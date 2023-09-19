@@ -1,0 +1,526 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "name": "模型",
+    "culture": "zh-CN",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "Oracle/172 16 8 78/oracledb",
+        "connectionDetails": {
+          "protocol": "oracle",
+          "address": {
+            "server": "172.16.8.78/oracledb"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {
+          "hierarchicalNavigation": true
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "Username": "gspm"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "维度_项目",
+        "columns": [
+          {
+            "name": "项目编码",
+            "dataType": "string",
+            "sourceColumn": "项目编码"
+          },
+          {
+            "name": "项目名称",
+            "dataType": "string",
+            "sourceColumn": "项目名称"
+          },
+          {
+            "name": "直管公司",
+            "dataType": "string",
+            "sourceColumn": "直管公司"
+          },
+          {
+            "name": "京内外",
+            "dataType": "string",
+            "sourceColumn": "京内外"
+          },
+          {
+            "name": "地区",
+            "dataType": "string",
+            "sourceColumn": "地区"
+          },
+          {
+            "name": "省",
+            "dataType": "string",
+            "sourceColumn": "省"
+          },
+          {
+            "name": "市",
+            "dataType": "string",
+            "sourceColumn": "市"
+          },
+          {
+            "name": "县",
+            "dataType": "string",
+            "sourceColumn": "县"
+          },
+          {
+            "name": "工程类别",
+            "dataType": "string",
+            "sourceColumn": "工程类别"
+          },
+          {
+            "name": "区域公司",
+            "dataType": "string",
+            "sourceColumn": "区域公司"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    源 = #\"Oracle/172 16 8 78/oracledb\",",
+                "    MD = 源{[Schema=\"MD\"]}[Data],",
+                "    MD_XIANGMUXINXI1 = MD{[Name=\"MD_XIANGMUXINXI\"]}[Data],",
+                "    筛选的行 = Table.SelectRows(MD_XIANGMUXINXI1, each [FXMBIANMA] <> null),",
+                "    删除的其他列 = Table.SelectColumns(筛选的行,{\"FXMBIANMA\", \"FXMQUANCHENG\", \"FZHIGUANJG\", \"FJNWFB\", \"FQUYU\", \"FSHENG\", \"FCHENGSHI\", \"FXIAN\", \"FGCLBEJ\", \"FZHIGUANJGXG\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FXMBIANMA\", \"项目编码\"}, {\"FXMQUANCHENG\", \"项目名称\"}, {\"FZHIGUANJG\", \"直管公司\"}, {\"FJNWFB\", \"京内外\"}, {\"FQUYU\", \"地区\"}, {\"FSHENG\", \"省\"}, {\"FCHENGSHI\", \"市\"}, {\"FXIAN\", \"县\"}, {\"FGCLBEJ\", \"工程类别\"}, {\"FZHIGUANJGXG\", \"区域公司\"}})",
+                "in",
+                "    重命名的列"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "物资合同明细",
+        "columns": [
+          {
+            "name": "商务科目路径",
+            "dataType": "string",
+            "sourceColumn": "商务科目路径"
+          },
+          {
+            "name": "物资编码",
+            "dataType": "string",
+            "sourceColumn": "物资编码"
+          },
+          {
+            "name": "物资名称",
+            "dataType": "string",
+            "sourceColumn": "物资名称"
+          },
+          {
+            "name": "单位",
+            "dataType": "string",
+            "sourceColumn": "单位"
+          },
+          {
+            "name": "规格",
+            "dataType": "string",
+            "sourceColumn": "规格"
+          },
+          {
+            "name": "数量",
+            "dataType": "double",
+            "sourceColumn": "数量"
+          },
+          {
+            "name": "单价",
+            "dataType": "double",
+            "sourceColumn": "单价"
+          },
+          {
+            "name": "金额",
+            "dataType": "double",
+            "sourceColumn": "金额"
+          },
+          {
+            "name": "项目编码",
+            "dataType": "string",
+            "sourceColumn": "项目编码"
+          },
+          {
+            "name": "项目名称",
+            "dataType": "string",
+            "sourceColumn": "项目名称"
+          },
+          {
+            "name": "合同编号",
+            "dataType": "string",
+            "sourceColumn": "合同编号"
+          },
+          {
+            "name": "合同名称",
+            "dataType": "string",
+            "sourceColumn": "合同名称"
+          },
+          {
+            "name": "标准合同",
+            "dataType": "string",
+            "sourceColumn": "标准合同"
+          },
+          {
+            "name": "增值税率",
+            "dataType": "double",
+            "sourceColumn": "增值税率"
+          },
+          {
+            "name": "供方名称",
+            "dataType": "string",
+            "sourceColumn": "供方名称"
+          },
+          {
+            "name": "签订时间",
+            "dataType": "dateTime",
+            "sourceColumn": "签订时间"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    源 =  #\"Oracle/172 16 8 78/oracledb\",",
+                "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+                "    GSPM_WUZIHETONGMINGXI = GSPM{[Name=\"GSPM_WUZIHETONGMINGXI\"]}[Data],",
+                "    删除的其他列 = Table.SelectColumns(GSPM_WUZIHETONGMINGXI,{\"FSHANGWUKEMUFNAME\", \"FWUZIBIANMA\", \"FWUZIMINGCHENG\", \"FDANWEI\", \"FGUIGE\", \"FPINPAI\", \"FRREA\", \"FSHULIANG\", \"FDANJIA\", \"FJINE\", \"FZBID\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FSHANGWUKEMUFNAME\", \"商务科目路径\"}, {\"FWUZIBIANMA\", \"物资编码\"}, {\"FWUZIMINGCHENG\", \"物资名称\"}, {\"FGUIGE\", \"规格\"}, {\"FDANWEI\", \"单位\"}, {\"FSHULIANG\", \"数量\"}, {\"FDANJIA\", \"单价\"}, {\"FJINE\", \"金额\"}, {\"FPINPAI\", \"品牌\"}, {\"FRREA\", \"产地\"}}),",
+                "    合并的查询 = Table.NestedJoin(重命名的列,{\"FZBID\"},物资合同主表,{\"FID\"},\"物资合同主表\",JoinKind.Inner),",
+                "    #\"展开的“物资合同主表”\" = Table.ExpandTableColumn(合并的查询, \"物资合同主表\", {\"项目编码\", \"项目名称\", \"合同编号\", \"合同名称\", \"标准合同\", \"增值税率\", \"供方名称\", \"签订时间\"}, {\"项目编码\", \"项目名称\", \"合同编号\", \"合同名称\", \"标准合同\", \"增值税率\", \"供方名称\", \"签订时间\"}),",
+                "    筛选的行 = Table.SelectRows(#\"展开的“物资合同主表”\", each not Text.StartsWith([物资名称], \"X3结转\"))",
+                "in",
+                "    筛选的行"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "分包合同明细",
+        "columns": [
+          {
+            "name": "施工内容",
+            "dataType": "string",
+            "sourceColumn": "施工内容"
+          },
+          {
+            "name": "规格",
+            "dataType": "string",
+            "sourceColumn": "规格"
+          },
+          {
+            "name": "单位",
+            "dataType": "string",
+            "sourceColumn": "单位"
+          },
+          {
+            "name": "数量",
+            "dataType": "double",
+            "sourceColumn": "数量"
+          },
+          {
+            "name": "单价",
+            "dataType": "double",
+            "sourceColumn": "单价"
+          },
+          {
+            "name": "金额",
+            "dataType": "double",
+            "sourceColumn": "金额"
+          },
+          {
+            "name": "合同编号",
+            "dataType": "string",
+            "sourceColumn": "合同编号"
+          },
+          {
+            "name": "合同协议号",
+            "dataType": "string",
+            "sourceColumn": "合同协议号"
+          },
+          {
+            "name": "合同名称",
+            "dataType": "string",
+            "sourceColumn": "合同名称"
+          },
+          {
+            "name": "项目编码",
+            "dataType": "string",
+            "sourceColumn": "项目编码"
+          },
+          {
+            "name": "项目名称",
+            "dataType": "string",
+            "sourceColumn": "项目名称"
+          },
+          {
+            "name": "标准合同",
+            "dataType": "string",
+            "sourceColumn": "标准合同"
+          },
+          {
+            "name": "商务科目路径.1",
+            "dataType": "string",
+            "sourceColumn": "商务科目路径.1"
+          },
+          {
+            "name": "商务科目路径.2",
+            "dataType": "string",
+            "sourceColumn": "商务科目路径.2"
+          },
+          {
+            "name": "商务科目路径.3",
+            "dataType": "string",
+            "sourceColumn": "商务科目路径.3"
+          },
+          {
+            "name": "商务科目路径.4",
+            "dataType": "string",
+            "sourceColumn": "商务科目路径.4"
+          },
+          {
+            "name": "是否临建合同",
+            "dataType": "string",
+            "sourceColumn": "是否临建合同"
+          },
+          {
+            "name": "分包名称",
+            "dataType": "string",
+            "sourceColumn": "分包名称"
+          },
+          {
+            "name": "增值税率",
+            "dataType": "double",
+            "sourceColumn": "增值税率"
+          },
+          {
+            "name": "签订日期",
+            "dataType": "dateTime",
+            "sourceColumn": "签订日期"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    源 = #\"Oracle/172 16 8 78/oracledb\",",
+                "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+                "    GSPM_HETONGMINGXI = GSPM{[Name=\"GSPM_HETONGMINGXI\"]}[Data],",
+                "    删除的其他列 = Table.SelectColumns(GSPM_HETONGMINGXI,{\"FHETONGID\", \"FSHIGONGNEIRONG\", \"FGUIGE\", \"FSHULIANG\", \"FDANJIA\", \"FJINE\", \"FDANWEI\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FSHIGONGNEIRONG\", \"施工内容\"}, {\"FGUIGE\", \"规格\"}, {\"FSHULIANG\", \"数量\"}, {\"FDANJIA\", \"单价\"}, {\"FJINE\", \"金额\"}, {\"FDANWEI\", \"单位\"}}),",
+                "    重排序的列 = Table.ReorderColumns(重命名的列,{\"FHETONGID\", \"施工内容\", \"规格\", \"单位\", \"数量\", \"单价\", \"金额\"}),",
+                "    合并的查询 = Table.NestedJoin(重排序的列,{\"FHETONGID\"},#\"分包合同主表\",{\"FID\"},\"分包合同主表\",JoinKind.Inner),",
+                "    #\"展开的“分包合同主表”\" = Table.ExpandTableColumn(合并的查询, \"分包合同主表\", {\"FID\", \"合同编号\", \"合同协议号\", \"合同名称\", \"项目编码\", \"项目名称\", \"标准合同\", \"商务科目路径\", \"是否临建合同\", \"分包名称\", \"增值税率\", \"签订日期\"}, {\"FID\", \"合同编号\", \"合同协议号\", \"合同名称\", \"项目编码\", \"项目名称\", \"标准合同\", \"商务科目路径\", \"是否临建合同\", \"分包名称\", \"增值税率\", \"签订日期\"}),",
+                "    删除的列 = Table.RemoveColumns(#\"展开的“分包合同主表”\",{\"FHETONGID\", \"FID\"}),",
+                "    按分隔符拆分列 = Table.SplitColumn(删除的列, \"商务科目路径\", Splitter.SplitTextByDelimiter(\"/\", QuoteStyle.Csv), {\"商务科目路径.1\", \"商务科目路径.2\", \"商务科目路径.3\", \"商务科目路径.4\", \"商务科目路径.5\"}),",
+                "    更改的类型 = Table.TransformColumnTypes(按分隔符拆分列,{{\"商务科目路径.1\", type text}, {\"商务科目路径.2\", type text}, {\"商务科目路径.3\", type text}, {\"商务科目路径.4\", type text}, {\"商务科目路径.5\", type text}}),",
+                "    删除的列1 = Table.RemoveColumns(更改的类型,{\"商务科目路径.1\"}),",
+                "    重命名的列1 = Table.RenameColumns(删除的列1,{{\"商务科目路径.2\", \"商务科目路径.1\"}, {\"商务科目路径.3\", \"商务科目路径.2\"}, {\"商务科目路径.4\", \"商务科目路径.3\"}, {\"商务科目路径.5\", \"商务科目路径.4\"}}),",
+                "    筛选的行 = Table.SelectRows(重命名的列1, each not Text.StartsWith([施工内容], \"X3\") and not Text.StartsWith([施工内容], \"x3\")),",
+                "    提取的日期 = Table.TransformColumns(筛选的行,{{\"签订日期\", DateTime.Date, type date}})",
+                "in",
+                "    提取的日期"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "日历",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Date",
+            "dataType": "dateTime",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Date]"
+          },
+          {
+            "type": "calculated",
+            "name": "年",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "YEAR('日历'[Date])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": "CALENDAR(\"2018-1-1\",TODAY())"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "b732d2a3-e334-4b5c-bb4e-782f1b0f67de",
+        "fromTable": "物资合同明细",
+        "fromColumn": "项目编码",
+        "toTable": "维度_项目",
+        "toColumn": "项目编码"
+      },
+      {
+        "name": "a17b9586-330c-4583-9156-b86e6b6c1048",
+        "fromTable": "分包合同明细",
+        "fromColumn": "项目编码",
+        "toTable": "维度_项目",
+        "toColumn": "项目编码"
+      },
+      {
+        "name": "ce94a993-873a-4e0a-81d7-cd4176220746",
+        "fromTable": "物资合同明细",
+        "fromColumn": "签订时间",
+        "toTable": "日历",
+        "toColumn": "Date"
+      },
+      {
+        "name": "d511a8a4-63cc-47da-abe9-f6b944b124d6",
+        "fromTable": "分包合同明细",
+        "fromColumn": "签订日期",
+        "toTable": "日历",
+        "toColumn": "Date"
+      }
+    ],
+    "roles": [
+      {
+        "name": "数据刷新",
+        "modelPermission": "refresh"
+      },
+      {
+        "name": "读取",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "CHINAONEBUILD\\pbiuser",
+            "memberId": "S-1-5-21-1606980848-1844823847-725345543-19722"
+          },
+          {
+            "memberName": "CHINAONEBUILD\\yangjiahe",
+            "memberId": "S-1-5-21-1606980848-1844823847-725345543-1253"
+          },
+          {
+            "memberName": "CHINAONEBUILD\\pbiadmin",
+            "memberId": "S-1-5-21-1606980848-1844823847-725345543-20683"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "物资合同主表",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = #\"Oracle/172 16 8 78/oracledb\",",
+          "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+          "    GSPM_WUZIHETONGXINXI = GSPM{[Name=\"GSPM_WUZIHETONGXINXI\"]}[Data],",
+          "    删除的其他列 = Table.SelectColumns(GSPM_WUZIHETONGXINXI,{\"FID\", \"FXIANGMUBIANMA\", \"FXIANGMUMINGCHENG\", \"FHETONGBIANHAO\", \"FHETONGMINGCHENG\", \"FBIAOZHUNHETONGNAME\", \"FZENGZHISHUILV\", \"FGONGFANGMINGCHENG\", \"FQIANDINGSHIJIAN\"}),",
+          "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FXIANGMUBIANMA\", \"项目编码\"}, {\"FXIANGMUMINGCHENG\", \"项目名称\"}, {\"FHETONGBIANHAO\", \"合同编号\"}, {\"FHETONGMINGCHENG\", \"合同名称\"}, {\"FGONGFANGMINGCHENG\", \"供方名称\"}, {\"FQIANDINGSHIJIAN\", \"签订时间\"}, {\"FZENGZHISHUILV\", \"增值税率\"}, {\"FBIAOZHUNHETONGNAME\", \"标准合同\"}})",
+          "in",
+          "    重命名的列"
+        ]
+      },
+      {
+        "name": "分包合同主表",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = #\"Oracle/172 16 8 78/oracledb\",",
+          "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+          "    GSPM_HETONGXINXI = GSPM{[Name=\"GSPM_HETONGXINXI\"]}[Data],",
+          "    删除的其他列 = Table.SelectColumns(GSPM_HETONGXINXI,{\"FID\", \"FHETONGBIANHAO\", \"FHETONGXIEYIHAO\", \"FHETONGMINGCHENG\", \"FXIANGMUBIANMA\", \"FXIANGMUMINGCHENG\", \"FDAIQIANHETONGMINGCHENG\", \"FSHANGWUKEMUFNAME\", \"FSHIFOULINJIANHT\", \"FFENBAOMINGCHENG\", \"FZENGZHISHUISHUILV\", \"FQIANDINGSHIJIAN\"}),",
+          "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FHETONGXIEYIHAO\", \"合同协议号\"}, {\"FHETONGMINGCHENG\", \"合同名称\"}, {\"FXIANGMUMINGCHENG\", \"项目名称\"}, {\"FSHANGWUKEMUFNAME\", \"商务科目路径\"}, {\"FFENBAOMINGCHENG\", \"分包名称\"}, {\"FQIANDINGSHIJIAN\", \"签订日期\"}, {\"FXIANGMUBIANMA\", \"项目编码\"}, {\"FZENGZHISHUISHUILV\", \"增值税率\"}, {\"FSHIFOULINJIANHT\", \"是否临建合同\"}, {\"FDAIQIANHETONGMINGCHENG\", \"标准合同\"}, {\"FHETONGBIANHAO\", \"合同编号\"}})",
+          "in",
+          "    重命名的列"
+        ]
+      },
+      {
+        "name": "维度_项目",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = #\"Oracle/172 16 8 78/oracledb\",",
+          "    MD = 源{[Schema=\"MD\"]}[Data],",
+          "    MD_XIANGMUXINXI1 = MD{[Name=\"MD_XIANGMUXINXI\"]}[Data],",
+          "    筛选的行 = Table.SelectRows(MD_XIANGMUXINXI1, each [FXMBIANMA] <> null),",
+          "    删除的其他列 = Table.SelectColumns(筛选的行,{\"FXMBIANMA\", \"FXMQUANCHENG\", \"FZHIGUANJG\", \"FJNWFB\", \"FQUYU\", \"FSHENG\", \"FCHENGSHI\", \"FXIAN\", \"FGCLBEJ\", \"FZHIGUANJGXG\"}),",
+          "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FXMBIANMA\", \"项目编码\"}, {\"FXMQUANCHENG\", \"项目名称\"}, {\"FZHIGUANJG\", \"直管公司\"}, {\"FJNWFB\", \"京内外\"}, {\"FQUYU\", \"地区\"}, {\"FSHENG\", \"省\"}, {\"FCHENGSHI\", \"市\"}, {\"FXIAN\", \"县\"}, {\"FGCLBEJ\", \"工程类别\"}, {\"FZHIGUANJGXG\", \"区域公司\"}})",
+          "in",
+          "    重命名的列"
+        ]
+      },
+      {
+        "name": "物资合同明细",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = #\"Oracle/172 16 8 78/oracledb\",",
+          "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+          "    GSPM_WUZIHETONGMINGXI = GSPM{[Name=\"GSPM_WUZIHETONGMINGXI\"]}[Data],",
+          "    删除的其他列 = Table.SelectColumns(GSPM_WUZIHETONGMINGXI,{\"FSHANGWUKEMUFNAME\", \"FWUZIBIANMA\", \"FWUZIMINGCHENG\", \"FDANWEI\", \"FGUIGE\", \"FSHULIANG\", \"FDANJIA\", \"FJINE\", \"FZBID\"}),",
+          "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FSHANGWUKEMUFNAME\", \"商务科目路径\"}, {\"FWUZIBIANMA\", \"物资编码\"}, {\"FWUZIMINGCHENG\", \"物资名称\"}, {\"FGUIGE\", \"规格\"}, {\"FDANWEI\", \"单位\"}, {\"FSHULIANG\", \"数量\"}, {\"FDANJIA\", \"单价\"}, {\"FJINE\", \"金额\"}}),",
+          "    合并的查询 = Table.NestedJoin(重命名的列,{\"FZBID\"},#\"物资合同主表\",{\"FID\"},\"物资合同主表\",JoinKind.Inner),",
+          "    #\"展开的“物资合同主表”\" = Table.ExpandTableColumn(合并的查询, \"物资合同主表\", {\"项目编码\", \"项目名称\", \"合同编号\", \"合同名称\", \"标准合同\", \"增值税率\", \"供方名称\", \"签订时间\"}, {\"项目编码\", \"项目名称\", \"合同编号\", \"合同名称\", \"标准合同\", \"增值税率\", \"供方名称\", \"签订时间\"}),",
+          "    筛选的行 = Table.SelectRows(#\"展开的“物资合同主表”\", each not Text.StartsWith([物资名称], \"X3结转\"))",
+          "in",
+          "    筛选的行"
+        ]
+      },
+      {
+        "name": "分包合同明细",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = #\"Oracle/172 16 8 78/oracledb\",",
+          "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+          "    GSPM_HETONGMINGXI = GSPM{[Name=\"GSPM_HETONGMINGXI\"]}[Data],",
+          "    删除的其他列 = Table.SelectColumns(GSPM_HETONGMINGXI,{\"FHETONGID\", \"FSHIGONGNEIRONG\", \"FGUIGE\", \"FSHULIANG\", \"FDANJIA\", \"FJINE\", \"FDANWEI\"}),",
+          "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FSHIGONGNEIRONG\", \"施工内容\"}, {\"FGUIGE\", \"规格\"}, {\"FSHULIANG\", \"数量\"}, {\"FDANJIA\", \"单价\"}, {\"FJINE\", \"金额\"}, {\"FDANWEI\", \"单位\"}}),",
+          "    重排序的列 = Table.ReorderColumns(重命名的列,{\"FHETONGID\", \"施工内容\", \"规格\", \"单位\", \"数量\", \"单价\", \"金额\"}),",
+          "    合并的查询 = Table.NestedJoin(重排序的列,{\"FHETONGID\"},#\"分包合同主表\",{\"FID\"},\"分包合同主表\",JoinKind.Inner),",
+          "    #\"展开的“分包合同主表”\" = Table.ExpandTableColumn(合并的查询, \"分包合同主表\", {\"FID\", \"合同编号\", \"合同协议号\", \"合同名称\", \"项目编码\", \"项目名称\", \"标准合同\", \"商务科目路径\", \"是否临建合同\", \"分包名称\", \"增值税率\", \"签订日期\"}, {\"FID\", \"合同编号\", \"合同协议号\", \"合同名称\", \"项目编码\", \"项目名称\", \"标准合同\", \"商务科目路径\", \"是否临建合同\", \"分包名称\", \"增值税率\", \"签订日期\"}),",
+          "    删除的列 = Table.RemoveColumns(#\"展开的“分包合同主表”\",{\"FHETONGID\", \"FID\"}),",
+          "    按分隔符拆分列 = Table.SplitColumn(删除的列, \"商务科目路径\", Splitter.SplitTextByDelimiter(\"/\", QuoteStyle.Csv), {\"商务科目路径.1\", \"商务科目路径.2\", \"商务科目路径.3\", \"商务科目路径.4\", \"商务科目路径.5\"}),",
+          "    更改的类型 = Table.TransformColumnTypes(按分隔符拆分列,{{\"商务科目路径.1\", type text}, {\"商务科目路径.2\", type text}, {\"商务科目路径.3\", type text}, {\"商务科目路径.4\", type text}, {\"商务科目路径.5\", type text}}),",
+          "    删除的列1 = Table.RemoveColumns(更改的类型,{\"商务科目路径.1\"}),",
+          "    重命名的列1 = Table.RenameColumns(删除的列1,{{\"商务科目路径.2\", \"商务科目路径.1\"}, {\"商务科目路径.3\", \"商务科目路径.2\"}, {\"商务科目路径.4\", \"商务科目路径.3\"}, {\"商务科目路径.5\", \"商务科目路径.4\"}}),",
+          "    筛选的行 = Table.SelectRows(重命名的列1, each not Text.StartsWith([施工内容], \"X3\") and not Text.StartsWith([施工内容], \"x3\"))",
+          "in",
+          "    筛选的行"
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      },
+      {
+        "name": "__TEdtr",
+        "value": "1"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

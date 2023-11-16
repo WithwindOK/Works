@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ELADDON", "ELADDON.csproj", "{AF73494D-0087-489A-9EFD-552A24E934E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF73494D-0087-489A-9EFD-552A24E934E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF73494D-0087-489A-9EFD-552A24E934E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF73494D-0087-489A-9EFD-552A24E934E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF73494D-0087-489A-9EFD-552A24E934E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88E7D4E5-4093-4453-86CE-CD19A273554D}
+	EndGlobalSection
+EndGlobal

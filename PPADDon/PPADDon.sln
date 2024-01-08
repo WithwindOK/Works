@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPADDon", "PPADDon.csproj", "{FFFA6625-3033-4839-ACB6-026841B56482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPADDonWeb", "..\PPADDonWeb\PPADDonWeb.csproj", "{1D6CA3C5-84B4-40D8-8A28-51CCEC2DD458}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFFA6625-3033-4839-ACB6-026841B56482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFFA6625-3033-4839-ACB6-026841B56482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFFA6625-3033-4839-ACB6-026841B56482}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FFFA6625-3033-4839-ACB6-026841B56482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFFA6625-3033-4839-ACB6-026841B56482}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFFA6625-3033-4839-ACB6-026841B56482}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1D6CA3C5-84B4-40D8-8A28-51CCEC2DD458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6CA3C5-84B4-40D8-8A28-51CCEC2DD458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6CA3C5-84B4-40D8-8A28-51CCEC2DD458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6CA3C5-84B4-40D8-8A28-51CCEC2DD458}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62E97104-5C49-4038-B1FC-690283EDF289}
+	EndGlobalSection
+EndGlobal

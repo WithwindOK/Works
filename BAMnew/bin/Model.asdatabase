@@ -1,7 +1,8 @@
 {
-  "name": "SemanticModel",
+  "name": "BAMnew",
   "compatibilityLevel": 1600,
   "model": {
+    "name": "模型",
     "culture": "zh-CN",
     "discourageImplicitMeasures": true,
     "dataSources": [
@@ -17558,6 +17559,5 @@
         "value": "1"
       }
     ]
-  },
-  "id": "SemanticModel"
+  }
 }

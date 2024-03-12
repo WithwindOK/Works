@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.9.34607.119
+VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{6870E480-7721-4708-BFB8-9AE898AA21B3}") = "BAMnew", "BAMnew.smproj", "{8CE414BB-95B2-4C99-9E03-51BA72086E22}"
 EndProject
@@ -18,6 +18,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {25C9E345-5439-40A9-B5F7-D33FE0875D08}
+		SolutionGuid = {75D35CCE-2F26-4B17-BAA3-AEE4B0D94D63}
 	EndGlobalSection
 EndGlobal

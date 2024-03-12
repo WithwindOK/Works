@@ -2,6 +2,7 @@
   "name": "SemanticModel",
   "compatibilityLevel": 1600,
   "model": {
+    "name": "模型",
     "culture": "zh-CN",
     "discourageImplicitMeasures": true,
     "dataSources": [
@@ -63,6 +64,8 @@
         },
         "credential": {
           "AuthenticationKind": "UsernamePassword",
+          "kind": "SQL",
+          "path": "ssas1.chinaonebuild.com;BAM",
           "Username": "sa",
           "EncryptConnection": false,
           "PrivacySetting": "Public"
@@ -72,7 +75,7 @@
     "tables": [
       {
         "name": "D_C_支付方式",
-        "lineageTag": "596b8bf9-56fc-427a-ac07-6557c94e7464",
+        "lineageTag": "9468401c-051a-4f65-8e3b-a4053b567760",
         "columns": [
           {
             "type": "calculatedTableColumn",
@@ -122,7 +125,7 @@
       },
       {
         "name": "D_项目开工日期",
-        "lineageTag": "505ea752-c8c7-41a9-b11e-2845fe79e458",
+        "lineageTag": "25a82272-9831-4521-bfd9-a3707e76d79e",
         "columns": [
           {
             "type": "calculatedTableColumn",
@@ -474,7 +477,7 @@
       },
       {
         "name": "F_分包合同额",
-        "lineageTag": "939daa98-dfe6-44ef-aa1b-e4a3b4af7591",
+        "lineageTag": "926d4aa5-a646-4308-aa1b-d58883081fe8",
         "columns": [
           {
             "name": "项目编码",
@@ -713,7 +716,7 @@
       },
       {
         "name": "D_承包合同",
-        "lineageTag": "342ae5b5-ed7e-43d6-9960-3e14dc909dd3",
+        "lineageTag": "8588c56e-1f09-424c-be23-151516590f87",
         "columns": [
           {
             "type": "calculated",
@@ -3259,16 +3262,12 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "导航"
           }
         ]
       },
       {
         "name": "F_承包合同金额",
-        "lineageTag": "f5121e4c-2ce3-4110-8502-8da9990e2d5a",
+        "lineageTag": "e9926494-df90-430e-8418-cd4d98fe4a02",
         "columns": [
           {
             "name": "KEYID",
@@ -3429,16 +3428,12 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "导航"
           }
         ]
       },
       {
         "name": "F_业主确认量",
-        "lineageTag": "e6289d35-9dff-4e34-afef-8a69f5678034",
+        "lineageTag": "6616a889-8e5b-4f98-8467-69313f5004ce",
         "columns": [
           {
             "name": "项目编码",
@@ -3632,7 +3627,7 @@
       {
         "name": "D-责任体",
         "excludeFromModelRefresh": true,
-        "lineageTag": "58d0dfc4-0ede-484a-aa05-fe4f7cb2ee5a",
+        "lineageTag": "6fb41176-a73c-4004-a60a-9a60c94e55d3",
         "columns": [
           {
             "name": "责任体",
@@ -3698,7 +3693,7 @@
       {
         "name": "D_施工专业",
         "excludeFromModelRefresh": true,
-        "lineageTag": "cc0fb1b7-68c6-4f92-b1c2-91160ddb201a",
+        "lineageTag": "18ee1709-3714-499b-ab73-942704403d09",
         "columns": [
           {
             "name": "施工专业",
@@ -3764,7 +3759,7 @@
       {
         "name": "D_分包类型",
         "excludeFromModelRefresh": true,
-        "lineageTag": "e015e363-9ab6-4c1c-99fd-2e9dde081046",
+        "lineageTag": "ae95607d-af76-4b78-a4bc-e6b158451d59",
         "columns": [
           {
             "name": "分包类型",
@@ -3848,7 +3843,7 @@
       },
       {
         "name": "D_商务科目",
-        "lineageTag": "a7f81f7d-c569-4086-b9e3-4e82bae95547",
+        "lineageTag": "cde14d0a-d592-4530-9630-b793608bbb6d",
         "columns": [
           {
             "name": "FID",
@@ -3974,7 +3969,7 @@
       {
         "name": "指标",
         "excludeFromModelRefresh": true,
-        "lineageTag": "2bba2944-57f8-4016-81ab-834b99ce8064",
+        "lineageTag": "830943bb-7281-43d6-adf4-80bca987fe19",
         "columns": [
           {
             "name": "A",
@@ -4473,7 +4468,7 @@
               "",
               " IF(ISINSCOPE('D_日历'[年月名称]),",
               "    BLANK(),",
-              "    [M.物资.含税应付.Exp]-[M.物资.实付款.Sum]",
+              "    [M.物资应付.Exp]-[M.物资.实付款.Sum]",
               ")",
               "/*-------------------------------------",
               "补充说明：",
@@ -4534,29 +4529,6 @@
             ]
           },
           {
-            "name": "M.租赁应付.价税合计.Sum",
-            "description": [
-              "",
-              "IF(NOT(ISCROSSFILTERED('D_日历'[日期])),",
-              "    SUMX(VALUES( 'D_租赁物资合同'[合同编号] ),[_租赁应付_价税合计])",
-              ")"
-            ],
-            "expression": [
-              "",
-              "IF(NOT(ISCROSSFILTERED('D_日历'[日期])),",
-              "    SUMX(VALUES( 'D_租赁物资合同'[合同编号] ),[_租赁应付.价税合计.Exp])",
-              ")"
-            ],
-            "formatString": "#,0.00",
-            "displayFolder": "04租赁\\02.结算",
-            "lineageTag": "8b9adda1-879b-4c10-98e9-363965d1d81f",
-            "changedProperties": [
-              {
-                "property": "FormatString"
-              }
-            ]
-          },
-          {
             "name": "M.租赁.实付款.Sum",
             "description": "CALCULATE( SUM('F_租赁物资付款表'[金额]),'F_租赁物资付款表'[单据状态]=\"已完成\")/SELECTEDVALUE('货币单位'[系数],1)",
             "expression": "CALCULATE( SUM('F_租赁付款'[金额]),'F_租赁付款'[状态]=\"已完成\")/SELECTEDVALUE('货币单位'[系数],1)",
@@ -4587,7 +4559,7 @@
               "",
               "IF(ISINSCOPE('D_日历'[年月名称]),",
               "    BLANK(),",
-              "    [M.租赁应付.价税合计.Sum]-[M.租赁.实付款.Sum]",
+              "    [M.租赁应付.Sum]-[M.租赁.实付款.Sum]",
               ")"
             ],
             "formatString": "#,0.00",
@@ -4603,9 +4575,15 @@
             "name": "M.分包合同.签订日期.Min",
             "description": "MIN('F_分包合同额'[签订日期])",
             "expression": "MIN('F_分包合同额'[日期])",
-            "formatString": "General Date",
+            "formatString": "yyyy-mm-dd",
             "displayFolder": "02分包\\00.合同",
-            "lineageTag": "a8d39530-5bfc-4414-b0d4-9b6fdfe0486a"
+            "lineageTag": "a8d39530-5bfc-4414-b0d4-9b6fdfe0486a",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
           },
           {
             "name": "M.分包.补充协议份数.DCnt",
@@ -4637,34 +4615,6 @@
             "changedProperties": [
               {
                 "property": "FormatString"
-              }
-            ]
-          },
-          {
-            "name": "_分包.应付.Exp",
-            "description": [
-              "",
-              "IF( ABS( [M_分包结算_价税合计] ) > 0, [M_分包结算_价税合计], [M_分包报量_价税合计] )",
-              "",
-              "/*",
-              "中间态辅助度量，不应作为最终度量使用",
-              "*/"
-            ],
-            "expression": [
-              "",
-              "IF( ABS( [M.分包结算.价税合计.Sum] ) > 0, [M.分包结算.价税合计.Sum], [M.分包报量.价税合计.Sum] )",
-              "",
-              "/*",
-              "中间态辅助度量，不应作为最终度量使用",
-              "*/"
-            ],
-            "formatString": "#,##0.00",
-            "displayFolder": "02分包\\02.结算",
-            "lineageTag": "0c4f0ab9-6fc4-4c96-9335-a8a64a60be6b",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
               }
             ]
           },
@@ -4769,7 +4719,7 @@
               "",
               "IF(ISINSCOPE('D_日历'[年月名称]),",
               "    BLANK(),",
-              "    DIVIDE([M.物资.实付款.Sum],[M.物资.含税应付.Exp])",
+              "    DIVIDE([M.物资.实付款.Sum],[M.物资应付.Exp])",
               ")",
               "",
               "/*-------------------------------------",
@@ -4869,7 +4819,7 @@
               "",
               "IF(ISINSCOPE('D_日历'[年月名称]),",
               "    BLANK(),",
-              "    DIVIDE([M.租赁.实付款.Sum],[M.租赁应付.价税合计.Sum])",
+              "    DIVIDE([M.租赁.实付款.Sum],[M.租赁应付.Sum])",
               ")"
             ],
             "formatString": "0.00%;-0.00%;0.00%",
@@ -4974,107 +4924,63 @@
             "name": "M.物资合同.签订日期.Min",
             "description": "MIN( 'F_采购物资合同额'[签订日期] )",
             "expression": "MIN( 'F_采购物资合同额'[日期] )",
-            "formatString": "General Date",
+            "formatString": "yyyy-mm-dd",
             "displayFolder": "03物资\\00.合同",
-            "lineageTag": "239a6eef-2a57-4584-9c02-04f6d6c8021d"
+            "lineageTag": "239a6eef-2a57-4584-9c02-04f6d6c8021d",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
           },
           {
             "name": "M.租赁.补充协议签订日期.Min",
             "description": "MIN( 'F_租赁物资合同额'[签订日期] )",
             "expression": "MIN( 'F_租赁物资合同额'[日期] )",
-            "formatString": "General Date",
+            "formatString": "yyyy-m-d",
             "displayFolder": "04租赁\\00.合同",
-            "lineageTag": "6f9429c7-5273-4966-8dc8-21868722b7f6"
+            "lineageTag": "6f9429c7-5273-4966-8dc8-21868722b7f6",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
           },
           {
             "name": "M.物资结算.签订日期.Max",
             "description": "MAX( 'F_采购物资结算'[签订日期] )",
             "expression": "MAX( 'F_采购物资结算'[日期] )",
-            "formatString": "General Date",
+            "formatString": "yyyy-mm-dd",
             "displayFolder": "03物资\\06.结算",
-            "lineageTag": "e6b36ce3-3a8e-4aa8-acba-388739f13666"
+            "lineageTag": "e6b36ce3-3a8e-4aa8-acba-388739f13666",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
           },
           {
             "name": "M.分包结算.签订日期.Max",
             "description": "MAX( 'F_分包结算'[签订日期] )",
             "expression": "MAX( 'F_分包结算'[日期] )",
-            "formatString": "General Date",
+            "formatString": "yyyy-mm-dd",
             "displayFolder": "02分包\\02.结算",
-            "lineageTag": "6a501d96-4a42-44cd-a393-1dca10a32ae0"
+            "lineageTag": "6a501d96-4a42-44cd-a393-1dca10a32ae0",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
           },
           {
             "name": "刷新时间",
             "description": "\"数据更新时间：\" & MAX('刷新时间'[刷新时间])",
             "expression": "\"数据更新时间：\" & MAX('刷新时间'[刷新时间])",
             "lineageTag": "2658fc24-6a58-4294-8b4a-9514a53c48ba"
-          },
-          {
-            "name": "_物资.含税应付.Exp",
-            "description": [
-              "",
-              "IF( [M_物资结算_价税合计]<>0, ",
-              "    [M_物资结算_价税合计], ",
-              "    [M_物资进场_价税合计]",
-              ")",
-              "",
-              "/*",
-              "补充说明：",
-              "中间态度量，不应作为最终度量使用",
-              "*/"
-            ],
-            "expression": [
-              "",
-              "IF( [M.物资结算.价税合计.Sum]<>0, ",
-              "    [M.物资结算.价税合计.Sum], ",
-              "    [M.物资有效进场.价税合计.Exp]",
-              ")",
-              "",
-              "/*",
-              "补充说明：",
-              "中间态度量，不应作为最终度量使用",
-              "*/"
-            ],
-            "displayFolder": "03物资\\06.结算",
-            "lineageTag": "26ad68e4-8aca-44d7-828b-ccd4e6626a20",
-            "changedProperties": [
-              {
-                "property": "FormatString"
-              }
-            ],
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ]
-          },
-          {
-            "name": "M.物资.含税应付.Exp",
-            "description": [
-              "",
-              "IF(NOT(ISCROSSFILTERED('D_日历'[日期])),",
-              "    SUMX(KEEPFILTERS(VALUES('D_采购物资合同'[合同编号])),[_物资应付_价税合计])",
-              ")",
-              "",
-              "/*说明：",
-              "    1、进场、结算在时间轴不一致，因此计算时间轴应付无意义，排除时间轴",
-              "    2、为保证性能，未用CROSSJOIN(ALL(各维度字段值))作为迭代表，因此使用时，各坐标轴字段应来自同一筛选链，例如：不应出现D_分包类型的字段",
-              "*/"
-            ],
-            "expression": [
-              "",
-              "",
-              "    SUMX(KEEPFILTERS(VALUES('D_采购物资合同'[合同编号])),[_物资.含税应付.Exp])",
-              ""
-            ],
-            "formatString": "#,0.00",
-            "displayFolder": "03物资\\06.结算",
-            "lineageTag": "8a7d5fb3-61f7-4338-8c5e-11aca442cae8",
-            "changedProperties": [
-              {
-                "property": "FormatString"
-              }
-            ]
           },
           {
             "name": "M.分包应付.Sum",
@@ -5085,8 +4991,7 @@
               ")"
             ],
             "expression": [
-              "",
-              "   SUMX(KEEPFILTERS(VALUES('D_分包合同'[合同编号])),[_分包.应付.Exp])",
+              "SUMX(KEEPFILTERS(VALUES('D_分包合同'[合同编号])),[_分包应付.Exp])",
               ""
             ],
             "displayFolder": "02分包\\02.结算",
@@ -5100,27 +5005,6 @@
               {
                 "name": "PBI_FormatHint",
                 "value": "{\"isGeneralNumber\":true}"
-              }
-            ]
-          },
-          {
-            "name": "_租赁应付.价税合计.Exp",
-            "description": [
-              "",
-              "IF( ABS( [M_租赁结算_价税合计] ) > 0, [M_租赁结算_价税合计], [M_租赁进场_价税合计] )",
-              ""
-            ],
-            "expression": [
-              "",
-              "IF( ABS( [M.租赁结算.价税合计.Sum] ) > 0, [M.租赁结算.价税合计.Sum], [M.租赁.价税合计.Sum] )",
-              ""
-            ],
-            "formatString": "#,0.00",
-            "displayFolder": "04租赁\\02.结算",
-            "lineageTag": "77b63f10-2057-43fb-8035-514b062a98a5",
-            "changedProperties": [
-              {
-                "property": "FormatString"
               }
             ]
           },
@@ -5246,7 +5130,7 @@
               "",
               " IF(ISINSCOPE('D_日历'[年月名称]),",
               "    BLANK(),",
-              "    [M.物资.含税应付.Exp]-[M.物资.实付款.Sum]-[M.物资.在途付款.Sum]",
+              "    [M.物资应付.Exp]-[M.物资.实付款.Sum]-[M.物资.在途付款.Sum]",
               ")"
             ],
             "formatString": "#,0.00",
@@ -5271,7 +5155,7 @@
               "",
               "IF(ISINSCOPE('D_日历'[年月名称]),",
               "    BLANK(),",
-              "    [M.租赁应付.价税合计.Sum]-[M.租赁.实付款.Sum]-[M.租赁.在途付款.Sum]",
+              "    [M.租赁应付.Sum]-[M.租赁.实付款.Sum]-[M.租赁.在途付款.Sum]",
               ")"
             ],
             "formatString": "#,0.00",
@@ -5358,88 +5242,22 @@
             "lineageTag": "5bd4d869-5d70-4aa2-a612-6c5b1d0ec727"
           },
           {
-            "name": "M.分包.实付款最后日期.BalD",
-            "description": "LASTNONBLANK('D_日历'[日期],[M_分包付款_实付])",
-            "expression": "CALCULATE(LASTNONBLANK('D_日历'[日期],[M.分包.实付款.Sum]),'D_日历'[日期]<=MAX('D_日历'[日期]))",
-            "formatString": "yyyy-mm-dd",
-            "displayFolder": "02分包\\03.付款",
-            "lineageTag": "74fa5b85-4ea8-409c-ab4e-e263c85e908c",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isDateTimeCustom\":true}"
-              }
-            ]
-          },
-          {
-            "name": "M.物资.付款最后日期.BalD",
-            "description": "LASTNONBLANK('D_日历'[日期],[M_物资付款_实付])",
-            "expression": "CALCULATE( LASTNONBLANK('D_日历'[日期],[M.物资.实付款.Sum]),'D_日历'[日期]<=MAX('D_日历'[日期]))",
-            "formatString": "General Date",
-            "displayFolder": "03物资\\07.付款",
-            "lineageTag": "45a67f51-1ffa-45a3-aaff-cca384764627"
-          },
-          {
-            "name": "M.租赁.付款最后日期.BalD",
-            "description": "LASTNONBLANK('D_日历'[日期],[M_租赁付款_实付])",
-            "expression": "CALCULATE( LASTNONBLANK('D_日历'[日期],[M.租赁.实付款.Sum]),'D_日历'[日期]<=MAX('D_日历'[日期]))",
-            "formatString": "yyyy-mm-dd",
-            "displayFolder": "04租赁\\03.付款",
-            "lineageTag": "7523734a-e92e-44b2-aaa6-4a778709002f",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isDateTimeCustom\":true}"
-              }
-            ]
-          },
-          {
             "name": "M.分包.计划付款执行比例.Max",
-            "expression": [
-              "",
-              "VAR _DT=FILTER(ALL('D_日历'[日期]),'D_日历'[日期]<=MAX('D_日历'[日期]))",
-              "RETURN",
-              "    IF(HASONEVALUE('D_分包合同'[KEYID]),",
-              "        CALCULATE(",
-              "            MAX('F_分包资金计划'[付款比例]),",
-              "            LASTNONBLANK(_DT,CALCULATE(MAX('F_分包资金计划'[付款比例])))",
-              "        )",
-              "    )"
-            ],
+            "expression": "IF(HASONEVALUE('D_分包合同'[KEYID]),MAX('F_分包资金计划'[付款比例]))",
             "formatString": "0.00%;-0.00%;0.00%",
             "displayFolder": "02分包\\03.付款",
             "lineageTag": "00cf0cdd-0d84-435a-9eba-f8ddc17e4d14"
           },
           {
             "name": "M.物资.计划付款执行比例.Max",
-            "expression": [
-              "",
-              "VAR _DT=FILTER(ALL('D_日历'[日期]),'D_日历'[日期]<=MAX('D_日历'[日期]))",
-              "RETURN",
-              "    IF(HASONEVALUE('D_采购物资合同'[KEYID]),",
-              "        CALCULATE(",
-              "            MAX('F_采购资金计划'[付款比例]),",
-              "            LASTNONBLANK(_DT,CALCULATE(MAX('F_采购资金计划'[付款比例])))",
-              "        )",
-              "    )"
-            ],
+            "expression": "IF(HASONEVALUE('D_采购物资合同'[KEYID]), MAX('F_采购资金计划'[付款比例]))",
             "formatString": "0.00%;-0.00%;0.00%",
             "displayFolder": "03物资\\07.付款",
             "lineageTag": "706a58ba-7645-48fc-9074-cba10aa2925f"
           },
           {
             "name": "M.租赁.计划付款执行比例.Max",
-            "expression": [
-              "",
-              "VAR _DT=FILTER(ALL('D_日历'[日期]),'D_日历'[日期]<=MAX('D_日历'[日期]))",
-              "RETURN",
-              "    IF(HASONEVALUE('D_租赁物资合同'[KEYID]),",
-              "        CALCULATE(",
-              "            MAX('F_租赁资金计划'[付款比例]),",
-              "            LASTNONBLANK(_DT,CALCULATE(MAX('F_租赁资金计划'[付款比例])))",
-              "        )",
-              "    )"
-            ],
+            "expression": "IF(HASONEVALUE('D_租赁物资合同'[KEYID]),MAX('F_租赁资金计划'[付款比例]))",
             "formatString": "0.00%;-0.00%;0.00%",
             "displayFolder": "04租赁\\03.付款",
             "lineageTag": "311f4706-b0d0-4310-a117-3e3b740e56a0"
@@ -5604,23 +5422,6 @@
             ]
           },
           {
-            "name": "M.分包应付.Sum.test",
-            "expression": [
-              "",
-              "",
-              "   SUMX(KEEPFILTERS(VALUES('D_分包合同'[合同编号])),[_分包.应付.Exp])",
-              ""
-            ],
-            "displayFolder": "02分包\\02.结算",
-            "lineageTag": "decfa4c1-3670-4431-9c76-39e266f41765",
-            "annotations": [
-              {
-                "name": "PBI_FormatHint",
-                "value": "{\"isGeneralNumber\":true}"
-              }
-            ]
-          },
-          {
             "name": "M.分包合同.初始价税合计.Exp",
             "expression": "CALCULATE([M.分包合同.价税合计.Sum],FIRSTNONBLANK(ALL('D_日历'[日期]),[M.分包合同.价税合计.Sum]))",
             "displayFolder": "02分包\\00.合同",
@@ -5629,6 +5430,201 @@
               {
                 "name": "PBI_FormatHint",
                 "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "M.租赁应付.Sum",
+            "description": [
+              "",
+              "IF(NOT(ISCROSSFILTERED('D_日历'[日期])),",
+              "    SUMX(VALUES( 'D_租赁物资合同'[合同编号] ),[_租赁应付_价税合计])",
+              ")"
+            ],
+            "expression": "SUMX(KEEPFILTERS(VALUES( 'D_租赁物资合同'[合同编号] )),[_租赁应付.Exp])",
+            "formatString": "#,0.00",
+            "displayFolder": "04租赁\\02.结算",
+            "lineageTag": "8b9adda1-879b-4c10-98e9-363965d1d81f",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ]
+          },
+          {
+            "name": "_分包应付.Exp",
+            "description": [
+              "",
+              "IF( ABS( [M_分包结算_价税合计] ) > 0, [M_分包结算_价税合计], [M_分包报量_价税合计] )",
+              "",
+              "/*",
+              "中间态辅助度量，不应作为最终度量使用",
+              "*/"
+            ],
+            "expression": [
+              "",
+              "IF( [M.分包结算.价税合计.Sum] <> 0, [M.分包结算.价税合计.Sum], [M.分包报量.价税合计.Sum] )",
+              "",
+              "/*",
+              "中间态辅助度量，不应作为最终度量使用",
+              "*/"
+            ],
+            "formatString": "#,##0.00",
+            "displayFolder": "02分包\\02.结算",
+            "lineageTag": "0c4f0ab9-6fc4-4c96-9335-a8a64a60be6b",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "_物资应付.Exp",
+            "description": [
+              "",
+              "IF( [M_物资结算_价税合计]<>0, ",
+              "    [M_物资结算_价税合计], ",
+              "    [M_物资进场_价税合计]",
+              ")",
+              "",
+              "/*",
+              "补充说明：",
+              "中间态度量，不应作为最终度量使用",
+              "*/"
+            ],
+            "expression": [
+              "",
+              "IF( [M.物资结算.价税合计.Sum]<>0, ",
+              "    [M.物资结算.价税合计.Sum], ",
+              "    [M.物资有效进场.价税合计.Exp]",
+              ")",
+              "",
+              "/*",
+              "补充说明：",
+              "中间态度量，不应作为最终度量使用",
+              "*/"
+            ],
+            "displayFolder": "03物资\\06.结算",
+            "lineageTag": "26ad68e4-8aca-44d7-828b-ccd4e6626a20",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ],
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "M.物资应付.Exp",
+            "description": [
+              "",
+              "IF(NOT(ISCROSSFILTERED('D_日历'[日期])),",
+              "    SUMX(KEEPFILTERS(VALUES('D_采购物资合同'[合同编号])),[_物资应付_价税合计])",
+              ")",
+              "",
+              "/*说明：",
+              "    1、进场、结算在时间轴不一致，因此计算时间轴应付无意义，排除时间轴",
+              "    2、为保证性能，未用CROSSJOIN(ALL(各维度字段值))作为迭代表，因此使用时，各坐标轴字段应来自同一筛选链，例如：不应出现D_分包类型的字段",
+              "*/"
+            ],
+            "expression": [
+              "SUMX(KEEPFILTERS(VALUES('D_采购物资合同'[合同编号])),[_物资应付.Exp])",
+              ""
+            ],
+            "formatString": "#,0.00",
+            "displayFolder": "03物资\\06.结算",
+            "lineageTag": "8a7d5fb3-61f7-4338-8c5e-11aca442cae8",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ]
+          },
+          {
+            "name": "_租赁应付.Exp",
+            "description": [
+              "",
+              "IF( ABS( [M_租赁结算_价税合计] ) > 0, [M_租赁结算_价税合计], [M_租赁进场_价税合计] )",
+              ""
+            ],
+            "expression": [
+              "",
+              "IF( ABS( [M.租赁结算.价税合计.Sum] ) > 0, [M.租赁结算.价税合计.Sum], [M.租赁.价税合计.Sum] )",
+              ""
+            ],
+            "formatString": "#,0.00",
+            "displayFolder": "04租赁\\02.结算",
+            "lineageTag": "77b63f10-2057-43fb-8035-514b062a98a5",
+            "changedProperties": [
+              {
+                "property": "FormatString"
+              }
+            ]
+          },
+          {
+            "name": "M.分包.实付款最后日期.MAX",
+            "description": "LASTNONBLANK('D_日历'[日期],[M_分包付款_实付])",
+            "expression": "CALCULATE(MAX('F_分包付款'[日期]),'F_分包付款'[状态]=\"已完成\")",
+            "formatString": "yyyy-mm-dd",
+            "displayFolder": "02分包\\03.付款",
+            "lineageTag": "74fa5b85-4ea8-409c-ab4e-e263c85e908c",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
+          },
+          {
+            "name": "M.物资.付款最后日期.Max",
+            "description": "LASTNONBLANK('D_日历'[日期],[M_物资付款_实付])",
+            "expression": "CALCULATE(MAX('F_物资付款'[日期]),'F_物资付款'[状态]=\"已完成\")",
+            "formatString": "yyyy-mm-dd",
+            "displayFolder": "03物资\\07.付款",
+            "lineageTag": "45a67f51-1ffa-45a3-aaff-cca384764627",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
+          },
+          {
+            "name": "M.租赁.付款最后日期.Max",
+            "description": "LASTNONBLANK('D_日历'[日期],[M_租赁付款_实付])",
+            "expression": "CALCULATE(MAX('F_租赁付款'[日期]),'F_租赁付款'[状态]=\"已完成\")",
+            "formatString": "yyyy-mm-dd",
+            "displayFolder": "04租赁\\03.付款",
+            "lineageTag": "7523734a-e92e-44b2-aaa6-4a778709002f",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ]
+          },
+          {
+            "name": "M.产值.价税合计.SUM",
+            "expression": "SUM('F_商务产值'[本期含税产值])/SELECTEDVALUE('货币单位'[系数],1)",
+            "formatString": "#,0.00",
+            "displayFolder": "06产值",
+            "lineageTag": "edae3ae8-f33a-4202-9c83-cfbe8fcf38ba"
+          },
+          {
+            "name": "M.租赁结算.签订日期.Max",
+            "expression": "MAX( 'F_租赁物资结算'[日期])",
+            "formatString": "yyyy-mm-dd",
+            "displayFolder": "04租赁\\02.结算",
+            "lineageTag": "ab645acc-3b34-4c73-bef1-99910891bc34",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
               }
             ]
           }
@@ -5651,7 +5647,7 @@
       },
       {
         "name": "F_采购物资合同额",
-        "lineageTag": "8d2e8636-0b20-4df4-a34c-800233c2dee8",
+        "lineageTag": "d87be606-0c0e-4dcf-9ca2-f3c2a75c1a4c",
         "columns": [
           {
             "name": "价税合计",
@@ -5825,7 +5821,7 @@
       },
       {
         "name": "F_租赁物资合同额",
-        "lineageTag": "f5d1a964-6f14-4b53-8e54-ccedd555b3bf",
+        "lineageTag": "22de492e-6b68-465c-a315-e0607dc7050b",
         "columns": [
           {
             "name": "价税合计",
@@ -6014,7 +6010,7 @@
       },
       {
         "name": "D_日历",
-        "lineageTag": "443b7a97-d56b-4be0-bf96-df4706c33b6b",
+        "lineageTag": "17b82bda-0e95-4742-ad38-b11c1e7d4f32",
         "dataCategory": "Time",
         "columns": [
           {
@@ -6379,7 +6375,7 @@
       },
       {
         "name": "F_采购物资结算",
-        "lineageTag": "549339a0-6c56-446a-8e3e-8636e8693beb",
+        "lineageTag": "c6d0af38-c506-4b1a-8be8-0b2f840d8a3c",
         "columns": [
           {
             "name": "项目编码",
@@ -6532,7 +6528,7 @@
       },
       {
         "name": "F_租赁物资结算",
-        "lineageTag": "e5a7716b-b696-4ead-b1ad-93caf7567f49",
+        "lineageTag": "ed88f25e-bfab-4b3f-86d8-1aef069fdc41",
         "columns": [
           {
             "name": "项目编码",
@@ -6705,7 +6701,7 @@
       },
       {
         "name": "F_分包结算",
-        "lineageTag": "363f2250-2102-4b3a-80e0-5f40e8869c33",
+        "lineageTag": "0157af68-97e0-4ac1-b436-d9a91631764a",
         "columns": [
           {
             "name": "KEYID",
@@ -6848,7 +6844,7 @@
       },
       {
         "name": "D_分包合同",
-        "lineageTag": "b672f1ae-91cf-41d2-8406-ffac62c0fa92",
+        "lineageTag": "9b72f63f-1e23-4f2b-b783-2257cae0ec4a",
         "columns": [
           {
             "name": "合同编号",
@@ -7181,7 +7177,7 @@
       },
       {
         "name": "D_采购物资合同",
-        "lineageTag": "1b283098-e3bd-4189-8e25-4995708a278f",
+        "lineageTag": "201470b0-9644-49dd-acf4-396a67a0dc42",
         "columns": [
           {
             "name": "项目编码",
@@ -7497,7 +7493,7 @@
       },
       {
         "name": "D_租赁物资合同",
-        "lineageTag": "df0ec658-a32c-445c-8005-b452ffd17e86",
+        "lineageTag": "f5e6c9e8-91e1-4612-9ced-9cef1d24d212",
         "columns": [
           {
             "name": "项目名称",
@@ -7813,7 +7809,7 @@
       },
       {
         "name": "刷新时间",
-        "lineageTag": "5dcaf075-8f2c-4a1a-9434-1765223a6a78",
+        "lineageTag": "246fb034-a8b2-402d-a048-090265c9fe9e",
         "columns": [
           {
             "name": "刷新时间",
@@ -7867,7 +7863,7 @@
       },
       {
         "name": "D_项目信息",
-        "lineageTag": "cae1ed66-5bf3-4364-80a0-cd3b5a194891",
+        "lineageTag": "e4cfc433-67fd-48a7-ad22-bfa66157eaea",
         "columns": [
           {
             "name": "项目编码",
@@ -11335,16 +11331,12 @@
           {
             "name": "PBI_ResultType",
             "value": "Exception"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "导航"
           }
         ]
       },
       {
         "name": "货币单位",
-        "lineageTag": "1c8f8a50-343b-4775-9c66-572a716eb38a",
+        "lineageTag": "c17d85f4-1826-4a1d-b227-76ea5debc56c",
         "columns": [
           {
             "name": "货币单位",
@@ -11388,7 +11380,7 @@
               "type": "m",
               "expression": [
                 "let",
-                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WetrarKSjZKgUqxOt9GRHO5RrAAQQoV37kYQgwrEA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [货币单位 = _t, 系数 = _t]),",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WetrarKSjZKgUqxOt9GRHO4htAAQQ/q79MD5ELBYA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [货币单位 = _t, 系数 = _t]),",
                 "    更改的类型 = Table.TransformColumnTypes(源,{{\"系数\", Int64.Type}})",
                 "in",
                 "    更改的类型"
@@ -11405,7 +11397,7 @@
       },
       {
         "name": "F_应上交收益履约",
-        "lineageTag": "a3eadfef-d29d-4a05-9131-0b21a60a804c",
+        "lineageTag": "cd30bf77-7f5f-4c97-9859-4659d7ced5b9",
         "columns": [
           {
             "name": "日期",
@@ -11546,7 +11538,7 @@
       },
       {
         "name": "D_标准合同",
-        "lineageTag": "3971f89c-e747-443f-8e8b-e7343222a33e",
+        "lineageTag": "e5839da6-cd54-45ea-80a1-735e78a18a9d",
         "columns": [
           {
             "name": "标准合同编号",
@@ -11658,7 +11650,7 @@
       },
       {
         "name": "F_业主合同回款",
-        "lineageTag": "1b94f704-9629-4a86-9ab4-9d89c0095d3c",
+        "lineageTag": "27067e6e-5d7a-45ab-bbb8-13026290b8a9",
         "columns": [
           {
             "name": "KEYID",
@@ -11816,7 +11808,7 @@
       },
       {
         "name": "F_租赁资金计划",
-        "lineageTag": "2a40278b-f0b6-4f31-9a1c-2999308c448e",
+        "lineageTag": "f4621428-5d4e-423d-9ec7-98dd31ac3788",
         "columns": [
           {
             "name": "付款比例",
@@ -11891,7 +11883,7 @@
       },
       {
         "name": "F_分包资金计划",
-        "lineageTag": "a414e3f1-e882-41b7-9485-34aae5ae71d8",
+        "lineageTag": "a2fc39c2-42bd-42d9-8b02-c633b8600d9d",
         "columns": [
           {
             "name": "付款比例",
@@ -11966,7 +11958,7 @@
       },
       {
         "name": "F_采购资金计划",
-        "lineageTag": "3cc2b443-f1f6-4475-a8d8-c79be6105fce",
+        "lineageTag": "fd24f863-de21-42ad-855a-aa06360ed4aa",
         "columns": [
           {
             "name": "付款比例",
@@ -12042,7 +12034,7 @@
       {
         "name": "账户",
         "description": "合并组织机构、员工账号，取得账号对应项目编码",
-        "lineageTag": "e1060673-53f0-4452-8c4c-4d81bb7468c2",
+        "lineageTag": "fbf18ce7-5723-4fbb-abf9-c221f56af735",
         "columns": [
           {
             "name": "身份证",
@@ -12136,7 +12128,7 @@
       },
       {
         "name": "F_物资进场",
-        "lineageTag": "c9aae009-b873-4a07-acf8-8611f515f457",
+        "lineageTag": "7649c1e7-42d2-4cfc-b16a-4c08015a476a",
         "columns": [
           {
             "name": "KEYID",
@@ -12270,7 +12262,7 @@
       },
       {
         "name": "F_物资对账",
-        "lineageTag": "2d266a02-b123-4a3e-ac5b-02240b80dc43",
+        "lineageTag": "cbb236e2-3cd9-4df2-8aeb-fbe8a603bbe4",
         "columns": [
           {
             "name": "KEYID",
@@ -12404,7 +12396,7 @@
       },
       {
         "name": "F_物资退场",
-        "lineageTag": "2bb10bce-0ab7-4d2a-8ca5-147dedf34880",
+        "lineageTag": "652d9ada-21ec-46cd-bdf8-81d3860ee0fa",
         "columns": [
           {
             "name": "KEYID",
@@ -12538,7 +12530,7 @@
       },
       {
         "name": "F_物资租赁对账",
-        "lineageTag": "bc6e185a-0f87-4acd-9fc4-a36eaed87ac9",
+        "lineageTag": "c4b98d51-b863-42d7-b384-4228d3472141",
         "columns": [
           {
             "name": "KEYID",
@@ -12672,7 +12664,7 @@
       },
       {
         "name": "F_分包完成量",
-        "lineageTag": "d17b27eb-9852-4c07-81b0-ed1dd4c53d58",
+        "lineageTag": "64bb4de9-c6e6-4e22-b121-0e835f74f764",
         "columns": [
           {
             "name": "KEYID",
@@ -12806,7 +12798,7 @@
       },
       {
         "name": "F_物资调拨",
-        "lineageTag": "3d8f9694-63f4-4687-9e9f-d2caa31cd160",
+        "lineageTag": "0a1f15de-bddd-4095-9e62-2557eb8ef928",
         "columns": [
           {
             "name": "KEYID",
@@ -12940,7 +12932,7 @@
       },
       {
         "name": "F_租赁付款",
-        "lineageTag": "2429e879-3943-4ce2-9b29-19073fc9803c",
+        "lineageTag": "59d77d2b-c8de-4875-b183-2ba468b0c1b9",
         "columns": [
           {
             "name": "KEYID",
@@ -13065,7 +13057,7 @@
       },
       {
         "name": "F_分包付款",
-        "lineageTag": "58a81381-2f0e-46d9-85c1-002d6fc7a413",
+        "lineageTag": "4af1f05c-56f5-4529-9cfa-5bb0787f8ffb",
         "columns": [
           {
             "name": "KEYID",
@@ -13224,7 +13216,7 @@
       },
       {
         "name": "F_物资付款",
-        "lineageTag": "11d247fc-3512-4e5f-bcea-f302fe1f9bde",
+        "lineageTag": "d5f28a09-04f0-40b4-a234-718bfce377e5",
         "columns": [
           {
             "name": "KEYID",
@@ -13349,7 +13341,7 @@
       },
       {
         "name": "D_分包分供",
-        "lineageTag": "555ca058-1329-4cdc-b379-ae0a6db76d90",
+        "lineageTag": "f3cff79f-d54d-47bd-82d9-d394b721f17c",
         "columns": [
           {
             "name": "编码",
@@ -13412,7 +13404,7 @@
       },
       {
         "name": "I_承包合同信息",
-        "lineageTag": "b03f187e-bf9e-4e82-a2ab-02e790da26c9",
+        "lineageTag": "a1916b69-84e2-4075-9e4e-99a9c6342659",
         "columns": [
           {
             "name": "FID",
@@ -15925,10 +15917,6 @@
         ],
         "annotations": [
           {
-            "name": "PBI_NavigationStepName",
-            "value": "导航"
-          },
-          {
             "name": "PBI_ResultType",
             "value": "Table"
           }
@@ -15936,7 +15924,7 @@
       },
       {
         "name": "权限计算组",
-        "lineageTag": "5d129c0c-bf97-466d-a8e2-201fe59d414d",
+        "lineageTag": "44ddfdc2-6772-46de-8adf-b3e2ab000199",
         "calculationGroup": {
           "precedence": 100,
           "calculationItems": [
@@ -15996,7 +15984,7 @@
       },
       {
         "name": "时间计算组",
-        "lineageTag": "944d70c3-dd15-49a5-b5db-5558b6c6b05e",
+        "lineageTag": "1c40b2b6-8d92-4fdb-b299-c04751f4f918",
         "calculationGroup": {
           "precedence": 20,
           "calculationItems": [
@@ -16052,6 +16040,73 @@
             "mode": "import",
             "source": {
               "type": "calculationGroup"
+            }
+          }
+        ]
+      },
+      {
+        "name": "F_商务产值",
+        "columns": [
+          {
+            "name": "项目编码",
+            "dataType": "string",
+            "sourceColumn": "项目编码"
+          },
+          {
+            "name": "项目名称",
+            "dataType": "string",
+            "sourceColumn": "项目名称"
+          },
+          {
+            "name": "分包类型",
+            "dataType": "string",
+            "sourceColumn": "分包类型"
+          },
+          {
+            "name": "专业",
+            "dataType": "string",
+            "sourceColumn": "专业"
+          },
+          {
+            "name": "本期含税产值",
+            "dataType": "double",
+            "sourceColumn": "本期含税产值"
+          },
+          {
+            "name": "本期无税产值",
+            "dataType": "double",
+            "sourceColumn": "本期无税产值"
+          },
+          {
+            "name": "累计无税产值",
+            "dataType": "double",
+            "sourceColumn": "累计无税产值"
+          },
+          {
+            "name": "累计含税产值",
+            "dataType": "double",
+            "sourceColumn": "累计含税产值"
+          },
+          {
+            "name": "日期",
+            "dataType": "dateTime",
+            "sourceColumn": "日期"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ssas1 chinaonebuild com;BAM\",",
+                "    dbo_F_商务产值 = Source{[Schema=\"dbo\",Item=\"F_商务产值\"]}[Data],",
+                "    删除的其他列 = Table.SelectColumns(dbo_F_商务产值,{\"项目名称\", \"项目编码\", \"分包类型\", \"专业\", \"累计含税产值\", \"累计无税产值\", \"日期\", \"本期含税产值\", \"本期无税产值\"})",
+                "in",
+                "    删除的其他列"
+              ]
             }
           }
         ]
@@ -16533,7 +16588,7 @@
           "in",
           "    源"
         ],
-        "lineageTag": "37e3a815-b3d7-4616-b829-9fcec0f82f21",
+        "lineageTag": "f84991a7-6f46-48cc-a8a4-9c0b7bafe8e6",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16559,7 +16614,7 @@
           "in",
           "    删除的其他列"
         ],
-        "lineageTag": "8a6d350d-bfbf-459b-a306-236266d5d78f",
+        "lineageTag": "9fc88fb1-826e-4143-bed9-e3fe1320fd51",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16584,7 +16639,7 @@
           "in",
           "    删除的其他列"
         ],
-        "lineageTag": "1956799e-c6ed-4ee3-b2d4-2410862c8ea8",
+        "lineageTag": "e53e73c2-4276-438f-8525-4c4deaffc683",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16612,7 +16667,7 @@
           "in",
           "    删除的列1"
         ],
-        "lineageTag": "37c68128-f1be-42d8-a6f8-4dab55c188d9",
+        "lineageTag": "53a8aaa5-7b56-4a69-b57d-3a39999c5a77",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16639,7 +16694,7 @@
           "in",
           "    重命名的列"
         ],
-        "lineageTag": "cd7cf464-4d69-477b-b13b-32760e3163df",
+        "lineageTag": "45505e15-773a-4f08-9bc6-4bf13a50b3f6",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16665,7 +16720,7 @@
           "in",
           "    重命名的列"
         ],
-        "lineageTag": "8ad9d0e0-3270-418d-a8d5-6863734c98c7",
+        "lineageTag": "f1cb5096-d1e3-45c4-884e-8280556b2382",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16699,7 +16754,7 @@
           "in",
           "    已透视列"
         ],
-        "lineageTag": "1cf2c698-82d1-496e-a476-ef2c9d6c9362",
+        "lineageTag": "83789ed6-23ab-4866-8493-7414c2f6df24",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -16725,7 +16780,7 @@
           "in",
           "    源"
         ],
-        "lineageTag": "ec302176-0fc0-4902-8a73-1d1ac71b1c35",
+        "lineageTag": "3b20b109-c971-4dcc-b196-83af9d174d23",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16746,7 +16801,7 @@
           "in",
           "    源"
         ],
-        "lineageTag": "5cac4ee6-6495-465b-bb06-670e135b18bf",
+        "lineageTag": "3bc8b85d-df9a-45d7-820f-343655cb3676",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16779,7 +16834,7 @@
           "in",
           "    提取的日期"
         ],
-        "lineageTag": "d252f98f-c02c-4d3d-92ea-3172d12e9073",
+        "lineageTag": "12854fb6-9912-4f93-9ef4-58f045234ee2",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16811,7 +16866,7 @@
           "in",
           "    筛选的行1"
         ],
-        "lineageTag": "c49a4a33-03c9-4291-afc6-8bb1d556d418",
+        "lineageTag": "250a59ef-79fd-4a30-802c-80daa5bc1764",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -16832,7 +16887,7 @@
           "in",
           "    源"
         ],
-        "lineageTag": "e0a0bfa3-dd6e-41c8-9e47-a5a52b4c6e28",
+        "lineageTag": "bec69036-0c66-4bca-856e-c2b39149884b",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16860,7 +16915,7 @@
           "in",
           "    替换的值"
         ],
-        "lineageTag": "22ac17f5-46f9-4e01-b577-df749fd1af3c",
+        "lineageTag": "0a35a184-dc1f-4579-a235-932f0f0eff18",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -16886,7 +16941,7 @@
           "in",
           "    更改的类型"
         ],
-        "lineageTag": "29bf9392-54e4-47e6-9108-b3666444705f",
+        "lineageTag": "558edb9a-261a-42f2-a921-614bf74e6ff6",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16907,7 +16962,7 @@
           "in",
           "    源"
         ],
-        "lineageTag": "caf58cff-7774-4640-a4a4-e1821ebb9fbe",
+        "lineageTag": "e0ef6816-e084-42cc-8e52-ff54a65617ff",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16937,7 +16992,7 @@
           "in",
           "    重命名的列"
         ],
-        "lineageTag": "e61265f0-04a6-4630-9408-172232e21938",
+        "lineageTag": "02685df9-a1e4-4611-8304-4d61d16e43f5",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -16967,7 +17022,7 @@
           "in",
           "    删除的副本"
         ],
-        "lineageTag": "87e776f5-713f-40d5-ad25-e81ecc8245a9",
+        "lineageTag": "f967f2de-9642-4abf-a416-570e928a177e",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -16996,7 +17051,7 @@
           "in",
           "    删除的副本"
         ],
-        "lineageTag": "ba0ef820-7616-49bf-955d-7b1410bcbeed",
+        "lineageTag": "b2a852f3-874f-4492-9d15-5248808bf5a7",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17024,7 +17079,7 @@
           "in",
           "    重命名的列"
         ],
-        "lineageTag": "773fff0c-6747-4d5d-806b-9212cb98df6d",
+        "lineageTag": "199476da-184d-4cb4-a1d5-0c9024a13be4",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17057,7 +17112,7 @@
           "in",
           "    筛选的行2"
         ],
-        "lineageTag": "429891b8-63ca-46e7-beb2-67e073d4d417",
+        "lineageTag": "e2878b55-3dd1-4d14-8f8b-82de38c4b3db",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17084,7 +17139,7 @@
           "in",
           "    更改的类型"
         ],
-        "lineageTag": "d64321a6-b42e-4f80-b36f-663a952c93ae",
+        "lineageTag": "e55f38a8-020c-4b0e-9918-398ade6ca356",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17109,7 +17164,7 @@
           "in",
           "    删除的列1"
         ],
-        "lineageTag": "1fa53354-e7d5-467a-973d-0d6899fd6d4c",
+        "lineageTag": "546d1d70-9727-4f31-a9f1-4004b75728c5",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17129,7 +17184,7 @@
           "in",
           "    重命名的列"
         ],
-        "lineageTag": "d73a9bcc-3484-4640-8f36-b00bd42f04a8",
+        "lineageTag": "112f0713-928c-45de-95ac-e4a39baba898",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17148,7 +17203,7 @@
           "in",
           "    #\"展开的“项目责任体”\""
         ],
-        "lineageTag": "82face5f-deb7-4710-8bb7-8b3d8108569f",
+        "lineageTag": "e1dcc47d-4226-4ba0-b1e2-01b780061266",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17171,7 +17226,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "9619f6a3-d344-42c3-a712-90faed6229eb",
+        "lineageTag": "8d1d3e59-e15b-4410-84c6-e6329e5a0804",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17190,7 +17245,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "a8bc2f76-271c-4055-9e9a-b761a6774452",
+        "lineageTag": "220f6f3c-534a-4487-935f-1be8d1ae030b",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17209,7 +17264,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "a0862030-9345-4b56-807d-547f80a50dcb",
+        "lineageTag": "354b6f83-4bf1-4a9d-a6bb-d171829d62a6",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17228,7 +17283,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "fdfa2ea2-8cbc-4963-8cce-8a91512515af",
+        "lineageTag": "e13663c9-7b48-44dd-87ab-8ece1e8ea10a",
         "annotations": [
           {
             "name": "PBI_ResultType",
@@ -17247,7 +17302,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "00839991-30f9-4ef5-8c0b-ffa276a08f3e",
+        "lineageTag": "830fb260-07f0-416b-9f09-5c1b68fed452",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17270,7 +17325,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "b699976c-6e33-40d0-abd3-b5c9f5cb4ed7",
+        "lineageTag": "c596e468-49b6-4c57-b77b-59c404a78116",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17293,7 +17348,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "66a1bae6-87b7-4627-b6e5-9acf57390cc3",
+        "lineageTag": "d86d2012-2e29-4ea2-9a5d-934b9e780f35",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17316,7 +17371,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "7ffcdbc9-aeda-4bfc-b19b-a896ddafff75",
+        "lineageTag": "7fe5c0d4-91b9-4889-8f26-f9c6737f877f",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17340,7 +17395,7 @@
           "in",
           "    删除的其他列"
         ],
-        "lineageTag": "cfcb7bea-1810-4d46-b7d7-8566647c05ff",
+        "lineageTag": "5677a856-712f-4940-9a6d-a95e7cdd544f",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17363,7 +17418,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "a43cab14-0e4d-42ff-8372-31fa14d3b1ed",
+        "lineageTag": "2eb4bc28-3446-49cd-9a2e-a24c9fbae992",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17386,7 +17441,7 @@
           "in",
           "    GSPM_HETONGPINGSHEN"
         ],
-        "lineageTag": "d689f696-8f88-4975-b64c-59505e96c10c",
+        "lineageTag": "d80be590-1e37-4012-bbbd-1dadb25165ec",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17412,7 +17467,7 @@
           "in",
           "    #\"展开的“X5-股份合同号对照”\""
         ],
-        "lineageTag": "97634ac3-8f41-4dbc-918f-27ed9f9d5e55",
+        "lineageTag": "d881971c-cf9c-46a4-8524-7bd7934d1eae",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17436,7 +17491,7 @@
           "in",
           "    重命名的列"
         ],
-        "lineageTag": "a98b2077-5f57-414a-ad97-67de5ae5595b",
+        "lineageTag": "eb0c726f-ef93-4770-9e41-8cecde63f505",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17464,7 +17519,7 @@
           "in",
           "    删除的副本1"
         ],
-        "lineageTag": "19cca419-d6bd-4c0a-bbc0-0f8f9da00daf",
+        "lineageTag": "b7ba96c4-f4a1-439b-a9db-f8dd5d1f9f65",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17489,7 +17544,7 @@
           "in",
           "    自定义1"
         ],
-        "lineageTag": "fff95bfc-2f9f-4098-b326-7a9ab75312fe",
+        "lineageTag": "67c3bab3-19c8-4bda-8731-8ddd923dc370",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17510,7 +17565,7 @@
           "in",
           "    源"
         ],
-        "lineageTag": "b7493e86-a1f6-47da-94b1-cb850bd26870",
+        "lineageTag": "97717aea-b15b-4bbc-b517-337d24354b5c",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",
@@ -17535,7 +17590,7 @@
           "in",
           "    自定义1"
         ],
-        "lineageTag": "8905e521-3e9a-42bb-9163-55e6c571f0e9",
+        "lineageTag": "75805ad1-d8b4-4ef6-a03d-b08676bb2fd5",
         "annotations": [
           {
             "name": "PBI_NavigationStepName",

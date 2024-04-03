@@ -1,0 +1,1865 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.124.1052.0 (23.12)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"商务运营表-X5\",\"度量值表\",\"维度_项目\",\"责任担当体\",\"大客户简称\",\"结算率指标\",\"分公司总经\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "zh-CN",
+    "cultures": [
+      {
+        "name": "zh-CN",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Entities": {
+              "table.column": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "度量值表",
+                    "ConceptualProperty": "【本年确权不含税】"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "本年确权不含税": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table.column1": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "度量值表",
+                    "ConceptualProperty": "【本年确权含税】"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "本年确权含税": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table.column108": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "度量值表",
+                    "ConceptualProperty": "【低于阈值项目个数占比】"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "低于108%项目个数占比": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "4d7262c2-b6e5-4651-a311-57bd026cd672",
+        "fromColumn": "责任体",
+        "fromTable": "维度_项目",
+        "toColumn": "名称",
+        "toTable": "责任担当体"
+      },
+      {
+        "name": "a3c43d5f-42d1-4add-8fc9-7480222a0a33",
+        "fromColumn": "项目所属大客户",
+        "fromTable": "维度_项目",
+        "toColumn": "大客户",
+        "toTable": "大客户简称"
+      },
+      {
+        "name": "d487e7f3-350f-488b-9980-73c5e7691f6a",
+        "fromColumn": "项目编码",
+        "fromTable": "商务运营表-X5",
+        "toColumn": "项目编码",
+        "toTable": "维度_项目"
+      },
+      {
+        "name": "de5802d8-7eab-4feb-9ae3-26fa994b3ae3",
+        "fromColumn": "日期",
+        "fromTable": "商务运营表-X5",
+        "toColumn": "Date",
+        "toTable": "日历"
+      },
+      {
+        "name": "8946c60c-4e2c-41d1-83a1-14da2010184a",
+        "crossFilteringBehavior": "bothDirections",
+        "fromColumn": "责任体",
+        "fromTable": "分公司总经",
+        "securityFilteringBehavior": "bothDirections",
+        "toColumn": "名称",
+        "toTable": "责任担当体"
+      }
+    ],
+    "roles": [
+      {
+        "name": "总部",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "7538c38fee7045ff956f4310eadbc50c"
+          }
+        ],
+        "modelPermission": "read"
+      },
+      {
+        "name": "分公司",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "40bca4b40aa24f3b8371a5c8294182c8"
+          }
+        ],
+        "modelPermission": "read",
+        "tablePermissions": [
+          {
+            "name": "分公司总经",
+            "filterExpression": "[帐号] = USERNAME()"
+          }
+        ]
+      }
+    ],
+    "sourceQueryCulture": "zh-CN",
+    "tables": [
+      {
+        "name": "DateTableTemplate_4711fd47-2b7c-4115-b6e8-3e0e3b791971",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "7078ebd6-0cb2-44e6-80c2-d4eb8589562c",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "年",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "ba44a9e3-8448-4f40-a449-94996f420f96",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "25312f62-71f6-4233-acc9-db77b3fe5139",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "月份",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "72539f7b-2c10-44ee-8162-4640cfd2aabb",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "930b92ed-ef01-41c8-ad13-a794ca4ecbe8",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "季度",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"季度 \" & [QuarterNo]",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "e7dad852-1d71-4fcb-a9bd-68ae4be71a53",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "日",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "lineageTag": "295c1a26-ca81-45a3-b328-34d272d49fa1",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "日期层次结构",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "年",
+                "column": "年",
+                "lineageTag": "5d3841f8-9dcb-4188-98c0-a4095bc15620",
+                "ordinal": 0
+              },
+              {
+                "name": "季度",
+                "column": "季度",
+                "lineageTag": "737fe30f-1903-447f-9845-5a50bff0894d",
+                "ordinal": 1
+              },
+              {
+                "name": "月份",
+                "column": "月份",
+                "lineageTag": "041aa5b3-5f86-46b9-9b36-797f810e0580",
+                "ordinal": 2
+              },
+              {
+                "name": "日",
+                "column": "日",
+                "lineageTag": "63c3e683-5b18-46ce-ab37-109525fd7f9b",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "a9c8ceff-2241-4965-be40-75385f9f7b2c"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "03eab5cb-3f7a-4f6a-891c-13280db858e9",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_4711fd47-2b7c-4115-b6e8-3e0e3b791971-8aecc89e-9092-42b7-95e4-f82cb342b4c7",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "度量值表",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "列 1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "716aa04d-b7a9-4786-b558-f894917b8d80",
+            "sourceColumn": "列 1",
+            "summarizeBy": "none"
+          }
+        ],
+        "excludeFromModelRefresh": true,
+        "lineageTag": "4553819f-da4e-4210-b89f-aedfb98f0c9d",
+        "measures": [
+          {
+            "name": "开累确权",
+            "expression": "SUM('商务运营表-X5'[开累确权])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "f3361631-dca6-44b8-ae56-8e70d09cdeef"
+          },
+          {
+            "name": "开累收入",
+            "expression": "(SUM('商务运营表-X5'[开累收入不含税])+SUM('商务运营表-X5'[开累收入税金]))/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "78cfef33-a153-495a-a8ea-ef8a93fcde94"
+          },
+          {
+            "name": "已完未结",
+            "expression": "SUM('商务运营表-X5'[未确权金额])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "d9836e34-0d17-4f6d-8244-50c3b5bce97c"
+          },
+          {
+            "name": "过程结算率_成本",
+            "expression": "DIVIDE([开累确权不含税],[开累实际成本不含税])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "a0539d27-e53a-4879-b34b-42018c698a4c"
+          },
+          {
+            "name": "低于阈值项目数",
+            "expression": "var yz=SELECTEDVALUE('结算率指标'[指标阈值],1) return IF(ISFILTERED('维度_项目'[项目名称]),BLANK(),CALCULATE(COUNT('商务运营表-X5'[项目编码]),'商务运营表-X5'[商务过程结算率_成本]<yz))",
+            "formatString": "0",
+            "lineageTag": "a2e23302-39b8-4756-aa19-7ede4be99ec2"
+          },
+          {
+            "name": "已完未结占收入比",
+            "expression": "DIVIDE([已完未结],[开累收入不含税])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "faf1cf64-a03b-49e3-857a-1b4e6ec01d75"
+          },
+          {
+            "name": "项目个数",
+            "expression": "IF(ISINSCOPE('维度_项目'[项目名称]),BLANK(),COUNT('商务运营表-X5'[项目编码]))",
+            "formatString": "0",
+            "lineageTag": "46d27fd9-398d-4212-901d-6abfdda8e6fe"
+          },
+          {
+            "name": "本年产值",
+            "expression": "(SUM('商务运营表-X5'[本年产值不含税])+SUM('商务运营表-X5'[本年产值税]))/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "a226bfe1-d4d8-40ff-89b0-3a9ee1cdd490"
+          },
+          {
+            "name": "已完未结占本年收入比",
+            "expression": "DIVIDE([已完未结],[【本年产值不含税】])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "cd92f478-106b-4b2b-ae95-34ed055eda07"
+          },
+          {
+            "name": "开累实际成本",
+            "expression": "(SUM('商务运营表-X5'[开累实际成本不含税])+SUM('商务运营表-X5'[开累实际成本税]))/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "2f2ae2c3-69bc-4c30-a7c8-b2d9609c822e"
+          },
+          {
+            "name": "开累确权不含税",
+            "expression": "SUM('商务运营表-X5'[开累确权不含税])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "e4257cd1-e21d-40e7-850e-e19225942e8f"
+          },
+          {
+            "name": "开累实际成本不含税",
+            "expression": "SUM('商务运营表-X5'[开累实际成本不含税])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "9913fdf9-38db-4d65-89de-2c2919715c18"
+          },
+          {
+            "name": "【低于阈值项目个数占比】",
+            "expression": "DIVIDE([低于阈值项目数],[项目个数])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "767dfa1e-b0b1-4919-9a27-7af5af285daa"
+          },
+          {
+            "name": "【本年产值不含税】",
+            "expression": "SUM('商务运营表-X5'[本年产值不含税])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "7a39641e-cbc3-45f1-bf27-84aad0e081bb"
+          },
+          {
+            "name": "【本年产值含税】",
+            "expression": "SUM('商务运营表-X5'[本年产值含税])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "1e7a6069-f0e8-48fe-a7a0-f7578d2fd435"
+          },
+          {
+            "name": "【本年确权含税】",
+            "expression": "SUM('商务运营表-X5'[本年确权含税])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "60554d30-d2ef-48ce-89a0-66e6e0108a90"
+          },
+          {
+            "name": "【本年确权不含税】",
+            "expression": "SUM('商务运营表-X5'[本年确权不含税])/10000",
+            "formatString": "#,0.00",
+            "lineageTag": "0002c585-d047-4392-ad9a-221bf5d8db69"
+          },
+          {
+            "name": "开累收入不含税",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SUM('商务运营表-X5'[开累收入不含税])/10000",
+            "lineageTag": "65b83a72-fb74-4ff9-9423-ba747251e98b"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "度量值表-1bce12eb-305a-4fb4-a089-00ad0d90e67e",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [#\"列 1\" = _t]),",
+                "    更改的类型 = Table.TransformColumnTypes(源,{{\"列 1\", type text}})",
+                "in",
+                "    更改的类型"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "维度_项目",
+        "annotations": [
+          {
+            "name": "PBI_QueryRelationships",
+            "value": "{\"columnCount\":29,\"keyColumnNames\":[],\"queryRelationships\":[],\"columnIdentities\":[\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMBIANMA,3}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMQUANCHENG,5}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMZONGJIAN,6}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZHUANYEFL,17}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMXINGZHI,18}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FJNWFB,21}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FQUYU,22}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FSHENG,23}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FCHENGSHI,24}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXIAN,25}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMSSZT,51}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FGCLBYJ,56}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FGCLBEJ,57}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMJSZT,66}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMSZDKH,75}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FSFTZJZXM,86}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FTUJIANHEDINGSYL,94}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FJIDIANHEDINGSYL,95}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZONGHEHEDINGSYL,96}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXIANGMULEIXING,136}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZHIGUANJGXG,137}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FTUJIANHEDINGSYLJZ,143}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FJIDIANHEDINGSYLJZ,144}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FCHANGFANGSHIYEBU,149}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZONGJIANTUANDUI,150}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMCAIWUZHUANGTAI,151}\",\"Section1/维度_项目/替换的值.{业务板块,26}\",\"Section1/维度_项目/已添加条件列.{责任体,27}\",\"Section1/维度_项目/已添加条件列1.{投资非投资项目,28}\"],\"ColumnCount\":29,\"KeyColumnNames\":[],\"ColumnIdentities\":[\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMBIANMA,3}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMQUANCHENG,5}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMZONGJIAN,6}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZHUANYEFL,17}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMXINGZHI,18}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FJNWFB,21}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FQUYU,22}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FSHENG,23}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FCHENGSHI,24}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXIAN,25}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMSSZT,51}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FGCLBYJ,56}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FGCLBEJ,57}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMJSZT,66}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMSZDKH,75}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FSFTZJZXM,86}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FTUJIANHEDINGSYL,94}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FJIDIANHEDINGSYL,95}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZONGHEHEDINGSYL,96}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXIANGMULEIXING,136}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZHIGUANJGXG,137}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FTUJIANHEDINGSYLJZ,143}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FJIDIANHEDINGSYLJZ,144}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FCHANGFANGSHIYEBU,149}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FZONGJIANTUANDUI,150}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/MD/MD.MD_XIANGMUXINXI.{FXMCAIWUZHUANGTAI,151}\",\"Section1/维度_项目/替换的值.{业务板块,26}\",\"Section1/维度_项目/已添加条件列.{责任体,27}\",\"Section1/维度_项目/已添加条件列1.{投资非投资项目,28}\"],\"RelationshipInfo\":[]}"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "项目编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6b8aafed-f17d-4580-8040-afbdafb39399",
+            "sourceColumn": "项目编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ce94ef3a-1c8a-4292-9b13-4fabbfeb3c89",
+            "sourceColumn": "项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "直管机构",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3b7e013d-6458-4d2b-8901-dfc7cc8107e3",
+            "sourceColumn": "直管机构",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "厂房事业部",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "56bbcc14-3f1e-4b78-a65b-787962a8de6c",
+            "sourceColumn": "厂房事业部",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目总监",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dea77067-3934-418d-8746-0cad6b6a7681",
+            "sourceColumn": "项目总监",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "专业分类",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "db52e713-9be4-4a1c-b06a-0951a90a16d9",
+            "sourceColumn": "专业分类",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目性质",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6f3b94aa-95e6-490c-bf3a-1ff5bec4758a",
+            "sourceColumn": "项目性质",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "京内外",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "26fe1638-82da-4523-8a39-634e741bf0dd",
+            "sourceColumn": "京内外",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "行政区域",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "71d49c7e-ebdb-47b0-87a7-f494d342a38b",
+            "sourceColumn": "行政区域",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "省",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2da17e7b-e0af-4031-87ce-f4a80aba0b7d",
+            "sourceColumn": "省",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "城市",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9f9603eb-4343-49dc-83b5-49520c6669c2",
+            "sourceColumn": "城市",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "区县",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "82c3bcea-78ba-4f2e-9eea-1417c3f38ecc",
+            "sourceColumn": "区县",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目实施状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5640850a-eb98-44ea-bbb9-5a914b66f855",
+            "sourceColumn": "项目实施状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "工程类别一级",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c5942027-cfa4-4c72-a04c-2f0a0a426a45",
+            "sourceColumn": "工程类别一级",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "工程类别二级",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "144e044b-3aa3-450c-8a4c-2fac6c543f76",
+            "sourceColumn": "工程类别二级",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目结算状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c4239235-80e6-48a9-94ab-740dc618a47c",
+            "sourceColumn": "项目结算状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目所属大客户",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "45a0aeb1-b768-4dec-8309-e6e25489786a",
+            "sourceColumn": "项目所属大客户",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "是否投资建造项目",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4566dbd5-f94e-4770-9625-7a713f0aab6a",
+            "sourceColumn": "是否投资建造项目",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "土建核定收益率",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6ea03ae7-6cab-4155-9291-52c1c192e8d7",
+            "sourceColumn": "土建核定收益率",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "机电核定收益率",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "92dfbe2a-c073-44d1-ad60-5ab5ef107dae",
+            "sourceColumn": "机电核定收益率",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "综合核定收益率",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "704cdb84-8c84-46c8-b208-e558b7c48c9b",
+            "sourceColumn": "综合核定收益率",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "项目类型",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "60f22862-f402-4400-9f81-9b1f7d0eac1d",
+            "sourceColumn": "项目类型",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "土建甲指核定收益率",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "7b07fc0e-c4e0-4ea7-9f66-0aae4ca98a30",
+            "sourceColumn": "土建甲指核定收益率",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "机电甲指核定收益率",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "53523273-64f6-4ba1-a9e9-5526186946d1",
+            "sourceColumn": "机电甲指核定收益率",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "所属总监团队",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "105b7b21-0967-4a9a-ad36-a34fd7f6d8f1",
+            "sourceColumn": "所属总监团队",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目财务状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "abcd9ac0-2183-45a3-8f5a-586b05a4c65d",
+            "sourceColumn": "项目财务状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "业务板块",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6f673ec8-34ad-4895-9379-129fe8aee6e7",
+            "sourceColumn": "业务板块",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "责任体",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fc12872c-a6d4-407d-809f-62cbf05cd759",
+            "sourceColumn": "责任体",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "投资非投资项目",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8c87e17b-4d8f-41fa-8c14-86f989266d9f",
+            "sourceColumn": "投资非投资项目",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "城市公司",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "52b16e42-237f-4bba-bb29-603befcd3307",
+            "sourceColumn": "城市公司",
+            "summarizeBy": "none"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "直管机构 层次结构",
+            "levels": [
+              {
+                "name": "直管机构",
+                "column": "直管机构",
+                "lineageTag": "e319ec91-2acb-4050-943f-46b0c3d19f04",
+                "ordinal": 0
+              },
+              {
+                "name": "业务板块",
+                "column": "业务板块",
+                "lineageTag": "5748eac1-f2ae-44c5-8fea-fc19eee013b2",
+                "ordinal": 1
+              }
+            ],
+            "lineageTag": "be2c3cc2-3c2d-4ffe-8159-93f8b874b3f6"
+          }
+        ],
+        "lineageTag": "c0f36bb4-12d1-4b96-92ee-64798628a29d",
+        "partitions": [
+          {
+            "name": "维度_项目-f6e0fce6-e7ce-42c5-91e9-220559170287",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Oracle.Database(\"172.16.8.77/oracledb\", [HierarchicalNavigation=true]),",
+                "    MD = 源{[Schema=\"MD\"]}[Data],",
+                "    MD_XIANGMUXINXI1 = MD{[Name=\"MD_XIANGMUXINXI\"]}[Data],",
+                "    重命名的列 = Table.RenameColumns(MD_XIANGMUXINXI1,{{\"FXMBIANMA\", \"项目编码\"}, {\"FXMQUANCHENG\", \"项目名称\"}, {\"FXMZONGJIAN\", \"项目总监\"}, {\"FZHUANYEFL\", \"专业分类\"}, {\"FXMXINGZHI\", \"项目性质\"}, {\"FJNWFB\", \"京内外\"}, {\"FQUYU\", \"行政区域\"}, {\"FSHENG\", \"省\"}, {\"FCHENGSHI\", \"城市\"}, {\"FXIAN\", \"区县\"}, {\"FXMSSZT\", \"项目实施状态\"}, {\"FGCLBYJ\", \"工程类别一级\"}, {\"FGCLBEJ\", \"工程类别二级\"}, {\"FXMJSZT\", \"项目结算状态\"}, {\"FXMSZDKH\", \"项目所属大客户\"}, {\"FSFTZJZXM\", \"是否投资建造项目\"}, {\"FPINGSHENZHUANGTAIID\", \"FPINGSHENZHUANGTAIID\"}, {\"FZHIGUANJGXG\", \"直管机构\"}, {\"FXIANGMULEIXING\", \"项目类型\"}, {\"FZONGJIANTUANDUI\", \"所属总监团队\"}, {\"FXMCAIWUZHUANGTAI\", \"项目财务状态\"}, {\"FYWBK\", \"业务板块\"}, {\"FTUJIANHEDINGSYL\", \"土建核定收益率\"}, {\"FJIDIANHEDINGSYL\", \"机电核定收益率\"}, {\"FZONGHEHEDINGSYL\", \"综合核定收益率\"}, {\"FTUJIANHEDINGSYLJZ\", \"土建甲指核定收益率\"}, {\"FJIDIANHEDINGSYLJZ\", \"机电甲指核定收益率\"}, {\"FCHANGFANGSHIYEBU\", \"厂房事业部\"}, {\"FCHENGSHIGONGSI\", \"城市公司\"}}),",
+                "    删除的其他列 = Table.SelectColumns(重命名的列,{\"项目编码\", \"项目名称\", \"项目总监\", \"专业分类\", \"项目性质\", \"京内外\", \"行政区域\", \"省\", \"城市\", \"区县\", \"项目实施状态\", \"工程类别一级\", \"工程类别二级\", \"项目结算状态\", \"项目所属大客户\", \"是否投资建造项目\", \"项目类型\", \"直管机构\", \"土建甲指核定收益率\", \"机电甲指核定收益率\", \"厂房事业部\", \"所属总监团队\", \"项目财务状态\", \"业务板块\", \"城市公司\", \"土建核定收益率\", \"机电核定收益率\", \"综合核定收益率\"}),",
+                "    缓存表 = Table.Buffer(删除的其他列),",
+                "    已添加条件列 = Table.AddColumn(缓存表, \"责任体\", each if [京内外] = \"国际\" then \"海外\" else if [直管机构] <> \"公司\" then [直管机构] else if [厂房事业部] <> null then [厂房事业部] else \"公司直营\"),",
+                "    替换的值1 = Table.ReplaceValue(已添加条件列,\"高科技电子厂房第一事业部\",\"第一事业部\",Replacer.ReplaceText,{\"责任体\"}),",
+                "    已添加条件列1 = Table.AddColumn(替换的值1, \"投资非投资项目\", each if [是否投资建造项目] = \"是\" then \"投资项目\" else \"非投资项目\"),",
+                "    替换的值 = Table.ReplaceValue(已添加条件列1,\"机电\",\"机电总包\",Replacer.ReplaceValue,{\"业务板块\"}),",
+                "    筛选的行 = Table.SelectRows(替换的值, each [项目编码] <> null and [项目编码] <> \"\")",
+                "in",
+                "    筛选的行"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "责任担当体",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8794d6cd-b401-432d-aa5c-532ace339855",
+            "sortByColumn": "排序",
+            "sourceColumn": "名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "排序",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d4ea1fb1-b272-46d8-a001-16a445f1727d",
+            "sourceColumn": "排序",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "24516bf6-d2ad-4b45-9723-bc4175bf50c2",
+        "partitions": [
+          {
+            "name": "责任担当体-baf6a0af-936d-43e1-b724-bf9a86324c0f",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45Wetq65mn/juezt7yYsFRJR8lQKVYnWunJjjlPe6Y/7WiDyALFjcDiT3v70MSNYeIgLUjiJnD1vSjqTcHiL5buRxM3A4s/X7PmyY6GJ7u6n+yY9bJ5BVDcHC6+qwdZ3AKhvhNZ3BIm/nT2bGRxQwOIg3buf7J3NrLFhkAfxwIA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [名称 = _t, 排序 = _t]),",
+                "    更改的类型 = Table.TransformColumnTypes(源,{{\"名称\", type text}, {\"排序\", Int64.Type}})",
+                "in",
+                "    更改的类型"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "大客户简称",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "大客户",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "29ce3873-76bb-4e6f-9ba6-1eb6bc64ee8f",
+            "sourceColumn": "大客户",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "大客户简称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bd6b5c3f-d062-4b2b-af9d-42e0736b1560",
+            "sourceColumn": "大客户简称",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d60e289c-4c73-4403-9696-aaa77d95a323",
+        "partitions": [
+          {
+            "name": "大客户简称-62b8abe9-1827-4081-8885-ff24bd607979",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Excel.Workbook(File.Contents(\"\\\\172.16.8.66\\经营分析\\经营分析会\\大客户简称.xlsx\"), null, true),",
+                "    商务偏差汇总表1 = 源{[Name=\"商务偏差汇总表\"]}[Data],",
+                "    更改的类型 = Table.TransformColumnTypes(商务偏差汇总表1,{{\"Column1\", type text}, {\"Column2\", type text}}),",
+                "    筛选的行 = Table.SelectRows(更改的类型, each ([Column1] <> null and [Column1] <> \"其他\" and [Column1] <> \"无\")),",
+                "    提升的标题 = Table.PromoteHeaders(筛选的行, [PromoteAllScalars=true]),",
+                "    更改的类型1 = Table.TransformColumnTypes(提升的标题,{{\"大客户\", type text}, {\"大客户简称\", type text}}),",
+                "    筛选的行1 = Table.SelectRows(更改的类型1, each ([大客户简称] <> null))",
+                "in",
+                "    筛选的行1"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "商务运营表-X5",
+        "annotations": [
+          {
+            "name": "PBI_QueryRelationships",
+            "value": "{\"columnCount\":18,\"keyColumnNames\":[\"项目编码\"],\"queryRelationships\":[],\"columnIdentities\":[\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FNIAN,3}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FYUE,4}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXMQUANCHENG,6}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXMBIANMA,7}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRBENNIANBUHANSHUI,38}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRBENNIANSHUI,39}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRKAILEIBUHANSHUI,40}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRKAILEISHUI,41}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FYZQRLKAILEIHANSHUI,44}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FYZQRLKAILEIBUHANSHUI,49}\",\"Section1/商务运营表-X5/替换的值.{开累实际成本不含税,10}\",\"Section1/商务运营表-X5/替换的值.{开累实际成本税,11}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FSWGCJSL,70}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FWQQJE,71}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FPINGSHENZHUANGTAI,79}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXMSSZT,97}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FSWGCJSLCHENGBEN,113}\",\"Section1/商务运营表-X5/更改的类型.{开累实际成本,17}\"],\"ColumnCount\":18,\"KeyColumnNames\":[\"项目编码\"],\"ColumnIdentities\":[\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FNIAN,3}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FYUE,4}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXMQUANCHENG,6}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXMBIANMA,7}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRBENNIANBUHANSHUI,38}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRBENNIANSHUI,39}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRKAILEIBUHANSHUI,40}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXXBWYSSRKAILEISHUI,41}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FYZQRLKAILEIHANSHUI,44}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FYZQRLKAILEIBUHANSHUI,49}\",\"Section1/商务运营表-X5/替换的值.{开累实际成本不含税,10}\",\"Section1/商务运营表-X5/替换的值.{开累实际成本税,11}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FSWGCJSL,70}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FWQQJE,71}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FPINGSHENZHUANGTAI,79}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FXMSSZT,97}\",\"Server.Database\\\\/2/Oracle/172.16.8.78\\\\/oracledb/GSPM/GSPM.GSPM_SHANGWUYUNYINGPS.{FSWGCJSLCHENGBEN,113}\",\"Section1/商务运营表-X5/更改的类型.{开累实际成本,17}\"],\"RelationshipInfo\":[]}"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Exception"
+          }
+        ],
+        "columns": [
+          {
+            "name": "年度",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "004903da-44a7-489e-9b39-db5ff7c386b9",
+            "sourceColumn": "年度",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "月份",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3ecba4fa-114d-42b2-92d2-a9dd8fffc507",
+            "sourceColumn": "月份",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "项目编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a1bbf2f5-d646-4c5d-abb6-464c189419df",
+            "sourceColumn": "项目编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "本年产值不含税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9cce2519-ddac-4d82-bae1-138e589dca55",
+            "sourceColumn": "本年产值不含税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "本年产值税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "eb5a5875-9089-4643-8068-aac361f5f2c9",
+            "sourceColumn": "本年产值税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "开累收入不含税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "72a29989-8a1b-4961-a030-618af7579fd5",
+            "sourceColumn": "开累收入不含税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "开累收入税金",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "5b5dc580-5cea-4a53-811a-86a39c7debb8",
+            "sourceColumn": "开累收入税金",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "开累确权",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "f1215a57-a396-4096-af5b-92a8cd1dd879",
+            "sourceColumn": "开累确权",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "开累确权不含税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b8438478-664b-40f9-8be0-0fc0de36f67e",
+            "sourceColumn": "开累确权不含税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "开累实际成本不含税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "98faa204-ffbc-4240-99a4-ff1fa0e812b6",
+            "sourceColumn": "开累实际成本不含税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "开累实际成本税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0389bfd4-179f-4827-8783-83a70315d9ac",
+            "sourceColumn": "开累实际成本税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "商务过程结算率",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "e1f4973e-62ae-4e36-92b6-94bde889cf24",
+            "sourceColumn": "商务过程结算率",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "未确权金额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2f8b0e90-60d9-491a-95bc-b7e9c81b70a3",
+            "sourceColumn": "未确权金额",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "FPINGSHENZHUANGTAI",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ec0402dd-c463-4a38-a970-1af980e4e690",
+            "sourceColumn": "FPINGSHENZHUANGTAI",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b54c0369-4be7-4164-92a2-9d171449852a",
+            "sourceColumn": "项目状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "商务过程结算率_成本",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "300f061a-ce5b-44bd-9036-469fcb6d64b3",
+            "sourceColumn": "商务过程结算率_成本",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "开累实际成本",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "081fa47c-62a6-4e06-bfcf-cd1007055e88",
+            "sourceColumn": "开累实际成本",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "结算率标志",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "IF('商务运营表-X5'[商务过程结算率_成本]>=1.08,\"108+\",\"108-\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "65238668-38ff-443a-9e29-a0f7dff2103d",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "FXMQUANCHENG",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c5577abb-4eba-4387-9550-5ec567cf9d1f",
+            "sourceColumn": "FXMQUANCHENG",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "本年确权含税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "eca6ca77-2176-408b-9238-cf133f198d31",
+            "sourceColumn": "本年确权含税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "本年确权不含税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "dcbc5919-32c3-441d-a742-571148bfb309",
+            "sourceColumn": "本年确权不含税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "本年产值含税",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "5c612460-d880-4748-a8aa-31860273d70d",
+            "sourceColumn": "本年产值含税",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "项目结算状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "397c5689-ad0c-4c4f-a2d7-e72ca075356f",
+            "sourceColumn": "项目结算状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "479d29c9-8a8c-4674-9359-add9b1e9320c",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          }
+        ],
+        "description": "取的末期报表",
+        "hierarchies": [
+          {
+            "name": "本年确权含税 层次结构",
+            "levels": [
+              {
+                "name": "本年确权含税",
+                "column": "本年确权含税",
+                "lineageTag": "1ab2c324-d0d4-49ba-8be8-fa611bcd25c6",
+                "ordinal": 0
+              },
+              {
+                "name": "项目状态",
+                "column": "项目状态",
+                "lineageTag": "085f52de-589a-4d55-aa16-0de6c8f2637c",
+                "ordinal": 1
+              }
+            ],
+            "lineageTag": "612a15c8-81fc-41bd-84ba-72cfebe57a43"
+          }
+        ],
+        "lineageTag": "c6eda8c1-952c-4efd-b1a7-e6f58f25fae1",
+        "partitions": [
+          {
+            "name": "商务运营表-X5-754898ec-c683-4391-becc-158efc5ad2f9",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Oracle.Database(\"172.16.8.77/oracledb\", [HierarchicalNavigation=true]),",
+                "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+                "    GSPM_SHANGWUYUNYINGPS1 = GSPM{[Name=\"GSPM_SHANGWUYUNYINGPS\"]}[Data],",
+                "    筛选的行 = Table.SelectRows(GSPM_SHANGWUYUNYINGPS1, each [FPINGSHENZHUANGTAI] = \"已完成\"),",
+                "    删除的其他列 = Table.SelectColumns(筛选的行,{\"FNIAN\", \"FYUE\", \"FXMQUANCHENG\", \"FXMBIANMA\", \"FXXBWYSSRBENNIANBUHANSHUI\", \"FXXBWYSSRBENNIANSHUI\", \"FXXBWYSSRKAILEIBUHANSHUI\", \"FXXBWYSSRKAILEISHUI\", \"FYZQRLBENNIANHANSHUI\", \"FYZQRLKAILEIHANSHUI\", \"FYZQRLBENNIANBUHANSHUI\", \"FYZQRLKAILEIBUHANSHUI\", \"FSJCBKAILEIBUHANSHUI\", \"FSJCBKAILEISHUI\", \"FSWGCJSL\", \"FWQQJE\", \"FPINGSHENZHUANGTAI\", \"FXMSSZT\", \"FXMJSZT\", \"FSWGCJSLCHENGBEN\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FXMBIANMA\", \"项目编码\"}, {\"FXXBWYSSRKAILEIBUHANSHUI\", \"开累收入不含税\"}, {\"FXXBWYSSRKAILEISHUI\", \"开累收入税金\"}, {\"FYZQRLKAILEIHANSHUI\", \"开累确权\"}, {\"FWQQJE\", \"未确权金额\"}, {\"FSWGCJSL\", \"商务过程结算率\"}, {\"FNIAN\", \"年度\"}, {\"FYUE\", \"月份\"}, {\"FXXBWYSSRBENNIANBUHANSHUI\", \"本年产值不含税\"}, {\"FXXBWYSSRBENNIANSHUI\", \"本年产值税\"}, {\"FSJCBKAILEIBUHANSHUI\", \"开累实际成本不含税\"}, {\"FSJCBKAILEISHUI\", \"开累实际成本税\"}, {\"FSWGCJSLCHENGBEN\", \"商务过程结算率_成本\"}, {\"FYZQRLKAILEIBUHANSHUI\", \"开累确权不含税\"}, {\"FXMSSZT\", \"项目状态\"}, {\"FYZQRLBENNIANHANSHUI\", \"本年确权含税\"}, {\"FYZQRLBENNIANBUHANSHUI\", \"本年确权不含税\"}, {\"FXMJSZT\", \"项目结算状态\"}}),",
+                "    已添加自定义 = Table.AddColumn(重命名的列, \"本年产值含税\", each List.Sum({[本年产值不含税],[本年产值税]}),type number),",
+                "    已添加自定义1 = Table.AddColumn(已添加自定义, \"日期\", each #date([年度],[月份],1),Date.Type),",
+                "    替换的值 = Table.ReplaceValue(已添加自定义1,null,0,Replacer.ReplaceValue,{\"开累实际成本不含税\", \"开累实际成本税\"}),",
+                "    已添加实际成本含税 = Table.AddColumn(替换的值, \"开累实际成本\", each [开累实际成本不含税]+[开累实际成本税]),",
+                "    更改的类型 = Table.TransformColumnTypes(已添加实际成本含税,{{\"开累实际成本\", type number}})",
+                "in",
+                "    更改的类型"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "结算率指标",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "指标阈值",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0%;-0%;0%",
+            "lineageTag": "a4603401-96be-4870-b539-ef8fa2779995",
+            "sourceColumn": "指标阈值",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "18ad7178-4e93-40aa-8176-70f0446be15c",
+        "measures": [
+          {
+            "name": "【当前阈值】",
+            "expression": "\"当前阈值: \" & FORMAT(SELECTEDVALUE('结算率指标'[指标阈值],1),\"#0%\")",
+            "lineageTag": "ba695866-db63-4b89-93fc-fac9ded81ba3"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "结算率指标-7ff25259-b2c1-45bf-b93a-453e11ded0e1",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WMlSK1QGSegYWSrGxAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [指标阈值 = _t]),",
+                "    更改的类型 = Table.TransformColumnTypes(源,{{\"指标阈值\", type number}})",
+                "in",
+                "    更改的类型"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "日历",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "078fc882a6a94addaa2e67e1ad42e56c"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isKey": true,
+            "isNameInferred": true,
+            "lineageTag": "6b15afbe-e992-415e-9b5f-1b802738563f",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "年月",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "FORMAT('日历'[Date],\"yyyy-MM\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "24586856-f039-47b1-aacc-1213834c031e",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "年",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "YEAR('日历'[Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "b672c661-2fad-454a-a91e-dffa756f3381",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "年名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "IF(YEAR('日历'[Date])=YEAR(TODAY()),\"本年\",FORMAT('日历'[Date],\"yyyy\"))",
+            "isDataTypeInferred": true,
+            "lineageTag": "8c2eb6ed-5e27-4c41-a353-1daea5738d98",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "月名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "IF(AND(YEAR('日历'[Date])=YEAR(TODAY()),MONTH('日历'[Date])=MONTH(TODAY())),\"本月\",FORMAT('日历'[Date],\"MM\"))",
+            "isDataTypeInferred": true,
+            "lineageTag": "995962ee-33a5-447e-9989-6a9aafac1baa",
+            "sortByColumn": "月",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "月",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "MONTH('日历'[Date])",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "277ff6b6-91e7-4f6c-ae7b-e8db4c87dded",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "dataCategory": "Time",
+        "hierarchies": [
+          {
+            "name": "业务期间",
+            "levels": [
+              {
+                "name": "年",
+                "column": "年",
+                "lineageTag": "7640dc06-5902-4116-8d18-9414bb2a579e",
+                "ordinal": 0
+              },
+              {
+                "name": "年月",
+                "column": "年月",
+                "lineageTag": "63939193-b2fc-49fb-9d0b-7e25acc11ef6",
+                "ordinal": 1
+              }
+            ],
+            "lineageTag": "ba16e87c-812d-4019-86ec-a3316bffed50"
+          },
+          {
+            "name": "年名称 层次结构",
+            "levels": [
+              {
+                "name": "年名称",
+                "column": "年名称",
+                "lineageTag": "d1deaa6d-0966-46ca-968d-79d916016060",
+                "ordinal": 0
+              },
+              {
+                "name": "月名称",
+                "column": "月名称",
+                "lineageTag": "57e339c0-2abb-45f6-ad6e-2b8b90cc5df6",
+                "ordinal": 1
+              }
+            ],
+            "lineageTag": "fd6ac925-0b69-49f4-924e-c3073704eac8"
+          }
+        ],
+        "lineageTag": "4792d08c-93c9-4f3c-bb96-3aad60596357",
+        "partitions": [
+          {
+            "name": "日历-1beb31d8-13bf-43e6-b897-4a9b5872153b",
+            "mode": "import",
+            "source": {
+              "expression": "CALENDAR(\"2017-1-1\",TODAY())",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "分公司总经",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "帐号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e0527974-4738-478c-b929-402d420c2ad8",
+            "sourceColumn": "帐号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "责任体",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d6d70f73-f15a-4621-b3b2-1cf3e83ef284",
+            "sourceColumn": "责任体",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8b66519b-f347-4f4c-8568-8b432e4ec22f",
+            "sourceColumn": "姓名",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "458c75fd-0dde-4c46-8c1f-dcaab056893d",
+        "partitions": [
+          {
+            "name": "分公司总经-8538442d-7ea4-4e89-a47f-ae6068e19bc9",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Excel.Workbook(File.Contents(\"\\\\172.16.8.66\\经营分析\\经营分析会\\分公司总经.xlsx\"), null, true),",
+                "    分公司总经_Table = 源{[Item=\"分公司总经\",Kind=\"Table\"]}[Data],",
+                "    更改的类型 = Table.TransformColumnTypes(分公司总经_Table,{{\"帐号\", type text}, {\"姓名\", type text}, {\"责任体\", type text}})",
+                "in",
+                "    更改的类型"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

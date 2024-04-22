@@ -1,0 +1,8 @@
+C:\Users\jiahe\source\repos\BAM_new\bin\Model.asdatabase
+C:\Users\jiahe\source\repos\BAM_new\bin\Model.deploymenttargets
+C:\Users\jiahe\source\repos\BAM_new\bin\Model.deploymentoptions
+C:\Users\jiahe\source\repos\BAM_new\obj\Development\BAM_new.smproj.AssemblyReference.cache
+C:\Users\jiahe\source\repos\BAM_new\obj\Development\BAM_new.smproj.CoreCompileInputs.cache
+C:\Users\jiahe\source\repos\BAM_new\obj\Development\Model.asdatabase
+C:\Users\jiahe\source\repos\BAM_new\obj\Development\Model.deploymentoptions
+C:\Users\jiahe\source\repos\BAM_new\obj\Development\Model.deploymenttargets

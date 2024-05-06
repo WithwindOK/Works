@@ -1,7 +1,0 @@
-1. Build latest code
-2. Install SUPD made from the build
-3. Get Print Capabilities of the SUPD queue (Don't use PTPC.exe)
-  3-1. Open driver UI once, then ConvertedStandardPC.xml is generated in "%localappdata%\HP\HP Smart Universal Printing", that is PC file to use
-4. Copy the PC file to \source\V4\UCDE\PTPCConverter\UpdateMasterPC\supdPC.xml
-5. Execute UpdateMasterPC.bat in same folder (no parameter needed)
-6. Check if MasterPC is updated (Solution Explorer -> V4\UCDE\HP.PSA.V4.UCDE.PTPCConverterLib\StaticXML\MasterExtPC.xml)

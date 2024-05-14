@@ -1,0 +1,77 @@
+table F_物资付款
+	lineageTag: 91a9cd43-c4c8-424d-8d74-cf19b41f859b
+
+	column KEYID
+		dataType: string
+		lineageTag: 1fdeea60-319c-487d-905f-edfb3b321a34
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3010dd0c-c459-4208-a086-97d925a6d401
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支付方式
+		dataType: string
+		lineageTag: 576d7985-7fad-402e-a2f1-2474898a88d8
+		summarizeBy: none
+		sourceColumn: 支付方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 状态
+		dataType: string
+		lineageTag: 872ce35c-be5b-49e9-aa2c-9f02870b7397
+		summarizeBy: none
+		sourceColumn: 状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 金额
+		dataType: double
+		lineageTag: a1859ba4-4ea7-4807-962a-b3c2def39d14
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 分包类型
+		dataType: string
+		lineageTag: 7e8396cc-807e-4f0a-84b6-b38d788892ed
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 专业
+		dataType: string
+		lineageTag: f2dcfc4e-4815-4d5e-9201-e64e4ebb3473
+		summarizeBy: none
+		sourceColumn: 专业
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_物资付款 = m
+		mode: import
+		queryGroup: 成本\物资\采购
+		source =
+				let
+				    源 = X5,
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    DW_WZCGFKMX = GSPM{[Name="DW_WZCGFKMX"]}[Data],
+				    删除的其他列 = Table.SelectColumns(DW_WZCGFKMX,{"KEYID", "FRQ", "FZHIFUFANGSHI", "FPINGSHENZHUANGTAI", "FUKUAN", "FHETONGLEIXING", "FSHIGONGZHUANYE"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FRQ", "日期"}, {"FZHIFUFANGSHI", "支付方式"}, {"FPINGSHENZHUANGTAI", "状态"}, {"FUKUAN", "金额"}, {"FHETONGLEIXING", "分包类型"}, {"FSHIGONGZHUANYE", "专业"}})
+				in
+				    重命名的列
+
+	annotation PBI_ResultType = Table
+

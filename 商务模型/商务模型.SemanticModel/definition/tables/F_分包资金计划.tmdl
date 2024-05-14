@@ -1,0 +1,45 @@
+table F_分包资金计划
+	lineageTag: fda44b8f-3f07-4214-b3df-644df2d29577
+
+	column 付款比例
+		dataType: double
+		lineageTag: f0ead672-0e65-4bd3-94b1-da4efeb14bdf
+		summarizeBy: sum
+		sourceColumn: 付款比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KEYID
+		dataType: string
+		lineageTag: d5268225-f057-470e-9d3e-9763a6b5e0ff
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b70d1e26-28f5-47ad-aeaa-5f46754d9024
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_分包资金计划 = m
+		mode: import
+		queryGroup: 资金计划
+		source =
+				let
+				    源 = X5,
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_FBZJJHB"]}[Data],
+				    删除的其他列 = Table.SelectColumns(GSPM_HETONGPINGSHEN,{"KEYID", "FRQ", "FLEIJIFUKUANBILI"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FRQ", "日期"}, {"FLEIJIFUKUANBILI", "付款比例"}})
+				in
+				    重命名的列
+
+	annotation PBI_ResultType = Table
+

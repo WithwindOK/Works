@@ -1,0 +1,107 @@
+table F_业主确认量
+	lineageTag: d12a1f20-a9fa-4ccb-b172-adc334ea4d44
+
+	column KEYID
+		dataType: string
+		lineageTag: 855438e4-a4c6-4c22-98e8-1a807cb8d198
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: b78b03d6-71e6-421a-afd5-ebee244b8887
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 15cbdfb1-291b-486d-93a3-f66440daddb6
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: edfb6989-5335-4912-8f73-cd9fe9ee72f0
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: 05828e0b-7d4d-4360-8ee5-f1c7b054f41b
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: 35e22e62-55d1-4380-a26f-b48b2bd146b5
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		lineageTag: 6744d6f4-8755-4f39-b695-caf56a2db431
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		lineageTag: 51b8e7a4-e3c4-47c2-9c20-95dbdf1e8424
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		lineageTag: e968ed7d-b9ed-4106-ae86-ff592119ff28
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4087c03a-e145-4261-b8d0-ddacb223b56d
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_业主确认量-2ccb6053-940f-4534-af4c-ecacf11c3d51 = m
+		mode: import
+		queryGroup: 业主确认量
+		source =
+				let
+				    源 = X5,
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    DW_CBHTYZQR = GSPM{[Name="DW_CBHTYZQR"]}[Data],
+				    删除的其他列 = Table.SelectColumns(DW_CBHTYZQR,{"KEYID", "FXIANGMUBIANMA", "FXIANGMUMINGCHENG", "FHETONGBIANHAO", "FSHIGONGZHUANYE", "FHETONGLEIXING", "FJIASHUIHEJI", "FJINE", "FSHUIJIN", "FRQ"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FXIANGMUBIANMA", "项目编码"}, {"FXIANGMUMINGCHENG", "项目名称"}, {"FHETONGBIANHAO", "合同编号"}, {"FSHIGONGZHUANYE", "施工专业"}, {"FHETONGLEIXING", "分包类型"}, {"FJIASHUIHEJI", "价税合计"}, {"FJINE", "金额"}, {"FSHUIJIN", "税金"}, {"FRQ", "日期"}})
+				in
+				    重命名的列
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

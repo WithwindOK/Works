@@ -1,0 +1,68 @@
+table 时间计算组
+	lineageTag: cb16019d-307f-435a-ba2e-3c3749059864
+
+	calculationGroup
+		precedence: 20
+
+		calculationItem 季累 =
+				
+				VAR _today=TODAY()
+				VAR _mindate=MAX('D_日历'[日期])
+				RETURN
+				    IF(
+				        _mindate<=_today,
+				        SWITCH(
+				            TRUE(),
+				            CONTAINSSTRING(SELECTEDMEASURENAME(),"M."),CALCULATE(SELECTEDMEASURE(), DATESQTD('D_日历'[日期])),
+				            SELECTEDMEASURE()
+				        )
+				    )
+
+		calculationItem 年累 =
+				
+				VAR _today=TODAY()
+				VAR _mindate=MIN('D_日历'[日期])
+				RETURN
+				    IF(
+				        _mindate<=_today,
+				        SWITCH(
+				            TRUE(),
+				            CONTAINSSTRING(SELECTEDMEASURENAME(),"M."),CALCULATE(SELECTEDMEASURE(), DATESYTD('D_日历'[日期])),
+				            SELECTEDMEASURE()
+				        )
+				    )
+
+		calculationItem 开累 =
+				
+				VAR _today=TODAY()
+				VAR _mindate=MIN('D_日历'[日期])
+				RETURN
+				    IF(
+				        _mindate<=_today,
+				        SWITCH(
+				            TRUE(),
+				            CONTAINSSTRING(SELECTEDMEASURENAME(),"M."),CALCULATE( SELECTEDMEASURE() , 'D_日历'[日期]<=MAX('D_日历'[日期]) ),
+				            SELECTEDMEASURE()
+				        )
+				    )
+
+		calculationItem 基值 = SELECTEDMEASURE()
+
+	column 时间组列
+		dataType: string
+		lineageTag: cb413137-f910-4882-8f84-136c057fa96b
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: 序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 9cb3e18b-0281-4b00-a6af-ccab04dbb3e1
+		summarizeBy: sum
+		sourceColumn: Ordinal
+
+		annotation SummarizationSetBy = Automatic
+

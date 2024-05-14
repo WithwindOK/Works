@@ -1,0 +1,34 @@
+table 货币单位
+	lineageTag: 825db9d2-d49a-4475-88d2-83874d67586a
+
+	column 货币单位
+		dataType: string
+		lineageTag: cca65d9c-005e-4d0d-be25-1b4452045053
+		summarizeBy: none
+		sourceColumn: 货币单位
+		sortByColumn: 系数
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 系数
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a918e34-0ffe-43a7-8c52-40a152c60c06
+		summarizeBy: sum
+		sourceColumn: 系数
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 货币单位-80c3e283-9aae-4a21-b971-4d6b8184fec2 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WetrarKSjZKgUqxOt9GRHO4htAAQQ/q79MD5ELBYA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [货币单位 = _t, 系数 = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"系数", Int64.Type}})
+				in
+				    更改的类型
+
+	annotation PBI_ResultType = Table
+

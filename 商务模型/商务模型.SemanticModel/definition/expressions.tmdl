@@ -1,0 +1,420 @@
+expression X5 =
+		let
+		    源 = Oracle.Database("172.16.8.76/oracledb", [HierarchicalNavigation=true])
+		in
+		    源
+	lineageTag: ef822521-14fc-4339-b318-36e18e007084
+	queryGroup: 数据源
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression fx_RN =
+		let
+		    源 = (OWNER as text,TABLE_NAME as text) as list => let
+		        源 =  X5,
+		        源1=Value.NativeQuery(源,"select COLUMN_NAME,COMMENTS from all_col_comments where OWNER = '" & OWNER &"' and TABLE_NAME = '" & TABLE_NAME & "'"),
+		        替换的值 = Table.ReplaceValue(源1,null, each [COLUMN_NAME],Replacer.ReplaceValue,{"COMMENTS"}),
+		        更改的类型 = Table.TransformColumnTypes(替换的值,{{"COMMENTS", type text}}),
+		        删除的副本 = Table.Distinct(更改的类型, {"COMMENTS"}),
+		        缩短说明字段长度=Table.TransformColumns(删除的副本, {{"COMMENTS", each Text.Start(_,50), type text}}),
+		        自定义1 = List.Zip({缩短说明字段长度[COLUMN_NAME],缩短说明字段长度[COMMENTS]})
+		    in
+		        自定义1
+		in
+		    源
+	lineageTag: 960675bf-ceb3-493c-938c-7f62844a2f71
+	queryGroup: 自定义函数
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Function
+
+expression 查询1 =
+		let
+		    源 = Text.Upper("GSPM_WuZiYueDuHeTongDZMXB")
+		in
+		    源
+	lineageTag: 88f2ec0a-cdac-4992-9bcf-84114b3a3462
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Text
+
+expression 一体化WBS-X5项目编码对照 =
+		let
+		    源 = X5,
+		    MD = 源{[Schema="MD"]}[Data],
+		    MD_XIANGMUYTHXINXI1 = MD{[Name="MD_XIANGMUYTHXINXI"]}[Data],
+		    删除的其他列 = Table.SelectColumns(MD_XIANGMUYTHXINXI1,{"FGFCWYTHXMBM", "FGFCWYTHZXMBM"}),
+		    筛选的行 = Table.SelectRows(删除的其他列, each ([FGFCWYTHXMBM] <> null)),
+		    替换的值 = Table.ReplaceValue(筛选的行,null,each [FGFCWYTHXMBM],Replacer.ReplaceValue,{"FGFCWYTHZXMBM"}),
+		    更改的类型 = Table.TransformColumnTypes(替换的值,{{"FGFCWYTHZXMBM", type text}}),
+		    删除的列 = Table.RemoveColumns(更改的类型,{"FGFCWYTHXMBM"}),
+		    重命名的列 = Table.RenameColumns(删除的列,{{"FGFCWYTHZXMBM", "WBS"}}),
+		    合并的查询 = Table.NestedJoin(重命名的列, {"WBS"}, #"MD_XIANGMUXINXI（项目信息）", {"股份财务一体化项目编码"}, "D_项目信息", JoinKind.LeftOuter),
+		    #"展开的“D_项目信息”" = Table.ExpandTableColumn(合并的查询, "D_项目信息", {"项目编码", "专业分类"}, {"项目编码", "专业分类"}),
+		    筛选的行1 = Table.SelectRows(#"展开的“D_项目信息”", each ([项目编码] <> null))
+		in
+		    筛选的行1
+	lineageTag: b773e115-41e3-4b79-bed8-43fbd7c06938
+	queryGroup: 成本\财务成本
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+
+expression picc =
+		let
+		    源 = Oracle.Database("172.16.8.127/racdb.com", [HierarchicalNavigation=true])
+		in
+		    源
+	lineageTag: 79ba0342-8a58-49b9-8155-2f107e2a25f2
+	queryGroup: 数据源
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression MD_XIANGMUXINXI（项目信息） =
+		let
+		    源 = X5,
+		    MD = 源{[Schema="MD"]}[Data],
+		    MD_XIANGMUXINXI = MD{[Name="MD_XIANGMUXINXI"]}[Data],
+		    #"停止折叠（取消后续会出错）" = Table.StopFolding(MD_XIANGMUXINXI),
+		    重命名的列 = Table.RenameColumns(#"停止折叠（取消后续会出错）",fx_RN("MD","MD_XIANGMUXINXI")),
+		    #"重命名的列（业务板块）" = Table.RenameColumns(重命名的列,{{"fYWBK", "业务板块"}}),
+		    计算责任体 = Table.AddColumn(#"重命名的列（业务板块）", "责任体", each if [京内外分布] = "国际" then "海外" else if [直管机构] <> "公司" then [直管机构] else if [厂房事业部] <> null then [厂房事业部] else "公司直营", type text),
+		    替换的值 = Table.ReplaceValue(计算责任体,"高科技电子厂房第一事业部","第一事业部",Replacer.ReplaceText,{"责任体"})
+		in
+		    替换的值
+	lineageTag: c5266e40-e2eb-43ff-90f9-6c32ecdb4e8f
+	queryGroup: 维度表
+
+	annotation PBI_ResultType = Table
+
+expression MD_SHANGWUKEMU2020（商务科目） =
+		let
+		    源 = X5,
+		    MD = 源{[Schema="MD"]}[Data],
+		    MD_SHANGWUKEMU2020 = MD{[Name="MD_SHANGWUKEMU2020"]}[Data],
+		    删除的其他列 = Table.SelectColumns(MD_SHANGWUKEMU2020,{"FID", "FSHANGWUKEMUMC", "FSHIYONGZHUANGTAI", "FFULLNAME"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FSHANGWUKEMUMC", "商务科目名称"}, {"FSHIYONGZHUANGTAI", "状态"}, {"FFULLNAME", "全路径"}}),
+		    复制的列 = Table.DuplicateColumn(重命名的列, "全路径", "全路径 - 复制"),
+		    按分隔符拆分列 = Table.SplitColumn(复制的列, "全路径 - 复制", Splitter.SplitTextByDelimiter("/", QuoteStyle.Csv), {"全路径 - 复制.1", "一级", "二级"}),
+		    删除的列 = Table.RemoveColumns(按分隔符拆分列,{"全路径 - 复制.1"}),
+		    替换的值 = Table.ReplaceValue(删除的列,null,each [一级],Replacer.ReplaceValue,{"二级"}),
+		    更改的类型 = Table.TransformColumnTypes(替换的值,{{"二级", type text}})
+		in
+		    更改的类型
+	lineageTag: 8badeeb5-ce21-4737-a4b4-370d56679f30
+	queryGroup: 维度表
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 集采劳务合同标准合同编码 =
+		let
+		    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wcopy89I1MDVXitWBcQwtoRzHKF0DA0NkjhEyxxjMifJyDg7WNTA3gEpBucYoXCMzVK45CtfSAoVrDOTGAgA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [编号 = _t])
+		in
+		    源
+	lineageTag: ea1053e7-5872-4eb5-a614-c7ceed56c8a4
+	queryGroup: 维度表
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 项目责任体 =
+		let
+		    源 = X5,
+		    MD = 源{[Schema="MD"]}[Data],
+		    MD_XIANGMUXINXI = MD{[Name="MD_XIANGMUXINXI"]}[Data],
+		    删除的其他列 = Table.SelectColumns(MD_XIANGMUXINXI,{"FXMBIANMA", "FXMQUANCHENG", "FJNWFB", "FZHIGUANJGXG", "FZHIGUANJGXGBM", "FCHANGFANGSHIYEBU"}),
+		    合并的查询 = Table.NestedJoin(删除的其他列, {"FCHANGFANGSHIYEBU"}, 厂房事业部编码, {"SNAME"}, "厂房事业部编码", JoinKind.LeftOuter),
+		    #"展开的“厂房事业部编码”" = Table.ExpandTableColumn(合并的查询, "厂房事业部编码", {"厂房事业部编码"}, {"厂房事业部编码"}),
+		    已添加条件列 = Table.AddColumn(#"展开的“厂房事业部编码”", "责任体编码", each if [FJNWFB] = "国际" then "U_ORG_ZB_GJYWB" else if [厂房事业部编码] <> null then [厂房事业部编码] else if [FZHIGUANJGXGBM] <> null then [FZHIGUANJGXGBM] else null, type text),
+		    重命名的列 = Table.RenameColumns(已添加条件列,{{"FXMBIANMA", "项目编码"}, {"FXMQUANCHENG", "项目名称"}}),
+		    删除的其他列1 = Table.SelectColumns(重命名的列,{"项目编码", "项目名称", "责任体编码"}),
+		    删除的副本 = Table.Distinct(删除的其他列1, {"项目编码"})
+		in
+		    删除的副本
+	lineageTag: e9b0e346-b619-4726-b1b2-1018460005c6
+	queryGroup: 账户权限
+
+	annotation PBI_ResultType = Table
+
+/// 从门户系统获取有效账户
+expression 门户账户 =
+		let
+		    源 = picc,
+		    PICC = 源{[Schema="PICC"]}[Data],
+		    SY_ORG_DEPT1 = PICC{[Name="SY_ORG_USER"]}[Data],
+		    // 取有效账号
+		    筛选的行 = Table.SelectRows(SY_ORG_DEPT1, each ([S_FLAG] = 1)),
+		    删除的其他列 = Table.SelectColumns(筛选的行,{"USER_CODE", "USER_LOGIN_NAME", "USER_NAME"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"USER_CODE", "身份证"}, {"USER_LOGIN_NAME", "账号"}, {"USER_NAME", "姓名"}}),
+		    删除的副本 = Table.Distinct(重命名的列, {"身份证"})
+		in
+		    删除的副本
+	lineageTag: e87aa64b-2481-4b37-b4aa-369ac233e2ea
+	queryGroup: 账户权限
+
+	annotation PBI_ResultType = Table
+
+/// 从X5系统获取组织机构，取得身份证对应的项目，其中公司账号对应所有项目
+expression 厂房事业部编码 =
+		let
+		    源 = X5,
+		    X5SYS = 源{[Schema="X5SYS"]}[Data],
+		    SA_OPORG1 = X5SYS{[Name="SA_OPORG"]}[Data],
+		    筛选的行4 = Table.SelectRows(SA_OPORG1, each Text.Contains([SCODE], "U_ORG_CFSYBFGS")),
+		    删除的其他列3 = Table.SelectColumns(筛选的行4,{"SNAME", "SCODE"}),
+		    已提取分隔符之后的文本 = Table.TransformColumns(删除的其他列3, {{"SNAME", each Text.AfterDelimiter(_, "厂房"), type text}}),
+		    重命名的列 = Table.RenameColumns(已提取分隔符之后的文本,{{"SCODE", "厂房事业部编码"}})
+		in
+		    重命名的列
+	lineageTag: 0c6368b6-065a-4c79-822e-7bcc39b76a5f
+	queryGroup: 账户权限
+
+	annotation PBI_ResultType = Table
+
+/// 从X5系统获取组织机构，取得身份证对应的项目，其中公司账号对应所有项目
+expression X5组织机构 =
+		let
+		    源 = X5,
+		    X5SYS = 源{[Schema="X5SYS"]}[Data],
+		    SA_OPORG1 = X5SYS{[Name="SA_OPORG"]}[Data],
+		    // 取人员
+		    筛选的行1 = Table.SelectRows(SA_OPORG1, each ([SORGKINDID] = "psm")),
+		    // 取有效值
+		    筛选的行 = Table.SelectRows(筛选的行1, each ([SVALIDSTATE] = 1)),
+		    删除的其他列 = Table.SelectColumns(筛选的行,{"SCODE", "SFCODE"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"SCODE", "身份证"}}),
+		    按分隔符拆分列 = Table.SplitColumn(重命名的列1, "SFCODE", Splitter.SplitTextByDelimiter("/", QuoteStyle.Csv), {"SFCODE.1", "SFCODE.2", "单位类型", "单位编码", "SFCODE.5", "SFCODE.6"}),
+		    删除的其他列1 = Table.SelectColumns(按分隔符拆分列,{"身份证", "单位类型", "单位编码"}),
+		    筛选的行2 = Table.SelectRows(删除的其他列1, each ([单位类型] <> "U_ORG_DFPRY"))
+		in
+		    筛选的行2
+	lineageTag: bbee889a-d42b-43a0-afe7-3ff3b7da4968
+	queryGroup: 账户权限
+
+	annotation PBI_ResultType = Table
+
+expression 总部员工 =
+		let
+		    源 = X5组织机构,
+		    #"筛选的行（总部）" = Table.SelectRows(源, each ([单位类型] = "U_ORG_ZB")),
+		    删除的其他列 = Table.SelectColumns(#"筛选的行（总部）",{"身份证"}),
+		    删除的副本 = Table.Distinct(删除的其他列),
+		    已添加自定义 = Table.AddColumn(删除的副本, "项目编码", each 项目责任体[项目编码]),
+		    #"展开的“项目编码”" = Table.ExpandListColumn(已添加自定义, "项目编码"),
+		    更改的类型 = Table.TransformColumnTypes(#"展开的“项目编码”",{{"项目编码", type text}})
+		in
+		    更改的类型
+	lineageTag: 8a5d178b-3b6f-40df-ac8a-1aa8a6871694
+	queryGroup: 账户权限
+
+	annotation PBI_ResultType = Table
+
+expression 分公司员工 =
+		let
+		    源 = X5组织机构,
+		    // 分公司
+		    #"筛选的行（分公司员工）" = Table.SelectRows(源, each ([单位类型] = "U_ORG_FGS")),
+		    删除的副本 = Table.Distinct(#"筛选的行（分公司员工）", {"身份证", "单位编码"}),
+		    #"合并的查询（去掉总部）" = Table.NestedJoin(删除的副本, {"身份证"}, 总部员工, {"身份证"}, "总部员工", JoinKind.LeftAnti),
+		    删除的列 = Table.RemoveColumns(#"合并的查询（去掉总部）",{"总部员工", "单位类型"}),
+		    #"合并的查询（责任体项目）" = Table.NestedJoin(删除的列, {"单位编码"}, 项目责任体, {"责任体编码"}, "项目责任体", JoinKind.Inner),
+		    #"展开的“项目责任体”" = Table.ExpandTableColumn(#"合并的查询（责任体项目）", "项目责任体", {"项目编码"}, {"项目编码"}),
+		    删除的列1 = Table.RemoveColumns(#"展开的“项目责任体”",{"单位编码"})
+		in
+		    删除的列1
+	lineageTag: 99d55295-bb30-4587-be9a-ad8df0553190
+	queryGroup: 账户权限
+
+	annotation PBI_ResultType = Table
+
+expression 项目员工 =
+		let
+		    源 = X5组织机构,
+		    筛选的行 = Table.SelectRows(源, each ([单位类型] = "U_ORG_XM")),
+		    删除的列 = Table.RemoveColumns(筛选的行,{"单位类型"}),
+		    重命名的列 = Table.RenameColumns(删除的列,{{"单位编码", "项目编码"}})
+		in
+		    重命名的列
+	lineageTag: fd01b8f7-eee5-4057-b6eb-e513316ec0b9
+	queryGroup: 账户权限
+
+	annotation PBI_ResultType = Table
+
+expression 员工项目 =
+		let
+		    源 = Table.Combine({总部员工, 分公司员工, 项目员工}),
+		    合并的查询 = Table.NestedJoin(源, {"项目编码"}, 项目责任体, {"项目编码"}, "项目责任体", JoinKind.LeftOuter),
+		    #"展开的“项目责任体”" = Table.ExpandTableColumn(合并的查询, "项目责任体", {"项目名称"}, {"项目名称"})
+		in
+		    #"展开的“项目责任体”"
+	lineageTag: 10b566b2-524d-4c97-9414-6b492d9dea7f
+	queryGroup: 账户权限
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression DW_WZHTXXB（物资合同） =
+		let
+		    源 = X5,
+		    GSPM = 源{[Schema="DATA_DW"]}[Data],
+		    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_WZHTXXB"]}[Data],
+		    重命名的列 = Table.RenameColumns(GSPM_HETONGPINGSHEN,{{"FXIANGMUBIANMA", "项目编码"}, {"FXIANGMUMINGCHENG", "项目名称"}, {"FPINGSHENDANHAO", "评审单号"}, {"FHETONGXIEYIHAO", "合同协议号"}, {"FHETONGBIANHAO", "合同编号"}, {"FHETONGMINGCHENG", "合同名称"}, {"FBIAOZHUNHETONGCODE", "标准合同编号"}, {"FBIAOZHUNHETONGNAME", "标准合同名称"}, {"CGORZL", "采购O租赁"}, {"FSHIGONGZHUANYE", "施工专业"}, {"FHETONGLEIXING", "分包类型"}, {"FGONGFANGBIANMA", "供方编码"}, {"FGONGFANGMINGCHENG", "供方名称"}, {"FGONGFANGLEIBIE", "供方类别"}, {"FNASHUIRENXINGZHI", "纳税人性质"}, {"FDINGJIAYUANZE", "定价原则"}, {"FDYYZMROKJXYBH", "对应集采合同编号"}, {"FDYYZMROKJXYMC", "对应集采合同名称"}, {"FGFCWYTHXMMC", "股份系统项目名称"}, {"FGFCWYTHXMBM", "股份系统项目编码"}, {"FGUONEIWAI", "国内外"}, {"FRQ", "日期"}, {"FJCQY", "集采区域"}, {"FFGLB", "分供类别"}, {"FFKMS", "付款模式"}, {"FCGMS", "采购模式"}, {"FJIASHUIHEJI", "价税合计"}, {"FJINE", "金额"}, {"FSHUIJIN", "税金"}, {"HTFKBL", "付款比率"}}),
+		    合并的查询 = Table.NestedJoin(重命名的列, {"合同编号"}, #"X5-股份合同号对照", {"X5合同号"}, "X5-股份合同号对照", JoinKind.LeftOuter),
+		    #"展开的“X5-股份合同号对照”" = Table.ExpandTableColumn(合并的查询, "X5-股份合同号对照", {"股份合同号"}, {"股份合同号"})
+		in
+		    #"展开的“X5-股份合同号对照”"
+	lineageTag: a3e82768-e069-4c87-9d50-a77087fda294
+	queryGroup: 成本\物资
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression DW_FBHTXXB（分包合同） =
+		let
+		    源 = X5,
+		    GSPM = 源{[Schema="DATA_DW"]}[Data],
+		    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_FBHTXXB"]}[Data],
+		    重命名的列 = Table.RenameColumns(GSPM_HETONGPINGSHEN,{{"FXIANGMUBIANMA", "项目编码"}, {"FXIANGMUMINGCHENG", "项目名称"}, {"FHETONGBIANHAO", "合同编号"}, {"FHETONGMINGCHENG", "合同名称"}, {"FBUCHONGXIEYIHAO", "合同协议号"}, {"FBIAOZHUNHETONGCODE", "标准合同编码"}, {"FBIAOZHUNHETONGNAME", "标准合同名称"}, {"FSHANGWUKEMUJICIMA", "商务科目级次码"}, {"FSHIGONGZHUANYE", "施工专业"}, {"FHETONGLEIXING", "分包类型"}, {"FFENBAOBIANMA", "分包编码"}, {"FFENBAOMINGCHENG", "分包名称"}, {"FGFCWYTHXMBM", "股份系统项目编码"}, {"FGFCWYTHXMMC", "股份系统项目名称"}, {"FSHIFOUZANGUHETONG", "是否暂估合同"}, {"FSHIFOULINJIANHT", "是否临建合同"}, {"FZDHTLX", "指定分包合同类型"}, {"FJUFENBAOLEIBIE", "分包类别"}, {"FYEWULEIBIE", "业务类别"}, {"FGUONEIWAI", "国内外"}, {"FCGMS", "采购模式"}, {"FFKMS", "付款模式"}, {"FJCQY", "集采区域"}, {"FJIASHUIHEJI", "价税合计"}, {"FJINE", "金额"}, {"FSHUIJIN", "税金"}, {"FRGFJE", "人工费金额"}, {"FRGFBL", "人工费比率"}, {"FZENGZHISHUILV", "增值税率"}, {"FRQ", "日期"}, {"HTFKBL", "付款比率"}})
+		in
+		    重命名的列
+	lineageTag: 39e59e4b-0117-48b9-874c-7e0afe556e1e
+	queryGroup: 成本\分包
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression X5-股份合同号对照 =
+		let
+		    源 = X5,
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    筛选的行 = Table.SelectRows(GSPM, each [Name] = "RPA_GFHT"),
+		    RPA_GFHT = 筛选的行{[Name="RPA_GFHT"]}[Data],
+		    删除的其他列 = Table.SelectColumns(RPA_GFHT,{"HETONGBIANHAOGF", "HETONGBIANHAOY"}),
+		    删除的副本 = Table.Distinct(删除的其他列, {"HETONGBIANHAOY"}),
+		    重命名的列 = Table.RenameColumns(删除的副本,{{"HETONGBIANHAOY", "X5合同号"}, {"HETONGBIANHAOGF", "股份合同号"}}),
+		    删除的副本1 = Table.Distinct(重命名的列, {"X5合同号"})
+		in
+		    删除的副本1
+	lineageTag: b5ae30b5-5ec9-4a47-97a7-6f57114004e6
+	queryGroup: 数据源
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 项目信息表字段名 =
+		let
+		    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("jVnbUttYFv2XVE1VUtVVk5f+AEuyZAnZxJbVttTVNS89UzUPU/MLTsDGgLFNmgABczGBQBJiQ0PA2Bj+ZcZHl6f+hdnnoqPjC+l5mEu81z46Z1/X3vz88zO1qCcyWtqW4H/SiWc/PAvbd/5ux7/f9A9fP/vlhxiR1jOanEpmNA5CzTX/9IKB0viEVGJePAI1bqlUSWQMOwagtXfemghwsvO5ZBYk/vKn4NviqFfyWgfB47a33WW/9GvwCz3MTeaSGTdl53VQCK4/jAaD0fC36BrufEYz4Ev8Hl5p4O+uU7H5k2Mni2nDxJe4PPH7H9ldBw2/WaEYKQnaEeZ4yWtXpzFuSi+COQjGWz4N2jVRaqXAYAWbnvCuglbaY7pwQck24SOmDa/GF4UrhgtnwesNf9Aa9fvsFFcBo5IPlNDlPjo+pfcAZPRWzVSt2N6dNnzD27xD9w1+S80Gy2OP+bvXAPBafW9/kUqxkQTx+oTYBVfF4vLplBhkTlLFbxz1fhv1dlC14l8Ooqth88D3BS+cBtfs4qoN37awZvh+Ea0c+md1v74U3cpK2boKV7OINjraR6V7QATwvLO6+DwjU1CxfUb9c1Qpo+NNuAHqLVBh1nZsrF7ro4ODyC00eP0WC2wSzewzB3XUexPHO/6p/kj/rcmKrtDfgu5Hf1BBrQu0V+KHGrqhFLCw8wCXhNgeDddiE5s6EWIDNyuTQtAmUjTog7Yo1QqaqVHnPoRbzLmofI4avejDugaRRNS9zSG6PRHVs3A4hDr99NcHCPTJT4MD0wb9tP91Pdw78k+7z/9bb79gB0D0GS5FlG9Gva/w6FFv9Qm0opOYl/GFCXAFXb7x3l1EUjBpLFsVZa6Uyhskhr56h0uoWUXN2mhw+3zUW0LlhRcxyLUkdQIXLH2Gl0M+gOMnFXJZDva2TnjtyDpEQE0iCixjTiMi1NkP35fRfQksOg4wRID/5cMEQMkTfxE7Qz58hic+/8/yyY8vX75Ed1f+5dULjpNJ8FMknOKfrQI4XGrAIz4zlDynYOe/e3we3J69QP2Pz//FJIarKbHfvmyLMksFt+GA2O6i5sdwac1/c0fzL5IrcizH3uifinItVZxzcSifLqLq26DTQ41u0GXpYmlUSKNtQlhMW5abj1tDZx9g/sqNV+IAVxKqFXONmM40KJ08f5y/cRaWNiJ1w3RdxYjLHSmp0BqgrPhfl/3+aZStlquRsKWGheLZOkO7Q9S5iQCm5MQAqFmo+uVnaDlwxC8xJDkN6ddiSCofxQsJxel4gbAWAdPxAiFtkvrOgvn6DCIAV8rDqBRqRTAprb+D36DyouFRbC25aBkyEaKDvt8uiUIHcpE0Wu9zEyKEh4dStBSehd7tpRg6Mjnq8o2IB6OLToVb+J0t0akGVHkH/mMWySUbQfMEG2t/NXqBCSValtJW/IaVK+iHuFLXyt7yI/7vsza/uJqQErgnpmV8mcY6iKEfijxDlXJFVxSKjcVxzWKO5P3OqDfA/fRqwPspFiqpCam/8S3o7lFAft52ddPBZlt5B4Hl7Z14/SZPLEdyiy6YJE6fy/1Rvz563At3WnCL0bDhVR/FbIKccJW5VNwDo0aOOkde9ZZ3cVtPx7QJUg8sEn01I5EWxz5YKdNiBy+PDOzm3KxiWAWZ1jUSZZQTgZ+gzAWdI+o21Kl51aYYgCa8yChanArBSyCdw6V1MZQISDKnQV53Y/SwKoDUlGVMw4LHDczjtm7CrWvuB9eAWpmVuS/CnRswTLhbQbtHtMeh8hl3uUzrBosWoWI4rmFZBj+FvlP8lKU6eRcMbHETeq1l6lxWpsSGquZdwxX8S4FQisLS4VgRdWXJjYkZtmrrHL6PVvYFtksIkpZP6DHfFRIHurc6bxcJPyD8OnZyuep/WYXvRZ3MAPbBe9mof4z67+AHGrHSK4sI4aogDLqLqNOOhKlkHvgB5ghZPaebep7RGlqvbnEcQDSgegUdf2Jlb54xfDeFmQXgDV3Sk7wO0n4CNRCqYUQz8OlQt3M47bxe2Ts/ZIw8SjvC1k3AKaQiUWl4VEHd+7HxwsUEImXHeXD9kecIOUOy04QssxMWzsItlvYZqDAgyMji1JKRLXseuCQ5N0++nZGpx+BodLIVwSbGG4Kbnm8mWbs8rySnmbv871//zlJCt4kpDT0JlwB3s5nE+/YadxSohXsHYqhGeDWR1SfRUOuCb7cC2pJzyUQ+mdfTxDnVXQhSUWwlszZckQj7DT6FkQ9IUGGfyKdXOqbDZLbioUtjSgzdKRSJQBEXRSAeIWDom480cLSQduKt7vJwFY62zISVT88rOqQtfZrXKqEmlNiOt3EnWgv3HTycwB2kRAbc4cA/yD0wLei0aTbi1rG+Hd3GICR+WgOmGugCszQmfU7h4x6PsA5Uv8nRZe0iWLmcObqknKxh5fQsgTXraHAD2RgFRVyhC7acgLiHOxfx2cTM3fC4GbRP0MonaF+cRmuWgsdBUsxpAa1e8BIXLtU4ENdDxyUNWSyEwWNzNGyJrZilBX6S+VNMAYRRjY+XJPvEAXPG9sBMkok5PkigCfyg4uxJVZD/P5+iA7wt7iLoHC/mgqUWUs5YOx/1+sHjLlAi7/yB+WSjOxps0xP+uK/SIggVGH4cDR+BnaLlNcYyzx8omHbF0bAOzODHl3/5436Zl5k0mACqKStVsRWqX8bLVgScgjEH4uE5A3MjTirHNAgZah1gxrzxu1db8g57qLPjbdz4uyvCVK1MKdG4/44S4UNWat52aAQwVjQDxAyP+4elkwdON1nxkdNKM1XEVlmwnWTBFrvz1iFeOqy0xdYs42LPMtBJSmQDUH8DtGzUXwU0X51ES6I8hJVi63EvJ7siYCHh9kFEz+SEXhjr5lF/OsKLHaEwurmswnKa9cC7j5SBiTntFKQ5SllA3dt7RHtbUTPXzMh2UB3pxC+2OatQ0CjFIjslIHRkohijO1knJhK3vwePr/3TQbB0hevayi72XkRoc6brOAXKLAQhuxZpO1Fp01S54ORTrmtohJcHb9qjwZC+H8YmPMPWNv3Boj9Yojkp9k2mXEw/rTrdbLkSscd3lMSgom63damYwdNIuP27d3ENPBS6B7q7Dt+zhxsKA9D4R40VvN8YbE4jgRDiPjyfhkCBpmll49hrNHEZIBreQhlVvqHymrdy4m9cBV1WYKSikbd1siWzSd5hSxMNYMVhqQSs2N9ZxIuZzg7XsFR4AE65Amn/HM88ursP2UeJPJ8wVFWWC/GIQYEXr9HXbShZ1Gi8CmnQWFNmzi0KduUWRdVP3s1HvOl5XBDtCl8oCnkXfqiH7z+NLxXmTBhEUnHk3ZeAwtKVokjjgPkXWCCM+usw4NNhcNr/FCilZgLFvTIGpp0JGOpWwrcnrCBYqTzlSHvodJVy3/BoD1fz8gK3i1mw0i5hJuyEzj5cB1VvxmZd2bKKKp+3g84D3nAMKjCPsfx/ZZHCGnwoh+U1aKR0ixEJTS6C4gkXiJuDiS0CTRpyDn6fS8cCx9XoiE+GqunOSAHEm9MQ0YnRqpNXW7rwFOus4Sow4Wpk8r4sUa7Ph1va5thZhVd0K0Cja5ohssqu6Fl7cg/TukC1Pl+QGClh/wGsbXAbXJ+iXlRP8Wrwbww0sR8EO+GF35QmNx1eF0a64p7wTxUVBWspOQg/MvVCbrQuRCQqr+O1w8U6/H/vcol3wrTDlfyHOoTXU0D6Lha3s55F1eOnSOQxMxWmnzapDKMcsFgoY3QehIL2pDXLC/y+Ex/nKjNWrlyHL43wzBpTr70m7maDBjCrGFCYAvTPOcBSLch+OV580K0YHbTFymPg+pyep3Sb+kiksFkydWYiAIyneBAXACmoMq/o2tb7douOo1Z0d4UaF2JuREDan5+AivkWKdCR4QmFf/46Dla/i/5HBMdNDk8vRUyoVXJ7PF70m0Co8XJojDuNQ9nUOg2PB1dLdfPqXNzqdt6g1y3MbM8fWJ+FbmBhO4idIOhee9v1qJpK+E7Ag+EdZM6r8H1NvPPxOyVe7y01O2daOVPoIH2vfgo0BFp40DkOj9gJZD+tYg40saEO3y+OBmzBS/bUBDSxqRZBc5qpJGhrIKvb0eD4r9NLXECRP1ZlRJx4jKE5lmHOaewsun8LP9egTwedCzR8N+NQqmN8R2d6WYx1yJNE9PhFpIQ0cQ869QTts5mXALzxFH7WBQAv3IBjxUvIquVItBuNs24xNTgJERjhTBIiMgKY/dJZk3QdZgFKd3plIMli75GSmQIenwjBOx8N13g7iST8L91cLt7OmDMcS5tjLbWEGh/Qw2LQPMHEa/gW/ikycjwe6Xyq4p3miREs4Y6DvzevKUlJSSkUxxYU/RqugZ1vMxUk18GcFnvl6gwTv+ZJuFHiVVw1iJj6alqMC27BTcYEV/yju1hwJ4ZPPnp+993KhAp9z3dU8HSWSo6ZanAPzWom2HELZtHKSpwE+sN1ukClbBxCNHqkDJVB3N8TCuTtXnubF+N8FttibBUs2sMf/BYMz8cV8pahvxJm0/pZWHoN4YN/jCzsGJYsrhvoBgFCDKa5Vn/sr3B0/MkUCaeeOf6gSjlo1/AiM6LCmmqm82NjFpRP9Pkt4GcNWAQsjAET4Ke5I80MgT2OZY+SMovk77n+6jl4gbp6bDRpfgl3b7ztAxo4TM3OkMP53jMoLRBn1yaq0OR8/2e1BoiGEa3Iyc7R21yCDBhflOOJvKhOzOQRsf/lfw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [name = _t, cname = _t]),
+		    删除的副本 = Table.Distinct(源, {"cname"}),
+		    删除的副本1 = Table.Distinct(删除的副本, {"cname"}),
+		    转置表 = Table.Transpose(删除的副本1),
+		    自定义1 = Table.ToColumns(转置表)
+		in
+		    自定义1
+	lineageTag: 5a9414e4-577c-4e76-8f6e-d88de81fb8e7
+	queryGroup: 维度表
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = List
+
+expression 承包合同字段名 =
+		let
+		    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [字段 = _t, 名称 = _t]),
+		    筛选的行 = Table.SelectRows(源, each ([名称] <> "")),
+		    删除的副本 = Table.Distinct(筛选的行, {"名称"}),
+		    转置表 = Table.Transpose(删除的副本),
+		    自定义1 = Table.ToColumns(转置表)
+		in
+		    自定义1
+	lineageTag: 33040824-0ec8-4841-8b33-44862bc09203
+	queryGroup: 承包合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = List
+
+expression 项目付款条件 =
+		let
+		    源 = I_承包合同信息,
+		    删除的其他列 = Table.SelectColumns(源,{"对应工程编码", "是否有工程预付款", "进度款支付方式"}),
+		    排序的行 = Table.Sort(删除的其他列,{{"是否有工程预付款", Order.Descending}}),
+		    已添加索引 = Table.AddIndexColumn(排序的行, "索引", 0, 1, Int64.Type),
+		    删除的副本 = Table.Distinct(已添加索引, {"对应工程编码"})
+		in
+		    删除的副本
+	lineageTag: 368ac5ab-6b13-4566-a00d-3f72e5236536
+	queryGroup: 承包合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression I_承包合同信息 =
+		let
+		    源 = X5,
+		    GSPM = 源{[Schema="DATA_DW"]}[Data],
+		    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_CBHTXXB"]}[Data],
+		    删除的副本 = Table.Distinct(GSPM_HETONGPINGSHEN, {"FHETONGBIANHAO"}),
+		    重命名的列 = Table.RenameColumns(删除的副本,承包合同字段名,MissingField.Ignore)
+		in
+		    重命名的列
+	lineageTag: 18bc6b53-0435-455f-a0a2-f4cb027ec2af
+	queryGroup: 承包合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+/// 取YSXT_XMQQXJLCSB表每项目最末一期记录
+expression 全期现金流主表 =
+		let
+		    源 = X5,
+		    YSXT = 源{[Schema="YSXT"]}[Data],
+		    YSXT_XMQQXJLCSB1 = YSXT{[Name="YSXT_XMQQXJLCSB"]}[Data],
+		    删除的其他列 = Table.SelectColumns(YSXT_XMQQXJLCSB1 ,{"FID", "FXIANGMUMINGCHENG", "FXIANGMUBIANMA", "FPSZT", "SCREATETIME"}),
+		    排序的行 = Table.Buffer(Table.Sort(删除的其他列,{{"FXIANGMUBIANMA", Order.Ascending}, {"SCREATETIME", Order.Descending}})),
+		    删除的副本 = Table.Distinct(排序的行, {"FXIANGMUBIANMA"}),
+		    重命名的列 = Table.RenameColumns(删除的副本,{{"FXIANGMUMINGCHENG", "项目名称"}, {"FXIANGMUBIANMA", "项目编码"}, {"FPSZT", "评审状态"}})
+		in
+		    重命名的列
+	lineageTag: 94de8f9f-30f9-4b63-b14b-229eaca8f3c3
+	queryGroup: 全期现金流
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 全期现金流明细 =
+		let
+		    源 = X5,
+		    YSXT = 源{[Schema="YSXT"]}[Data],
+		    YSXT_XMQQXJLCS_CB1 = YSXT{[Name="YSXT_XMQQXJLCS_CB"]}[Data],
+		    重命名的列 = Table.RenameColumns(YSXT_XMQQXJLCS_CB1,{{"FND", "年度"}, {"FYF", "月份"}, {"FSGCZ", "施工产值"}, {"FCZQK", "商务产值（含税）"}, {"FCZSE", "产值税额"}, {"FSWCZBHS", "商务产值（不含税）"}, {"FYZQRL", "业主确认量"}, {"FGCKLRXJKJ", "工程款流入（现金口径）"}, {"FGCKLRQKJ", "工程款流入（全口径）"}, {"FXJLR", "现金流入"}, {"FGCKXJLR", "工程款现金流入"}, {"FNCYZDQPJSQ", "拟持有至到期票据收取"}, {"FPJDQXJLR", "票据到期现金流入"}, {"FBZJTH", "保证金退还"}, {"FQTLR", "其他现金流入"}, {"FFXJLR", "工程款非现金流入"}, {"FNZTPJSQ", "拟转帖票据收取"}, {"FGCKHSL", "工程款回收率"}, {"FXJLC", "现金流出"}, {"FZJFZC", "直接费支出"}, {"FFBZC", "分包支出"}, {"FCLK", "材料款"}, {"FJXSYF", "机械使用费"}, {"FQTZJF", "其他直接费"}, {"FJJFZC", "间接费支出"}, {"FSJGSYSY", "上交公司预收益"}, {"FSJ", "税金"}, {"FRZYWDQDFZC", "融资业务到期兑付支出"}, {"FGLBZJZC", "各类保证金支出"}, {"FFXJLC", "非现金流支出"}, {"FFBZCZTPJZF", "分包支出:转贴票据支付"}, {"FCLKZTPJZF", "材料款:转贴票据支付"}, {"FJXSYFZTPJZF", "机械使用费:转贴票据支付"}, {"FQTFXJLC", "其他非现金流出"}, {"FZFL", "支付率"}, {"FXMYDXJJLL", "项目月度现金净流量"}, {"FXMLJXJJLL", "项目累计现金净流量"}, {"FGSNBJK", "公司内部借款"}, {"FYSNJK", "预算内借款"}, {"FDQGHNBJK", "到期归还预算内借款"}, {"FJKYE", "借款余额"}, {"FYSWJK", "预算外借款"}, {"FDQGHYSNJK", "到期归还预算外借款"}, {"FXMLJXJJLL_JHKH", "项目累计现金净流量（还款后）"}, {"FYSNJKYE", "预算内借款余额"}, {"FQTFXJLR", "其他非现金工程款流入"}})
+		in
+		    重命名的列
+	lineageTag: dcfa4f2a-00ab-43be-8888-965db615f28c
+	queryGroup: 全期现金流
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 数据库服务器地址 = "172.16.8.76" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9641e3f3-bacf-432c-afdc-3d93880375d2
+
+	annotation PBI_ResultType = Text
+

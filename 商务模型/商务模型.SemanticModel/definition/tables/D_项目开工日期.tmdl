@@ -1,0 +1,219 @@
+table D_项目开工日期
+	lineageTag: 07b39f32-c760-4ad3-8487-0490619c3473
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b4eb7615-aa6a-46b9-899f-391c00ff9d76
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[日期]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期序号
+		dataType: int64
+		formatString: 0
+		lineageTag: cadc3ec9-d382-4ecc-b4e5-1ed52896943e
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[日期序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 51bde302-4db7-4c4e-b2be-1d5dcf5d4050
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年份名称
+		dataType: string
+		lineageTag: e9b97e25-b96f-483a-b812-030f4407c3e5
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年份名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 221083b3-96e2-4e4c-91f8-23746c445123
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[季度序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度名称
+		dataType: string
+		lineageTag: e6ebcaf0-0a88-4618-b6e7-c7b811678aeb
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[季度名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 5682f71b-4efb-4378-a29b-5680d37bcd6e
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[月份序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份名称
+		dataType: string
+		lineageTag: e5338f80-8e43-442e-959d-7a7639e82a59
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[月份名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 06f4601a-ca33-418e-8610-0abd1891c7fb
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[周序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周名称
+		dataType: string
+		lineageTag: 9619f0d1-8230-4e2f-a4d6-b7b745fbad9c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[周名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年季序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c7452b0-e266-4450-a004-4d7bff467c1d
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年季序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年季名称
+		dataType: string
+		lineageTag: 46384d94-5ba8-4bf4-b40e-11efec3a179c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年季名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 78f148df-b57c-49af-9f1e-e98a13b72184
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年月序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月名称
+		dataType: string
+		lineageTag: 47de755b-3c55-42db-b0c4-cfd1d0880acf
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年月名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年周序号
+		dataType: int64
+		formatString: 0
+		lineageTag: a9255205-1aba-4419-8586-98176b38ae99
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年周序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年周名称
+		dataType: string
+		lineageTag: 1435b283-e20d-419f-9c3e-a97cdbdbdaa1
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[年周名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日序号
+		dataType: int64
+		formatString: 0
+		lineageTag: b8df3c04-dee3-4767-b69c-57c453924420
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[日序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周天名称
+		dataType: string
+		lineageTag: 6970a0f7-40c4-4ce6-b513-9db0ee21eb1e
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[周天名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工作日
+		dataType: string
+		lineageTag: deb61a55-12b4-4169-9920-d1c1f5df0f33
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[工作日]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日名称
+		dataType: string
+		lineageTag: bc1ae35c-e73c-4370-abaf-a9009182f8fe
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: D_日历[日名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_项目开工日期-ece99377-8b12-48b0-9f9c-a5e32d4e0a84 = calculated
+		mode: import
+		source = 'D_日历'
+
+	annotation PBI_Id = 55ff94244bd34e1388493467d7414f4e
+

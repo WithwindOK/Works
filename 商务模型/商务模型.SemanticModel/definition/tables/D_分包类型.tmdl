@@ -1,0 +1,49 @@
+table D_分包类型
+	excludeFromModelRefresh
+	lineageTag: 291bf009-2208-47c7-9146-1148e2be7ea8
+
+	column 分包类型
+		dataType: string
+		lineageTag: 621a8587-34e8-4787-a212-0ab56937556d
+		summarizeBy: none
+		sourceColumn: 分包类型
+		sortByColumn: 排序
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 排序
+		dataType: int64
+		formatString: 0
+		lineageTag: 744b04e6-f649-43d4-9dc8-8262e5bf3274
+		summarizeBy: sum
+		sourceColumn: 排序
+
+		annotation SummarizationSetBy = Automatic
+
+	column 简称
+		dataType: string
+		lineageTag: b29c06e9-88d1-45d6-8e31-40f2aeef1af4
+		summarizeBy: none
+		sourceColumn: 简称
+		sortByColumn: 排序
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_分包类型-bf783b29-abac-47fb-8c35-47022d34cbb2 = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WetG+6tm0vUo6CIahUqxOtNKznvan62Y97Wh72tMKFIRwgQwjpdhYAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [分包类型 = _t, 简称 = _t, 排序 = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"排序", Int64.Type}})
+				in
+				    更改的类型
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

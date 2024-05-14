@@ -1,0 +1,223 @@
+table D_分包合同
+	lineageTag: ebbaff48-f0dd-49e0-9d25-a6285cadd26a
+
+	column 合同编号
+		dataType: string
+		lineageTag: 6f78b9df-b3bf-4739-9c3d-1cc107ab4718
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: 36ade3d4-9471-466f-aa69-cb5ce5b7d6ec
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: ef915478-016f-4653-84e0-7b1c2d254b75
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 0106bffe-7aef-487e-b89a-a73c648f2507
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: b73b219f-3d1b-4f90-897f-7db85ca5dc4d
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否临建合同
+		dataType: string
+		lineageTag: b784825c-4564-48b9-a769-696302d28651
+		summarizeBy: none
+		sourceColumn: 是否临建合同
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: 91fd9521-522b-4e71-9ff9-158eff562fb8
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: 564b3dd4-a083-4896-99ab-ed1caf73eda4
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包编码
+		dataType: string
+		lineageTag: d5df1e6a-4d8e-4875-8fad-5609011fe47a
+		summarizeBy: none
+		sourceColumn: 分包编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包名称
+		dataType: string
+		lineageTag: ceb0ad56-8b93-4497-b0d5-3b52bc600a0d
+		summarizeBy: none
+		sourceColumn: 分包名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业务类别
+		dataType: string
+		lineageTag: a53f3694-dded-4a93-9a99-cc891cc7e42b
+		summarizeBy: none
+		sourceColumn: 业务类别
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEYID
+		dataType: string
+		lineageTag: 8ef81bcb-043f-46b0-98d3-ce247ce05bcd
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同编码
+		dataType: string
+		lineageTag: 5142bab9-6b00-4720-adfe-7d37d204ab9b
+		summarizeBy: none
+		sourceColumn: 标准合同编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 国内外
+		dataType: string
+		lineageTag: 237e6aba-6cd2-4b09-a6dd-261597f168fe
+		summarizeBy: none
+		sourceColumn: 国内外
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类别
+		dataType: string
+		lineageTag: 8a2bd40c-3ea3-4aa7-954a-294623579866
+		summarizeBy: none
+		sourceColumn: 分包类别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同svg = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='45' ><text x='0' y='20' font-size='18' font-family='STKaiti' fill='black' stroke='blue' stroke-width='0'>" & 'D_分包合同'[合同名称] & "</text><text x='0' y='40' font-size='15' fill='blue'>" & 'D_分包合同'[合同编号] & "</text></svg>"
+		dataType: string
+		lineageTag: 4d0d634e-b071-41c5-a33d-f665cf2b5db0
+		dataCategory: ImageUrl
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 采购模式
+		dataType: string
+		lineageTag: 0091037e-ba3f-426a-bf38-7a802b79c701
+		summarizeBy: none
+		sourceColumn: 采购模式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 集采区域
+		dataType: string
+		lineageTag: a2525033-8a53-4fcc-90cd-79041f063ca2
+		summarizeBy: none
+		sourceColumn: 集采区域
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同协议号
+		dataType: string
+		lineageTag: 0c056a7c-0ba5-4e33-9d42-94094d5fb20c
+		summarizeBy: none
+		sourceColumn: 合同协议号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否暂估合同
+		dataType: string
+		lineageTag: d137d16f-c367-4940-8950-85984b9bee0f
+		summarizeBy: none
+		sourceColumn: 是否暂估合同
+
+		annotation SummarizationSetBy = Automatic
+
+	column 付款模式
+		dataType: string
+		lineageTag: 65a6c247-3117-48cc-b681-684753347239
+		summarizeBy: none
+		sourceColumn: 付款模式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 付款比率
+		dataType: string
+		lineageTag: dcd6dd53-3e15-4658-811d-2236c955c0f7
+		summarizeBy: none
+		sourceColumn: 付款比率
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份合同号
+		dataType: string
+		lineageTag: 8d4ddf3c-fa94-4928-9d27-883cb55b8fdf
+		summarizeBy: none
+		sourceColumn: 股份合同号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 人工费金额
+		dataType: double
+		lineageTag: 22fec1d4-aacb-43d1-8f10-c3b7debd1fb2
+		summarizeBy: sum
+		sourceColumn: 人工费金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 人工费比率
+		dataType: double
+		lineageTag: bee87e97-d57a-4571-a092-7f189741557d
+		summarizeBy: sum
+		sourceColumn: 人工费比率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition D_分包合同-608378e0-d759-4821-8667-39daeb7f1c45 = m
+		mode: import
+		queryGroup: 成本\分包
+		source =
+				let
+				    源 = #"DW_FBHTXXB（分包合同）",
+				    删除的其他列 = Table.SelectColumns(源,{"KEYID", "项目编码", "项目名称", "合同编号", "合同名称", "合同协议号", "标准合同编码", "标准合同名称", "施工专业", "分包类型", "分包编码", "分包名称", "是否暂估合同", "是否临建合同", "分包类别", "业务类别", "国内外", "采购模式", "付款模式", "集采区域", "人工费金额", "人工费比率", "付款比率"}),
+				    删除的副本 = Table.Distinct(删除的其他列, {"KEYID"}),
+				    合并的查询 = Table.NestedJoin(删除的副本, {"合同编号"}, #"X5-股份合同号对照", {"X5合同号"}, "X5-股份合同号对照", JoinKind.LeftOuter),
+				    #"展开的“X5-股份合同号对照”" = Table.ExpandTableColumn(合并的查询, "X5-股份合同号对照", {"股份合同号"}, {"股份合同号"})
+				in
+				    #"展开的“X5-股份合同号对照”"
+
+	annotation PBI_ResultType = Table
+

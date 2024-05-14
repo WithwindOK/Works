@@ -1,0 +1,48 @@
+table D_分包分供
+	lineageTag: fbc27c64-de30-4ea9-8c1e-2f05e4eb1add
+
+	column 编码
+		dataType: string
+		lineageTag: b6bfc3a9-31e9-48ac-8fa2-7a6bf7eeef33
+		summarizeBy: none
+		sourceColumn: 编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 名称
+		dataType: string
+		lineageTag: 4abc5707-8445-485c-b4a2-19ea6560c48c
+		summarizeBy: none
+		sourceColumn: 名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 单位性质
+		dataType: string
+		lineageTag: 8dc38a1e-6c46-434a-8c46-38c986895ff8
+		summarizeBy: none
+		sourceColumn: 单位性质
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_分包分供 = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    源 = X5,
+				    MD = 源{[Schema="MD"]}[Data],
+				    MD_FENGONGSHANGXINXI1 = MD{[Name="MD_FENGONGSHANGXINXI"]}[Data],
+				    删除的其他列 = Table.SelectColumns(MD_FENGONGSHANGXINXI1,{"FFENGONGBIANMA", "FFENGONGMINGCHENG", "FDANWEIXINGZHI", "FBGZT"}),
+				    已添加条件列 = Table.AddColumn(删除的其他列, "自定义", each if [FBGZT] = "最新" then 0 else if [FBGZT] = "旧版" then 1 else 3,Int16.Type),
+				    排序的行1 = Table.Sort(已添加条件列,{{"FFENGONGBIANMA", Order.Ascending}, {"自定义", Order.Ascending}}),
+				    已添加索引 = Table.AddIndexColumn(排序的行1, "索引", 0, 1, Int64.Type),
+				    删除的副本 = Table.Distinct(已添加索引, {"FFENGONGBIANMA"}),
+				    重命名的列 = Table.RenameColumns(删除的副本,{{"FFENGONGBIANMA", "编码"}, {"FFENGONGMINGCHENG", "名称"}, {"FDANWEIXINGZHI", "单位性质"}}),
+				    删除的其他列1 = Table.SelectColumns(重命名的列,{"编码", "名称", "单位性质"}),
+				    筛选的行 = Table.SelectRows(删除的其他列1, each [编码] <> null and [编码] <> "")
+				in
+				    筛选的行
+
+	annotation PBI_ResultType = Table
+

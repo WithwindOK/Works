@@ -1,0 +1,314 @@
+relationship 0d05ffc4-4a04-43d0-b940-8deb379eb51b
+	fromColumn: F_分包合同额.KEYID
+	toColumn: D_分包合同.KEYID
+
+relationship 60ef4f56-c6b8-427e-a902-b00ef0d61b43
+	fromColumn: F_采购物资合同额.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship d6c8274c-1843-43fb-9d6c-fe8aecc881f3
+	fromColumn: F_采购物资结算.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship a92efc12-3b1a-435e-b775-1ca76e9d0c24
+	fromColumn: F_租赁物资合同额.KEYID
+	toColumn: D_租赁物资合同.KEYID
+
+relationship b7ce866e-9b12-4bea-9294-6d571c9831e9
+	fromColumn: F_租赁物资结算.KEYID
+	toColumn: D_租赁物资合同.KEYID
+
+relationship 432e2d67-7778-4f93-9d4b-f4d4b9f4e406
+	fromColumn: D_分包合同.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship 40c9443b-e460-42df-855a-de1193653d3b
+	fromColumn: D_采购物资合同.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship a843da54-1ef7-4fb5-a37e-7a02d972c0b3
+	fromColumn: D_项目信息.责任体
+	toColumn: D-责任体.责任体
+
+relationship 22ed431a-fb1b-4846-9884-2c6ba6064257
+	fromColumn: D_租赁物资合同.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship 674492bf-3d07-40f2-9d15-3ac2aa4837df
+	fromColumn: F_应上交收益履约.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship 6ad5465f-c31a-4af8-98ed-2c29f2c408ea
+	fromColumn: F_应上交收益履约.日期
+	toColumn: D_日历.日期
+
+relationship 65251883-e9f5-4ad2-a14a-c9084753e66b
+	fromColumn: D_分包合同.标准合同编码
+	toColumn: D_标准合同.标准合同编号
+
+relationship d8000a17-ee67-4c8b-bb85-eb8662169638
+	fromColumn: D_分包合同.施工专业
+	toColumn: D_施工专业.施工专业
+
+relationship 71366bfa-93cd-4a1d-979a-f1357f34f65f
+	fromColumn: F_分包结算.KEYID
+	toColumn: D_分包合同.KEYID
+
+relationship 1cd294db-1735-4816-b194-e1d98a96d96b
+	fromColumn: D_分包合同.分包类型
+	toColumn: D_分包类型.分包类型
+
+relationship 993c0269-5ae7-4dd3-b7f0-4dcd7c2b537d
+	fromColumn: D_采购物资合同.分包类型
+	toColumn: D_分包类型.分包类型
+
+relationship e9c92749-02cf-4f45-ba69-2844c90fee83
+	fromColumn: D_租赁物资合同.分包类型
+	toColumn: D_分包类型.分包类型
+
+relationship 52b53c55-59c0-4fcf-973f-936c475d052a
+	fromColumn: F_分包资金计划.KEYID
+	toColumn: D_分包合同.KEYID
+
+relationship 8055281d-1c62-4dfc-8030-0eff3cab6b6b
+	fromColumn: F_采购资金计划.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship c4c013d0-7a55-4524-8faa-bcabc4a3c3a1
+	fromColumn: F_租赁资金计划.KEYID
+	toColumn: D_租赁物资合同.KEYID
+
+relationship 3d6bb07c-8833-4757-9c5a-1b6c0de213f1
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	fromColumn: 账户.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship 006a3f7b-d8f6-4184-850f-46dc5be7a37e
+	fromColumn: F_物资进场.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship b82ab014-b01b-4a97-a2a4-847aa76210cd
+	fromColumn: F_物资进场.日期
+	toColumn: D_日历.日期
+
+relationship fc2828f9-ca38-47bc-bf3d-57c4cbc9c468
+	fromColumn: F_物资对账.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship ae56dd92-6460-40f6-bbd0-bf27f85b467e
+	fromColumn: F_物资对账.日期
+	toColumn: D_日历.日期
+
+relationship 19227ec1-5b22-408d-9630-222c07312309
+	fromColumn: F_物资退场.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship 7e0cf57b-99cb-4cb4-9669-53aa0d600874
+	fromColumn: F_物资退场.日期
+	toColumn: D_日历.日期
+
+relationship 915e400b-29f1-43ce-9d81-c3288c05d3ae
+	fromColumn: F_物资租赁对账.KEYID
+	toColumn: D_租赁物资合同.KEYID
+
+relationship a7ad1e0c-f80b-425c-a907-ddfccc762840
+	fromColumn: F_物资租赁对账.日期
+	toColumn: D_日历.日期
+
+relationship f6eb4926-374e-4c54-a901-be7652dd58f5
+	fromColumn: F_分包完成量.KEYID
+	toColumn: D_分包合同.KEYID
+
+relationship 606fe463-1e9b-4372-b23b-75bb532ce26d
+	fromColumn: F_分包完成量.日期
+	toColumn: D_日历.日期
+
+relationship 8a837a72-3237-49ed-af92-d9a65649e8ad
+	fromColumn: F_物资调拨.日期
+	toColumn: D_日历.日期
+
+relationship f3c1c98a-c850-4531-9426-f3af4de05514
+	fromColumn: F_物资调拨.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship 22de3092-8345-4f84-80c6-7d0643881dc1
+	fromColumn: F_租赁付款.KEYID
+	toColumn: D_租赁物资合同.KEYID
+
+relationship bd1c9ee6-6674-418d-9f7d-1c0e300dcf1a
+	fromColumn: F_租赁付款.日期
+	toColumn: D_日历.日期
+
+relationship 66dea73a-da10-4345-a29c-bbcf0f848bc3
+	fromColumn: F_分包付款.KEYID
+	toColumn: D_分包合同.KEYID
+
+relationship eeeead97-1535-46f8-991b-27c37924f354
+	fromColumn: F_分包付款.日期
+	toColumn: D_日历.日期
+
+relationship aab05c08-35c2-4af9-8763-ab66b5ae7954
+	fromColumn: F_物资付款.KEYID
+	toColumn: D_采购物资合同.KEYID
+
+relationship 42409243-2862-48c7-9546-6389dd6856e5
+	fromColumn: F_物资付款.日期
+	toColumn: D_日历.日期
+
+relationship 8e938100-3759-4b42-b920-997089144109
+	fromColumn: F_分包结算.日期
+	toColumn: D_日历.日期
+
+relationship 3f6f8fcc-4b61-446c-a32a-ba743528b2b8
+	fromColumn: F_采购物资结算.日期
+	toColumn: D_日历.日期
+
+relationship b9700c96-d632-4c32-a2c9-25af28ece792
+	fromColumn: F_租赁物资结算.日期
+	toColumn: D_日历.日期
+
+relationship 32585a56-4419-48a4-8e64-c1f2557f3cc2
+	fromColumn: D_分包合同.分包编码
+	toColumn: D_分包分供.编码
+
+relationship c12162ef-e7e7-408d-b9ef-5e4c670c286f
+	fromColumn: D_采购物资合同.供方编码
+	toColumn: D_分包分供.编码
+
+relationship cc6260c3-9e51-456c-a67e-05e4df3b7d8f
+	fromColumn: D_租赁物资合同.供方编码
+	toColumn: D_分包分供.编码
+
+relationship d3df1b0e-53eb-4c36-a747-9bc11394f318
+	fromColumn: F_采购物资合同额.日期
+	toColumn: D_日历.日期
+
+relationship 894fa7d4-16c4-4a0a-b2a1-983052a4d85d
+	fromColumn: D_采购物资合同.施工专业
+	toColumn: D_施工专业.施工专业
+
+relationship 94f1bd15-aaa5-400d-a239-c75928b20764
+	fromColumn: F_租赁物资合同额.日期
+	toColumn: D_日历.日期
+
+relationship 32419714-c828-46fa-8b17-b4c70b0b5538
+	fromColumn: D_租赁物资合同.施工专业
+	toColumn: D_施工专业.施工专业
+
+relationship f5d04673-ec61-4916-b034-48f4008f32b2
+	fromColumn: F_分包合同额.日期
+	toColumn: D_日历.日期
+
+relationship 12b2d2c3-6a5f-4794-b0f8-40861fb4122c
+	fromColumn: F_分包资金计划.日期
+	toColumn: D_日历.日期
+
+relationship 3b14e82d-a510-46fe-9112-7b1f2455f868
+	fromColumn: F_采购资金计划.日期
+	toColumn: D_日历.日期
+
+relationship 7a47fdad-3cef-43de-88f4-1460a3f86160
+	fromColumn: F_租赁资金计划.日期
+	toColumn: D_日历.日期
+
+relationship 6b72fbe5-4735-4da1-bc92-b74b1a8ba3e6
+	fromColumn: F_业主合同回款.日期
+	toColumn: D_日历.日期
+
+relationship 874d64ab-bbe3-4b30-a782-266e6f5231b6
+	fromColumn: F_业主合同回款.施工专业
+	toColumn: D_施工专业.施工专业
+
+relationship ca159ac2-952f-4e75-a5c4-e9021e24bc86
+	fromColumn: F_承包合同金额.日期
+	toColumn: D_日历.日期
+
+relationship 80eae8f4-8e02-4fde-9e31-2efa1c2832eb
+	fromColumn: F_承包合同金额.施工专业
+	toColumn: D_施工专业.施工专业
+
+relationship 886ae7c7-e343-4e9e-a6fe-8e7ed91209a7
+	fromColumn: D_承包合同.对应工程编码
+	toColumn: D_项目信息.项目编码
+
+relationship cfb0d241-3bcf-4949-abc9-b67324a1542b
+	fromColumn: F_业主合同回款.KEYID
+	toColumn: D_承包合同.KEYID
+
+relationship 2e6a267f-bfe7-45d3-bfd6-5c99137a0032
+	fromColumn: F_承包合同金额.KEYID
+	toColumn: D_承包合同.KEYID
+
+relationship a2cd7d4a-8375-44fd-ae8e-62891bcaa5b5
+	fromColumn: F_商务产值.日期
+	toColumn: D_日历.日期
+
+relationship b0682b48-c1e9-4cfc-9504-5bcee9ac8157
+	fromColumn: F_商务产值.专业
+	toColumn: D_施工专业.施工专业
+
+relationship 5e217b72-e859-4cf2-8654-d69cc800e5d8
+	fromColumn: F_商务产值.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship 9c9a1ee8-2d08-4063-bb6a-dd79cb3cb6ef
+	fromColumn: F_商务产值.分包类型
+	toColumn: D_分包类型.简称
+
+relationship c5122ec6-951f-400a-b058-3b0a92080a04
+	fromColumn: F_业主确认量.日期
+	toColumn: D_日历.日期
+
+relationship 78a42abc-b023-4df0-8d5f-97c237ca7ce7
+	fromColumn: F_业主确认量.施工专业
+	toColumn: D_施工专业.施工专业
+
+relationship 9ce29869-7fa3-4860-85a4-8267254c6da7
+	fromColumn: F_业主确认量.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship 1c3e574d-8812-4661-a3ab-54ca3470be0b
+	fromColumn: F_业主确认量.分包类型
+	toColumn: D_分包类型.简称
+
+relationship 35ea9112-ff24-485d-9191-308cdc56ecbd
+	fromColumn: F_业主结算进展.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship b4bb8c36-53d7-436e-9471-937b02e0d501
+	fromColumn: F_业主结算进展.日期
+	toColumn: D_日历.日期
+
+relationship d66d2e4a-a350-4a7d-aa4f-7cee861c8fb8
+	fromColumn: F_业主结算进展.施工专业
+	toColumn: D_施工专业.施工专业
+
+relationship 4457e80f-bb26-41df-ad18-3a94738e0884
+	fromColumn: F_业主结算进展.分包类型
+	toColumn: D_分包类型.简称
+
+relationship d93c9873-f7c6-45cc-a455-679733257984
+	fromColumn: F_全期现金流.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship ab8205bc-e646-4948-b969-f2f43b8bc11d
+	fromColumn: F_全期现金流.日期
+	toColumn: D_日历.日期
+
+relationship 42703ea3-e01f-af91-5c76-3f7e69c7dd88
+	fromColumn: F_承包合同金额.分包类型
+	toColumn: D_分包类型.简称
+
+relationship 98958f41-8b36-4792-8db3-ae2d60305ac1
+	fromColumn: F_业主合同回款.合同类型
+	toColumn: D_分包类型.简称
+
+relationship d6931f08-030d-469a-8a5c-8d5fdaa487d4
+	fromColumn: D_采购物资合同.标准合同编号
+	toColumn: D_标准合同.标准合同编号
+
+relationship 7ada20eb-f3e2-4015-91d7-470aa7e30ce5
+	fromColumn: D_租赁物资合同.标准合同编号
+	toColumn: D_标准合同.标准合同编号
+

@@ -1,0 +1,1070 @@
+table 指标
+	excludeFromModelRefresh
+	lineageTag: ad717c26-5ebd-4048-945c-d7838811224f
+
+	/// SUM ( 'F_分包合同额'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包合同.金额.Sum' =
+			
+			SUM ( 'F_分包合同额'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\00.合同
+		lineageTag: bbb6dddd-036f-453e-9250-eff96ef2d6b5
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_分包合同额'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包合同.税金.Sum' =
+			
+			SUM ( 'F_分包合同额'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\00.合同
+		lineageTag: c207de68-8d70-4e08-8947-bea6e6d76cab
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_分包合同额'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包合同.价税合计.Sum' =
+			
+			SUM ( 'F_分包合同额'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\00.合同
+		lineageTag: 32c0b45d-1dec-4e84-94e9-bdcccd57679d
+
+		changedProperty = FormatString
+
+	/// DISTINCTCOUNT ( 'F_分包合同额'[项目编码] )
+	measure 'M.分包.项目数.DCnt' =
+			
+			DISTINCTCOUNT ( 'F_分包合同额'[项目编码] )
+		formatString: 0
+		displayFolder: 02分包\04.计数
+		lineageTag: 56f0e0bb-8d7a-4e5f-96ae-381ad2e6319a
+
+	/// DISTINCTCOUNT ( 'F_分包合同额'[合同编号] )
+	measure 'M.分包.合同份数.DCnt' =
+			
+			DISTINCTCOUNT ( 'F_分包合同额'[合同编号] )
+		formatString: 0
+		displayFolder: 02分包\04.计数
+		lineageTag: 33522db5-78f5-4353-9d9c-7aa8abd6bd44
+
+		changedProperty = FormatString
+
+	/// SUM('F_分包完成量'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包报量.价税合计.Sum' = SUM('F_分包完成量'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\01.报量
+		lineageTag: 3b79eb94-8397-48d5-91ab-bc4e4f614f6c
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_分包完成量'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包报量.金额.Sum' =
+			
+			SUM ( 'F_分包完成量'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\01.报量
+		lineageTag: 74f3408b-445b-49f8-aa5f-0766ac4ca5a3
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_分包完成量'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包报量.税金.Sum' =
+			
+			SUM ( 'F_分包完成量'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\01.报量
+		lineageTag: 0f295057-5865-4538-9dd4-1b6adf62dd88
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_承包合同金额'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.承包合同.价税合计.Sum' =
+			
+			SUM ( 'F_承包合同金额'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\合同及结算
+		lineageTag: 2756ca31-9136-449d-811d-5de2662f4e31
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_承包合同金额'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.承包合同.金额.Sum' =
+			
+			SUM ( 'F_承包合同金额'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\合同及结算
+		lineageTag: 7dcc56dd-2020-4a1f-896d-43d9a900afae
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_业主确认量'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主确权.价税合计.Sum' =
+			
+			SUM ( 'F_业主确认量'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\确权
+		lineageTag: 6c0d8962-bd90-48d6-a583-729ec4fa3486
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_业主确认量'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主确权.金额.Sum' = SUM ( 'F_业主确认量'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\确权
+		lineageTag: cb809ef1-20f2-4d10-9606-c18bde7ec82c
+
+		changedProperty = FormatString
+
+	/// SUM ( 'F_业主确认量'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主确权.税金.Sum' =
+			
+			SUM ( 'F_业主确认量'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\确权
+		lineageTag: a454a5df-b25e-4a8b-b85c-19576738c684
+
+		changedProperty = FormatString
+
+	/// CALCULATE ( SUM ( 'F_分包付款'[金额] ), 'F_分包付款'[状态] = "在途" )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包.在途付款.Sum' =
+			
+			CALCULATE ( SUM ( 'F_分包付款'[金额] ), 'F_分包付款'[状态] = "在途" )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\03.付款
+		lineageTag: 375bba8a-17d4-438c-b9d3-23d92cb931e1
+
+		changedProperty = FormatString
+
+	/// 
+	/// CALCULATE ( SUM ( 'F_分包付款'[金额] ), 'F_分包付款'[状态] = "已完成" )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包.实付款.Sum' =
+			
+			CALCULATE ( SUM ( 'F_分包付款'[金额] ), 'F_分包付款'[状态] = "已完成" )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\03.付款
+		lineageTag: 6aed5240-ab8c-45d9-895f-db9652a4cc17
+
+		changedProperty = FormatString
+
+	/// CALCULATE ( SUM ( 'F_分包付款'[劳务] ), 'F_分包付款'[状态] = "已完成" )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包.实付劳务费.Sum' =
+			
+			CALCULATE ( SUM ( 'F_分包付款'[劳务] ), 'F_分包付款'[状态] = "已完成" )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\03.付款
+		lineageTag: a5a6d3d9-2cb9-4cd9-90f2-3647d2ab8c42
+
+		changedProperty = FormatString
+
+	/// 
+	/// CALCULATE ( SUM ( 'F_分包付款'[其它] ), 'F_分包付款'[单据状态] = "已完成" )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包.实付其它款.Sum' =
+			
+			CALCULATE ( SUM ( 'F_分包付款'[其它] ), 'F_分包付款'[状态] = "已完成" )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\03.付款
+		lineageTag: 08ebaef6-0045-4026-a565-cd06d5611264
+
+		changedProperty = FormatString
+
+	/// SUM('F_分包结算'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包结算.价税合计.Sum' = SUM('F_分包结算'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\02.结算
+		lineageTag: b869a2fe-86cf-4549-b489-5a11b57b3013
+
+		changedProperty = FormatString
+
+	/// SUM('F_分包结算'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包结算.金额.Sum' = SUM('F_分包结算'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\02.结算
+		lineageTag: 1af64d56-68bb-47e8-b817-69a73c885c4e
+
+		changedProperty = FormatString
+
+	/// SUM('F_分包结算'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.分包结算.税金.Sum' = SUM('F_分包结算'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 02分包\02.结算
+		lineageTag: 5f5d8b93-fb7a-41d5-a235-73c0f599e68b
+
+		changedProperty = FormatString
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     [M.分包应付.Exp]-[M.分包.实付款.Sum]
+	/// )
+	measure 'M.分包.欠款.Exp' = ```
+			
+			 IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    [M.分包应付.Exp]-[M.分包.实付款.Sum]
+			)
+			```
+		formatString: #,0.00
+		displayFolder: 02分包\03.付款
+		lineageTag: 9514bcc2-faf2-4b5e-8c80-d653576ee9b3
+
+		changedProperty = FormatString
+
+	/// SUM('F_采购物资合同额'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资合同.价税合计.Sum' = SUM('F_采购物资合同额'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\00.合同
+		lineageTag: 79241aae-6c8f-4159-b800-5e6b33f6c8e5
+
+		changedProperty = FormatString
+
+	/// SUM('F_物资进场'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资进场.价税合计.Sum' = SUM('F_物资进场'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\01.进场
+		lineageTag: 14fbdb6f-5805-444b-8527-cd9dfc9ce731
+
+		changedProperty = FormatString
+
+	/// SUM('F_采购物资结算'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资结算.价税合计.Sum' = SUM('F_采购物资结算'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\06.结算
+		lineageTag: 00c695a2-45aa-4691-b2b3-ab2bc4933f56
+
+		changedProperty = FormatString
+
+	/// CALCULATE( SUM( 'F_物资付款'[金额]) , 'F_物资付款'[状态]="已完成")/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资.实付款.Sum' = CALCULATE( SUM( 'F_物资付款'[金额]) , 'F_物资付款'[状态]="已完成")/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\07.付款
+		lineageTag: ff6780e4-1eeb-48ad-b41f-8f3c7bab9bf3
+
+		changedProperty = FormatString
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     [M.物资应付.Exp]-[M.物资.实付款.Sum]
+	/// )
+	measure 'M.物资.欠款.Exp' = ```
+			
+			 IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    [M.物资应付.Exp]-[M.物资.实付款.Sum]
+			)
+			/*-------------------------------------
+			补充说明：
+			    时间轴本度量无意义，故时间轴本度量置空
+			--------------------------------------*/
+			```
+		formatString: #,0.00
+		displayFolder: 03物资\07.付款
+		lineageTag: 4a2b3b36-6a0a-4bf1-8520-33aa7430746a
+
+		changedProperty = FormatString
+
+	/// SUM('F_租赁物资合同额'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁合同.价税合计.Sum' = SUM('F_租赁物资合同额'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\00.合同
+		lineageTag: 28b49eb4-8eae-40e0-b6cf-7aae97c9359b
+
+		changedProperty = FormatString
+
+	/// SUM('F_物资租赁对账'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁.价税合计.Sum' = SUM('F_物资租赁对账'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\01.进场
+		lineageTag: 2dba3c09-8f72-4d54-aa41-9b2cbb500629
+
+		changedProperty = FormatString
+
+	/// SUM('F_租赁物资结算'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁结算.价税合计.Sum' = SUM('F_租赁物资结算'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\02.结算
+		lineageTag: c7e293e3-21f5-482c-a479-d992f433dc3f
+
+		changedProperty = FormatString
+
+	/// SUMX(KEEPFILTERS(VALUES( 'D_租赁物资合同'[合同编号] )),[_租赁应付.Exp])
+	measure 'M.租赁应付.Exp' = SUMX(KEEPFILTERS(VALUES( 'D_租赁物资合同'[合同编号] )),[_租赁应付.Exp])
+		formatString: #,0.00
+		displayFolder: 04租赁\02.结算
+		lineageTag: 8b9adda1-879b-4c10-98e9-363965d1d81f
+
+		changedProperty = FormatString
+
+	/// CALCULATE( SUM('F_租赁付款'[金额]),'F_租赁付款'[状态]="已完成")/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁.实付款.Sum' = CALCULATE( SUM('F_租赁付款'[金额]),'F_租赁付款'[状态]="已完成")/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\03.付款
+		lineageTag: b8ab9d56-0631-4628-9e48-aeeee721d832
+
+		changedProperty = FormatString
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     [M.租赁应付.Exp]-[M.租赁.实付款.Sum]
+	/// )
+	measure 'M.租赁.欠款.Exp' =
+			
+			IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    [M.租赁应付.Exp]-[M.租赁.实付款.Sum]
+			)
+		formatString: #,0.00
+		displayFolder: 04租赁\03.付款
+		lineageTag: 207f0d52-57a9-4994-9b7c-e215c43ad13b
+
+		changedProperty = FormatString
+
+	/// MIN('F_分包合同额'[日期])
+	measure 'M.分包合同.签订日期.Min' = MIN('F_分包合同额'[日期])
+		formatString: yyyy-mm-dd
+		displayFolder: 02分包\00.合同
+		lineageTag: a8d39530-5bfc-4414-b0d4-9b6fdfe0486a
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// DISTINCTCOUNT('F_分包合同额'[合同协议号])
+	measure 'M.分包.补充协议份数.DCnt' = DISTINCTCOUNT('F_分包合同额'[合同协议号])
+		formatString: 0
+		displayFolder: 02分包\04.计数
+		lineageTag: 001204a8-9690-4b88-98b4-0ab5f1716dc1
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     DIVIDE([M.分包.实付款.Sum],[M.分包应付.Exp])
+	/// )
+	measure 'M.分包.支付率.Rto' =
+			
+			IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    DIVIDE([M.分包.实付款.Sum],[M.分包应付.Exp])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02分包\03.付款
+		lineageTag: db8fd459-f810-4a45-8941-01db8d439b3e
+
+		changedProperty = FormatString
+
+	/// IF( [M.分包结算.价税合计.Sum] <> 0, [M.分包结算.价税合计.Sum], [M.分包报量.价税合计.Sum] )
+	measure '_分包应付.Exp' =
+			
+			IF( [M.分包结算.价税合计.Sum] <> 0, [M.分包结算.价税合计.Sum], [M.分包报量.价税合计.Sum] )
+			
+			/*
+			中间态辅助度量，不应作为最终度量使用
+			*/
+		formatString: #,##0.00
+		displayFolder: 02分包\02.结算
+		lineageTag: 0c4f0ab9-6fc4-4c96-9335-a8a64a60be6b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// SUM('F_物资进场'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资进场.金额.Sum' = SUM('F_物资进场'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\01.进场
+		lineageTag: e69f79ca-bc34-4ec1-8627-f55759ec4039
+
+		changedProperty = FormatString
+
+	/// SUM( 'F_物资进场'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资进场.税金.Sum' = SUM( 'F_物资进场'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\01.进场
+		lineageTag: 50a69dcd-ca58-42ed-88c4-76f166a33c0d
+
+		changedProperty = FormatString
+
+	/// SUM('F_采购物资合同额'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资合同.金额.Sum' = SUM('F_采购物资合同额'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\00.合同
+		lineageTag: 858a30d9-125c-44a1-a303-d3880554c5df
+
+		changedProperty = FormatString
+
+	/// SUM('F_采购物资合同额'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资合同.税金.Sum' = SUM('F_采购物资合同额'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\00.合同
+		lineageTag: 1e50b614-8ccf-4e0c-88ef-86638dfe445a
+
+		changedProperty = FormatString
+
+	/// SUM('F_采购物资结算'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资结算.金额.Sum' = SUM('F_采购物资结算'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\06.结算
+		lineageTag: e27eb06f-879c-4964-925d-f65e184e0da9
+
+		changedProperty = FormatString
+
+	/// SUM('F_采购物资结算'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资结算.税金.Sum' = SUM('F_采购物资结算'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\06.结算
+		lineageTag: f857f533-a51e-48e8-9009-22e9bcfb813c
+
+		changedProperty = FormatString
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     DIVIDE([M.物资.实付款.Sum],[M.物资应付.Exp])
+	/// )
+	measure 'M.物资.支付率.Rto' =
+			
+			IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    DIVIDE([M.物资.实付款.Sum],[M.物资应付.Exp])
+			)
+			
+			/*-------------------------------------
+			补充说明：
+			    时间轴本度量无意义，故时间轴本度量置空
+			--------------------------------------*/
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 03物资\07.付款
+		lineageTag: 9fb7a045-39aa-42aa-a954-59bb6852d4af
+
+		changedProperty = FormatString
+
+	/// DISTINCTCOUNT('F_采购物资合同额'[合同协议号])
+	measure 'M.物资.补充协议份数.DCnt' = DISTINCTCOUNT('F_采购物资合同额'[合同协议号])
+		formatString: 0
+		displayFolder: 03物资\08.计数
+		lineageTag: fb4615be-7d53-44b0-a815-1f97a8f5db2f
+
+	/// DISTINCTCOUNT ( 'F_采购物资合同额'[合同编号] )
+	measure 'M.物资.合同份数.Dcnt' =
+			
+			DISTINCTCOUNT ( 'F_采购物资合同额'[合同编号] )
+		formatString: 0
+		displayFolder: 03物资\08.计数
+		lineageTag: a04a2366-13c6-4d78-a4dd-7142cc3cb763
+
+	/// DISTINCTCOUNT ( 'F_采购物资合同额'[项目编码] )
+	measure 'M.物资合同.项目数.Dcnt' =
+			
+			DISTINCTCOUNT ( 'F_采购物资合同额'[项目编码] )
+		formatString: 0
+		displayFolder: 03物资\08.计数
+		lineageTag: 03716c31-560d-44a4-bf81-9de18a62763a
+
+	/// DISTINCTCOUNT('F_分包合同额'[分包编码])
+	measure 'M.分包.数量.Dcnt' = DISTINCTCOUNT('F_分包合同额'[分包编码])
+		formatString: 0
+		displayFolder: 02分包\04.计数
+		lineageTag: d938452c-39c5-4a24-9afa-970976c82b95
+
+	/// SUM('F_租赁物资合同额'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁合同金额.Sum' = SUM('F_租赁物资合同额'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\00.合同
+		lineageTag: 5826fe9a-e561-48f6-be00-13a81142d2df
+
+		changedProperty = FormatString
+
+	/// SUM('F_租赁物资合同额'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁合同.税金.Sum' = SUM('F_租赁物资合同额'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\00.合同
+		lineageTag: 360d4385-19b7-43d0-aac8-7df3ce7accaa
+
+		changedProperty = FormatString
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     DIVIDE([M.租赁.实付款.Sum],[M.租赁应付.Exp])
+	/// )
+	measure 'M.租赁.支付率.Rto' =
+			
+			IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    DIVIDE([M.租赁.实付款.Sum],[M.租赁应付.Exp])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 04租赁\03.付款
+		lineageTag: 3db357a7-ca0b-4a1d-a02f-b309964aaffe
+
+		changedProperty = FormatString
+
+	/// SUM('F_物资租赁对账'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁.金额.Sum' = SUM('F_物资租赁对账'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\01.进场
+		lineageTag: 88ace1bc-a1bf-4581-8915-029c4be10c8f
+
+		changedProperty = FormatString
+
+	/// SUM('F_物资租赁对账'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁.税金.Sum' = SUM('F_物资租赁对账'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\01.进场
+		lineageTag: daa7b39d-ba2a-47be-950f-566ea069e825
+
+		changedProperty = FormatString
+
+	///  SUM('F_租赁物资结算'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁结算,金额.Sum' = SUM('F_租赁物资结算'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\02.结算
+		lineageTag: 4fbdafe3-caf1-4968-8b5d-70996382bd3b
+
+		changedProperty = FormatString
+
+	/// SUM('F_租赁物资结算'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁结算.税金.Sum' = SUM('F_租赁物资结算'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\02.结算
+		lineageTag: 57e9c297-51d9-4b7a-a634-868b9a75e99a
+
+		changedProperty = FormatString
+
+	/// DISTINCTCOUNT('F_采购物资合同额'[供方编码])
+	measure 'M.物资.分供数.DCnt' = DISTINCTCOUNT('F_采购物资合同额'[供方编码])
+		formatString: 0
+		displayFolder: 03物资\08.计数
+		lineageTag: af2131a0-30e9-429f-ad2b-8e3407a7fe1f
+
+	/// DISTINCTCOUNT( 'F_租赁物资合同额'[合同协议号] )
+	measure 'M.租赁.补充协议份数.Dcnt' = DISTINCTCOUNT( 'F_租赁物资合同额'[合同协议号] )
+		formatString: 0
+		displayFolder: 04租赁\04.计数
+		lineageTag: 76c0df0a-f163-4c77-a13f-939f0b6c6c60
+
+	/// DISTINCTCOUNT( 'F_租赁物资合同额'[合同编号] )
+	measure 'M.租赁.合同份数.DCnt' = DISTINCTCOUNT( 'F_租赁物资合同额'[合同编号] )
+		displayFolder: 04租赁\04.计数
+		lineageTag: fad88daf-293a-454d-ab52-bb568824c78d
+
+	/// DISTINCTCOUNT( 'F_租赁物资合同额'[供方编码] )
+	measure 'M.租赁.分供数.DCnt' = DISTINCTCOUNT( 'F_租赁物资合同额'[供方编码] )
+		displayFolder: 04租赁\04.计数
+		lineageTag: 427756df-4351-402f-9bee-4b0abddc65d9
+
+	/// DISTINCTCOUNT( 'F_租赁物资合同额'[项目编码] )
+	measure 'M.租赁.项目数.DCnt' = DISTINCTCOUNT( 'F_租赁物资合同额'[项目编码] )
+		displayFolder: 04租赁\04.计数
+		lineageTag: 3ee597ba-26ad-4073-8aec-adec0e047640
+
+	/// MIN( 'F_采购物资合同额'[日期] )
+	measure 'M.物资合同.签订日期.Min' = MIN( 'F_采购物资合同额'[日期] )
+		formatString: yyyy-mm-dd
+		displayFolder: 03物资\00.合同
+		lineageTag: 239a6eef-2a57-4584-9c02-04f6d6c8021d
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// MIN( 'F_租赁物资合同额'[日期] )
+	measure 'M.租赁.补充协议签订日期.Min' = MIN( 'F_租赁物资合同额'[日期] )
+		formatString: yyyy-m-d
+		displayFolder: 04租赁\00.合同
+		lineageTag: 6f9429c7-5273-4966-8dc8-21868722b7f6
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// MAX( 'F_采购物资结算'[日期] )
+	measure 'M.物资结算.签订日期.Max' = MAX( 'F_采购物资结算'[日期] )
+		formatString: yyyy-mm-dd
+		displayFolder: 03物资\06.结算
+		lineageTag: e6b36ce3-3a8e-4aa8-acba-388739f13666
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	///  MAX( 'F_分包结算'[日期] )
+	measure 'M.分包结算.签订日期.Max' = MAX( 'F_分包结算'[日期] )
+		formatString: yyyy-mm-dd
+		displayFolder: 02分包\02.结算
+		lineageTag: 6a501d96-4a42-44cd-a393-1dca10a32ae0
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// "数据更新时间：" & MAX('刷新时间'[刷新时间])
+	measure 刷新时间 = "数据更新时间：" & MAX('刷新时间'[刷新时间])
+		lineageTag: 2658fc24-6a58-4294-8b4a-9514a53c48ba
+
+	/// IF( [M.物资结算.价税合计.Sum]<>0, 
+	///     [M.物资结算.价税合计.Sum], 
+	///     [M.物资有效进场.价税合计.Exp]
+	/// )
+	/// 
+	measure '_物资应付.Exp' = ```
+			
+			IF( [M.物资结算.价税合计.Sum]<>0, 
+			    [M.物资结算.价税合计.Sum], 
+			    [M.物资有效进场.价税合计.Exp]
+			)
+			
+			/*
+			补充说明：
+			中间态度量，不应作为最终度量使用
+			*/
+			```
+		displayFolder: 03物资\06.结算
+		lineageTag: 26ad68e4-8aca-44d7-828b-ccd4e6626a20
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// SUMX(KEEPFILTERS(VALUES('D_采购物资合同'[合同编号])),[_物资应付.Exp])
+	/// 
+	measure 'M.物资应付.Exp' = ```
+			SUMX(KEEPFILTERS(VALUES('D_采购物资合同'[合同编号])),[_物资应付.Exp])
+			
+			```
+		formatString: #,0.00
+		displayFolder: 03物资\06.结算
+		lineageTag: 8a7d5fb3-61f7-4338-8c5e-11aca442cae8
+
+		changedProperty = FormatString
+
+	/// SUMX(KEEPFILTERS(VALUES('D_分包合同'[合同编号])),[_分包应付.Exp])
+	/// 
+	measure 'M.分包应付.Exp' = ```
+			SUMX(KEEPFILTERS(VALUES('D_分包合同'[合同编号])),[_分包应付.Exp])
+			
+			```
+		formatString: #,0.00
+		displayFolder: 02分包\02.结算
+		lineageTag: 7afc1514-c816-4785-ae20-bb7bb6aec28c
+
+		changedProperty = FormatString
+
+	/// IF( ABS( [M.租赁结算.价税合计.Sum] ) > 0, [M.租赁结算.价税合计.Sum], [M.租赁.价税合计.Sum] )
+	measure '_租赁应付.Exp' = ```
+			
+			IF( ABS( [M.租赁结算.价税合计.Sum] ) > 0, [M.租赁结算.价税合计.Sum], [M.租赁.价税合计.Sum] )
+			
+			```
+		formatString: #,0.00
+		displayFolder: 04租赁\02.结算
+		lineageTag: 77b63f10-2057-43fb-8035-514b062a98a5
+
+		changedProperty = FormatString
+
+	/// CALCULATE( SUM( 'F_物资付款'[金额] ) , 'F_物资付款'[状态]="在途")/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资.在途付款.Sum' = CALCULATE( SUM( 'F_物资付款'[金额] ) , 'F_物资付款'[状态]="在途")/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\07.付款
+		lineageTag: 6129e94b-22c3-4cfa-be92-fed806533ff5
+
+		changedProperty = FormatString
+
+	/// CALCULATE( SUM('F_租赁付款'[金额]),'F_租赁付款'[状态]="在途")/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.租赁.在途付款.Sum' = CALCULATE( SUM('F_租赁付款'[金额]),'F_租赁付款'[状态]="在途")/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 04租赁\03.付款
+		lineageTag: 7648a4e3-49f1-41e3-b8f9-b1c2f41cbad6
+
+		changedProperty = FormatString
+
+	/// SUMX(
+	///      VALUES('D_项目信息'[项目名称]),
+	///     LASTNONBLANKVALUE('D_日历'[日期],SUM('F_应上交收益履约'[开工累计应上缴履约]))
+	/// )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.应上缴履约.Bal' = ```
+			
+			 SUMX(
+			     VALUES('D_项目信息'[项目名称]),
+			    LASTNONBLANKVALUE('D_日历'[日期],SUM('F_应上交收益履约'[开工累计应上缴履约]))
+			)/SELECTEDVALUE('货币单位'[系数],1)
+			```
+		formatString: #,0.00
+		displayFolder: 05应上缴收益履约
+		lineageTag: b65546cc-d660-4cc2-863f-c3d06f4cf8db
+
+		changedProperty = FormatString
+
+	/// SUMX(
+	///      VALUES('D_项目信息'[项目名称]),
+	///      LASTNONBLANKVALUE('D_日历'[日期],SUM('F_应上交收益履约'[开工累计应上缴收益]))
+	/// )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.应上缴收益.Bal' = ```
+			
+			 SUMX(
+			     VALUES('D_项目信息'[项目名称]),
+			     LASTNONBLANKVALUE('D_日历'[日期],SUM('F_应上交收益履约'[开工累计应上缴收益]))
+			)/SELECTEDVALUE('货币单位'[系数],1)
+			```
+		formatString: #,0.00
+		displayFolder: 05应上缴收益履约
+		lineageTag: a0182690-336d-432a-ac27-b96e1060d72d
+
+		changedProperty = FormatString
+
+	/// DISTINCTCOUNT('F_承包合同金额'[合同编号])
+	measure 'M.承包合同.份数.DCnt' = DISTINCTCOUNT('F_承包合同金额'[合同编号])
+		formatString: 0
+		displayFolder: 01承包合同\合同及结算
+		lineageTag: 43ae731e-69db-4901-84c7-fca2fefe5ce4
+
+	///  IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     [M.分包应付.Exp]-[M.分包.实付款.Sum]-[M.分包.在途付款.Sum]
+	/// )
+	measure 'M.分包.欠款.含在途.Exp' = ```
+			
+			 IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    [M.分包应付.Exp]-[M.分包.实付款.Sum]-[M.分包.在途付款.Sum]
+			)
+			```
+		formatString: #,0.00
+		displayFolder: 02分包\03.付款
+		lineageTag: bb1fc8d3-86a0-4712-8ac1-bc0d61b3ca5b
+
+		changedProperty = FormatString
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     [M.物资应付.Exp]-[M.物资.实付款.Sum]-[M.物资.在途付款.Sum]
+	/// )
+	measure 'M.物资.欠款.含在途.Exp' = ```
+			
+			 IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    [M.物资应付.Exp]-[M.物资.实付款.Sum]-[M.物资.在途付款.Sum]
+			)
+			```
+		formatString: #,0.00
+		displayFolder: 03物资\07.付款
+		lineageTag: a650517f-8a5b-4962-9e12-8bd2f2b88a48
+
+		changedProperty = FormatString
+
+	/// IF(ISINSCOPE('D_日历'[年月名称]),
+	///     BLANK(),
+	///     [M.租赁应付.Exp]-[M.租赁.实付款.Sum]-[M.租赁.在途付款.Sum]
+	/// )
+	measure 'M.租赁.欠款.含在途.Exp' =
+			
+			IF(ISINSCOPE('D_日历'[年月名称]),
+			    BLANK(),
+			    [M.租赁应付.Exp]-[M.租赁.实付款.Sum]-[M.租赁.在途付款.Sum]
+			)
+		formatString: #,0.00
+		displayFolder: 04租赁\03.付款
+		lineageTag: fe50609d-43de-497a-aac8-429199e0cc4b
+
+		changedProperty = FormatString
+
+	/// SUM('F_业主合同回款'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.承包合同.回款.Sum' = SUM('F_业主合同回款'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\回款
+		lineageTag: 2e7e3975-96d5-4234-bbaf-299e5c13cdba
+
+		changedProperty = FormatString
+
+	/// [M.分包合同.价税合计.Sum]+[M.物资合同.价税合计.Sum]+[M.租赁合同.价税合计.Sum]
+	measure 'M.下游合同额.含税.Exp' = [M.分包合同.价税合计.Sum]+[M.物资合同.价税合计.Sum]+[M.租赁合同.价税合计.Sum]
+		formatString: #,0.00
+		displayFolder: 00项目级度量
+		lineageTag: 8364dd51-f004-4b1c-98b5-9023105e2d4c
+
+		changedProperty = FormatString
+
+	/// [M.分包.实付款.Sum]+[M.物资.实付款.Sum]+[M.租赁.实付款.Sum]
+	measure 'M.下游合同付款.Exp' = [M.分包.实付款.Sum]+[M.物资.实付款.Sum]+[M.租赁.实付款.Sum]
+		formatString: #,0.00
+		displayFolder: 00项目级度量
+		lineageTag: abb9c2d2-3f92-4789-b99a-f5c5d42bcfb8
+
+	/// [M.分包应付.Exp]+[M.物资应付.Exp]+[M.租赁应付.Exp]
+	measure 'M.下游合同应付.Exp' = [M.分包应付.Exp]+[M.物资应付.Exp]+[M.租赁应付.Exp]
+		formatString: #,0.00
+		displayFolder: 00项目级度量
+		lineageTag: d4421b5f-afa8-405f-be52-451a2a8fe2bd
+
+	/// [M.分包结算.价税合计.Sum]+[M.物资结算.价税合计.Sum]+[M.租赁结算.价税合计.Sum]
+	measure 'M.下游合同结算.含税.Exp' = [M.分包结算.价税合计.Sum]+[M.物资结算.价税合计.Sum]+[M.租赁结算.价税合计.Sum]
+		formatString: #,0.00
+		displayFolder: 00项目级度量
+		lineageTag: f4f8727c-2ad7-4354-92b7-a381374702d3
+
+	/// [M.分包报量.价税合计.Sum]+[M.物资进场.价税合计.Sum]+[M.租赁.价税合计.Sum]
+	measure 'M.下游合同完成量.价税合计.Exp' = [M.分包报量.价税合计.Sum]+[M.物资进场.价税合计.Sum]+[M.租赁.价税合计.Sum]
+		formatString: #,0.00
+		displayFolder: 00项目级度量
+		lineageTag: fe24e7c2-fde2-4dbc-89cc-5b5ce6b4288a
+
+	///  [M.分包.欠款.Exp]+[M.物资.欠款.Exp]+[M.租赁.欠款.Exp]
+	measure 'M.欠分包款物资款.Exp' = [M.分包.欠款.Exp]+[M.物资.欠款.Exp]+[M.租赁.欠款.Exp]
+		formatString: #,0.00
+		displayFolder: 00项目级度量
+		lineageTag: 76a3a546-f14f-429c-a976-abc7cf7ca06e
+
+	/// CALCULATE([M.承包合同.价税合计.Sum],'D_分包类型'[分包类型]="自施")
+	measure 'M.承包合同额.价税合计.自施.Sum' = CALCULATE([M.承包合同.价税合计.Sum],'D_分包类型'[分包类型]="自施")
+		formatString: #,0.00
+		displayFolder: 01承包合同\合同及结算
+		lineageTag: 5bd4d869-5d70-4aa2-a612-6c5b1d0ec727
+
+	/// CALCULATE(MAX('F_分包付款'[日期]),'F_分包付款'[状态]="已完成")
+	measure 'M.分包.实付款最后日期.MAX' = CALCULATE(MAX('F_分包付款'[日期]),'F_分包付款'[状态]="已完成")
+		formatString: yyyy-mm-dd
+		displayFolder: 02分包\03.付款
+		lineageTag: 74fa5b85-4ea8-409c-ab4e-e263c85e908c
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// CALCULATE(MAX('F_物资付款'[日期]),'F_物资付款'[状态]="已完成")
+	measure 'M.物资.付款最后日期.Max' = CALCULATE(MAX('F_物资付款'[日期]),'F_物资付款'[状态]="已完成")
+		formatString: yyyy-mm-dd
+		displayFolder: 03物资\07.付款
+		lineageTag: 45a67f51-1ffa-45a3-aaff-cca384764627
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// CALCULATE(MAX('F_租赁付款'[日期]),'F_租赁付款'[状态]="已完成")
+	measure 'M.租赁.付款最后日期.Max' = CALCULATE(MAX('F_租赁付款'[日期]),'F_租赁付款'[状态]="已完成")
+		formatString: yyyy-mm-dd
+		displayFolder: 04租赁\03.付款
+		lineageTag: 7523734a-e92e-44b2-aaa6-4a778709002f
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// IF(HASONEVALUE('D_分包合同'[KEYID]),MAX('F_分包资金计划'[付款比例]))
+	measure 'M.分包.计划付款执行比例.Max' = IF(HASONEVALUE('D_分包合同'[KEYID]),MAX('F_分包资金计划'[付款比例]))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 02分包\03.付款
+		lineageTag: 00cf0cdd-0d84-435a-9eba-f8ddc17e4d14
+
+	///  IF(HASONEVALUE('D_采购物资合同'[KEYID]), MAX('F_采购资金计划'[付款比例]))
+	measure 'M.物资.计划付款执行比例.Max' = IF(HASONEVALUE('D_采购物资合同'[KEYID]), MAX('F_采购资金计划'[付款比例]))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 03物资\07.付款
+		lineageTag: 706a58ba-7645-48fc-9074-cba10aa2925f
+
+	/// IF(HASONEVALUE('D_租赁物资合同'[KEYID]),MAX('F_租赁资金计划'[付款比例]))
+	measure 'M.租赁.计划付款执行比例.Max' = IF(HASONEVALUE('D_租赁物资合同'[KEYID]),MAX('F_租赁资金计划'[付款比例]))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 04租赁\03.付款
+		lineageTag: 311f4706-b0d0-4310-a117-3e3b740e56a0
+
+	/// DISTINCTCOUNT('F_分包结算'[合同编号])
+	measure 'M.分包.结算份数.DCnt' = DISTINCTCOUNT('F_分包结算'[合同编号])
+		formatString: 0
+		displayFolder: 02分包\04.计数
+		lineageTag: ffe922cf-6d3c-49b5-aa8e-acc464995e56
+
+	/// DISTINCTCOUNT('F_采购物资结算'[合同编号])
+	measure 'M.物资结算.份数.Dcnt' = DISTINCTCOUNT('F_采购物资结算'[合同编号])
+		formatString: 0
+		displayFolder: 03物资\08.计数
+		lineageTag: 4c91afcd-b56f-469b-af9c-0451345e47b7
+
+	///  DISTINCTCOUNT('F_租赁物资结算'[合同编号])
+	measure 'M.租赁.结算份数.DCnt' = DISTINCTCOUNT('F_租赁物资结算'[合同编号])
+		formatString: 0
+		displayFolder: 04租赁\04.计数
+		lineageTag: 84740114-d7a0-4fe2-bf9a-055b12cb03d4
+
+	/// SUM('F_商务产值'[本期含税产值])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.产值.价税合计.Sum' = SUM('F_商务产值'[本期含税产值])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: edae3ae8-f33a-4202-9c83-cfbe8fcf38ba
+
+	/// SUM('F_物资对账'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资对账费用.价税合计.Sum' = SUM('F_物资对账'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\02.对账
+		lineageTag: 55d7ee92-dd66-4206-8abf-a485cea86637
+
+	/// [M.物资进场.价税合计.Sum]+[M.物资对账费用.价税合计.Sum]-[M.物资退场.价税合计.Sum]
+	measure 'M.物资有效进场.价税合计.Exp' = [M.物资进场.价税合计.Sum]+[M.物资对账费用.价税合计.Sum]-[M.物资退场.价税合计.Sum]
+		formatString: #,0.00
+		displayFolder: 03物资\05.成本
+		lineageTag: a40672ee-3bea-4bb9-a2e7-44201de555c5
+
+	/// SUM('F_物资退场'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资退场.价税合计.Sum' = SUM('F_物资退场'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\03.退场
+		lineageTag: 4b0477d9-9207-4d34-9ab3-917e405267ec
+
+	///  [M.物资进场.金额.Sum]+[M.物资对账费用.金额.Sum]-[M.物资退场.金额.Sum]
+	measure 'M.物资有效进场.金额.Exp' = [M.物资进场.金额.Sum]+[M.物资对账费用.金额.Sum]-[M.物资退场.金额.Sum]
+		formatString: #,0.00
+		displayFolder: 03物资\05.成本
+		lineageTag: 5918a79d-1938-4f93-8e60-c0724f3982d1
+
+	/// SUM('F_物资退场'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资退场.金额.Sum' = SUM('F_物资退场'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\03.退场
+		lineageTag: 960fda58-692a-4349-9649-bd1e7c9aa2e3
+
+	/// SUM('F_物资退场'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资退场.税额.Sum' = SUM('F_物资退场'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\03.退场
+		lineageTag: 47cb460a-9526-46ea-aa51-12c7d276387c
+
+	/// SUM('F_物资对账'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资对账费用.金额.Sum' = SUM('F_物资对账'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\02.对账
+		lineageTag: e6e5a297-1ac4-453d-b23b-8d3914eba239
+
+	///  SUM('F_物资对账'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资对账费用.税金.Sum' = SUM('F_物资对账'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\02.对账
+		lineageTag: 960cfd69-5875-407d-828e-4de657607008
+
+	/// [M.物资进场.税金.Sum]+[M.物资对账费用.税金.Sum]-[M.物资退场.税额.Sum]
+	measure 'M.物资有效进场.税金.Exp' = [M.物资进场.税金.Sum]+[M.物资对账费用.税金.Sum]-[M.物资退场.税额.Sum]
+		formatString: #,0.00
+		displayFolder: 03物资\05.成本
+		lineageTag: 720793d0-e412-4390-83ca-7df510dfd190
+
+	/// SUM('F_物资调拨'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资调拨.价税合计.Sum' = SUM('F_物资调拨'[价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\04.调拨
+		lineageTag: 281a911c-216c-4f2b-b713-d042fd775770
+
+	/// SUM('F_物资调拨'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资调拨.金额.Sum' = SUM('F_物资调拨'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\04.调拨
+		lineageTag: a4f6cd8f-21a3-4e57-bf62-97267cedff72
+
+	/// SUM('F_物资调拨'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.物资调拨.税金.Sum' = SUM('F_物资调拨'[税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 03物资\04.调拨
+		lineageTag: dd4770e7-f327-4cbb-a1df-5f6287f41f07
+
+	/// CALCULATE([M.分包合同.价税合计.Sum],FIRSTNONBLANK(ALL('D_日历'[日期]),[M.分包合同.价税合计.Sum]))
+	measure 'M.分包合同.初始价税合计.Exp' = CALCULATE([M.分包合同.价税合计.Sum],FIRSTNONBLANK(ALL('D_日历'[日期]),[M.分包合同.价税合计.Sum]))
+		formatString: #,0.00
+		displayFolder: 02分包\00.合同
+		lineageTag: a65f1960-d46b-4b2f-bfda-28179235cdac
+
+	/// MAX( 'F_租赁物资结算'[日期])
+	measure 'M.租赁结算.签订日期.Max' = MAX( 'F_租赁物资结算'[日期])
+		formatString: yyyy-mm-dd
+		displayFolder: 04租赁\02.结算
+		lineageTag: ab645acc-3b34-4c73-bef1-99910891bc34
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// SUM('F_结算进展'[预计结算价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.价税合计.Sum' = SUM('F_业主结算进展'[预计结算价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 56fcb9e8-0fd0-4b8f-bd99-a3466ee24c7d
+
+	/// SUM('F_结算进展'[预计结算金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.金额.Sum' = SUM('F_业主结算进展'[预计结算金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 41ee3bef-28df-4bfb-b88d-4cee1a582b24
+
+	/// SUM('F_结算进展'[预计结算税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.税金.Sum' = SUM('F_业主结算进展'[预计结算税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 71f3d5ee-8ade-4859-8e1f-a8b98cf4f769
+
+	/// SUM('F_结算进展'[核定收益额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.核定收益.Sum' = SUM('F_业主结算进展'[核定收益额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 8c8257d8-5872-4c10-806c-1d857fb384e7
+
+	/// SUM('F_结算进展'[预计成本降低])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.成本降低.Sum' = SUM('F_业主结算进展'[预计成本降低])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: ea09ed6e-1663-43aa-a763-1afc04f991da
+
+	/// SUM('F_结算进展'[预计总收益额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.总收益.Sum' = SUM('F_业主结算进展'[预计总收益额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 9d280f51-2c87-449b-be06-045802197c7d
+
+	/// SUM('F_结算进展'[预计成本价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.成本.价税合计.Sum' = SUM('F_业主结算进展'[预计成本价税合计])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 1145a17f-3b87-4e00-bbf3-549ae474a995
+
+	/// SUM('F_结算进展'[预计成本金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.成本.金额.Sum' = SUM('F_业主结算进展'[预计成本金额])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 3b24f095-ebc1-495c-9445-53aa6eb83314
+
+	/// SUM('F_结算进展'[预计成本税金])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'M.业主结算.成本.税金.Sum' = SUM('F_业主结算进展'[预计成本税金])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: 07f717ae-b9b0-4e09-976e-538ff8cbf5d7
+
+	measure 'M.产值.价税合计.年累.Sum' = CALCULATE([M.产值.价税合计.Sum],'时间计算组'[时间组列]="年累")
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: baf3563a-2184-4444-ab55-f4446e0f4b9e
+
+	measure 'M.产值.金额.Sum' = SUM('F_商务产值'[本期无税产值])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: 6552e9c3-4541-45db-b338-f81e34df91c5
+
+	measure 'M.产值.金额.年累.Sum' = CALCULATE([M.产值.金额.Sum],'时间计算组'[时间组列]="年累")
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: 734d39b1-fac2-45b0-b709-a4024d3aa007
+
+	measure 度量值 = CALCULATE([M.分包合同.价税合计.Sum],DATESBETWEEN('D_日历'[日期],BLANK(),MAX('D_日历'[日期])))
+		displayFolder: 02分包
+		lineageTag: 9f7e0e7f-35c3-4c5f-8d31-c99efe1fed51
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'M.下游合同份数.Dcnt' = [M.分包.合同份数.DCnt]+[M.物资.合同份数.Dcnt]+[M.租赁.合同份数.DCnt]
+		displayFolder: 00项目级度量
+		lineageTag: 0b9b0d4e-753a-4e5d-9298-81b4ffca22f8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'M.业主结算.结算收益率.Rto' = DIVIDE([M.业主结算.总收益.Sum],[M.业主结算.价税合计.Sum])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01承包合同\结算
+		lineageTag: 20f85599-c8cc-4008-91da-b46222ae3f28
+
+	column A
+		dataType: string
+		isHidden
+		lineageTag: 557b75f6-8aae-40b0-ac68-71fbc741192f
+		summarizeBy: none
+		sourceColumn: A
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 指标-143da9bd-bd05-437c-ab19-72605f32fd8c = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [列1 = _t]),
+				    重命名的列 = Table.RenameColumns(源,{{"列1", "A"}})
+				in
+				    重命名的列
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

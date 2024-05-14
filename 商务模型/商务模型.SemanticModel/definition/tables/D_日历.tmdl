@@ -1,0 +1,235 @@
+table D_日历
+	lineageTag: f4f7eca8-c7a2-456d-b382-81fbfa39fa0b
+	dataCategory: Time
+
+	column 日期
+		dataType: dateTime
+		isKey
+		formatString: General Date
+		lineageTag: 94646aed-5870-4abf-8a7b-69c0d0651be3
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ee00a41-609f-4314-8ed4-2c8bdd3fc088
+		summarizeBy: sum
+		sourceColumn: 日期序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 322f05e3-bd47-40a7-a940-c3672c387bc4
+		summarizeBy: sum
+		sourceColumn: 年序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年份名称
+		dataType: string
+		lineageTag: 24b3d35c-a554-4b63-8547-cdb56db8e6f2
+		summarizeBy: none
+		sourceColumn: 年份名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度序号
+		dataType: int64
+		formatString: 0
+		lineageTag: df9096a0-3cca-4628-88b3-dd29641cac7f
+		summarizeBy: sum
+		sourceColumn: 季度序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度名称
+		dataType: string
+		lineageTag: 1eb3510b-1e99-4c57-bda2-c1c790787b4c
+		summarizeBy: none
+		sourceColumn: 季度名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bd34d4b-d58e-4774-9cc5-e6be24daa28b
+		summarizeBy: sum
+		sourceColumn: 月份序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份名称
+		dataType: string
+		lineageTag: 0458f172-5f9d-4e4e-818f-d64d5ce3477b
+		summarizeBy: none
+		sourceColumn: 月份名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周序号
+		dataType: int64
+		formatString: 0
+		lineageTag: aab03c0b-7fff-4c5e-8ec1-7f0a053d5cd4
+		summarizeBy: sum
+		sourceColumn: 周序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周名称
+		dataType: string
+		lineageTag: c7224833-c392-449e-b220-9435ef068b7c
+		summarizeBy: none
+		sourceColumn: 周名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年季序号
+		dataType: int64
+		formatString: 0
+		lineageTag: b7112f45-d46a-4683-8d87-d76cbbd20c5b
+		summarizeBy: sum
+		sourceColumn: 年季序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年季名称
+		dataType: string
+		lineageTag: fd17cc91-b35f-46a5-84ab-26b214ce2286
+		summarizeBy: none
+		sourceColumn: 年季名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 836e2ce9-0b6e-40e2-99b0-7f01e5e64969
+		summarizeBy: sum
+		sourceColumn: 年月序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月名称
+		dataType: string
+		lineageTag: 3521e228-1aea-4767-9416-79ef09cc6c60
+		summarizeBy: none
+		sourceColumn: 年月名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年周序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 902651ba-1f90-4f9b-8f81-473577a21a08
+		summarizeBy: sum
+		sourceColumn: 年周序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年周名称
+		dataType: string
+		lineageTag: 4e7cd5e6-f3cb-459b-a398-0c77433da6b1
+		summarizeBy: none
+		sourceColumn: 年周名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日序号
+		dataType: int64
+		formatString: 0
+		lineageTag: fc8d7fcd-8508-4f39-8e58-86de3a18897d
+		summarizeBy: sum
+		sourceColumn: 日序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周天名称
+		dataType: string
+		lineageTag: 8413037a-c808-43b1-b764-51de73b1b5db
+		summarizeBy: none
+		sourceColumn: 周天名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工作日
+		dataType: string
+		lineageTag: 1a289cb2-c183-44c8-adf2-8a79fa7b907d
+		summarizeBy: none
+		sourceColumn: 工作日
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日名称 = FORMAT('D_日历'[日期],"yyyy年MM月DD日")
+		dataType: string
+		lineageTag: 43484ca8-6eb2-4ffc-b256-af7c24f7369e
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 日期层次
+		lineageTag: 6e644283-1862-4c8f-b218-9ba364f7e68c
+
+		level 年份名称
+			lineageTag: 944c5366-6eb3-4ab4-af6f-8d0fe8fb0614
+			column: 年份名称
+
+		level 年月名称
+			lineageTag: e79daaf5-c944-4555-a402-1c6578da7d79
+			column: 年月名称
+
+		level 日名称
+			lineageTag: ceae9f3e-c3a0-44f8-a5dd-ed0fb3d1da0b
+			column: 日期
+
+	partition D_日历-376d6bad-218e-4251-9604-13c2b05a305c = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    x = 2000,
+				    y = Date.Year(DateTime.FixedLocalNow()),
+				    begin_date = if x = null then #date(Date.Year(DateTime.LocalNow()),1,1) else #date(x,1,1),
+				    end_date = if y = null then #date(Date.Year(DateTime.LocalNow()),12,31) else #date(y,12,31),
+				    list = {1..Number.From(end_date)-Number.From(begin_date)+1},
+				    dates = List.Transform( list , (item)=> Date.AddDays(begin_date,item-1) ),
+				    table = Table.TransformColumnTypes(Table.RenameColumns(Table.FromList(dates, Splitter.SplitByNothing(), null, null, ExtraValues.Error),{{"Column1", "日期"}}),{{"日期", type date}}),
+				    date_id = Table.TransformColumnTypes(Table.AddColumn(table, "日期序号", each Date.Year([日期])*10000+Date.Month([日期])*100+Date.Day([日期])),{{"日期序号", Int64.Type}}),
+				    year_id = Table.AddColumn(date_id, "年序号", each Date.Year([日期]), Int64.Type),
+				    year_name = Table.AddColumn(year_id, "年份名称", each Text.From([年序号])&"年",Text.Type),
+				    quarter_id = Table.AddColumn(year_name, "季度序号", each Date.QuarterOfYear([日期]), Int64.Type),
+				    quarter_name = Table.AddColumn(quarter_id, "季度名称", each Text.From([季度序号])&"季",Text.Type),
+				    month_id = Table.AddColumn(quarter_name, "月份序号", each Date.Month([日期]), Int64.Type),
+				    month_name = Table.AddColumn(month_id, "月份名称", each Text.PadStart(Text.From([月份序号]),2,"0")&"月",Text.Type),
+				    week_id = Table.AddColumn(month_name, "周序号", each Date.WeekOfYear([日期]), Int64.Type),
+				    week_name = Table.AddColumn(week_id, "周名称", each Text.PadStart(Text.From([周序号]),2,"0")&"周",Text.Type),
+				    year_quarter_id = Table.AddColumn(week_name, "年季序号", each Date.Year([日期])*10+Date.QuarterOfYear([日期]), Int64.Type),
+				    year_quarter_name = Table.AddColumn(year_quarter_id, "年季名称", each "YQ"&Text.From([年季序号]),Text.Type),
+				    year_month_id = Table.AddColumn(year_quarter_name, "年月序号", each Date.Year([日期])*100+ Date.Month([日期]), Int64.Type),
+				    year_month_name = Table.AddColumn(year_month_id, "年月名称", each [年份名称]&[月份名称],type text),
+				    year_week_id = Table.AddColumn(year_month_name, "年周序号", each Date.Year([日期])*100+ Date.WeekOfYear([日期]), Int64.Type),
+				    #"year_week-name" = Table.AddColumn(year_week_id, "年周名称", each "YW"&Text.From([年周序号]),Text.Type),
+				    day_in_week_id = Table.AddColumn(#"year_week-name", "日序号", each Date.DayOfWeek([日期],0), Int64.Type),
+				    day_in_week_name = Table.AddColumn(day_in_week_id, "周天名称", each if [日序号] = 1 then "WD1" else
+				if [日序号] = 2 then "WD2" else
+				if [日序号] = 3 then "WD3" else
+				if [日序号] = 4 then "WD4" else
+				if [日序号] = 5 then "WD5" else
+				if [日序号] = 6 then "WD6" else
+				"WD7",Text.Type),
+				    work_day = Table.AddColumn(day_in_week_name , "工作日", each if [日序号] = 6 or [日序号] = 0 then "休息日" else "工作日",Text.Type)
+				in
+				    work_day
+
+	annotation PBI_ResultType = Table
+

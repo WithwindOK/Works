@@ -1,0 +1,82 @@
+table F_物资退场
+	lineageTag: b7c3d1a0-4067-45ea-bd9c-2076321471ed
+
+	column KEYID
+		dataType: string
+		lineageTag: dbcf6a6c-0def-49fa-b249-4b610488a315
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: 6ca109af-e883-456a-b954-4fad349c1583
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 专业
+		dataType: string
+		lineageTag: 2d9e665a-a13e-4c00-bb21-9e84e19eaafc
+		summarizeBy: none
+		sourceColumn: 专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 25800d72-08d1-42cd-b366-83fda57159cb
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		lineageTag: e3f0a7db-6fb8-4187-9335-f1d903d4109e
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		lineageTag: 1898958e-3026-435e-94e5-f1fd5bfa1692
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		lineageTag: ab39f1e3-e517-4124-8a30-f163092af3c0
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_物资退场 = m
+		mode: import
+		queryGroup: 成本\物资\采购
+		source =
+				let
+				    源 = X5,
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    DW_WZTCMX = GSPM{[Name="DW_WZTCMX"]}[Data],
+				    删除的其他列 = Table.SelectColumns(DW_WZTCMX,{"KEYID", "FHETONGLEIXING", "FSHIGONGZHUANYE", "FRQ", "FJIASHUIHEJI", "FSHUIE", "FJINE"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FHETONGLEIXING", "分包类型"}, {"FSHIGONGZHUANYE", "专业"}, {"FRQ", "日期"}, {"FJIASHUIHEJI", "价税合计"}, {"FSHUIE", "税金"}, {"FJINE", "金额"}}),
+				    #"筛选的行（排除垃圾数据）" = Table.SelectRows(重命名的列, each not (([价税合计] = 0 or [价税合计]=null ) and ([金额] = 0 or [金额]=null)))
+				in
+				    #"筛选的行（排除垃圾数据）"
+
+	annotation PBI_ResultType = Table
+

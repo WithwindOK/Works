@@ -1,0 +1,89 @@
+table F_采购物资结算
+	lineageTag: 261c6852-46bc-4188-a8dc-cd923a9fb79a
+
+	column 项目编码
+		dataType: string
+		lineageTag: a939be97-bf48-4aa3-b54f-5af52207c4de
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 69a018c6-4ea2-4dc7-a4c0-aa8f4b4c91d5
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEYID
+		dataType: string
+		lineageTag: 464cb923-ab70-4ca1-a633-9beb3c2d3237
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b8054aef-6c29-4d72-ae04-e266acdb99e7
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		lineageTag: 75de6bcc-1479-47bd-83e7-80596687cff9
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		lineageTag: 51b8cbae-a70b-42f8-bf6f-d7e96d104271
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		lineageTag: 6d24eea8-dbf2-4149-bdc7-ca4d7070e124
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_采购物资结算-d3d26f3a-8174-497c-89ca-1795fe8224fe = m
+		mode: import
+		queryGroup: 成本\物资\采购
+		source =
+				let
+				    源 = X5,
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    DW_WZCGJSMX = GSPM{[Name="DW_WZCGJSMX"]}[Data],
+				    删除的其他列 = Table.SelectColumns(DW_WZCGJSMX,{"KEYID", "FXIANGMUBIANMA", "FHETONGBIANHAO", "FRQ", "FJIASHUIHEJI", "FJINE", "FSHUIJIN"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FXIANGMUBIANMA", "项目编码"}, {"FHETONGBIANHAO", "合同编号"}, {"FRQ", "日期"}, {"FJIASHUIHEJI", "价税合计"}, {"FJINE", "金额"}, {"FSHUIJIN", "税金"}})
+				in
+				    重命名的列
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

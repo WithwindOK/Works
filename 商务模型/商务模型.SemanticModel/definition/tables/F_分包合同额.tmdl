@@ -1,0 +1,136 @@
+table F_分包合同额
+	lineageTag: 21abf895-a84d-4404-8e74-ab5835c97e59
+
+	column 项目编码
+		dataType: string
+		lineageTag: 7f3aabac-58fe-4771-85fc-02370ffac1b9
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 税金
+		dataType: double
+		lineageTag: a3b68394-a895-42cb-a502-4ae3825e2d7c
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KEYID
+		dataType: string
+		lineageTag: 756286ea-2a61-49d6-99c8-c9fb6ff5e05c
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: b0728a3d-1aad-49ab-8288-8c2479d957d8
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包编码
+		dataType: string
+		lineageTag: e5797d38-0c3a-419d-ab7e-3ea4d34ec11f
+		summarizeBy: none
+		sourceColumn: 分包编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同协议号
+		dataType: string
+		lineageTag: 86ced80d-0496-4417-94ba-0f6424bb5718
+		summarizeBy: none
+		sourceColumn: 合同协议号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		lineageTag: a9800b01-5aae-4fbe-82b0-68e1f87c1e1f
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		lineageTag: 9f0274e0-d668-4e1d-b31e-2185aa2f6c60
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 增值税率
+		dataType: double
+		lineageTag: 7ab8be06-a4e0-4df4-947f-577b68c5ac2a
+		summarizeBy: sum
+		sourceColumn: 增值税率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 人工费金额
+		dataType: double
+		lineageTag: efebe342-41d3-4466-9d02-57e8aef4dc7a
+		summarizeBy: sum
+		sourceColumn: 人工费金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 人工费比率
+		dataType: double
+		lineageTag: e596838f-7b9e-475b-b69a-b27d65f0bfd2
+		summarizeBy: sum
+		sourceColumn: 人工费比率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c8927396-2974-4fea-9b17-19043d9913d8
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_分包合同额-b0fe78bd-397d-472c-ba7e-25dbc0d25e59 = m
+		mode: import
+		queryGroup: 成本\分包
+		source =
+				let
+				    源 = #"DW_FBHTXXB（分包合同）",
+				    删除的其他列 = Table.SelectColumns(源,{"KEYID", "项目编码", "合同编号", "合同协议号", "分包编码", "价税合计", "金额", "税金", "增值税率", "人工费金额", "人工费比率", "日期"})
+				in
+				    删除的其他列
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

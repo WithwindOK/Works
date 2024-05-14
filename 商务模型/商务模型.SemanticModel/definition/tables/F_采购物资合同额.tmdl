@@ -1,0 +1,101 @@
+table F_采购物资合同额
+	lineageTag: 27b01000-0565-4819-bb52-ecfa49356f17
+
+	column 价税合计
+		dataType: double
+		lineageTag: 75897d01-cc5d-40ff-95d7-a32010a6a534
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KEYID
+		dataType: string
+		lineageTag: ee22fbd4-48e1-4158-9707-ae2d3e96cc23
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 金额
+		dataType: double
+		lineageTag: 9bcf4ef7-4512-4fa3-a644-9eb3f92fc321
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		lineageTag: 73c9593a-9c05-4129-b3a1-96b1b95042be
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 011ea767-2ce4-46d9-9d38-a700f76ca501
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同协议号
+		dataType: string
+		lineageTag: e4b35060-c660-4fbe-bfa4-fc8f4a46dd49
+		summarizeBy: none
+		sourceColumn: 合同协议号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: c138b63d-501d-4212-be9c-29bf70bd9f37
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: f7df930f-89a0-4ebd-9bd6-1085c9774be7
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 供方编码
+		dataType: string
+		lineageTag: c42f741f-29e6-4161-8b2f-a33fa7422fa2
+		summarizeBy: none
+		sourceColumn: 供方编码
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_采购物资合同额-25a730a8-ee90-4c6e-bea4-2a038b7f7a94 = m
+		mode: import
+		queryGroup: 成本\物资\采购
+		source =
+				let
+				    源 = #"DW_WZHTXXB（物资合同）",
+				    筛选的行 = Table.SelectRows(源, each ([采购O租赁] = "采购合同")),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"KEYID", "项目编码", "合同协议号", "合同编号", "供方编码", "价税合计", "金额", "税金", "日期"})
+				in
+				    删除的其他列
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,30 @@
+table D_C_支付方式
+	lineageTag: 22c7c66e-e3f2-4c64-b902-66487e0810b4
+
+	column 支付方式
+		dataType: string
+		lineageTag: 93ff589c-addd-4c02-beaf-1162e89138c9
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: F_分包付款[支付方式]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_C_支付方式-b0d194ea-e1df-4e88-816f-1b37e8a71128 = calculated
+		mode: import
+		source =
+				
+				FILTER(
+				    DISTINCT(
+				        UNION(
+				            DISTINCT('F_分包付款'[支付方式]),
+				            DISTINCT('F_物资付款'[支付方式]),
+				            DISTINCT('F_租赁付款'[支付方式])
+				        )
+				    ),
+				    NOT(ISBLANK([支付方式]))
+				)
+
+	annotation PBI_Id = f21589925496476c8ec779f685813754
+

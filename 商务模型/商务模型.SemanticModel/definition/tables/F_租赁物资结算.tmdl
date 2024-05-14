@@ -1,0 +1,97 @@
+table F_租赁物资结算
+	lineageTag: 99796492-93cc-4a76-82f3-5799741805d9
+
+	column 项目编码
+		dataType: string
+		lineageTag: dc669830-6206-44fb-a834-ca3df0450176
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: b48f5464-2b7b-4d70-8012-be0788968261
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEYID
+		dataType: string
+		lineageTag: 298b66aa-7f83-4f26-b36f-7a8ce7427ff6
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a5d9c5ba-47e0-4bed-a993-da947ec3bf06
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		lineageTag: 205ad864-75a3-4a6b-9978-b7a8961601af
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		lineageTag: b892fa23-4c42-4f99-92d8-76476c3d20fc
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		lineageTag: 2f7ea2aa-5e7c-4849-b0db-6853ee1c5677
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_租赁物资结算-d695981c-182e-46e8-b3d8-45abfac54ee4 = m
+		mode: import
+		queryGroup: 成本\物资\租赁
+		source =
+				let
+				    源 = X5,
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    DW_WZZLJSMX = GSPM{[Name="DW_WZZLJSMX"]}[Data],
+				    删除的其他列 = Table.SelectColumns(DW_WZZLJSMX,{"KEYID", "FXIANGMUBIANMA", "FHETONGBIANHAO", "FRQ", "FJIASHUIHEJI", "FJINE", "FSHUIJIN"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FXIANGMUBIANMA", "项目编码"}, {"FHETONGBIANHAO", "合同编号"}, {"FRQ", "日期"}, {"FJIASHUIHEJI", "价税合计"}, {"FJINE", "金额"}, {"FSHUIJIN", "税金"}})
+				in
+				    重命名的列
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

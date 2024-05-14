@@ -1,0 +1,56 @@
+table 维度选择
+	lineageTag: e83cc75f-53cb-4841-9bd5-440610984bf3
+
+	column 维度选择
+		dataType: string
+		lineageTag: cfd8bab7-57db-40e6-8444-f934c6343717
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: '维度选择 个订单'
+
+		relatedColumnDetails
+			groupByColumn: '维度选择 个字段'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '维度选择 个字段'
+		dataType: string
+		isHidden
+		lineageTag: 0d277cb3-f2c6-417c-959d-0dd78ada05b6
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: '维度选择 个订单'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '维度选择 个订单'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ea92adc6-41a8-41cd-904a-498c4c81d759
+		summarizeBy: sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 维度选择 = calculated
+		mode: import
+		source =
+				{
+				    ("责任体", NAMEOF('D-责任体'[责任体]), 0),
+				    ("项目名称", NAMEOF('D_项目信息'[项目名称]), 1),
+				    ("施工专业", NAMEOF('D_施工专业'[施工专业]), 2),
+				    ("简称", NAMEOF('D_分包类型'[简称]), 3)
+				}
+
+	annotation PBI_Id = 68dfb3f1dce04f58847240c255288e25
+

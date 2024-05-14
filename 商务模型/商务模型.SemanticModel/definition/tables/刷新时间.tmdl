@@ -1,0 +1,29 @@
+table 刷新时间
+	lineageTag: dd4b25bd-0ad2-46a5-9955-257141b6b296
+
+	column 刷新时间
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e9f597b2-fb71-4b88-838f-521d4db66f8f
+		summarizeBy: none
+		sourceColumn: 刷新时间
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 刷新时间-beae341b-b68b-4189-8d63-bbc6cc39e668 = m
+		mode: import
+		source =
+				let
+				    源 = DateTime.LocalNow(),
+				    转换为表 = #table(1, {{源}}),
+				    重命名的列 = Table.RenameColumns(转换为表,{{"Column1", "刷新时间"}}),
+				    更改的类型 = Table.TransformColumnTypes(重命名的列,{{"刷新时间", type datetime}})
+				in
+				    更改的类型
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

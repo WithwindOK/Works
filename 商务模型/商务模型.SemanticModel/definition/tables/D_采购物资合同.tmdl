@@ -1,0 +1,193 @@
+table D_采购物资合同
+	lineageTag: 9840cebd-4f18-410e-8002-aa6a171ce8fd
+
+	column 项目编码
+		dataType: string
+		lineageTag: 3d2e9502-8bce-43bd-be5e-39bc51c75ea9
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 4b278583-36f3-4f34-881d-ede74b48f2bc
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 84407a73-38fc-4d41-8f7c-58d677cefdbf
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: e7b6acc8-2149-4371-8f63-b2f9f67f786d
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: cae54133-f09e-4420-a171-f6ea3fd53945
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: a0bbc26f-aef2-494c-a58a-abf666002120
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 供方编码
+		dataType: string
+		lineageTag: 16d9c074-626d-4016-8563-d9582c75691d
+		summarizeBy: none
+		sourceColumn: 供方编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 供方名称
+		dataType: string
+		lineageTag: f6608c52-38e0-44b7-871b-e6603f8bc0ce
+		summarizeBy: none
+		sourceColumn: 供方名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEYID
+		dataType: string
+		lineageTag: 449acce8-76e3-4259-897d-30d8ec5d74d0
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 采购模式
+		dataType: string
+		lineageTag: 6010f626-7c26-4f39-844f-e5f4095e3628
+		summarizeBy: none
+		sourceColumn: 采购模式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 集采区域
+		dataType: string
+		lineageTag: 6d09ef85-2f93-444f-94ef-3565065ccadc
+		summarizeBy: none
+		sourceColumn: 集采区域
+
+		annotation SummarizationSetBy = Automatic
+
+	column 采购O租赁
+		dataType: string
+		lineageTag: 98b3a18e-a78b-40e7-9ca3-56c7ee03e825
+		summarizeBy: none
+		sourceColumn: 采购O租赁
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同编号
+		dataType: string
+		lineageTag: 65595c19-75fa-489b-9edd-3f2a54260f8f
+		summarizeBy: none
+		sourceColumn: 标准合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: 37bb4a97-dd0b-4677-82cc-0bf9a1eaa48a
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 供方类别
+		dataType: string
+		lineageTag: b039ffaf-5536-44f1-b484-90f645914ba3
+		summarizeBy: none
+		sourceColumn: 供方类别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 纳税人性质
+		dataType: string
+		lineageTag: 805eda07-2b96-4fdc-bb52-66b78404f04d
+		summarizeBy: none
+		sourceColumn: 纳税人性质
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份系统项目名称
+		dataType: string
+		lineageTag: 5a156dcb-7cbd-4987-a25b-8490e6a9cfa4
+		summarizeBy: none
+		sourceColumn: 股份系统项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份系统项目编码
+		dataType: string
+		lineageTag: a144bf24-e4d5-4882-ab5c-8ffe3fd05be5
+		summarizeBy: none
+		sourceColumn: 股份系统项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 付款模式
+		dataType: string
+		lineageTag: 8cc85b99-88cd-4f08-ae54-2e340d2b0ebb
+		summarizeBy: none
+		sourceColumn: 付款模式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分供类别
+		dataType: string
+		lineageTag: 670644b3-fd0e-4cc6-9514-e8f396f7c73b
+		summarizeBy: none
+		sourceColumn: 分供类别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 付款比率
+		dataType: string
+		lineageTag: b6eadb39-627d-4ce2-bbe1-7be6aa8b7514
+		summarizeBy: none
+		sourceColumn: 付款比率
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份合同号
+		dataType: string
+		lineageTag: 10582f36-a5de-4d52-824d-55ca6bca3bfa
+		summarizeBy: none
+		sourceColumn: 股份合同号
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_采购物资合同-dde3de35-8aef-47f6-8c1d-c558e6c9481b = m
+		mode: import
+		queryGroup: 成本\物资\采购
+		source =
+				let
+				    源 = #"DW_WZHTXXB（物资合同）",
+				    筛选的行 = Table.SelectRows(源, each ([采购O租赁] = "采购合同")),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"KEYID", "项目编码", "项目名称", "合同编号", "合同名称", "采购O租赁", "标准合同编号", "标准合同名称", "施工专业", "分包类型", "供方编码", "供方名称", "供方类别", "纳税人性质", "股份系统项目名称", "股份系统项目编码", "采购模式", "付款模式", "分供类别", "集采区域", "付款比率", "股份合同号"}),
+				    删除的副本 = Table.Distinct(删除的其他列, {"KEYID"})
+				in
+				    删除的副本
+
+	annotation PBI_ResultType = Table
+

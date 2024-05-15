@@ -1,0 +1,150 @@
+{
+  "config": "{\"version\":\"5.47\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU08\",\"version\":\"5.48\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Middle'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "publicCustomVisuals": [
+    "BoxandWhiskerByMAQ1823AD39DT234AB532063E128AX"
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY23SU08",
+            "path": "BaseThemes/CY23SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"outspace\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":6,\"Percent\":0.6}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"90D\"}}}}}]}}",
+      "displayName": "汇总",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"fa3859da35b6111109af\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.323033376577428,\"y\":41.86657231591776,\"z\":0,\"width\":1243.1151472264812,\"height\":650.5421236781067,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"收入成本分析.项目性质 (组)\",\"active\":true},{\"queryRef\":\"收入成本分析.责任体\",\"active\":true},{\"queryRef\":\"收入成本分析.项目名称\"}],\"Values\":[{\"queryRef\":\"收入成本分析.【临建占比平均值】\"},{\"queryRef\":\"收入成本分析.【公司平均值】\"},{\"queryRef\":\"收入成本分析.【项目数】\"},{\"queryRef\":\"收入成本分析.度量值\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"收\",\"Entity\":\"收入成本分析\",\"Type\":0},{\"Name\":\"度\",\"Entity\":\"度量值\",\"Type\":0}],\"Select\":[{\"GroupRef\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质 (组)\",\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质\"}}]},\"Name\":\"收入成本分析.项目性质 (组)\",\"NativeReferenceName\":\"项目性质 (组)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【平均值】\"},\"Name\":\"收入成本分析.【临建占比平均值】\",\"NativeReferenceName\":\"【临建占比平均值】\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"责任体\"},\"Name\":\"收入成本分析.责任体\",\"NativeReferenceName\":\"责任体\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【公司平均值】\"},\"Name\":\"收入成本分析.【公司平均值】\",\"NativeReferenceName\":\"【公司平均值】\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【项目数】\"},\"Name\":\"收入成本分析.【项目数】\",\"NativeReferenceName\":\"【项目数】\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【超平均值项目数】\"},\"Name\":\"收入成本分析.度量值\",\"NativeReferenceName\":\"度量值\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目名称\"},\"Name\":\"收入成本分析.项目名称\",\"NativeReferenceName\":\"项目名称\"}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"收入成本分析.项目性质 (组)\"],\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"收入成本分析\"}},\"Property\":\"项目性质 (组)\"}}],\"isPinned\":true},{\"queryRefs\":[\"收入成本分析.责任体\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"收入成本分析\"}},\"Property\":\"责任体\"}}],\"isPinned\":true},{\"queryRefs\":[\"收入成本分析.项目名称\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'工业厂房'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'公共建筑'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'其它'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'住宅'\"}}],\"isToggled\":true}]}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}},\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"gridHorizontal\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridHorizontalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"443.02599059054D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.项目性质 (组)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"185.19999159852514D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"220.5639095701017D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【公司平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"144.8153024208365D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【项目数】\"}}],\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"titleAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Left'\"}}}}}],\"rowHeaders\":[{\"properties\":{\"steppedLayoutIndentation\":{\"expr\":{\"Literal\":{\"Value\":\"43D\"}}},\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'None'\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"36D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"visualHeader\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 650.54,
+          "width": 1243.12,
+          "x": 19.32,
+          "y": 41.87,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"outspace\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":6,\"Percent\":0.6}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"90D\"}}}}}]}}",
+      "displayName": "汇总 的副本",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection52f54b5b6426257d2dd7",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0046fb2330031e232eef\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.323033376577428,\"y\":41.86657231591776,\"z\":0,\"width\":1243.1151472264812,\"height\":650.5421236781067,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"收入成本分析.项目性质 (组)\",\"active\":true}],\"Values\":[{\"queryRef\":\"收入成本分析.【临建占比平均值】\"},{\"queryRef\":\"度量值.度量值\"}],\"Columns\":[{\"queryRef\":\"收入成本分析.责任体\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"收\",\"Entity\":\"收入成本分析\",\"Type\":0},{\"Name\":\"度\",\"Entity\":\"度量值\",\"Type\":0}],\"Select\":[{\"GroupRef\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质 (组)\",\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质\"}}]},\"Name\":\"收入成本分析.项目性质 (组)\",\"NativeReferenceName\":\"项目性质 (组)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【平均值】\"},\"Name\":\"收入成本分析.【临建占比平均值】\",\"NativeReferenceName\":\"【临建占比平均值】\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"责任体\"},\"Name\":\"收入成本分析.责任体\",\"NativeReferenceName\":\"责任体\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"度量值\"},\"Name\":\"度量值.度量值\",\"NativeReferenceName\":\"度量值\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}},\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"gridHorizontal\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridHorizontalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"143.86294728956506D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.项目性质 (组)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"185.19999159852514D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比平均值】\"}}],\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"titleAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Left'\"}}}}}],\"rowHeaders\":[{\"properties\":{\"steppedLayoutIndentation\":{\"expr\":{\"Literal\":{\"Value\":\"43D\"}}},\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'None'\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"36D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"visualHeader\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 650.54,
+          "width": 1243.12,
+          "x": 19.32,
+          "y": 41.87,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "明细",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection677f97cb7e2467317bd7",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"e2a9d7f313de5497dd41\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.060741176965465,\"y\":44.7970386573003,\"z\":0,\"width\":1252.5941193791275,\"height\":658.1718756572582,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"收入成本分析.责任体\"},{\"queryRef\":\"收入成本分析.项目名称\"},{\"queryRef\":\"收入成本分析.项目编码\"},{\"queryRef\":\"收入成本分析.项目性质\"},{\"queryRef\":\"收入成本分析.工程类别[一级]\"},{\"queryRef\":\"收入成本分析.工程类别[二级]\"},{\"queryRef\":\"Sum(收入成本分析.建筑面积)\"},{\"queryRef\":\"Sum(收入成本分析.累计合同额)\"},{\"queryRef\":\"Sum(收入成本分析.累计自施收入)\"},{\"queryRef\":\"Sum(收入成本分析.累计目标成本)\"},{\"queryRef\":\"Sum(收入成本分析.临设费收入（累计）)\"},{\"queryRef\":\"Sum(收入成本分析.临设费收入（累计）单方造价)\"},{\"queryRef\":\"Sum(收入成本分析.临设费成本（累计）单方造价)\"},{\"queryRef\":\"Sum(收入成本分析.临设费成本（累计）单方造价)\"},{\"queryRef\":\"Sum(收入成本分析.临设费目标成本（累计）)\"},{\"queryRef\":\"Sum(收入成本分析.临建标准)\"},{\"queryRef\":\"Sum(收入成本分析.临建占比)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"收\",\"Entity\":\"收入成本分析\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"责任体\"},\"Name\":\"收入成本分析.责任体\",\"NativeReferenceName\":\"责任体\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目名称\"},\"Name\":\"收入成本分析.项目名称\",\"NativeReferenceName\":\"项目名称\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目编码\"},\"Name\":\"收入成本分析.项目编码\",\"NativeReferenceName\":\"项目编码\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质\"},\"Name\":\"收入成本分析.项目性质\",\"NativeReferenceName\":\"项目性质\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"工程类别[一级]\"},\"Name\":\"收入成本分析.工程类别[一级]\",\"NativeReferenceName\":\"工程类别[一级]\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"工程类别[二级]\"},\"Name\":\"收入成本分析.工程类别[二级]\",\"NativeReferenceName\":\"工程类别[二级]\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"建筑面积\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.建筑面积)\",\"NativeReferenceName\":\"建筑面积 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"累计合同额\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.累计合同额)\",\"NativeReferenceName\":\"累计合同额 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"累计自施收入\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.累计自施收入)\",\"NativeReferenceName\":\"累计自施收入 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"累计目标成本\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.累计目标成本)\",\"NativeReferenceName\":\"累计目标成本 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"临设费收入（累计）\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.临设费收入（累计）)\",\"NativeReferenceName\":\"临设费收入（累计） 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"临设费收入（累计）单方造价\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.临设费收入（累计）单方造价)\",\"NativeReferenceName\":\"临设费收入（累计）单方造价 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"临设费成本（累计）单方造价\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.临设费成本（累计）单方造价)\",\"NativeReferenceName\":\"临设费成本（累计）单方造价 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"临设费目标成本（累计）\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.临设费目标成本（累计）)\",\"NativeReferenceName\":\"临设费目标成本（累计） 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"临建标准\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.临建标准)\",\"NativeReferenceName\":\"临建标准 的总和\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"临建占比\"}},\"Function\":0},\"Name\":\"Sum(收入成本分析.临建占比)\",\"NativeReferenceName\":\"临建占比 的总和\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"gridHorizontal\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridHorizontalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}],\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"443.02599059054D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.项目性质 (组)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"205.88695934451385D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"220.5639095701017D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【公司平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"144.8153024208365D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【项目数】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"328.1298774589017D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"286.33304966119147D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【排名后5】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"341.54701194404527D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.项目名称\"}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"36D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'None'\"}}}}}],\"visualHeader\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 658.17,
+          "width": 1252.59,
+          "x": 12.06,
+          "y": 44.80,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "排名 后5",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection8b9d570a5c697ca6e0e1",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"56b8a55351c8a5efcc4f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.433299899699097,\"y\":49.29989969909729,\"z\":1,\"width\":1234.1408224674021,\"height\":650.7586760280842,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"收入成本分析.项目性质 (组)\",\"active\":true},{\"queryRef\":\"收入成本分析.项目全径\",\"active\":true}],\"Values\":[{\"queryRef\":\"收入成本分析.【临建占比】\"},{\"queryRef\":\"度量值.【排名后5】\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"收\",\"Entity\":\"收入成本分析\",\"Type\":0},{\"Name\":\"度\",\"Entity\":\"度量值\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【临建占比】\"},\"Name\":\"收入成本分析.【临建占比】\",\"NativeReferenceName\":\"【临建占比】\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目全径\"},\"Name\":\"收入成本分析.项目全径\",\"NativeReferenceName\":\"项目全径\"},{\"GroupRef\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质 (组)\",\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质\"}}]},\"Name\":\"收入成本分析.项目性质 (组)\",\"NativeReferenceName\":\"项目性质 (组)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【排名后5】\"},\"Name\":\"度量值.【排名后5】\",\"NativeReferenceName\":\"【排名后5】\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【排名后5】\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"gridHorizontal\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridHorizontalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"663.5320294687496D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.项目性质 (组)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"205.88695934451385D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"220.5639095701017D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【公司平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"144.8153024208365D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【项目数】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"288.51682114146627D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比】\"}}],\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"titleAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"rowHeaders\":[{\"properties\":{\"steppedLayoutIndentation\":{\"expr\":{\"Literal\":{\"Value\":\"43D\"}}},\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"36D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'None'\"}}}}}],\"visualHeader\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"度量值\"}},\"Property\":\"【排名后5】\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"度\",\"Entity\":\"度量值\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【排名后5】\"}},\"Right\":{\"Literal\":{\"Value\":\"6L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 650.76,
+          "width": 1234.14,
+          "x": 16.43,
+          "y": 49.30,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "第 1 页",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectione74c262f6c0c6a257fc2",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"7e68e2f6d5f7a4a6dc75\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":115.28254454038694,\"z\":0,\"width\":1253.5577658760521,\"height\":575.2934746966881,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"BoxandWhiskerByMAQ1823AD39DT234AB532063E128AX\",\"projections\":{\"category\":[{\"queryRef\":\"收入成本分析.项目性质 (组)\"}],\"measure\":[{\"queryRef\":\"度量值.【平均值】\"}],\"categoryGroup\":[{\"queryRef\":\"收入成本分析.责任体\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"收\",\"Entity\":\"收入成本分析\",\"Type\":0},{\"Name\":\"度\",\"Entity\":\"度量值\",\"Type\":0}],\"Select\":[{\"GroupRef\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质 (组)\",\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质\"}}]},\"Name\":\"收入成本分析.项目性质 (组)\",\"NativeReferenceName\":\"项目性质 (组)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【平均值】\"},\"Name\":\"度量值.【平均值】\",\"NativeReferenceName\":\"【平均值】\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"责任体\"},\"Name\":\"收入成本分析.责任体\",\"NativeReferenceName\":\"责任体\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"yAxis\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0.6}}}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"displayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"meanConfig\":[{\"properties\":{\"meanShape\":{\"expr\":{\"Literal\":{\"Value\":\"'Triangle'\"}}}}}],\"boxOptions\":[{\"properties\":{\"median\":{\"expr\":{\"Literal\":{\"Value\":\"'Inclusive'\"}}},\"whiskerType\":{\"expr\":{\"Literal\":{\"Value\":\"'Min/Max'\"}}},\"boxUpperColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":0.6}}}}},\"boxLowerColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":5,\"Percent\":0.4}}}}},\"boxTransparency\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}},\"whiskerColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":8,\"Percent\":0.2}}}}}}}],\"sort\":[{\"properties\":{\"axis\":{\"expr\":{\"Literal\":{\"Value\":\"'desc'\"}}}}}],\"flip\":[{\"properties\":{\"orient\":{\"expr\":{\"Literal\":{\"Value\":\"'vertical'\"}}}}}],\"gridLines\":[{\"properties\":{\"showAxisGridLines\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 575.29,
+          "width": 1253.56,
+          "x": 0.00,
+          "y": 115.28,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "排名前5",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionf1676e5595c1d3ab2ae0",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"b6e9dc195f157d746b94\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.433299899699097,\"y\":49.29989969909729,\"z\":1,\"width\":1234.1408224674021,\"height\":650.7586760280842,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"收入成本分析.项目性质 (组)\",\"active\":true},{\"queryRef\":\"收入成本分析.项目全径\",\"active\":true}],\"Values\":[{\"queryRef\":\"收入成本分析.【临建占比】\"},{\"queryRef\":\"度量值.【排名前5】\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"收\",\"Entity\":\"收入成本分析\",\"Type\":0},{\"Name\":\"度\",\"Entity\":\"度量值\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【临建占比】\"},\"Name\":\"收入成本分析.【临建占比】\",\"NativeReferenceName\":\"【临建占比】\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目全径\"},\"Name\":\"收入成本分析.项目全径\",\"NativeReferenceName\":\"项目全径\"},{\"GroupRef\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质 (组)\",\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"收\"}},\"Property\":\"项目性质\"}}]},\"Name\":\"收入成本分析.项目性质 (组)\",\"NativeReferenceName\":\"项目性质 (组)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【排名前5】\"},\"Name\":\"度量值.【排名前5】\",\"NativeReferenceName\":\"【排名前5】\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【排名前5】\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"grid\":[{\"properties\":{\"gridHorizontal\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"gridHorizontalColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"rowPadding\":{\"expr\":{\"Literal\":{\"Value\":\"4D\"}}},\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}}}],\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"663.5320294687496D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.项目性质 (组)\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"205.88695934451385D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"220.5639095701017D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【公司平均值】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"144.8153024208365D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【项目数】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"288.51682114146627D\"}}}},\"selector\":{\"metadata\":\"收入成本分析.【临建占比】\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"216.78119431596204D\"}}}},\"selector\":{\"metadata\":\"度量值.【排名前5】\"}}],\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Right'\"}}},\"titleAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"rowHeaders\":[{\"properties\":{\"steppedLayoutIndentation\":{\"expr\":{\"Literal\":{\"Value\":\"43D\"}}},\"wordWrap\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"titleWrap\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"36D\"}}}}}],\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.3}}}}},\"radius\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"preset\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}}}}],\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'None'\"}}}}}],\"visualHeader\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"100D\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"度量值\"}},\"Property\":\"【排名前5】\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"度\",\"Entity\":\"度量值\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"度\"}},\"Property\":\"【排名前5】\"}},\"Right\":{\"Literal\":{\"Value\":\"6L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 650.76,
+          "width": 1234.14,
+          "x": 16.43,
+          "y": 49.30,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

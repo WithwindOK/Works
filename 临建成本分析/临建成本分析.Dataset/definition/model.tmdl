@@ -1,0 +1,39 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 成本分析
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 成本分析\参数
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 成本分析\辅助表
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 成本分析\初始
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 成本分析\调整
+
+	annotation PBI_QueryGroupOrder = 3
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.128.1380.0 (24.04)
+
+annotation PBI_QueryOrder = ["截止日期","X5","MD_XIANGMUXINXI","fx_List_生成字段更名列表","项目信息","临时设施标准合同库","额外标准合同","内部交易","GSPM_CHUSHIMUBIAOCBZB（初始目标成本主表）","GSPM_CHUSHIMUBIAOCBFJ（初始目标成本分解从表）","GSPM_CHUSHIMUBIAOCBFJ（初始目标成本分解从表排除部分）)","初始目标成本","GSPM_TZMUBIAOCBZB（调整目标成本主表）","GSPM_TZMUBIAOCBFJ（调整目标成本分解从表）","GSPM_TZMUBIAOCBFJ（调整目标成本分解从表排除部分）","调整目标成本","收入成本分析","度量值"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 度量值
+ref table 收入成本分析
+

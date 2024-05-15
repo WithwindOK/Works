@@ -1,0 +1,68 @@
+table 度量值
+	excludeFromModelRefresh
+	lineageTag: 99de241f-7a72-4a6f-a4af-c690c5ef2db1
+
+	measure 【超平均值项目数】 = CALCULATE([【项目数】],FILTER('收入成本分析',[【平均值】]>[【公司平均值】]))
+		formatString: 0
+		displayFolder: 度量值
+		lineageTag: fff005f0-7520-496c-b07f-6af8694e43a2
+
+	measure 【公司平均值】 =
+			
+			CALCULATE([【平均值】], ALLEXCEPT('收入成本分析','收入成本分析'[项目性质 (组)]))
+		formatString: #,0.0000
+		displayFolder: 度量值
+		lineageTag: 44a38d56-9911-4656-ac59-6d78cf329044
+
+		extendedProperty MeasureTemplate =
+				{
+				  "daxTemplateName": "TotalForAllCategory",
+				  "version": 0
+				}
+
+		changedProperty = FormatString
+
+	measure 【临建占比】 = max('收入成本分析'[临建占比])
+		formatString: #,0.0000
+		displayFolder: 度量值
+		lineageTag: 8a8f5a44-db92-417c-ba4b-e2bbcd34173f
+
+	measure 【排名后5】 = IF(ISINSCOPE('收入成本分析'[项目全径]),RANK(DENSE,ALLSELECTED('收入成本分析'[项目全径]),ORDERBY([【临建占比】],DESC BLANKS LAST)))
+		formatString: 0
+		displayFolder: 度量值
+		lineageTag: d04a828a-cee5-4220-a9d1-b1dfdbcd54e6
+
+	measure 【排名前5】 = IF(ISINSCOPE('收入成本分析'[项目全径]),RANK(DENSE,ALLSELECTED('收入成本分析'[项目全径]),ORDERBY([【临建占比】],ASC BLANKS LAST)))
+		formatString: 0
+		displayFolder: 度量值
+		lineageTag: 532dece3-4051-4c82-92ce-391510875b47
+
+	measure 【平均值】 = ROUND(AVERAGE('收入成本分析'[临建占比]),4)
+		formatString: #,0.0000
+		displayFolder: 度量值
+		lineageTag: 9c7af73e-a1f0-493e-95b5-a52466407c02
+
+	measure 【项目数】 = DISTINCTCOUNT('收入成本分析'[项目名称])
+		formatString: 0
+		displayFolder: 度量值
+		lineageTag: 17791b96-36b2-4961-96f5-c3d007554ed6
+
+	measure 度量值 = AVERAGEX(VALUES('收入成本分析'[责任体]),[【平均值】])
+		formatString: #,0.0000
+		displayFolder: 度量值
+		lineageTag: 0b3b782b-075d-4f1b-a140-4af32391a382
+
+	partition 度量值 = m
+		mode: import
+		queryGroup: 成本分析
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"列 1" = _t]),
+				    删除的列 = Table.RemoveColumns(源,{"列 1"})
+				in
+				    删除的列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

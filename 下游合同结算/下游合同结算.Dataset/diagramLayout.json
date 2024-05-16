@@ -1,0 +1,85 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 852,
+            "y": 74
+          },
+          "nodeIndex": "业主结算状态",
+          "nodeLineageTag": "875fa336-734f-4aba-bdac-e74b37f004a2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 74
+          },
+          "nodeIndex": "主表",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 0
+          },
+          "nodeIndex": "项目表",
+          "nodeLineageTag": "164e41cf-2b99-4a4e-b04a-dc5862b9f28b",
+          "size": {
+            "height": 400,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "合同表",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 124
+          },
+          "nodeIndex": "行内容",
+          "nodeLineageTag": "38355f87-e47d-495c-a7a2-112a12e276b2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}

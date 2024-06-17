@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBIDesktopVersion",
-        "value": "2.124.1052.0 (23.12)"
+        "value": "2.129.905.0 (24.05)"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -12,7 +12,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"X5\",\"查询1\",\"DW_FBHTXXB（分包合同）\",\"D_分包合同\",\"F_分包合同额\",\"D_承包合同\",\"F_承包合同金额\",\"F_业主确认量\",\"MD_SHANGWUKEMU2020（商务科目）\",\"MD_XIANGMUXINXI（项目信息）\",\"D-责任体\",\"D_施工专业\",\"D_分包类型\",\"D_商务科目\",\"fx_RN\",\"指标\",\"D_采购物资合同\",\"F_采购物资合同额\",\"F_物资进场\",\"F_物资退场\",\"F_物资对账\",\"F_物资调拨\",\"D_租赁物资合同\",\"F_租赁物资合同额\",\"F_物资租赁对账\",\"D_日历\",\"F_采购物资结算\",\"F_租赁物资结算\",\"一体化WBS-X5项目编码对照\",\"picc\",\"刷新时间\",\"D_项目信息\",\"货币单位\",\"F_应上交收益履约\",\"D_标准合同\",\"F_业主合同回款\",\"集采劳务合同标准合同编码\",\"F_分包结算\",\"F_分包资金计划\",\"F_采购资金计划\",\"X5-股份合同号对照\",\"F_业主结算进展\",\"F_租赁资金计划\",\"账户\",\"项目责任体\",\"门户账户\",\"厂房事业部编码\",\"X5组织机构\",\"总部员工\",\"分公司员工\",\"项目员工\",\"员工项目\",\"F_商务产值\",\"F_分包完成量\",\"F_物资付款\",\"F_租赁付款\",\"F_分包付款\",\"DW_WZHTXXB（物资合同）\",\"D_分包分供\",\"I_承包合同信息\",\"项目信息表字段名\",\"承包合同字段名\",\"项目付款条件\",\"全期现金流主表\",\"全期现金流明细\",\"F_全期现金流\"]"
+        "value": "[\"X5\",\"查询1\",\"DW_FBHTXXB（分包合同）\",\"D_分包合同\",\"F_分包合同额\",\"D_承包合同\",\"F_承包合同金额\",\"F_业主确认量\",\"MD_SHANGWUKEMU2020（商务科目）\",\"MD_XIANGMUXINXI（项目信息）\",\"D-责任体\",\"D_施工专业\",\"D_分包类型\",\"D_商务科目\",\"fx_RN\",\"指标\",\"D_采购物资合同\",\"F_采购物资合同额\",\"F_物资进场\",\"F_物资退场\",\"F_物资对账\",\"F_物资调拨\",\"D_租赁物资合同\",\"F_租赁物资合同额\",\"F_物资租赁对账\",\"D_日历\",\"F_采购物资结算\",\"F_租赁物资结算\",\"一体化WBS-X5项目编码对照\",\"picc\",\"刷新时间\",\"D_项目信息\",\"货币单位\",\"F_应上交收益履约\",\"D_标准合同\",\"F_业主合同回款\",\"集采劳务合同标准合同编码\",\"F_分包结算\",\"F_分包资金计划\",\"F_采购资金计划\",\"X5-股份合同号对照\",\"F_业主结算进展\",\"F_租赁资金计划\",\"账户\",\"项目责任体\",\"门户账户\",\"厂房事业部编码\",\"X5组织机构\",\"总部员工\",\"分公司员工\",\"项目员工\",\"员工项目\",\"F_商务产值\",\"F_分包完成量\",\"F_物资付款\",\"F_租赁付款\",\"F_分包付款\",\"DW_WZHTXXB（物资合同）\",\"D_分包分供\",\"I_承包合同信息\",\"项目信息表字段名\",\"承包合同字段名\",\"项目付款条件\",\"全期现金流主表\",\"全期现金流明细\",\"F_全期现金流\",\"数据库服务器地址\"]"
       },
       {
         "name": "__TEdtr",
@@ -29,7 +29,6 @@
         "name": "zh-CN",
         "linguisticMetadata": {
           "content": {
-            "DynamicImprovement": "HighConfidence",
             "Entities": {
               "table.m_": {
                 "Definition": {
@@ -1414,6 +1413,18 @@
         "kind": "m",
         "lineageTag": "dcfa4f2a-00ab-43be-8888-965db615f28c",
         "queryGroup": "全期现金流"
+      },
+      {
+        "name": "数据库服务器地址",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"172.16.8.76\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "9641e3f3-bacf-432c-afdc-3d93880375d2"
       }
     ],
     "queryGroups": [
@@ -2028,7 +2039,7 @@
         "name": "9c9a1ee8-2d08-4063-bb6a-dd79cb3cb6ef",
         "fromColumn": "分包类型",
         "fromTable": "F_商务产值",
-        "toColumn": "简称",
+        "toColumn": "分包类型简称",
         "toTable": "D_分包类型"
       },
       {
@@ -2056,7 +2067,7 @@
         "name": "1c3e574d-8812-4661-a3ab-54ca3470be0b",
         "fromColumn": "分包类型",
         "fromTable": "F_业主确认量",
-        "toColumn": "简称",
+        "toColumn": "分包类型简称",
         "toTable": "D_分包类型"
       },
       {
@@ -2084,7 +2095,7 @@
         "name": "4457e80f-bb26-41df-ad18-3a94738e0884",
         "fromColumn": "分包类型",
         "fromTable": "F_业主结算进展",
-        "toColumn": "简称",
+        "toColumn": "分包类型简称",
         "toTable": "D_分包类型"
       },
       {
@@ -2105,14 +2116,14 @@
         "name": "42703ea3-e01f-af91-5c76-3f7e69c7dd88",
         "fromColumn": "分包类型",
         "fromTable": "F_承包合同金额",
-        "toColumn": "简称",
+        "toColumn": "分包类型简称",
         "toTable": "D_分包类型"
       },
       {
         "name": "98958f41-8b36-4792-8db3-ae2d60305ac1",
         "fromColumn": "合同类型",
         "fromTable": "F_业主合同回款",
-        "toColumn": "简称",
+        "toColumn": "分包类型简称",
         "toTable": "D_分包类型"
       },
       {
@@ -5465,7 +5476,7 @@
             "summarizeBy": "sum"
           },
           {
-            "name": "简称",
+            "name": "分包类型简称",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -5480,7 +5491,7 @@
             "dataType": "string",
             "lineageTag": "b29c06e9-88d1-45d6-8e31-40f2aeef1af4",
             "sortByColumn": "排序",
-            "sourceColumn": "简称",
+            "sourceColumn": "分包类型简称",
             "summarizeBy": "none"
           }
         ],
@@ -5495,9 +5506,10 @@
               "expression": [
                 "let",
                 "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WetG+6tm0vUo6CIahUqxOtNKznvan62Y97Wh72tMKFIRwgQwjpdhYAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [分包类型 = _t, 简称 = _t, 排序 = _t]),",
-                "    更改的类型 = Table.TransformColumnTypes(源,{{\"排序\", Int64.Type}})",
+                "    更改的类型 = Table.TransformColumnTypes(源,{{\"排序\", Int64.Type}}),",
+                "    重命名的列 = Table.RenameColumns(更改的类型,{{\"简称\", \"分包类型简称\"}})",
                 "in",
-                "    更改的类型"
+                "    重命名的列"
               ],
               "type": "m"
             }
@@ -6375,7 +6387,7 @@
             "lineageTag": "03716c31-560d-44a4-bf81-9de18a62763a"
           },
           {
-            "name": "M_.分包.数量.Dcnt",
+            "name": "M.分包.数量.Dcnt",
             "description": "DISTINCTCOUNT('F_分包合同额'[分包编码])",
             "displayFolder": "02分包\\04.计数",
             "expression": "DISTINCTCOUNT('F_分包合同额'[分包编码])",
@@ -7142,7 +7154,7 @@
             "lineageTag": "71f3d5ee-8ade-4859-8e1f-a8b98cf4f769"
           },
           {
-            "name": "M.收益.核定收益.Sum",
+            "name": "M.业主结算.核定收益.Sum",
             "description": "SUM('F_结算进展'[核定收益额])/SELECTEDVALUE('货币单位'[系数],1)",
             "displayFolder": "01承包合同\\结算",
             "expression": "SUM('F_业主结算进展'[核定收益额])/SELECTEDVALUE('货币单位'[系数],1)",
@@ -7150,7 +7162,7 @@
             "lineageTag": "8c8257d8-5872-4c10-806c-1d857fb384e7"
           },
           {
-            "name": "M.收益.成本降低.Sum",
+            "name": "M.业主结算.成本降低.Sum",
             "description": "SUM('F_结算进展'[预计成本降低])/SELECTEDVALUE('货币单位'[系数],1)",
             "displayFolder": "01承包合同\\结算",
             "expression": "SUM('F_业主结算进展'[预计成本降低])/SELECTEDVALUE('货币单位'[系数],1)",
@@ -7158,7 +7170,7 @@
             "lineageTag": "ea09ed6e-1663-43aa-a763-1afc04f991da"
           },
           {
-            "name": "M.收益.总收益.Sum",
+            "name": "M.业主结算.总收益.Sum",
             "description": "SUM('F_结算进展'[预计总收益额])/SELECTEDVALUE('货币单位'[系数],1)",
             "displayFolder": "01承包合同\\结算",
             "expression": "SUM('F_业主结算进展'[预计总收益额])/SELECTEDVALUE('货币单位'[系数],1)",
@@ -7166,7 +7178,7 @@
             "lineageTag": "9d280f51-2c87-449b-be06-045802197c7d"
           },
           {
-            "name": "M.业主结算成本.价税合计.Sum",
+            "name": "M.业主结算.成本.价税合计.Sum",
             "description": "SUM('F_结算进展'[预计成本价税合计])/SELECTEDVALUE('货币单位'[系数],1)",
             "displayFolder": "01承包合同\\结算",
             "expression": "SUM('F_业主结算进展'[预计成本价税合计])/SELECTEDVALUE('货币单位'[系数],1)",
@@ -7174,7 +7186,7 @@
             "lineageTag": "1145a17f-3b87-4e00-bbf3-549ae474a995"
           },
           {
-            "name": "M.业主结算成本.金额.Sum",
+            "name": "M.业主结算.成本.金额.Sum",
             "description": "SUM('F_结算进展'[预计成本金额])/SELECTEDVALUE('货币单位'[系数],1)",
             "displayFolder": "01承包合同\\结算",
             "expression": "SUM('F_业主结算进展'[预计成本金额])/SELECTEDVALUE('货币单位'[系数],1)",
@@ -7182,7 +7194,7 @@
             "lineageTag": "3b24f095-ebc1-495c-9445-53aa6eb83314"
           },
           {
-            "name": "M.业主结算成本.税金.Sum",
+            "name": "M.业主结算.成本.税金.Sum",
             "description": "SUM('F_结算进展'[预计成本税金])/SELECTEDVALUE('货币单位'[系数],1)",
             "displayFolder": "01承包合同\\结算",
             "expression": "SUM('F_业主结算进展'[预计成本税金])/SELECTEDVALUE('货币单位'[系数],1)",
@@ -7221,6 +7233,36 @@
             "displayFolder": "02分包",
             "expression": "CALCULATE([M.分包合同.价税合计.Sum],DATESBETWEEN('D_日历'[日期],BLANK(),MAX('D_日历'[日期])))",
             "lineageTag": "9f7e0e7f-35c3-4c5f-8d31-c99efe1fed51"
+          },
+          {
+            "name": "M.下游合同份数.Dcnt",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "displayFolder": "00项目级度量",
+            "expression": "[M.分包.合同份数.DCnt]+[M.物资.合同份数.Dcnt]+[M.租赁.合同份数.DCnt]",
+            "lineageTag": "0b9b0d4e-753a-4e5d-9298-81b4ffca22f8"
+          },
+          {
+            "name": "M.业主结算.结算收益率.Rto",
+            "displayFolder": "01承包合同\\结算",
+            "expression": "DIVIDE([M.业主结算.总收益.Sum],[M.业主结算.价税合计.Sum])",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "20f85599-c8cc-4008-91da-b46222ae3f28"
+          },
+          {
+            "name": "度量值 2",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "Maxx({[M.分包合同.价税合计.Sum],[M.物资合同.价税合计.Sum]},[Value])",
+            "lineageTag": "15c6d699-e21a-4bd3-a458-b0ddebf94254"
           }
         ],
         "partitions": [
@@ -8369,6 +8411,11 @@
                 "value": "Automatic"
               }
             ],
+            "changedProperties": [
+              {
+                "property": "DataType"
+              }
+            ],
             "dataType": "dateTime",
             "formatString": "General Date",
             "lineageTag": "55fa0750-cfa5-4dd6-ade9-0203ec81f667",
@@ -8440,9 +8487,10 @@
                 "    GSPM = 源{[Schema=\"DATA_DW\"]}[Data],",
                 "    DW_FBJSMX = GSPM{[Name=\"DW_FBJSMX\"]}[Data],",
                 "    删除的其他列 = Table.SelectColumns(DW_FBJSMX,{\"KEYID\", \"FXIANGMUBIANMA\", \"FHETONGBIANHAO\", \"FRQ\", \"FJIASHUIHEJI\", \"FJINE\", \"FSHUIJIN\"}),",
-                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FXIANGMUBIANMA\", \"项目编码\"}, {\"FHETONGBIANHAO\", \"合同编号\"}, {\"FRQ\", \"日期\"}, {\"FJIASHUIHEJI\", \"价税合计\"}, {\"FJINE\", \"金额\"}, {\"FSHUIJIN\", \"税金\"}})",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FXIANGMUBIANMA\", \"项目编码\"}, {\"FHETONGBIANHAO\", \"合同编号\"}, {\"FRQ\", \"日期\"}, {\"FJIASHUIHEJI\", \"价税合计\"}, {\"FJINE\", \"金额\"}, {\"FSHUIJIN\", \"税金\"}}),",
+                "    提取的日期 = Table.TransformColumns(重命名的列,{{\"日期\", DateTime.Date, type date}})",
                 "in",
-                "    重命名的列"
+                "    提取的日期"
               ],
               "type": "m"
             }
@@ -8819,6 +8867,40 @@
             "lineageTag": "8d4ddf3c-fa94-4928-9d27-883cb55b8fdf",
             "sourceColumn": "股份合同号",
             "summarizeBy": "none"
+          },
+          {
+            "name": "人工费金额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "22fec1d4-aacb-43d1-8f10-c3b7debd1fb2",
+            "sourceColumn": "人工费金额",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "人工费比率",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "bee87e97-d57a-4571-a092-7f189741557d",
+            "sourceColumn": "人工费比率",
+            "summarizeBy": "sum"
           }
         ],
         "lineageTag": "ebbaff48-f0dd-49e0-9d25-a6285cadd26a",
@@ -8831,7 +8913,7 @@
               "expression": [
                 "let",
                 "    源 = #\"DW_FBHTXXB（分包合同）\",",
-                "    删除的其他列 = Table.SelectColumns(源,{\"KEYID\", \"项目编码\", \"项目名称\", \"合同编号\", \"合同名称\", \"合同协议号\", \"标准合同编码\", \"标准合同名称\", \"施工专业\", \"分包类型\", \"分包编码\", \"分包名称\", \"是否暂估合同\", \"是否临建合同\", \"分包类别\", \"业务类别\", \"国内外\", \"采购模式\", \"付款模式\", \"集采区域\", \"付款比率\"}),",
+                "    删除的其他列 = Table.SelectColumns(源,{\"KEYID\", \"项目编码\", \"项目名称\", \"合同编号\", \"合同名称\", \"合同协议号\", \"标准合同编码\", \"标准合同名称\", \"施工专业\", \"分包类型\", \"分包编码\", \"分包名称\", \"是否暂估合同\", \"是否临建合同\", \"分包类别\", \"业务类别\", \"国内外\", \"采购模式\", \"付款模式\", \"集采区域\", \"人工费金额\", \"人工费比率\", \"付款比率\"}),",
                 "    删除的副本 = Table.Distinct(删除的其他列, {\"KEYID\"}),",
                 "    合并的查询 = Table.NestedJoin(删除的副本, {\"合同编号\"}, #\"X5-股份合同号对照\", {\"X5合同号\"}, \"X5-股份合同号对照\", JoinKind.LeftOuter),",
                 "    #\"展开的“X5-股份合同号对照”\" = Table.ExpandTableColumn(合并的查询, \"X5-股份合同号对照\", {\"股份合同号\"}, {\"股份合同号\"})",
@@ -9550,6 +9632,7 @@
             ],
             "dataType": "string",
             "displayFolder": "信息",
+            "isKey": true,
             "lineageTag": "7d77b403-b668-42d3-a01c-36b57fe533c2",
             "sourceColumn": "项目编码",
             "summarizeBy": "none"
@@ -9565,7 +9648,6 @@
             "dataType": "string",
             "displayFolder": "维度",
             "isDefaultLabel": true,
-            "isKey": true,
             "lineageTag": "c6212ebc-8d80-4b65-b18c-cf0f7de8c32f",
             "sourceColumn": "项目名称",
             "summarizeBy": "none"
@@ -13014,13 +13096,6 @@
           }
         ],
         "description": "项目基础信息",
-        "extendedProperties": [
-          {
-            "name": "IsCuratedForDataSearch",
-            "type": "json",
-            "value": {}
-          }
-        ],
         "lineageTag": "5295f894-e2c2-4205-84a7-6c96f4af23ec",
         "partitions": [
           {
@@ -14155,7 +14230,7 @@
         "annotations": [
           {
             "name": "PBI_ResultType",
-            "value": "Exception"
+            "value": "Table"
           }
         ],
         "columns": [
@@ -14939,10 +15014,16 @@
               "name": "开累",
               "expression": [
                 "",
+                "VAR _today=TODAY()",
+                "VAR _mindate=MIN('D_日历'[日期])",
+                "RETURN",
                 "    IF(",
-                "        CONTAINSSTRING(SELECTEDMEASURENAME(),\"M.\"),",
-                "        CALCULATE( SELECTEDMEASURE() , 'D_日历'[日期]<=MAX('D_日历'[日期]) ),",
-                "        SELECTEDMEASURE()",
+                "        _mindate<=_today,",
+                "        SWITCH(",
+                "            TRUE(),",
+                "            CONTAINSSTRING(SELECTEDMEASURENAME(),\"M.\"),CALCULATE( SELECTEDMEASURE() , 'D_日历'[日期]<=MAX('D_日历'[日期]) ),",
+                "            SELECTEDMEASURE()",
+                "        )",
                 "    )"
               ],
               "ordinal": 2
@@ -14955,10 +15036,16 @@
               "name": "年累",
               "expression": [
                 "",
+                "VAR _today=TODAY()",
+                "VAR _mindate=MIN('D_日历'[日期])",
+                "RETURN",
                 "    IF(",
-                "        CONTAINSSTRING(SELECTEDMEASURENAME(),\"M.\"),",
-                "        CALCULATE( SELECTEDMEASURE() , DATESYTD('D_日历'[日期])),",
-                "        SELECTEDMEASURE()",
+                "        _mindate<=_today,",
+                "        SWITCH(",
+                "            TRUE(),",
+                "            CONTAINSSTRING(SELECTEDMEASURENAME(),\"M.\"),CALCULATE(SELECTEDMEASURE(), DATESYTD('D_日历'[日期])),",
+                "            SELECTEDMEASURE()",
+                "        )",
                 "    )"
               ],
               "ordinal": 1
@@ -14967,10 +15054,16 @@
               "name": "季累",
               "expression": [
                 "",
+                "VAR _today=TODAY()",
+                "VAR _mindate=MAX('D_日历'[日期])",
+                "RETURN",
                 "    IF(",
-                "        CONTAINSSTRING(SELECTEDMEASURENAME(),\"M.\"),",
-                "        CALCULATE(SELECTEDMEASURE(),DATESQTD('D_日历'[日期])),",
-                "        SELECTEDMEASURE()",
+                "        _mindate<=_today,",
+                "        SWITCH(",
+                "            TRUE(),",
+                "            CONTAINSSTRING(SELECTEDMEASURENAME(),\"M.\"),CALCULATE(SELECTEDMEASURE(), DATESQTD('D_日历'[日期])),",
+                "            SELECTEDMEASURE()",
+                "        )",
                 "    )"
               ],
               "ordinal": 0
@@ -15808,7 +15901,7 @@
             "source": {
               "expression": [
                 "let",
-                "    源 = Sql.Databases(\"ssas1.chinaonebuild.com\"),",
+                "    源 = Sql.Databases(\"sql1.chinaonebuild.com\"),",
                 "    BAM = 源{[Name=\"BAM\"]}[Data],",
                 "    dbo_F_商务产值 = BAM{[Schema=\"dbo\",Item=\"F_商务产值\"]}[Data],",
                 "    删除的其他列 = Table.SelectColumns(dbo_F_商务产值,{\"项目编码\", \"项目名称\", \"分包类型\", \"专业\",  \"日期\", \"本期含税产值\", \"本期无税产值\", \"累计无税产值\",\"累计含税产值\"})",
@@ -16192,8 +16285,23 @@
             "lineageTag": "d492956c-9f9f-4488-bb21-027b635a7387",
             "sourceColumn": "日期",
             "summarizeBy": "none"
+          },
+          {
+            "name": "索引",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "519bbf85-dbd0-4faf-9434-461911642664",
+            "sourceColumn": "索引",
+            "summarizeBy": "sum"
           }
         ],
+        "description": "取项目末期数据",
         "lineageTag": "83fa6eff-dbc3-44b2-9709-14ee0de58c3a",
         "partitions": [
           {
@@ -16207,9 +16315,12 @@
                 "    GSPM = 源{[Schema=\"DATA_DW\"]}[Data],",
                 "    DW_WZDZMX = GSPM{[Name=\"DW_CBHTYZJSJZMX\"]}[Data],",
                 "    重命名的列 = Table.RenameColumns(DW_WZDZMX,{{\"FXIANGMUBIANMA\", \"项目编码\"}, {\"FXIANGMUMINGCHENG\", \"项目名称\"}, {\"FYZZSJSZT\", \"自施结算状态\"}, {\"FSUOSHUBANKUAI\", \"业务板块\"}, {\"FHETONGLEIXING\", \"分包类型\"}, {\"FSHIGONGZHUANYE\", \"施工专业\"}, {\"YJJSJIASHUIHEJI\", \"预计结算价税合计\"}, {\"YJJSJINE\", \"预计结算金额\"}, {\"YJJSSHUIJIN\", \"预计结算税金\"}, {\"YJCBJIASHUIHEJI\", \"预计成本价税合计\"}, {\"YJCBJINE\", \"预计成本金额\"}, {\"YJCBSHUIJIN\", \"预计成本税金\"}, {\"HDSYE\", \"核定收益额\"}, {\"YJCBJD\", \"预计成本降低\"}, {\"YJZSYE\", \"预计总收益额\"}, {\"CSHTSR\", \"初始合同收入\"}, {\"HDSYL\", \"核定收益率\"}, {\"YJJSSYL\", \"预计结算收益率\"}, {\"FLJFAFANGJIANGJIN\", \"累计发放各类奖励金额\"}, {\"FQTSR\", \"其他收入\"}, {\"FYYWSR\", \"营业外收入\"}, {\"DFZJ\", \"单方造价\"}, {\"FRQ\", \"日期\"}}),",
-                "    删除的其他列 = Table.SelectColumns(重命名的列,{\"项目编码\", \"项目名称\", \"自施结算状态\", \"业务板块\", \"分包类型\", \"施工专业\", \"预计结算价税合计\", \"预计结算金额\", \"预计结算税金\", \"预计成本价税合计\", \"预计成本金额\", \"预计成本税金\", \"核定收益额\", \"预计成本降低\", \"预计总收益额\", \"初始合同收入\", \"核定收益率\", \"预计结算收益率\", \"累计发放各类奖励金额\", \"其他收入\", \"营业外收入\", \"单方造价\", \"日期\"})",
+                "    删除的其他列 = Table.SelectColumns(重命名的列,{\"项目编码\", \"项目名称\", \"自施结算状态\", \"业务板块\", \"分包类型\", \"施工专业\", \"预计结算价税合计\", \"预计结算金额\", \"预计结算税金\", \"预计成本价税合计\", \"预计成本金额\", \"预计成本税金\", \"核定收益额\", \"预计成本降低\", \"预计总收益额\", \"初始合同收入\", \"核定收益率\", \"预计结算收益率\", \"累计发放各类奖励金额\", \"其他收入\", \"营业外收入\", \"单方造价\", \"日期\"}),",
+                "    排序的行 = Table.Sort(删除的其他列,{{\"项目编码\", Order.Ascending}, {\"分包类型\", Order.Ascending}, {\"施工专业\", Order.Ascending}, {\"日期\", Order.Descending}}),",
+                "    已添加索引 = Table.AddIndexColumn(排序的行, \"索引\", 0, 1, Int64.Type),",
+                "    删除的副本 = Table.Distinct(已添加索引, {\"项目编码\", \"分包类型\", \"施工专业\"})",
                 "in",
-                "    删除的其他列"
+                "    删除的副本"
               ],
               "type": "m"
             }
@@ -17462,6 +17573,353 @@
                 "    替换的值"
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "维度选择",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "68dfb3f1dce04f58847240c255288e25"
+          }
+        ],
+        "columns": [
+          {
+            "name": "维度选择",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "cfd8bab7-57db-40e6-8444-f934c6343717",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "维度选择 个字段"
+                }
+              ]
+            },
+            "sortByColumn": "维度选择 个订单",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "维度选择 个字段",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "0d277cb3-f2c6-417c-959d-0dd78ada05b6",
+            "sortByColumn": "维度选择 个订单",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "维度选择 个订单",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "ea92adc6-41a8-41cd-904a-498c4c81d759",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "e83cc75f-53cb-4841-9bd5-440610984bf3",
+        "partitions": [
+          {
+            "name": "维度选择",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"责任体\", NAMEOF('D-责任体'[责任体]), 0),",
+                "    (\"项目名称\", NAMEOF('D_项目信息'[项目名称]), 1),",
+                "    (\"施工专业\", NAMEOF('D_施工专业'[施工专业]), 2),",
+                "    (\"简称\", NAMEOF('D_分包类型'[分包类型简称]), 3)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "度量值选择",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "61ad484a0e6945c8ac61fc27ebb2d3cc"
+          }
+        ],
+        "columns": [
+          {
+            "name": "度量值选择",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "fc1d1329-099b-4f08-b3c4-baa0d76c0c1c",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "度量值选择 个字段"
+                }
+              ]
+            },
+            "sortByColumn": "度量值选择 个订单",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "度量值选择 个字段",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "d27969fa-2909-447a-971c-b7a1daf2cf79",
+            "sortByColumn": "度量值选择 个订单",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "度量值选择 个订单",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "b4387153-7d3f-4b6d-9e60-086f6e6f9406",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "度量值分类",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "24ba754a-13d9-4494-b940-609dce728967",
+            "sourceColumn": "[Value4]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "b7332088-31c0-47c7-9f3d-796a6c54fbe8",
+        "partitions": [
+          {
+            "name": "度量值选择",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"M.分包合同.价税合计.Sum\", NAMEOF('指标'[M.分包合同.价税合计.Sum]), 0, \"分包\"),",
+                "    (\"M.分包报量.价税合计.Sum\", NAMEOF('指标'[M.分包报量.价税合计.Sum]), 1, \"分包\"),",
+                "    (\"M.分包应付.Exp\", NAMEOF('指标'[M.分包应付.Exp]), 2, \"分包\"),",
+                "    (\"M.分包.实付款.Sum\", NAMEOF('指标'[M.分包.实付款.Sum]), 3, \"分包\"),",
+                "    (\"M.分包.欠款.Exp\", NAMEOF('指标'[M.分包.欠款.Exp]), 4, \"分包\"),",
+                "    (\"M.分包.支付率.Rto\", NAMEOF('指标'[M.分包.支付率.Rto]), 5, \"分包\"),",
+                "    (\"M.物资合同.价税合计.Sum\", NAMEOF('指标'[M.物资合同.价税合计.Sum]), 6, \"物资\"),",
+                "    (\"M.物资有效进场.价税合计.Exp\", NAMEOF('指标'[M.物资有效进场.价税合计.Exp]), 7, \"物资\"),",
+                "    (\"M.物资结算.价税合计.Sum\", NAMEOF('指标'[M.物资结算.价税合计.Sum]), 8, \"物资\"),",
+                "    (\"M.物资应付.Exp\", NAMEOF('指标'[M.物资应付.Exp]), 9, \"物资\"),",
+                "    (\"M.物资.实付款.Sum\", NAMEOF('指标'[M.物资.实付款.Sum]), 10, \"物资\"),",
+                "    (\"M.物资.欠款.Exp\", NAMEOF('指标'[M.物资.欠款.Exp]), 11, \"物资\"),",
+                "    (\"M.物资.支付率.Rto\", NAMEOF('指标'[M.物资.支付率.Rto]), 12, \"物资\"),",
+                "    (\"M.租赁合同.价税合计.Sum\", NAMEOF('指标'[M.租赁合同.价税合计.Sum]), 13, \"租赁\"),",
+                "    (\"M.租赁.价税合计.Sum\", NAMEOF('指标'[M.租赁.价税合计.Sum]), 14, \"租赁\"),",
+                "    (\"M.租赁结算.价税合计.Sum\", NAMEOF('指标'[M.租赁结算.价税合计.Sum]), 15, \"租赁\"),",
+                "    (\"M.租赁应付.Exp\", NAMEOF('指标'[M.租赁应付.Exp]), 16, \"租赁\"),",
+                "    (\"M.租赁.实付款.Sum\", NAMEOF('指标'[M.租赁.实付款.Sum]), 17, \"租赁\"),",
+                "    (\"M.租赁.欠款.Exp\", NAMEOF('指标'[M.租赁.欠款.Exp]), 18, \"租赁\"),",
+                "    (\"M.租赁.支付率.Rto\", NAMEOF('指标'[M.租赁.支付率.Rto]), 19, \"租赁\")",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "合同选择",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "37f33c456f254efdb1afd95674a177f5"
+          }
+        ],
+        "columns": [
+          {
+            "name": "合同选择",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "38c78447-5654-43b7-ac03-be1b99452cf7",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "合同选择 个字段"
+                }
+              ]
+            },
+            "sortByColumn": "合同选择 个订单",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "合同选择 个字段",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "95e7f438-246e-42c3-9537-a2a80af9e72e",
+            "sortByColumn": "合同选择 个订单",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "合同选择 个订单",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "72dd2d0e-006e-48c4-9d21-03acd082b062",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "合同分类",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "72cb400e-fe88-4e30-8568-72d756d2096b",
+            "sourceColumn": "[Value4]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "93ba4058-9f95-45b7-8efa-861d2589bbe9",
+        "partitions": [
+          {
+            "name": "合同选择",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"分包名称\", NAMEOF('D_分包合同'[分包名称]), 0,\"分包\"),",
+                "    (\"分包合同编号\", NAMEOF('D_分包合同'[合同编号]), 1,\"分包\"),",
+                "    (\"物资供方名称\", NAMEOF('D_采购物资合同'[供方名称]), 2,\"物资\"),",
+                "    (\"分供合同编号\", NAMEOF('D_采购物资合同'[合同编号]), 3,\"物资\"),",
+                "    (\"租赁供方名称\", NAMEOF('D_租赁物资合同'[供方名称]), 4,\"租赁\"),",
+                "    (\"租赁合同编号\", NAMEOF('D_租赁物资合同'[合同编号]), 5,\"租赁\")",
+                "}"
+              ],
+              "type": "calculated"
             }
           }
         ]

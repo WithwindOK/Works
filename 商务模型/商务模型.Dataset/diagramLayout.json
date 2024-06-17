@@ -562,6 +562,36 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "维度选择",
+          "nodeLineageTag": "e83cc75f-53cb-4841-9bd5-440610984bf3",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "度量值选择",
+          "nodeLineageTag": "b7332088-31c0-47c7-9f3d-796a6c54fbe8",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "合同选择",
+          "nodeLineageTag": "93ba4058-9f95-45b7-8efa-861d2589bbe9",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "所有表",
@@ -574,7 +604,7 @@
     {
       "ordinal": 1,
       "scrollPosition": {
-        "x": 36.363635592990448,
+        "x": 7.0707066853841143,
         "y": 0
       },
       "nodes": [
@@ -589,7 +619,7 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 5,
+          "zIndex": 4,
           "expandedHeight": 392
         },
         {
@@ -603,7 +633,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 6,
+          "zIndex": 5,
           "expandedHeight": 300
         },
         {
@@ -617,7 +647,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 8,
+          "zIndex": 7,
           "expandedHeight": 128
         },
         {
@@ -631,13 +661,13 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 7,
+          "zIndex": 6,
           "expandedHeight": 128
         },
         {
           "location": {
-            "x": 996.12500000000023,
-            "y": 0
+            "x": 964.91287570529539,
+            "y": 3.3333333333333339
           },
           "nodeIndex": "D_日历",
           "nodeLineageTag": "f4f7eca8-c7a2-456d-b382-81fbfa39fa0b",
@@ -645,7 +675,7 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 4,
+          "zIndex": 9,
           "expandedHeight": 300
         },
         {
@@ -659,7 +689,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 9,
+          "zIndex": 8,
           "expandedHeight": 248
         },
         {
@@ -692,8 +722,8 @@
         },
         {
           "location": {
-            "x": 986.18181355794263,
-            "y": 431.09217325846356
+            "x": 943.8585866292317,
+            "y": 433.31439548068579
           },
           "nodeIndex": "F_分包付款",
           "nodeLineageTag": "dd816b4e-917b-4c91-b046-a46f423941dd",
@@ -2210,7 +2240,7 @@
       "ordinal": 21,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 44.545452117919922
       },
       "nodes": [
         {
@@ -2272,8 +2302,88 @@
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
+    },
+    {
+      "ordinal": 22,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 294.20026441479297,
+            "y": 192.1859804009481
+          },
+          "nodeIndex": "F_业主结算进展",
+          "nodeLineageTag": "83fa6eff-dbc3-44b2-9709-14ee0de58c3a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 354.36373350809731
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "5295f894-e2c2-4205-84a7-6c96f4af23ec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 654.39539945486877,
+            "y": 285.35310574115397
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "f4f7eca8-c7a2-456d-b382-81fbfa39fa0b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 21.257084747997283
+          },
+          "nodeIndex": "D_施工专业",
+          "nodeLineageTag": "266c5a32-bf96-4b40-8b34-bc1339c155cd",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 603.67094049140394,
+            "y": 8
+          },
+          "nodeIndex": "D_分包类型",
+          "nodeLineageTag": "291bf009-2208-47c7-9146-1148e2be7ea8",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "布局 4",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
     }
   ],
-  "selectedDiagram": "布局 3",
+  "selectedDiagram": "分包合同",
   "defaultDiagram": "所有表"
 }

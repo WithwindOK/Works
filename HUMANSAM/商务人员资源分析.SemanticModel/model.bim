@@ -1,0 +1,4848 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.129.1229.0 (24.05)"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"人员基本信息\",\"X5账号\",\"项目基本信息\",\"岗位表\",\"度量值表\",\"cscecdb\",\"员工离职表\",\"单位编码\",\"岗位筛选\",\"员工调动表\",\"上月工资表\",\"商务202202\",\"责任体\",\"表\",\"HR_DEPT\",\"员工离职表-导出用\",\"员工履历\",\"业主合同\",\"员工商务岗时间\",\"商务岗位列表\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "zh-CN",
+    "cultures": [
+      {
+        "name": "zh-CN",
+        "linguisticMetadata": {
+          "content": {
+            "Entities": {
+              "table.column": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "上月工资表",
+                    "ConceptualProperty": "联系方式"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "联系方式": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table.femployeestate": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "上月工资表",
+                    "ConceptualProperty": "FEMPLOYEESTATE"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "员工状态": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table.fname": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "上月工资表",
+                    "ConceptualProperty": "岗位名称"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "岗位名称": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  },
+                  {
+                    "现岗位名称": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "table202202.column": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "商务202202",
+                    "ConceptualProperty": "岗位名称 (组)"
+                  }
+                },
+                "State": "Generated"
+              },
+              "table202202.column1": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "商务202202",
+                    "ConceptualProperty": "员工状态 (组)"
+                  }
+                },
+                "State": "Generated"
+              }
+            },
+            "Language": "en-US",
+            "Version": "2.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "X5账号",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(\"172.16.8.76/oracledb\", [HierarchicalNavigation=true]),",
+          "    X5SYS = 源{[Schema=\"X5SYS\"]}[Data],",
+          "    SA_OPPERSON1 = X5SYS{[Name=\"SA_OPPERSON\"]}[Data],",
+          "    删除的其他列 = Table.SelectColumns(SA_OPPERSON1,{\"SID\", \"SIDCARD\"}),",
+          "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"SID\", \"账号ID\"}, {\"SIDCARD\", \"身份证号\"}})",
+          "in",
+          "    重命名的列"
+        ],
+        "kind": "m",
+        "lineageTag": "acea710e-2cdc-45ba-ada6-594cd86e0a47"
+      },
+      {
+        "name": "岗位表",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "description": "合并入'人员基本信息'",
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(\"172.16.8.87/cscecdb\", [HierarchicalNavigation=true]),",
+          "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+          "    HR_STATION1 = FZHR{[Name=\"HR_STATION\"]}[Data]",
+          "in",
+          "    HR_STATION1"
+        ],
+        "kind": "m",
+        "lineageTag": "70da7eab-6f73-42dc-b343-decbc9daf4af"
+      },
+      {
+        "name": "cscecdb",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(\"172.16.8.87/cscecdb\", [HierarchicalNavigation=true])",
+          "in",
+          "    源"
+        ],
+        "kind": "m",
+        "lineageTag": "0e67cb59-3ab8-4a14-9e9a-ffee2847269e"
+      },
+      {
+        "name": "单位编码",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = #\"cscecdb\",",
+          "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+          "    HR_DEPT = FZHR{[Name=\"HR_DEPT\"]}[Data],",
+          "    重命名的列 = Table.RenameColumns(HR_DEPT,{{\"FCODE\", \"单位编码\"}, {\"FNAME\", \"单位名称\"}, {\"FPROJECTREGIONAL\", \"京内外\"}, {\"FKIND\", \"单位类型\"}})",
+          "in",
+          "    重命名的列"
+        ],
+        "kind": "m",
+        "lineageTag": "2fa8cafd-c003-4671-acf3-7d701c9fbb6c"
+      },
+      {
+        "name": "岗位筛选",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Excel.Workbook(File.Contents(\"\\\\172.16.8.66\\关键指标数据\\经营管控中心\\商务岗位筛选.xlsx\"), null, true),",
+          "    Sheet1_Sheet = 源{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+          "    向下填充 = Table.FillDown(Sheet1_Sheet,{\"Column1\"}),",
+          "    重命名的列 = Table.RenameColumns(向下填充,{{\"Column2\", \"岗位\"}, {\"Column1\", \"所属单位类型\"}})",
+          "in",
+          "    Table.Buffer(重命名的列)"
+        ],
+        "kind": "m",
+        "lineageTag": "dca26854-23ef-4fef-80cf-9a902eb7b1d0"
+      },
+      {
+        "name": "HR_DEPT",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(\"172.16.8.87/cscecdb\", [HierarchicalNavigation=true]),",
+          "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+          "    HR_DEPT1 = FZHR{[Name=\"HR_DEPT\"]}[Data],",
+          "    删除的其他列 = Table.SelectColumns(HR_DEPT1,{\"FCODE\", \"FNAME\"})",
+          "in",
+          "    删除的其他列"
+        ],
+        "kind": "m",
+        "lineageTag": "f67ca20f-64ef-4e07-b27b-b5b3548a315d"
+      },
+      {
+        "name": "业主合同",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(\"172.16.8.76/oracledb\", [HierarchicalNavigation=true]),",
+          "    GSPM = 源{[Schema=\"GSPM\"]}[Data],",
+          "    GSPM_CHENGBAOHETONGXINXI1 = GSPM{[Name=\"GSPM_CHENGBAOHETONGXINXI\"]}[Data],",
+          "    筛选的行 = Table.SelectRows(GSPM_CHENGBAOHETONGXINXI1, each ([FHETONGFENLEI2] <> \"备案\")),",
+          "    删除的其他列 = Table.SelectColumns(筛选的行,{\"FDUIYINGGONGCHENGBIANMA\", \"FQIZHONGZISHIJINEHANSHUI\"}),",
+          "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FDUIYINGGONGCHENGBIANMA\", \"项目编码\"}, {\"FQIZHONGZISHIJINEHANSHUI\", \"自施合同额\"}}),",
+          "    分组的行 = Table.Group(重命名的列, {\"项目编码\"}, {{\"自施合同额\", each List.Sum([自施合同额]), type nullable number}}),",
+          "    删除的副本 = Table.Distinct(分组的行, {\"项目编码\"}),",
+          "    被除的列 = Table.TransformColumns(删除的副本, {{\"自施合同额\", each Number.Round(_ / 10000,2), type number}})",
+          "in",
+          "    被除的列"
+        ],
+        "kind": "m",
+        "lineageTag": "860f76a9-cf7a-414a-933e-8e91e2a1ba7a"
+      },
+      {
+        "name": "项目基本信息",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(\"172.16.8.76/oracledb\", [HierarchicalNavigation=true]),",
+          "    MD = 源{[Schema=\"MD\"]}[Data],",
+          "    MD_XIANGMUXINXI1 = MD{[Name=\"MD_XIANGMUXINXI\"]}[Data],",
+          "    重命名的列 = Table.RenameColumns(MD_XIANGMUXINXI1,{{\"FXMBIANMA\", \"项目编码\"}, {\"FXMQUANCHENG\", \"项目名称\"}, {\"FXMZONGJIAN\", \"项目总监\"}, {\"FZHUANYEFL\", \"专业分类\"}, {\"FXMXINGZHI\", \"项目性质\"}, {\"FJNWFB\", \"京内外\"}, {\"FQUYU\", \"行政区域\"}, {\"FSHENG\", \"省\"}, {\"FCHENGSHI\", \"城市\"}, {\"FXIAN\", \"区县\"}, {\"FXMSSZT\", \"项目实施状态\"}, {\"FGCLBYJ\", \"工程类别一级\"}, {\"FGCLBEJ\", \"工程类别二级\"}, {\"FXMJSZT\", \"项目结算状态\"}, {\"FXMSZDKH\", \"项目所属大客户\"}, {\"FSFTZJZXM\", \"是否投资建造项目\"}, {\"FPINGSHENZHUANGTAIID\", \"FPINGSHENZHUANGTAIID\"}, {\"FZHIGUANJGXG\", \"直管机构\"}, {\"FXIANGMULEIXING\", \"项目类型\"}, {\"FZONGJIANTUANDUI\", \"所属总监团队\"}, {\"FXMCAIWUZHUANGTAI\", \"项目财务状态\"}, {\"FYWBK\", \"业务板块\"}, {\"FTUJIANHEDINGSYL\", \"土建核定收益率\"}, {\"FJIDIANHEDINGSYL\", \"机电核定收益率\"}, {\"FZONGHEHEDINGSYL\", \"综合核定收益率\"}, {\"FTUJIANHEDINGSYLJZ\", \"土建甲指核定收益率\"}, {\"FJIDIANHEDINGSYLJZ\", \"机电甲指核定收益率\"}, {\"FCHANGFANGSHIYEBU\", \"厂房事业部\"}}),",
+          "    删除的其他列 = Table.SelectColumns(重命名的列,{\"项目编码\", \"项目名称\", \"项目总监\", \"专业分类\", \"项目性质\", \"京内外\", \"行政区域\", \"省\", \"城市\", \"区县\", \"项目实施状态\", \"工程类别一级\", \"工程类别二级\", \"项目结算状态\", \"项目所属大客户\", \"是否投资建造项目\", \"土建核定收益率\", \"机电核定收益率\", \"综合核定收益率\", \"项目类型\", \"直管机构\", \"土建甲指核定收益率\", \"机电甲指核定收益率\", \"厂房事业部\", \"所属总监团队\", \"项目财务状态\", \"业务板块\"}),",
+          "    Buffer一下预防出错 = Table.Buffer(删除的其他列),",
+          "    已添加条件列 = Table.AddColumn(Buffer一下预防出错, \"责任体区域\", each if [京内外] = \"国际\" then \"海外\" else if [直管机构] <> \"公司\" then [直管机构] else if [厂房事业部] <> null then [厂房事业部] else \"公司直营\")",
+          "in",
+          "    已添加条件列"
+        ],
+        "kind": "m",
+        "lineageTag": "c47aa007-0031-4b3c-9acd-9c5a16a28b37"
+      },
+      {
+        "name": "员工商务岗时间",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(\"172.16.8.87/cscecdb\", [HierarchicalNavigation=true]),",
+          "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+          "    HR_EMPSALARY = FZHR{[Name=\"HR_EMPSALARY\"]}[Data],",
+          "    筛选的行1 = Table.SelectRows(HR_EMPSALARY, each ([DWLB] = \"项目\")),",
+          "    删除的其他列1 = Table.SelectColumns(筛选的行1,{\"FCODE\", \"FYEAR\", \"FMONTH\", \"FSTATIONCODE\"}),",
+          "    合并的查询1 = Table.NestedJoin(删除的其他列1, {\"FSTATIONCODE\"}, 岗位表, {\"FGUID\"}, \"岗位表\", JoinKind.LeftOuter),",
+          "    #\"展开的“岗位表”\" = Table.ExpandTableColumn(合并的查询1, \"岗位表\", {\"FNAME\"}, {\"岗位名称\"}),",
+          "    筛选的行 = Table.SelectRows(#\"展开的“岗位表”\", each List.Contains(商务岗位列表[岗位名称],[岗位名称])),",
+          "    合并的列 = Table.CombineColumns(筛选的行,{\"FYEAR\", \"FMONTH\"},Combiner.CombineTextByDelimiter(\"-\", QuoteStyle.None),\"已合并\"),",
+          "    重命名的列 = Table.RenameColumns(合并的列,{{\"已合并\", \"日期\"}}),",
+          "    分组的行 = Table.Group(重命名的列, {\"FCODE\"}, {{\"最早从事商务岗位年月\", each List.Min([日期]), type text}})",
+          "in",
+          "    分组的行"
+        ],
+        "kind": "m",
+        "lineageTag": "ae42010f-c531-49e8-815e-d4ace13c5565"
+      },
+      {
+        "name": "商务岗位列表",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"nVTLUsIwFP0Xds649zfcM/yLAqWlKNQHIgJicdA6A3VQGGqL8jO9SbPiF0zoYyCSNnWX9J5zc+65Z1osFoj5hXt24Tg6kFEV2x24ui+Ujv8U0cBAd11BEdo10E3stbBRE9dJxcqCQP1dDMH1t2BRTe1ClEs8bQTzZ9/zwNFSB9mstNOTo4NdYiPEEHDK6Had6hhR1WA+heUYWw2BFtA/mW+2SccRdEmG3rcGtBooE2g5MCuTwYjC4cKF4TD6GPvtOx7ojxIM33mgDAqnYujUYYPNqi5BZSZ4N9QH6cfQ4hx0Cz460sLCyXMKi1K5dXc/Nbm8SOaTexWdefQltGjGO89wb5sSaevA0LD7EsKZHf0heK6kML2NntR/UWn2co6VMGLL6Y2FOMH+KPH+uQo9k47F7YA1spO1c4z9OHHFcP07/vJkzUD9SRaKSyE9BMZYIOfgAND7Jl0l/Cji8UlIUSo2Nqu+GyCJSaV1Z+raWkZRqPnqO1NYV1Lzwckg1yP2X7dNorYEMuhfEi1neRbFGK6RLXzFPMuKUXiNUl36BQ==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [岗位层次 = _t, 岗位名称 = _t])",
+          "in",
+          "    源"
+        ],
+        "kind": "m",
+        "lineageTag": "3b632e70-a8d3-4cd8-bb38-99a899f6d37e"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "6f55344d-ce1a-4b6b-834a-0df2323afdc8",
+        "fromColumn": "异动日期",
+        "fromTable": "员工调动表",
+        "toColumn": "Date",
+        "toTable": "日历"
+      },
+      {
+        "name": "2be1a4ce-7e23-4245-ac51-28084082d321",
+        "fromColumn": "离职时间",
+        "fromTable": "员工离职表",
+        "toColumn": "Date",
+        "toTable": "日历"
+      },
+      {
+        "name": "92ec8bb1-7b10-4d96-8b55-7e731e846f5a",
+        "fromColumn": "司龄",
+        "fromTable": "商务202202",
+        "toColumn": "司龄",
+        "toTable": "司龄段"
+      },
+      {
+        "name": "c71ad73c-80aa-48e8-91ef-8b8bfd8be648",
+        "fromColumn": "责任体",
+        "fromTable": "商务202202",
+        "toColumn": "责任体",
+        "toTable": "责任体"
+      },
+      {
+        "name": "7c32e066-9d94-4ddb-96c9-b4496eea3546",
+        "fromColumn": "责任体",
+        "fromTable": "员工离职表",
+        "toColumn": "责任体",
+        "toTable": "责任体"
+      },
+      {
+        "name": "07d2f52e-5d0f-426c-8eab-46fa5677c7c6",
+        "fromColumn": "员工状态 (组)",
+        "fromTable": "商务202202",
+        "toColumn": "员工状态",
+        "toTable": "表"
+      },
+      {
+        "name": "547080ac-beb0-4e9c-beca-5446726d23d7",
+        "fromColumn": "司龄",
+        "fromTable": "员工离职表",
+        "toColumn": "司龄",
+        "toTable": "司龄段"
+      },
+      {
+        "name": "bcd402fc-a529-4e19-9fd7-b5c21cb9fa36",
+        "fromColumn": "司龄",
+        "fromTable": "上月工资表",
+        "toColumn": "司龄",
+        "toTable": "司龄段"
+      },
+      {
+        "name": "06868c7b-fe44-40e4-a2d5-d998c9b543eb",
+        "fromColumn": "离职年龄",
+        "fromTable": "员工离职表",
+        "toColumn": "年龄",
+        "toTable": "年龄段"
+      },
+      {
+        "name": "e37b4315-27f9-4106-9038-1a047f05f4cc",
+        "fromColumn": "年龄",
+        "fromTable": "商务202202",
+        "toColumn": "年龄",
+        "toTable": "年龄段"
+      },
+      {
+        "name": "81d4f51b-2e97-45af-a745-b1070a648000",
+        "fromColumn": "年龄",
+        "fromTable": "上月工资表",
+        "toColumn": "年龄",
+        "toTable": "年龄段"
+      },
+      {
+        "name": "c2238d8a-e29e-4b5d-b91f-46c07526d3bf",
+        "fromColumn": "进入本企日期",
+        "fromTable": "上月工资表",
+        "toColumn": "Date",
+        "toTable": "日历"
+      },
+      {
+        "name": "c2738d9e-687a-4c42-ac66-7ffd528af33e",
+        "fromColumn": "员工状态 (组)",
+        "fromTable": "上月工资表",
+        "toColumn": "员工状态",
+        "toTable": "表"
+      },
+      {
+        "name": "97a10604-21d1-4fdb-8e68-6d10bf76fecb",
+        "fromColumn": "所属单位 (组)",
+        "fromTable": "上月工资表",
+        "toColumn": "责任体",
+        "toTable": "责任体"
+      },
+      {
+        "name": "32981273-1e18-4ce3-167d-f4a62ca4a714",
+        "fromColumn": "员工编码",
+        "fromTable": "员工履历",
+        "toColumn": "员工编码",
+        "toTable": "上月工资表"
+      },
+      {
+        "name": "f369a91d-dd5f-e9c9-9e0f-8f53f9f93abd",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "员工编码",
+        "fromTable": "人员基本信息",
+        "toColumn": "员工编码",
+        "toTable": "上月工资表"
+      }
+    ],
+    "sourceQueryCulture": "zh-CN",
+    "tables": [
+      {
+        "name": "年龄段",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "14f7e159319c404e9bdb43e87e00a220"
+          }
+        ],
+        "columns": [
+          {
+            "name": "年龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"年龄段\",\"TableItemName\":\"年龄段\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "f548882c-e49b-436d-9568-21c89a3d801d",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "年龄段",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"年\",\"Entity\":\"年龄段\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"年\"}},\"Property\":\"年龄\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"20-25岁\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"年\"}},\"Property\":\"年龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"20D\"}}],[{\"Literal\":{\"Value\":\"21D\"}}],[{\"Literal\":{\"Value\":\"22D\"}}],[{\"Literal\":{\"Value\":\"23D\"}}],[{\"Literal\":{\"Value\":\"24D\"}}],[{\"Literal\":{\"Value\":\"25D\"}}]]}}},{\"DisplayName\":\"26-30岁\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"年\"}},\"Property\":\"年龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"26D\"}}],[{\"Literal\":{\"Value\":\"27D\"}}],[{\"Literal\":{\"Value\":\"28D\"}}],[{\"Literal\":{\"Value\":\"29D\"}}],[{\"Literal\":{\"Value\":\"30D\"}}]]}}},{\"DisplayName\":\"31-35岁\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"年\"}},\"Property\":\"年龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"31D\"}}],[{\"Literal\":{\"Value\":\"32D\"}}],[{\"Literal\":{\"Value\":\"33D\"}}],[{\"Literal\":{\"Value\":\"34D\"}}],[{\"Literal\":{\"Value\":\"35D\"}}]]}}},{\"DisplayName\":\"36-40岁\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"年\"}},\"Property\":\"年龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"36D\"}}],[{\"Literal\":{\"Value\":\"37D\"}}],[{\"Literal\":{\"Value\":\"38D\"}}],[{\"Literal\":{\"Value\":\"39D\"}}],[{\"Literal\":{\"Value\":\"40D\"}}]]}}},{\"DisplayName\":\"41-50岁\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"年\"}},\"Property\":\"年龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"41D\"}}],[{\"Literal\":{\"Value\":\"42D\"}}],[{\"Literal\":{\"Value\":\"43D\"}}],[{\"Literal\":{\"Value\":\"44D\"}}],[{\"Literal\":{\"Value\":\"45D\"}}],[{\"Literal\":{\"Value\":\"46D\"}}],[{\"Literal\":{\"Value\":\"47D\"}}],[{\"Literal\":{\"Value\":\"48D\"}}],[{\"Literal\":{\"Value\":\"49D\"}}],[{\"Literal\":{\"Value\":\"50D\"}}]]}}},{\"DisplayName\":\"51-60岁\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"年\"}},\"Property\":\"年龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"51D\"}}],[{\"Literal\":{\"Value\":\"52D\"}}],[{\"Literal\":{\"Value\":\"53D\"}}],[{\"Literal\":{\"Value\":\"54D\"}}],[{\"Literal\":{\"Value\":\"55D\"}}],[{\"Literal\":{\"Value\":\"56D\"}}],[{\"Literal\":{\"Value\":\"57D\"}}],[{\"Literal\":{\"Value\":\"58D\"}}],[{\"Literal\":{\"Value\":\"59D\"}}],[{\"Literal\":{\"Value\":\"60D\"}}]]}}},{\"DisplayName\":\"60岁以上\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('年龄段'[年龄]),",
+              "  \"(空白)\",",
+              "  '年龄段'[年龄] IN {20,",
+              "    21,",
+              "    22,",
+              "    23,",
+              "    24,",
+              "    25},",
+              "  \"20-25岁\",",
+              "  '年龄段'[年龄] IN {26,",
+              "    27,",
+              "    28,",
+              "    29,",
+              "    30},",
+              "  \"26-30岁\",",
+              "  '年龄段'[年龄] IN {31,",
+              "    32,",
+              "    33,",
+              "    34,",
+              "    35},",
+              "  \"31-35岁\",",
+              "  '年龄段'[年龄] IN {36,",
+              "    37,",
+              "    38,",
+              "    39,",
+              "    40},",
+              "  \"36-40岁\",",
+              "  '年龄段'[年龄] IN {41,",
+              "    42,",
+              "    43,",
+              "    44,",
+              "    45,",
+              "    46,",
+              "    47,",
+              "    48,",
+              "    49,",
+              "    50},",
+              "  \"41-50岁\",",
+              "  '年龄段'[年龄] IN {51,",
+              "    52,",
+              "    53,",
+              "    54,",
+              "    55,",
+              "    56,",
+              "    57,",
+              "    58,",
+              "    59,",
+              "    60},",
+              "  \"51-60岁\",",
+              "  \"60岁以上\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "年龄段"
+                          }
+                        },
+                        "Property": "年龄"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "10fbd4e1-d6c6-4d7a-8210-35c0f100d357",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "14f89438-1b7f-417b-ac2f-b9a9da711708",
+        "partitions": [
+          {
+            "name": "年龄段-56bfd928-9b32-4975-83d3-b445e0fae196",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(20, 65, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "度量值表",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "列 1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "026389f9-2168-4acd-b73a-f09c491f4d3c",
+            "sourceColumn": "列 1",
+            "summarizeBy": "none"
+          }
+        ],
+        "excludeFromModelRefresh": true,
+        "lineageTag": "e02dd133-e761-4595-a2b0-8f9f015d82f7",
+        "measures": [
+          {
+            "name": "员工人数",
+            "expression": "COUNT('上月工资表'[员工编码])",
+            "formatString": "0",
+            "lineageTag": "eb6b8542-06ab-4944-af7c-7d393cd217b1"
+          },
+          {
+            "name": "新入职人数",
+            "expression": "COUNT('人员基本信息'[员工编码])",
+            "formatString": "0",
+            "lineageTag": "3673ce5f-5c48-4fde-aa14-e04d678f8465"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "度量值表-27cb60ef-b79e-4329-82da-2d4e4d46cf93",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"列 1\" = _t])",
+                "in",
+                "    源"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "日历",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "b541ffb82b89429499bdc5b9e97c3d68"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isKey": true,
+            "isNameInferred": true,
+            "lineageTag": "96490ae6-1042-4cd0-89e3-747453831372",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "年月",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "FORMAT('日历'[Date],\"yyyy-MM\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "1d8ccf02-e90e-40dc-8520-615ca626ad01",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "年",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "FORMAT('日历'[Date],\"yyyy\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "7a7f9bec-82ab-40e7-818a-31a92c671316",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "70e3e437-fc6f-456a-a1dd-8526b2326930",
+        "partitions": [
+          {
+            "name": "日历-37576a80-4594-41a2-88b9-3066e2e8beef",
+            "mode": "import",
+            "source": {
+              "expression": "CALENDAR(\"2000-1-1\",TODAY())",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "司龄段",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "30a54ba4a426454183b2b1994a6edc20"
+          }
+        ],
+        "columns": [
+          {
+            "name": "司龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"司龄段\",\"TableItemName\":\"司龄段\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "int64",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "923da55c-7a7d-4825-80dd-e039c898425d",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "司龄段",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"司\",\"Entity\":\"司龄段\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"司\"}},\"Property\":\"司龄\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"1-3年\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"司\"}},\"Property\":\"司龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"0D\"}}],[{\"Literal\":{\"Value\":\"1D\"}}],[{\"Literal\":{\"Value\":\"2D\"}}],[{\"Literal\":{\"Value\":\"3D\"}}]]}}},{\"DisplayName\":\"4-5年\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"司\"}},\"Property\":\"司龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"4D\"}}],[{\"Literal\":{\"Value\":\"5D\"}}]]}}},{\"DisplayName\":\"6-8年\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"司\"}},\"Property\":\"司龄\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"6D\"}}],[{\"Literal\":{\"Value\":\"7D\"}}],[{\"Literal\":{\"Value\":\"8D\"}}]]}}},{\"DisplayName\":\"8年以上\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('司龄段'[司龄]),",
+              "  \"(空白)\",",
+              "  '司龄段'[司龄] IN {0,",
+              "    1,",
+              "    2,",
+              "    3},",
+              "  \"1-3年\",",
+              "  '司龄段'[司龄] IN {4,",
+              "    5},",
+              "  \"4-5年\",",
+              "  '司龄段'[司龄] IN {6,",
+              "    7,",
+              "    8},",
+              "  \"6-8年\",",
+              "  \"8年以上\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "司龄段"
+                          }
+                        },
+                        "Property": "司龄"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "d486e3bd-07b6-434a-a6f2-965a8a3f33e3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "f7ef009a-fd15-45b0-88fd-fc9123561f89",
+        "partitions": [
+          {
+            "name": "司龄段-e6a01a2f-dca4-438b-a239-c999c592fcf1",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 50, 1)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "进入本企日历",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "4d391bc1db2f42fb9a3ab1b1bbc96527"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "c659c2f8-1b0c-4fba-96e1-0f0588446967",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "年",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "FORMAT('进入本企日历'[Date],\"yyyy\")",
+            "isDataTypeInferred": true,
+            "lineageTag": "89a080e4-43a4-496e-8f7a-509234970140",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "13782c1b-f9e8-4993-8f97-d85c563ef869",
+        "partitions": [
+          {
+            "name": "进入本企日历-bf9da7ac-5a19-487a-8377-55cc43e0ef0d",
+            "mode": "import",
+            "source": {
+              "expression": "CALENDAR(\"2016-1-1\",TODAY())",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "员工离职表",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Exception"
+          }
+        ],
+        "columns": [
+          {
+            "name": "员工编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "40179f1b-8f8f-4480-b57d-62694996ab14",
+            "sourceColumn": "员工编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "31fa712c-ffda-4989-b2ab-28518a5a1386",
+            "sourceColumn": "姓名",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "性别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c9c1cdfe-3f32-4767-baaa-2f1705c68fd3",
+            "sourceColumn": "性别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "生日",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "e2091d27-279a-4455-8495-3deceaa5de9c",
+            "sourceColumn": "生日",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FDEPTCODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f61699e5-0679-4021-9e92-10a73a1a8a38",
+            "sourceColumn": "FDEPTCODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时单位",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c61fd0e9-fcc7-45d4-bcba-ea43add6d740",
+            "sourceColumn": "离职时单位",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时职务",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "78d06145-4f74-4ba8-8b33-a2ff1dc054b3",
+            "sourceColumn": "离职时职务",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时岗位",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dadf0a61-536c-485d-8e9f-f68c21dcd1db",
+            "sourceColumn": "离职时岗位",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职类型",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b7dd30ea-e284-4a56-86b2-06596a92dd77",
+            "sourceColumn": "离职类型",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "2691b520-885d-4cda-bed6-9dd9411e57a7",
+            "sourceColumn": "离职时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "去向",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0fabbaf9-3b2d-42f9-ba97-ef948288736c",
+            "sourceColumn": "去向",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "单位类型",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e19cbca8-2d50-4213-a88a-50f61c2e0669",
+            "sourceColumn": "单位类型",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职年龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2579d82f-234a-434b-a921-a5d9bdd726da",
+            "sourceColumn": "离职年龄",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "人员基本信息.所属系统",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d8ea217f-3df0-47d6-851a-ccf142a5dfd4",
+            "sourceColumn": "人员基本信息.所属系统",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "索引",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7795b42d-506b-4cb7-8b4e-4c457391d772",
+            "sourceColumn": "索引",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "责任体区域",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f603b6c4-2e90-4f02-863f-7f2780ca6335",
+            "sourceColumn": "责任体区域",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "责任体",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a47762ee-389c-4512-a1d7-d86cd49e27c2",
+            "sourceColumn": "责任体",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "进入本企日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "3407c7d9-afdb-446e-8c99-61bf2f806fa0",
+            "sourceColumn": "进入本企日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "司龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DATEDIFF('员工离职表'[进入本企日期],'员工离职表'[离职时间],YEAR)",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "lineageTag": "cb2c33ce-6732-41d9-a3d2-b9cc29de8eee",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "d592ecf2-7904-488b-b7d2-d6c53a588aae",
+        "measures": [
+          {
+            "name": "【离职人数】",
+            "expression": "IF(ISBLANK( DISTINCTCOUNT('员工离职表'[员工编码])),0,DISTINCTCOUNT('员工离职表'[员工编码]))",
+            "formatString": "0",
+            "lineageTag": "595ca9ab-ec34-4460-9b45-f3ec6ee6fc42"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "员工离职表-cfc0a959-1f04-425f-9ca7-c896899afccd",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = cscecdb,",
+                "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+                "    HR_SEPARATION1 = FZHR{[Name=\"HR_SEPARATION\"]}[Data],",
+                "    重命名的列 = Table.RenameColumns(HR_SEPARATION1,{{\"FCODE\", \"员工编码\"}, {\"FNAME\", \"姓名\"}, {\"FSEX\", \"性别\"}, {\"FDEPTNAME\", \"离职时单位\"}, {\"FPOSITIONNAME\", \"离职时职务\"}, {\"FSTATIONNAME\", \"离职时岗位\"}, {\"FSEPARATIONKIND\", \"离职类型\"}, {\"FGOWHERE\", \"去向\"}, {\"FSEPARATIONDATE\", \"离职时间\"}, {\"FBIRTHDATE\", \"生日\"}}),",
+                "    删除的其他列 = Table.SelectColumns(重命名的列,{\"员工编码\", \"姓名\", \"性别\", \"生日\", \"FDEPTCODE\", \"离职时单位\", \"离职时职务\", \"离职时岗位\", \"离职类型\", \"离职时间\", \"去向\"}),",
+                "    合并的查询 = Table.NestedJoin(删除的其他列, {\"FDEPTCODE\"}, 单位编码, {\"单位编码\"}, \"单位编码\", JoinKind.LeftOuter),",
+                "    #\"展开的“单位编码”\" = Table.ExpandTableColumn(合并的查询, \"单位编码\", {\"单位类型\"}, {\"单位类型\"}),",
+                "    已添加自定义 = Table.AddColumn(#\"展开的“单位编码”\", \"离职年龄\", each Date.Year([离职时间])-Date.Year([生日]),Int64.Type),",
+                "    合并的查询1 = Table.NestedJoin(已添加自定义, {\"员工编码\"}, 人员基本信息, {\"员工编码\"}, \"人员基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“人员基本信息”\" = Table.ExpandTableColumn(合并的查询1, \"人员基本信息\", {\"所属系统\"}, {\"人员基本信息.所属系统\"}),",
+                "    排序的行 = Table.Sort(#\"展开的“人员基本信息”\",{{\"离职时间\", Order.Descending}}),",
+                "    已添加索引 = Table.AddIndexColumn(排序的行, \"索引\", 0, 1, Int64.Type),",
+                "    删除的副本 = Table.Distinct(已添加索引, {\"员工编码\"}),",
+                "    更改的类型 = Table.TransformColumnTypes(删除的副本,{{\"离职时间\", type date}}),",
+                "    筛选的行1 = Table.SelectRows(更改的类型, each Date.IsInCurrentYear([离职时间])),",
+                "    合并的查询2 = Table.NestedJoin(筛选的行1, {\"离职时单位\"}, 项目基本信息, {\"项目名称\"}, \"项目基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“项目基本信息”\" = Table.ExpandTableColumn(合并的查询2, \"项目基本信息\", {\"责任体区域\"}, {\"责任体区域\"}),",
+                "    已添加条件列 = Table.AddColumn(#\"展开的“项目基本信息”\", \"责任体\", each if [责任体区域] = null then [离职时单位] else [责任体区域]),",
+                "    合并的查询3 = Table.NestedJoin(已添加条件列, {\"员工编码\"}, 人员基本信息, {\"员工编码\"}, \"人员基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“人员基本信息”1\" = Table.ExpandTableColumn(合并的查询3, \"人员基本信息\", {\"进入本企日期\"}, {\"进入本企日期\"})",
+                "in",
+                "    #\"展开的“人员基本信息”1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "员工调动表",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "FCODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9363deac-fdbe-40bf-846b-b7d497368b0d",
+            "sourceColumn": "FCODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aa1a12d0-aea5-4a65-97a1-51e692b6725a",
+            "sourceColumn": "姓名",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "性别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aee11b7c-4050-4380-83b3-7918648e68ef",
+            "sourceColumn": "性别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FBIRTHDATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "9124c412-df67-4646-88d6-49d65812bba4",
+            "sourceColumn": "FBIRTHDATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FDEPTCODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cf4c2b33-7167-420c-bf3c-34971c17c96e",
+            "sourceColumn": "FDEPTCODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动前单位",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a27d624e-ee48-4188-b381-a090d88dd818",
+            "sourceColumn": "异动前单位",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动前职务名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "086a652c-4ade-49b3-ab14-f43dddd0f71c",
+            "sourceColumn": "异动前职务名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动前岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "66aa60c2-db0a-4a8c-83f9-9e39cc069fda",
+            "sourceColumn": "异动前岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "进入前单位日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "e5f10af3-db84-4648-be85-c251a292dcee",
+            "sourceColumn": "进入前单位日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动类型",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e89e33e7-c596-42e6-aead-d0da620f7b6a",
+            "sourceColumn": "异动类型",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "2e779093-d2b2-4d71-b4c3-eb4656ee0669",
+            "sourceColumn": "异动日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动后单位类别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e1777797-9320-4cad-8ac3-0da03cea2d29",
+            "sourceColumn": "异动后单位类别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FCHANGEDEPTCODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b1547c64-1035-4ed3-b219-2613ef9da993",
+            "sourceColumn": "FCHANGEDEPTCODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动后单位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2c8cc9b5-4c95-467b-b2ca-cad2c47b328f",
+            "sourceColumn": "异动后单位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动后职务名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "45f3d9cc-effd-4212-99c3-9a410a7d5612",
+            "sourceColumn": "异动后职务名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动后岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "186e2aff-6e58-4799-8ac8-24ebdacf9c3a",
+            "sourceColumn": "异动后岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "异动前员工状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "28b8aa9f-78be-47fa-82a3-b8bdc0127d66",
+            "sourceColumn": "异动前员工状态",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9d528912-26d0-4a7c-ad2f-6dd5403be7c5",
+        "partitions": [
+          {
+            "name": "员工调动表-c47ee309-0920-4f8e-9305-1c0afa4424e5",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = cscecdb,",
+                "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+                "    HR_INNERCHANGE = FZHR{[Name=\"HR_INNERCHANGE\"]}[Data],",
+                "    重命名的列 = Table.RenameColumns(HR_INNERCHANGE,{{\"FNAME\", \"姓名\"}, {\"FSEX\", \"性别\"}, {\"FDEPTNAME\", \"异动前单位\"}, {\"FPOSITIONNAME\", \"异动前职务名称\"}, {\"FSTATIONNAME\", \"异动前岗位名称\"}, {\"FINTOCOMPANYDATE\", \"进入前单位日期\"}, {\"FCHANGEKIND\", \"异动类型\"}, {\"FCHANGEDATE\", \"异动日期\"}, {\"FDEPTKIND\", \"异动后单位类别\"}, {\"FCHANGEDEPTNAME\", \"异动后单位名称\"}, {\"FCHANGEPOSITIONNAME\", \"异动后职务名称\"}, {\"FCHANGESTATIONNAME\", \"异动后岗位名称\"}, {\"FEMPLOYEESTATE\", \"异动前员工状态\"}}),",
+                "    删除的其他列 = Table.SelectColumns(重命名的列,{\"FCODE\", \"姓名\", \"性别\", \"FBIRTHDATE\", \"FDEPTCODE\", \"异动前单位\", \"异动前职务名称\", \"异动前岗位名称\", \"异动日期\", \"异动类型\", \"进入前单位日期\", \"异动后单位类别\", \"异动后单位名称\", \"FCHANGEDEPTCODE\", \"异动后职务名称\", \"异动后岗位名称\", \"异动前员工状态\"}),",
+                "    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{\"异动日期\", type date}, {\"FBIRTHDATE\", type date}}),",
+                "    筛选的行 = Table.SelectRows(更改的类型, each (List.Contains(岗位筛选[岗位],[异动前岗位名称])))",
+                "in",
+                "    筛选的行"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "人员基本信息",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          }
+        ],
+        "columns": [
+          {
+            "name": "员工编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eba7bfc4-277f-4246-8cf9-fd18a78fc8c9",
+            "sourceColumn": "员工编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1bd639c3-c64e-43b5-a621-0c90d978da41",
+            "sourceColumn": "姓名",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "性别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "801b4d47-22b1-4863-b2a1-c13ef68ab470",
+            "sourceColumn": "性别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "民族",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d59deb69-8ad4-4219-a319-a67ec5eee231",
+            "sourceColumn": "民族",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "籍贯",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "378f01f5-b2f5-4edf-86d6-3bc2bf9a6a99",
+            "sourceColumn": "籍贯",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "出生日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "6240fbea-75c3-4848-a92a-dd0b0fc68252",
+            "sourceColumn": "出生日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "身份证号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a0787aaf-c395-4571-b0a9-8d1447c85c71",
+            "sourceColumn": "身份证号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FDIMISSDATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "fa7ce39e-920c-4727-bc87-482d1fe09b49",
+            "sourceColumn": "FDIMISSDATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FSTATIONCODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "de393742-0312-4494-9ed2-2f0e151ef0be",
+            "sourceColumn": "FSTATIONCODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "进入本企日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "65248567-fc4d-4ae9-8270-29ecf81742a3",
+            "sourceColumn": "进入本企日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b44b67dd-7578-4897-b3be-449aaf38351d",
+            "sourceColumn": "员工状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "政治面貌",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b4b7874c-5493-416a-9d54-7fef68c867e2",
+            "sourceColumn": "政治面貌",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一学历",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "62061e2e-8917-4590-92cd-51aa77e998c4",
+            "sourceColumn": "第一学历",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一毕业院校",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "81a15fa8-436f-4cfb-86f1-b3ed1fa73b63",
+            "sourceColumn": "第一毕业院校",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一专业",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "812005b3-5538-45d5-97c8-7b2f7ec0cf3e",
+            "sourceColumn": "第一专业",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一学历毕业日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "6d9f0392-2503-49ba-a234-9d21d8a6983d",
+            "sourceColumn": "第一学历毕业日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b0b86f8b-ba2c-4c7b-97f1-c19acfeda03e",
+            "sourceColumn": "最高学历",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历毕业院校",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "62d215da-5a49-4bc7-88db-75a887357551",
+            "sourceColumn": "最高学历毕业院校",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历专业",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "969fa12b-f80e-4093-92dd-b603b61e00f2",
+            "sourceColumn": "最高学历专业",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历毕业生日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "850b85f8-edc9-4f19-a33e-d07aac1a6724",
+            "sourceColumn": "最高学历毕业生日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "入职方式",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "986f0f30-2d2c-42b1-ab20-f29a4985ca8f",
+            "sourceColumn": "入职方式",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "职级",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dd64c633-337d-4dbf-809e-7abb41139d3b",
+            "sourceColumn": "职级",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "年龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "dc280901-c62a-412d-b2ff-6e676a4f7b43",
+            "sourceColumn": "年龄",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "司龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d0bb874d-aaa5-4396-98c7-7244974c6a4a",
+            "sourceColumn": "司龄",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "所属系统",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5813e827-c087-4974-8dd5-2929974369e4",
+            "sourceColumn": "所属系统",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FNAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dbd4462f-5b1b-41d9-84fb-1a7a173ce0ef",
+            "sourceColumn": "FNAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FKIND",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9fc4a26f-e6c0-4315-b4fd-f716667b7bff",
+            "sourceColumn": "FKIND",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FDEPTCODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dbfce461-2807-4f9a-9f46-f4f2fe5f8be7",
+            "sourceColumn": "FDEPTCODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FOWNEDPOSITIONNAME",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4bb38386-e92d-4e52-b0b4-38d46b087c71",
+            "sourceColumn": "FOWNEDPOSITIONNAME",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FRELATIONTEL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e7edcb7b-78d1-4aa7-ae68-ff5e16614693",
+            "sourceColumn": "FRELATIONTEL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "职称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c629ad54-77f1-4b68-9be4-8d24aaf442dd",
+            "sourceColumn": "职称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "参加工作日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "fedd2820-e54a-41bf-a13d-6c8af2f245f0",
+            "sourceColumn": "参加工作日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "执业资格",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "efa16baa-cc48-4a9f-8e24-034ef050bee7",
+            "sourceColumn": "执业资格",
+            "summarizeBy": "none"
+          }
+        ],
+        "description": "合并入'财务人员基本信息'",
+        "lineageTag": "4e8b2e6a-3255-428a-bc0a-214f2d9c36df",
+        "partitions": [
+          {
+            "name": "人员基本信息-1639434d-484b-4453-b002-74fb73fadf81",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Oracle.Database(\"172.16.8.87/cscecdb\", [HierarchicalNavigation=true]),",
+                "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+                "    HR_EMPLOYEEINFO1 = FZHR{[Name=\"HR_EMPLOYEEINFO\"]}[Data],",
+                "    删除的其他列 = Table.SelectColumns(HR_EMPLOYEEINFO1,{\"FCODE\", \"FNAME\", \"FSEX\", \"FNATIONALITY\", \"FNATIVEPLACE\", \"FBIRTHDATE\", \"FNATIONALITYCARDNUM\", \"FDIMISSDATE\", \"FJOINWORKDATE\", \"FSTATIONCODE\", \"FRELATIONTEL\", \"FDEPTCODE\", \"FINTOCOMPANYDATE\", \"FEMPLOYEESTATE\", \"FPOLITICSSTATUS\", \"FOFFICE\", \"FEDUCATION\", \"FFOLDTYPE\", \"SXZY\", \"BYYX\", \"ZJ\", \"DYXLBYRQ\", \"SZYWXT\", \"ZGXLBYYX\", \"ZGXLSXZY\", \"ZGXLBYRQ\", \"ZGXL\", \"FZYZG\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FCODE\", \"员工编码\"}, {\"FNAME\", \"姓名\"}, {\"FBIRTHDATE\", \"出生日期\"}, {\"FINTOCOMPANYDATE\", \"进入本企日期\"}, {\"FEDUCATION\", \"第一学历\"}, {\"BYYX\", \"第一毕业院校\"}, {\"ZJ\", \"职级\"}, {\"FNATIONALITYCARDNUM\", \"身份证号\"}, {\"FEMPLOYEESTATE\", \"员工状态\"}, {\"ZGXLBYYX\", \"最高学历毕业院校\"}, {\"FPOLITICSSTATUS\", \"政治面貌\"}, {\"FSEX\", \"性别\"}, {\"ZGXLSXZY\", \"最高学历专业\"}, {\"FNATIONALITY\", \"民族\"}, {\"FNATIVEPLACE\", \"籍贯\"}, {\"FFOLDTYPE\", \"入职方式\"}, {\"DYXLBYRQ\", \"第一学历毕业日期\"}, {\"ZGXLBYRQ\", \"最高学历毕业生日期\"}, {\"ZGXL\", \"最高学历\"}, {\"SXZY\", \"第一专业\"}, {\"SZYWXT\", \"所属系统\"}, {\"FOFFICE\", \"职称\"}, {\"FJOINWORKDATE\", \"参加工作日期\"}, {\"FZYZG\", \"执业资格\"}}),",
+                "    计算年龄 = Table.AddColumn(重命名的列, \"年龄\", each Date.Year(DateTime.LocalNow())-Date.Year([出生日期]),Int64.Type),",
+                "    计算司龄 = Table.AddColumn(计算年龄, \"司龄\", each Date.Year(DateTime.LocalNow())-Date.Year([进入本企日期]),Int64.Type),",
+                "    提取的日期 = Table.TransformColumns(计算司龄,{{\"进入本企日期\", DateTime.Date, type date}}),",
+                "    合并的查询 = Table.NestedJoin(提取的日期, {\"FSTATIONCODE\"}, 岗位表, {\"FGUID\"}, \"岗位表\", JoinKind.LeftOuter),",
+                "    #\"展开的“岗位表”\" = Table.ExpandTableColumn(合并的查询, \"岗位表\", {\"FNAME\", \"FKIND\", \"FOWNEDPOSITIONNAME\"}, {\"FNAME\", \"FKIND\", \"FOWNEDPOSITIONNAME\"})",
+                "in",
+                "    #\"展开的“岗位表”\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "商务202202",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "员工姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "95bfc8ef-beb8-41f3-a1d7-fcdcb621e782",
+            "sourceColumn": "员工姓名",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目所属区域",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1be564f3-51a3-4499-84cb-0a330a055563",
+            "sourceColumn": "项目所属区域",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "单位类别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "199d3b89-7e9e-4507-8d6e-7b8ac31a0711",
+            "sourceColumn": "单位类别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "单位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "19c69f44-0cd1-459e-9fa5-d198d19393cd",
+            "sourceColumn": "单位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "职务名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2a0ba502-8125-4044-9ff1-6c0efdf60189",
+            "sourceColumn": "职务名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"商务202202\",\"TableItemName\":\"岗位名称 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3db384ef-86a8-46a3-963a-405d4c63ca13",
+            "sourceColumn": "岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "所属业务系统",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f194092e-ac67-46f2-8901-6f23ff25e999",
+            "sourceColumn": "所属业务系统",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"商务202202\",\"TableItemName\":\"员工状态 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "33bab896-fd57-4881-9585-7568652869a1",
+            "sourceColumn": "员工状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "身份证号码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "68623190-e104-4b6a-b591-40a29b4a3228",
+            "sourceColumn": "身份证号码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "参加工作日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "49459c5c-1ad9-40f2-b6ba-25ec9a869cdb",
+            "sourceColumn": "参加工作日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "进入本单位日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "758d4065-50a7-4075-9e98-3ed65d0be118",
+            "sourceColumn": "进入本单位日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "调入类别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ebb059e1-910e-41c1-89db-d117e3e75a59",
+            "sourceColumn": "调入类别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"商务202202\",\"TableItemName\":\"最高学历 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ec24e3cf-6e61-44fa-9f63-65c6c74d6fa4",
+            "sourceColumn": "最高学历",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "职级",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "27b14482-ab49-4801-88bf-5ca6d32e342b",
+            "sourceColumn": "职级",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "出生日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cc85e951-6146-4664-bce0-fea843e05cf6",
+            "sourceColumn": "出生日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "性别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "130125d4-df90-4ea2-8aa8-8ea873e365da",
+            "sourceColumn": "性别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "年龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a4a92717-5e61-4b63-b3fd-db6f847fc8fe",
+            "sourceColumn": "年龄",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "民族",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5e6cdcba-46fd-498a-9fb4-1c49257469d3",
+            "sourceColumn": "民族",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "籍贯",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0947b3cd-05f1-4b31-91e6-cb5a8fc94373",
+            "sourceColumn": "籍贯",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "户籍性质",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cf4d4db7-7e21-4f80-92e2-0dd401b6facf",
+            "sourceColumn": "户籍性质",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "户籍地址",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e5b81a74-d4b8-48e4-b6c9-f69c1e852771",
+            "sourceColumn": "户籍地址",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "联系电话",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1535c46f-b81b-4c75-834b-6cf118e07724",
+            "sourceColumn": "联系电话",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "政治面貌",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"商务202202\",\"TableItemName\":\"政治面貌 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "219628a8-585e-4fe0-b934-179d7fb8f8e4",
+            "sourceColumn": "政治面貌",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一学历毕业院校",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ee96f844-1eff-4125-bcba-371e74a1e189",
+            "sourceColumn": "第一学历毕业院校",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一学历所学专业",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "de01a366-bb63-4bf8-9ec8-95344f10743d",
+            "sourceColumn": "第一学历所学专业",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一学历",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "00f50e27-8898-4f22-bdf0-984d85b23370",
+            "sourceColumn": "第一学历",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历毕业院校",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e3748ee4-c961-4671-9fe2-787a36a675ce",
+            "sourceColumn": "最高学历毕业院校",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历所学专业",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1c248612-c836-4d62-8dc7-8356ed626f79",
+            "sourceColumn": "最高学历所学专业",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "职称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ebd530eb-f4d5-4172-9157-b06562f3f53b",
+            "sourceColumn": "职称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "身份",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2b805cc8-c6e3-4f7f-b8f4-2ae3d2d2f171",
+            "sourceColumn": "身份",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "聘用形式",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8f976dfe-7e4d-4e23-89e0-39fba74f4ece",
+            "sourceColumn": "聘用形式",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工类别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7f8e5784-9bac-48f6-a11c-a0517d0be650",
+            "sourceColumn": "员工类别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "岗位类别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7778c565-c4bc-468b-b24f-acfc352d0b5f",
+            "sourceColumn": "岗位类别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "起薪日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "65dd26c9-7d30-4d79-98c3-353836dad52b",
+            "sourceColumn": "起薪日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "08a1ff4e-39fb-45a9-9fa9-be5937009821",
+            "sourceColumn": "离职日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "劳务公司名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8e24f6ab-0618-45b5-a75c-94a4c16d5ebb",
+            "sourceColumn": "劳务公司名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工编号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "25cc5a1e-9078-4f6b-b319-85cc0877bd39",
+            "sourceColumn": "员工编号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工属地",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c5d0ff5d-b268-45b4-9957-6a1dbd67fa3b",
+            "sourceColumn": "员工属地",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工状态细分",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a12fb3ea-709a-4321-ba56-1dfdc82cbcc0",
+            "sourceColumn": "员工状态细分",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "紧急联系人姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ff205e9e-c3d4-4ab8-81c6-cc737545068a",
+            "sourceColumn": "紧急联系人姓名",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "紧急联系人电话",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3c451e38-3084-4873-be5d-e972088edd21",
+            "sourceColumn": "紧急联系人电话",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "主管分公司",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b8a223ed-14fb-4619-844c-3a5458ed3533",
+            "sourceColumn": "主管分公司",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "一体化账号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c97aae2b-969d-4bf3-8f66-daf0586ac785",
+            "sourceColumn": "一体化账号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "业务板块",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5e6684ba-f87a-46bb-8c8a-daf66ee207cd",
+            "sourceColumn": "业务板块",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "司龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "expression": "DATEDIFF('商务202202'[进入本单位日期],'商务202202'[日期],YEAR)",
+            "isDataTypeInferred": true,
+            "lineageTag": "04e19bce-7139-4d83-9888-b383dd345c66",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "b4f98e2c-dcf9-4f1a-ab18-aabdd3a7f288",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "厂房事业部",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d28ab17e-5d7c-4fbe-9625-93606f01de02",
+            "sourceColumn": "厂房事业部",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "所属总监团队",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "93e10b3a-e8e1-4da0-af9a-2e2a9f4cadd3",
+            "sourceColumn": "所属总监团队",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "业务板块.1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ba8be5fd-b215-4712-b191-09e9cd0d4b4e",
+            "sourceColumn": "业务板块.1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "责任体区域",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "853ada3c-2805-4c72-8282-4670fdfc4b1c",
+            "sourceColumn": "责任体区域",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "责任体",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9a79768c-581a-47b6-b047-daeabe362275",
+            "sourceColumn": "责任体",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "岗位名称 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"商\",\"Entity\":\"商务202202\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"岗位名称\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"物资人员\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"岗位名称\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'项目材料员'\"}}],[{\"Literal\":{\"Value\":\"'项目物资部副经理'\"}}],[{\"Literal\":{\"Value\":\"'项目物资部经理'\"}}]]}}},{\"DisplayName\":\"商务人员\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('商务202202'[岗位名称]),",
+              "  \"(空白)\",",
+              "  '商务202202'[岗位名称] IN {\"项目材料员\",",
+              "    \"项目物资部副经理\",",
+              "    \"项目物资部经理\"},",
+              "  \"物资人员\",",
+              "  \"商务人员\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "商务202202"
+                          }
+                        },
+                        "Property": "岗位名称"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "c0be1283-5166-4726-aaa7-666643e195e2",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "员工状态 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"商\",\"Entity\":\"商务202202\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"员工状态\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"派遣及其他\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"员工状态\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'劳务派遣实习'\"}}],[{\"Literal\":{\"Value\":\"'劳务派遣在岗'\"}}],[{\"Literal\":{\"Value\":\"'其他用工在岗'\"}}]]}}},{\"DisplayName\":\"自有员工\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"员工状态\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'本公司在岗'\"}}],[{\"Literal\":{\"Value\":\"'短期待岗'\"}}],[{\"Literal\":{\"Value\":\"'实习'\"}}]]}}}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('商务202202'[员工状态]),",
+              "  \"(空白)\",",
+              "  '商务202202'[员工状态] IN {\"劳务派遣实习\",",
+              "    \"劳务派遣在岗\",",
+              "    \"其他用工在岗\"},",
+              "  \"派遣及其他\",",
+              "  '商务202202'[员工状态] IN {\"本公司在岗\",",
+              "    \"短期待岗\",",
+              "    \"实习\"},",
+              "  \"自有员工\",",
+              "  '商务202202'[员工状态]",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "商务202202"
+                          }
+                        },
+                        "Property": "员工状态"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "9a1b5c5b-12f4-49dc-b20a-398adb97c9dc",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "最高学历 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"商\",\"Entity\":\"商务202202\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"最高学历\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"大学专科\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"最高学历\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'大学专科'\"}}]]}}},{\"DisplayName\":\"大学本科\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"最高学历\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'大学本科'\"}}]]}}},{\"DisplayName\":\"研究生及以上\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"最高学历\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'硕士研究生'\"}}]]}}},{\"DisplayName\":\"其他\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('商务202202'[最高学历]),",
+              "  \"(空白)\",",
+              "  '商务202202'[最高学历] IN {\"大学专科\"},",
+              "  \"大学专科\",",
+              "  '商务202202'[最高学历] IN {\"大学本科\"},",
+              "  \"大学本科\",",
+              "  '商务202202'[最高学历] IN {\"硕士研究生\"},",
+              "  \"研究生及以上\",",
+              "  \"其他\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "商务202202"
+                          }
+                        },
+                        "Property": "最高学历"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "46c33f8b-9d7d-41e1-9acd-6d570131fda9",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "政治面貌 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"商\",\"Entity\":\"商务202202\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"政治面貌\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"中共党员\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"政治面貌\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'中共党员'\"}}],[{\"Literal\":{\"Value\":\"'中共预备党员'\"}}]]}}},{\"DisplayName\":\"共青团员\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"商\"}},\"Property\":\"政治面貌\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'共青团员'\"}}]]}}},{\"DisplayName\":\"群众\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('商务202202'[政治面貌]),",
+              "  \"(空白)\",",
+              "  '商务202202'[政治面貌] IN {\"中共党员\",",
+              "    \"中共预备党员\"},",
+              "  \"中共党员\",",
+              "  '商务202202'[政治面貌] IN {\"共青团员\"},",
+              "  \"共青团员\",",
+              "  \"群众\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "商务202202"
+                          }
+                        },
+                        "Property": "政治面貌"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "acb8f9d8-198d-4d38-b49b-ff7c3a2baa23",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "最高学历2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b214123a-1455-4ce7-96c7-a16d4a8229c4",
+            "sourceColumn": "最高学历2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "7a45956a-fb71-4c81-a868-2af34fd43f24",
+        "partitions": [
+          {
+            "name": "商务202202-75b99c73-bb16-4447-ac96-8d358f16c34b",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Excel.Workbook(File.Contents(\"\\\\172.16.8.66\\关键指标数据\\经营管控中心\\2月商务系统人员.xlsx\"), null, true),",
+                "    Sheet1_Sheet = 源{[Item=\"Sheet1\",Kind=\"Sheet\"]}[Data],",
+                "    提升的标题 = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),",
+                "    更改的类型 = Table.TransformColumnTypes(提升的标题,{{\"身份证号码\", type text}}),",
+                "    大写的文本 = Table.TransformColumns(更改的类型,{{\"身份证号码\", Text.Upper, type text}}),",
+                "    更改的类型1 = Table.TransformColumnTypes(大写的文本,{{\"进入本单位日期\", type date}}),",
+                "    已添加自定义 = Table.AddColumn(更改的类型1, \"日期\", each \"2022-02\"),",
+                "    更改的类型2 = Table.TransformColumnTypes(已添加自定义,{{\"日期\", type date}}),",
+                "    替换的值 = Table.ReplaceValue(更改的类型2,null,\"直管\",Replacer.ReplaceValue,{\"主管分公司\"}),",
+                "    替换的值1 = Table.ReplaceValue(替换的值,null,\"其他\",Replacer.ReplaceValue,{\"岗位名称\"}),",
+                "    合并的查询 = Table.NestedJoin(替换的值1, {\"单位名称\"}, 项目基本信息, {\"项目名称\"}, \"项目基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“项目基本信息”\" = Table.ExpandTableColumn(合并的查询, \"项目基本信息\", {\"厂房事业部\", \"所属总监团队\", \"业务板块\", \"责任体区域\"}, {\"厂房事业部\", \"所属总监团队\", \"业务板块.1\", \"责任体区域\"}),",
+                "    已添加条件列 = Table.AddColumn(#\"展开的“项目基本信息”\", \"责任体\", each if [责任体区域] = null then [单位名称] else [责任体区域])",
+                "in",
+                "    已添加条件列"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "责任体",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "责任体",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7e2c085c-be99-4121-8571-fa907d574ad8",
+            "sortByColumn": "序号",
+            "sourceColumn": "责任体",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "序号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "55afe48f-bcee-4668-bec5-d77319532fd0",
+            "sourceColumn": "序号",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "8b647bb5-ee0c-46bb-a7a4-fceddc4cc42c",
+        "partitions": [
+          {
+            "name": "责任体-01ada842-51b2-4647-8559-e1088debe64a",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"XZDdboJAEIXfhWsvSq21fRbiu5AaDCDykzS2drmxkWBTaNpE6xYwvMzOrlz5Ch0Q7ZbL+c6ZM5mjaQoYCXhUkM3Bj5SeoiqjnqYwGoLzBObkpCK/bjjM3A7vn3m9IvGbi3/2zz9o+CEqO/y24dX7s4gDbuvicQupD+4DN0uRJIzqLJsy+lKN12geNuaaZ47M7y6cWjK/P3MgRObqVSPw7Q5W83o+fc/1HHUg+2phoBfsZWvvS7LIPWxMfCy5GzOaQjmuHW1NPyXbE/k9te3D+GZ5c2nY9pxCnh0LE1ZvfBMdCwt2UX3SmSMXaYCjWE95aFUL/y9sIC1jNfClV2QC5BWDGLXxHQzC4iD8ZFkMhQ5e0I3Avke/\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [责任体 = _t, 序号 = _t]),",
+                "    更改的类型 = Table.TransformColumnTypes(源,{{\"序号\", Int64.Type}})",
+                "in",
+                "    更改的类型"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "表",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "员工状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5955fbdc-7b18-4266-b1ca-ddbe052b7c80",
+            "sortByColumn": "序号",
+            "sourceColumn": "员工状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "序号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8b1aa41c-2f9b-4efa-be87-d8009d0ec01f",
+            "sourceColumn": "序号",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "27b0487f-2291-464c-8f1f-fece46fc24e9",
+        "partitions": [
+          {
+            "name": "表-658c71e9-a7f2-40f7-b956-36f073cbc64b",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WetG+6tmczqcTZzzdvlRJR8lQKVYnWunZln0vGxc/7e962rrtye5pQHEjpdhYAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [员工状态 = _t, 序号 = _t])",
+                "in",
+                "    源"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "上月工资表",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          }
+        ],
+        "columns": [
+          {
+            "name": "员工编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5465b75e-f69a-4bf9-8f3e-1fbe622fabd7",
+            "sourceColumn": "员工编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "年",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7e4020e5-d17b-456c-9c8e-d0d66180c833",
+            "sourceColumn": "年",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "月",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d35c58a5-2b51-4e42-9f22-e2af4198f938",
+            "sourceColumn": "月",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "ece86bc7-f846-4570-828f-c7f1b5e54d50",
+            "sourceColumn": "日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "政治面貌",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"上月工资表\",\"TableItemName\":\"政治面貌 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "049774b1-84ae-4803-9619-03807dbc5c19",
+            "sourceColumn": "政治面貌",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "所属系统",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eb04e88d-5dac-497a-baec-9aad25fe0a33",
+            "sourceColumn": "所属系统",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "年龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "eb20bba5-749e-40ed-9ef9-3fed2335276c",
+            "sourceColumn": "年龄",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "司龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "38463638-8469-4459-ad66-5e74abbbe5c3",
+            "sourceColumn": "司龄",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cb92a07c-9ca2-4861-9e29-3d83a84c96e4",
+            "sourceColumn": "姓名",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "性别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0147aa46-7d84-4d51-869f-995919872b00",
+            "sourceColumn": "性别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "民族",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a702b3b0-071e-4491-b998-34d80bdb5dc2",
+            "sourceColumn": "民族",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "籍贯",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c70fc216-e34e-4226-add8-8c1ee70de4cc",
+            "sourceColumn": "籍贯",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "出生日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "43f5df30-ff02-40c4-aa42-f9530bcdbaae",
+            "sourceColumn": "出生日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "身份证号",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8ae818e7-cce0-43dc-bb4b-2e71721825c3",
+            "sourceColumn": "身份证号",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FDIMISSDATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "0e1b8ea6-2473-4c6a-b807-a781c1feef32",
+            "sourceColumn": "FDIMISSDATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "进入本企日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "309e9ae2-9476-4cba-80ca-9a34d8788270",
+            "sourceColumn": "进入本企日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工状态",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "12a21d87-ef52-41b7-9e92-415cd06344a2",
+            "sourceColumn": "员工状态",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一学历",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b772d698-8299-457d-9ff1-06e2ab8e4c0d",
+            "sourceColumn": "第一学历",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "入职方式",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0ecaab2f-691f-4769-acb4-5a39bd2bb34b",
+            "sourceColumn": "入职方式",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一专业",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "31fa66c3-917e-475a-9ca7-8294857a48ca",
+            "sourceColumn": "第一专业",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一毕业院校",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "764595ff-5e15-4f04-b36a-1f5d46af5f3a",
+            "sourceColumn": "第一毕业院校",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "职级",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e7cac9d0-91f9-49ea-b171-a4fa7962b3c7",
+            "sourceColumn": "职级",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "第一学历毕业日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "c78b4886-e158-4e7f-afa0-4449509965a5",
+            "sourceColumn": "第一学历毕业日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历毕业院校",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "63ba9420-7cd1-4759-a4a6-62896c785877",
+            "sourceColumn": "最高学历毕业院校",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历专业",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b82bf22c-50a6-40f2-a847-8bd7457b43fd",
+            "sourceColumn": "最高学历专业",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历毕业生日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "ff1975b7-8338-41bf-a78b-1117f97dad9b",
+            "sourceColumn": "最高学历毕业生日期",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最高学历",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"上月工资表\",\"TableItemName\":\"最高学历 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b1d75448-5cb5-415e-9fa5-e249cb5831f7",
+            "sourceColumn": "最高学历",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FEMPLOYEESTATE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"上月工资表\",\"TableItemName\":\"员工状态 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "07b52d31-e327-4e56-aa22-12b59f382094",
+            "sourceColumn": "FEMPLOYEESTATE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"上月工资表\",\"TableItemName\":\"岗位名称 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "864a0e4b-80a2-448e-beb7-8406fd842481",
+            "sourceColumn": "岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "员工状态 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"工\",\"Entity\":\"上月工资表\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"FEMPLOYEESTATE\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"自有员工\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"FEMPLOYEESTATE\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'本公司在岗'\"}}],[{\"Literal\":{\"Value\":\"'短期待岗'\"}}],[{\"Literal\":{\"Value\":\"'实习'\"}}]]}}},{\"DisplayName\":\"派遣及其他\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('上月工资表'[FEMPLOYEESTATE]),",
+              "  \"(空白)\",",
+              "  '上月工资表'[FEMPLOYEESTATE] IN {\"本公司在岗\",",
+              "    \"短期待岗\",",
+              "    \"实习\"},",
+              "  \"自有员工\",",
+              "  \"派遣及其他\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "上月工资表"
+                          }
+                        },
+                        "Property": "FEMPLOYEESTATE"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "1e4199c3-96b5-4257-bae1-9daa57fa6814",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "岗位名称 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"工\",\"Entity\":\"上月工资表\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"岗位名称\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"物资人员\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"岗位名称\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'项目材料员'\"}}],[{\"Literal\":{\"Value\":\"'项目物资部副经理'\"}}],[{\"Literal\":{\"Value\":\"'项目物资部经理'\"}}]]}}},{\"DisplayName\":\"商务人员\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('上月工资表'[岗位名称]),",
+              "  \"(空白)\",",
+              "  '上月工资表'[岗位名称] IN {\"项目材料员\",",
+              "    \"项目物资部副经理\",",
+              "    \"项目物资部经理\"},",
+              "  \"物资人员\",",
+              "  \"商务人员\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "上月工资表"
+                          }
+                        },
+                        "Property": "岗位名称"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "91a046e3-75ce-411e-b5be-39c4afb380d1",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "政治面貌 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"工\",\"Entity\":\"上月工资表\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"政治面貌\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"中共党员\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"政治面貌\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'中共党员'\"}}],[{\"Literal\":{\"Value\":\"'中共预备党员'\"}}]]}}},{\"DisplayName\":\"共青团员\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"政治面貌\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'共青团员'\"}}]]}}},{\"DisplayName\":\"群众\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('上月工资表'[政治面貌]),",
+              "  \"(空白)\",",
+              "  '上月工资表'[政治面貌] IN {\"中共党员\",",
+              "    \"中共预备党员\"},",
+              "  \"中共党员\",",
+              "  '上月工资表'[政治面貌] IN {\"共青团员\"},",
+              "  \"共青团员\",",
+              "  \"群众\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "上月工资表"
+                          }
+                        },
+                        "Property": "政治面貌"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "b8b4897d-9eeb-4446-8908-0a4f31f935bf",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "最高学历 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"工\",\"Entity\":\"上月工资表\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"最高学历\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"大学专科\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"最高学历\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'大学专科'\"}}]]}}},{\"DisplayName\":\"大学本科\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"最高学历\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'大学本科'\"}}],[{\"Literal\":{\"Value\":\"'大学本科双学位'\"}}]]}}},{\"DisplayName\":\"硕士研究生\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"最高学历\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'硕士研究生'\"}}]]}}},{\"DisplayName\":\"其他\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "  TRUE,",
+              "  ISBLANK('上月工资表'[最高学历]),",
+              "  \"(空白)\",",
+              "  '上月工资表'[最高学历] IN {\"大学专科\"},",
+              "  \"大学专科\",",
+              "  '上月工资表'[最高学历] IN {\"大学本科\",",
+              "    \"大学本科双学位\"},",
+              "  \"大学本科\",",
+              "  '上月工资表'[最高学历] IN {\"硕士研究生\"},",
+              "  \"硕士研究生\",",
+              "  \"其他\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "上月工资表"
+                          }
+                        },
+                        "Property": "最高学历"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "5437d435-39a6-4e24-961c-57eb8f605325",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "单位类别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "364bb65f-6ee5-4f5f-a189-cb27b73b04ed",
+            "sourceColumn": "单位类别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "单位编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fb9539a8-887c-42a8-b8f5-b1f4af8d42b9",
+            "sourceColumn": "单位编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "25e950dd-2408-4f97-a5d6-e1dcaa81d7f9",
+            "sourceColumn": "项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "责任体区域",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "61e2eb81-8ebf-4391-9659-8632723d496c",
+            "sourceColumn": "责任体区域",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "单位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4a5011ff-ef07-412f-a0f8-b9921130956a",
+            "sourceColumn": "单位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "所属单位",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "__PBI_SemanticLinks",
+                "value": "[{\"LinkTarget\":{\"TableName\":\"上月工资表\",\"TableItemName\":\"所属单位 (组)\",\"ObjectType\":4},\"LinkType\":\"UsedInGroup\"}]"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "133a922b-3a4e-4e50-869f-967286fb0227",
+            "sourceColumn": "所属单位",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "所属单位 (组)",
+            "annotations": [
+              {
+                "name": "GroupingDesignState",
+                "value": "{\"Version\":0,\"Sources\":[{\"Name\":\"工\",\"Entity\":\"上月工资表\"}],\"GroupedColumns\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"GroupItems\":[{\"DisplayName\":\"(空白)\",\"BlankDefaultPlaceholder\":true},{\"DisplayName\":\"第二事业部\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'第二事业部'\"}}],[{\"Literal\":{\"Value\":\"'厦门城市公司'\"}}]]}}},{\"DisplayName\":\"第三事业部\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'第三事业部'\"}}]]}}},{\"DisplayName\":\"第四事业部\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'第四事业部'\"}}],[{\"Literal\":{\"Value\":\"'西安城市公司'\"}}]]}}},{\"DisplayName\":\"东北分公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'东北分公司'\"}}]]}}},{\"DisplayName\":\"高科技电子厂房第一事业部\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'高科技电子厂房第一事业部'\"}}]]}}},{\"DisplayName\":\"公司直营\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'公司直营'\"}}]]}}},{\"DisplayName\":\"广佛分公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'广佛分公司'\"}}]]}}},{\"DisplayName\":\"海外\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'海外'\"}}]]}}},{\"DisplayName\":\"华北分公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'华北分公司'\"}}]]}}},{\"DisplayName\":\"华东分公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'华东分公司'\"}}]]}}},{\"DisplayName\":\"华南分公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'华南分公司'\"}}]]}}},{\"DisplayName\":\"西南分公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'西南分公司'\"}}]]}}},{\"DisplayName\":\"中建（天津）工业化建筑工程有限公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'中建（天津）工业化建筑工程有限公司'\"}}]]}}},{\"DisplayName\":\"中建一局集团（上海）房地产开发有限公司\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'中建一局集团（上海）房地产开发有限公司'\"}}]]}}},{\"DisplayName\":\"总部国际业务部\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'总部国际业务部'\"}}]]}}},{\"DisplayName\":\"总部经营管控中心\",\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"工\"}},\"Property\":\"所属单位\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'钢筋计量工作室'\"}}],[{\"Literal\":{\"Value\":\"'总部经营管控中心'\"}}]]}}},{\"DisplayName\":\"其他\"}]}"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": [
+              "SWITCH(",
+              "\tTRUE,",
+              "\tISBLANK('上月工资表'[所属单位]),",
+              "\t\"(空白)\",",
+              "\t'上月工资表'[所属单位] IN {\"第二事业部\",",
+              "\t\t\"厦门城市公司\"},",
+              "\t\"第二事业部\",",
+              "\t'上月工资表'[所属单位] IN {\"第三事业部\"},",
+              "\t\"第三事业部\",",
+              "\t'上月工资表'[所属单位] IN {\"第四事业部\",",
+              "\t\t\"西安城市公司\"},",
+              "\t\"第四事业部\",",
+              "\t'上月工资表'[所属单位] IN {\"东北分公司\"},",
+              "\t\"东北分公司\",",
+              "\t'上月工资表'[所属单位] IN {\"高科技电子厂房第一事业部\"},",
+              "\t\"高科技电子厂房第一事业部\",",
+              "\t'上月工资表'[所属单位] IN {\"公司直营\"},",
+              "\t\"公司直营\",",
+              "\t'上月工资表'[所属单位] IN {\"广佛分公司\"},",
+              "\t\"广佛分公司\",",
+              "\t'上月工资表'[所属单位] IN {\"海外\"},",
+              "\t\"海外\",",
+              "\t'上月工资表'[所属单位] IN {\"华北分公司\"},",
+              "\t\"华北分公司\",",
+              "\t'上月工资表'[所属单位] IN {\"华东分公司\"},",
+              "\t\"华东分公司\",",
+              "\t'上月工资表'[所属单位] IN {\"华南分公司\"},",
+              "\t\"华南分公司\",",
+              "\t'上月工资表'[所属单位] IN {\"西南分公司\"},",
+              "\t\"西南分公司\",",
+              "\t'上月工资表'[所属单位] IN {\"中建（天津）工业化建筑工程有限公司\"},",
+              "\t\"中建（天津）工业化建筑工程有限公司\",",
+              "\t'上月工资表'[所属单位] IN {\"中建一局集团（上海）房地产开发有限公司\"},",
+              "\t\"中建一局集团（上海）房地产开发有限公司\",",
+              "\t'上月工资表'[所属单位] IN {\"总部国际业务部\"},",
+              "\t\"总部国际业务部\",",
+              "\t'上月工资表'[所属单位] IN {\"钢筋计量工作室\",",
+              "\t\t\"总部经营管控中心\"},",
+              "\t\"总部经营管控中心\",",
+              "\t\"其他\"",
+              ")"
+            ],
+            "extendedProperties": [
+              {
+                "name": "GroupingMetadata",
+                "type": "json",
+                "value": {
+                  "groupedColumns": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "上月工资表"
+                          }
+                        },
+                        "Property": "所属单位"
+                      }
+                    }
+                  ],
+                  "version": 0
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "lineageTag": "3e9eaf10-05a1-4664-b4d9-5b7cfabc2235",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "自有岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d35851fa-95a3-450c-91f9-4c6cbee930ec",
+            "sourceColumn": "自有岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "联系方式",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3064a58a-ebc4-4f6f-ac1f-c5d541cbcf8a",
+            "sourceColumn": "联系方式",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "最早从事商务岗位年月",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1610ee3b-91f3-41a9-ae57-6c049b042a1f",
+            "sourceColumn": "最早从事商务岗位年月",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2ebae4ac-31d4-4f2b-bc6a-1887c735ba4b",
+        "partitions": [
+          {
+            "name": "上月工资表-3d466b06-9f98-4fc9-b0bd-873ec5aa29b5",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Oracle.Database(\"172.16.8.87/cscecdb\", [HierarchicalNavigation=true]),",
+                "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+                "    HR_EMPSALARY = FZHR{[Name=\"HR_EMPSALARY\"]}[Data],",
+                "    删除的其他列 = Table.SelectColumns(HR_EMPSALARY,{\"FCODE\", \"FYEAR\", \"FMONTH\", \"FEMPLOYEESTATE\"}),",
+                "    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{\"FYEAR\", Int64.Type}, {\"FMONTH\", Int64.Type}}),",
+                "    已添加自定义 = Table.AddColumn(更改的类型, \"日期\", each #date([FYEAR],[FMONTH],1)),",
+                "    更改的类型1 = Table.TransformColumnTypes(已添加自定义,{{\"日期\", type date}}),",
+                "    #\"筛选的行（取上月数据）\" = Table.SelectRows(更改的类型1, each Date.IsInPreviousMonth([日期])),",
+                "    合并的查询 = Table.NestedJoin(#\"筛选的行（取上月数据）\", {\"FCODE\"}, 人员基本信息, {\"员工编码\"}, \"岗位表\", JoinKind.LeftOuter),",
+                "    展开的人员基本信息表 = Table.ExpandTableColumn(合并的查询, \"岗位表\", {\"姓名\", \"性别\", \"民族\", \"籍贯\", \"出生日期\", \"身份证号\", \"FDIMISSDATE\", \"FRELATIONTEL\", \"FDEPTCODE\", \"进入本企日期\", \"员工状态\", \"政治面貌\", \"第一学历\", \"入职方式\", \"第一专业\", \"第一毕业院校\", \"职级\", \"第一学历毕业日期\", \"所属系统\", \"最高学历毕业院校\", \"最高学历专业\", \"最高学历毕业生日期\", \"最高学历\", \"年龄\", \"司龄\", \"FNAME\", \"FKIND\", \"FOWNEDPOSITIONNAME\"}, {\"姓名\", \"性别\", \"民族\", \"籍贯\", \"出生日期\", \"身份证号\", \"FDIMISSDATE\", \"FRELATIONTEL\", \"FDEPTCODE\", \"进入本企日期\", \"员工状态\", \"政治面貌\", \"第一学历\", \"入职方式\", \"第一专业\", \"第一毕业院校\", \"职级\", \"第一学历毕业日期\", \"所属系统\", \"最高学历毕业院校\", \"最高学历专业\", \"最高学历毕业生日期\", \"最高学历\", \"年龄\", \"司龄\", \"FNAME\", \"FKIND\", \"FOWNEDPOSITIONNAME\"}),",
+                "    #\"筛选的行（取商务人员）\" = Table.SelectRows(展开的人员基本信息表, each ([所属系统] = \"商务\")),",
+                "    合并的查询1 = Table.NestedJoin(#\"筛选的行（取商务人员）\", {\"FDEPTCODE\"}, 项目基本信息, {\"项目编码\"}, \"项目基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“项目基本信息”\" = Table.ExpandTableColumn(合并的查询1, \"项目基本信息\", {\"项目名称\", \"责任体区域\"}, {\"项目名称\", \"责任体区域\"}),",
+                "    合并的查询2 = Table.NestedJoin(#\"展开的“项目基本信息”\", {\"FDEPTCODE\"}, HR_DEPT, {\"FCODE\"}, \"HR_DEPT\", JoinKind.LeftOuter),",
+                "    #\"展开的“HR_DEPT”\" = Table.ExpandTableColumn(合并的查询2, \"HR_DEPT\", {\"FNAME\"}, {\"FNAME.1\"}),",
+                "    已添加条件列 = Table.AddColumn(#\"展开的“HR_DEPT”\", \"所属单位\", each if [责任体区域] = null then [FNAME.1] else [责任体区域]),",
+                "    替换的值 = Table.ReplaceValue(已添加条件列,null,\"其他\",Replacer.ReplaceValue,{\"FNAME\"}),",
+                "    替换的值1 = Table.ReplaceValue(替换的值,null,\"公司总部\",Replacer.ReplaceValue,{\"FKIND\"}),",
+                "    重命名的列 = Table.RenameColumns(替换的值1,{{\"FKIND\", \"单位类别\"}, {\"FCODE\", \"员工编码\"}, {\"FYEAR\", \"年\"}, {\"FMONTH\", \"月\"}, {\"FNAME\", \"岗位名称\"}, {\"FRELATIONTEL\", \"联系方式\"}, {\"FDEPTCODE\", \"单位编码\"}, {\"FNAME.1\", \"单位名称\"}, {\"FOWNEDPOSITIONNAME\", \"自有岗位名称\"}}),",
+                "    合并的查询3 = Table.NestedJoin(重命名的列, {\"员工编码\"}, 员工商务岗时间, {\"FCODE\"}, \"员工商务岗时间\", JoinKind.LeftOuter),",
+                "    #\"展开的“员工商务岗时间”\" = Table.ExpandTableColumn(合并的查询3, \"员工商务岗时间\", {\"最早从事商务岗位年月\"}, {\"最早从事商务岗位年月\"})",
+                "in",
+                "    #\"展开的“员工商务岗时间”\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "员工离职表-导出用",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "员工编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "038a47fb-20c7-487f-a230-0d19c59c0f0c",
+            "sourceColumn": "员工编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "姓名",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c39b8c14-1f42-4763-b87c-73702a60c6b0",
+            "sourceColumn": "姓名",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "性别",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dd211556-3899-40d6-8700-ea204979ff59",
+            "sourceColumn": "性别",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "生日",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "cfc10849-54bf-4c48-b716-26c0cc897424",
+            "sourceColumn": "生日",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FDEPTCODE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4d4b458a-e054-4bd5-a28c-baa5f3b6bc8b",
+            "sourceColumn": "FDEPTCODE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时单位",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e7a2c3a2-a945-4339-8f5f-2a7f149e4e80",
+            "sourceColumn": "离职时单位",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时职务",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2359b96b-7107-4acf-9805-ec600f902dcb",
+            "sourceColumn": "离职时职务",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时岗位",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ab36e6a2-d16d-4e75-b300-7ff8e0ac149f",
+            "sourceColumn": "离职时岗位",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职类型",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eef5568d-7aa5-42ec-a2d2-2f99ec447457",
+            "sourceColumn": "离职类型",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "d552bdcd-839a-40fc-a6bf-126d79e375e3",
+            "sourceColumn": "离职时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "去向",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2f0f3001-34f8-4def-9dd8-3bed79bfce4a",
+            "sourceColumn": "去向",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "单位类型",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5c450a14-691a-4c43-be24-bc1e02d2ec09",
+            "sourceColumn": "单位类型",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "离职年龄",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "eeabd425-d95c-43b2-aae1-abda4093b52e",
+            "sourceColumn": "离职年龄",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "人员基本信息.所属系统",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "81c05d2a-4dbd-4e96-bfcf-94aa490b71e6",
+            "sourceColumn": "人员基本信息.所属系统",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "索引",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ae65d0de-d923-41de-be93-5e5c4005170e",
+            "sourceColumn": "索引",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "责任体区域",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b79cfb08-6d98-48c4-b615-891fd8591abc",
+            "sourceColumn": "责任体区域",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "责任体",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e90a258c-146e-41eb-a5d6-9ad6ad2829d4",
+            "sourceColumn": "责任体",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "进入本企日期",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "e65f09da-b09d-4a08-aedc-fc98639ee3af",
+            "sourceColumn": "进入本企日期",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "8edd6e44-382a-4ff5-98ff-9cf53749196c",
+        "partitions": [
+          {
+            "name": "员工离职表-导出用-c3b20dac-1593-43ba-931d-b3f277bf1634",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = cscecdb,",
+                "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+                "    HR_SEPARATION1 = FZHR{[Name=\"HR_SEPARATION\"]}[Data],",
+                "    重命名的列 = Table.RenameColumns(HR_SEPARATION1,{{\"FCODE\", \"员工编码\"}, {\"FNAME\", \"姓名\"}, {\"FSEX\", \"性别\"}, {\"FDEPTNAME\", \"离职时单位\"}, {\"FPOSITIONNAME\", \"离职时职务\"}, {\"FSTATIONNAME\", \"离职时岗位\"}, {\"FSEPARATIONKIND\", \"离职类型\"}, {\"FGOWHERE\", \"去向\"}, {\"FSEPARATIONDATE\", \"离职时间\"}, {\"FBIRTHDATE\", \"生日\"}}),",
+                "    删除的其他列 = Table.SelectColumns(重命名的列,{\"员工编码\", \"姓名\", \"性别\", \"生日\", \"FDEPTCODE\", \"离职时单位\", \"离职时职务\", \"离职时岗位\", \"离职类型\", \"离职时间\", \"去向\"}),",
+                "    合并的查询 = Table.NestedJoin(删除的其他列, {\"FDEPTCODE\"}, 单位编码, {\"单位编码\"}, \"单位编码\", JoinKind.LeftOuter),",
+                "    #\"展开的“单位编码”\" = Table.ExpandTableColumn(合并的查询, \"单位编码\", {\"单位类型\"}, {\"单位类型\"}),",
+                "    已添加自定义 = Table.AddColumn(#\"展开的“单位编码”\", \"离职年龄\", each Date.Year([离职时间])-Date.Year([生日]),Int64.Type),",
+                "    合并的查询1 = Table.NestedJoin(已添加自定义, {\"员工编码\"}, 人员基本信息, {\"员工编码\"}, \"人员基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“人员基本信息”\" = Table.ExpandTableColumn(合并的查询1, \"人员基本信息\", {\"所属系统\"}, {\"人员基本信息.所属系统\"}),",
+                "    排序的行 = Table.Sort(#\"展开的“人员基本信息”\",{{\"离职时间\", Order.Descending}}),",
+                "    已添加索引 = Table.AddIndexColumn(排序的行, \"索引\", 0, 1, Int64.Type),",
+                "    删除的副本 = Table.Distinct(已添加索引, {\"员工编码\"}),",
+                "    筛选的行 = Table.SelectRows(删除的副本, each ([人员基本信息.所属系统] = \"商务\")),",
+                "    更改的类型 = Table.TransformColumnTypes(筛选的行,{{\"离职时间\", type date}}),",
+                "    筛选的行1 = Table.SelectRows(更改的类型, each Date.IsInCurrentYear([离职时间])),",
+                "    合并的查询2 = Table.NestedJoin(筛选的行1, {\"离职时单位\"}, 项目基本信息, {\"项目名称\"}, \"项目基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“项目基本信息”\" = Table.ExpandTableColumn(合并的查询2, \"项目基本信息\", {\"责任体区域\"}, {\"责任体区域\"}),",
+                "    已添加条件列 = Table.AddColumn(#\"展开的“项目基本信息”\", \"责任体\", each if [责任体区域] = null then [离职时单位] else [责任体区域]),",
+                "    合并的查询3 = Table.NestedJoin(已添加条件列, {\"员工编码\"}, 人员基本信息, {\"员工编码\"}, \"人员基本信息\", JoinKind.LeftOuter),",
+                "    #\"展开的“人员基本信息”1\" = Table.ExpandTableColumn(合并的查询3, \"人员基本信息\", {\"进入本企日期\"}, {\"进入本企日期\"})",
+                "in",
+                "    #\"展开的“人员基本信息”1\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "员工履历",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "导航"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "员工编码",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "444707d0-5f10-4d6a-a99d-fdd5c982c1c0",
+            "sourceColumn": "员工编码",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "1.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "157570b7-d7c9-445e-89b6-7980a8ccd348",
+            "sourceColumn": "1.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "1.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "438193cb-7a0d-4494-8b96-7a0b3c879dd8",
+            "sourceColumn": "1.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "1.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3620b0e7-3a53-43c9-9aed-23883bc0633d",
+            "sourceColumn": "1.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "1.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "39eba4b0-d350-4599-89f7-7296e2e605a5",
+            "sourceColumn": "1.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "2.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9cf190d4-10ed-4f41-a09e-5d2c41c057cb",
+            "sourceColumn": "2.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "2.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2881f619-fcf9-49c5-8113-27a33ceae8d1",
+            "sourceColumn": "2.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "2.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "406f418e-0a2e-458e-bd13-885ed6fb03ab",
+            "sourceColumn": "2.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "2.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "304b726b-6a72-45e9-80f2-042dd832b1f0",
+            "sourceColumn": "2.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "3.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "69c9a736-7f0f-45cf-b45c-087621595556",
+            "sourceColumn": "3.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "3.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5efe798f-b62c-440a-9137-1dad14a66c08",
+            "sourceColumn": "3.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "3.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8c3e3652-58bc-4a97-991d-e2c62fd0d3ee",
+            "sourceColumn": "3.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "3.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "854c0013-1b9b-4fa8-a729-c29ff1b19936",
+            "sourceColumn": "3.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "4.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0b9d443d-e714-4200-9aa9-ea6859f580b5",
+            "sourceColumn": "4.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "4.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e4793d64-c73f-40b8-826c-f7c0059fc6a7",
+            "sourceColumn": "4.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "4.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b72944f7-f101-4572-93ff-6612864adc67",
+            "sourceColumn": "4.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "4.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d5c34119-e5ce-4020-a729-ae5081a0c54f",
+            "sourceColumn": "4.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "5.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7b5aa2a5-a1a0-44d7-b6ed-31db07263d8e",
+            "sourceColumn": "5.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "5.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "70713654-5946-4782-8ea5-09cbe601a448",
+            "sourceColumn": "5.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "5.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b96c95fc-2bf0-4a85-87d2-2fbfbb9909be",
+            "sourceColumn": "5.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "5.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a306716d-b66d-4ffa-82ba-8333f0afd569",
+            "sourceColumn": "5.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "6.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "61372966-3cf9-4d41-b765-e0e9db44b2ef",
+            "sourceColumn": "6.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "6.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a4381dcd-38ef-491a-a4f2-f0d42bd9bab7",
+            "sourceColumn": "6.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "6.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7b3cb9cc-dac0-4d40-befa-f339c4c24aa5",
+            "sourceColumn": "6.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "6.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c7539e9b-c6dc-44ac-98ff-66f52a70f4c1",
+            "sourceColumn": "6.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "7.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a17dd6f3-c35c-4d57-87d6-1df7c227170f",
+            "sourceColumn": "7.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "7.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7de52be6-db57-4744-87c7-1e7eb14ab604",
+            "sourceColumn": "7.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "7.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ce266e84-7391-4c07-9fdd-debf5b1dfa47",
+            "sourceColumn": "7.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "7.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "365756e8-0ee9-48bb-b684-9254adf29bbe",
+            "sourceColumn": "7.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "8.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "942de308-5505-4ec5-9d37-8c14f91b3cea",
+            "sourceColumn": "8.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "8.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3431784b-2a68-4031-acab-01623358d1db",
+            "sourceColumn": "8.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "8.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "866909cd-8333-4bbe-80c8-18a763b4c3b6",
+            "sourceColumn": "8.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "8.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0e2c3e0b-3dfa-41ff-9afc-61f6d273fdff",
+            "sourceColumn": "8.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3343c36c-fee8-49c4-a492-73e0d552e5b7",
+            "sourceColumn": "9.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "900b3645-f3d8-4598-8f0e-8623ccdd13ea",
+            "sourceColumn": "9.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2c7c4176-a0ab-4146-8410-b07fe6b83227",
+            "sourceColumn": "9.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "9.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4448252e-9aec-4090-bb1d-16c352cb8e34",
+            "sourceColumn": "9.在岗时间",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "10.项目名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "28d8e904-d8ce-47c9-815b-c80767bea9ae",
+            "sourceColumn": "10.项目名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "10.自施合同额",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b822f16b-2fb7-4402-bd4a-55733a87552e",
+            "sourceColumn": "10.自施合同额",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "10.岗位名称",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "369a1725-ffcc-44f1-8c00-d211d1727e08",
+            "sourceColumn": "10.岗位名称",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "10.在岗时间",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "593be832-1c56-463e-9c56-db3b1e6986a4",
+            "sourceColumn": "10.在岗时间",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "5ee2d916-dbb7-4e44-aca5-2a22d009fea6",
+        "partitions": [
+          {
+            "name": "员工履历",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    源 = Oracle.Database(\"172.16.8.87/cscecdb\", [HierarchicalNavigation=true]),",
+                "    FZHR = 源{[Schema=\"FZHR\"]}[Data],",
+                "    HR_EMPSALARY = FZHR{[Name=\"HR_EMPSALARY\"]}[Data],",
+                "    筛选的行1 = Table.SelectRows(HR_EMPSALARY, each ([DWLB] = \"项目\")),",
+                "    删除的其他列1 = Table.SelectColumns(筛选的行1,{\"FCODE\", \"FYEAR\", \"FMONTH\", \"FNAME\", \"FPOSITIONCODE\", \"FSTATIONCODE\", \"FDEPTCODE\"}),",
+                "    合并的查询 = Table.NestedJoin(删除的其他列1, {\"FDEPTCODE\"}, 单位编码, {\"单位编码\"}, \"单位编码\", JoinKind.LeftOuter),",
+                "    #\"展开的“单位编码”\" = Table.ExpandTableColumn(合并的查询, \"单位编码\", {\"单位名称\"}, {\"单位名称\"}),",
+                "    合并的查询1 = Table.NestedJoin(#\"展开的“单位编码”\", {\"FSTATIONCODE\"}, 岗位表, {\"FGUID\"}, \"岗位表\", JoinKind.LeftOuter),",
+                "    #\"展开的“岗位表”\" = Table.ExpandTableColumn(合并的查询1, \"岗位表\", {\"FNAME\"}, {\"岗位名称\"}),",
+                "    删除的其他列 = Table.SelectColumns(#\"展开的“岗位表”\",{\"FCODE\", \"FYEAR\", \"FMONTH\", \"单位名称\", \"岗位名称\", \"FDEPTCODE\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FCODE\", \"员工编码\"}}),",
+                "    #\"已添加自定义(计算年月)\" = Table.AddColumn(重命名的列, \"年月\", each [FYEAR] &\"年\"& [FMONTH] & \"月\"),",
+                "    分组的行 = Table.Group(#\"已添加自定义(计算年月)\", {\"员工编码\", \"单位名称\", \"FDEPTCODE\"}, {{\"在岗起始\", each List.Min([年月]), type text}, {\"在岗终止\", each List.Max([年月]), type text}, {\"岗位\", each List.Max([岗位名称]), type nullable text}}),",
+                "    合并的查询2 = Table.NestedJoin(分组的行, {\"FDEPTCODE\"}, 业主合同, {\"项目编码\"}, \"业主合同\", JoinKind.LeftOuter),",
+                "    #\"展开的“业主合同”\" = Table.ExpandTableColumn(合并的查询2, \"业主合同\", {\"自施合同额\"}, {\"自施合同额\"}),",
+                "    更改的类型 = Table.TransformColumnTypes(#\"展开的“业主合同”\",{{\"自施合同额\", type text}}),",
+                "    替换的值1 = Table.ReplaceValue(更改的类型,null,\"/\",Replacer.ReplaceValue,{\"自施合同额\"}),",
+                "    #\"已添加自定义(在岗时间)\" = Table.AddColumn(替换的值1, \"在岗时间\", each [在岗起始]&\"至\"&[在岗终止]),",
+                "    替换的值 = Table.ReplaceValue(#\"已添加自定义(在岗时间)\",null,\"/\",Replacer.ReplaceValue,{\"岗位\"}),",
+                "    #\"已添加自定义（json）\" = Table.AddColumn(替换的值, \"自定义\", each Text.Format(\"{\"\"项目名称\"\":\"\"#{0}\"\",\"\"自施合同额\"\":\"\"#{1}\"\" ,\"\"岗位名称\"\":\"\"#{2}\"\" ,\"\"在岗时间\"\":\"\"#{3}\"\"}\",{[单位名称],[自施合同额],[岗位],[在岗时间]})),",
+                "    排序的行 = Table.Sort(#\"已添加自定义（json）\",{{\"员工编码\", Order.Ascending}, {\"在岗终止\", Order.Descending}}),",
+                "    已添加索引 = Table.AddIndexColumn(排序的行, \"索引\", 0, 1, Int64.Type),",
+                "    删除的其他列2 = Table.SelectColumns(已添加索引,{\"员工编码\", \"自定义\", \"索引\"}),",
+                "    分组的行1 = Table.Group(删除的其他列2, {\"员工编码\"}, {{\"计数\", each _, type table [员工编码=text, 自定义=text]}}),",
+                "    已添加自定义3 = Table.AddColumn(分组的行1, \"自定义\", each Table.AddIndexColumn([计数],\"序号\",1)),",
+                "    删除的其他列3 = Table.SelectColumns(已添加自定义3,{\"自定义\"}),",
+                "    #\"展开的“自定义”\" = Table.ExpandTableColumn(删除的其他列3, \"自定义\", {\"员工编码\", \"自定义\", \"序号\"}, {\"员工编码\", \"自定义.1\", \"序号\"}),",
+                "    更改的类型1 = Table.TransformColumnTypes(#\"展开的“自定义”\",{{\"员工编码\", type text}, {\"自定义.1\", type text}, {\"序号\", Int64.Type}}),",
+                "    筛选的行 = Table.SelectRows(更改的类型1, each [序号] < 11),",
+                "    已透视列 = Table.Pivot(Table.TransformColumnTypes(筛选的行, {{\"序号\", type text}}, \"zh-CN\"), List.Distinct(Table.TransformColumnTypes(筛选的行, {{\"序号\", type text}}, \"zh-CN\")[序号]), \"序号\", \"自定义.1\"),",
+                "    替换的值2 = Table.ReplaceValue(已透视列,null,\"{}\",Replacer.ReplaceValue,{\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\"}),",
+                "    #\"解析的 JSON\" = Table.TransformColumns(替换的值2,{{\"1\", Json.Document}, {\"2\", Json.Document}, {\"3\", Json.Document}, {\"4\", Json.Document}, {\"5\", Json.Document}, {\"6\", Json.Document}, {\"7\", Json.Document}, {\"8\", Json.Document}, {\"9\", Json.Document}, {\"10\", Json.Document}}),",
+                "    #\"展开的“1”\" = Table.ExpandRecordColumn(#\"解析的 JSON\", \"1\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"1.项目名称\", \"1.自施合同额\", \"1.岗位名称\", \"1.在岗时间\"}),",
+                "    #\"展开的“2”\" = Table.ExpandRecordColumn(#\"展开的“1”\", \"2\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"2.项目名称\", \"2.自施合同额\", \"2.岗位名称\", \"2.在岗时间\"}),",
+                "    #\"展开的“3”\" = Table.ExpandRecordColumn(#\"展开的“2”\", \"3\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"3.项目名称\", \"3.自施合同额\", \"3.岗位名称\", \"3.在岗时间\"}),",
+                "    #\"展开的“4”\" = Table.ExpandRecordColumn(#\"展开的“3”\", \"4\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"4.项目名称\", \"4.自施合同额\", \"4.岗位名称\", \"4.在岗时间\"}),",
+                "    #\"展开的“5”\" = Table.ExpandRecordColumn(#\"展开的“4”\", \"5\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"5.项目名称\", \"5.自施合同额\", \"5.岗位名称\", \"5.在岗时间\"}),",
+                "    #\"展开的“6”\" = Table.ExpandRecordColumn(#\"展开的“5”\", \"6\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"6.项目名称\", \"6.自施合同额\", \"6.岗位名称\", \"6.在岗时间\"}),",
+                "    #\"展开的“7”\" = Table.ExpandRecordColumn(#\"展开的“6”\", \"7\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"7.项目名称\", \"7.自施合同额\", \"7.岗位名称\", \"7.在岗时间\"}),",
+                "    #\"展开的“8”\" = Table.ExpandRecordColumn(#\"展开的“7”\", \"8\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"8.项目名称\", \"8.自施合同额\", \"8.岗位名称\", \"8.在岗时间\"}),",
+                "    #\"展开的“9”\" = Table.ExpandRecordColumn(#\"展开的“8”\", \"9\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"9.项目名称\", \"9.自施合同额\", \"9.岗位名称\", \"9.在岗时间\"}),",
+                "    #\"展开的“10”\" = Table.ExpandRecordColumn(#\"展开的“9”\", \"10\", {\"项目名称\", \"自施合同额\", \"岗位名称\", \"在岗时间\"}, {\"10.项目名称\", \"10.自施合同额\", \"10.岗位名称\", \"10.在岗时间\"}),",
+                "    删除的副本 = Table.Distinct(#\"展开的“10”\", {\"员工编码\"}),",
+                "    合并的查询3 = Table.NestedJoin(删除的副本, {\"员工编码\"}, 上月工资表, {\"员工编码\"}, \"上月工资表\", JoinKind.Inner),",
+                "    删除的列 = Table.RemoveColumns(合并的查询3,{\"上月工资表\"}),",
+                "    替换的值3 = Table.ReplaceValue(删除的列,null,\"/\",Replacer.ReplaceValue,{\"1.自施合同额\", \"1.岗位名称\", \"1.在岗时间\", \"2.项目名称\", \"2.自施合同额\", \"2.岗位名称\", \"2.在岗时间\", \"3.项目名称\", \"3.自施合同额\", \"3.岗位名称\", \"3.在岗时间\", \"4.项目名称\", \"4.自施合同额\", \"4.岗位名称\", \"4.在岗时间\", \"5.项目名称\", \"5.自施合同额\", \"5.岗位名称\", \"5.在岗时间\", \"6.项目名称\", \"6.自施合同额\", \"6.岗位名称\", \"6.在岗时间\", \"7.项目名称\", \"7.自施合同额\", \"7.岗位名称\", \"7.在岗时间\", \"8.项目名称\", \"8.自施合同额\", \"8.岗位名称\", \"8.在岗时间\", \"9.项目名称\", \"9.自施合同额\", \"9.岗位名称\", \"9.在岗时间\", \"10.项目名称\", \"10.自施合同额\", \"10.岗位名称\", \"10.在岗时间\"})",
+                "in",
+                "    替换的值3"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

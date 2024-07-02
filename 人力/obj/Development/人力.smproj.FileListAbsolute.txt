@@ -1,8 +1,0 @@
-C:\Users\jiahe\source\repos\人力\bin\Model.asdatabase
-C:\Users\jiahe\source\repos\人力\bin\Model.deploymenttargets
-C:\Users\jiahe\source\repos\人力\bin\Model.deploymentoptions
-C:\Users\jiahe\source\repos\人力\obj\Development\人力.smproj.AssemblyReference.cache
-C:\Users\jiahe\source\repos\人力\obj\Development\人力.smproj.CoreCompileInputs.cache
-C:\Users\jiahe\source\repos\人力\obj\Development\Model.asdatabase
-C:\Users\jiahe\source\repos\人力\obj\Development\Model.deploymentoptions
-C:\Users\jiahe\source\repos\人力\obj\Development\Model.deploymenttargets

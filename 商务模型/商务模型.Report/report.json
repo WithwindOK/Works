@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.54\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU05\",\"version\":\"5.54\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Middle'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU05",
+            "path": "BaseThemes/CY24SU05.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "第 1 页",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "6ecfb94956c6a54270ba",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"31dfc68f1f74268bfce6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":16.19277108433735,\"y\":50.89156626506024,\"z\":0,\"width\":1249.156626506024,\"height\":659.277108433735,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"financials.Product\",\"active\":true},{\"queryRef\":\"financials.Year\",\"active\":true}],\"Values\":[{\"queryRef\":\"Min(financials.Profit)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Product\"},\"Name\":\"financials.Product\",\"NativeReferenceName\":\"Product\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Profit\"}},\"Function\":3},\"Name\":\"Min(financials.Profit)\",\"NativeReferenceName\":\"Profit\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Year\"},\"Name\":\"financials.Year\",\"NativeReferenceName\":\"Year\"}]},\"expansionStates\":[{\"roles\":[\"Rows\"],\"levels\":[{\"queryRefs\":[\"financials.Product\"],\"isCollapsed\":true,\"identityKeys\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"financials\"}},\"Property\":\"Product\"}}],\"isPinned\":true},{\"queryRefs\":[\"financials.Year\"],\"isCollapsed\":true,\"isPinned\":true}],\"root\":{\"identityValues\":null,\"children\":[{\"identityValues\":[{\"Literal\":{\"Value\":\"'Paseo'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'VTT'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'Velo'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'Montana'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'Carretera'\"}}],\"isToggled\":true},{\"identityValues\":[{\"Literal\":{\"Value\":\"'Amarilla'\"}}],\"isToggled\":true}]}}],\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"195.39492428983237D\"}}}},\"selector\":{\"metadata\":\"financials.Product\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"267.81756842019985D\"}}}},\"selector\":{\"metadata\":\"Min(financials.Profit)\"}}]}}}",
+          "filters": "[]",
+          "height": 659.28,
+          "width": 1249.16,
+          "x": 16.19,
+          "y": 50.89,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

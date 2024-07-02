@@ -1,8 +1,0 @@
-C:\Users\jiahe\source\repos\物资管理\bin\Model.asdatabase
-C:\Users\jiahe\source\repos\物资管理\bin\Model.deploymenttargets
-C:\Users\jiahe\source\repos\物资管理\bin\Model.deploymentoptions
-C:\Users\jiahe\source\repos\物资管理\obj\Development\物资管理.smproj.AssemblyReference.cache
-C:\Users\jiahe\source\repos\物资管理\obj\Development\物资管理.smproj.CoreCompileInputs.cache
-C:\Users\jiahe\source\repos\物资管理\obj\Development\Model.asdatabase
-C:\Users\jiahe\source\repos\物资管理\obj\Development\Model.deploymentoptions
-C:\Users\jiahe\source\repos\物资管理\obj\Development\Model.deploymenttargets

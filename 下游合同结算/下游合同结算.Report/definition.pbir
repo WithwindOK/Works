@@ -1,9 +1,0 @@
-{
-  "version": "1.0",
-  "datasetReference": {
-    "byPath": {
-      "path": "../下游合同结算.Dataset"
-    },
-    "byConnection": null
-  }
-}

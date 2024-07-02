@@ -1,9 +1,0 @@
-{
-  "version": "4.0",
-  "datasetReference": {
-    "byPath": {
-      "path": "../商务人员资源分析.SemanticModel"
-    },
-    "byConnection": null
-  }
-}

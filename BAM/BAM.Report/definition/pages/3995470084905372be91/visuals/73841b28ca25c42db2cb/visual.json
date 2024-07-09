@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "73841b28ca25c42db2cb",
+  "position": {
+    "x": 20.759971279336611,
+    "y": 24.219966492559379,
+    "z": 0,
+    "width": 568.5925467062749,
+    "height": 352.91951174872236,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Contacts"
+                    }
+                  },
+                  "Property": "City"
+                }
+              },
+              "queryRef": "Contacts.City",
+              "nativeQueryRef": "City",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Contacts"
+                        }
+                      },
+                      "Property": "ContactSeq"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Contacts.ContactSeq)",
+              "nativeQueryRef": "ContactSeq 的总和"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Contacts"
+                      }
+                    },
+                    "Property": "ContactSeq"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

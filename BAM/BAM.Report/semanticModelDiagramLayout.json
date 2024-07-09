@@ -1,0 +1,178 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 781.58528145995911,
+            "y": 391.60050978241543
+          },
+          "nodeIndex": "Accounts",
+          "nodeLineageTag": "22d72ed3-5ee0-4ff1-98ec-c82153839a11",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 524.79756895892024,
+            "y": 1302.725185937933
+          },
+          "nodeIndex": "Campaigns",
+          "nodeLineageTag": "c357383b-71d5-4f88-bc40-806bea44031e",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": -10
+          },
+          "nodeIndex": "Case Calendar",
+          "nodeLineageTag": "3d29bbf8-05ff-43e8-afd2-23b65886b6af",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 253.72438517474495,
+            "y": 350.82509267541764
+          },
+          "nodeIndex": "Cases",
+          "nodeLineageTag": "e1332845-db9f-4fd5-bdd8-1975aba5f89c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1034.3037334152154,
+            "y": 30.765739529257417
+          },
+          "nodeIndex": "Contacts",
+          "nodeLineageTag": "59b3ba36-d753-49c2-aa4c-d326b45f4e58",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 883.255168750443,
+            "y": 748.85254588109615
+          },
+          "nodeIndex": "Industries",
+          "nodeLineageTag": "46e20580-f584-47f3-9fb6-650aaf55c07d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 404.23806680292626,
+            "y": 943.73440574837912
+          },
+          "nodeIndex": "Opportunities",
+          "nodeLineageTag": "574e7ea3-1c8d-44ef-8571-714b66f865c7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 187.48918121758641,
+            "y": 1304.5855207283316
+          },
+          "nodeIndex": "Opportunity Calendar",
+          "nodeLineageTag": "50bae5c7-70dc-4542-81d2-8cffdb6f465e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1308.3037334152154,
+            "y": 743.29276036416582
+          },
+          "nodeIndex": "Opportunity Forecast Adjustment",
+          "nodeLineageTag": "5c6989c1-9cb2-49a3-92a2-02c2b7f5474e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 490.35464850736992,
+            "y": 709.71129855165452
+          },
+          "nodeIndex": "Owners",
+          "nodeLineageTag": "70f990fe-b5ba-4e53-b914-9a6dc8e15c2d",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 109.22562118003884,
+            "y": 703.71031053936474
+          },
+          "nodeIndex": "Products",
+          "nodeLineageTag": "9c41c4f3-4a44-481e-9206-e81a3e1655c5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1592.3037334152154,
+            "y": 719.29276036416582
+          },
+          "nodeIndex": "Territories",
+          "nodeLineageTag": "353b2fab-9798-4035-afca-a28f49c1412e",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}

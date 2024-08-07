@@ -3,8 +3,13 @@
   "themeCollection": {
     "baseTheme": {
       "name": "CY24SU06",
-      "reportVersionAtImport": "5.55",
+      "reportVersionAtImport": "5.56",
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Accessible_Neutral7368945554411492.json",
+      "reportVersionAtImport": "5.56",
+      "type": "RegisteredResources"
     }
   },
   "layoutOptimization": "None",
@@ -32,6 +37,17 @@
           "name": "CY24SU06",
           "path": "BaseThemes/CY24SU06.json",
           "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Accessible_Neutral7368945554411492.json",
+          "path": "Accessible_Neutral7368945554411492.json",
+          "type": "CustomTheme"
         }
       ]
     }

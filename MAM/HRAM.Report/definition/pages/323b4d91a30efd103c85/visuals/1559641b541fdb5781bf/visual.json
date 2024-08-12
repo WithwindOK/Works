@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
-  "name": "6ff7761d7d2c014dc99a",
+  "name": "1559641b541fdb5781bf",
   "position": {
-    "x": 11.421082716410837,
+    "x": 480.8275823608962,
     "y": 11.421082716410837,
-    "z": 0,
+    "z": 1,
     "width": 382.606270999763,
     "height": 338.06404840576073,
-    "tabOrder": 0
+    "tabOrder": 1
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -47,7 +47,7 @@
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -70,57 +70,31 @@
             }
           ]
         }
-      }
-    },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
+      },
+      "sortDefinition": {
+        "sort": [
           {
-            "queryRefs": [
-              "financials.Month Name"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "financials"
-                    }
-                  },
-                  "Property": "Month Name"
-                }
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "financials"
+                      }
+                    },
+                    "Property": "Units Sold"
+                  }
+                },
+                "Function": 0
               }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "financials.Product"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
+            },
+            "direction": "Descending"
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'April'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "isDefaultSort": true
       }
-    ],
+    },
     "drillFilterOtherVisuals": true
   }
 }

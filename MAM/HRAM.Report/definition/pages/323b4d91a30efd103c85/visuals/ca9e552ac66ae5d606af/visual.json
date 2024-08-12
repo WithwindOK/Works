@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
-  "name": "6ff7761d7d2c014dc99a",
+  "name": "ca9e552ac66ae5d606af",
   "position": {
     "x": 11.421082716410837,
-    "y": 11.421082716410837,
-    "z": 0,
+    "y": 368.90097174007,
+    "z": 2,
     "width": 382.606270999763,
     "height": 338.06404840576073,
-    "tabOrder": 0
+    "tabOrder": 2
   },
   "visual": {
-    "visualType": "pivotTable",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
-        "Rows": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -47,7 +47,7 @@
             }
           ]
         },
-        "Values": {
+        "Y": {
           "projections": [
             {
               "field": {
@@ -70,57 +70,39 @@
             }
           ]
         }
-      }
-    },
-    "expansionStates": [
-      {
-        "roles": [
-          "Rows"
-        ],
-        "levels": [
+      },
+      "sortDefinition": {
+        "sort": [
           {
-            "queryRefs": [
-              "financials.Month Name"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "financials"
-                    }
-                  },
-                  "Property": "Month Name"
-                }
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": "Month Name"
               }
-            ],
-            "isPinned": true
+            },
+            "direction": "Ascending"
           },
           {
-            "queryRefs": [
-              "financials.Product"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": "Product"
+              }
+            },
+            "direction": "Ascending"
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'April'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "isDefaultSort": true
       }
-    ],
+    },
     "drillFilterOtherVisuals": true
   }
 }

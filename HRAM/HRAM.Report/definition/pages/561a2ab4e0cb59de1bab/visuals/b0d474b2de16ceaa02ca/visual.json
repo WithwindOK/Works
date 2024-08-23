@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
-  "name": "1b7ba7713a5c165c2c7b",
+  "name": "b0d474b2de16ceaa02ca",
   "position": {
     "x": 72.659899477678138,
     "y": 79.579889904123675,
@@ -9,8 +9,7 @@
     "width": 785.41891340156837
   },
   "visual": {
-    "visualType": "clusteredBarChart",
-    "autoSelectVisualType": true,
+    "visualType": "areaChart",
     "query": {
       "queryState": {
         "Category": {

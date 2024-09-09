@@ -1,0 +1,409 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1213,
+        "y": 826
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1672.1922471933754,
+            "y": 1277.5145700968978
+          },
+          "nodeIndex": "专项物资付款表",
+          "size": {
+            "height": 194,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1767.0504632441025,
+            "y": 477.93930167418324
+          },
+          "nodeIndex": "专项物资合同表",
+          "size": {
+            "height": 289,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2070.0504632441025,
+            "y": 913.97701564274291
+          },
+          "nodeIndex": "专项物资结算",
+          "size": {
+            "height": 137,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1342.7386381645165,
+            "y": 1277.5145700968978
+          },
+          "nodeIndex": "专项物资进场",
+          "size": {
+            "height": 251,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1535.4614365451998,
+            "y": 879.34485261583927
+          },
+          "nodeIndex": "专项物资退场",
+          "size": {
+            "height": 270,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 274,
+            "y": 753.19295103461059
+          },
+          "nodeIndex": "分包付款主表",
+          "size": {
+            "height": 194,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 548,
+            "y": 708.023233553552
+          },
+          "nodeIndex": "分包减报量",
+          "size": {
+            "height": 289,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 417.16971748105857,
+            "y": 300.28456466927446
+          },
+          "nodeIndex": "分包合同表",
+          "size": {
+            "height": 308,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 810,
+            "y": 293.81286149177936
+          },
+          "nodeIndex": "分包报量表",
+          "size": {
+            "height": 308,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 256.64303279364952
+          },
+          "nodeIndex": "分包结算",
+          "size": {
+            "height": 156,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 415.955474972822
+          },
+          "nodeIndex": "度量值表",
+          "size": {
+            "height": 337,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1142.5615548120502,
+            "y": 437.04235098961408
+          },
+          "nodeIndex": "日历",
+          "size": {
+            "height": 137,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1417.6800557001411,
+            "y": 5.6535731914622147
+          },
+          "nodeIndex": "租赁合同表",
+          "size": {
+            "height": 270,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1809.4614365451998,
+            "y": 806.9393016741833
+          },
+          "nodeIndex": "租赁物资付款表",
+          "size": {
+            "height": 194,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1437.7110282819851,
+            "y": 374.82329067252078
+          },
+          "nodeIndex": "租赁物资报量表",
+          "size": {
+            "height": 327,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1733.8497731811997,
+            "y": 1.1368683772161603E-13
+          },
+          "nodeIndex": "租赁物资结算",
+          "size": {
+            "height": 137,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2256.8497731811995,
+            "y": 10
+          },
+          "nodeIndex": "统一转账合同",
+          "size": {
+            "height": 289,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2868.1132050243659,
+            "y": 0
+          },
+          "nodeIndex": "统一转账度量值",
+          "size": {
+            "height": 118,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2594.1132050243659,
+            "y": 6.5
+          },
+          "nodeIndex": "统一转账进场",
+          "size": {
+            "height": 270,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2320.1132050243659,
+            "y": 250
+          },
+          "nodeIndex": "统一转账退场",
+          "size": {
+            "height": 289,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": -1,
+            "y": -1
+          },
+          "nodeIndex": "项目信息",
+          "size": {
+            "height": 173,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2867.9,
+            "y": 149
+          },
+          "nodeIndex": "权限计算组",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2767.3,
+            "y": 401
+          },
+          "nodeIndex": "分公司总经",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3505.9,
+            "y": 0
+          },
+          "nodeIndex": "维度-责任体",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3869.7,
+            "y": 0
+          },
+          "nodeIndex": "分公司人员",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4233.5,
+            "y": 0
+          },
+          "nodeIndex": "项目人员",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 314.679012345679,
+            "y": 31.242798353909471
+          },
+          "nodeIndex": "项目信息",
+          "size": {
+            "height": 284,
+            "width": 241
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 951,
+            "y": 77
+          },
+          "nodeIndex": "分公司总经",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 636,
+            "y": 7
+          },
+          "nodeIndex": "维度-责任体",
+          "size": {
+            "height": 181,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 639.53909465020593,
+            "y": 207.81481481481481
+          },
+          "nodeIndex": "项目人员",
+          "size": {
+            "height": 154.43621399176953,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 634.7325102880659,
+            "y": 378.44855967078189
+          },
+          "nodeIndex": "分公司人员",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "权限视图",
+      "zoomValue": 83.219178082191775,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "权限视图",
+  "defaultDiagram": "All tables"
+}

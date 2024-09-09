@@ -1,0 +1,124 @@
+table 分包合同表
+	lineageTag: 2e38fd54-3a77-4f0f-b2d4-b909682e7c9b
+
+	column 合同编号
+		dataType: string
+		lineageTag: 41a105e9-3f79-4d34-b967-f350c35b422f
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 2277cee5-5a1f-4ebc-af4b-d98170fe33fe
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 49b50857-6425-47ba-917e-b2e3f2751c6f
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务科目编码
+		dataType: string
+		lineageTag: 2af09733-045c-4d0a-be56-78b46727267a
+		summarizeBy: none
+		sourceColumn: 商务科目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目编码
+		dataType: string
+		lineageTag: 99376a9b-aba3-4a76-b934-c87045a81063
+		summarizeBy: none
+		sourceColumn: 财务科目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 专业
+		dataType: string
+		lineageTag: b06f0cff-ed40-49af-8ec8-eb18b16582c9
+		summarizeBy: none
+		sourceColumn: 专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: d14f1160-0577-426e-8d45-b7c256686a74
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包名称
+		dataType: string
+		lineageTag: 5d888128-2843-47bb-806f-6f70610743cc
+		summarizeBy: none
+		sourceColumn: 分包名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同金额
+		dataType: double
+		lineageTag: 1ae0021f-214e-4341-8805-221a5a0794f0
+		summarizeBy: sum
+		sourceColumn: 合同金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同价税合计
+		dataType: double
+		lineageTag: 07626dba-1253-4cb6-9764-34c48ee729d9
+		summarizeBy: sum
+		sourceColumn: 合同价税合计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同税额
+		dataType: double
+		lineageTag: a8dd5d5b-9bdc-4cc8-84cf-b56bfa1f2601
+		summarizeBy: sum
+		sourceColumn: 合同税额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 局分包类型
+		dataType: string
+		lineageTag: 9f25c880-7d68-4741-b1d8-b16a729e34ad
+		summarizeBy: none
+		sourceColumn: 局分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 分包合同表-3762405d-fd53-49f2-9041-d73aad9b4863 = m
+		mode: import
+		queryGroup: 分包
+		source =
+				let
+				    源 = gspm,
+				    GSPM = 源{[Schema="GSPM"]}[Data],
+				    GSPM_HETONGXINXI = GSPM{[Name="GSPM_HETONGXINXI"]}[Data],
+				    重命名的列 = Table.RenameColumns(GSPM_HETONGXINXI,{{"FBUHANSHUIHETONGZONGJIA", "合同金额"}, {"FHETONGBIANHAO", "合同编号"}, {"FXIANGMUBIANMA", "项目编码"}, {"FCAIWUKEMUJICIMA", "财务科目编码"}, {"FSHANGWUKEMUJICIMA", "商务科目编码"}, {"FFENBAOMINGCHENG", "分包名称"}, {"FSHIGONGZHUANYE", "专业"}, {"FHETONGLEIXING", "分包类型"}, {"FHANSHUIHETONGZONGJIA", "合同价税合计"}, {"FQIZHONGSHUIJIN", "合同税额"}, {"FXIANGMUMINGCHENG", "项目名称"}}),
+				    删除的其他列 = Table.SelectColumns(重命名的列,{"合同编号", "项目编码", "项目名称", "商务科目编码", "财务科目编码", "专业", "分包类型", "分包名称", "FJUFENBAOLEIBIE", "合同金额", "合同价税合计", "合同税额"}),
+				    去除的文本 = Table.TransformColumns(删除的其他列,{{"项目名称", Text.Trim, type text}}),
+				    重命名的列1 = Table.RenameColumns(去除的文本,{{"FJUFENBAOLEIBIE", "局分包类型"}})
+				in
+				    重命名的列1
+
+	annotation PBI_QueryRelationships = {"columnCount":12,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FHETONGBIANHAO,2}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FXIANGMUBIANMA,6}","Section1/分包合同表/去除的文本.{项目名称,2}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FSHANGWUKEMUJICIMA,21}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FCAIWUKEMUJICIMA,28}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FSHIGONGZHUANYE,30}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FHETONGLEIXING,31}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FFENBAOMINGCHENG,35}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FJUFENBAOLEIBIE,44}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FBUHANSHUIHETONGZONGJIA,53}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FHANSHUIHETONGZONGJIA,54}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FQIZHONGSHUIJIN,55}"],"ColumnCount":12,"KeyColumnNames":[],"ColumnIdentities":["Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FHETONGBIANHAO,2}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FXIANGMUBIANMA,6}","Section1/分包合同表/去除的文本.{项目名称,2}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FSHANGWUKEMUJICIMA,21}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FCAIWUKEMUJICIMA,28}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FSHIGONGZHUANYE,30}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FHETONGLEIXING,31}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FFENBAOMINGCHENG,35}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FJUFENBAOLEIBIE,44}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FBUHANSHUIHETONGZONGJIA,53}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FHANSHUIHETONGZONGJIA,54}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_HETONGXINXI.{FQIZHONGSHUIJIN,55}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Exception
+

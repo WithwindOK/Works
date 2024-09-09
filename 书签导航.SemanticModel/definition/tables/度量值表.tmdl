@@ -1,0 +1,262 @@
+table 度量值表
+	excludeFromModelRefresh
+	lineageTag: de1a7bf0-2939-43ab-87ff-e65308f38560
+
+	measure 【报量金额】 = SUM('分包报量表'[报量金额])
+		formatString: #,0.00
+		lineageTag: 1a7268f7-4f34-465f-aa5a-5a60884916fd
+
+	measure 【报量税金】 = SUM('分包报量表'[报量税额])
+		formatString: #,0.00
+		lineageTag: 32625064-0ebd-4eba-a433-1d3dd913a4ee
+
+	measure 【报量价税合计】 = SUM('分包报量表'[报量价税合计])
+		formatString: #,0.00
+		lineageTag: 756690cf-eae0-47a3-901f-98999435b60e
+
+	measure 【分包实际付款】 = CALCULATE(SUM('分包付款主表'[本期实际付款]),'分包付款主表'[单据状态]="已完成")
+		formatString: #,0.00
+		lineageTag: a1669927-e087-4c14-ba84-c5520983a948
+
+	measure 【分包付款差额】 = SUMX(KEEPFILTERS(values('分包合同表'[合同编号])),IF([【分包含税结算额】]>0,[【分包含税结算额】]-[【分包实际付款】],[【报量价税合计】]-[【分包实际付款】]))
+		lineageTag: ad2f157c-1329-4cec-9457-45a93b8a46ef
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【进场价税合计】 = SUM('专项物资进场'[价税合计])
+		formatString: #,0.00
+		lineageTag: 92c4d00f-1f56-4955-b6ac-b5d781617371
+
+	measure 【进场金额】 = SUM('专项物资进场'[金额])
+		formatString: #,0.00
+		lineageTag: a5880b75-c503-4e1c-9052-ba63df66864b
+
+	measure 【进场税金】 = SUM('专项物资进场'[税金])
+		formatString: #,0.00
+		lineageTag: 1e89cb15-4907-4e0d-8563-47a73aec9fb6
+
+	measure 【物资实际付款】 = CALCULATE(SUM('专项物资付款表'[本期付款]),'专项物资付款表'[单据状态]="已完成")
+		formatString: #,0.00
+		lineageTag: 8211512d-3bc4-4d1d-8071-724a27dbaa8c
+
+	measure 【物资付款差额】 = SUMX(KEEPFILTERS(VALUES('专项物资合同表'[合同编号])),IF([【专项物资含税结算价】]>0,[【专项物资含税结算价】]-[【物资实际付款】],[【有效进场价税合计】]-[【物资实际付款】]))
+		formatString: #,0.00
+		lineageTag: 3dae4768-07f8-432d-929d-d387587b1f18
+
+	measure 【退场金额】 = SUM('专项物资退场'[金额])
+		formatString: #,0.00
+		lineageTag: 922a2f88-0b6b-454b-ae50-5f9eee0fb34f
+
+	measure 【退场税金】 = SUM('专项物资退场'[税金])
+		formatString: #,0.00
+		lineageTag: 479c3826-2b7c-4d50-be9d-6ce485de155a
+
+	measure 【退场价税合计】 = SUM('专项物资退场'[价税合计])
+		formatString: #,0.00
+		lineageTag: c0c8b11b-cc0d-4ff3-af7b-971a9898fa6c
+
+	measure 【有效进场金额】 = [【进场金额】]-[【退场金额】]
+		formatString: #,0.00
+		lineageTag: cb2853ac-05e0-4b0a-b1f8-f3c3b2f3c6da
+
+	measure 【有效进场税金】 = [【进场税金】]-[【退场税金】]
+		lineageTag: a0d7a3bc-ec8b-423f-b9ef-cb1ea32b5870
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【有效进场价税合计】 = [【进场价税合计】]-[【退场价税合计】]
+		lineageTag: de79e14a-a6c1-4509-a79a-fdb9e4cb42b4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【租赁报量金额】 = SUM('租赁物资报量表'[报量金额])
+		formatString: #,0.00
+		lineageTag: b25b82ee-b877-4709-b818-793e9ec14128
+
+	measure 【租赁报量税额】 = SUM('租赁物资报量表'[报量税额])
+		formatString: #,0.00
+		lineageTag: a9493682-36ba-4b41-bacd-bbc1ace7f7c7
+
+	measure 【租赁报量价税合计】 = SUM('租赁物资报量表'[报量价税合计])
+		formatString: #,0.00
+		lineageTag: cee12d9f-2c8c-48c0-9fb1-5a63afe5305a
+
+	measure 【租赁付款】 = CALCULATE(SUM('租赁物资付款表'[金额]),'租赁物资付款表'[单据状态]="已完成")
+		lineageTag: 58a1e0fd-13ec-4a98-a29d-97d71d8335e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【租赁付款差额】 = SUMX(KEEPFILTERS(VALUES('租赁合同表'[合同编号])),IF([【租赁含税结算额】]>0,[【租赁含税结算额】]-[【租赁付款】], [【租赁报量价税合计】]-[【租赁付款】]))
+		formatString: #,0.00
+		lineageTag: 833cc4ff-522f-4229-a0b5-a3156bb6a307
+
+	measure 【专项物资含税结算价】 = var a=SUM('专项物资结算'[含税结算额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		formatString: #,0.00
+		lineageTag: 6f19865e-35a7-4a66-93f2-ed1f79e8f086
+
+	measure 【分包含税结算额】 = var a=SUM('分包结算'[含税结算额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: f2541e61-2cfb-483a-b872-bfe109783262
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【租赁含税结算额】 = var a=SUM('租赁物资结算'[含税结算额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: 13f4b0de-3770-4e75-8f52-bff46c0cf084
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【最后取数时间】 = MAX('专项物资合同表'[最后处理时间])
+		formatString: General Date
+		lineageTag: 12d4686a-6c45-45dd-b656-af83e8970292
+
+	measure 【分包合同金额】 = var a=SUM('分包合同表'[合同金额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: 39667ee1-d50a-48d3-b4f3-84e90f9d8494
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包合同税额】 = var a=SUM('分包合同表'[合同税额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: 819aec32-aa9e-4609-88c8-99de793e7482
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包合同价税合计】 = var a=SUM('分包合同表'[合同价税合计]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: 36207ca3-516d-4842-9f43-c8345c0c301b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【物资合同额】 = var a=SUM('专项物资合同表'[合同额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: f60d2b75-3eb7-473f-b555-f6cdc4ec1ebd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【物资合同税额】 = var a=SUM('专项物资合同表'[税额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: 5344c3df-0207-4c35-8c8f-f88c2b0bbfba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【物资合同价税合计】 = var a=SUM('专项物资合同表'[价税合计]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		lineageTag: ebb8ed59-d31d-4d56-aa70-918c583ebd37
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【减报量金额】 = SUM('分包减报量'[减报量金额])
+		formatString: #,0.00
+		lineageTag: 41bdf12b-ae0b-4009-805c-dbaed4e9282e
+
+	measure 【减报量税金】 = SUM('分包减报量'[减报量税额])
+		formatString: #,0.00
+		lineageTag: ca3acf35-fb17-44c1-8ab0-81a7208e4424
+
+	measure 【减报量价税合计】 = SUM('分包减报量'[减报量价税合计])
+		formatString: #,0.00
+		lineageTag: 3102bd09-62aa-4a90-b569-d2447e4ced5c
+
+	measure 【有效报量价税合计】 = [【减报量价税合计】]+[【报量价税合计】]
+		formatString: #,0.00
+		lineageTag: d156d628-f911-42b6-a3fa-3b22021f3ff2
+
+	measure 【有效报量税金】 = [【减报量税金】]+[【报量税金】]
+		formatString: #,0.00
+		lineageTag: c637ccca-f207-494d-b6b7-ed3b54f2b442
+
+	measure 【有效报量金额】 = [【减报量金额】]+[【报量金额】]
+		formatString: 0.00
+		lineageTag: cf4f22a4-0ad2-40e6-b78c-627c11a73103
+
+	measure 【租赁合同额】 = var a=SUM('租赁合同表'[合同额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		formatString: #,0.00
+		lineageTag: 3972eeb5-4a7c-47b3-996a-78a062f0ea3c
+
+	measure 【租赁合同税额】 = var a=SUM('租赁合同表'[税额]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		formatString: #,0.00
+		lineageTag: 03a7be85-be35-4044-a78c-4a0feff9a342
+
+	measure 【租赁合同价税合计】 = var a=SUM('租赁合同表'[价税合计]) return IF(ISFILTERED('日历'[年月]),BLANK(),a)
+		formatString: #,0.00
+		lineageTag: a0e9cad4-89ba-42f1-b0b4-e2ecaeb698a3
+
+	measure 度量值 = USERPRINCIPALNAME()
+		lineageTag: ad45ca69-eaf1-4c9b-9db9-f75a4363e345
+
+	measure 【分包付款_在途】 = CALCULATE(SUM('分包付款主表'[本期实际付款]),'分包付款主表'[单据状态]="总部处理中")
+		lineageTag: 6a7a5036-7260-4bf5-9295-85ddc4ae4771
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包付款含在途】 = [【分包付款_在途】]+[【分包实际付款】]
+		lineageTag: 0c381a1f-4ad5-4dcd-b83f-0cad363adb19
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【物资付款_在途】 = CALCULATE(SUM('专项物资付款表'[本期付款]),'专项物资付款表'[单据状态]="总部处理中")
+		lineageTag: a98daeb2-ecfe-48cf-8346-8a45e6611813
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【物资付款含在途】 = [【物资付款_在途】]+[【物资实际付款】]
+		lineageTag: 569307e9-e0eb-440e-8084-db26362b30c8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【租赁付款_在途】 = CALCULATE(SUM('租赁物资付款表'[金额]),'租赁物资付款表'[单据状态]="总部处理中")
+		lineageTag: 5c5aabb7-9fd6-448e-a1e5-85c69812a688
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【租赁付款含在途】 = [【租赁付款_在途】]+[【租赁付款】]
+		lineageTag: f81c510c-3615-432a-b6fc-776a6cd201f3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包应付】 = SUMX(KEEPFILTERS(values('分包合同表'[合同编号])),IF([【分包含税结算额】]>0,[【分包含税结算额】],[【报量价税合计】]))
+		lineageTag: 5c858641-6d10-499a-a997-2b702d0bad67
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包支付率】 = DIVIDE([【分包实际付款】],[【分包应付】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c5720ca2-d4f7-4117-aa69-0ab281d4a206
+
+	measure 【分供应付】 = SUMX(KEEPFILTERS(VALUES('专项物资合同表'[合同编号])),IF([【专项物资含税结算价】]>0,[【专项物资含税结算价】],[【有效进场价税合计】]))
+		lineageTag: d2472075-39c6-46f4-952f-4c948e23e554
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分供支付率】 = DIVIDE([【物资实际付款】],[【分供应付】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 67f0c868-ff0a-4588-9d70-ef7cd68dea17
+
+	measure 【租赁应付】 = SUMX(KEEPFILTERS(VALUES('租赁合同表'[合同编号])),IF([【租赁含税结算额】]>0,[【租赁含税结算额】], [【租赁报量价税合计】]))
+		lineageTag: 41103dbc-fc0e-4e67-bfe9-0c0d0924086c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【租赁支付率】 = DIVIDE([【租赁付款】],[【租赁应付】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d601cdbf-c3ea-4c0f-ae6e-100245b82882
+
+	column '列 1'
+		dataType: string
+		isHidden
+		lineageTag: 2014e404-5f3c-4387-8aad-2c0f943156b4
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 度量值表-2c1ddbe1-3579-4d89-990c-f6c0ba373e54 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [#"列 1" = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"列 1", type text}})
+				in
+				    更改的类型
+
+	annotation PBI_QueryRelationships = {"columnCount":1,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/度量值表/更改的类型.{列 1,0}"],"ColumnCount":1,"KeyColumnNames":[],"ColumnIdentities":["Section1/度量值表/更改的类型.{列 1,0}"],"RelationshipInfo":[]}
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

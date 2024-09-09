@@ -1,0 +1,34 @@
+table 租赁物资结算
+	lineageTag: d25f4a86-38f5-4657-b952-7da5e1e75b3b
+
+	column 合同编号
+		dataType: string
+		lineageTag: ee62572d-da1c-4a00-ba5a-04a52ad95088
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 含税结算额
+		dataType: double
+		lineageTag: 434042de-85ba-42b6-8094-778d382a4c60
+		summarizeBy: sum
+		sourceColumn: 含税结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 租赁物资结算-7daf20b0-3a21-47cc-aea2-9bd2bf2e458d = m
+		mode: import
+		queryGroup: 租赁物资
+		source =
+				let
+				    源 = 专项物资结算
+				in
+				    源
+
+	annotation PBI_QueryRelationships = {"columnCount":2,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGJIESUANPS.{FHETONGBIANHAO,11}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGJIESUANPS.{FJIESUANJIAHS,56}"],"ColumnCount":2,"KeyColumnNames":[],"ColumnIdentities":["Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGJIESUANPS.{FHETONGBIANHAO,11}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGJIESUANPS.{FJIESUANJIAHS,56}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Exception
+

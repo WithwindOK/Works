@@ -1,0 +1,5 @@
+role 总部
+	modelPermission: read
+
+	annotation PBI_Id = 154a1397905945d499bd8657d2e1bca7
+

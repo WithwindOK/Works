@@ -1,0 +1,65 @@
+table 统一转账度量值
+	excludeFromModelRefresh
+	lineageTag: 1911afd7-4e30-454f-9004-a52ef22ee36e
+
+	measure 【统一进场价税合计】 = SUM('统一转账进场'[价税合计])
+		formatString: #,0.00
+		lineageTag: 4dbbc5e0-a501-492b-895c-1c59b278aff3
+
+	measure 【统一退场价税合计】 = SUM('统一转账退场'[价税合计])
+		lineageTag: 08300ccd-9c9f-4c12-9131-635171312742
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【统一有效进场】 = [【统一进场价税合计】]-[【统一退场价税合计】]
+		lineageTag: 60f41491-36df-49aa-a7ff-2c5af0f6de95
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【付款金额】 = CALCULATE(SUM('统一转账进场'[价税合计]),'统一转账进场'[付款状态]="已支付")
+		formatString: #,0.00
+		lineageTag: 305376c6-2861-4ca3-92ab-bc8d4a39e047
+
+	measure 【统一进场金额】 = SUM('统一转账进场'[金额])
+		formatString: #,0.00
+		lineageTag: 6b88d975-19da-40ac-b918-fd5760e1531c
+
+	measure 【统一进场税金】 = SUM('统一转账进场'[税金])
+		lineageTag: 7f51a09a-cfc4-4e69-93e6-7c594948a857
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【统一退场金额】 = SUM('统一转账退场'[金额])
+		formatString: #,0.00
+		lineageTag: 2aa77c12-43fc-4a47-9897-e2d64a3a21d3
+
+	measure 【统一退场税金】 = SUM('统一转账退场'[税金])
+		formatString: #,0.00
+		lineageTag: 0f11fbbe-c983-44c3-8507-554b40e26370
+
+	column '列 1'
+		dataType: string
+		isHidden
+		lineageTag: 5467bd7e-6772-42b5-8533-f33c859abf4d
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 统一转账度量值-227307db-a113-4cee-9ea7-01e7712ebf09 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [#"列 1" = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"列 1", type text}})
+				in
+				    更改的类型
+
+	annotation PBI_QueryRelationships = {"columnCount":1,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/统一转账度量值/更改的类型.{列 1,0}"],"ColumnCount":1,"KeyColumnNames":[],"ColumnIdentities":["Section1/统一转账度量值/更改的类型.{列 1,0}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

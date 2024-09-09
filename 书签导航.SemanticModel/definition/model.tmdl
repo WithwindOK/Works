@@ -1,0 +1,75 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 分包
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 专项物资
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 租赁物资
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 统一转账
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 账户-项目对照表
+
+	annotation PBI_QueryGroupOrder = 5
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.132.1053.0 (24.08)
+
+annotation PBI_QueryOrder = ["gspm","分包合同表","分包付款主表","度量值表","专项物资进场","专项物资合同表","专项物资付款表","专项物资退场","专项物资退场主表","租赁物资报量表","租赁物资报量从表","租赁合同表","租赁物资付款表","专项物资结算","租赁物资结算","分包结算","分包减报量主表","分包减报量明细","分包减报量","项目信息","统一转账合同","统一转账进场","统一转账物资退场主表","统一转账退场","统一转账度量值","SA_OPPERSON","picc","分包报量表","分包完成量主表","2022年4月之前分包报量主表","2022年4月之前分包报量","2022年4月之前分包报量明细","X5组织机构","分公司人员","项目人员","分公司总经","维度-责任体"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_3307cde2-c606-4ea4-8257-ba86819ab6fe
+ref table 分包合同表
+ref table 分包付款主表
+ref table 日历
+ref table 度量值表
+ref table 专项物资进场
+ref table 专项物资合同表
+ref table 专项物资付款表
+ref table 专项物资退场
+ref table 租赁物资报量表
+ref table 租赁合同表
+ref table 租赁物资付款表
+ref table 专项物资结算
+ref table 租赁物资结算
+ref table 分包结算
+ref table LocalDateTable_e8796e2c-101e-41ad-b904-746407cd068a
+ref table 分包减报量
+ref table LocalDateTable_99722cc6-6d93-4014-b627-f8e4deb254c0
+ref table 统一转账合同
+ref table 统一转账进场
+ref table 统一转账退场
+ref table 统一转账度量值
+ref table 项目信息
+ref table 权限计算组
+ref table 分公司总经
+ref table 维度-责任体
+ref table 分包报量表
+ref table 分公司人员
+ref table 项目人员
+
+ref role 分公司
+ref role 总部
+ref role 项目
+
+ref cultureInfo zh-CN
+

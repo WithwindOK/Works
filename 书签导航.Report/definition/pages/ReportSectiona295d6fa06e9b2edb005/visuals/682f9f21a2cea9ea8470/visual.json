@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "682f9f21a2cea9ea8470",
+  "position": {
+    "x": 734.8464619492654,
+    "y": 189.69292389853138,
+    "z": 3000,
+    "height": 381.09479305740985,
+    "width": 471.66889185580771,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "项目信息"
+                    }
+                  },
+                  "Property": "责任体区域"
+                }
+              },
+              "queryRef": "项目信息.责任体区域"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "度量值表"
+                    }
+                  },
+                  "Property": "【分包含税结算额】"
+                }
+              },
+              "queryRef": "度量值表.【分包含税结算额】"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "度量值表"
+                  }
+                },
+                "Property": "【分包含税结算额】"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'扇形'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "isHidden": true
+}

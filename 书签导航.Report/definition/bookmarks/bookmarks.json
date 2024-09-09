@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "Bookmark49a0c5a2883277bb9d60",
+      "displayName": "组 1",
+      "children": [
+        "Bookmark842149162351edc4051d",
+        "Bookmark26e2b67d9b10cd137a00",
+        "Bookmarkcf6cb56caadd150663ee"
+      ]
+    },
+    {
+      "name": "Bookmark698b2eb99c1078d10708",
+      "displayName": "组 2",
+      "children": [
+        "Bookmark0bf9520b7584d8b0675d",
+        "Bookmark8f333ad609a21d006299"
+      ]
+    }
+  ]
+}

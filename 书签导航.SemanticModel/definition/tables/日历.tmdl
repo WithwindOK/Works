@@ -1,0 +1,30 @@
+table 日历
+	lineageTag: 7c6de829-2ea9-4eb1-8af0-e3525f4cc682
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 53cc7604-79e3-4e58-bed1-9306967a0a0f
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Date]
+
+		variation 变体
+			isDefault
+			relationship: 56f0bd3b-e122-450d-9cbf-a168795fceee
+			defaultHierarchy: LocalDateTable_99722cc6-6d93-4014-b627-f8e4deb254c0.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月 = format('日历'[日期],"yyyy-MM")
+		dataType: string
+		lineageTag: 5b85255b-3ea2-4a26-8f6b-da25f4023ceb
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 日历-3b898c79-9157-41dc-8953-e25a66f8602c = calculated
+		mode: import
+		source = CALENDAR("2017-11-1",TODAY())
+

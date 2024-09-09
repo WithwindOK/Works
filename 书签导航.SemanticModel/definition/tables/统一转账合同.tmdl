@@ -1,0 +1,103 @@
+table 统一转账合同
+	lineageTag: 1d3de789-6620-4ed5-971f-0f5559c0fb00
+
+	column 项目编码
+		dataType: string
+		lineageTag: 21789153-e38b-499c-9fa6-4c827e67c5bd
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: df1e731f-126f-4adf-bb3d-51e1e0a08b06
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 80822b61-be36-4fc2-a9f2-b8df68369a00
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: 3cf24a86-c029-4844-96de-98f45c5697c3
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 专业
+		dataType: string
+		lineageTag: e7bb1446-f6d0-4f66-b767-03758da31494
+		summarizeBy: none
+		sourceColumn: 专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 供方名称
+		dataType: string
+		lineageTag: 04d8cc3b-89a4-4223-aa68-5c0e218a8ded
+		summarizeBy: none
+		sourceColumn: 供方名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		lineageTag: d6c75bce-a471-4889-9cf1-fd4e77757201
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同额
+		dataType: double
+		lineageTag: dd7a1158-20ee-4176-b030-e6ce36f94a30
+		summarizeBy: sum
+		sourceColumn: 合同额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税额
+		dataType: double
+		lineageTag: b306a9ba-fc09-4c01-8253-62a79f878d05
+		summarizeBy: sum
+		sourceColumn: 税额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同类型
+		dataType: string
+		lineageTag: 080c1e6f-4ad0-4910-94a3-0dc63801e5f1
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 统一转账合同-dd5b8790-5d03-42b1-8999-26a7f19ab89b = m
+		mode: import
+		queryGroup: 统一转账
+		source =
+				let
+				    源 = 专项物资合同表,
+				    筛选的行 = Table.SelectRows(源, each ([合同类型] = "统一转账合同"))
+				in
+				    筛选的行
+
+	annotation PBI_QueryRelationships = {"columnCount":10,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FXIANGMUBIANMA,3}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FXIANGMUMINGCHENG,5}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHETONGBIANHAO,6}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHETONGLEIXING,11}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FSHIGONGZHUANYE,29}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FGONGFANGMINGCHENG,46}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHANSHUIHETONGJIAKUAN,58}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FBUHANSHUIHETONGJIAKUAN,59}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FSHUIJIN,60}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHETONGPINGSHENTYPE,73}"],"ColumnCount":10,"KeyColumnNames":[],"ColumnIdentities":["Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FXIANGMUBIANMA,3}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FXIANGMUMINGCHENG,5}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHETONGBIANHAO,6}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHETONGLEIXING,11}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FSHIGONGZHUANYE,29}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FGONGFANGMINGCHENG,46}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHANSHUIHETONGJIAKUAN,58}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FBUHANSHUIHETONGJIAKUAN,59}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FSHUIJIN,60}","Server.Database\\/2/Oracle/172.16.8.78\\/oracledb/GSPM/GSPM.GSPM_WUZIHETONGXINXI.{FHETONGPINGSHENTYPE,73}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Exception
+

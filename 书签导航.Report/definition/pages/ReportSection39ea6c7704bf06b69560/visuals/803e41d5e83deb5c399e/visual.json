@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "803e41d5e83deb5c399e",
+  "position": {
+    "x": 0,
+    "y": 33.069908814589667,
+    "z": 0,
+    "height": 41.823708206686931,
+    "width": 270.3951367781155
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "度量值表"
+                    }
+                  },
+                  "Property": "【最后取数时间】"
+                }
+              },
+              "queryRef": "度量值表.【最后取数时间】"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

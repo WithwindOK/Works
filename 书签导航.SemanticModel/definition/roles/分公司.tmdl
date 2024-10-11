@@ -1,7 +1,0 @@
-role 分公司
-	modelPermission: read
-
-	tablePermission 分公司总经 = [帐号] = USERNAME()
-
-	annotation PBI_Id = 82aa0dcf05614b028136bb2f5a52201a
-

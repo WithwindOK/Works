@@ -1,7 +1,0 @@
-role 项目
-	modelPermission: read
-
-	tablePermission 项目人员 = [账号] = USERNAME()
-
-	annotation PBI_Id = 4671850b986244dd8b15b4af64c383d3
-

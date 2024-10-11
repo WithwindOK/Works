@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.1.0/schema.json",
-  "name": "ReportSectiona295d6fa06e9b2edb005",
-  "displayName": "第 1 页",
-  "displayOption": "FitToPage",
-  "height": 720,
-  "width": 1280
-}

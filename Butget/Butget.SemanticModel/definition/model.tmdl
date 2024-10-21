@@ -1,0 +1,20 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.137.751.0 (24.10)
+
+annotation PBI_QueryOrder = ["financials"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table financials
+
+ref cultureInfo zh-CN
+

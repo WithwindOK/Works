@@ -1,0 +1,53 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "table.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "账户名称",
+			          "ConceptualProperty": "姓名"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "用户名称": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "catalog.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Catalog",
+			          "ConceptualProperty": "Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "报表名称": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

@@ -1,0 +1,28 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 刷新
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.136.1202.0 (24.09)
+
+annotation PBI_QueryOrder = ["Catalog","log3","账户名称","补充账户表","一点点历史数据","数据连接"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Catalog
+ref table log3
+ref table 账户名称
+ref table 参数
+ref table 日历表
+
+ref cultureInfo zh-CN
+

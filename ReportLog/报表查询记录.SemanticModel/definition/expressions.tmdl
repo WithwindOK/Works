@@ -1,0 +1,36 @@
+expression 补充账户表 =
+		let
+		    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WKkjKLC1OLVLSgbNiYwE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [账户 = _t, 姓名 = _t]),
+		    更改的类型 = Table.TransformColumnTypes(源,{{"账户", type text}, {"姓名", type text}})
+		in
+		    更改的类型
+	lineageTag: 23e620fd-fc71-4823-9711-826eae380c54
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 一点点历史数据 =
+		let
+		    源 = Excel.Workbook(File.Contents("\\172.16.8.66\关键指标数据\关键指标模型存放\报表查询记录历史数据.xlsx"), null, true),
+		    Sheet1_Sheet = 源{[Item="Sheet1",Kind="Sheet"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+		    更改的类型 = Table.TransformColumnTypes(提升的标题,{{"Date", type date}, {"Start", type datetime}, {"End", type datetime}})
+		in
+		    更改的类型
+	lineageTag: e92c7cd5-2628-456e-94c4-44fed02f5e5a
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 数据连接 =
+		let
+		    源 = Sql.Databases("sql1.chinaonebuild.com")
+		in
+		    源
+	lineageTag: 8262ad84-a0de-4808-b7dd-a7abcf35a3b6
+	queryGroup: 刷新
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,25 @@
+table 参数
+	lineageTag: a6f8ae35-89b0-4ca4-b616-633cb6072447
+
+	measure '参数 值' = SELECTEDVALUE('参数'[参数])
+		lineageTag: fe8dc152-5755-49e8-b246-2e2a5b9a3414
+
+	column 参数
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bf1a2ad-d305-4449-b891-d7bf095c5112
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 参数-68bd5fa6-8ea5-4119-a5dd-b8ca30cc5f9d = calculated
+		mode: import
+		source = GENERATESERIES(0, 23, 1)
+

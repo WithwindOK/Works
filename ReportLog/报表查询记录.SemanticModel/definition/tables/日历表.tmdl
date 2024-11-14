@@ -1,0 +1,72 @@
+table 日历表
+	lineageTag: 29ba78db-918a-46e4-ba4a-57f671483804
+	dataCategory: Time
+
+	measure 【星期】 = IF(HASONEVALUE('日历表'[Date]),SELECTEDVALUE('日历表'[星期名]))
+		lineageTag: 304ce63a-eb26-41f0-9603-91bd6afb67d3
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: General Date
+		lineageTag: f056b033-0374-4048-9148-06a2f8d6ac8a
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年 = FORMAT('日历表'[Date],"yyyy年")
+		dataType: string
+		lineageTag: 994709c4-98ce-4d3d-a53f-abc06b882ae4
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月 = FORMAT('日历表'[Date],"mm月")
+		dataType: string
+		lineageTag: b40b0d61-d801-4762-a61e-cbbf7187ccbe
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日 = FORMAT('日历表'[Date],"dd日")
+		dataType: string
+		lineageTag: fdea5255-ae0f-493e-a958-d259704dfc1a
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 星期数 = WEEKDAY('日历表'[Date],1)
+		dataType: int64
+		formatString: 0
+		lineageTag: 09f439d2-fec0-4b81-a5ee-e94b32d07b79
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 星期名 = SWITCH('日历表'[星期数],1,"星期日",2,"星期一",3,"星期二",4,"星期三",5,"星期四",6,"星期五","星期六")
+		dataType: string
+		lineageTag: ace53e03-1b09-4365-acc7-1e0f4cd8e286
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 星期 = FORMAT('日历表'[Date],"ddd")
+		dataType: string
+		lineageTag: c645936c-b4ee-4744-a89d-40cc23c4536a
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 日历表-b5f948ac-4bc6-458c-8653-e9c7e0acfe39 = calculated
+		mode: import
+		source = CALENDAR("2019/1/1",TODAY())
+

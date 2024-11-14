@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../报表查询记录.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

@@ -1,0 +1,122 @@
+table log3
+	lineageTag: 61b00cf3-d73e-4188-a594-6b5d3402151a
+
+	measure 【人数】 = DISTINCTCOUNT('log3'[UserName])
+		lineageTag: e860d2bb-b712-445b-8927-4c54784a48ec
+
+		formatStringDefinition = "0 人"
+
+	measure 【报表数】 = DISTINCTCOUNT('log3'[ItemPath])
+		lineageTag: 50ea3f90-f08c-4fc1-9d14-34e8750ad144
+
+		formatStringDefinition = "0 张报表"
+
+	measure 【访问次数】 = COUNTA('log3'[ItemPath])
+		lineageTag: d9e84cc3-a454-4d80-b08f-303cf1eec947
+
+		formatStringDefinition = "0 次"
+
+	measure 标题 = [【访问次数】] &"次访问" & [【报表数】] & "张报表 "
+		lineageTag: dcc5b72b-faad-4de1-a8ac-09622cc8b3e3
+
+	measure 【时长_分钟】 = SUM('log3'[时长])
+		lineageTag: 1760a8d4-1b90-4354-b5b9-2bd2346db7e5
+
+		formatStringDefinition = "0分钟"
+
+	measure 【时长】 = [【时长_分钟】]&"分钟"
+		lineageTag: 827fabe3-0932-4292-a803-83c83121f744
+
+	column ItemPath
+		dataType: string
+		lineageTag: 21633215-9ee7-4a25-86c7-d2e42cde26b6
+		summarizeBy: none
+		sourceColumn: ItemPath
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 65b50736-b3b7-494a-b822-1702d12d979a
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 17198392-2e7c-4709-ac73-2247bbaa708c
+		summarizeBy: none
+		sourceColumn: Hour
+
+		annotation SummarizationSetBy = Automatic
+
+	column Start
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d8ab975d-e7f3-4474-8152-ea1135eac660
+		summarizeBy: none
+		sourceColumn: Start
+
+		annotation SummarizationSetBy = Automatic
+
+	column End
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9d271fb1-1eed-42fa-9412-2e41f2e6dcde
+		summarizeBy: none
+		sourceColumn: End
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserName
+		dataType: string
+		lineageTag: 5be54605-19e3-4f35-9fb9-38f7054bab62
+		summarizeBy: none
+		sourceColumn: UserName
+
+		annotation SummarizationSetBy = Automatic
+
+	column 时长
+		dataType: int64
+		lineageTag: c8b957c3-d0b4-4776-af06-a0f84e64e21d
+		summarizeBy: sum
+		sourceColumn: 时长
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition log3-0d1aebdc-fdd7-47e3-b956-3fe4b1a78380 = m
+		mode: import
+		source =
+				let
+				    源 = Sql.Databases("sql1.chinaonebuild.com"),
+				    ReportServer = 源{[Name="ReportServerSSO"]}[Data],
+				    dbo_ExecutionLog3 = ReportServer{[Schema="dbo",Item="ExecutionLog3"]}[Data],
+				    筛选的行 = Table.SelectRows(dbo_ExecutionLog3, each ([ItemPath] <> "Unknown") and ([ItemAction] = "QueryData")),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"ItemPath", "UserName", "TimeStart", "TimeEnd"}),
+				    复制的列 = Table.DuplicateColumn(删除的其他列, "TimeStart", "TimeStart - 复制"),
+				    复制的列1 = Table.DuplicateColumn(复制的列, "TimeStart - 复制", "TimeStart - 复制 - 复制"),
+				    提取的日期1 = Table.TransformColumns(复制的列1,{{"TimeStart - 复制", DateTime.Date, type date}}),
+				    重命名的列 = Table.RenameColumns(提取的日期1,{{"TimeStart - 复制", "Date"}}),
+				    提取的小时 = Table.TransformColumns(重命名的列,{{"TimeStart - 复制 - 复制", Time.Hour, Int64.Type}}),
+				    重命名的列1 = Table.RenameColumns(提取的小时,{{"TimeStart - 复制 - 复制", "Hour"}}),
+				    分组的行 = Table.Group(重命名的列1, {"ItemPath", "UserName", "Date", "Hour"}, {{"Start", each List.Min([TimeStart]), type datetime}, {"End", each List.Max([TimeEnd]), type datetime}}),
+				    筛选的行1 = Table.SelectRows(分组的行, each ([UserName] <> "PBI-1\Administrator" and [UserName] <> "PBI-2\Administrator")),
+				    筛选的行2 = Table.SelectRows(筛选的行1, each ([UserName] <> "pbiadmin" and [UserName] <> "ANONYMOUS LOGON" and [UserName] <> "bb")),
+				    去除的文本 = Table.TransformColumns(筛选的行2,{{"ItemPath", Text.Trim, type text}}),
+				    清除的文本 = Table.TransformColumns(去除的文本,{{"ItemPath", Text.Clean, type text}}),
+				    替换的值 = Table.ReplaceValue(清除的文本,"财务资金管理部","财务资金管理中心",Replacer.ReplaceText,{"ItemPath"}),
+				    插入的时间相减 = Table.AddColumn(替换的值, "时长", each Duration.Minutes([End] - [Start]),Int8.Type)
+				in
+				    插入的时间相减
+
+	annotation PBI_QueryRelationships = {"columnCount":6,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/log3/替换的值.{ItemPath,0}","Section1/log3/分组的行.{UserName,1}","Section1/log3/分组的行.{Date,2}","Section1/log3/分组的行.{Hour,3}","Section1/log3/分组的行.{Start,4}","Section1/log3/分组的行.{End,5}"],"ColumnCount":6,"KeyColumnNames":[],"ColumnIdentities":["Section1/log3/替换的值.{ItemPath,0}","Section1/log3/分组的行.{UserName,1}","Section1/log3/分组的行.{Date,2}","Section1/log3/分组的行.{Hour,3}","Section1/log3/分组的行.{Start,4}","Section1/log3/分组的行.{End,5}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Table
+

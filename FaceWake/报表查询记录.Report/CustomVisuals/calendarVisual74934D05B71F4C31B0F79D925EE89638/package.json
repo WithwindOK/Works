@@ -1,0 +1,29 @@
+{
+  "version": "3.1.0.1",
+  "author": {
+    "name": "MAQ Software",
+    "email": "support@maqsoftware.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/calendarVisual74934D05B71F4C31B0F79D925EE89638.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "calendarVisual74934D05B71F4C31B0F79D925EE89638",
+    "name": "CalendarVisualByMAQSoftware",
+    "displayName": "Calendar Visual by MAQ Software",
+    "version": "3.1.0.1",
+    "description": "A calendar visual renders a calendar and displays events based on event date in month, week, day and list view.",
+    "supportUrl": "https://github.com/maqsoftware/CalendarVisual/issues",
+    "gitHubUrl": "https://github.com/maqsoftware/CalendarVisual/",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

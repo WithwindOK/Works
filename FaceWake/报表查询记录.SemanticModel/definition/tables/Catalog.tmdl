@@ -1,0 +1,233 @@
+table Catalog
+	lineageTag: 76d41ef0-9435-4358-be78-a12f47a77eb6
+
+	measure MyURL = "http://pbi.chinaonebuild.com/Reports/powerbi/" & SELECTEDVALUE('Catalog'[Path]) & "?Rs:Embed=true&username=" & USERNAME() &"&pbitoken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNTgzNCIsImlhdCI6IjE2ODU0Mjg3NzUiLCJuYmYiOiIxNjg1NDI4Nzc1IiwiZXhwIjoiMTY4NTQzNTk3NSIsImlzcyI6InZvbC5jb3JlLm93bmVyIiwiYXVkIjoidm9sLmNvcmUifQ.mvM96INCH5d8ZtObhsc5WK6qSF1nz6mlLQLMv3RXA94"
+		lineageTag: 4b422cb3-c641-4405-8c56-6c6b24d398f0
+
+	column Path
+		dataType: string
+		lineageTag: 62a86ec7-4ed3-4096-a309-1f1af5734148
+		summarizeBy: none
+		sourceColumn: Path
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 26c34a67-8a62-4d10-9e55-19fe21cd8f54
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ItemID
+		dataType: string
+		lineageTag: e1713136-4ac4-4b94-9085-6e6f94493d44
+		summarizeBy: none
+		sourceColumn: ItemID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentID
+		dataType: string
+		lineageTag: fdf56825-e436-418b-b2b9-f123d6fcbece
+		summarizeBy: none
+		sourceColumn: ParentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fd176ca-28ab-4631-843b-c5b1376062a9
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intermediate
+		dataType: string
+		lineageTag: 259761c0-46ad-4b11-b823-28d1e845ee94
+		summarizeBy: none
+		sourceColumn: Intermediate
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotDataID
+		dataType: string
+		lineageTag: 1a4daedc-835d-4c1c-a70d-d16ac88909ba
+		summarizeBy: none
+		sourceColumn: SnapshotDataID
+
+		annotation SummarizationSetBy = Automatic
+
+	column LinkSourceID
+		dataType: string
+		lineageTag: b2839688-05ab-4d28-9024-412c6ea14986
+		summarizeBy: none
+		sourceColumn: LinkSourceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Property
+		dataType: string
+		lineageTag: 2cdf742a-149a-4f9d-bbe0-eac861109993
+		summarizeBy: none
+		sourceColumn: Property
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 991c27fc-8ca7-4a44-8514-a580e29b2ec7
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hidden
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c214d169-b64f-4107-be90-053737e25c04
+		summarizeBy: none
+		sourceColumn: Hidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedByID
+		dataType: string
+		lineageTag: 3cf8aa10-7d3b-4166-87d9-0308575c87b2
+		summarizeBy: none
+		sourceColumn: CreatedByID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreationDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 443cdfd5-4661-4cc7-97e4-308f1110cf14
+		summarizeBy: none
+		sourceColumn: CreationDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedByID
+		dataType: string
+		lineageTag: bcd1d364-b419-40dd-9ae6-9da0edad8f69
+		summarizeBy: none
+		sourceColumn: ModifiedByID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3acf592b-939c-4a98-9189-bcff333bf74b
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column MimeType
+		dataType: string
+		lineageTag: b2842307-8b43-41e5-a027-0651e55627c3
+		summarizeBy: none
+		sourceColumn: MimeType
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotLimit
+		dataType: int64
+		formatString: 0
+		lineageTag: 99358b2e-b003-4866-a7a7-69069bbdcefc
+		summarizeBy: none
+		sourceColumn: SnapshotLimit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parameter
+		dataType: string
+		lineageTag: e748aa3b-e85c-42dc-9fc2-01b89c8b7a32
+		summarizeBy: none
+		sourceColumn: Parameter
+
+		annotation SummarizationSetBy = Automatic
+
+	column PolicyID
+		dataType: string
+		lineageTag: f7cc5374-37b0-43d5-849b-0d7bc2ae2a8d
+		summarizeBy: none
+		sourceColumn: PolicyID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PolicyRoot
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5cff5716-5365-47d4-bd63-b38a0107244b
+		summarizeBy: none
+		sourceColumn: PolicyRoot
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExecutionFlag
+		dataType: int64
+		formatString: 0
+		lineageTag: 864c599a-5172-4db5-8cde-f385f606d1d2
+		summarizeBy: none
+		sourceColumn: ExecutionFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExecutionTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 50b5024c-62ab-4a8b-9ca0-f3fef4ae52b5
+		summarizeBy: none
+		sourceColumn: ExecutionTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubType
+		dataType: string
+		lineageTag: 916a9b6a-ab32-4416-a5dd-be69bdd77f65
+		summarizeBy: none
+		sourceColumn: SubType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ComponentID
+		dataType: string
+		lineageTag: c0ead190-e10f-43b1-b2a5-aaa6a1199789
+		summarizeBy: none
+		sourceColumn: ComponentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContentSize
+		dataType: int64
+		formatString: 0
+		lineageTag: c797ed94-fafb-4134-b071-0ff1dd846a53
+		summarizeBy: none
+		sourceColumn: ContentSize
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Catalog-ae6670f3-87ee-4ece-afc2-6abcb9b121f4 = m
+		mode: import
+		source =
+				let
+				    源 = Sql.Databases("sql1.chinaonebuild.com"),
+				    ReportServer = 源{[Name="ReportServerSSO"]}[Data],
+				    dbo_Catalog = ReportServer{[Schema="dbo",Item="Catalog"]}[Data],
+				    筛选的行 = Table.SelectRows(dbo_Catalog, each ([Type] = 13)),
+				    去除的文本 = Table.TransformColumns(筛选的行,{{"Path", Text.Trim, type text}}),
+				    清除的文本 = Table.TransformColumns(去除的文本,{{"Path", Text.Clean, type text}}),
+				    替换的值 = Table.ReplaceValue(清除的文本,"财务资金管理部","财务资金管理中心",Replacer.ReplaceText,{"Path"})
+				in
+				    替换的值
+
+	annotation PBI_QueryRelationships = {"columnCount":26,"keyColumnNames":["ItemID"],"queryRelationships":[{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/AlertSubscribers.{ItemID,3}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/CachePolicy.{ReportID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{LinkSourceID,8}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ParentID,3}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":8,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ItemID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":3,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ItemID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/CatalogItemExtendedContent.{ItemId,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Comments.{AttachmentID,7}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Comments.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataModelDataSource.{ItemId,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataModelRole.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataSets.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataSets.{LinkID,2}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataSource.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Favorites.{ItemID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ModelDrill.{ModelID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ModelDrill.{ReportID,2}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ModelPerspective.{ModelID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":19,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Policies.{PolicyID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ReportSchedule.{ReportID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Subscriptions.{Report_OID,2}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":12,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Users.{UserID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":14,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Users.{UserID,0}","KeyColumnCount":1}],"columnIdentities":["Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ItemID,0}","Section1/Catalog/替换的值.{Path,1}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Name,2}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ParentID,3}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Type,4}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Content,5}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Intermediate,6}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{SnapshotDataID,7}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{LinkSourceID,8}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Property,9}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Description,10}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Hidden,11}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{CreatedByID,12}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{CreationDate,13}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ModifiedByID,14}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ModifiedDate,15}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{MimeType,16}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{SnapshotLimit,17}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Parameter,18}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{PolicyID,19}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{PolicyRoot,20}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ExecutionFlag,21}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ExecutionTime,22}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{SubType,23}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ComponentID,24}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ContentSize,25}"],"ColumnCount":26,"KeyColumnNames":["ItemID"],"ColumnIdentities":["Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ItemID,0}","Section1/Catalog/替换的值.{Path,1}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Name,2}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ParentID,3}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Type,4}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Content,5}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Intermediate,6}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{SnapshotDataID,7}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{LinkSourceID,8}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Property,9}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Description,10}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Hidden,11}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{CreatedByID,12}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{CreationDate,13}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ModifiedByID,14}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ModifiedDate,15}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{MimeType,16}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{SnapshotLimit,17}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{Parameter,18}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{PolicyID,19}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{PolicyRoot,20}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ExecutionFlag,21}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ExecutionTime,22}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{SubType,23}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ComponentID,24}","Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ContentSize,25}"],"RelationshipInfo":[{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/AlertSubscribers.{ItemID,3}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/CachePolicy.{ReportID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{LinkSourceID,8}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ParentID,3}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":8,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ItemID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":3,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Catalog.{ItemID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/CatalogItemExtendedContent.{ItemId,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Comments.{AttachmentID,7}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Comments.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataModelDataSource.{ItemId,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataModelRole.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataSets.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataSets.{LinkID,2}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/DataSource.{ItemID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Favorites.{ItemID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ModelDrill.{ModelID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ModelDrill.{ReportID,2}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ModelPerspective.{ModelID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":19,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Policies.{PolicyID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/ReportSchedule.{ReportID,1}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":0,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Subscriptions.{Report_OID,2}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":12,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Users.{UserID,0}","KeyColumnCount":1},{"keyColumnCount":1,"keyColumn":14,"otherKeyColumnIdentity":"Server.Database\\/2/SQL/sql1.chinaonebuild.com;ReportServerSSO/dbo/Users.{UserID,0}","KeyColumnCount":1}]}
+
+	annotation PBI_ResultType = Table
+

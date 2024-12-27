@@ -1,0 +1,71 @@
+table 账户名称
+	lineageTag: 179f875a-3163-4f8a-b87b-b605207de5cd
+
+	column 账户
+		dataType: string
+		lineageTag: 4422147d-192f-42bd-a4c9-43084869510a
+		summarizeBy: none
+		sourceColumn: 账户
+
+		annotation SummarizationSetBy = Automatic
+
+	column 姓名
+		dataType: string
+		lineageTag: 33ac8066-f2c7-4c0b-869f-4b810dc1cd39
+		summarizeBy: none
+		sourceColumn: 姓名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 启用标志
+		dataType: double
+		lineageTag: f8d0acb6-9dc4-40e5-9c3e-6706eef21194
+		summarizeBy: none
+		sourceColumn: 启用标志
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 在职离职
+		dataType: double
+		lineageTag: 492b81b9-aaf2-480c-9bd2-afe1b7d250d0
+		summarizeBy: none
+		sourceColumn: 在职离职
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 单位
+		dataType: string
+		lineageTag: aa7d6e47-000b-4d2a-af6a-4e1222fff0e4
+		summarizeBy: none
+		sourceColumn: 单位
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 账户名称-585a5c8b-329c-4322-a40a-9115d55b692c = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database("172.16.8.127/racdb.com", [HierarchicalNavigation=true]),
+				    PICC = 源{[Schema="PICC"]}[Data],
+				    SY_ORG_USER1 = PICC{[Name="SY_ORG_USER"]}[Data],
+				    删除的其他列 = Table.SelectColumns(SY_ORG_USER1,{"USER_LOGIN_NAME", "USER_NAME", "S_FLAG", "USER_STATE", "DN"}),
+				    已添加自定义1 = Table.AddColumn(删除的其他列, "自定义.1", each [DN]),
+				    替换的值 = Table.ReplaceValue(已添加自定义1,"CN=","",Replacer.ReplaceText,{"自定义.1"}),
+				    替换的值1 = Table.ReplaceValue(替换的值,"OU=","",Replacer.ReplaceText,{"自定义.1"}),
+				    按分隔符拆分列 = Table.SplitColumn(替换的值1, "自定义.1", Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv), {"自定义.1.1", "自定义.1.2", "自定义.1.3", "自定义.1.4", "自定义.1.5"}),
+				    更改的类型 = Table.TransformColumnTypes(按分隔符拆分列,{{"自定义.1.1", type text}, {"自定义.1.2", type text}, {"自定义.1.3", type text}, {"自定义.1.4", type text}, {"自定义.1.5", type text}}),
+				    重命名的列 = Table.RenameColumns(更改的类型,{{"USER_LOGIN_NAME", "账户"}, {"USER_NAME", "姓名"}, {"自定义.1.2", "单位"}, {"DN", "组织单元"}, {"USER_STATE", "在职离职"}, {"S_FLAG", "启用标志"}}),
+				    筛选的行 = Table.SelectRows(重命名的列, each true),
+				    追加的查询 = Table.Combine({筛选的行, 补充账户表}),
+				    删除的列 = Table.RemoveColumns(追加的查询,{"自定义.1.1", "自定义.1.3", "自定义.1.4", "自定义.1.5", "组织单元"})
+				in
+				    删除的列
+
+	annotation PBI_QueryRelationships = {"columnCount":10,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/账户名称/追加的查询.{账户,0}","Section1/账户名称/追加的查询.{姓名,1}","Section1/账户名称/追加的查询.{启用标志,2}","Section1/账户名称/追加的查询.{在职离职,3}","Section1/账户名称/追加的查询.{组织单元,4}","Section1/账户名称/追加的查询.{自定义.1.1,5}","Section1/账户名称/追加的查询.{单位,6}","Section1/账户名称/追加的查询.{自定义.1.3,7}","Section1/账户名称/追加的查询.{自定义.1.4,8}","Section1/账户名称/追加的查询.{自定义.1.5,9}"],"ColumnCount":10,"KeyColumnNames":[],"ColumnIdentities":["Section1/账户名称/追加的查询.{账户,0}","Section1/账户名称/追加的查询.{姓名,1}","Section1/账户名称/追加的查询.{启用标志,2}","Section1/账户名称/追加的查询.{在职离职,3}","Section1/账户名称/追加的查询.{组织单元,4}","Section1/账户名称/追加的查询.{自定义.1.1,5}","Section1/账户名称/追加的查询.{单位,6}","Section1/账户名称/追加的查询.{自定义.1.3,7}","Section1/账户名称/追加的查询.{自定义.1.4,8}","Section1/账户名称/追加的查询.{自定义.1.5,9}"],"RelationshipInfo":[]}
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,17 @@
+relationship 1a6bd472-23f3-42bc-a63d-b1cc4ac56c37
+	fromColumn: log3.ItemPath
+	toColumn: Catalog.Path
+
+relationship 21d0e206-4737-408f-982b-ee611046eec3
+	fromColumn: log3.Date
+	toColumn: 日历表.Date
+
+relationship 62fd9e59-d42c-4a43-846c-82d906d7a041
+	fromColumn: log3.Hour
+	toColumn: 参数.参数
+
+relationship 73dc87c4-99e6-48a1-a203-6f33796fa151
+	crossFilteringBehavior: bothDirections
+	fromColumn: log3.UserName
+	toColumn: 账户名称.账户
+

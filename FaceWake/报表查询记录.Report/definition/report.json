@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY18SU07",
+      "reportVersionAtImport": "3.15",
+      "type": "SharedResources"
+    }
+  },
+  "layoutOptimization": "None",
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY18SU07",
+          "path": "BaseThemes/CY18SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "ChicletSlicer1448559807354",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "ChicletSlicer1448559807354.pbiviz.json",
+          "path": "ChicletSlicer1448559807354.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "calendarVisual74934D05B71F4C31B0F79D925EE89638",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "calendarVisual74934D05B71F4C31B0F79D925EE89638.pbiviz.json",
+          "path": "calendarVisual74934D05B71F4C31B0F79D925EE89638.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "calendarVisual5E37BB8CB2CB427ABE4F9EAAE66C5223",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "calendarVisual5E37BB8CB2CB427ABE4F9EAAE66C5223.pbiviz.json",
+          "path": "calendarVisual5E37BB8CB2CB427ABE4F9EAAE66C5223.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

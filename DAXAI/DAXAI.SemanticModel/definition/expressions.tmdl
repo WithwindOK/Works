@@ -1,0 +1,44 @@
+expression MD_XIANGMUXINXI =
+		let
+		    源 = Oracle.Database("172.16.8.76/oracledb", [HierarchicalNavigation=true]),
+		    MD = 源{[Schema="MD"]}[Data],
+		    MD_XIANGMUXINXI1 = MD{[Name="MD_XIANGMUXINXI"]}[Data],
+		    删除的其他列 = Table.SelectColumns(MD_XIANGMUXINXI1,{"FXMBIANMA", "FXMQUANCHENG", "FZHIGUANJGXG", "FGFCWYTHXMBM", "FGFCWYTHNXZH"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FZHIGUANJGXG", "直管机构"}})
+		in
+		    重命名的列
+	lineageTag: 2374b6c0-1e00-45ad-ad25-2cca712ab713
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression MD_XMYTHDZXX =
+		let
+		    源 = Oracle.Database("172.16.8.76/oracledb", [HierarchicalNavigation=true]),
+		    MD = 源{[Schema="MD"]}[Data],
+		    MD_XMYTHDZXX1 = MD{[Name="MD_XMYTHDZXX"]}[Data],
+		    删除的其他列 = Table.SelectColumns(MD_XMYTHDZXX1,{"FXMBIANMA", "FGFYTHLRZXBM", "FGFYTHLRZXMC"})
+		in
+		    删除的其他列
+	lineageTag: c60782b4-8c19-4b58-82a8-0466c6c70fb7
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression SA_TASK =
+		let
+		    源 = Oracle.Database("172.16.8.76/oracledb", [HierarchicalNavigation=true]),
+		    X5SYS = 源{[Schema="X5SYS"]}[Data],
+		    SA_TASK1 = X5SYS{[Name="SA_TASK"]}[Data],
+		    删除的其他列 = Table.SelectColumns(SA_TASK1,{"SNAME", "SCATALOGID", "SKINDID", "STYPENAME", "SACTIVITY", "SCREATETIME", "SACTUALSTARTTIME", "SACTUALFINISHTIME", "SEXECUTORPERSONNAME", "SEXECUTORPOSNAME", "SDATA1"}),
+		    筛选的行 = Table.SelectRows(删除的其他列, each ([STYPENAME] = "研发经费投入管理") and ([SKINDID] = "tkTask"))
+		in
+		    筛选的行
+	lineageTag: 477afe95-f4dd-49ae-9a6d-a5e45ad62a87
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

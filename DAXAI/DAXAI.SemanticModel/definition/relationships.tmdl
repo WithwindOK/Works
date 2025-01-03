@@ -1,0 +1,24 @@
+relationship 3b90759a-dc96-4c5d-b058-0d640fb26d15
+	joinOnDateBehavior: datePartOnly
+	fromColumn: GSPM_YFJFTRGLZB.费用期间
+	toColumn: LocalDateTable_54536e4c-6b49-4b35-a806-7f0dc8b048d2.Date
+
+relationship 73b740e8-770c-4e14-8829-220801102725
+	fromColumn: GSPM_YFJFTRGLCB.FZBID
+	toColumn: GSPM_YFJFTRGLZB.FID
+
+relationship 6cef97f2-8af4-4ecd-ba96-d1e5b9dfc649
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 流程数据.SCREATETIME
+	toColumn: LocalDateTable_5b560baf-944f-4174-8deb-7643e94a7f8b.Date
+
+relationship 910d71b7-0247-4e10-afb8-506166abd7db
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 流程数据.SACTUALSTARTTIME
+	toColumn: LocalDateTable_c46062ec-925d-424d-93ca-a38663a0726a.Date
+
+relationship 4d1ec35b-9ff1-44fa-b441-50f6e2996333
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 流程数据.SACTUALFINISHTIME
+	toColumn: LocalDateTable_8eef6462-98a8-4535-b6e7-4aeb65cebf72.Date
+

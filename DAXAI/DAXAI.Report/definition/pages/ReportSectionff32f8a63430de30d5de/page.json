@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.2.0/schema.json",
+  "name": "ReportSectionff32f8a63430de30d5de",
+  "displayName": "流程流转查询",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

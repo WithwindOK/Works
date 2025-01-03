@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.2.0/schema.json",
+  "name": "ReportSection1aa1c661080e024102ab",
+  "displayName": "课题明细",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

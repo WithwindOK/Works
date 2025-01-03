@@ -1,0 +1,308 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.2.0/schema.json",
+  "name": "9b2179f0bcbb89a0a418",
+  "position": {
+    "x": 18.480243161094226,
+    "y": 112.82674772036475,
+    "z": 0,
+    "height": 581.64133738601822,
+    "width": 1226.5045592705167
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "课题编号"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.课题编号"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "课题名称"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.课题名称"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "项目名称"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.项目名称1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "直管机构"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.直管机构"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "评审状态"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.评审状态"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "财务一体化利润中心编码"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.财务一体化利润中心编码"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "财务一体化利润中心名称"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.财务一体化利润中心名称"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLZB"
+                    }
+                  },
+                  "Property": "客商名称"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLZB.客商名称"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLCB"
+                    }
+                  },
+                  "Property": "物资名称"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLCB.物资名称"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GSPM_YFJFTRGLCB"
+                    }
+                  },
+                  "Property": "规格型号"
+                }
+              },
+              "queryRef": "GSPM_YFJFTRGLCB.规格型号"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "GSPM_YFJFTRGLCB"
+                        }
+                      },
+                      "Property": "当期研发分摊金额"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(GSPM_YFJFTRGLCB.当期研发分摊金额)",
+              "displayName": "当期研发分摊金额"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "GSPM_YFJFTRGLCB"
+                        }
+                      },
+                      "Property": "当期研发分摊使用量"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(GSPM_YFJFTRGLCB.当期研发分摊使用量)",
+              "displayName": "当期研发分摊使用量"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filtercd95a881ca448ca26926",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GSPM_YFJFTRGLZB"
+              }
+            },
+            "Property": "课题名称"
+          }
+        },
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "g",
+              "Entity": "GSPM_YFJFTRGLZB",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "g"
+                              }
+                            },
+                            "Property": "课题名称"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

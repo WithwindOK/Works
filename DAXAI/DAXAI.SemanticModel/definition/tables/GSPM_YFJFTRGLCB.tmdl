@@ -1,0 +1,63 @@
+table GSPM_YFJFTRGLCB
+	lineageTag: f862a7c8-491d-4a16-a125-9c6c03355234
+
+	column FZBID
+		dataType: string
+		lineageTag: 3f902822-f9b5-4467-a98d-f1790a272f5f
+		summarizeBy: none
+		sourceColumn: FZBID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 物资名称
+		dataType: string
+		lineageTag: 2149dfff-5530-496c-a931-eb985cfa6872
+		summarizeBy: none
+		sourceColumn: 物资名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 规格型号
+		dataType: string
+		lineageTag: f7d1aa31-b391-4c25-a4fa-af7b91aba289
+		summarizeBy: none
+		sourceColumn: 规格型号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 当期研发分摊使用量
+		dataType: double
+		lineageTag: 72d31463-422f-4357-855e-e1478cd9a405
+		summarizeBy: sum
+		sourceColumn: 当期研发分摊使用量
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 当期研发分摊金额
+		dataType: double
+		lineageTag: 04eb038b-30e3-436d-b609-567450a07ec3
+		summarizeBy: sum
+		sourceColumn: 当期研发分摊金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition GSPM_YFJFTRGLCB-6891694a-1bf2-4b07-8998-cb7ca268480b = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database("172.16.8.76/oracledb", [HierarchicalNavigation=true]),
+				    GSPM = 源{[Schema="GSPM"]}[Data],
+				    GSPM_YFJFTRGLCB1 = GSPM{[Name="GSPM_YFJFTRGLCB"]}[Data],
+				    重命名的列 = Table.RenameColumns(GSPM_YFJFTRGLCB1,{{"FWZMC", "物资名称"}, {"FGGXH", "规格型号"}, {"FDQYFFTSYL", "当期研发分摊使用量"}, {"FDQYFFTJE", "当期研发分摊金额"}}),
+				    删除的其他列 = Table.SelectColumns(重命名的列,{"FZBID", "物资名称", "规格型号", "当期研发分摊使用量", "当期研发分摊金额"})
+				in
+				    删除的其他列
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

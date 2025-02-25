@@ -1,0 +1,178 @@
+table 模型
+	lineageTag: 94b76662-397a-4c66-a2f1-17a383ac99e4
+
+	column D_日历[日期]
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4c4c504e-cbab-4c28-979c-b3c981955a30
+		summarizeBy: none
+		sourceColumn: D_日历[日期]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[日期序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: 887177c0-affc-4aef-8cb7-6ab5baf72a35
+		summarizeBy: sum
+		sourceColumn: D_日历[日期序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: dfecef3f-601c-4f88-b074-a015808933ae
+		summarizeBy: sum
+		sourceColumn: D_日历[年序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年份名称]
+		dataType: string
+		lineageTag: 94a0e271-0f5e-4858-808a-b19766b4f335
+		summarizeBy: none
+		sourceColumn: D_日历[年份名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[季度序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: 54f6f41a-f325-44ed-85a8-5f9c3ce4359c
+		summarizeBy: sum
+		sourceColumn: D_日历[季度序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[季度名称]
+		dataType: string
+		lineageTag: 51a562ac-8d83-46ab-9fec-af3e281766f9
+		summarizeBy: none
+		sourceColumn: D_日历[季度名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[月份序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: b0b16142-cb6e-49fa-9b47-8553dba50aa6
+		summarizeBy: sum
+		sourceColumn: D_日历[月份序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[月份名称]
+		dataType: string
+		lineageTag: 62106383-3dab-4820-87af-f28fc8962de4
+		summarizeBy: none
+		sourceColumn: D_日历[月份名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[周序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: 5fed986d-2c4c-4390-851a-fdd90ea51182
+		summarizeBy: sum
+		sourceColumn: D_日历[周序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[周名称]
+		dataType: string
+		lineageTag: 0cf5e191-2616-4370-890d-848335d8ed0f
+		summarizeBy: none
+		sourceColumn: D_日历[周名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年季序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c7986c9-cb6a-4d44-b2d1-8a01435b33f3
+		summarizeBy: sum
+		sourceColumn: D_日历[年季序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年季名称]
+		dataType: string
+		lineageTag: 003e1775-5a60-4979-a76d-f9307f408f0e
+		summarizeBy: none
+		sourceColumn: D_日历[年季名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年月序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cbcd258-987c-46e0-a4c8-27160f33c0bd
+		summarizeBy: sum
+		sourceColumn: D_日历[年月序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年月名称]
+		dataType: string
+		lineageTag: f6e7b849-84e2-41b3-b7a3-fa372f6724f5
+		summarizeBy: none
+		sourceColumn: D_日历[年月名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年周序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: d5b6ba7e-3163-4837-87f4-949e068c4293
+		summarizeBy: sum
+		sourceColumn: D_日历[年周序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[年周名称]
+		dataType: string
+		lineageTag: 0089f7c2-eb1a-4a32-b435-07210acdf7cd
+		summarizeBy: none
+		sourceColumn: D_日历[年周名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[日序号]
+		dataType: int64
+		formatString: 0
+		lineageTag: f1ac0425-7d8e-42f1-abb7-774a8948404d
+		summarizeBy: sum
+		sourceColumn: D_日历[日序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[周天名称]
+		dataType: string
+		lineageTag: bb02a452-5cae-47da-9fb2-0dc36b17329c
+		summarizeBy: none
+		sourceColumn: D_日历[周天名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_日历[工作日]
+		dataType: string
+		lineageTag: 63786981-2c7b-4d7d-8480-2e6f94116ee0
+		summarizeBy: none
+		sourceColumn: D_日历[工作日]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 模型 = m
+		mode: import
+		source =
+				let
+				    源 = AnalysisServices.Database("sql1.chinaonebuild.com", "BAM", [TypedMeasureColumns=true, Implementation="2.0"]),
+				    自定义1 = Value.NativeQuery(源,"EVALUATE 'D_日历'")
+				in
+				    自定义1
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,35 @@
+table F_结算面积
+	lineageTag: 69d03030-6600-428b-ac67-e07b5d4ac269
+
+	column 项目编码
+		lineageTag: c5c103ee-7b33-463c-9978-99475337909d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: F_合同面积[项目编码]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		lineageTag: d99bd1f4-eb56-4996-9843-c5a4ccc35ac7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: F_合同面积[项目名称]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 建筑面积(㎡)
+		lineageTag: e813be5b-5f8c-4254-bca0-0cfa37fba152
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: F_合同面积[建筑面积(㎡)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_结算面积 = calculated
+		mode: import
+		source = 'F_合同面积'
+
+	annotation PBI_Id = 34a9b8bd6d314ed0a3d700bebd244325
+

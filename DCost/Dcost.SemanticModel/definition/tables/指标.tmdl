@@ -1,0 +1,62 @@
+table 指标
+	excludeFromModelRefresh
+	lineageTag: 69180d42-8d2c-4a06-9249-48d3f6af6592
+
+	measure 【合同价税合计】 = SUM('F_合同'[M.下游合同.价税合计.Sum])
+		formatString: #,0.00
+		displayFolder: 合同
+		lineageTag: 41d50c77-8325-48fd-bfb9-64b96a8af575
+
+	measure 【合同面积】 = SUM('F_合同面积'[建筑面积(㎡)])
+		formatString: #,0.00
+		displayFolder: 合同
+		lineageTag: 4730c3fd-aeee-41af-9c01-823b5cbcb0ea
+
+	measure 【合同价税合计/平米】 = DIVIDE([【合同价税合计】],[【合同面积】])
+		formatString: #,0.00
+		displayFolder: 合同
+		lineageTag: 9a7f5cd5-ff65-4e83-932d-5347d7ab3792
+
+	measure 【结算面积】 = SUM('F_结算面积'[建筑面积(㎡)])
+		formatString: #,0.00
+		lineageTag: 2188f168-11e7-4ccf-bed7-3372259e2e7b
+
+	measure 【合同金额】 = SUM('F_合同'[M.下游合同.金额.Sum])
+		formatString: #,0.00
+		displayFolder: 合同
+		lineageTag: 6d194e12-61d8-42c0-b605-8324bdf1e89e
+
+	measure 【合同税金】 = SUM('F_合同'[M.下游合同.税金.Sum])
+		formatString: #,0.00
+		displayFolder: 合同
+		lineageTag: ae5fb1fc-622f-43d5-910d-0b8eae03f64e
+
+	measure 【结算价税合计】 = SUM('F_结算'[M.下游合同结算.价税合计.Sum])
+		formatString: #,0.00
+		lineageTag: f0bf53bb-b340-4ff4-837d-0a33e23e066b
+
+	measure 【结算金额】 = SUM('F_结算'[M.下游合同结算.金额.Sum])
+		formatString: #,0.00
+		lineageTag: ced2001a-c112-4edb-a8f9-0bcc51cee8fc
+
+	measure 【结算税金】 = SUM('F_结算'[M.下游合同结算.税金.Sum])
+		formatString: #,0.00
+		lineageTag: 74691014-198f-43eb-bb3e-21cf88751a04
+
+	measure 【结算价税合计/平米】 = DIVIDE([【结算价税合计】],[【结算面积】])
+		formatString: #,0.00
+		lineageTag: 1e0aaf76-a80e-4727-878f-f64f9f62c037
+
+	partition 指标 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"列 1" = _t]),
+				    删除的列 = Table.RemoveColumns(源,{"列 1"})
+				in
+				    删除的列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,178 @@
+table D_日历
+	lineageTag: b1a8ca2d-238b-45bb-981a-a99a4adef14e
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 88047202-f975-4fa8-b683-d14be8d72203
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 6db25e02-2d80-441e-bb88-f01b0a7417bc
+		summarizeBy: sum
+		sourceColumn: 日期序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年序号
+		dataType: int64
+		formatString: 0
+		lineageTag: ab382adc-c1e3-4c5f-bee2-2e324e684900
+		summarizeBy: sum
+		sourceColumn: 年序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年份名称
+		dataType: string
+		lineageTag: 9bd5f91b-d41e-4d02-b722-df28a5688d23
+		summarizeBy: none
+		sourceColumn: 年份名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 3737e8b3-da35-4dc6-9231-95ca8145090a
+		summarizeBy: sum
+		sourceColumn: 季度序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度名称
+		dataType: string
+		lineageTag: 55530ff0-a7c9-48d5-a7b0-2c5b72fb673e
+		summarizeBy: none
+		sourceColumn: 季度名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d5e82ac-d15c-4c98-9b31-a7e42da14695
+		summarizeBy: sum
+		sourceColumn: 月份序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份名称
+		dataType: string
+		lineageTag: 4f2097c2-e482-46bc-bb41-f439a1c748bf
+		summarizeBy: none
+		sourceColumn: 月份名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周序号
+		dataType: int64
+		formatString: 0
+		lineageTag: f9be9979-3c61-41fe-a9af-9de7ad5604a2
+		summarizeBy: sum
+		sourceColumn: 周序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周名称
+		dataType: string
+		lineageTag: 9e937529-a7d5-4aa4-bf47-d4b36402583b
+		summarizeBy: none
+		sourceColumn: 周名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年季序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cddc808-55fa-4486-937d-28afec2bf165
+		summarizeBy: sum
+		sourceColumn: 年季序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年季名称
+		dataType: string
+		lineageTag: df5f50cf-046c-4dc9-88c6-74e3552f1df9
+		summarizeBy: none
+		sourceColumn: 年季名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 84267241-dd5c-4d22-9620-f674fbf0b368
+		summarizeBy: sum
+		sourceColumn: 年月序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月名称
+		dataType: string
+		lineageTag: e963e93d-703f-414d-8b9d-9c17d146eb7a
+		summarizeBy: none
+		sourceColumn: 年月名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年周序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ce2bb02-0cf0-42ca-9cca-37bf812d4d8f
+		summarizeBy: sum
+		sourceColumn: 年周序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年周名称
+		dataType: string
+		lineageTag: 7da70398-5b32-4483-bde2-63a67e8e0450
+		summarizeBy: none
+		sourceColumn: 年周名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日序号
+		dataType: int64
+		formatString: 0
+		lineageTag: 2fa9faa3-872a-4247-b967-6b9172ce9f1e
+		summarizeBy: sum
+		sourceColumn: 日序号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 周天名称
+		dataType: string
+		lineageTag: 22c2cb94-61fe-4888-b076-dc2aefb7d1c9
+		summarizeBy: none
+		sourceColumn: 周天名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工作日
+		dataType: string
+		lineageTag: 7601955d-9f63-47aa-aa2c-1907b4bc5806
+		summarizeBy: none
+		sourceColumn: 工作日
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_日历 = m
+		mode: import
+		source =
+				let
+				    查询1 = AnalysisServices.Database("sql1.chinaonebuild.com", "BAM", [Query="/* START QUERY BUILDER */#(lf)EVALUATE#(lf)'D_日历'", Implementation="2.0"]),
+				    重命名列 = Table.TransformColumnNames(查询1,each Text.BetweenDelimiters(_,"[","]"))
+				in
+				    重命名列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,106 @@
+table F_结算
+	lineageTag: a23239af-735e-4b1f-b2b0-e0f26f7acec4
+
+	column 项目编码
+		dataType: string
+		lineageTag: d6f8d291-bcfd-4f65-adb1-6ee837460afd
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 17346f65-f0d3-4be7-8781-adefcc7d9914
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同编号
+		dataType: string
+		lineageTag: ac3269ae-bab3-4319-acb0-7a9abc795256
+		summarizeBy: none
+		sourceColumn: 标准合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: a8bd5a75-b4e9-43a8-b57c-8df4de5eefeb
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 085e2136-c244-46bc-98b2-99160e1da907
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'M.下游合同结算.价税合计.Sum'
+		dataType: double
+		lineageTag: 686768ab-7819-49ce-9919-0bfdbeb6df50
+		summarizeBy: sum
+		sourceColumn: M.下游合同结算.价税合计.Sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'M.下游合同结算.金额.Sum'
+		dataType: double
+		lineageTag: e71859f0-dfed-42bf-9259-56e9e782b979
+		summarizeBy: sum
+		sourceColumn: M.下游合同结算.金额.Sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'M.下游合同结算.税金.Sum'
+		dataType: double
+		lineageTag: 3ab3d0a3-e510-40c7-a220-fc567ea2cde5
+		summarizeBy: sum
+		sourceColumn: M.下游合同结算.税金.Sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_结算 = m
+		mode: import
+		source =
+				let
+				    查询1 = AnalysisServices.Database("sql1.chinaonebuild.com", "BAM", [Query="/* START QUERY BUILDER */#(lf)EVALUATE#(lf)SUMMARIZECOLUMNS(#(lf)    'D_项目信息'[项目编码],#(lf)    'D_项目信息'[项目名称],#(lf)    'D_下游合同'[标准合同编号],#(lf)    'D_下游合同'[标准合同名称],#(lf)    'D_日历'[日期],#(lf)    KEEPFILTERS( FILTER( ALL( 'D_下游合同'[合同编号] ), NOT( ISBLANK( 'D_下游合同'[合同编号] )))),#(lf)    ""M.下游合同结算.价税合计.Sum"", [M.下游合同结算.价税合计.Sum],#(lf)    ""M.下游合同结算.金额.Sum"", [M.下游合同结算.金额.Sum],#(lf)    ""M.下游合同结算.税金.Sum"", [M.下游合同结算.税金.Sum]#(lf))#(lf)", Implementation="2.0"]),
+				    重命名列 = Table.TransformColumnNames(查询1,each Text.BetweenDelimiters(_,"[","]")),
+				    更改的类型 = Table.TransformColumnTypes(重命名列,{{"M.下游合同结算.价税合计.Sum", type number}, {"M.下游合同结算.金额.Sum", type number}, {"M.下游合同结算.税金.Sum", type number}})
+				in
+				    更改的类型
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

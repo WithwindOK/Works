@@ -1,0 +1,143 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 83.636360168457031,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 979,
+            "y": 204.5
+          },
+          "nodeIndex": "指标",
+          "nodeLineageTag": "69180d42-8d2c-4a06-9249-48d3f6af6592",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 477,
+            "y": 31.5
+          },
+          "nodeIndex": "F_合同",
+          "nodeLineageTag": "f2eeb47a-34a9-4a22-b41f-5624dbdc8d8b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5,
+            "y": 162.5
+          },
+          "nodeIndex": "D_科目",
+          "nodeLineageTag": "3bc691a8-cab5-48bc-9200-cf62f3d61388",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 469.45458221435547,
+            "y": 352.5
+          },
+          "nodeIndex": "F_结算",
+          "nodeLineageTag": "a23239af-735e-4b1f-b2b0-e0f26f7acec4",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "78a78081-8dd1-4027-b889-b13e895b7e09",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 803.18181610107422,
+            "y": 348
+          },
+          "nodeIndex": "F_结算面积",
+          "nodeLineageTag": "69d03030-6600-428b-ac67-e07b5d4ac269",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 788,
+            "y": 96.5
+          },
+          "nodeIndex": "F_合同面积",
+          "nodeLineageTag": "625fbe89-5e94-4620-a923-f3b6386ba7fa",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 4.0000076293945313,
+            "y": 323.02272796630859
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "b1a8ca2d-238b-45bb-981a-a99a4adef14e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 1263,
+            "y": 162.25
+          },
+          "nodeIndex": "模型",
+          "nodeLineageTag": "94b76662-397a-4c66-a2f1-17a383ac99e4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}

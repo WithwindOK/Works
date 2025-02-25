@@ -1,0 +1,143 @@
+table 资金计划汇总额-付款单统计情况
+	lineageTag: e029df34-6285-43f5-a609-da06cc4a5b80
+
+	column 项目名称
+		dataType: string
+		lineageTag: d7c8839a-a874-4c23-bb04-f54100828ab1
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: b6866080-3ee3-4581-87d1-33bdb9c9ce3a
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 直管机构
+		dataType: string
+		lineageTag: 6963783c-cd0d-44ee-bfab-0c46c004df95
+		summarizeBy: none
+		sourceColumn: 直管机构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 589e02a7-c926-4370-900d-68dadc421d77
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: ea6c1e0d-fbc4-477e-b28d-a0ebf22572ff
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同类型
+		dataType: string
+		lineageTag: 41a7cea9-c55a-4292-b801-dd143bdef16a
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: 4afe49cf-6076-4efa-a585-db6d9710b592
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支付方式
+		dataType: string
+		lineageTag: 0481ca5e-e762-4f3f-b913-101db53a0fb3
+		summarizeBy: none
+		sourceColumn: 支付方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业务类型
+		dataType: string
+		lineageTag: 6a01df8a-7522-4ef9-a646-d463ba4446f7
+		summarizeBy: none
+		sourceColumn: 业务类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 资金计划汇总额度
+		dataType: double
+		lineageTag: 601ce043-939f-45ff-8cc3-8f99ca915fe9
+		summarizeBy: sum
+		sourceColumn: 资金计划汇总额度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 付款单号
+		dataType: string
+		lineageTag: 48495217-5c9e-4f14-aa17-235c4375847e
+		summarizeBy: none
+		sourceColumn: 付款单号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 付款单付款金额
+		dataType: double
+		lineageTag: 15d6fc9e-d3d0-47a0-9cee-8b4a1d1845fb
+		summarizeBy: sum
+		sourceColumn: 付款单付款金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 付款单支付方式
+		dataType: string
+		lineageTag: df85e3e9-4cab-4153-85d9-58b113a9966e
+		summarizeBy: none
+		sourceColumn: 付款单支付方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 评审状态
+		dataType: string
+		lineageTag: 2a257795-b746-40b8-bc3a-6b955ac1f4a7
+		summarizeBy: none
+		sourceColumn: 评审状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column FRQ
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d7ba43b3-52c1-4c5c-a5bb-98905aeec87d
+		summarizeBy: none
+		sourceColumn: FRQ
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 资金计划汇总额-付款单统计情况 = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database(oracle, [HierarchicalNavigation=true]),
+				    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+				    DM_ZJJH_FKDQKTJQK1 = DATA_DW{[Name="DM_ZJJH_FKDQKTJQK"]}[Data],
+				    重命名的列 = Table.RenameColumns(DM_ZJJH_FKDQKTJQK1,{{"FXMQUANCHENG", "项目名称"}, {"FXIANGMUBIANMA", "项目编码"}, {"ZGJG", "直管机构"}, {"FHETONGBIANHAO", "合同编号"}, {"FHETONGMINGCHENG", "合同名称"}, {"FHETONGLEIXING", "合同类型"}, {"FKESHANGMC", "客商名称"}, {"FZHIFUFANGSHI", "支付方式"}, {"FTYPE", "业务类型"}, {"FBENYUEJIHUAE", "资金计划汇总额度"}, {"FYEWUDANHAO", "付款单号"}, {"FBENQISHIJIFUKUAN", "付款单付款金额"}, {"FKDZFFS", "付款单支付方式"}, {"FPINGSHENZHUANGTAI", "评审状态"}})
+				in
+				    重命名的列
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

@@ -1,0 +1,119 @@
+table 项目资金计划流出明细
+	lineageTag: c2b6af4c-0ab3-4390-a753-41f057648454
+
+	column 项目名称
+		dataType: string
+		lineageTag: 63bc9ee0-a9f5-4860-b1ac-4b98468227b9
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: d807efc5-c51d-4170-b181-fff43486fca9
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 直管机构
+		dataType: string
+		lineageTag: 43117d60-723b-4dd8-a02f-776c1ac5ed23
+		summarizeBy: none
+		sourceColumn: 直管机构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 2d683750-cc93-45b2-a6c0-cc44b9b461ca
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: 9e0d3300-1ef1-44a9-b19a-3fa31f46da7d
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同类型
+		dataType: string
+		lineageTag: 4362721b-7928-4365-9697-bda4fef03058
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 补充协议号
+		dataType: string
+		lineageTag: df86fae9-ba3a-44c2-999d-b83dfcb7e80e
+		summarizeBy: none
+		sourceColumn: 补充协议号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: 9d7f6dea-9db1-4177-ad3b-3b05f4d2f68e
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 农民工工资
+		dataType: double
+		lineageTag: 9c701dee-1eec-4dec-88d9-1b80d3186fa6
+		summarizeBy: sum
+		sourceColumn: 农民工工资
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款
+		dataType: double
+		lineageTag: 8e05bcff-29b3-45d0-971e-47f059e1e163
+		summarizeBy: sum
+		sourceColumn: 工程款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 支付方式
+		dataType: string
+		lineageTag: 38fb44fd-e303-4a4b-81e7-af611a19b748
+		summarizeBy: none
+		sourceColumn: 支付方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column FRQ
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dba2e1a1-1c7f-43bc-a04e-9c91eb2f161c
+		summarizeBy: none
+		sourceColumn: FRQ
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 项目资金计划流出明细 = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database(oracle, [HierarchicalNavigation=true]),
+				    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+				    DM_ZJJH_ZJLCMX1 = DATA_DW{[Name="DM_ZJJH_ZJLCMX"]}[Data],
+				    重命名的列 = Table.RenameColumns(DM_ZJJH_ZJLCMX1,{{"FXIANGMUBIANMA", "项目编码"}, {"FHETONGBIANHAO", "合同编号"}, {"FHETONGMINGCHENG", "合同名称"}, {"FHETONGLEIXING", "合同类型"}, {"FBUCHONGXIEYIHAO", "补充协议号"}, {"FKESHANGMC", "客商名称"}, {"FXIANGMUMINGCHENG", "项目名称"}, {"ZGJG", "直管机构"}, {"FNONGMINGONGGZ", "农民工工资"}, {"FGONGCHENGKUAN", "工程款"}, {"FZHIFUFANGSHI", "支付方式"}})
+				in
+				    重命名的列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

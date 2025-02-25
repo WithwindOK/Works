@@ -1,0 +1,81 @@
+table 项目核对直接费额度
+	lineageTag: 439f1483-44e3-48bc-b0f4-c29e5639c6e8
+
+	column 项目名称
+		dataType: string
+		lineageTag: ae40581f-af81-4a63-ad50-4398655af6b9
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 3e3fc255-e400-46b6-8751-374ed6539413
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 直管机构
+		dataType: string
+		lineageTag: 33ded969-209e-44cd-b261-2da4b2578ea1
+		summarizeBy: none
+		sourceColumn: 直管机构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分公司核定直接费
+		dataType: double
+		lineageTag: 0c05cae1-7fe6-44b1-973c-bd695caacde9
+		summarizeBy: sum
+		sourceColumn: 分公司核定直接费
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '年月.1'
+		dataType: string
+		lineageTag: 63bef506-3086-4241-a7d5-917394159659
+		summarizeBy: none
+		sourceColumn: 年月.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column '年月.2'
+		dataType: string
+		lineageTag: d86b830d-8ac7-4d1b-af1d-2d6aac91427c
+		summarizeBy: none
+		sourceColumn: 年月.2
+
+		annotation SummarizationSetBy = Automatic
+
+	column FRQ
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f99d54b7-4502-4ece-b2bf-bd75be50a1fb
+		summarizeBy: none
+		sourceColumn: FRQ
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 项目核对直接费额度 = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database(oracle, [HierarchicalNavigation=true]),
+				    GSPM = 源{[Schema="GSPM"]}[Data],
+				    GSPM_V_GONGSIEDUXINXI1 = GSPM{[Name="GSPM_V_GONGSIEDUXINXI"]}[Data],
+				    删除的其他列 = Table.SelectColumns(GSPM_V_GONGSIEDUXINXI1,{"FXMMC", "FXMBM", "FGONGSIMC", "FYUEFEN", "FZJF"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FXMMC", "项目名称"}, {"FXMBM", "项目编码"}, {"FGONGSIMC", "直管机构"}, {"FYUEFEN", "年月"}, {"FZJF", "分公司核定直接费"}}),
+				    按位置拆分列 = Table.SplitColumn(重命名的列, "年月", Splitter.SplitTextByPositions({0, 4}), {"年月.1", "年月.2"}),
+				    已添加自定义 = Table.AddColumn(按位置拆分列, "FRQ", each [年月.1]&"-"&[年月.2]&"-01 00:00:00"),
+				    更改的类型 = Table.TransformColumnTypes(已添加自定义,{{"FRQ", type datetime}})
+				in
+				    更改的类型
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

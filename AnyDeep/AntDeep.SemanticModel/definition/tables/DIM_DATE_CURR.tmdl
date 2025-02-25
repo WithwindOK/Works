@@ -1,0 +1,60 @@
+table DIM_DATE_CURR
+	lineageTag: ed2eed27-f7df-40de-8459-f351671039ca
+
+	column DS
+		dataType: string
+		lineageTag: 94b16626-11d9-428b-9df0-20a3a4f0fa30
+		summarizeBy: none
+		sourceColumn: DS
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_DATE
+		dataType: string
+		lineageTag: c5e6e02d-cd2d-4138-b925-65bfc158d934
+		summarizeBy: none
+		sourceColumn: D_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_DATETIME
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9154eb91-2f9f-4816-8062-85997ecdba59
+		summarizeBy: none
+		sourceColumn: D_DATETIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份
+		dataType: string
+		lineageTag: 84526655-619e-49ff-b306-3b0d55d4e7fc
+		summarizeBy: none
+		sourceColumn: 月份
+
+		annotation SummarizationSetBy = Automatic
+
+	column SFBR
+		dataType: string
+		lineageTag: 797fe673-2703-421d-aa73-1cae9049492f
+		summarizeBy: none
+		sourceColumn: SFBR
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_DATE_CURR = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database(oracle, [HierarchicalNavigation=true]),
+				    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+				    DIM_DATE_CURR1 = DATA_DW{[Name="DIM_DATE_CURR"]}[Data],
+				    重命名的列 = Table.RenameColumns(DIM_DATE_CURR1,{{"SFBY", "月份"}}),
+				    筛选的行 = Table.SelectRows(重命名的列, each [D_DATETIME] <= DateTime.LocalNow())
+				in
+				    筛选的行
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

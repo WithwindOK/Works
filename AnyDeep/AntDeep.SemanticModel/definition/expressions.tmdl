@@ -1,0 +1,7 @@
+expression oracle = "172.16.8.76/oracledb" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: dafcfdc2-1e4d-46b1-9464-7ae92a4e2a4b
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Text
+

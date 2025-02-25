@@ -1,0 +1,267 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "10397b61821c020d73c7",
+  "position": {
+    "x": 168.4729064039409,
+    "y": 118.81773399014779,
+    "z": 0,
+    "height": 585.22167487684726,
+    "width": 1111.92118226601,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "项目名称"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.项目名称",
+              "nativeQueryRef": "项目名称"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "项目编码"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.项目编码",
+              "nativeQueryRef": "项目编码"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "直管机构"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.直管机构",
+              "nativeQueryRef": "直管机构"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "合同编号"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.合同编号",
+              "nativeQueryRef": "合同编号"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "合同名称"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.合同名称",
+              "nativeQueryRef": "合同名称"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "合同类型"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.合同类型",
+              "nativeQueryRef": "合同类型"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "客商名称"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.客商名称",
+              "nativeQueryRef": "客商名称"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "支付方式"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.支付方式",
+              "nativeQueryRef": "支付方式"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "业务类型"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.业务类型",
+              "nativeQueryRef": "业务类型"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "资金计划汇总额-付款单统计情况"
+                        }
+                      },
+                      "Property": "资金计划汇总额度"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(资金计划汇总额-付款单统计情况.资金计划汇总额度)",
+              "nativeQueryRef": "资金计划汇总额度",
+              "displayName": "资金计划汇总额度"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "付款单号"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.付款单号",
+              "nativeQueryRef": "付款单号"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "资金计划汇总额-付款单统计情况"
+                        }
+                      },
+                      "Property": "付款单付款金额"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(资金计划汇总额-付款单统计情况.付款单付款金额)",
+              "nativeQueryRef": "付款单付款金额",
+              "displayName": "付款单付款金额"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "付款单支付方式"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.付款单支付方式",
+              "nativeQueryRef": "付款单支付方式"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "资金计划汇总额-付款单统计情况"
+                    }
+                  },
+                  "Property": "评审状态"
+                }
+              },
+              "queryRef": "资金计划汇总额-付款单统计情况.评审状态",
+              "nativeQueryRef": "评审状态"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

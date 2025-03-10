@@ -1,0 +1,179 @@
+table 度量值
+	excludeFromModelRefresh
+	lineageTag: 2f93ba53-57a5-43f2-8e61-96040fae5aa8
+
+	measure 【分包计划金额】 =
+			
+			SUM('分包资金计划'[计划金额])
+		formatString: #,0.00
+		displayFolder: 分包
+		lineageTag: 420b84eb-a471-4238-8ce9-a7c0b283d326
+
+	measure 【分供计划金额】 =
+			
+			SUM('分供资金计划'[计划金额])
+		formatString: #,0.00
+		displayFolder: 分供
+		lineageTag: dc4b815a-e0fa-4669-a8e0-6da5c02ebe91
+
+	measure 【分包合同额基值】 =
+			
+			LASTNONBLANKVALUE('日历'[Date],MAX('分包资金计划'[合同额]))
+		displayFolder: 分包
+		lineageTag: e5a98319-65cf-4f6f-a940-527aaae565cf
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包合同额】 =
+			
+			SUMX(
+			    KEEPFILTERS(VALUES('分包合同'[合同编号])),
+			    [【分包合同额基值】]
+			)
+		displayFolder: 分包
+		lineageTag: ebfd04cf-4272-4c6d-9f18-81915ab44b23
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包应付基值】 =
+			
+			LASTNONBLANKVALUE('日历'[Date],MAX('分包资金计划'[自开工累计应付款]))
+		displayFolder: 分包
+		lineageTag: de6cad25-d690-4922-a3d6-cfef1b883e3c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包应付】 =
+			
+			SUMX(
+			    KEEPFILTERS(VALUES('分包合同'[合同编号])),
+			    [【分包应付基值】]
+			)
+		formatString: #,0.00
+		displayFolder: 分包
+		lineageTag: 4b6d3828-d5da-4f16-a7ec-675539063e61
+
+	measure 【分包付款比例】 =
+			
+			IF(
+			    ISINSCOPE('分包合同'[合同编号]),
+			    LASTNONBLANKVALUE('日历'[Date],MAX('分包资金计划'[累计付款比例]))
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 分包
+		lineageTag: 363ea161-00cf-47fc-81f9-374e58d0b9ba
+
+	measure 【分包付款】 =
+			
+			SUM('分包付款主表'[本期实际付款])
+		displayFolder: 分包
+		lineageTag: fdd43fe7-c581-4a05-9387-30401b405beb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包截止上月累计付款】 =
+			
+			var BD=
+			    BLANK()
+			var ED=
+			    LASTDATE(PREVIOUSMONTH('日历'[Date]))
+			return
+			    IF(
+			        OR(ISBLANK(ED),ISBLANK([【分包计划金额】])),
+			        BLANK(),
+			        CALCULATE([【分包付款】],DATESBETWEEN('日历'[Date],BD,ED))
+			    )
+		displayFolder: 分包
+		lineageTag: 09976beb-cdab-4ea5-bf2c-53675abb3917
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分包付款状态】 =
+			
+			IF(
+			    ISINSCOPE('分包合同'[合同编号]),
+			    LASTNONBLANKVALUE('日历'[Date],MAX('分包资金计划'[形象进度]))
+			)
+		displayFolder: 分包
+		lineageTag: 7d09eaba-8d3c-4597-8e92-644f2eee6298
+
+	measure 【分供付款】 = SUM('专项物资付款表'[本期付款])
+		formatString: #,0.00
+		displayFolder: 分供
+		lineageTag: d08dce18-4a4a-4c1a-9092-ca968f99f7c2
+
+	measure 【分供付款比例】 =
+			
+			IF (
+			    ISINSCOPE ( '分供合同'[合同编号] ),
+			    LASTNONBLANKVALUE ( '日历'[Date], MAX ( '分供资金计划'[累计付款比例] ) )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 分供
+		lineageTag: 659285d1-2485-4fc8-a39a-e38a2ce1b4f1
+
+	measure 【分供合同额基值】 =
+			
+			LASTNONBLANKVALUE ( '日历'[Date], MAX ( '分供资金计划'[合同额] ) )
+		formatString: #,0.00
+		displayFolder: 分供
+		lineageTag: 93d691eb-d3d0-40b9-8dfc-0511cddec864
+
+	measure 【分供合同额】 =
+			
+			SUMX ( KEEPFILTERS ( VALUES ( '分供合同'[合同编号] ) ), [【分供合同额基值】] )
+		formatString: #,0.00
+		displayFolder: 分供
+		lineageTag: b36665e1-3c94-46d3-a9d4-a08423ff920c
+
+	measure 【分供应付基值】 =
+			
+			LASTNONBLANKVALUE ( '日历'[Date], MAX ( '分供资金计划'[自开工累计应付款] ) )
+		formatString: #,0.00
+		displayFolder: 分供
+		lineageTag: 1fc7937d-787c-46c7-943d-4c1b6dc86273
+
+	measure 【分供应付】 =
+			
+			SUMX ( KEEPFILTERS ( VALUES ( '分供合同'[合同编号] ) ), [【分供应付基值】] )
+		displayFolder: 分供
+		lineageTag: 9744dd2a-4fcb-4184-b1b1-75072aa7bc05
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【分供截止上月累计付款】 =
+			
+			VAR BD = BLANK ()
+			VAR ED = LASTDATE ( PREVIOUSMONTH ( '日历'[Date] ) )
+			RETURN
+			    IF (
+			        OR ( ISBLANK ( ED ), ISBLANK ( [【分供计划金额】] ) ),
+			        BLANK (),
+			        CALCULATE ( [【分供付款】], DATESBETWEEN ( '日历'[Date], BD, ED ) )
+			    )
+		formatString: #,0.00
+		displayFolder: 分供
+		lineageTag: 5e39cf3d-c0bd-40d0-8af7-e76632d94d20
+
+	measure 【分供付款状态】 = ```
+			
+			IF (
+			    ISINSCOPE ( '分供合同'[合同编号] ),
+			    LASTNONBLANKVALUE ( '日历'[Date], MAX ( '分供资金计划'[付款状态] ) )
+			)
+			
+			```
+		displayFolder: 分供
+		lineageTag: b0a6a41c-5422-4312-94a9-e08e09d36040
+
+	partition 度量值-38d0f5d7-0698-4c9f-a5ef-ceebdc3b3229 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"列 1" = _t]),
+				    删除的列 = Table.RemoveColumns(源,{"列 1"})
+				in
+				    删除的列
+
+	annotation PBI_ResultType = Table
+

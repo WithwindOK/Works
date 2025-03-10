@@ -1,0 +1,100 @@
+table 分包合同
+	lineageTag: 84d2712a-1cdf-46bd-83b0-cc9ef662ea6b
+
+	column 合同编号
+		dataType: string
+		lineageTag: bda1e33c-f92a-44cc-9e22-7b85d5c308bd
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包名称
+		dataType: string
+		lineageTag: 9a26a9ff-00b1-49a9-85b1-8a7323547d53
+		summarizeBy: none
+		sourceColumn: 分包名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: dcfd90bb-bd39-4115-bb05-474838c07fab
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同类型
+		dataType: string
+		lineageTag: fc0c20a4-9432-4e19-bd54-17816f1da348
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: 71930772-bf41-48cb-b261-5958191fc5e2
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 83b50798-86be-432e-9036-ba2cec32a654
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2a16dc85-c9f2-4860-ac11-f786fbde5453
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 索引
+		dataType: int64
+		formatString: 0
+		lineageTag: 166a6f91-44e9-42fc-896e-e00efe7457eb
+		summarizeBy: sum
+		sourceColumn: 索引
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '项目名称 层次结构'
+		lineageTag: f0d43777-d35e-4718-bab4-265e83888c70
+
+		level 项目名称
+			lineageTag: 2ba26753-13a9-4b36-9bd6-a25c96697362
+			column: 项目名称
+
+		level 分包名称
+			lineageTag: 5d676a46-a6ad-4928-bf6c-f545ce24fa16
+			column: 分包名称
+
+		level 合同编号
+			lineageTag: 45ae1370-88d5-494b-8657-4ca810e16055
+			column: 合同编号
+
+	partition 分包合同-daae58f8-fede-4cf0-a2aa-26365a47bab9 = m
+		mode: import
+		source =
+				let
+				    源 = 分包资金计划,
+				    删除的其他列 = Table.SelectColumns(源,{"项目编码", "项目名称", "合同编号", "分包名称", "合同类型", "分包类型", "日期"}),
+				    排序的行 = Table.Sort(删除的其他列,{{"项目编码", Order.Ascending}, {"日期", Order.Descending}}),
+				    已添加索引 = Table.AddIndexColumn(排序的行, "索引", 0, 1, Int64.Type),
+				    删除的副本 = Table.Distinct(已添加索引, {"合同编号"})
+				in
+				    删除的副本
+
+	annotation PBI_ResultType = Table
+

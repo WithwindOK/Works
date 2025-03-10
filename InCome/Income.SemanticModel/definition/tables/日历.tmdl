@@ -1,0 +1,33 @@
+table 日历
+	lineageTag: b7794592-08e8-4abd-8842-38de0098e3e1
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: d3945649-2e3c-408c-a079-e98fa8dc034c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月 = FORMAT('日历'[Date],"yyyy-MM")
+		lineageTag: 942ee10e-3f58-4da0-b3a0-f3357e6ba450
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年 = YEAR('日历'[Date])
+		formatString: 0
+		lineageTag: fb145082-ee28-4501-ac53-8d508626e24f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 日历-af87866f-3a65-4355-8d11-208a9bfa8646 = calculated
+		mode: import
+		source = CALENDAR("2017-1-1",TODAY())
+
+	annotation PBI_Id = cd450dfee8fb4aba95a7c4bcfb56f35b
+

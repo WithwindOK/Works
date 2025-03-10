@@ -1,0 +1,175 @@
+table 分包资金计划
+	lineageTag: 0d0fb842-96b4-4e30-bbe3-3c74de095594
+
+	column 项目编码
+		dataType: string
+		lineageTag: 2c4d7b36-1008-438c-a1e1-059ff682ef1a
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: c015e12b-cdeb-43f7-9981-6a7bd72e7511
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年度
+		dataType: string
+		lineageTag: 73eaec8d-d567-44a3-89c1-cd103f9b7cdf
+		summarizeBy: none
+		sourceColumn: 年度
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份
+		dataType: string
+		lineageTag: a299329c-efd9-4805-a35c-414db7c8372e
+		summarizeBy: none
+		sourceColumn: 月份
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: cdd00661-3238-4fe4-b5dc-d5d0d9e3cbfb
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包名称
+		dataType: string
+		lineageTag: cdcdd3d2-d72c-473b-99a9-222009e48775
+		summarizeBy: none
+		sourceColumn: 分包名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同类型
+		dataType: string
+		lineageTag: 549be7f3-3e02-40b1-b2be-797c5cb37036
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: abec5518-ed10-4b84-a4be-3b3e881b8d3f
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同额
+		dataType: double
+		lineageTag: dd53c4dd-47ef-415b-b83c-dd1e2799aafa
+		summarizeBy: sum
+		sourceColumn: 合同额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 形象进度
+		dataType: string
+		lineageTag: 02338c63-4cab-427c-8a4e-911dd96e5682
+		summarizeBy: none
+		sourceColumn: 形象进度
+
+		annotation SummarizationSetBy = Automatic
+
+	column 累计付款比例
+		dataType: double
+		lineageTag: 02f3b318-1263-4f97-a686-4afaa8e0e605
+		summarizeBy: sum
+		sourceColumn: 累计付款比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自开工累计应付款
+		dataType: double
+		lineageTag: fd4b6637-d58d-4523-aeb0-9baf131fd447
+		summarizeBy: sum
+		sourceColumn: 自开工累计应付款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自开工累计已付款
+		dataType: double
+		lineageTag: 3c32cb13-daa5-452a-91ea-7679078089c0
+		summarizeBy: sum
+		sourceColumn: 自开工累计已付款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 本期应付款
+		dataType: double
+		lineageTag: d6b46819-0011-48cd-a132-317e4c9a467a
+		summarizeBy: sum
+		sourceColumn: 本期应付款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 计划金额
+		dataType: double
+		lineageTag: 203e29e7-6710-4c1b-bdfb-15cf469e71d5
+		summarizeBy: sum
+		sourceColumn: 计划金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 支付方式
+		dataType: string
+		lineageTag: 673a083f-4d63-4507-bd1a-7b9f97225156
+		summarizeBy: none
+		sourceColumn: 支付方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 80497651-e474-4241-944f-91dbaf3408da
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 评审状态
+		dataType: string
+		lineageTag: cf57ab85-bf02-4a15-a4d1-a31620610d38
+		summarizeBy: none
+		sourceColumn: 评审状态
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 分包资金计划-8099709f-2b32-43a7-b496-41f91968821e = m
+		mode: import
+		source =
+				let
+				    源 = Table.NestedJoin(资金计划主表, {"FID"}, 分包资金计划明细, {"FJHSHBID"}, "分包资金计划明细", JoinKind.Inner),
+				    #"展开的“分包资金计划明细”" = Table.ExpandTableColumn(源, "分包资金计划明细", {"合同编号", "分包名称", "合同类型", "分包类型", "合同额", "形象进度", "累计付款比例", "自开工累计应付款", "自开工累计已付款", "本期应付款", "计划金额", "支付方式"}, {"合同编号", "分包名称", "合同类型", "分包类型", "合同额", "形象进度", "累计付款比例", "自开工累计应付款", "自开工累计已付款", "本期应付款", "计划金额", "支付方式"}),
+				    删除的列 = Table.RemoveColumns(#"展开的“分包资金计划明细”",{"FID"}),
+				    已添加自定义 = Table.AddColumn(删除的列, "日期", each #date(Number.From([年度]),Number.From([月份]),1),type date)
+				in
+				    已添加自定义
+
+	annotation PBI_ResultType = Table
+

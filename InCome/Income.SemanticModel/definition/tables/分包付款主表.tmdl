@@ -1,0 +1,77 @@
+table 分包付款主表
+	lineageTag: 6ce9c7e0-3146-4d95-bad1-52ef7bd9a442
+
+	column 年
+		dataType: double
+		lineageTag: 6c0b4c81-34e1-4d0b-b412-3663f7440612
+		summarizeBy: sum
+		sourceColumn: 年
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 月
+		dataType: double
+		lineageTag: 7f44b3e0-5150-470d-baec-41c1751ccaac
+		summarizeBy: sum
+		sourceColumn: 月
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同编号
+		dataType: string
+		lineageTag: a1a5bebf-79fc-4306-b791-6c0a110d807d
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本期实际付款
+		dataType: double
+		lineageTag: 673f52bf-453b-49f2-947e-b22300a88d2a
+		summarizeBy: sum
+		sourceColumn: 本期实际付款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 单据状态
+		dataType: string
+		lineageTag: 43313ff0-de8e-46af-885a-c887298e98f6
+		summarizeBy: none
+		sourceColumn: 单据状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 415e2749-ca49-41dc-93a1-2f5152fce237
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 分包付款主表-3b8ef349-6b5f-4a71-895c-24acb8a853a4 = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database(X5数据连接, [HierarchicalNavigation=true]),
+				    GSPM = 源{[Schema="GSPM"]}[Data],
+				    GSPM_FENBAOGONGCHENGFUKUAN = GSPM{[Name="GSPM_FENBAOGONGCHENGFUKUAN"]}[Data],
+				    筛选的行 = Table.SelectRows(GSPM_FENBAOGONGCHENGFUKUAN, each ([FPINGSHENZHUANGTAI] = "已完成")),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"FNIAN", "FYUE", "FHETONGBIANHAO", "FBENQISHIJIFUKUAN", "FPINGSHENZHUANGTAI2"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FHETONGBIANHAO", "合同编号"}, {"FBENQISHIJIFUKUAN", "本期实际付款"}, {"FNIAN", "年"}, {"FYUE", "月"}, {"FPINGSHENZHUANGTAI2", "单据状态"}}),
+				    已添加自定义 = Table.AddColumn(重命名的列, "日期", each #date([年],[月],1),type date),
+				    追加的租赁付款 = Table.Combine({已添加自定义, 租赁物资付款表})
+				in
+				    追加的租赁付款
+
+	annotation PBI_ResultType = Table
+

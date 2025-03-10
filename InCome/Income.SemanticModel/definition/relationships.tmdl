@@ -1,0 +1,40 @@
+relationship 9bdb459b-2073-4577-ab13-1c8e5eaf3ee3
+	fromColumn: 分供合同.项目编码
+	toColumn: 项目信息.项目编码
+
+relationship 2a4104c2-7e85-45d6-8ee4-3c9554d272bc
+	fromColumn: 分包合同.项目编码
+	toColumn: 项目信息.项目编码
+
+relationship 4f237362-315e-4df4-bb27-30dfef34fe73
+	fromColumn: 分供资金计划.合同编号
+	toColumn: 分供合同.合同编号
+
+relationship 74cca06a-ce51-4c2f-ba3d-b09f293bd31c
+	fromColumn: 专项物资付款表.合同编号
+	toColumn: 分供合同.合同编号
+
+relationship 39503c94-cdcd-49ae-8825-5b9b0e81de4d
+	fromColumn: 分包资金计划.合同编号
+	toColumn: 分包合同.合同编号
+
+relationship d49b7b5a-2930-4bc7-a32c-3e7cec8a45f1
+	fromColumn: 分包付款主表.合同编号
+	toColumn: 分包合同.合同编号
+
+relationship 716b55c4-439d-40b7-be10-33abdbb0aec1
+	fromColumn: 分供资金计划.日期
+	toColumn: 日历.Date
+
+relationship b3dfe269-d51a-4986-8034-0ebd671ad4fa
+	fromColumn: 专项物资付款表.日期
+	toColumn: 日历.Date
+
+relationship 0b4164c6-9955-414d-80f8-9574cc06ea40
+	fromColumn: 分包资金计划.日期
+	toColumn: 日历.Date
+
+relationship 506f1651-2666-469c-bffd-be4c63a5f66e
+	fromColumn: 分包付款主表.日期
+	toColumn: 日历.Date
+

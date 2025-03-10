@@ -1,0 +1,69 @@
+expression X5数据连接 = "172.16.8.76/oracledb" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 2af9cafc-be3f-4781-9a2f-e2cee36600da
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = 导航
+
+expression 分包资金计划明细 =
+		let
+		    源 = Oracle.Database(X5数据连接, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_FBZIJINZHICHUJHB1 = GSPM{[Name="GSPM_FBZIJINZHICHUJHB"]}[Data],
+		    删除的其他列 = Table.SelectColumns(GSPM_FBZIJINZHICHUJHB1,{"FHETONGBIANHAO", "FFENBAOMINGCHENG", "FHETONGLEIXING", "FFENBAOLEIXING", "FHETONGE", "FXINGXIANGJINDU", "FLEIJIFUKUANBILI", "FZIKAIGONGLEIJIYUFUKUAN", "FZIKAIGONGLJFBYIFUKUAN", "FBENQIYINGFUKUAN", "FJIHUAJINE", "FZHIFUFANGSHI", "FJHSHBID"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FHETONGBIANHAO", "合同编号"}, {"FFENBAOMINGCHENG", "分包名称"}, {"FHETONGLEIXING", "合同类型"}, {"FFENBAOLEIXING", "分包类型"}, {"FHETONGE", "合同额"}, {"FXINGXIANGJINDU", "形象进度"}, {"FLEIJIFUKUANBILI", "累计付款比例"}, {"FBENQIYINGFUKUAN", "本期应付款"}, {"FJIHUAJINE", "计划金额"}, {"FZHIFUFANGSHI", "支付方式"}, {"FZIKAIGONGLEIJIYUFUKUAN", "自开工累计应付款"}, {"FZIKAIGONGLJFBYIFUKUAN", "自开工累计已付款"}})
+		in
+		    重命名的列
+	lineageTag: 05aa3d9c-6969-411a-a2f8-f06d68140135
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 资金计划主表 =
+		let
+		    源 = Oracle.Database(X5数据连接, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_ZIJINJIHUASHB1 = GSPM{[Name="GSPM_ZIJINJIHUASHB"]}[Data],
+		    删除的其他列 = Table.SelectColumns(GSPM_ZIJINJIHUASHB1,{"FID", "FXIANGMUBIANMA", "FXIANGMUMINGCHENG", "FNIANDU", "FYUEFEN", "FPINGSHENZHUANGTAI"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FXIANGMUBIANMA", "项目编码"}, {"FXIANGMUMINGCHENG", "项目名称"}, {"FNIANDU", "年度"}, {"FYUEFEN", "月份"}, {"FPINGSHENZHUANGTAI", "评审状态"}})
+		in
+		    重命名的列
+	lineageTag: ea0aa41c-dbef-4722-985f-326908fe64f8
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 分供资金计划明细 =
+		let
+		    源 = Oracle.Database(X5数据连接, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_FGZIJINZHICHUJHB1 = GSPM{[Name="GSPM_FGZIJINZHICHUJHB"]}[Data],
+		    删除的其他列 = Table.SelectColumns(GSPM_FGZIJINZHICHUJHB1,{"FHETONGBIANHAO", "FFENGONGMINGCHENG", "FFENGONGLIEBIE", "FHETONGLEIXING", "FHETONGE", "FFUKUANZHUANGTAI", "FLEIJIFUKUANBILI", "FZIKAIGONGLEIJIYUFUKUAN", "FJIHUAJINE", "FZHIFUFANGSHI", "FJHSHBID"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FHETONGBIANHAO", "合同编号"}, {"FFENGONGMINGCHENG", "分供名称"}, {"FFENGONGLIEBIE", "分供类别"}, {"FHETONGLEIXING", "合同类型"}, {"FHETONGE", "合同额"}, {"FFUKUANZHUANGTAI", "付款状态"}, {"FLEIJIFUKUANBILI", "累计付款比例"}, {"FZIKAIGONGLEIJIYUFUKUAN", "自开工累计应付款"}, {"FJIHUAJINE", "计划金额"}, {"FZHIFUFANGSHI", "支付方式"}})
+		in
+		    重命名的列
+	lineageTag: 90751646-5a39-4fa9-a910-03606e740685
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 租赁物资付款表 =
+		let
+		    源 = Oracle.Database(X5数据连接, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_ZZCAILIAOZULINAFK = GSPM{[Name="GSPM_ZZCAILIAOZULINAFK"]}[Data],
+		    筛选的行 = Table.SelectRows(GSPM_ZZCAILIAOZULINAFK, each ([FPINGSHENZHUANGTAI] = "已完成")),
+		    删除的其他列 = Table.SelectColumns(筛选的行,{"FNIAN", "FYUE", "FHETONGBIANHAO", "FBENQISHIJIFUKUAN", "FPINGSHENZHUANGTAI2"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FNIAN", "年"}, {"FYUE", "月"}, {"FHETONGBIANHAO", "合同编号"}, {"FBENQISHIJIFUKUAN", "本期实际付款"}, {"FPINGSHENZHUANGTAI2", "单据状态"}}),
+		    已添加自定义 = Table.AddColumn(重命名的列, "日期", each #date([年],[月],1),type date)
+		in
+		    已添加自定义
+	lineageTag: 57ae02aa-c2ec-4935-9ff2-66942cbe5b9a
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

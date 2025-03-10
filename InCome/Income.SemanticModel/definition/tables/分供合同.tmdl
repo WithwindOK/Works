@@ -1,0 +1,85 @@
+table 分供合同
+	lineageTag: e0862c76-1ff3-4c52-abcb-0b34cfdabe2d
+
+	column 合同编号
+		dataType: string
+		lineageTag: 21dfaa4b-8b6b-47f0-8a1a-273bac954818
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分供名称
+		dataType: string
+		lineageTag: b1e952ea-1f5c-46e6-be9e-f0618763269f
+		summarizeBy: none
+		sourceColumn: 分供名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 94a21e35-61f2-4ab4-bdc5-a686e8950473
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分供类别
+		dataType: string
+		lineageTag: 9ea92f7d-4a00-41aa-9a61-372e86a9b73f
+		summarizeBy: none
+		sourceColumn: 分供类别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同类型
+		dataType: string
+		lineageTag: 6cf37502-043b-459d-8af9-e21e26de22f6
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 71f18438-9d46-4f77-a74b-fde4f4a84706
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9ace5e8d-76e1-403d-9dd7-c9515a3ef995
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 索引
+		dataType: int64
+		formatString: 0
+		lineageTag: 88e5a8f1-692a-4485-a451-8880ab1d9719
+		summarizeBy: sum
+		sourceColumn: 索引
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 分供合同-abac81db-d16d-44ef-ae67-2a8f25a69980 = m
+		mode: import
+		source =
+				let
+				    源 = 分供资金计划,
+				    删除的其他列 = Table.SelectColumns(源,{"项目编码", "项目名称", "合同编号", "分供名称", "分供类别", "合同类型", "日期"}),
+				    排序的行 = Table.Sort(删除的其他列,{{"合同编号", Order.Ascending}}),
+				    已添加索引 = Table.AddIndexColumn(排序的行, "索引", 0, 1, Int64.Type),
+				    删除的副本 = Table.Distinct(已添加索引, {"合同编号"})
+				in
+				    删除的副本
+
+	annotation PBI_ResultType = Table
+

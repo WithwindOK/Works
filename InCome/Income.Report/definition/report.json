@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/1.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY21SU07",
+      "reportVersionAtImport": "5.25",
+      "type": "SharedResources"
+    }
+  },
+  "layoutOptimization": "None",
+  "filterConfig": {
+    "filterSortOrder": "Custom"
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Middle'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY21SU07",
+          "path": "BaseThemes/CY21SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "R-C5580983032600326.jpg",
+          "path": "R-C5580983032600326.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "R-C4163916476859224.jpg",
+          "path": "R-C4163916476859224.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "R-C5928609485303156.jpg",
+          "path": "R-C5928609485303156.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "R-C6677082520583517.jpg",
+          "path": "R-C6677082520583517.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "R-C8324701784671731.jpg",
+          "path": "R-C8324701784671731.jpg",
+          "type": "Image"
+        },
+        {
+          "name": "R-C5573309469166956.jpg",
+          "path": "R-C5573309469166956.jpg",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

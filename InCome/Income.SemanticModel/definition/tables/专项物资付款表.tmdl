@@ -1,0 +1,76 @@
+table 专项物资付款表
+	lineageTag: 0fc13f30-c1bc-422c-b321-0228df6e556c
+
+	column 年
+		dataType: double
+		lineageTag: 9fe35e19-b20f-46d0-9886-6944e9eebc04
+		summarizeBy: sum
+		sourceColumn: 年
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 月
+		dataType: double
+		lineageTag: b697017c-2e1a-4c4e-ad64-23d935cc4e2b
+		summarizeBy: sum
+		sourceColumn: 月
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同编号
+		dataType: string
+		lineageTag: bdc2692c-8c9f-48e4-a5ea-6a78edbc999c
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本期付款
+		dataType: double
+		lineageTag: f47864db-2ca9-4782-8df3-894df14cf625
+		summarizeBy: sum
+		sourceColumn: 本期付款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 单据状态
+		dataType: string
+		lineageTag: c14c1217-a93a-4574-826d-e0c6d2e65c15
+		summarizeBy: none
+		sourceColumn: 单据状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 90e14fb0-548e-4471-bef3-7187a03f54e4
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 专项物资付款表-a44181a9-da25-444d-9d2c-26f54f74d4f0 = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database(X5数据连接, [HierarchicalNavigation=true]),
+				    GSPM = 源{[Schema="GSPM"]}[Data],
+				    GSPM_DANXIANGWUZIFUKUAN = GSPM{[Name="GSPM_DANXIANGWUZIFUKUAN"]}[Data],
+				    筛选的行 = Table.SelectRows(GSPM_DANXIANGWUZIFUKUAN, each ([FPINGSHENZHUANGTAI] = "已完成")),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"FNIAN", "FYUE", "FHETONGBIANHAO", "FBENQISHIJIFUKUAN", "FPINGSHENZHUANGTAI2"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FNIAN", "年"}, {"FYUE", "月"}, {"FHETONGBIANHAO", "合同编号"}, {"FBENQISHIJIFUKUAN", "本期付款"}, {"FPINGSHENZHUANGTAI2", "单据状态"}}),
+				    已添加自定义 = Table.AddColumn(重命名的列, "日期", each #date([年],[月],1),type date)
+				in
+				    已添加自定义
+
+	annotation PBI_ResultType = Table
+

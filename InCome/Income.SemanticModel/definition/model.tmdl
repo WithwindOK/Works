@@ -1,0 +1,28 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBIDesktopVersion = 2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6996f9c3a3196
+
+annotation PBI_QueryOrder = ["X5数据连接","分包资金计划明细","资金计划主表","分包资金计划","分供资金计划明细","分供资金计划","项目信息","分包付款主表","专项物资付款表","租赁物资付款表","分包合同","分供合同","度量值"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 分包资金计划
+ref table 分供资金计划
+ref table 项目信息
+ref table 分包付款主表
+ref table 专项物资付款表
+ref table 分包合同
+ref table 分供合同
+ref table 日历
+ref table 度量值
+
+ref cultureInfo zh-CN
+

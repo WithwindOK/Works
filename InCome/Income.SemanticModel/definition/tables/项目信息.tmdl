@@ -1,0 +1,75 @@
+table 项目信息
+	lineageTag: 75337513-cbab-4cfb-a942-a2b0dac860ac
+
+	column 项目编码
+		dataType: string
+		lineageTag: 82506621-0828-4b9a-99c2-64338311d62e
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 25c8ac4d-058c-4ae1-ae49-0e6edf69ce5d
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 京内外
+		dataType: string
+		lineageTag: 1b3e2ee5-8461-45f6-99ba-67b405ed448d
+		summarizeBy: none
+		sourceColumn: 京内外
+
+		annotation SummarizationSetBy = Automatic
+
+	column 直管机构
+		dataType: string
+		lineageTag: 2b395865-1d64-49d8-98cf-f71b00fe9d5c
+		summarizeBy: none
+		sourceColumn: 直管机构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 厂房事业部
+		dataType: string
+		lineageTag: 5855d6a0-7ee2-42c5-8bc5-713ec46f1bbc
+		summarizeBy: none
+		sourceColumn: 厂房事业部
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业务板块
+		dataType: string
+		lineageTag: 36706724-995b-4913-a0b3-fbb32b7a3250
+		summarizeBy: none
+		sourceColumn: 业务板块
+
+		annotation SummarizationSetBy = Automatic
+
+	column 责任体
+		dataType: string
+		lineageTag: 21f2b9eb-e240-44d9-bece-745f79982774
+		summarizeBy: none
+		sourceColumn: 责任体
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 项目信息-1393af19-d947-458b-8ba3-2ee3e46596ba = m
+		mode: import
+		source =
+				let
+				    源 = Oracle.Database(X5数据连接, [HierarchicalNavigation=true]),
+				    MD = 源{[Schema="MD"]}[Data],
+				    MD_XIANGMUXINXI1 = MD{[Name="MD_XIANGMUXINXI"]}[Data],
+				    删除的其他列 = Table.Buffer(Table.SelectColumns(MD_XIANGMUXINXI1,{"FXMBIANMA", "FXMQUANCHENG", "FJNWFB", "FZHIGUANJGXG", "FCHANGFANGSHIYEBU", "FYWBK"})),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FXMBIANMA", "项目编码"}, {"FXMQUANCHENG", "项目名称"}, {"FJNWFB", "京内外"}, {"FZHIGUANJGXG", "直管机构"}, {"FCHANGFANGSHIYEBU", "厂房事业部"}, {"FYWBK", "业务板块"}}),
+				    计算责任体 = Table.AddColumn(重命名的列, "责任体", each if [京内外] = "国际" then "海外" else if [厂房事业部] <> null then [厂房事业部] else if [直管机构] <> "公司" then [直管机构] else "公司直营",Text.Type),
+				    筛选的行 = Table.SelectRows(计算责任体, each [项目编码] <> null and [项目编码] <> "")
+				in
+				    筛选的行
+
+	annotation PBI_ResultType = Table
+

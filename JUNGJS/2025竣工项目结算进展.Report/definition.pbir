@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../2025竣工项目结算进展.SemanticModel"
+    },
+    "byConnection": null
+  }
+}

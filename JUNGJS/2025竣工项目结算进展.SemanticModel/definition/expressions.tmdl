@@ -1,0 +1,87 @@
+expression 参数1 = 示例文件 meta [IsParameterQuery=true, BinaryIdentifier=示例文件, Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 6752811e-72da-49f1-a9a5-fd9f15dfa343
+	queryGroup: '各年比较\从 往年结算进展 转换文件\已竣未结'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Binary
+
+expression 示例文件 =
+		let
+		    源 = Folder.Files("\\172.16.8.66\经营分析\经营分析会\2025-1季度\往年结算进展"),
+		    #"\\172 16 8 66\经营分析\经营分析会\2025-1季度\往年结算进展\_已竣未结22 3 xlsx" = 源{[#"Folder Path"="\\172.16.8.66\经营分析\经营分析会\2025-1季度\往年结算进展\",Name="已竣未结22.3.xlsx"]}[Content]
+		in
+		    #"\\172 16 8 66\经营分析\经营分析会\2025-1季度\往年结算进展\_已竣未结22 3 xlsx"
+	lineageTag: 47afb1de-968c-4fc3-9e7d-222b7e709c3d
+	queryGroup: '各年比较\从 往年结算进展 转换文件\已竣未结'
+
+expression 转换文件 =
+		let
+		    源 = (参数1 as binary) => let
+		        源 = Excel.Workbook(参数1, null, true),
+		        Sheet0 = 源{[Name="Sheet0"]}[Data],
+		        提升的标题 = Table.PromoteHeaders(Sheet0, [PromoteAllScalars=true])
+		    in
+		        提升的标题
+		in
+		    源
+	lineageTag: a54e28fa-6304-4491-a76c-6bf2ed14064f
+	queryGroup: '各年比较\从 往年结算进展 转换文件\已竣未结'
+
+	annotation PBI_ResultType = Function
+
+expression 转换示例文件 =
+		let
+		    源 = Excel.Workbook(参数1, null, true),
+		    Sheet0 = 源{[Name="Sheet0"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(Sheet0, [PromoteAllScalars=true])
+		in
+		    提升的标题
+	lineageTag: 9a4dbeba-a80e-4907-9d75-a3e979e4d33f
+	queryGroup: '各年比较\从 往年结算进展 转换文件'
+
+expression 海外结算进展 =
+		let
+		    源 = Excel.Workbook(File.Contents("\\172.16.8.66\经营分析\经营分析会\2025-1季度\海外结算进展25.3.xls"), null, true),
+		    Sheet1 = 源{[Name="Sheet0"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(Sheet1, [PromoteAllScalars=true]),
+		    筛选的行 = Table.SelectRows(提升的标题, each ([业务年] = "2025")),
+		    删除的其他列 = Table.SelectColumns(筛选的行,{"业务年", "业务月", "业主结算年度", "业主自施结算状态", "项目名称", "25年年度计划", "预计结算时间", "结算分类", "产值所属二级机构", "大客户", "所属板块", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "考核完工日期", "超完工日期月数", "按预计结算#(lf)合理值待回款#(lf)（万元）"}),
+		    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"业务年", Int64.Type}, {"业务月", Int64.Type}, {"业主结算年度", Int64.Type}, {"业主自施结算状态", type text}, {"项目名称", type text}, {"25年年度计划", type text}, {"预计结算时间", type date}, {"结算分类", type text}, {"产值所属二级机构", type text}, {"大客户", type text}, {"所属板块", type text}, {"自施预计结算总额#(lf)合理值", type number}, {"合计预计结算总额#(lf)合理值", type number}, {"含税预计成本金额#(lf)合理值", type number}, {"预计成本降低额#(lf)合理值", Percentage.Type}, {"合计预计结算收益额#(lf)合理值", type number}, {"按预计结算#(lf)合理值待回款#(lf)（万元）", type number}, {"超完工日期月数", type number}}),
+		    合并的列 = Table.CombineColumns(Table.TransformColumnTypes(更改的类型, {{"业务年", type text}, {"业务月", type text}}, "zh-CN"),{"业务年", "业务月"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"年月"),
+		    复制的列 = Table.DuplicateColumn(合并的列, "预计结算时间", "计划结算月"),
+		    重命名的列 = Table.RenameColumns(复制的列,{{"预计结算时间", "计划结算年"}, {"按预计结算#(lf)合理值待回款#(lf)（万元）", "剩余回款"}}),
+		    提取的年 = Table.TransformColumns(重命名的列,{{"计划结算年", Date.Year, Int64.Type}}),
+		    提取的月份 = Table.TransformColumns(提取的年,{{"计划结算月", Date.Month, Int64.Type}}),
+		    添加的前缀 = Table.TransformColumns(提取的月份, {{"产值所属二级机构", each "11." & _, type text}})
+		in
+		    添加的前缀
+	lineageTag: 7202611b-8d4a-4656-bd81-7998bcab6ac1
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 'G_各年3月 中的错误' =
+		let
+		源 = G_各年3月,
+		  检测到类型不匹配 = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(源, Table.ColumnsOfType(源, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "值类型与列类型不匹配。", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(源, pairs),
+		  已添加索引 = Table.AddIndexColumn(检测到类型不匹配, "行号" ,1),
+		  保留的错误 = Table.SelectRowsWithErrors(已添加索引, {"年月", "业主结算年度", "业主自施结算状态", "项目名称", "产值所属二级机构", "大客户", "所属板块", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "自施核定收益率", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "预计结算收益率#(lf)合理值", "考核完工日期", "超完工日期月数", "责任状业主结算日期", "超责任状业主结算日期月数", "业主自施结算签订日期", "业主结算时长"}),
+		  重排序的列 = Table.ReorderColumns(保留的错误, {"行号", "年月", "业主结算年度", "业主自施结算状态", "项目名称", "产值所属二级机构", "大客户", "所属板块", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "自施核定收益率", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "预计结算收益率#(lf)合理值", "考核完工日期", "超完工日期月数", "责任状业主结算日期", "超责任状业主结算日期月数", "业主自施结算签订日期", "业主结算时长"})
+		in
+		  重排序的列
+	lineageTag: a1cf741f-1609-4354-a081-fcf358598194
+	queryGroup: '查询错误 - 2025-04-25 17:32:07'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,5885 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "3.5.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "G_各年3月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "G 各年3月": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "G_各年3月": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.业主结算年度": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "业主结算年度"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主结算年度": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.业主自施结算状态": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "业主自施结算状态"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主自施结算状态": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.产值所属二级机构": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "产值所属二级机构"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "产值所属二级机构": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.大客户": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "大客户"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "大客户": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.所属板块": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "所属板块"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "所属板块": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.自施预计结算总额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "自施预计结算总额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "自施预计结算总额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.合计预计结算总额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "合计预计结算总额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "合计预计结算总额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.含税预计成本金额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "含税预计成本金额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "含税预计成本金额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.自施核定收益率": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "自施核定收益率"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "自施核定收益率": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.预计成本降低额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "预计成本降低额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计成本降低额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.合计预计结算收益额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "合计预计结算收益额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "合计预计结算收益额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.预计结算收益率合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "预计结算收益率合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计结算收益率合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.考核完工日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "考核完工日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "考核完工日期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "G_各年3月.超完工日期月数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "超完工日期月数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "超完工日期月数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.责任状业主结算日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "责任状业主结算日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "责任状业主结算日期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "G_各年3月.超责任状业主结算日期月数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "超责任状业主结算日期月数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "超责任状业主结算日期月数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.业主自施结算签订日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "业主自施结算签订日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主自施结算签订日期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "G_各年3月.业主结算时长": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "业主结算时长"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主结算时长": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.年月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "年月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年月": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "#结算额#"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#结算额#": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "#结算额 no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#结算额 num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#结算额 number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "no 结算额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "num 结算额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number 结算额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.自施结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "#自施结算额#"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#自施结算额#": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "#自施结算额 no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#自施结算额 num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#自施结算额 number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "no 自施结算额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "num 自施结算额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number 自施结算额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.结算收益额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "#结算收益额#"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#结算收益额#": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "#结算收益额 no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#结算收益额 num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#结算收益额 number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "no 结算收益额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "num 结算收益额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number 结算收益额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.成本降低额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "#成本降低额#"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#成本降低额#": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "#成本降低额 no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#成本降低额 num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#成本降低额 number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "no 成本降低额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "num 成本降低额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number 成本降低额#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.结算收益率": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "#结算收益率#"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#结算收益率#": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "#结算收益率 no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#结算收益率 num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#结算收益率 number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "no 结算收益率#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "num 结算收益率#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number 结算收益率#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年3月.项目数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年3月",
+			          "ConceptualProperty": "#项目数#"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#项目数#": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "#项目数 no": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#项目数 num": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "#项目数 number": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "no 项目数#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "num 项目数#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "number 项目数#": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "G 各年12月": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "G_各年12月": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.业主结算年度": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "业主结算年度"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主结算年度": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.业主自施结算状态": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "业主自施结算状态"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主自施结算状态": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.产值所属二级机构": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "产值所属二级机构"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "产值所属二级机构": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.大客户": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "大客户"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "大客户": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.所属板块": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "所属板块"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "所属板块": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.自施预计结算总额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "自施预计结算总额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "自施预计结算总额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.合计预计结算总额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "合计预计结算总额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "合计预计结算总额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.含税预计成本金额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "含税预计成本金额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "含税预计成本金额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.自施核定收益率": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "自施核定收益率"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "自施核定收益率": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.预计成本降低额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "预计成本降低额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计成本降低额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.合计预计结算收益额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "合计预计结算收益额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "合计预计结算收益额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.预计结算收益率合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "预计结算收益率合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计结算收益率合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.考核完工日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "考核完工日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "考核完工日期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "G_各年12月.超完工日期月数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "超完工日期月数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "超完工日期月数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.责任状业主结算日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "责任状业主结算日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "责任状业主结算日期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "G_各年12月.超责任状业主结算日期月数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "超责任状业主结算日期月数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "超责任状业主结算日期月数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.业主自施结算签订日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "业主自施结算签订日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主自施结算签订日期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "G_各年12月.业主结算时长": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "业主结算时长"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主结算时长": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "tag": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.年月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "年月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年月": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.v_结算额__结算额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "_结算额_"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_结算额_": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.v_成本降低额__成本降低额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "_成本降低额_"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_成本降低额_": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.v_结算收益额__结算收益额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "_结算收益额_"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_结算收益额_": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.v_自施结算额__自施结算额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "_自施结算额_"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_自施结算额_": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.v_结算收益率__结算收益率_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "_结算收益率_"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_结算收益率_": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "G_各年12月.v_项目数__项目数_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "G_各年12月",
+			          "ConceptualProperty": "_项目数_"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_项目数_": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "F 进展末期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "F_进展末期": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.业主结算年度": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "业主结算年度"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主结算年度": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.自施预计结算总额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "自施预计结算总额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "自施预计结算总额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.合计预计结算总额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "合计预计结算总额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "合计预计结算总额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.含税预计成本金额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "含税预计成本金额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "含税预计成本金额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.预计成本降低额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "预计成本降低额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计成本降低额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.合计预计结算收益额合理值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "合计预计结算收益额合理值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "合计预计结算收益额合理值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.剩余回款": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "剩余回款"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "剩余回款": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.年月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "年月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年月": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.业主自施结算状态": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "业主自施结算状态"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主自施结算状态": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.v25年年度计划25年年度计划": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "25年年度计划"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25年年度计划": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.结算分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "结算分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "结算分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.产值所属二级机构": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "产值所属二级机构"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "产值所属二级机构": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.大客户": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "大客户"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "大客户": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.所属板块": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "所属板块"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "所属板块": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.超完工日期月数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "超完工日期月数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "超完工日期月数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.计划结算年": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "计划结算年"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "计划结算年": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.计划结算月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "计划结算月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "计划结算月": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.结算额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".结算额."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".结算额.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.自施结算额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".自施结算额."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".自施结算额.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.成本降低额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".成本降低额."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".成本降低额.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.结算收益额_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".结算收益额."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".结算收益额.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.项目数_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".项目数."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".项目数.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.结算收益率_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".结算收益率."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".结算收益率.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.v25年结算额目标25年结算额目标": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "25年结算额目标"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25年结算额目标": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.v25年结算项目数目标25年结算项目数目标": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "25年结算项目数目标"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25年结算项目数目标": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "25年结算个数目标": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "25年结个数目标": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.剩余回款_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".剩余回款."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".剩余回款.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.超完工期数_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".超完工期数."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".超完工期数.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.结算年度_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".结算年度."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".结算年度.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.SVG_vertical_line": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "SVG_Vertical_Line"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SVG vertical line": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SVG_Vertical_Line": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "vertical line": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "svg vertical streak": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "svg vertical stroke": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "svg vertical stripe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "svg vertical contour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "svg vertical mark": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "vertical streak": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vertical stroke": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vertical stripe": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vertical contour": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "vertical mark": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.层级判断": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "层级判断"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "层级判断": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.责任体页面项目数占比_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".责任体页面项目数占比."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".责任体页面项目数占比.": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          ".项目数占比.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "货币单位": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位.货币单位": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "货币单位"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "货币单位": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "货币单位 name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "货币单位.系数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "系数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "系数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位.货币系数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "【货币系数】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【货币系数】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.业务板块项目数占比_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".业务板块项目数占比."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".业务板块项目数占比.": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          ".项目数占比.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.结算分类项目数占比_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".结算分类项目数占比."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".结算分类项目数占比.": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          ".项目数占比.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.久竣未结项目数占比_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".久竣未结项目数占比."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".久竣未结项目数占比.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.考核完工日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": "考核完工日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "考核完工日期": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.大客户项目数占比_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".大客户项目数占比."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".大客户项目数占比.": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          ".项目数占比.": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "F_进展末期.完工日期_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_进展末期",
+			          "ConceptualProperty": ".完工日期."
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          ".完工日期.": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "F_进展末期_has_大客户项目数占比_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.大客户项目数占比_": {
+			          "Target": {
+			            "Entity": "F_进展末期.大客户项目数占比_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.大客户项目数占比_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__大客户项目数占比_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_考核完工日期": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.考核完工日期": {
+			          "Target": {
+			            "Entity": "F_进展末期.考核完工日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.考核完工日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_考核完工日期"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_久竣未结项目数占比_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.久竣未结项目数占比_": {
+			          "Target": {
+			            "Entity": "F_进展末期.久竣未结项目数占比_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.久竣未结项目数占比_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__久竣未结项目数占比_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_结算分类项目数占比_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.结算分类项目数占比_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算分类项目数占比_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算分类项目数占比_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__结算分类项目数占比_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_业务板块项目数占比_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.业务板块项目数占比_": {
+			          "Target": {
+			            "Entity": "F_进展末期.业务板块项目数占比_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.业务板块项目数占比_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__业务板块项目数占比_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_货币系数": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.货币系数": {
+			          "Target": {
+			            "Entity": "货币单位.货币系数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.货币系数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_货币系数"
+			        }
+			      ]
+			    },
+			    "货币单位_has_系数": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.系数": {
+			          "Target": {
+			            "Entity": "货币单位.系数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.系数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_系数"
+			        }
+			      ]
+			    },
+			    "货币单位_has_货币单位": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.货币单位": {
+			          "Target": {
+			            "Entity": "货币单位.货币单位"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.货币单位"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_货币单位"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Name": {
+			              "Role": "货币单位.货币单位"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_are_names_IDs_of_货币单位"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_责任体页面项目数占比_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.责任体页面项目数占比_": {
+			          "Target": {
+			            "Entity": "F_进展末期.责任体页面项目数占比_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.责任体页面项目数占比_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__责任体页面项目数占比_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_层级判断": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.层级判断": {
+			          "Target": {
+			            "Entity": "F_进展末期.层级判断"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.层级判断"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_层级判断"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_SVG_vertical_line": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.SVG_vertical_line": {
+			          "Target": {
+			            "Entity": "F_进展末期.SVG_vertical_line"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.SVG_vertical_line"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_SVG_vertical_line"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_结算年度_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.结算年度_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算年度_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算年度_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__结算年度_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_超完工期数_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.超完工期数_": {
+			          "Target": {
+			            "Entity": "F_进展末期.超完工期数_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.超完工期数_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__超完工期数_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_F_进展末期_剩余回款_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "F_进展末期.剩余回款_": {
+			          "Target": {
+			            "Entity": "F_进展末期.剩余回款_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.剩余回款_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__剩余回款_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_剩余回款_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.剩余回款_": {
+			          "Target": {
+			            "Entity": "F_进展末期.剩余回款_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.剩余回款_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__剩余回款_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_v25年结算项目数目标25年结算项目数目标": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.v25年结算项目数目标25年结算项目数目标": {
+			          "Target": {
+			            "Entity": "F_进展末期.v25年结算项目数目标25年结算项目数目标"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.v25年结算项目数目标25年结算项目数目标"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_25年结算项目数目标"
+			        }
+			      ]
+			    },
+			    "货币单位_has_F_进展末期_v25年结算额目标25年结算额目标": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "F_进展末期.v25年结算额目标25年结算额目标": {
+			          "Target": {
+			            "Entity": "F_进展末期.v25年结算额目标25年结算额目标"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.v25年结算额目标25年结算额目标"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_25年结算额目标"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_v25年结算额目标25年结算额目标": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.v25年结算额目标25年结算额目标": {
+			          "Target": {
+			            "Entity": "F_进展末期.v25年结算额目标25年结算额目标"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.v25年结算额目标25年结算额目标"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_25年结算额目标"
+			        }
+			      ]
+			    },
+			    "货币单位_has_F_进展末期_结算收益率_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "F_进展末期.结算收益率_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算收益率_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算收益率_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__结算收益率_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_结算收益率_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.结算收益率_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算收益率_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算收益率_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__结算收益率_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_项目数_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.项目数_": {
+			          "Target": {
+			            "Entity": "F_进展末期.项目数_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.项目数_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__项目数_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_F_进展末期_结算收益额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "F_进展末期.结算收益额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算收益额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算收益额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__结算收益额_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_结算收益额_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.结算收益额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算收益额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算收益额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__结算收益额_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_F_进展末期_成本降低额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "F_进展末期.成本降低额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.成本降低额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.成本降低额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__成本降低额_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_成本降低额_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.成本降低额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.成本降低额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.成本降低额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__成本降低额_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_F_进展末期_自施结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "F_进展末期.自施结算额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.自施结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.自施结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__自施结算额_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_自施结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.自施结算额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.自施结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.自施结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__自施结算额_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_F_进展末期_结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "F_进展末期.结算额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__结算额_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.结算额_": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__结算额_"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_计划结算月": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.计划结算月": {
+			          "Target": {
+			            "Entity": "F_进展末期.计划结算月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.计划结算月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_计划结算月"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_计划结算年": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.计划结算年": {
+			          "Target": {
+			            "Entity": "F_进展末期.计划结算年"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.计划结算年"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_计划结算年"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_超完工日期月数": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.超完工日期月数": {
+			          "Target": {
+			            "Entity": "F_进展末期.超完工日期月数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.超完工日期月数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_超完工日期月数"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_所属板块": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.所属板块": {
+			          "Target": {
+			            "Entity": "F_进展末期.所属板块"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.所属板块"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_所属板块"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_大客户": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.大客户": {
+			          "Target": {
+			            "Entity": "F_进展末期.大客户"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.大客户"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_大客户"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_产值所属二级机构": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.产值所属二级机构": {
+			          "Target": {
+			            "Entity": "F_进展末期.产值所属二级机构"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.产值所属二级机构"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_产值所属二级机构"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_结算分类": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.结算分类": {
+			          "Target": {
+			            "Entity": "F_进展末期.结算分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.结算分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_结算分类"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_v25年年度计划25年年度计划": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.v25年年度计划25年年度计划": {
+			          "Target": {
+			            "Entity": "F_进展末期.v25年年度计划25年年度计划"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.v25年年度计划25年年度计划"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_25年年度计划"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_项目名称": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.项目名称": {
+			          "Target": {
+			            "Entity": "F_进展末期.项目名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.项目名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_项目名称"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_业主自施结算状态": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.业主自施结算状态": {
+			          "Target": {
+			            "Entity": "F_进展末期.业主自施结算状态"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.业主自施结算状态"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_业主自施结算状态"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_年月": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.年月": {
+			          "Target": {
+			            "Entity": "F_进展末期.年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_年月"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_剩余回款": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.剩余回款": {
+			          "Target": {
+			            "Entity": "F_进展末期.剩余回款"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.剩余回款"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_剩余回款"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_合计预计结算收益额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.合计预计结算收益额合理值": {
+			          "Target": {
+			            "Entity": "F_进展末期.合计预计结算收益额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.合计预计结算收益额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_合计预计结算收益额合理值"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_预计成本降低额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.预计成本降低额合理值": {
+			          "Target": {
+			            "Entity": "F_进展末期.预计成本降低额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.预计成本降低额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_预计成本降低额合理值"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_含税预计成本金额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.含税预计成本金额合理值": {
+			          "Target": {
+			            "Entity": "F_进展末期.含税预计成本金额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.含税预计成本金额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_含税预计成本金额合理值"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_合计预计结算总额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.合计预计结算总额合理值": {
+			          "Target": {
+			            "Entity": "F_进展末期.合计预计结算总额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.合计预计结算总额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_合计预计结算总额合理值"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_自施预计结算总额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.自施预计结算总额合理值": {
+			          "Target": {
+			            "Entity": "F_进展末期.自施预计结算总额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.自施预计结算总额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_自施预计结算总额合理值"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_业主结算年度": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.业主结算年度": {
+			          "Target": {
+			            "Entity": "F_进展末期.业主结算年度"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.业主结算年度"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have_业主结算年度"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_v_项目数__项目数_": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.v_项目数__项目数_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_项目数__项目数_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_项目数__项目数_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have__项目数_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年12月_v_结算收益率__结算收益率_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年12月.v_结算收益率__结算收益率_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_结算收益率__结算收益率_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_结算收益率__结算收益率_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__结算收益率_1"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_v_结算收益率__结算收益率_": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.v_结算收益率__结算收益率_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_结算收益率__结算收益率_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_结算收益率__结算收益率_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have__结算收益率_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年12月_v_自施结算额__自施结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年12月.v_自施结算额__自施结算额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_自施结算额__自施结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_自施结算额__自施结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__自施结算额_1"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_v_自施结算额__自施结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.v_自施结算额__自施结算额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_自施结算额__自施结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_自施结算额__自施结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have__自施结算额_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年12月_v_结算收益额__结算收益额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年12月.v_结算收益额__结算收益额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_结算收益额__结算收益额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_结算收益额__结算收益额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__结算收益额_1"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_v_结算收益额__结算收益额_": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.v_结算收益额__结算收益额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_结算收益额__结算收益额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_结算收益额__结算收益额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have__结算收益额_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年12月_v_成本降低额__成本降低额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年12月.v_成本降低额__成本降低额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_成本降低额__成本降低额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_成本降低额__成本降低额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__成本降低额_1"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_v_成本降低额__成本降低额_": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.v_成本降低额__成本降低额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_成本降低额__成本降低额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_成本降低额__成本降低额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have__成本降低额_"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年12月_v_结算额__结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年12月.v_结算额__结算额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_结算额__结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_结算额__结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have__结算额_1"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_v_结算额__结算额_": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.v_结算额__结算额_": {
+			          "Target": {
+			            "Entity": "G_各年12月.v_结算额__结算额_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.v_结算额__结算额_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have__结算额_"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_年月": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.年月": {
+			          "Target": {
+			            "Entity": "G_各年12月.年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_年月"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_name": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.name": {
+			          "Target": {
+			            "Entity": "G_各年12月.name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_names"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_业主结算时长": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.业主结算时长": {
+			          "Target": {
+			            "Entity": "G_各年12月.业主结算时长"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.业主结算时长"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_业主结算时长"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_业主自施结算签订日期": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.业主自施结算签订日期": {
+			          "Target": {
+			            "Entity": "G_各年12月.业主自施结算签订日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.业主自施结算签订日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_业主自施结算签订日期"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_超责任状业主结算日期月数": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.超责任状业主结算日期月数": {
+			          "Target": {
+			            "Entity": "G_各年12月.超责任状业主结算日期月数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.超责任状业主结算日期月数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_超责任状业主结算日期月数"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_责任状业主结算日期": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.责任状业主结算日期": {
+			          "Target": {
+			            "Entity": "G_各年12月.责任状业主结算日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.责任状业主结算日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_责任状业主结算日期"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_超完工日期月数": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.超完工日期月数": {
+			          "Target": {
+			            "Entity": "G_各年12月.超完工日期月数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.超完工日期月数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_超完工日期月数"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_考核完工日期": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.考核完工日期": {
+			          "Target": {
+			            "Entity": "G_各年12月.考核完工日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.考核完工日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_考核完工日期"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_预计结算收益率合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.预计结算收益率合理值": {
+			          "Target": {
+			            "Entity": "G_各年12月.预计结算收益率合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.预计结算收益率合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_预计结算收益率合理值"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_合计预计结算收益额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.合计预计结算收益额合理值": {
+			          "Target": {
+			            "Entity": "G_各年12月.合计预计结算收益额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.合计预计结算收益额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_合计预计结算收益额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_预计成本降低额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.预计成本降低额合理值": {
+			          "Target": {
+			            "Entity": "G_各年12月.预计成本降低额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.预计成本降低额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_预计成本降低额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_自施核定收益率": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.自施核定收益率": {
+			          "Target": {
+			            "Entity": "G_各年12月.自施核定收益率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.自施核定收益率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_自施核定收益率"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_含税预计成本金额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.含税预计成本金额合理值": {
+			          "Target": {
+			            "Entity": "G_各年12月.含税预计成本金额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.含税预计成本金额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_含税预计成本金额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_合计预计结算总额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.合计预计结算总额合理值": {
+			          "Target": {
+			            "Entity": "G_各年12月.合计预计结算总额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.合计预计结算总额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_合计预计结算总额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_自施预计结算总额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.自施预计结算总额合理值": {
+			          "Target": {
+			            "Entity": "G_各年12月.自施预计结算总额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.自施预计结算总额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_自施预计结算总额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_所属板块": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.所属板块": {
+			          "Target": {
+			            "Entity": "G_各年12月.所属板块"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.所属板块"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_所属板块"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_大客户": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.大客户": {
+			          "Target": {
+			            "Entity": "G_各年12月.大客户"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.大客户"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_大客户"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_产值所属二级机构": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.产值所属二级机构": {
+			          "Target": {
+			            "Entity": "G_各年12月.产值所属二级机构"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.产值所属二级机构"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_产值所属二级机构"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_项目名称": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.项目名称": {
+			          "Target": {
+			            "Entity": "G_各年12月.项目名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.项目名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_项目名称"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_业主自施结算状态": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.业主自施结算状态": {
+			          "Target": {
+			            "Entity": "G_各年12月.业主自施结算状态"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.业主自施结算状态"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_业主自施结算状态"
+			        }
+			      ]
+			    },
+			    "G_各年12月_has_业主结算年度": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年12月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年12月": {
+			          "Target": {
+			            "Entity": "G_各年12月"
+			          }
+			        },
+			        "G_各年12月.业主结算年度": {
+			          "Target": {
+			            "Entity": "G_各年12月.业主结算年度"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年12月"
+			            },
+			            "Object": {
+			              "Role": "G_各年12月.业主结算年度"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年12月_have_业主结算年度"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_项目数": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.项目数": {
+			          "Target": {
+			            "Entity": "G_各年3月.项目数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.项目数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_项目数"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年3月_结算收益率": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年3月.结算收益率": {
+			          "Target": {
+			            "Entity": "G_各年3月.结算收益率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.结算收益率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_结算收益率"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_结算收益率": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.结算收益率": {
+			          "Target": {
+			            "Entity": "G_各年3月.结算收益率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.结算收益率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_结算收益率"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年3月_成本降低额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年3月.成本降低额": {
+			          "Target": {
+			            "Entity": "G_各年3月.成本降低额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.成本降低额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_成本降低额"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_成本降低额": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.成本降低额": {
+			          "Target": {
+			            "Entity": "G_各年3月.成本降低额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.成本降低额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_成本降低额"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年3月_结算收益额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年3月.结算收益额": {
+			          "Target": {
+			            "Entity": "G_各年3月.结算收益额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.结算收益额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_结算收益额"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_结算收益额": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.结算收益额": {
+			          "Target": {
+			            "Entity": "G_各年3月.结算收益额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.结算收益额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_结算收益额"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年3月_自施结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年3月.自施结算额": {
+			          "Target": {
+			            "Entity": "G_各年3月.自施结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.自施结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_自施结算额"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_自施结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.自施结算额": {
+			          "Target": {
+			            "Entity": "G_各年3月.自施结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.自施结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_自施结算额"
+			        }
+			      ]
+			    },
+			    "货币单位_has_G_各年3月_结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "G_各年3月.结算额": {
+			          "Target": {
+			            "Entity": "G_各年3月.结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_结算额"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.结算额": {
+			          "Target": {
+			            "Entity": "G_各年3月.结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_结算额"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_年月": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.年月": {
+			          "Target": {
+			            "Entity": "G_各年3月.年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_年月"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_业主结算时长": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.业主结算时长": {
+			          "Target": {
+			            "Entity": "G_各年3月.业主结算时长"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.业主结算时长"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_业主结算时长"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_业主自施结算签订日期": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.业主自施结算签订日期": {
+			          "Target": {
+			            "Entity": "G_各年3月.业主自施结算签订日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.业主自施结算签订日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_业主自施结算签订日期"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_超责任状业主结算日期月数": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.超责任状业主结算日期月数": {
+			          "Target": {
+			            "Entity": "G_各年3月.超责任状业主结算日期月数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.超责任状业主结算日期月数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_超责任状业主结算日期月数"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_责任状业主结算日期": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.责任状业主结算日期": {
+			          "Target": {
+			            "Entity": "G_各年3月.责任状业主结算日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.责任状业主结算日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_责任状业主结算日期"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_超完工日期月数": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.超完工日期月数": {
+			          "Target": {
+			            "Entity": "G_各年3月.超完工日期月数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.超完工日期月数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_超完工日期月数"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_考核完工日期": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.考核完工日期": {
+			          "Target": {
+			            "Entity": "G_各年3月.考核完工日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.考核完工日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_考核完工日期"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_预计结算收益率合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.预计结算收益率合理值": {
+			          "Target": {
+			            "Entity": "G_各年3月.预计结算收益率合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.预计结算收益率合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_预计结算收益率合理值"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_合计预计结算收益额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.合计预计结算收益额合理值": {
+			          "Target": {
+			            "Entity": "G_各年3月.合计预计结算收益额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.合计预计结算收益额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_合计预计结算收益额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_预计成本降低额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.预计成本降低额合理值": {
+			          "Target": {
+			            "Entity": "G_各年3月.预计成本降低额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.预计成本降低额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_预计成本降低额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_自施核定收益率": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.自施核定收益率": {
+			          "Target": {
+			            "Entity": "G_各年3月.自施核定收益率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.自施核定收益率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_自施核定收益率"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_含税预计成本金额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.含税预计成本金额合理值": {
+			          "Target": {
+			            "Entity": "G_各年3月.含税预计成本金额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.含税预计成本金额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_含税预计成本金额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_合计预计结算总额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.合计预计结算总额合理值": {
+			          "Target": {
+			            "Entity": "G_各年3月.合计预计结算总额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.合计预计结算总额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_合计预计结算总额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_自施预计结算总额合理值": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.自施预计结算总额合理值": {
+			          "Target": {
+			            "Entity": "G_各年3月.自施预计结算总额合理值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.自施预计结算总额合理值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_自施预计结算总额合理值"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_所属板块": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.所属板块": {
+			          "Target": {
+			            "Entity": "G_各年3月.所属板块"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.所属板块"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_所属板块"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_大客户": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.大客户": {
+			          "Target": {
+			            "Entity": "G_各年3月.大客户"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.大客户"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_大客户"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_产值所属二级机构": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.产值所属二级机构": {
+			          "Target": {
+			            "Entity": "G_各年3月.产值所属二级机构"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.产值所属二级机构"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_产值所属二级机构"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_项目名称": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.项目名称": {
+			          "Target": {
+			            "Entity": "G_各年3月.项目名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.项目名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_项目名称"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_业主自施结算状态": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.业主自施结算状态": {
+			          "Target": {
+			            "Entity": "G_各年3月.业主自施结算状态"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.业主自施结算状态"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_业主自施结算状态"
+			        }
+			      ]
+			    },
+			    "G_各年3月_has_业主结算年度": {
+			      "Binding": {
+			        "ConceptualEntity": "G_各年3月"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "G_各年3月": {
+			          "Target": {
+			            "Entity": "G_各年3月"
+			          }
+			        },
+			        "G_各年3月.业主结算年度": {
+			          "Target": {
+			            "Entity": "G_各年3月.业主结算年度"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "G_各年3月"
+			            },
+			            "Object": {
+			              "Role": "G_各年3月.业主结算年度"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "G_各年3月_have_业主结算年度"
+			        }
+			      ]
+			    },
+			    "F_进展末期_has_完工日期_": {
+			      "Binding": {
+			        "ConceptualEntity": "F_进展末期"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_进展末期": {
+			          "Target": {
+			            "Entity": "F_进展末期"
+			          }
+			        },
+			        "F_进展末期.完工日期_": {
+			          "Target": {
+			            "Entity": "F_进展末期.完工日期_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_进展末期"
+			            },
+			            "Object": {
+			              "Role": "F_进展末期.完工日期_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_进展末期_have__完工日期_"
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

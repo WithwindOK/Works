@@ -1,0 +1,253 @@
+table G_各年12月
+	lineageTag: 7041eb1d-e76b-4fc4-a5ab-fc7ef2271534
+
+	measure _结算额_ = SUM('G_各年12月'[合计预计结算总额合理值])/[【货币系数】]
+		lineageTag: c118a6de-cca2-4fa8-a55b-20b1d3add0be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _成本降低额_ = SUM('G_各年12月'[预计成本降低额合理值])/[【货币系数】]
+		lineageTag: cff0cc17-e191-47fb-8154-20e885f1e9e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _结算收益额_ = SUM('G_各年12月'[合计预计结算收益额合理值])/[【货币系数】]
+		lineageTag: 76df52ee-23ad-46f7-b42b-eb783fa11810
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _自施结算额_ = SUM('G_各年12月'[自施预计结算总额合理值])/[【货币系数】]
+		lineageTag: a45a0050-cf7a-45b6-b0f5-c43ef056332e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure _结算收益率_ = DIVIDE([_结算收益额_],[_自施结算额_])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ce64a236-b117-4d9d-893a-ea72373c4e4e
+
+	measure _项目数_ = DISTINCTCOUNT('G_各年12月'[项目名称])
+		lineageTag: 8d7c3eca-3382-4061-a482-02daf3bcc907
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 业主结算年度
+		dataType: int64
+		formatString: 0
+		lineageTag: a2fc0a4a-c59c-47c1-95e7-f8ec5b6715b3
+		summarizeBy: sum
+		sourceColumn: 业主结算年度
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主自施结算状态
+		dataType: string
+		lineageTag: 7e750d07-61f5-4bb9-abcf-d46516c78df7
+		summarizeBy: none
+		sourceColumn: 业主自施结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 39aeed99-b40d-448b-b067-cdd5fc69832d
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 产值所属二级机构
+		dataType: string
+		lineageTag: 8e9b497f-5de6-46b1-ad14-bfc0a205d7d4
+		summarizeBy: none
+		sourceColumn: 产值所属二级机构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 大客户
+		dataType: string
+		lineageTag: b8f87ef9-cbc5-46d5-95c5-8a4b1e038e5b
+		summarizeBy: none
+		sourceColumn: 大客户
+
+		annotation SummarizationSetBy = Automatic
+
+	column 所属板块
+		dataType: string
+		lineageTag: dcb211c8-2620-44c5-a292-c1bfd4b1bf9e
+		summarizeBy: none
+		sourceColumn: 所属板块
+
+		annotation SummarizationSetBy = Automatic
+
+	column 自施预计结算总额合理值
+		dataType: double
+		lineageTag: 51433224-eb62-4592-a350-01ed356bf8b9
+		summarizeBy: sum
+		sourceColumn: 自施预计结算总额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合计预计结算总额合理值
+		dataType: double
+		lineageTag: 89e9ac75-f575-4a0f-be4b-70cb0aae692d
+		summarizeBy: sum
+		sourceColumn: 合计预计结算总额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 含税预计成本金额合理值
+		dataType: double
+		lineageTag: 2b0b7750-17b2-4876-a888-b44a0e9ce14f
+		summarizeBy: sum
+		sourceColumn: 含税预计成本金额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施核定收益率
+		dataType: double
+		lineageTag: 9aaec619-1d02-432f-9abb-33d58e4d17a4
+		summarizeBy: sum
+		sourceColumn: 自施核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计成本降低额合理值
+		dataType: double
+		lineageTag: 41fefded-ec13-4a0f-b9c4-0a4f425979bb
+		summarizeBy: sum
+		sourceColumn: 预计成本降低额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合计预计结算收益额合理值
+		dataType: double
+		lineageTag: 97d3133b-2b92-4db8-96ce-7834ecbbe76f
+		summarizeBy: sum
+		sourceColumn: 合计预计结算收益额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计结算收益率合理值
+		dataType: double
+		lineageTag: ffc08db2-1822-4bf6-8757-100946f0c969
+		summarizeBy: sum
+		sourceColumn: 预计结算收益率合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 考核完工日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7d15f0da-ff6e-4b65-8b1b-0816ec95d65c
+		summarizeBy: none
+		sourceColumn: 考核完工日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 超完工日期月数
+		dataType: double
+		lineageTag: 37a7d3d0-aa02-4cad-a567-a95a32a22c63
+		summarizeBy: sum
+		sourceColumn: 超完工日期月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 责任状业主结算日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7682b87d-553d-4fda-b7d1-2d8edfc8c224
+		summarizeBy: none
+		sourceColumn: 责任状业主结算日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 超责任状业主结算日期月数
+		dataType: double
+		lineageTag: 70aab6ff-0f2d-4e5e-b652-3b9024246a92
+		summarizeBy: sum
+		sourceColumn: 超责任状业主结算日期月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 业主自施结算签订日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ac0e37d2-314b-41fc-a932-e30becce28c1
+		summarizeBy: none
+		sourceColumn: 业主自施结算签订日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 业主结算时长
+		dataType: double
+		lineageTag: 29fa16dd-883a-4bd2-87f4-30429bdb6ebb
+		summarizeBy: sum
+		sourceColumn: 业主结算时长
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Name
+		dataType: string
+		lineageTag: ab87b069-868d-40e9-a3b0-914aa8048c20
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月
+		dataType: string
+		lineageTag: 18df033c-eab2-43ee-b859-f1c848fce697
+		summarizeBy: none
+		sourceColumn: 年月
+
+		annotation SummarizationSetBy = Automatic
+
+	partition G_各年12月 = m
+		mode: import
+		queryGroup: 各年比较
+		source =
+				let
+				    源 = Folder.Files("\\172.16.8.66\经营分析\经营分析会\2025-1季度\往年结算进展"),
+				    筛选的行 = Table.SelectRows(源, each ([Name] = "已竣已结项目22-24年度.xlsx" or [Name] = "已竣未结22.12.xlsx" or [Name] = "已竣未结23.12.xlsx" or [Name] = "已竣未结24.12.xlsx")),
+				    #"展开的“Attributes”" = Table.ExpandRecordColumn(筛选的行, "Attributes", {"Kind", "Hidden"}, {"Kind", "Hidden"}),
+				    筛选的行1 = Table.SelectRows(#"展开的“Attributes”", each ([Kind] = "Excel File")),
+				    删除的其他列 = Table.SelectColumns(筛选的行1,{"Content", "Name"}),
+				    已添加自定义 = Table.AddColumn(删除的其他列, "自定义", each 转换文件([Content])),
+				    删除的列 = Table.RemoveColumns(已添加自定义,{"Content"}),
+				    #"展开的“自定义”" = Table.ExpandTableColumn(删除的列, "自定义", {"业务年", "业务月", "业主结算年度", "业主自施结算状态", "项目名称", "产值所属二级机构", "大客户", "所属板块", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "自施核定收益率", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "预计结算收益率#(lf)合理值", "考核完工日期", "超完工日期月数", "责任状业主结算日期", "超责任状业主结算日期月数", "业主自施结算签订日期", "业主结算时长"}, {"业务年", "业务月", "业主结算年度", "业主自施结算状态", "项目名称", "产值所属二级机构", "大客户", "所属板块", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "自施核定收益率", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "预计结算收益率#(lf)合理值", "考核完工日期", "超完工日期月数", "责任状业主结算日期", "超责任状业主结算日期月数", "业主自施结算签订日期", "业主结算时长"}),
+				    更改的类型 = Table.TransformColumnTypes(#"展开的“自定义”",{{"业务年", type text}, {"业务月", type text}, {"业主结算年度", Int64.Type}, {"业主自施结算状态", type text}, {"项目名称", type text}, {"产值所属二级机构", type text}, {"大客户", type text}, {"所属板块", type text}, {"自施预计结算总额#(lf)合理值", type number}, {"合计预计结算总额#(lf)合理值", type number}, {"含税预计成本金额#(lf)合理值", type number}, {"自施核定收益率", type number}, {"预计成本降低额#(lf)合理值", type number}, {"合计预计结算收益额#(lf)合理值", type number}, {"预计结算收益率#(lf)合理值", type number}, {"考核完工日期", type date}, {"超完工日期月数", type number}, {"责任状业主结算日期", type date}, {"超责任状业主结算日期月数", type number}, {"业主自施结算签订日期", type date}, {"业主结算时长", type number}}),
+				    筛选的行2 = Table.SelectRows(更改的类型, each ([业务年] <> null)),
+				    合并的列 = Table.CombineColumns(筛选的行2,{"业务年", "业务月"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"年月")
+				in
+				    合并的列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

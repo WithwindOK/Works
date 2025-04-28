@@ -1,0 +1,42 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: zh-CN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 各年比较
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup '各年比较\从 往年结算进展 转换文件'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup '各年比较\从 往年结算进展 转换文件\已竣未结'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// 已加载到 2025-04-25 17:32:07 上的查询中的错误。
+queryGroup '查询错误 - 2025-04-25 17:32:07'
+
+	annotation PBI_QueryGroupOrder = 3
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6996f9c3a3196
+
+annotation PBI_QueryOrder = ["参数1","示例文件","转换文件","转换示例文件","G_各年3月","G_各年12月","货币单位","海外结算进展","F_进展末期","G_各年3月 中的错误"]
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","CalcGroup","DevMode"]
+
+ref table G_各年3月
+ref table G_各年12月
+ref table F_进展末期
+ref table 货币单位
+
+ref cultureInfo zh-CN
+

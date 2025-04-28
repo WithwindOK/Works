@@ -1,0 +1,366 @@
+table F_进展末期
+	lineageTag: cc3dcf37-2b99-4e57-b5ba-e0e7f4ab02ab
+
+	measure '.结算额.' = SUM('F_进展末期'[合计预计结算总额合理值])/[【货币系数】]+0
+		formatString: #,0.00
+		lineageTag: 5425e927-c9f7-4f31-9480-daa7f17caa69
+
+	measure '.自施结算额.' = SUM('F_进展末期'[自施预计结算总额合理值])/[【货币系数】]
+		formatString: #,0.00
+		lineageTag: ae9942aa-b3ac-4f9e-aaba-0d961e50d89d
+
+	measure '.成本降低额.' = SUM('F_进展末期'[预计成本降低额合理值])/[【货币系数】]
+		formatString: #,0.00
+		lineageTag: ffddc037-9ea4-4f09-a100-1c845f647b8c
+
+	measure '.结算收益额.' = SUM('F_进展末期'[合计预计结算收益额合理值])/[【货币系数】]
+		formatString: #,0.00
+		lineageTag: 22edb0e6-3406-4a94-b3eb-9322fb0b43cf
+
+	measure '.项目数.' = IF(ISINSCOPE('F_进展末期'[项目名称]),BLANK(),DISTINCTCOUNT('F_进展末期'[项目名称]))
+		formatString: 0
+		lineageTag: 1c5c5684-6fea-4d20-90d4-89fcb7f2f634
+
+	measure '.结算收益率.' = DIVIDE([.结算收益额.],[.自施结算额.])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f99fcf6e-f6f5-44b7-a18a-79741564c327
+
+	measure 25年结算额目标 = CALCULATE([.结算额.],'F_进展末期'[25年年度计划]="是")
+		lineageTag: b3de4b8f-4c5c-4b18-83a0-0199e62e2c87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 25年结算项目数目标 = CALCULATE([.项目数.],'F_进展末期'[25年年度计划]="是")
+		lineageTag: 68e7f2f8-e4d3-4c2d-b392-e353ae53313b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '.剩余回款.' = SUM('F_进展末期'[剩余回款])/[【货币系数】]+0
+		formatString: #,0.00
+		lineageTag: 03894178-15c2-47a7-9f52-9489d43c8f03
+
+	measure '.超完工期数.' = AVERAGE('F_进展末期'[超完工日期月数])
+		lineageTag: 52d145a7-78f3-458d-b44d-f89eff07e82e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '.结算年度.' = IF(ISINSCOPE('F_进展末期'[项目名称]),MIN('F_进展末期'[业主结算年度]))
+		formatString: 0
+		lineageTag: 11b07094-0fc1-4973-92a0-ee764892151c
+
+	measure SVG_Vertical_Line = ```
+			
+			VAR LineColor = "#FF5733"  -- 竖线颜色，可按需修改
+			VAR LineThickness = 3  -- 竖线粗细，可按需修改
+			VAR SVGWidth = 4  -- SVG 宽度
+			VAR SVGHeight = 22  -- SVG 高度
+			VAR XPosition = 0  -- 竖线水平位置
+			VAR SVGCode = 
+			    "data:image/svg+xml," &
+			    " <svg xmlns='http://www.w3.org/2000/svg' width='" & SVGWidth & "' height='" & SVGHeight & "'>" &
+			    "<line x1='" & XPosition & "' y1='0' x2='" & XPosition & "' y2='" & SVGHeight & "' " &
+			    "stroke='" & LineColor & "' stroke-width='" & LineThickness & "' />" &
+			    "</svg>"
+			RETURN SVGCode     
+			```
+		lineageTag: 91c4b31a-a0b2-433a-b6a1-a2cd3c2b5b2d
+		dataCategory: ImageUrl
+
+	measure 层级判断 = ```
+			
+			VAR IsSecondLevelOrgFiltered = ISFILTERED('F_进展末期'[产值所属二级机构])
+			VAR OwnerSettlementStatusFiltered = ISFILTERED('F_进展末期'[业主自施结算状态])
+			VAR BelongingPlateFiltered = ISFILTERED('F_进展末期'[所属板块])
+			VAR SettlementCategoryFiltered = ISFILTERED('F_进展末期'[结算分类])
+			VAR FilteredColumnCount = 
+			    IF(IsSecondLevelOrgFiltered, 1, 0) +
+			    IF(OwnerSettlementStatusFiltered, 1, 0) +
+			    IF(BelongingPlateFiltered, 1, 0) +
+			    IF(SettlementCategoryFiltered, 1, 0)
+			
+			RETURN 
+			SWITCH (
+			    FilteredColumnCount,
+			    1, 
+			        SWITCH (
+			            TRUE (),
+			            IsSecondLevelOrgFiltered, "产值所属二级机构层级",
+			            OwnerSettlementStatusFiltered, "业主自施结算状态层级",
+			            BelongingPlateFiltered, "所属板块层级",
+			            SettlementCategoryFiltered, "结算分类层级"
+			        ),
+			    2, 
+			        SWITCH (
+			            TRUE (),
+			            IsSecondLevelOrgFiltered && OwnerSettlementStatusFiltered, "业主自施结算状态层级",
+			            IsSecondLevelOrgFiltered && BelongingPlateFiltered, 
+			                IF(OwnerSettlementStatusFiltered, "所属板块层级", "业主自施结算状态层级"),
+			            IsSecondLevelOrgFiltered && SettlementCategoryFiltered, 
+			                IF(OwnerSettlementStatusFiltered || BelongingPlateFiltered, "结算分类层级", "业主自施结算状态层级"),
+			            OwnerSettlementStatusFiltered && BelongingPlateFiltered, "所属板块层级",
+			            OwnerSettlementStatusFiltered && SettlementCategoryFiltered, "结算分类层级",
+			            BelongingPlateFiltered && SettlementCategoryFiltered, "结算分类层级"
+			        ),
+			    3, 
+			        SWITCH (
+			            TRUE (),
+			            IsSecondLevelOrgFiltered && OwnerSettlementStatusFiltered && BelongingPlateFiltered, 
+			                IF(SettlementCategoryFiltered, "结算分类层级", "所属板块层级"),
+			            IsSecondLevelOrgFiltered && OwnerSettlementStatusFiltered && SettlementCategoryFiltered, "结算分类层级",
+			            IsSecondLevelOrgFiltered && BelongingPlateFiltered && SettlementCategoryFiltered, "结算分类层级",
+			            OwnerSettlementStatusFiltered && BelongingPlateFiltered && SettlementCategoryFiltered, "结算分类层级"
+			        ),
+			    4, "结算分类层级",
+			    "未知层级"
+			)
+			    
+			```
+		lineageTag: 16d42d28-3b06-460c-8146-7541044bafe6
+
+	measure '.责任体页面项目数占比.' =
+			
+			VAR fz=[.项目数.]
+			VAR fm1=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[产值所属二级机构]))
+			VAR fm2=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[业主自施结算状态]))
+			return
+			IF(ISINSCOPE('F_进展末期'[产值所属二级机构])&&ISINSCOPE('F_进展末期'[业主自施结算状态]),DIVIDE(fz,fm1),DIVIDE(fz,fm2))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 807b1108-7c04-484d-b02a-6d412fe0a99c
+
+	measure '.业务板块项目数占比.' =
+			
+			VAR fz=[.项目数.]
+			VAR fm1=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[所属板块]))
+			VAR fm2=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[业主自施结算状态]))
+			return
+			IF(ISINSCOPE('F_进展末期'[所属板块])&&ISINSCOPE('F_进展末期'[业主自施结算状态]),DIVIDE(fz,fm1),DIVIDE(fz,fm2))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 184416c1-eca5-431d-9e11-9853270162c6
+
+	measure '.结算分类项目数占比.' =
+			
+			VAR fz=[.项目数.]
+			VAR fm1=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[产值所属二级机构]))
+			VAR fm2=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[结算分类]))
+			return
+			IF(ISINSCOPE('F_进展末期'[产值所属二级机构])&&ISINSCOPE('F_进展末期'[结算分类]),DIVIDE(fz,fm1),DIVIDE(fz,fm2))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3f1fcabb-0f79-4a58-b260-7893844cdfe5
+
+	measure '.久竣未结项目数占比.' =
+			
+			VAR fz=[.项目数.]
+			VAR fm1=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[产值所属二级机构]))
+			return
+			DIVIDE(fz,fm1)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: fb26722b-4bf7-429c-8557-05ec3b6f6d67
+
+	measure '.大客户项目数占比.' =
+			
+			VAR fz=[.项目数.]
+			VAR fm1=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[大客户]))
+			VAR fm2=CALCULATE([.项目数.],ALLSELECTED('F_进展末期'[业主自施结算状态]))
+			return
+			IF(ISINSCOPE('F_进展末期'[大客户])&&ISINSCOPE('F_进展末期'[业主自施结算状态]),DIVIDE(fz,fm1),DIVIDE(fz,fm2))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7bde3fae-22c8-4721-a081-e960593da472
+
+	measure '.完工日期.' = IF(ISINSCOPE('F_进展末期'[项目名称]),MIN('F_进展末期'[考核完工日期]))
+		formatString: yyyy-m-d
+		lineageTag: 8ce1c155-b474-425f-8eb7-e32f603bea61
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 业主结算年度
+		dataType: int64
+		formatString: 0
+		lineageTag: ede05e33-d360-49ae-ae5e-5c66de102bab
+		summarizeBy: sum
+		sourceColumn: 业主结算年度
+
+		annotation SummarizationSetBy = Automatic
+
+	column 自施预计结算总额合理值
+		dataType: double
+		lineageTag: 649b92dc-f9f6-4490-a5ec-6c23feb62a33
+		summarizeBy: sum
+		sourceColumn: 自施预计结算总额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合计预计结算总额合理值
+		dataType: double
+		lineageTag: da4c7d78-da46-4463-83ce-eefeec620d25
+		summarizeBy: sum
+		sourceColumn: 合计预计结算总额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 含税预计成本金额合理值
+		dataType: double
+		lineageTag: 00be9ac9-ae1a-448d-b649-df79c41ed97c
+		summarizeBy: sum
+		sourceColumn: 含税预计成本金额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计成本降低额合理值
+		dataType: double
+		lineageTag: 5a245480-3b89-4b8d-aa64-6d8cca2c47ea
+		summarizeBy: sum
+		sourceColumn: 预计成本降低额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合计预计结算收益额合理值
+		dataType: double
+		lineageTag: 9d0c47ba-c917-43f3-9de9-09f096e1bda3
+		summarizeBy: sum
+		sourceColumn: 合计预计结算收益额合理值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 剩余回款
+		dataType: double
+		lineageTag: c8a96166-4748-4f97-8487-d6591cd939a0
+		summarizeBy: sum
+		sourceColumn: 剩余回款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 年月
+		dataType: string
+		lineageTag: 9d1cd0b6-d201-48b6-89ab-6b086a6efffa
+		summarizeBy: none
+		sourceColumn: 年月
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主自施结算状态
+		dataType: string
+		lineageTag: 511d565e-8864-4ca1-a257-9994e0e869dd
+		summarizeBy: none
+		sourceColumn: 业主自施结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 93b4312b-f147-4df1-af4d-96ca5b839b75
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 25年年度计划
+		dataType: string
+		lineageTag: 5a7a342e-d084-4485-83ff-b802fc9e55e0
+		summarizeBy: none
+		sourceColumn: 25年年度计划
+
+		annotation SummarizationSetBy = Automatic
+
+	column 结算分类
+		dataType: string
+		lineageTag: 7000a5b0-1b76-4bb0-99ec-28173e169c89
+		summarizeBy: none
+		sourceColumn: 结算分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 产值所属二级机构
+		dataType: string
+		lineageTag: 11eb0fe4-e8f8-4e7b-9f12-0696f39d2def
+		summarizeBy: none
+		sourceColumn: 产值所属二级机构
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 大客户
+		dataType: string
+		lineageTag: 86539082-4648-4c7a-bd35-3bc49f2be0e7
+		summarizeBy: none
+		sourceColumn: 大客户
+
+		annotation SummarizationSetBy = Automatic
+
+	column 所属板块
+		dataType: string
+		lineageTag: 678fbd66-f098-461a-87b2-1b6981e38762
+		summarizeBy: none
+		sourceColumn: 所属板块
+
+		annotation SummarizationSetBy = Automatic
+
+	column 超完工日期月数
+		dataType: double
+		lineageTag: 6db79b15-1ae1-4c04-a04c-15d6fb4f3499
+		summarizeBy: sum
+		sourceColumn: 超完工日期月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 计划结算年
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f71125f-3dba-421d-89e4-6d513cc6c73d
+		summarizeBy: sum
+		sourceColumn: 计划结算年
+
+		annotation SummarizationSetBy = Automatic
+
+	column 计划结算月
+		dataType: int64
+		formatString: 0
+		lineageTag: d2aecb79-f05b-4ad9-bf02-e82597d92546
+		summarizeBy: sum
+		sourceColumn: 计划结算月
+
+		annotation SummarizationSetBy = Automatic
+
+	column 考核完工日期
+		dataType: string
+		lineageTag: 3e49322e-0869-4cd7-a34a-11f2c4342352
+		summarizeBy: none
+		sourceColumn: 考核完工日期
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_进展末期 = m
+		mode: import
+		source =
+				let
+				    源 = Excel.Workbook(File.Contents("\\172.16.8.66\经营分析\经营分析会\2025-1季度\结算进展25.3.xlsx"), null, true),
+				    sheet1_Sheet = 源{[Item="sheet1",Kind="Sheet"]}[Data],
+				    提升的标题 = Table.PromoteHeaders(sheet1_Sheet, [PromoteAllScalars=true]),
+				    删除的其他列 = Table.SelectColumns(提升的标题,{"业务年", "业务月", "业主结算年度", "业主自施结算状态", "项目名称", "25年年度计划", "预计结算时间", "结算分类", "产值所属二级机构", "大客户", "所属板块", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "考核完工日期", "超完工日期月数", "剩余回款"}),
+				    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"业务年", type text}, {"业务月", type text}, {"业主结算年度", Int64.Type}, {"业主自施结算状态", type text}, {"项目名称", type text}, {"25年年度计划", type text}, {"结算分类", type text}, {"产值所属二级机构", type text}, {"大客户", type text}, {"所属板块", type text}, {"自施预计结算总额#(lf)合理值", type number}, {"合计预计结算总额#(lf)合理值", type number}, {"含税预计成本金额#(lf)合理值", type number}, {"预计成本降低额#(lf)合理值", type number}, {"合计预计结算收益额#(lf)合理值", type number}, {"剩余回款", type number}, {"超完工日期月数", type number}, {"预计结算时间", type text}, {"考核完工日期", type date}}),
+				    按分隔符拆分列 = Table.SplitColumn(更改的类型, "预计结算时间", Splitter.SplitTextByDelimiter("_", QuoteStyle.Csv), {"预计结算时间.1", "预计结算时间.2"}),
+				    更改的类型1 = Table.TransformColumnTypes(按分隔符拆分列,{{"预计结算时间.1", Int64.Type}, {"预计结算时间.2", Int64.Type}}),
+				    重命名的列 = Table.RenameColumns(更改的类型1,{{"预计结算时间.1", "计划结算年"}, {"预计结算时间.2", "计划结算月"}}),
+				    合并的列 = Table.CombineColumns(重命名的列,{"业务年", "业务月"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"年月"),
+				    #"追加的查询（海外）" = Table.Combine({合并的列, 海外结算进展})
+				in
+				    #"追加的查询（海外）"
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

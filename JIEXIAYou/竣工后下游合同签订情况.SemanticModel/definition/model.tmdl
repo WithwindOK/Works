@@ -1,0 +1,23 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6996f9c3a3196
+
+annotation PBI_QueryOrder = ["X5","fx_RN","X5 (2)","D_项目信息","项目信息表字段名","X5_DadabaseURL","分包合同","分包合同补充协议","物资合同补充协议","物资合同","延迟标准天数","F_下游合同","货币单位","延迟段"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table D_项目信息
+ref table F_下游合同
+ref table 货币单位
+ref table 延迟段
+
+ref cultureInfo zh-CN
+

@@ -1,0 +1,155 @@
+table F_下游合同
+	lineageTag: adb0f73a-613b-4ea1-a66d-82e7859d7008
+
+	measure 'C.协议份数.计数' = DISTINCTCOUNT('F_下游合同'[合同协议号])
+		formatString: 0
+		lineageTag: 21355d0a-5310-4652-8525-63c83343785e
+
+	measure 'M.合同价税合计.合计' = SUM('F_下游合同'[含税合同总价])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		lineageTag: a04c1ecd-fd75-4849-8949-64d9a76dce77
+
+	measure 误差线起点 = 0.00000001
+		formatString: 0
+		lineageTag: ddefcfbf-c1ba-4129-afa1-90bdbf10fd50
+
+	column 评审单号
+		dataType: string
+		lineageTag: dbd35944-7153-4cd6-909d-e4560c7765e0
+		summarizeBy: none
+		sourceColumn: 评审单号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: b4b31c40-8ab5-4691-b51c-03743fec49c7
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同协议号
+		dataType: string
+		lineageTag: 8b1ef48d-b03e-494e-bf66-d58c76cbf3a0
+		summarizeBy: none
+		sourceColumn: 合同协议号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: 15d0a42c-57c8-4e8e-8e20-d579803d54d3
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: ed864290-a802-40c9-9f42-d94537d23e0f
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 83635f5c-c9e7-4c76-8e92-d4933e1f0e4d
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: 9d72ebc6-ce7b-4bf8-a279-16eec1a83af6
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: a3319525-5f83-42b8-bbb1-68947dfde7b7
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 签订时间
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e38d8062-3db8-4217-9469-545df89ea44d
+		summarizeBy: none
+		sourceColumn: 签订时间
+
+		annotation SummarizationSetBy = Automatic
+
+	column 含税合同总价
+		dataType: double
+		lineageTag: e93aaeb6-8c32-49fe-8bc0-e6ab57128aa1
+		summarizeBy: sum
+		sourceColumn: 含税合同总价
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 延迟总天数
+		dataType: double
+		lineageTag: 4f4a3aee-651e-4051-9853-63f0cd7ac49f
+		summarizeBy: sum
+		sourceColumn: 延迟总天数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 业务种类
+		dataType: string
+		lineageTag: 47190fc0-da41-4a7a-abf0-77792b258d1b
+		summarizeBy: none
+		sourceColumn: 业务种类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 原始/补充
+		dataType: string
+		lineageTag: 3ba42fae-a01a-4fa6-9c6d-40cab0f55a89
+		summarizeBy: none
+		sourceColumn: 原始/补充
+
+		annotation SummarizationSetBy = Automatic
+
+	column 延迟段落 = int(([延迟总天数]-90)/30)
+		lineageTag: 21b14b60-cb58-4ecc-ad32-17e8e28eb85c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 考核完工日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: ea23c2b6-847b-45bf-af65-a35da19c91b1
+		summarizeBy: none
+		sourceColumn: 考核完工日期
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_下游合同 = m
+		mode: import
+		source =
+				let
+				    源 = Table.Combine({分包合同, 分包合同补充协议, 物资合同, 物资合同补充协议}),
+				    筛选的行1 = Table.SelectRows(源, each [签订时间] > #datetime(2017, 12, 31, 0, 0, 0)),
+				    筛选的行 = Table.SelectRows(筛选的行1, each [含税合同总价] <> 0)
+				in
+				    筛选的行
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,8 @@
+relationship AutoDetected_df145562-bf82-4533-b8db-59be2a876a23
+	fromColumn: F_下游合同.项目编码
+	toColumn: D_项目信息.项目编码
+
+relationship 44ceaeca-2f32-d0dc-0386-5e83fcc7bafb
+	fromColumn: F_下游合同.延迟段落
+	toColumn: 延迟段.天数
+

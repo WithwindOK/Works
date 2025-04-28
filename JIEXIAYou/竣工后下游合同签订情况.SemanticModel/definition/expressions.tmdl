@@ -1,0 +1,162 @@
+expression X5 =
+		let
+		    源 = Oracle.Database("172.16.8.76/oracledb", [HierarchicalNavigation=true])
+		in
+		    源
+	lineageTag: ffeec0cc-c042-4c79-a2c0-1de5680f5cc3
+
+	annotation PBI_ResultType = Table
+
+expression fx_RN =
+		let
+		    源 = (OWNER as text,TABLE_NAME as text) as list => let
+		        源 =  X5,
+		        源1=Value.NativeQuery(源,"select COLUMN_NAME,COMMENTS from all_col_comments where OWNER = '" & OWNER &"' and TABLE_NAME = '" & TABLE_NAME & "'"),
+		        替换的值 = Table.ReplaceValue(源1,null, each [COLUMN_NAME],Replacer.ReplaceValue,{"COMMENTS"}),
+		        更改的类型 = Table.TransformColumnTypes(替换的值,{{"COMMENTS", type text}}),
+		        删除的副本 = Table.Distinct(更改的类型, {"COMMENTS"}),
+		        缩短说明字段长度=Table.TransformColumns(删除的副本, {{"COMMENTS", each Text.Start(_,50), type text}}),
+		        自定义1 = List.Zip({缩短说明字段长度[COLUMN_NAME],缩短说明字段长度[COMMENTS]})
+		    in
+		        自定义1
+		in
+		    源
+	lineageTag: 03595e90-aa01-4ca3-90a5-2f5bc9ae38cc
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Function
+
+expression 'X5 (2)' =
+		let
+		    源 = Oracle.Database("172.16.8.76/oracledb", [HierarchicalNavigation=true])
+		in
+		    源
+	lineageTag: 20762fb0-6968-465d-81cc-a6007efa70e4
+
+	annotation PBI_ResultType = Table
+
+expression 项目信息表字段名 =
+		let
+		    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("jVnbUttYFv2XVE1VUtVVk5f+AEuyZAnZxJbVttTVNS89UzUPU/MLTsDGgLFNmgABczGBQBJiQ0PA2Bj+ZcZHl6f+hdnnoqPjC+l5mEu81z46Z1/X3vz88zO1qCcyWtqW4H/SiWc/PAvbd/5ux7/f9A9fP/vlhxiR1jOanEpmNA5CzTX/9IKB0viEVGJePAI1bqlUSWQMOwagtXfemghwsvO5ZBYk/vKn4NviqFfyWgfB47a33WW/9GvwCz3MTeaSGTdl53VQCK4/jAaD0fC36BrufEYz4Ev8Hl5p4O+uU7H5k2Mni2nDxJe4PPH7H9ldBw2/WaEYKQnaEeZ4yWtXpzFuSi+COQjGWz4N2jVRaqXAYAWbnvCuglbaY7pwQck24SOmDa/GF4UrhgtnwesNf9Aa9fvsFFcBo5IPlNDlPjo+pfcAZPRWzVSt2N6dNnzD27xD9w1+S80Gy2OP+bvXAPBafW9/kUqxkQTx+oTYBVfF4vLplBhkTlLFbxz1fhv1dlC14l8Ooqth88D3BS+cBtfs4qoN37awZvh+Ea0c+md1v74U3cpK2boKV7OINjraR6V7QATwvLO6+DwjU1CxfUb9c1Qpo+NNuAHqLVBh1nZsrF7ro4ODyC00eP0WC2wSzewzB3XUexPHO/6p/kj/rcmKrtDfgu5Hf1BBrQu0V+KHGrqhFLCw8wCXhNgeDddiE5s6EWIDNyuTQtAmUjTog7Yo1QqaqVHnPoRbzLmofI4avejDugaRRNS9zSG6PRHVs3A4hDr99NcHCPTJT4MD0wb9tP91Pdw78k+7z/9bb79gB0D0GS5FlG9Gva/w6FFv9Qm0opOYl/GFCXAFXb7x3l1EUjBpLFsVZa6Uyhskhr56h0uoWUXN2mhw+3zUW0LlhRcxyLUkdQIXLH2Gl0M+gOMnFXJZDva2TnjtyDpEQE0iCixjTiMi1NkP35fRfQksOg4wRID/5cMEQMkTfxE7Qz58hic+/8/yyY8vX75Ed1f+5dULjpNJ8FMknOKfrQI4XGrAIz4zlDynYOe/e3we3J69QP2Pz//FJIarKbHfvmyLMksFt+GA2O6i5sdwac1/c0fzL5IrcizH3uifinItVZxzcSifLqLq26DTQ41u0GXpYmlUSKNtQlhMW5abj1tDZx9g/sqNV+IAVxKqFXONmM40KJ08f5y/cRaWNiJ1w3RdxYjLHSmp0BqgrPhfl/3+aZStlquRsKWGheLZOkO7Q9S5iQCm5MQAqFmo+uVnaDlwxC8xJDkN6ddiSCofxQsJxel4gbAWAdPxAiFtkvrOgvn6DCIAV8rDqBRqRTAprb+D36DyouFRbC25aBkyEaKDvt8uiUIHcpE0Wu9zEyKEh4dStBSehd7tpRg6Mjnq8o2IB6OLToVb+J0t0akGVHkH/mMWySUbQfMEG2t/NXqBCSValtJW/IaVK+iHuFLXyt7yI/7vsza/uJqQErgnpmV8mcY6iKEfijxDlXJFVxSKjcVxzWKO5P3OqDfA/fRqwPspFiqpCam/8S3o7lFAft52ddPBZlt5B4Hl7Z14/SZPLEdyiy6YJE6fy/1Rvz563At3WnCL0bDhVR/FbIKccJW5VNwDo0aOOkde9ZZ3cVtPx7QJUg8sEn01I5EWxz5YKdNiBy+PDOzm3KxiWAWZ1jUSZZQTgZ+gzAWdI+o21Kl51aYYgCa8yChanArBSyCdw6V1MZQISDKnQV53Y/SwKoDUlGVMw4LHDczjtm7CrWvuB9eAWpmVuS/CnRswTLhbQbtHtMeh8hl3uUzrBosWoWI4rmFZBj+FvlP8lKU6eRcMbHETeq1l6lxWpsSGquZdwxX8S4FQisLS4VgRdWXJjYkZtmrrHL6PVvYFtksIkpZP6DHfFRIHurc6bxcJPyD8OnZyuep/WYXvRZ3MAPbBe9mof4z67+AHGrHSK4sI4aogDLqLqNOOhKlkHvgB5ghZPaebep7RGlqvbnEcQDSgegUdf2Jlb54xfDeFmQXgDV3Sk7wO0n4CNRCqYUQz8OlQt3M47bxe2Ts/ZIw8SjvC1k3AKaQiUWl4VEHd+7HxwsUEImXHeXD9kecIOUOy04QssxMWzsItlvYZqDAgyMji1JKRLXseuCQ5N0++nZGpx+BodLIVwSbGG4Kbnm8mWbs8rySnmbv871//zlJCt4kpDT0JlwB3s5nE+/YadxSohXsHYqhGeDWR1SfRUOuCb7cC2pJzyUQ+mdfTxDnVXQhSUWwlszZckQj7DT6FkQ9IUGGfyKdXOqbDZLbioUtjSgzdKRSJQBEXRSAeIWDom480cLSQduKt7vJwFY62zISVT88rOqQtfZrXKqEmlNiOt3EnWgv3HTycwB2kRAbc4cA/yD0wLei0aTbi1rG+Hd3GICR+WgOmGugCszQmfU7h4x6PsA5Uv8nRZe0iWLmcObqknKxh5fQsgTXraHAD2RgFRVyhC7acgLiHOxfx2cTM3fC4GbRP0MonaF+cRmuWgsdBUsxpAa1e8BIXLtU4ENdDxyUNWSyEwWNzNGyJrZilBX6S+VNMAYRRjY+XJPvEAXPG9sBMkok5PkigCfyg4uxJVZD/P5+iA7wt7iLoHC/mgqUWUs5YOx/1+sHjLlAi7/yB+WSjOxps0xP+uK/SIggVGH4cDR+BnaLlNcYyzx8omHbF0bAOzODHl3/5436Zl5k0mACqKStVsRWqX8bLVgScgjEH4uE5A3MjTirHNAgZah1gxrzxu1db8g57qLPjbdz4uyvCVK1MKdG4/44S4UNWat52aAQwVjQDxAyP+4elkwdON1nxkdNKM1XEVlmwnWTBFrvz1iFeOqy0xdYs42LPMtBJSmQDUH8DtGzUXwU0X51ES6I8hJVi63EvJ7siYCHh9kFEz+SEXhjr5lF/OsKLHaEwurmswnKa9cC7j5SBiTntFKQ5SllA3dt7RHtbUTPXzMh2UB3pxC+2OatQ0CjFIjslIHRkohijO1knJhK3vwePr/3TQbB0hevayi72XkRoc6brOAXKLAQhuxZpO1Fp01S54ORTrmtohJcHb9qjwZC+H8YmPMPWNv3Boj9Yojkp9k2mXEw/rTrdbLkSscd3lMSgom63damYwdNIuP27d3ENPBS6B7q7Dt+zhxsKA9D4R40VvN8YbE4jgRDiPjyfhkCBpmll49hrNHEZIBreQhlVvqHymrdy4m9cBV1WYKSikbd1siWzSd5hSxMNYMVhqQSs2N9ZxIuZzg7XsFR4AE65Amn/HM88ursP2UeJPJ8wVFWWC/GIQYEXr9HXbShZ1Gi8CmnQWFNmzi0KduUWRdVP3s1HvOl5XBDtCl8oCnkXfqiH7z+NLxXmTBhEUnHk3ZeAwtKVokjjgPkXWCCM+usw4NNhcNr/FCilZgLFvTIGpp0JGOpWwrcnrCBYqTzlSHvodJVy3/BoD1fz8gK3i1mw0i5hJuyEzj5cB1VvxmZd2bKKKp+3g84D3nAMKjCPsfx/ZZHCGnwoh+U1aKR0ixEJTS6C4gkXiJuDiS0CTRpyDn6fS8cCx9XoiE+GqunOSAHEm9MQ0YnRqpNXW7rwFOus4Sow4Wpk8r4sUa7Ph1va5thZhVd0K0Cja5ohssqu6Fl7cg/TukC1Pl+QGClh/wGsbXAbXJ+iXlRP8Wrwbww0sR8EO+GF35QmNx1eF0a64p7wTxUVBWspOQg/MvVCbrQuRCQqr+O1w8U6/H/vcol3wrTDlfyHOoTXU0D6Lha3s55F1eOnSOQxMxWmnzapDKMcsFgoY3QehIL2pDXLC/y+Ex/nKjNWrlyHL43wzBpTr70m7maDBjCrGFCYAvTPOcBSLch+OV580K0YHbTFymPg+pyep3Sb+kiksFkydWYiAIyneBAXACmoMq/o2tb7douOo1Z0d4UaF2JuREDan5+AivkWKdCR4QmFf/46Dla/i/5HBMdNDk8vRUyoVXJ7PF70m0Co8XJojDuNQ9nUOg2PB1dLdfPqXNzqdt6g1y3MbM8fWJ+FbmBhO4idIOhee9v1qJpK+E7Ag+EdZM6r8H1NvPPxOyVe7y01O2daOVPoIH2vfgo0BFp40DkOj9gJZD+tYg40saEO3y+OBmzBS/bUBDSxqRZBc5qpJGhrIKvb0eD4r9NLXECRP1ZlRJx4jKE5lmHOaewsun8LP9egTwedCzR8N+NQqmN8R2d6WYx1yJNE9PhFpIQ0cQ869QTts5mXALzxFH7WBQAv3IBjxUvIquVItBuNs24xNTgJERjhTBIiMgKY/dJZk3QdZgFKd3plIMli75GSmQIenwjBOx8N13g7iST8L91cLt7OmDMcS5tjLbWEGh/Qw2LQPMHEa/gW/ikycjwe6Xyq4p3miREs4Y6DvzevKUlJSSkUxxYU/RqugZ1vMxUk18GcFnvl6gwTv+ZJuFHiVVw1iJj6alqMC27BTcYEV/yju1hwJ4ZPPnp+993KhAp9z3dU8HSWSo6ZanAPzWom2HELZtHKSpwE+sN1ukClbBxCNHqkDJVB3N8TCuTtXnubF+N8FttibBUs2sMf/BYMz8cV8pahvxJm0/pZWHoN4YN/jCzsGJYsrhvoBgFCDKa5Vn/sr3B0/MkUCaeeOf6gSjlo1/AiM6LCmmqm82NjFpRP9Pkt4GcNWAQsjAET4Ke5I80MgT2OZY+SMovk77n+6jl4gbp6bDRpfgl3b7ztAxo4TM3OkMP53jMoLRBn1yaq0OR8/2e1BoiGEa3Iyc7R21yCDBhflOOJvKhOzOQRsf/lfw==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [name = _t, cname = _t]),
+		    删除的副本 = Table.Distinct(源, {"cname"}),
+		    删除的副本1 = Table.Distinct(删除的副本, {"cname"}),
+		    转置表 = Table.Transpose(删除的副本1),
+		    自定义1 = Table.ToColumns(转置表)
+		in
+		    自定义1
+	lineageTag: 826be148-17f6-4bea-8ba6-2c1a06fb9ed0
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = List
+
+expression X5_DadabaseURL = "172.16.8.76/oracledb" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 3b1a8fd9-c8dc-49c8-9ec8-85a03f300e84
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Text
+
+expression 分包合同 =
+		let
+		    源 = Oracle.Database(X5_DadabaseURL, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_HETONGPINGSHEN1 = GSPM{[Name="GSPM_HETONGPINGSHEN"]}[Data],
+		    筛选的行 = Table.SelectRows(GSPM_HETONGPINGSHEN1, each ([FPINGSHENZHUANGTAI] = "已完成")),
+		    重命名的列 = Table.RenameColumns(筛选的行,fx_RN("GSPM","GSPM_HETONGPINGSHEN")),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"评审单号", "合同编号", "合同协议号", "合同名称", "项目编码", "项目名称", "施工专业", "分包名称", "签订时间", "含税合同总价"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"分包名称", "客商名称"}}),
+		    合并的查询 = Table.NestedJoin(重命名的列1, {"项目编码"}, D_项目信息, {"项目编码"}, "D_项目信息", JoinKind.LeftOuter),
+		    #"展开的“D_项目信息”" = Table.ExpandTableColumn(合并的查询, "D_项目信息", {"考核完工日期"}, {"考核完工日期"}),
+		    #"已添加自定义（延迟总天数）" = Table.AddColumn(#"展开的“D_项目信息”", "延迟总天数", each Number.RoundUp(Duration.TotalDays([签订时间]-[考核完工日期]),0)-90,Number.Type),
+		    #"筛选的行（延迟签订）" = Table.SelectRows(#"已添加自定义（延迟总天数）", each [延迟总天数] > 0),
+		    #"已添加自定义（业务种类）" = Table.AddColumn(#"筛选的行（延迟签订）", "业务种类", each "分包",type text),
+		    #"已添加自定义（原始合同OR补充协议）" = Table.AddColumn(#"已添加自定义（业务种类）", "原始/补充", each "原始",type text)
+		in
+		    #"已添加自定义（原始合同OR补充协议）"
+	lineageTag: 96f9afc2-a3ad-4153-b691-6311abd581e4
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 分包合同补充协议 =
+		let
+		    源 = Oracle.Database(X5_DadabaseURL, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_FENBAOBUCHONGPINGSHEN1 = GSPM{[Name="GSPM_FENBAOBUCHONGPINGSHEN"]}[Data],
+		    筛选的行 = Table.SelectRows(GSPM_FENBAOBUCHONGPINGSHEN1, each ([FPINGSHENZHUANGTAI] = "已完成")),
+		    重命名的列 = Table.RenameColumns(筛选的行,fx_RN("GSPM","GSPM_HETONGPINGSHEN"),MissingField.Ignore),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"评审单号", "FBUCHONGXIEYIHAO", "FBUCHONGXIEYIMINGCHENG", "项目编码", "项目名称", "合同编号", "分包名称", "含税合同总价", "FQIANDINGRIQI", "施工专业"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"FQIANDINGRIQI", "签订时间"}, {"FBUCHONGXIEYIMINGCHENG", "合同名称"}, {"FBUCHONGXIEYIHAO", "合同协议号"}, {"分包名称", "客商名称"}}),
+		    合并的查询 = Table.NestedJoin(重命名的列1, {"项目编码"}, D_项目信息, {"项目编码"}, "D_项目信息", JoinKind.LeftOuter),
+		    #"展开的“D_项目信息”" = Table.ExpandTableColumn(合并的查询, "D_项目信息", {"考核完工日期"}, {"考核完工日期"}),
+		    已添加自定义 = Table.AddColumn(#"展开的“D_项目信息”", "延迟总天数", each Number.RoundUp(Duration.TotalDays([签订时间]-[考核完工日期]),0)-90,Number.Type),
+		    筛选的行1 = Table.SelectRows(已添加自定义, each [延迟总天数] > 0),
+		    #"已添加自定义（业务种类）" = Table.AddColumn(筛选的行1, "业务种类", each "分包",type text),
+		    #"已添加自定义（原始/补充）" = Table.AddColumn(#"已添加自定义（业务种类）", "原始/补充", each "补充",type text)
+		in
+		    #"已添加自定义（原始/补充）"
+	lineageTag: 0b811f7b-9e90-4e02-9ffb-b8cbe14ebcb2
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 物资合同补充协议 =
+		let
+		    源 = Oracle.Database(X5_DadabaseURL, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_WUZIHETONGBUCHONG1 = GSPM{[Name="GSPM_WUZIHETONGBUCHONG"]}[Data],
+		    筛选的行 = Table.SelectRows(GSPM_WUZIHETONGBUCHONG1, each ([FPINGSHENZHUANGTAI] = "已完成")),
+		    重命名的列 = Table.RenameColumns(筛选的行,fx_RN("GSPM","GSPM_WUZIHETONGBUCHONG")),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"评审单号", "项目编码", "项目名称", "合同编号", "补充协议号", "补充协议名称", "补充评审日期", "含税合同总价", "施工专业", "供方名称", "业务大类"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"补充协议号", "合同协议号"}, {"补充协议名称", "合同名称"}, {"补充评审日期", "签订时间"}, {"供方名称", "客商名称"}}),
+		    合并的查询 = Table.NestedJoin(重命名的列1, {"项目编码"}, D_项目信息, {"项目编码"}, "D_项目信息", JoinKind.LeftOuter),
+		    #"展开的“D_项目信息”" = Table.ExpandTableColumn(合并的查询, "D_项目信息", {"考核完工日期"}, {"考核完工日期"}),
+		    已添加自定义 = Table.AddColumn(#"展开的“D_项目信息”", "延迟总天数", each Number.RoundUp(Duration.TotalDays([签订时间]-[考核完工日期]),0)-90,Number.Type),
+		    筛选的行1 = Table.SelectRows(已添加自定义, each [延迟总天数] > 延迟标准天数),
+		    已添加条件列 = Table.AddColumn(筛选的行1, "业务种类", each if [业务大类] = "物资" then "物资" else "租赁",type text),
+		    已添加自定义1 = Table.AddColumn(已添加条件列, "原始/补充", each "补充",type text),
+		    删除的列 = Table.RemoveColumns(已添加自定义1,{"业务大类"})
+		in
+		    删除的列
+	lineageTag: 16d63b46-e46e-4f8d-9c3c-0280c8991a0f
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 物资合同 =
+		let
+		    源 = Oracle.Database(X5_DadabaseURL, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_WUZIHETONGPS1 = GSPM{[Name="GSPM_WUZIHETONGPS"]}[Data],
+		    筛选的行 = Table.SelectRows(GSPM_WUZIHETONGPS1, each ([FPINGSHENZHUANGTAI] = "已完成")),
+		    重命名的列 = Table.RenameColumns(筛选的行,fx_RN("GSPM","GSPM_WUZIHETONGPS")),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"项目编码", "项目名称", "评审单号", "合同协议号", "合同编号", "合同名称", "施工专业", "供方名称", "签订时间", "含税合同价", "业务大类"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"供方名称", "客商名称"}}),
+		    合并的查询 = Table.NestedJoin(重命名的列1, {"项目编码"}, D_项目信息, {"项目编码"}, "D_项目信息", JoinKind.LeftOuter),
+		    #"展开的“D_项目信息”" = Table.ExpandTableColumn(合并的查询, "D_项目信息", {"考核完工日期"}, {"考核完工日期"}),
+		    添加的列 = Table.AddColumn(#"展开的“D_项目信息”", "延迟总天数", each Number.RoundUp(Duration.TotalDays([签订时间]-[考核完工日期]),0)-90,Number.Type),
+		    筛选的行1 = Table.SelectRows(添加的列, each [延迟总天数] > 延迟标准天数),
+		    已添加条件列 = Table.AddColumn(筛选的行1, "业务种类", each if [业务大类] = "物资" then "物资" else "租赁",type text),
+		    已添加自定义 = Table.AddColumn(已添加条件列, "原始/补充", each "原始",type text),
+		    删除的列 = Table.RemoveColumns(已添加自定义,{"业务大类"}),
+		    重命名的列2 = Table.RenameColumns(删除的列,{{"含税合同价", "含税合同总价"}})
+		in
+		    重命名的列2
+	lineageTag: b7b0846c-d363-48e3-b03c-4c9a343c6d6a
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 延迟标准天数 = 90 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: 4dffbc76-2790-43a7-b540-a7307a4c278a
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Number
+

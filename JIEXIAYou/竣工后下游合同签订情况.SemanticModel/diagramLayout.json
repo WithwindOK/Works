@@ -1,0 +1,75 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "f6c22cbb-5fed-4e72-b690-7167dc3013dc",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 408,
+            "y": 41
+          },
+          "nodeIndex": "F_下游合同",
+          "nodeLineageTag": "adb0f73a-613b-4ea1-a66d-82e7859d7008",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 692,
+            "y": 8.5
+          },
+          "nodeIndex": "货币单位",
+          "nodeLineageTag": "95444010-29fd-4fec-bdd5-c437ede099b0",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 273.5
+          },
+          "nodeIndex": "延迟段",
+          "nodeLineageTag": "160f3eb6-60fc-4f1e-81c8-45841ca0c9c9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}

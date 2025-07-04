@@ -1,0 +1,5029 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "度量值.entity_25年目标结算个数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【25年目标结算个数】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【25年目标结算个数】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "25年目标结算个数": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "货币单位": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位.货币单位": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "货币单位"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "货币单位": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "货币单位 name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "货币单位.系数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "系数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "系数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位.货币系数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "【货币系数】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【货币系数】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "度量值": {
+			            "State": "Generated",
+			            "Weight": 0.87
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.列_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "列 1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "列 1": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.结算计划": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【结算计划】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【结算计划】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.肯定结算": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【肯定结算】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【肯定结算】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.争取结算": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【争取结算】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【争取结算】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.本年已结": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【本年已结】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【本年已结】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.目前存贷差": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【目前存贷差】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【目前存贷差】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.结算之后可以收款_肯定": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【结算之后可以收款.肯定】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【结算之后可以收款.肯定】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.其中抵房_肯定": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【其中抵房.肯定】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【其中抵房.肯定】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.结算之后可以收款_争取": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【结算之后可以收款.争取】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【结算之后可以收款.争取】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.其中抵房_争取": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【其中抵房.争取】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【其中抵房.争取】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【结算额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【结算额】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "计划结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.自施结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【自施结算额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【自施结算额】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "自施结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.成本降低额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【成本降低额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【成本降低额】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "成本降低额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.结算收益额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【结算收益额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【结算收益额】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "结算收益额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.结算收益率": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【结算收益率】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【结算收益率】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "结算收益率": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.项目数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【项目数】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【项目数】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "项目数": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.责任体页面项目数占比": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【责任体页面项目数占比】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【责任体页面项目数占比】": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.entity_25年目标结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【25年目标结算额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【25年目标结算额】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "25年目标结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.剩余回款": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【剩余回款】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【剩余回款】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "剩余回款": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.项目经理": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【项目经理】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【项目经理】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "项目经理": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.t_25年度计划": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "T.25年度计划"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "t.25年度计划": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.t_计划结算年月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "T.计划结算年月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "t.计划结算年月": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "计划结算月": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "度量值.t_结算分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "T.结算分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "t.结算分类": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "结算分类": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.t_所属板块": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "T.所属板块"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "t.所属板块": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "所属板块": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.已结结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【已结结算额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【已结结算额】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "已结结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.t_自施结算状态": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "T.自施结算状态"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "t.自施结算状态": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "自施结算状态": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.t_结算进展": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "T.结算进展"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "t.结算进展": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "结算进展": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.度量值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "度量值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "度量值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "账户": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "账户"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "账户": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "账户.身份证": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "账户",
+			          "ConceptualProperty": "身份证"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "身份证": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "账户.账号": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "账户",
+			          "ConceptualProperty": "账号"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "账号": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "账户.姓名": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "账户",
+			          "ConceptualProperty": "姓名"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "姓名": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "账户.项目编码": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "账户",
+			          "ConceptualProperty": "项目编码"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目编码": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "账户.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "账户",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "CG_权限计算组": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CG_权限计算组"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CG 权限计算组": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "CG_权限计算组": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "CG_权限计算组.行级权限": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CG_权限计算组",
+			          "ConceptualProperty": "行级权限"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "行级权限": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "CG_权限计算组.ordinal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "CG_权限计算组",
+			          "ConceptualProperty": "Ordinal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "ordinal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "F 周报": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "F_周报": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.报表期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "报表期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "报表期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "F_周报.业主结算年度": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "业主结算年度"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主结算年度": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.业主自施结算状态": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "业主自施结算状态"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主自施结算状态": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.业主指定结算状态": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "业主指定结算状态"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业主指定结算状态": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.项目编码": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "项目编码"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目编码": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.entity_25年年度计划": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "25年年度计划"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25年年度计划": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.entity_25年肯定能结": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "25年肯定能结"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25年肯定能结": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.entity_25年争取能结": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "25年争取能结"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25年争取能结": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.结算分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "结算分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "结算分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.产值所属二级机构": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "产值所属二级机构"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "产值所属二级机构": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.所属板块": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "所属板块"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "所属板块": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.项目总监": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "项目总监"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目总监": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.项目经理": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "项目经理"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目经理": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.自施结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "自施结算额"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "自施结算额": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "结算额"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "结算额": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.结算成本": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "结算成本"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "结算成本": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.成本降低额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "成本降低额"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "成本降低额": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.总收益额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "总收益额"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "总收益额": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.剩余回款": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "剩余回款"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "剩余回款": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.剩余回款按合同约定结算完后收款比例计算": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "剩余回款（按合同约定结算完后收款比例计算）"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "剩余回款（按合同约定结算完后收款比例计算）": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "剩余回款": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.抵房物": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "抵房、物"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "抵房、物": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.存贷差": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "存贷差"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "存贷差": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.报表周": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "报表周"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "报表周": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.已结项目数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【已结项目数】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【已结项目数】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "已结项目数": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.计划结算月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【计划结算月】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【计划结算月】": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "F_周报.本周结算进展": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "本周结算进展"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "本周结算进展": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "KEY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "major": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "keynote": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "essential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "F_年结算计划": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_年结算计划"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "F 年结算计划": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "F_年结算计划": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "F_年结算计划.报表期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_年结算计划",
+			          "ConceptualProperty": "报表期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "报表期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "F_年结算计划.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_年结算计划",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_年结算计划.entity_25年年度计划": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_年结算计划",
+			          "ConceptualProperty": "25年年度计划"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25年年度计划": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_年结算计划.key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_年结算计划",
+			          "ConceptualProperty": "KEY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "main": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "basic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "fundamental": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "central": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "major": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "keynote": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "essential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "solution": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "basis": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.索引": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "索引"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "索引": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.最新计划结算年月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "最新计划结算年月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "最新计划结算年月": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "F_周报.计划有变化": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "计划有变化"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "计划有变化": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_年结算计划.含税预计结算额": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_年结算计划",
+			          "ConceptualProperty": "含税预计结算额"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "含税预计结算额": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "d_rili": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_RILI"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "d rili": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "D_RILI": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "d_rili.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_RILI",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "度量值.f_空值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "F.空值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "f.空值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "度量值.t_计划结算年": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "T.计划结算年"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "t.计划结算年": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.本周预计结算时间": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "本周预计结算时间"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "本周预计结算时间": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "F_周报.entity_25_5预计结算时间": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "25_5预计结算时间"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "25 5预计结算时间": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "25_5预计结算时间": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "度量值.已结结算额结算发展变化专用": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "度量值",
+			          "ConceptualProperty": "【已结结算额】(结算发展变化专用)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【已结结算额】(结算发展变化专用)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "【已结结算额】": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "已结结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.entity_5_27计划结算时间": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "5.27计划结算时间"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "5.27计划结算时间": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "F_周报.entity_5_27计划年": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "5.27计划年"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "5.27计划年": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_周报.entity_5_27计划月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_周报",
+			          "ConceptualProperty": "5.27计划月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "5.27计划月": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "F_年结算计划_has_F_周报": {
+			      "Binding": {
+			        "ConceptualEntity": "F_年结算计划"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_年结算计划": {
+			          "Target": {
+			            "Entity": "F_年结算计划"
+			          }
+			        },
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_年结算计划"
+			            },
+			            "Object": {
+			              "Role": "F_周报"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_年结算计划_have_F_周报"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_年结算计划"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_F_年结算计划"
+			        }
+			      ]
+			    },
+			    "F_周报_has_账户": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "账户": {
+			          "Target": {
+			            "Entity": "账户"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "账户"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_账户"
+			        }
+			      ]
+			    },
+			    "F_周报_has_entity_5_27计划月": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.entity_5_27计划月": {
+			          "Target": {
+			            "Entity": "F_周报.entity_5_27计划月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.entity_5_27计划月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_5_27计划月"
+			        }
+			      ]
+			    },
+			    "F_周报_has_entity_5_27计划年": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.entity_5_27计划年": {
+			          "Target": {
+			            "Entity": "F_周报.entity_5_27计划年"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.entity_5_27计划年"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_5_27计划年"
+			        }
+			      ]
+			    },
+			    "F_周报_has_entity_5_27计划结算时间": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.entity_5_27计划结算时间": {
+			          "Target": {
+			            "Entity": "F_周报.entity_5_27计划结算时间"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.entity_5_27计划结算时间"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_5_27计划结算时间"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_已结结算额结算发展变化专用": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.已结结算额结算发展变化专用": {
+			          "Target": {
+			            "Entity": "度量值.已结结算额结算发展变化专用"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.已结结算额结算发展变化专用"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_已结结算额结算发展变化专用"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_已结结算额结算发展变化专用": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.已结结算额结算发展变化专用": {
+			          "Target": {
+			            "Entity": "度量值.已结结算额结算发展变化专用"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.已结结算额结算发展变化专用"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_已结结算额结算发展变化专用"
+			        }
+			      ]
+			    },
+			    "F_周报_has_entity_25_5预计结算时间": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.entity_25_5预计结算时间": {
+			          "Target": {
+			            "Entity": "F_周报.entity_25_5预计结算时间"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.entity_25_5预计结算时间"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_25_5预计结算时间"
+			        }
+			      ]
+			    },
+			    "F_周报_has_本周预计结算时间": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.本周预计结算时间": {
+			          "Target": {
+			            "Entity": "F_周报.本周预计结算时间"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.本周预计结算时间"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_本周预计结算时间"
+			        }
+			      ]
+			    },
+			    "度量值_has_t_计划结算年": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.t_计划结算年": {
+			          "Target": {
+			            "Entity": "度量值.t_计划结算年"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.t_计划结算年"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_t_计划结算年"
+			        }
+			      ]
+			    },
+			    "度量值_has_f_空值": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.f_空值": {
+			          "Target": {
+			            "Entity": "度量值.f_空值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.f_空值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_f_空值"
+			        }
+			      ]
+			    },
+			    "d_rili_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "D_RILI"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_rili": {
+			          "Target": {
+			            "Entity": "d_rili"
+			          }
+			        },
+			        "d_rili.date": {
+			          "Target": {
+			            "Entity": "d_rili.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_rili"
+			            },
+			            "Object": {
+			              "Role": "d_rili.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_rilis_have_dates"
+			        }
+			      ]
+			    },
+			    "F_年结算计划_has_含税预计结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_年结算计划"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_年结算计划": {
+			          "Target": {
+			            "Entity": "F_年结算计划"
+			          }
+			        },
+			        "F_年结算计划.含税预计结算额": {
+			          "Target": {
+			            "Entity": "F_年结算计划.含税预计结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_年结算计划"
+			            },
+			            "Object": {
+			              "Role": "F_年结算计划.含税预计结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_年结算计划_have_含税预计结算额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_计划有变化": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.计划有变化": {
+			          "Target": {
+			            "Entity": "F_周报.计划有变化"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.计划有变化"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_计划有变化"
+			        }
+			      ]
+			    },
+			    "度量值_has_最新计划结算年月": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.最新计划结算年月": {
+			          "Target": {
+			            "Entity": "度量值.最新计划结算年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.最新计划结算年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_最新计划结算年月"
+			        }
+			      ]
+			    },
+			    "F_周报_has_索引": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.索引": {
+			          "Target": {
+			            "Entity": "F_周报.索引"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.索引"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_索引"
+			        }
+			      ]
+			    },
+			    "F_年结算计划_has_entity_25年年度计划": {
+			      "Binding": {
+			        "ConceptualEntity": "F_年结算计划"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_年结算计划": {
+			          "Target": {
+			            "Entity": "F_年结算计划"
+			          }
+			        },
+			        "F_年结算计划.entity_25年年度计划": {
+			          "Target": {
+			            "Entity": "F_年结算计划.entity_25年年度计划"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_年结算计划"
+			            },
+			            "Object": {
+			              "Role": "F_年结算计划.entity_25年年度计划"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_年结算计划_have_25年年度计划"
+			        }
+			      ]
+			    },
+			    "F_年结算计划_has_项目名称": {
+			      "Binding": {
+			        "ConceptualEntity": "F_年结算计划"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_年结算计划": {
+			          "Target": {
+			            "Entity": "F_年结算计划"
+			          }
+			        },
+			        "F_年结算计划.项目名称": {
+			          "Target": {
+			            "Entity": "F_年结算计划.项目名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_年结算计划"
+			            },
+			            "Object": {
+			              "Role": "F_年结算计划.项目名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_年结算计划_have_项目名称"
+			        }
+			      ]
+			    },
+			    "F_年结算计划_has_报表期": {
+			      "Binding": {
+			        "ConceptualEntity": "F_年结算计划"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_年结算计划": {
+			          "Target": {
+			            "Entity": "F_年结算计划"
+			          }
+			        },
+			        "F_年结算计划.报表期": {
+			          "Target": {
+			            "Entity": "F_年结算计划.报表期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_年结算计划"
+			            },
+			            "Object": {
+			              "Role": "F_年结算计划.报表期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_年结算计划_have_报表期"
+			        }
+			      ]
+			    },
+			    "F_周报_has_key": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.key": {
+			          "Target": {
+			            "Entity": "F_周报.key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_keys"
+			        }
+			      ]
+			    },
+			    "F_周报_has_本周结算进展": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.本周结算进展": {
+			          "Target": {
+			            "Entity": "F_周报.本周结算进展"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.本周结算进展"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_本周结算进展"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_计划结算月": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.计划结算月": {
+			          "Target": {
+			            "Entity": "度量值.计划结算月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.计划结算月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_计划结算月"
+			        }
+			      ]
+			    },
+			    "度量值_has_已结项目数": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.已结项目数": {
+			          "Target": {
+			            "Entity": "度量值.已结项目数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.已结项目数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_已结项目数"
+			        }
+			      ]
+			    },
+			    "F_周报_has_报表周": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.报表周": {
+			          "Target": {
+			            "Entity": "F_周报.报表周"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.报表周"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_报表周"
+			        }
+			      ]
+			    },
+			    "F_周报_has_存贷差": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.存贷差": {
+			          "Target": {
+			            "Entity": "F_周报.存贷差"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.存贷差"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_存贷差"
+			        }
+			      ]
+			    },
+			    "F_周报_has_抵房物": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.抵房物": {
+			          "Target": {
+			            "Entity": "F_周报.抵房物"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.抵房物"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_抵房物"
+			        }
+			      ]
+			    },
+			    "F_周报_has_剩余回款按合同约定结算完后收款比例计算": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.剩余回款按合同约定结算完后收款比例计算": {
+			          "Target": {
+			            "Entity": "F_周报.剩余回款按合同约定结算完后收款比例计算"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.剩余回款按合同约定结算完后收款比例计算"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_剩余回款按合同约定结算完后收款比例计算"
+			        }
+			      ]
+			    },
+			    "F_周报_has_剩余回款": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.剩余回款": {
+			          "Target": {
+			            "Entity": "F_周报.剩余回款"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.剩余回款"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_剩余回款"
+			        }
+			      ]
+			    },
+			    "F_周报_has_总收益额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.总收益额": {
+			          "Target": {
+			            "Entity": "F_周报.总收益额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.总收益额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_总收益额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_成本降低额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.成本降低额": {
+			          "Target": {
+			            "Entity": "F_周报.成本降低额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.成本降低额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_成本降低额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_结算成本": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.结算成本": {
+			          "Target": {
+			            "Entity": "F_周报.结算成本"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.结算成本"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_结算成本"
+			        }
+			      ]
+			    },
+			    "F_周报_has_结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.结算额": {
+			          "Target": {
+			            "Entity": "F_周报.结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_结算额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_自施结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.自施结算额": {
+			          "Target": {
+			            "Entity": "F_周报.自施结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.自施结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_自施结算额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_项目经理": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.项目经理": {
+			          "Target": {
+			            "Entity": "F_周报.项目经理"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.项目经理"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_项目经理"
+			        }
+			      ]
+			    },
+			    "F_周报_has_项目总监": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.项目总监": {
+			          "Target": {
+			            "Entity": "F_周报.项目总监"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.项目总监"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_项目总监"
+			        }
+			      ]
+			    },
+			    "F_周报_has_所属板块": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.所属板块": {
+			          "Target": {
+			            "Entity": "F_周报.所属板块"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.所属板块"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_所属板块"
+			        }
+			      ]
+			    },
+			    "F_周报_has_产值所属二级机构": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.产值所属二级机构": {
+			          "Target": {
+			            "Entity": "F_周报.产值所属二级机构"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.产值所属二级机构"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_产值所属二级机构"
+			        }
+			      ]
+			    },
+			    "F_周报_has_结算分类": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.结算分类": {
+			          "Target": {
+			            "Entity": "F_周报.结算分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.结算分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_结算分类"
+			        }
+			      ]
+			    },
+			    "F_周报_has_entity_25年争取能结": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.entity_25年争取能结": {
+			          "Target": {
+			            "Entity": "F_周报.entity_25年争取能结"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.entity_25年争取能结"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_25年争取能结"
+			        }
+			      ]
+			    },
+			    "F_周报_has_entity_25年肯定能结": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.entity_25年肯定能结": {
+			          "Target": {
+			            "Entity": "F_周报.entity_25年肯定能结"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.entity_25年肯定能结"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_25年肯定能结"
+			        }
+			      ]
+			    },
+			    "F_周报_has_entity_25年年度计划": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.entity_25年年度计划": {
+			          "Target": {
+			            "Entity": "F_周报.entity_25年年度计划"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.entity_25年年度计划"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_25年年度计划"
+			        }
+			      ]
+			    },
+			    "F_周报_has_项目编码": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.项目编码": {
+			          "Target": {
+			            "Entity": "F_周报.项目编码"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.项目编码"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_项目编码"
+			        }
+			      ]
+			    },
+			    "F_周报_has_业主指定结算状态": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.业主指定结算状态": {
+			          "Target": {
+			            "Entity": "F_周报.业主指定结算状态"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.业主指定结算状态"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_业主指定结算状态"
+			        }
+			      ]
+			    },
+			    "F_周报_has_业主自施结算状态": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.业主自施结算状态": {
+			          "Target": {
+			            "Entity": "F_周报.业主自施结算状态"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.业主自施结算状态"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_业主自施结算状态"
+			        }
+			      ]
+			    },
+			    "F_周报_has_业主结算年度": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.业主结算年度": {
+			          "Target": {
+			            "Entity": "F_周报.业主结算年度"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.业主结算年度"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_业主结算年度"
+			        }
+			      ]
+			    },
+			    "F_周报_has_报表期": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "F_周报.报表期": {
+			          "Target": {
+			            "Entity": "F_周报.报表期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "F_周报.报表期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_报表期"
+			        }
+			      ]
+			    },
+			    "CG_权限计算组_has_行级权限": {
+			      "Binding": {
+			        "ConceptualEntity": "CG_权限计算组"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "CG_权限计算组": {
+			          "Target": {
+			            "Entity": "CG_权限计算组"
+			          }
+			        },
+			        "CG_权限计算组.行级权限": {
+			          "Target": {
+			            "Entity": "CG_权限计算组.行级权限"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "CG_权限计算组"
+			            },
+			            "Object": {
+			              "Role": "CG_权限计算组.行级权限"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "CG_权限计算组_have_行级权限"
+			        }
+			      ]
+			    },
+			    "账户_has_项目名称": {
+			      "Binding": {
+			        "ConceptualEntity": "账户"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "账户": {
+			          "Target": {
+			            "Entity": "账户"
+			          }
+			        },
+			        "账户.项目名称": {
+			          "Target": {
+			            "Entity": "账户.项目名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "账户"
+			            },
+			            "Object": {
+			              "Role": "账户.项目名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "账户_have_项目名称"
+			        }
+			      ]
+			    },
+			    "账户_has_项目编码": {
+			      "Binding": {
+			        "ConceptualEntity": "账户"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "账户": {
+			          "Target": {
+			            "Entity": "账户"
+			          }
+			        },
+			        "账户.项目编码": {
+			          "Target": {
+			            "Entity": "账户.项目编码"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "账户"
+			            },
+			            "Object": {
+			              "Role": "账户.项目编码"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "账户_have_项目编码"
+			        }
+			      ]
+			    },
+			    "账户_has_姓名": {
+			      "Binding": {
+			        "ConceptualEntity": "账户"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "账户": {
+			          "Target": {
+			            "Entity": "账户"
+			          }
+			        },
+			        "账户.姓名": {
+			          "Target": {
+			            "Entity": "账户.姓名"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "账户"
+			            },
+			            "Object": {
+			              "Role": "账户.姓名"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "账户_have_姓名"
+			        }
+			      ]
+			    },
+			    "账户_has_账号": {
+			      "Binding": {
+			        "ConceptualEntity": "账户"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "账户": {
+			          "Target": {
+			            "Entity": "账户"
+			          }
+			        },
+			        "账户.账号": {
+			          "Target": {
+			            "Entity": "账户.账号"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "账户"
+			            },
+			            "Object": {
+			              "Role": "账户.账号"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "账户_have_账号"
+			        }
+			      ]
+			    },
+			    "账户_has_身份证": {
+			      "Binding": {
+			        "ConceptualEntity": "账户"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "账户": {
+			          "Target": {
+			            "Entity": "账户"
+			          }
+			        },
+			        "账户.身份证": {
+			          "Target": {
+			            "Entity": "账户.身份证"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "账户"
+			            },
+			            "Object": {
+			              "Role": "账户.身份证"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "账户_have_身份证"
+			        }
+			      ]
+			    },
+			    "度量值_has_度量值": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.度量值": {
+			          "Target": {
+			            "Entity": "度量值.度量值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.度量值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_度量值"
+			        }
+			      ]
+			    },
+			    "度量值_has_t_结算进展": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.t_结算进展": {
+			          "Target": {
+			            "Entity": "度量值.t_结算进展"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.t_结算进展"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_t_结算进展"
+			        }
+			      ]
+			    },
+			    "度量值_has_t_自施结算状态": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.t_自施结算状态": {
+			          "Target": {
+			            "Entity": "度量值.t_自施结算状态"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.t_自施结算状态"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_t_自施结算状态"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_已结结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.已结结算额": {
+			          "Target": {
+			            "Entity": "度量值.已结结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.已结结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_已结结算额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_已结结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.已结结算额": {
+			          "Target": {
+			            "Entity": "度量值.已结结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.已结结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_已结结算额"
+			        }
+			      ]
+			    },
+			    "度量值_has_t_所属板块": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.t_所属板块": {
+			          "Target": {
+			            "Entity": "度量值.t_所属板块"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.t_所属板块"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_t_所属板块"
+			        }
+			      ]
+			    },
+			    "度量值_has_t_结算分类": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.t_结算分类": {
+			          "Target": {
+			            "Entity": "度量值.t_结算分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.t_结算分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_t_结算分类"
+			        }
+			      ]
+			    },
+			    "度量值_has_t_计划结算年月": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.t_计划结算年月": {
+			          "Target": {
+			            "Entity": "度量值.t_计划结算年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.t_计划结算年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_t_计划结算年月"
+			        }
+			      ]
+			    },
+			    "度量值_has_t_25年度计划": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.t_25年度计划": {
+			          "Target": {
+			            "Entity": "度量值.t_25年度计划"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.t_25年度计划"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_t_25年度计划"
+			        }
+			      ]
+			    },
+			    "度量值_has_项目经理": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.项目经理": {
+			          "Target": {
+			            "Entity": "度量值.项目经理"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.项目经理"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_项目经理"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_剩余回款": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.剩余回款": {
+			          "Target": {
+			            "Entity": "度量值.剩余回款"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.剩余回款"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_剩余回款"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_剩余回款": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.剩余回款": {
+			          "Target": {
+			            "Entity": "度量值.剩余回款"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.剩余回款"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_剩余回款1"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_entity_25年目标结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.entity_25年目标结算额": {
+			          "Target": {
+			            "Entity": "度量值.entity_25年目标结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.entity_25年目标结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_25年目标结算额"
+			        }
+			      ]
+			    },
+			    "F_年结算计划_has_度量值_entity_25年目标结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_年结算计划"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_年结算计划": {
+			          "Target": {
+			            "Entity": "F_年结算计划"
+			          }
+			        },
+			        "度量值.entity_25年目标结算额": {
+			          "Target": {
+			            "Entity": "度量值.entity_25年目标结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_年结算计划"
+			            },
+			            "Object": {
+			              "Role": "度量值.entity_25年目标结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_年结算计划_have_25年目标结算额"
+			        }
+			      ]
+			    },
+			    "度量值_has_责任体页面项目数占比": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.责任体页面项目数占比": {
+			          "Target": {
+			            "Entity": "度量值.责任体页面项目数占比"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.责任体页面项目数占比"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_责任体页面项目数占比"
+			        }
+			      ]
+			    },
+			    "度量值_has_项目数": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.项目数": {
+			          "Target": {
+			            "Entity": "度量值.项目数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.项目数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_项目数"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_结算收益率": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.结算收益率": {
+			          "Target": {
+			            "Entity": "度量值.结算收益率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算收益率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_结算收益率"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_结算收益率": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.结算收益率": {
+			          "Target": {
+			            "Entity": "度量值.结算收益率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算收益率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_结算收益率"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_结算收益额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.结算收益额": {
+			          "Target": {
+			            "Entity": "度量值.结算收益额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算收益额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_结算收益额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_结算收益额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.结算收益额": {
+			          "Target": {
+			            "Entity": "度量值.结算收益额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算收益额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_结算收益额"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_成本降低额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.成本降低额": {
+			          "Target": {
+			            "Entity": "度量值.成本降低额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.成本降低额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_成本降低额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_成本降低额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.成本降低额": {
+			          "Target": {
+			            "Entity": "度量值.成本降低额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.成本降低额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_成本降低额1"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_自施结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.自施结算额": {
+			          "Target": {
+			            "Entity": "度量值.自施结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.自施结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_自施结算额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_自施结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.自施结算额": {
+			          "Target": {
+			            "Entity": "度量值.自施结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.自施结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_自施结算额1"
+			        }
+			      ]
+			    },
+			    "货币单位_has_度量值_结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "度量值.结算额": {
+			          "Target": {
+			            "Entity": "度量值.结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_结算额"
+			        }
+			      ]
+			    },
+			    "F_周报_has_度量值_结算额": {
+			      "Binding": {
+			        "ConceptualEntity": "F_周报"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_周报": {
+			          "Target": {
+			            "Entity": "F_周报"
+			          }
+			        },
+			        "度量值.结算额": {
+			          "Target": {
+			            "Entity": "度量值.结算额"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_周报"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算额"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_周报_have_结算额1"
+			        }
+			      ]
+			    },
+			    "度量值_has_其中抵房_争取": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.其中抵房_争取": {
+			          "Target": {
+			            "Entity": "度量值.其中抵房_争取"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.其中抵房_争取"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_其中抵房_争取"
+			        }
+			      ]
+			    },
+			    "度量值_has_结算之后可以收款_争取": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.结算之后可以收款_争取": {
+			          "Target": {
+			            "Entity": "度量值.结算之后可以收款_争取"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算之后可以收款_争取"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_结算之后可以收款_争取"
+			        }
+			      ]
+			    },
+			    "度量值_has_其中抵房_肯定": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.其中抵房_肯定": {
+			          "Target": {
+			            "Entity": "度量值.其中抵房_肯定"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.其中抵房_肯定"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_其中抵房_肯定"
+			        }
+			      ]
+			    },
+			    "度量值_has_结算之后可以收款_肯定": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.结算之后可以收款_肯定": {
+			          "Target": {
+			            "Entity": "度量值.结算之后可以收款_肯定"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算之后可以收款_肯定"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_结算之后可以收款_肯定"
+			        }
+			      ]
+			    },
+			    "度量值_has_目前存贷差": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.目前存贷差": {
+			          "Target": {
+			            "Entity": "度量值.目前存贷差"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.目前存贷差"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_目前存贷差"
+			        }
+			      ]
+			    },
+			    "度量值_has_本年已结": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.本年已结": {
+			          "Target": {
+			            "Entity": "度量值.本年已结"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.本年已结"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_本年已结"
+			        }
+			      ]
+			    },
+			    "度量值_has_争取结算": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.争取结算": {
+			          "Target": {
+			            "Entity": "度量值.争取结算"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.争取结算"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_争取结算"
+			        }
+			      ]
+			    },
+			    "度量值_has_肯定结算": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.肯定结算": {
+			          "Target": {
+			            "Entity": "度量值.肯定结算"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.肯定结算"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_肯定结算"
+			        }
+			      ]
+			    },
+			    "度量值_has_结算计划": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.结算计划": {
+			          "Target": {
+			            "Entity": "度量值.结算计划"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.结算计划"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_结算计划"
+			        }
+			      ]
+			    },
+			    "货币单位_has_货币系数": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.货币系数": {
+			          "Target": {
+			            "Entity": "货币单位.货币系数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.货币系数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_货币系数"
+			        }
+			      ]
+			    },
+			    "货币单位_has_系数": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.系数": {
+			          "Target": {
+			            "Entity": "货币单位.系数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.系数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_系数"
+			        }
+			      ]
+			    },
+			    "货币单位_has_货币单位": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.货币单位": {
+			          "Target": {
+			            "Entity": "货币单位.货币单位"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.货币单位"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_货币单位"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Name": {
+			              "Role": "货币单位.货币单位"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_are_names_IDs_of_货币单位"
+			        }
+			      ]
+			    },
+			    "度量值_has_entity_25年目标结算个数": {
+			      "Binding": {
+			        "ConceptualEntity": "度量值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "度量值": {
+			          "Target": {
+			            "Entity": "度量值"
+			          }
+			        },
+			        "度量值.entity_25年目标结算个数": {
+			          "Target": {
+			            "Entity": "度量值.entity_25年目标结算个数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "度量值"
+			            },
+			            "Object": {
+			              "Role": "度量值.entity_25年目标结算个数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "度量值_have_25年目标结算个数"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

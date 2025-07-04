@@ -1,0 +1,155 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 359.09091186523438,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 141,
+            "y": 3.25
+          },
+          "nodeIndex": "货币单位",
+          "nodeLineageTag": "606430d9-6050-40e9-8923-2d7835017637",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 154.25
+          },
+          "nodeIndex": "度量值",
+          "nodeLineageTag": "3d336d28-c6a5-4488-bb5a-c6eb4410a7a6",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 990,
+            "y": 304.25
+          },
+          "nodeIndex": "账户",
+          "nodeLineageTag": "60b6ccf1-ea3e-4a28-8181-c94e05e4f29a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 359,
+            "y": 0
+          },
+          "nodeIndex": "CG_权限计算组",
+          "nodeLineageTag": "84993c1e-709f-467c-9678-03574f83abb7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1374,
+            "y": 16
+          },
+          "nodeIndex": "F_周报",
+          "nodeLineageTag": "d641777a-fde1-4ca2-858d-6552cbedd5be",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1617,
+            "y": 290.25
+          },
+          "nodeIndex": "F_年结算计划",
+          "nodeLineageTag": "eb9a8479-0aca-46c0-b542-afa28de56e8f",
+          "size": {
+            "height": 252,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1655.45458984375,
+            "y": 17.75
+          },
+          "nodeIndex": "D_RILI",
+          "nodeLineageTag": "f56d66ea-522a-45e8-a11f-c8b888ae7a0e",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [],
+      "name": "布局 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 374.09091186523438,
+            "y": 0
+          },
+          "nodeIndex": "账户",
+          "nodeLineageTag": "60b6ccf1-ea3e-4a28-8181-c94e05e4f29a",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "布局 2",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}

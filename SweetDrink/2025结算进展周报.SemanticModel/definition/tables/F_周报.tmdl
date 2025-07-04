@@ -1,0 +1,333 @@
+table F_周报
+	lineageTag: d641777a-fde1-4ca2-858d-6552cbedd5be
+
+	column 报表期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f2213f01-9bcd-42b0-8157-b41beac1fac6
+		summarizeBy: none
+		sourceColumn: 报表期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 业主结算年度
+		dataType: int64
+		formatString: 0
+		lineageTag: b9f73663-15b4-48cb-8b68-538518629342
+		summarizeBy: sum
+		sourceColumn: 业主结算年度
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主自施结算状态
+		dataType: string
+		lineageTag: 61b43223-0270-45e0-b779-a08fbd0acd78
+		summarizeBy: none
+		sourceColumn: 业主自施结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主指定结算状态
+		dataType: string
+		lineageTag: fcf2c31e-2a5f-4b66-9290-009a1aaaa2b8
+		summarizeBy: none
+		sourceColumn: 业主指定结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 2cb5f4fd-8de1-43d6-b036-3746afc5aa1b
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: e822d5e9-c813-4e3b-b5d3-4ef354d97987
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 25年年度计划
+		dataType: string
+		lineageTag: 45ad1f3f-5e4f-4909-a539-406c1936f333
+		summarizeBy: none
+		sourceColumn: 25年年度计划
+
+		annotation SummarizationSetBy = Automatic
+
+	column 25年肯定能结
+		dataType: string
+		lineageTag: 6d5e3536-efd5-41d1-9d50-1c6ec6241d8e
+		summarizeBy: none
+		sourceColumn: 25年肯定能结
+
+		annotation SummarizationSetBy = Automatic
+
+	column 25年争取能结
+		dataType: string
+		lineageTag: 8a23c6d6-6072-474c-b95d-91e11818bba5
+		summarizeBy: none
+		sourceColumn: 25年争取能结
+
+		annotation SummarizationSetBy = Automatic
+
+	column 结算分类
+		dataType: string
+		lineageTag: 6f314573-9a76-413b-bf8b-4663bf932272
+		summarizeBy: none
+		sourceColumn: 结算分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 产值所属二级机构
+		dataType: string
+		lineageTag: 35c32ead-cfe1-4dc0-96b3-ce757075df4d
+		summarizeBy: none
+		sourceColumn: 产值所属二级机构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 所属板块
+		dataType: string
+		lineageTag: 15a7460f-ccb0-4431-847a-39f81f73afc3
+		summarizeBy: none
+		sourceColumn: 所属板块
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目总监
+		dataType: string
+		lineageTag: 4bfb4995-3ca4-4e0b-ae77-efe3fe205410
+		summarizeBy: none
+		sourceColumn: 项目总监
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目经理
+		dataType: string
+		lineageTag: 60faf876-ebed-44f8-89a1-e707f4206143
+		summarizeBy: none
+		sourceColumn: 项目经理
+
+		annotation SummarizationSetBy = Automatic
+
+	column 自施结算额
+		dataType: double
+		lineageTag: 67c7daef-1fa2-48fe-aae9-f3492c6614eb
+		summarizeBy: sum
+		sourceColumn: 自施结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 结算额
+		dataType: double
+		lineageTag: c5e34c63-928f-4099-b0f2-9bc2510bac01
+		summarizeBy: sum
+		sourceColumn: 结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 结算成本
+		dataType: double
+		lineageTag: 800d6afe-5602-4927-8048-08fbe44d5ce2
+		summarizeBy: sum
+		sourceColumn: 结算成本
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 成本降低额
+		dataType: double
+		lineageTag: 70634169-4cac-4b2e-9635-67ecdcea6736
+		summarizeBy: sum
+		sourceColumn: 成本降低额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 总收益额
+		dataType: double
+		lineageTag: c79663a4-45c5-4a91-b02f-02e1e08ef703
+		summarizeBy: sum
+		sourceColumn: 总收益额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 剩余回款
+		dataType: double
+		lineageTag: 1a54dff4-c2e2-4c0d-b68c-d78c8198c91f
+		summarizeBy: sum
+		sourceColumn: 剩余回款
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 剩余回款（按合同约定结算完后收款比例计算）
+		dataType: double
+		lineageTag: ed2859aa-1a12-4dab-ba56-d16d74347c46
+		summarizeBy: sum
+		sourceColumn: 剩余回款（按合同约定结算完后收款比例计算）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 抵房、物
+		dataType: double
+		lineageTag: c9bc8115-69bd-4acd-9f8a-b0c1261549d0
+		summarizeBy: sum
+		sourceColumn: 抵房、物
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 存贷差
+		dataType: double
+		lineageTag: c4fe2c60-7c8d-4bbf-9b6c-23ccb63e13c8
+		summarizeBy: sum
+		sourceColumn: 存贷差
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 报表周
+		dataType: int64
+		formatString: 0
+		lineageTag: b3b6f213-366d-413d-a82b-2a7b070f2e3d
+		summarizeBy: sum
+		sourceColumn: 报表周
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本周结算进展
+		dataType: string
+		lineageTag: 9b199f65-180e-4a92-96ca-60f7e9058cbf
+		summarizeBy: none
+		sourceColumn: 本周结算进展
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY
+		dataType: string
+		lineageTag: 9bca4915-6be9-4b61-aa30-3c7555bd2066
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 索引
+		dataType: int64
+		formatString: 0
+		lineageTag: 025a244e-f314-4125-b01d-dda49f5739f7
+		summarizeBy: sum
+		sourceColumn: 索引
+
+		annotation SummarizationSetBy = Automatic
+
+	column 计划有变化
+		dataType: string
+		lineageTag: 7fb40797-1ebe-4d16-a5a1-ad77ab7587d8
+		summarizeBy: none
+		sourceColumn: 计划有变化
+
+		annotation SummarizationSetBy = Automatic
+
+	column 25_5预计结算时间
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ed7abb2f-7130-47a4-a620-7d8a25b77825
+		summarizeBy: none
+		sourceColumn: 25_5预计结算时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 本周预计结算时间
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5c60d2e2-2ca1-4003-963a-dc665a2781f0
+		summarizeBy: none
+		sourceColumn: 本周预计结算时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column '5.27计划结算时间'
+		dataType: dateTime
+		formatString: yyyy"年"m"月"
+		lineageTag: d1c90948-c7fa-4a0e-981f-e5f76daf6ce2
+		summarizeBy: none
+		sourceColumn: 5.27计划结算时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column '5.27计划年'
+		dataType: int64
+		formatString: 0
+		lineageTag: 95d5ae5d-972e-43d6-9dc1-f2b54763842c
+		summarizeBy: sum
+		sourceColumn: 5.27计划年
+
+		annotation SummarizationSetBy = Automatic
+
+	column '5.27计划月'
+		dataType: int64
+		formatString: 0
+		lineageTag: 52ba153c-0f6c-4000-afa7-475a56d9405e
+		summarizeBy: sum
+		sourceColumn: 5.27计划月
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_周报 = m
+		mode: import
+		source =
+				let
+				    源 = Folder.Files("\\172.16.8.66\经营分析\经营分析会\周报"),
+				    筛选的隐藏文件 = Table.SelectRows(源, each [Attributes]?[Hidden]? <> true),
+				    重命名的列1 = Table.RenameColumns(筛选的隐藏文件, {"Name", "Source.Name"}),
+				    已提取分隔符之间的文本 = Table.TransformColumns(重命名的列1, {{"Source.Name", each Text.BetweenDelimiters(_, "展", ".x"), type text}}),
+				    已分析的日期 = Table.TransformColumns(已提取分隔符之间的文本,{{"Source.Name", each Date.From(DateTimeZone.From(_)), type date}}),
+				    排序的行 = Table.Sort(已分析的日期,{{"Source.Name", Order.Ascending}}),
+				    已添加索引 = Table.AddIndexColumn(排序的行, "索引", 0, 1, Int64.Type),
+				    调用自定义函数1 = Table.AddColumn(已添加索引, "转换文件", each 周报转换文件([Content])),
+				    删除的其他列 = Table.SelectColumns(调用自定义函数1,{"Source.Name", "索引", "转换文件"}),
+				    扩展的表格列 = Table.ExpandTableColumn(删除的其他列, "转换文件", Table.ColumnNames(周报转换文件(周报示例文件))),
+				    重命名的列 = Table.RenameColumns(扩展的表格列,{{"Source.Name", "报表期"}}),
+				    #"已添加自定义(报表周)" = Table.AddColumn(重命名的列, "报表周", each Date.WeekOfYear([报表期]),Int64.Type),
+				    #"替换的值（总监替换空项目经理）" = Table.ReplaceValue(#"已添加自定义(报表周)",null,each [项目总监],Replacer.ReplaceValue,{"项目经理"}),
+				    更改的类型 = Table.TransformColumnTypes(#"替换的值（总监替换空项目经理）",{{"业主结算年度", Int64.Type}, {"业主自施结算状态", type text}, {"业主指定结算状态", type text}, {"项目编码", type text}, {"项目名称", type text}, {"25年年度计划", type text}, {"25年肯定能结", type text}, {"25年争取能结", type text}, {"结算分类", type text}, {"本周结算进展", type text}, {"产值所属二级机构", type text}, {"所属板块", type text}, {"项目总监", type text}, {"项目经理", type text}, {"自施结算额", type number}, {"结算额", type number}, {"结算成本", type number}, {"成本降低额", type number}, {"总收益额", type number}, {"剩余回款", type number}, {"剩余回款（按合同约定结算完后收款比例计算）", type number}, {"抵房、物", type number}, {"存贷差", type number}, {"报表周", Int64.Type}, {"本周预计结算时间", type date}, {"25_5预计结算时间", type date}}),
+				    #"插入的合并列(key)" = Table.AddColumn(更改的类型, "KEY", each Text.Combine({Text.From([报表期], "zh-CN"), [项目名称]}, ""), type text),
+				    合并的查询1 = Table.NestedJoin(#"插入的合并列(key)", {"项目编码"}, 初始计划年月, {"项目编码"}, "初始计划年月", JoinKind.LeftOuter),
+				    #"展开的“初始计划年月”" = Table.ExpandTableColumn(合并的查询1, "初始计划年月", {"初始计划结算时间", "初始计划年", "初始计划月"}, {"5.27计划结算时间", "5.27计划年", "5.27计划月"}),
+				    #"已添加自定义(计划时间是否有变化)" = Table.AddColumn(#"展开的“初始计划年月”", "计划有变化", each if [本周预计结算时间]<>[5.27计划结算时间] then "是" else "否",type text)
+				in
+				    #"已添加自定义(计划时间是否有变化)"
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

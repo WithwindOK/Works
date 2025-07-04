@@ -1,0 +1,20 @@
+table D_RILI
+	lineageTag: f56d66ea-522a-45e8-a11f-c8b888ae7a0e
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 1dc7e3dc-e8f6-4ec1-803e-128c1779b9ab
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_RILI = calculated
+		mode: import
+		source = CALENDAR("2017-1-1",TODAY())
+
+	annotation PBI_Id = 057b61a74deb4be796844049ab76a201
+

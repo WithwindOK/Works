@@ -1,0 +1,70 @@
+table F_年结算计划
+	lineageTag: eb9a8479-0aca-46c0-b542-afa28de56e8f
+
+	column 报表期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b650df33-74fe-4789-bcbf-ba1b5aa03832
+		summarizeBy: none
+		sourceColumn: 报表期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 项目名称
+		dataType: string
+		lineageTag: 8b44b7d3-e1bc-4c5a-9288-9b2aa511fb41
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 25年年度计划
+		dataType: string
+		lineageTag: 27b7955b-ed0b-4d61-896b-5cf3158ed36e
+		summarizeBy: none
+		sourceColumn: 25年年度计划
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY
+		dataType: string
+		lineageTag: b005e857-b9b3-4885-ba91-3ccc8bf3544d
+		summarizeBy: none
+		sourceColumn: KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 含税预计结算额
+		dataType: double
+		lineageTag: 764848b4-6a7b-44d4-add6-1c3c8624952d
+		summarizeBy: sum
+		sourceColumn: 含税预计结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_年结算计划 = m
+		mode: import
+		source =
+				let
+				    源 = Folder.Files("\\172.16.8.66\经营分析\经营分析会\周报"),
+				    筛选的隐藏文件1 = Table.SelectRows(源, each [Attributes]?[Hidden]? <> true),
+				    调用自定义函数1 = Table.AddColumn(筛选的隐藏文件1, "转换文件 (2)", each 结算计划转换文件([Content])),
+				    重命名的列1 = Table.RenameColumns(调用自定义函数1, {"Name", "Source.Name"}),
+				    删除的其他列1 = Table.SelectColumns(重命名的列1, {"Source.Name", "转换文件 (2)"}),
+				    扩展的表格列1 = Table.ExpandTableColumn(删除的其他列1, "转换文件 (2)", Table.ColumnNames(结算计划转换文件(结算计划示例文件))),
+				    已提取分隔符之间的文本 = Table.TransformColumns(扩展的表格列1, {{"Source.Name", each Text.BetweenDelimiters(_, "展", ".x"), type text}}),
+				    已分析的日期 = Table.TransformColumns(已提取分隔符之间的文本,{{"Source.Name", each Date.From(DateTimeZone.From(_)), type date}}),
+				    重命名的列 = Table.RenameColumns(已分析的日期,{{"Source.Name", "报表期"}}),
+				    更改的类型 = Table.TransformColumnTypes(重命名的列,{{"项目名称", type text}, {"含税预计结算额", type number}, {"25年年度计划", type text}}),
+				    插入的合并列 = Table.AddColumn(更改的类型, "KEY", each Text.Combine({Text.From([报表期], "zh-CN"), [项目名称]}, ""), type text)
+				in
+				    插入的合并列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

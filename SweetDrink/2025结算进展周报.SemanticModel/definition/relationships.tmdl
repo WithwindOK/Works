@@ -1,0 +1,11 @@
+relationship 2d864d98-6ced-7789-651c-42b5d278fdeb
+	fromColumn: F_年结算计划.KEY
+	toColumn: F_周报.KEY
+
+relationship 691171f4-1152-19ad-cdb6-6b8ea75133e4
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: F_周报.项目名称
+	toColumn: 账户.项目名称
+

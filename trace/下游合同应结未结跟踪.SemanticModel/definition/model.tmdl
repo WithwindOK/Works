@@ -1,0 +1,21 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
+
+annotation PBI_QueryOrder = ["X5","DW_FB_JSMX（分包结算）","fx_RN","DW_WZ_CGJSMX（物资结算）","DW_WZ_ZLJSMX（租赁结算）","DW_WZ_HTXXB（物资合同信息）","D_物资合同_L1","DW_FB_HTXXB（分包合同信息）","D_分包合同_L1","D_下游合同","F_下游合同结算","160应结未结","963应结未结"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 160应结未结
+ref table 963应结未结
+
+ref cultureInfo zh-CN
+

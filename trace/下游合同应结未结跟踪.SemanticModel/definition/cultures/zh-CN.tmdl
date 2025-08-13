@@ -1,0 +1,584 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "entity_160应结未结": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "160应结未结": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.股份公司四级单位": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "股份公司四级单位"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "股份公司四级单位": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.分供商单位名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "分供商单位名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "分供商单位名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.分供商专业类别": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "分供商专业类别"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "分供商专业类别": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.合同号": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "合同号"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "合同号": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.价税合计": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "价税合计"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "价税合计": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.cnt_合同数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "cnt.合同数.160"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cnt.合同数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.cnt_合同数_未结": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "cnt.合同数.未结.160"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cnt.合同数.未结": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "未结合同数": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.r_未结率": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "R.未结率.160"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "r.未结率": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "未结率": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.entity__cnt_合同数_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "_cnt.合同数 FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_cnt.合同数 FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.entity__cnt_合同数_未结_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "_cnt.合同数.未结 FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_cnt.合同数.未结 FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity_160应结未结.entity__r_未结率_FormatString": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "160应结未结",
+			          "ConceptualProperty": "_R.未结率 FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "_r.未结率 FormatString": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "entity_160应结未结_has_r_未结率": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.r_未结率": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.r_未结率"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.r_未结率"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_r_未结率"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_cnt_合同数_未结": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.cnt_合同数_未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.cnt_合同数_未结"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.cnt_合同数_未结"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_cnt_合同数_未结"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_cnt_合同数": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.cnt_合同数": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.cnt_合同数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.cnt_合同数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_cnt_合同数"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_结算状态": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.结算状态": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.结算状态"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.结算状态"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_结算状态"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_价税合计": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.价税合计": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.价税合计"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.价税合计"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_价税合计"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_合同号": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.合同号": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.合同号"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.合同号"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_合同号"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_分供商专业类别": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.分供商专业类别": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.分供商专业类别"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.分供商专业类别"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_分供商专业类别"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_分供商单位名称": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.分供商单位名称": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.分供商单位名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.分供商单位名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_分供商单位名称"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_项目名称": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.项目名称": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.项目名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.项目名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_项目名称"
+			        }
+			      ]
+			    },
+			    "entity_160应结未结_has_股份公司四级单位": {
+			      "Binding": {
+			        "ConceptualEntity": "160应结未结"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity_160应结未结": {
+			          "Target": {
+			            "Entity": "entity_160应结未结"
+			          }
+			        },
+			        "entity_160应结未结.股份公司四级单位": {
+			          "Target": {
+			            "Entity": "entity_160应结未结.股份公司四级单位"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity_160应结未结"
+			            },
+			            "Object": {
+			              "Role": "entity_160应结未结.股份公司四级单位"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing160应结未结_have_股份公司四级单位"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

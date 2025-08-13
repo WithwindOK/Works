@@ -1,0 +1,125 @@
+table 160应结未结
+	lineageTag: 43b11aff-9342-4faf-a2c4-12ab1e1f204c
+
+	measure 'cnt.合同数.160' = DISTINCTCOUNT('160应结未结'[合同号])
+		lineageTag: 38f5b95e-4636-44a4-8ce1-d4ed06991ef1
+
+		formatStringDefinition = "共：0份"
+
+	measure 'cnt.合同数.未结.160' = CALCULATE([cnt.合同数.160],'160应结未结'[结算状态]="未结")
+		lineageTag: d4b5277b-b78e-4e0a-8b22-f50a932a6d43
+
+		formatStringDefinition = "未结：0份"
+
+	measure 'R.未结率.160' = DIVIDE([cnt.合同数.未结.160],[cnt.合同数.160])
+		lineageTag: 620002e7-c276-40f8-bf44-2883fa0fcef0
+
+		formatStringDefinition = "0.00%;-0.00%;0.00%"
+
+	column 股份公司四级单位
+		dataType: string
+		lineageTag: a42d4296-f8ff-4dd6-99b9-ccaa1c6a76dd
+		summarizeBy: none
+		sourceColumn: 股份公司四级单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 29da1aa7-434d-4600-9597-b5dfbc986088
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分供商单位名称
+		dataType: string
+		lineageTag: ebced4e7-8f39-4bdb-bd45-6e595af43194
+		summarizeBy: none
+		sourceColumn: 分供商单位名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分供商专业类别
+		dataType: string
+		lineageTag: cac89b56-7448-4c68-82ad-b53ef1423f53
+		summarizeBy: none
+		sourceColumn: 分供商专业类别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同号
+		dataType: string
+		lineageTag: f022f95c-9998-43a8-a074-9417d2f686c4
+		summarizeBy: none
+		sourceColumn: 合同号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		lineageTag: cee6ae82-d594-4960-82da-bcaf123b647b
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KEYID
+		dataType: string
+		lineageTag: 099de8b6-9910-4023-b721-48fb8536b980
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 73387f68-bedb-4185-b940-cf93b6f8c7f6
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: 28414051-b172-454c-8133-80dbad3684c4
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: 6be79b1f-4846-4d19-a3ea-a36c233cfbd5
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 结算状态
+		dataType: string
+		lineageTag: d5f53999-8e3f-4345-b2f0-ab3121ed0198
+		summarizeBy: none
+		sourceColumn: 结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 160应结未结 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"股份公司#(lf)四级单位" = _t, 项目名称 = _t, 分供商单位名称 = _t, 分供商专业类别 = _t, 合同号 = _t]),
+				    合并的查询1 = Table.NestedJoin(源, {"合同号"}, D_下游合同, {"合同编号"}, "D_下游合同", JoinKind.LeftOuter),
+				    #"展开的“D_下游合同”" = Table.ExpandTableColumn(合并的查询1, "D_下游合同", {"KEYID", "合同编号", "合同名称", "客商名称"}, {"KEYID", "合同编号", "合同名称", "客商名称"}),
+				    合并的查询 = Table.NestedJoin(#"展开的“D_下游合同”", {"KEYID"}, F_下游合同结算, {"KEYID"}, "F_下游合同结算", JoinKind.LeftOuter),
+				    #"展开的“F_下游合同结算”" = Table.ExpandTableColumn(合并的查询, "F_下游合同结算", {"价税合计"}, {"价税合计"}),
+				    已添加条件列 = Table.AddColumn(#"展开的“F_下游合同结算”", "结算状态", each if [价税合计] = null then "未结" else "已结",type text)
+				in
+				    已添加条件列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

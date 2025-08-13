@@ -1,0 +1,177 @@
+table F_下游合同资金计划
+	lineageTag: 7b7dd91c-a4b3-4f00-9629-0a65e1aa4131
+
+	measure 合同计划风险数量 = CALCULATE(COUNTROWS('F_下游合同资金计划'),'F_下游合同资金计划'[风险项]="是")
+		formatString: 0
+		lineageTag: 303bf5ef-659d-44d4-a184-957281f17950
+
+	measure 合同计划数量 = COUNTROWS('F_下游合同资金计划')
+		formatString: 0
+		lineageTag: 1e60c9aa-fc5f-4cd8-8d67-b2b2670d3c1c
+
+	column KEYID
+		dataType: string
+		lineageTag: 829f2c6f-265c-4e9a-bd39-acef974e1156
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 2e8b507f-6a71-4e45-afb6-1b898abe60fc
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 5470338a-df83-4e6c-94ea-198d41476048
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 6e8263ef-3e96-45c1-a1d4-8e733e95562c
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 付款状态
+		dataType: string
+		lineageTag: 5bc8ef96-2942-47e6-b05c-e4181e8a5704
+		summarizeBy: none
+		sourceColumn: 付款状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: 9f4073bf-96f0-4682-91a0-4b1ae3c2d696
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 资金计划日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0fed08ac-2143-424e-9a45-79eeb10f29d1
+		summarizeBy: none
+		sourceColumn: 资金计划日期
+
+		variation 变体
+			isDefault
+			relationship: 749fc374-5a84-4e2e-943c-9beb1f19f356
+			defaultHierarchy: LocalDateTable_86f10022-f1fe-43f4-bdbf-83e070f6a185.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 开累已付
+		dataType: double
+		lineageTag: 04682d50-b732-47ea-a967-92b9a0acbce6
+		summarizeBy: sum
+		sourceColumn: 开累已付
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 当月计划额
+		dataType: double
+		lineageTag: 6ed0f4af-d5dd-41cd-801a-3db4f4e9125a
+		summarizeBy: sum
+		sourceColumn: 当月计划额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 是否投诉诉讼事项
+		dataType: string
+		lineageTag: 86f2d7d2-fd26-4758-b255-2330dfa4f5b8
+		summarizeBy: none
+		sourceColumn: 是否投诉诉讼事项
+
+		annotation SummarizationSetBy = Automatic
+
+	column 结算日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0b0f717b-6f03-42f1-b1a2-9ca49c7178eb
+		summarizeBy: none
+		sourceColumn: 结算日期
+
+		variation 变体
+			isDefault
+			relationship: 443635f6-b59f-47bc-a375-3f5dda7a7b61
+			defaultHierarchy: LocalDateTable_88c43547-e6da-4ed2-8abc-24cc04ca5bd4.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 结算含税金额
+		dataType: double
+		lineageTag: 49c508f9-4af0-4601-a4e9-57e84893a117
+		summarizeBy: sum
+		sourceColumn: 结算含税金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 风险项
+		dataType: string
+		lineageTag: 6bfbf689-c335-490e-be46-3e106423ad4f
+		summarizeBy: none
+		sourceColumn: 风险项
+
+		annotation SummarizationSetBy = Automatic
+
+	column 提前天数
+		dataType: int64
+		lineageTag: 4f53f30b-965d-449b-a0cc-4193dedd841b
+		summarizeBy: sum
+		sourceColumn: 提前天数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 责任体
+		dataType: string
+		lineageTag: 325e3449-e526-4fd0-a3ad-cfc5acaf8c4e
+		summarizeBy: none
+		sourceColumn: 责任体
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_下游合同资金计划 = m
+		mode: import
+		queryGroup: 资金计划
+		source =
+				let
+				    源 = Table.Combine({T_分包资金计划, T_采购资金计划, T_租赁资金计划,T_新资金计划}),
+				    筛选的行 = Table.SelectRows(源, each ([付款状态] = "保修期满/保修已完工" or [付款状态] = "已完工已结算")),
+				    合并的查询 = Table.NestedJoin(筛选的行, {"KEYID"}, F_下游合同结算, {"KEYID"}, "F_下游合同结算", JoinKind.LeftOuter),
+				    #"展开的“F_下游合同结算”" = Table.ExpandTableColumn(合并的查询, "F_下游合同结算", {"日期", "价税合计"}, {"日期", "价税合计"}),
+				    重命名的列 = Table.RenameColumns(#"展开的“F_下游合同结算”",{{"日期", "结算日期"}, {"价税合计", "结算含税金额"}}),
+				    已添加条件列 = Table.AddColumn(重命名的列, "风险项", each if [结算日期] = null then "是" else if [资金计划日期] < [结算日期] then "是" else "否", type text),
+				    重命名的列1 = Table.RenameColumns(已添加条件列,{{"当月计划付款金额合计", "当月计划额"}}),
+				    已添加自定义 = Table.AddColumn(重命名的列1, "提前天数", each Duration.TotalDays([结算日期]-[资金计划日期]),Int16.Type),
+				    合并的查询1 = Table.NestedJoin(已添加自定义, {"项目编码"}, 项目信息, {"项目编码"}, "项目信息", JoinKind.LeftOuter),
+				    #"展开的“项目信息”" = Table.ExpandTableColumn(合并的查询1, "项目信息", {"责任体"}, {"责任体"})
+				in
+				    #"展开的“项目信息”"
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

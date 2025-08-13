@@ -1,0 +1,302 @@
+expression X5 = "172.16.8.76/oracledb" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f567f5ca-645a-4174-81f8-a9c9772e98c6
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = 导航
+
+expression fx_RN =
+		let
+		    源 = (OWNER as text,TABLE_NAME as text) as list =>
+		    let
+		        源 =   Oracle.Database(X5, [HierarchicalNavigation=true]),
+		        源1=Value.NativeQuery(源,"select COLUMN_NAME,COMMENTS from all_col_comments where OWNER = '" & OWNER &"' and TABLE_NAME = '" & TABLE_NAME & "'"),
+		        替换的值 = Table.ReplaceValue(源1,null, each [COLUMN_NAME],Replacer.ReplaceValue,{"COMMENTS"}),
+		        更改的类型 = Table.TransformColumnTypes(替换的值,{{"COMMENTS", type text}}),
+		        已添加自定义 = Table.AddColumn(更改的类型, "NewName", each [COMMENTS]&"（"&[COLUMN_NAME]&"）",type text),
+		        删除的其他列 = Table.SelectColumns(已添加自定义,{"COLUMN_NAME", "NewName"}),
+		        转置表 = Table.ToColumns( Table.Transpose(删除的其他列) )
+		    in
+		        转置表
+		in
+		    源
+	lineageTag: 2692cb9b-a68d-47d0-b148-8ebecdb76b92
+
+	annotation PBI_ResultType = Function
+
+expression DW_WZ_CGJSMX（物资结算） =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="DW_WZ_CGJSMX"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("DATA_DW","DW_WZ_CGJSMX")),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"KEYID（KEYID）", "FRQ（FRQ）", "价税合计（JIASHUIHEJI）", "金额（JINE）", "税金（SHUIE）"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"KEYID（KEYID）", "KEYID"}, {"FRQ（FRQ）", "日期"}, {"价税合计（JIASHUIHEJI）", "价税合计"}, {"金额（JINE）", "金额"}, {"税金（SHUIE）", "税金"}}),
+		    更改的类型 = Table.TransformColumnTypes(重命名的列1,{{"日期", type date}})
+		in
+		    更改的类型
+	lineageTag: 3dce0324-56dd-474b-9946-60980f9efbec
+	queryGroup: 结算
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression DW_WZ_ZLJSMX（租赁结算） =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="DW_WZ_ZLJSMX"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("DATA_DW","DW_WZ_ZLJSMX")),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"KEYID（KEYID）", "FRQ（FRQ）", "价税合计（JIASHUIHEJI）", "金额（JINE）", "税金（SHUIE）"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"KEYID（KEYID）", "KEYID"}, {"FRQ（FRQ）", "日期"}, {"价税合计（JIASHUIHEJI）", "价税合计"}, {"金额（JINE）", "金额"}, {"税金（SHUIE）", "税金"}}),
+		    更改的类型 = Table.TransformColumnTypes(重命名的列1,{{"日期", type date}})
+		in
+		    更改的类型
+	lineageTag: 0424215b-c042-43e2-9aae-a4ae7fbb5daf
+	queryGroup: 结算
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression DW_FB_JSMX（分包结算） =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="DW_FB_JSMX"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("DATA_DW","DW_FB_JSMX")),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"KEYID（KEYID）", "日期（FRQ）", "价税合计（JIASHUIHEJI）", "金额（JINE）", "税额（SHUIE）"}),
+		    重命名的列1 = Table.RenameColumns(删除的其他列,{{"KEYID（KEYID）", "KEYID"}, {"日期（FRQ）", "日期"}, {"价税合计（JIASHUIHEJI）", "价税合计"}, {"金额（JINE）", "金额"}, {"税额（SHUIE）", "税金"}}),
+		    更改的类型 = Table.TransformColumnTypes(重命名的列1,{{"日期", type date}})
+		in
+		    更改的类型
+	lineageTag: 346ff120-fde7-49e3-a6da-cbc4e1c7c5ab
+	queryGroup: 结算
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression D_物资合同_L1 =
+		let
+		    源 = #"DW_WZ_HTXXB（物资合同信息）",
+		    #"删除的其他列（保留维度列）" = Table.SelectColumns(源,{"KEYID", "项目编码", "项目名称", "合同编号", "补充协议号", "补充协议名称", "采购租赁", "标准合同编号", "标准合同名称", "对应集采合同编号", "商务科目级次码", "施工专业", "合同类型", "客商名称", "付款模式", "客商类别", "指定合同类型", "集采区域", "增值税率", "股份合同编号"}),
+		    重命名的列 = Table.RenameColumns(#"删除的其他列（保留维度列）",{{"补充协议名称", "合同名称"}, {"采购租赁", "业务种类"}})
+		in
+		    重命名的列
+	lineageTag: ddec43ed-fbe9-4df1-84cf-42673c7ae66c
+	queryGroup: 合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression D_分包合同_L1 =
+		let
+		    源 = #"DW_FB_HTXXB（分包合同信息）",
+		    #"删除的其他列（保留维度列）" = Table.SelectColumns(源,{"KEYID", "项目编码", "项目名称", "合同编号", "合同名称", "对应集采合同编号", "补充协议号", "标准合同编号", "标准合同名称", "商务科目级次码", "施工专业", "合同类型", "客商名称", "指定合同类型", "客商类别", "付款模式", "集采区域", "增值税率", "股份合同编号"}),
+		    #"已添加自定义（业务种类）" = Table.AddColumn(#"删除的其他列（保留维度列）", "业务种类", each "分包合同",Text.Type)
+		in
+		    #"已添加自定义（业务种类）"
+	lineageTag: c80c8da7-4cc0-42a6-b485-f1054805a4ce
+	queryGroup: 合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression D_下游合同_参照完整 =
+		let
+		    源 = D_下游合同,
+		    删除的其他列 = Table.SelectColumns(源,{"KEYID", "项目名称", "客商名称"})
+		in
+		    删除的其他列
+	lineageTag: 3be1bfdc-558b-4140-8646-a8944dea5836
+	queryGroup: 合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression DW_FB_HTXXB（分包合同信息） =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+		    DW_WZ_HTXXB1 = DATA_DW{[Name="DW_FB_HTXXB"]}[Data],
+		    #"重命名的列（中英对照）" = Table.RenameColumns(DW_WZ_HTXXB1,fx_RN("DATA_DW","DW_FB_HTXXB")),
+		    #"重命名的列（中文）" = Table.TransformColumnNames(#"重命名的列（中英对照）",each Text.BeforeDelimiter(_,"（"))
+		in
+		    #"重命名的列（中文）"
+	lineageTag: 3d8d63c0-4366-4f81-b5e3-40c3a925fa17
+	queryGroup: 合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression DW_WZ_HTXXB（物资合同信息） =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+		    DW_WZ_HTXXB1 = DATA_DW{[Name="DW_WZ_HTXXB"]}[Data],
+		    #"重命名的列（中英对照）" = Table.RenameColumns(DW_WZ_HTXXB1,fx_RN("DATA_DW","DW_WZ_HTXXB")),
+		    #"重命名的列（中文）" = Table.TransformColumnNames(#"重命名的列（中英对照）",each Text.BeforeDelimiter(_,"（"))
+		in
+		    #"重命名的列（中文）"
+	lineageTag: ac7c099a-5370-4280-90ca-46485634a18c
+	queryGroup: 合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression T_分包资金计划 =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="DATA_DW"]}[Data],
+		    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_FBZJJHB"]}[Data],
+		    #"重命名的列（中英混合）" = Table.RenameColumns(GSPM_HETONGPINGSHEN,fx_RN("DATA_DW","DW_FBZJJHB")),
+		    #"重命名的列（中文）" = Table.TransformColumnNames(#"重命名的列（中英混合）", each Text.BeforeDelimiter(_,"（")),
+		    删除的其他列 = Table.SelectColumns(#"重命名的列（中文）",{"KEYID", "项目编码", "项目名称", "合同编号", "分包名称", "FRQ", "自开工累计分包已付款", "计划金额", "付款状态"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FRQ", "资金计划日期"}, {"分包名称", "客商名称"}, {"自开工累计分包已付款", "开累已付"}, {"计划金额", "当月计划付款金额合计"}}),
+		    提取的日期 = Table.TransformColumns(重命名的列,{{"资金计划日期", DateTime.Date, type date}})
+		in
+		    提取的日期
+	lineageTag: 9678d2b7-c01b-4b6d-9c8c-e262b53904c3
+	queryGroup: 资金计划
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression T_采购资金计划 =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="DATA_DW"]}[Data],
+		    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_WZCGZJJHB"]}[Data],
+		    #"重命名的列（中英混合）" = Table.RenameColumns(GSPM_HETONGPINGSHEN,fx_RN("DATA_DW","DW_WZCGZJJHB")),
+		    #"重命名的列（中文）" = Table.TransformColumnNames(#"重命名的列（中英混合）", each Text.BeforeDelimiter(_,"（")),
+		    删除的其他列 = Table.SelectColumns(#"重命名的列（中文）",{"KEYID", "项目编码", "项目名称", "合同编号", "分包名称", "FRQ ", "自开工累计分供已付款", "付款状态", "计划金额"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"FRQ ", "资金计划日期"}, {"分包名称", "客商名称"}, {"自开工累计分供已付款", "开累已付"}, {"计划金额", "当月计划付款金额合计"}}),
+		    提取的日期 = Table.TransformColumns(重命名的列,{{"资金计划日期", DateTime.Date, type date}})
+		in
+		    提取的日期
+	lineageTag: 48970816-fbb1-469c-bed9-847dc15f17e1
+	queryGroup: 资金计划
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression T_租赁资金计划 =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="DATA_DW"]}[Data],
+		    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_WZZLZJJHB"]}[Data],
+		    #"重命名的列（中英混合）" = Table.RenameColumns(GSPM_HETONGPINGSHEN,fx_RN("DATA_DW","DW_WZZLZJJHB")),
+		    #"重命名的列（中文）" = Table.TransformColumnNames(#"重命名的列（中英混合）", each Text.BeforeDelimiter(_,"（")),
+		    删除的其他列 = Table.SelectColumns(#"重命名的列（中文）",{"KEYID", "项目编码", "项目名称", "合同编号", "分供名称", "FRQ", "自开工累计分供已付款", "计划金额"}),
+		    重命名的列 = Table.RenameColumns(删除的其他列,{{"分供名称", "客商名称"}, {"FRQ", "资金计划日期"}, {"自开工累计分供已付款", "开累已付"}, {"计划金额", "当月计划付款金额合计"}}),
+		    提取的日期 = Table.TransformColumns(重命名的列,{{"资金计划日期", DateTime.Date, type date}})
+		in
+		    提取的日期
+	lineageTag: 7ac3a3c5-82c5-4b9f-82ef-ebd373671737
+	queryGroup: 资金计划
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression T_新资金计划_C =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_HETONGPINGSHEN = GSPM{[Name="GSPM_ZIJINLIUCHUJIHUABIAO"]}[Data],
+		    #"重命名的列（中英混合）" = Table.RenameColumns(GSPM_HETONGPINGSHEN,fx_RN("GSPM","GSPM_ZIJINLIUCHUJIHUABIAO")),
+		    #"重命名的列（中文）" = Table.TransformColumnNames(#"重命名的列（中英混合）", each Text.BeforeDelimiter(_,"（")),
+		    删除的其他列 = Table.SelectColumns(#"重命名的列（中文）",{"合同编号", "客商名称", "付款状态", "开累已付", "当月计划付款金额合计", "主表ID", "是否投诉诉讼事项"})
+		in
+		    删除的其他列
+	lineageTag: d02cf605-54ea-456d-806e-115cc06ae68b
+	queryGroup: 资金计划
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression F_下游合同结算 =
+		let
+		    源 = Table.Combine({#"DW_FB_JSMX（分包结算）", #"DW_WZ_CGJSMX（物资结算）", #"DW_WZ_ZLJSMX（租赁结算）"})
+		in
+		    源
+	lineageTag: 637b4631-3734-41b0-97fa-de772b6e5d83
+	queryGroup: 结算
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression D_下游合同 =
+		let
+		    源 = Table.Combine({D_物资合同_L1, D_分包合同_L1}),
+		    删除的副本 = Table.Distinct(源, {"KEYID"})
+		in
+		    删除的副本
+	lineageTag: 167ec47e-1299-44f1-8618-4caf2c5d1612
+	queryGroup: 合同
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression T_新资金计划主表 =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    GSPM = 源{[Schema="GSPM"]}[Data],
+		    GSPM_ZIJINJIHUA1 = GSPM{[Name="GSPM_ZIJINJIHUA"]}[Data],
+		    重命名的列 = Table.RenameColumns(GSPM_ZIJINJIHUA1,fx_RN("GSPM","GSPM_ZIJINJIHUA")),
+		    自定义1 = Table.TransformColumnNames(重命名的列,each Text.BeforeDelimiter(_,"（")),
+		    筛选的行 = Table.SelectRows(自定义1, each ([评审状态] = "已完成"))
+		in
+		    筛选的行
+	lineageTag: deb42868-9819-4586-8e1f-48fc0986acee
+	queryGroup: 资金计划
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression T_新资金计划 =
+		let
+		    源 = Table.NestedJoin(T_新资金计划_C, {"主表ID"}, T_新资金计划主表, {"FID"}, "T_资金计划主表", JoinKind.Inner),
+		    #"展开的“T_资金计划主表”" = Table.ExpandTableColumn(源, "T_资金计划主表", {"项目编码", "项目名称", "年度", "月份"}, {"项目编码", "项目名称", "年度", "月份"}),
+		    删除的列 = Table.RemoveColumns(#"展开的“T_资金计划主表”",{"主表ID"}),
+		    已添加自定义 = Table.AddColumn(删除的列, "资金计划日期", each #date(Number.From([年度]),Number.From([月份]),1),type date),
+		    删除的列1 = Table.RemoveColumns(已添加自定义,{"年度", "月份"}),
+		    插入的合并列 = Table.AddColumn(删除的列1, "KEYID", each Text.Combine({[合同编号], [项目编码]}, "@"), type text)
+		in
+		    插入的合并列
+	lineageTag: 53ab033c-4526-433f-a8ea-3e8eef6e6861
+	queryGroup: 资金计划
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 项目信息 =
+		let
+		    源 = Oracle.Database(#"X5", [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="DW_XIANGMUXINXI"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,#"fx_RN"("DATA_DW","DW_XIANGMUXINXI")),
+		    #"重命名（汉字）" = Table.TransformColumnNames(重命名的列,each Text.Select(_,{"一".."龟"})),
+		    删除的其他列 = Table.SelectColumns(#"重命名（汉字）",{"项目编码", "责任体"})
+		in
+		    删除的其他列
+	lineageTag: 8992295e-4867-4af0-b187-7a4045da955c
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

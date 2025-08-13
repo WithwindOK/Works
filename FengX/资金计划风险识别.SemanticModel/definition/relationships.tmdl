@@ -1,0 +1,10 @@
+relationship 749fc374-5a84-4e2e-943c-9beb1f19f356
+	joinOnDateBehavior: datePartOnly
+	fromColumn: F_下游合同资金计划.资金计划日期
+	toColumn: LocalDateTable_86f10022-f1fe-43f4-bdbf-83e070f6a185.Date
+
+relationship 443635f6-b59f-47bc-a375-3f5dda7a7b61
+	joinOnDateBehavior: datePartOnly
+	fromColumn: F_下游合同资金计划.结算日期
+	toColumn: LocalDateTable_88c43547-e6da-4ed2-8abc-24cc04ca5bd4.Date
+

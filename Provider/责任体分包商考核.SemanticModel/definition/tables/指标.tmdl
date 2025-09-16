@@ -1,0 +1,123 @@
+table 指标
+	lineageTag: 3753585d-2a6b-44b6-af82-741cb2587211
+
+	measure 'cnt.客商数' = DISTINCTCOUNT('F_分包产值'[客商名称])
+		formatString: 0
+		lineageTag: c4374786-5e0d-43b6-964c-a709aa899b33
+
+	measure 'sum.产值' = SUM('F_分包产值'[产值])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: "¥"#,0.00;"¥"-#,0.00;"¥"#,0.00
+		lineageTag: ed3e0078-04d9-4565-9751-e5a90612aae5
+
+		annotation PBI_FormatHint = {"currencyCulture":"zh-CN"}
+
+	measure 'sum.产值.所有等级' = CALCULATE([sum.产值],REMOVEFILTERS('D_包商等级'[包商等级]))
+		formatString: "¥"#,0.###############;"¥"-#,0.###############;"¥"#,0.###############
+		lineageTag: fe3c4a05-40ca-4bd1-8115-7353b5555036
+
+		annotation PBI_FormatHint = {"currencyCulture":"zh-CN"}
+
+	measure 'R.产值等级占比' = DIVIDE([sum.产值],[sum.产值.所有等级])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7be95ba8-b5af-4f45-aaad-9260c9e43f8a
+
+	measure 'cnt.客商数.所有等级' = CALCULATE([cnt.客商数],REMOVEFILTERS('D_包商等级'[包商等级]))
+		formatString: 0
+		lineageTag: c2265432-4d0e-4ede-93fe-f8c0e83764e2
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'R.客商数等级占比' = DIVIDE([cnt.客商数],[cnt.客商数.所有等级])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 084fe549-5fec-467e-86d0-3fd842faeb28
+
+	measure 'Y.最大值.产值' = MAXX(VALUES('D_责任体'[责任体]),[sum.产值])*1.5
+		formatString: "¥"#,0.###############;"¥"-#,0.###############;"¥"#,0.###############
+		lineageTag: 9359c1fb-61f1-4a89-839e-8a8a56db4e2a
+
+		annotation PBI_FormatHint = {"currencyCulture":"zh-CN"}
+
+	measure 'Y.最小值.客商数' = MAXX(VALUES('D_责任体'[责任体]),[cnt.客商数])*(-1.5)
+		lineageTag: 71bbf76b-348d-4111-83e6-f5704fd56a03
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'sum.产值.开累' =
+			
+			CALCULATE([sum.产值], 'D_日历'[Date]<=MAX('D_日历'[Date]))
+		formatString: "¥"#,0.00;"¥"-#,0.00;"¥"#,0.00
+		lineageTag: 5545c870-fc4e-4533-9752-d05ae9d4d232
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearToDate"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"zh-CN"}
+
+	measure 'sum.产值.年累' =
+			
+			TOTALYTD([sum.产值], 'D_日历'[Date])
+		formatString: "¥"#,0.00;"¥"-#,0.00;"¥"#,0.00
+		lineageTag: 8a478013-a879-459e-ad72-115847f6b2a1
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "YearToDate"
+				}
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"currencyCulture":"zh-CN"}
+
+	measure 'Y.最大值.客商数' = MAXX(VALUES('D_责任体'[责任体]),[cnt.客商数])*1.5
+		lineageTag: 5e250a15-c0a1-41ad-9076-1426aeeadbb2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 客商数&等级占比 = [cnt.客商数]
+		lineageTag: 6c79444b-0530-4152-a91b-c76676eef2b3
+
+		formatStringDefinition = """" & FORMAT([cnt.客商数],"客商数  0") & "  ||  " & FORMAT([R.客商数等级占比],"等级占比   0.00%") & """"
+
+	measure 产值&等级占比 = [sum.产值]
+		lineageTag: ce510db5-f83b-4d72-84b0-e24e9fa15016
+
+		formatStringDefinition = """" & FORMAT([sum.产值],"产值  #,###.00") & "；" & FORMAT([R.产值等级占比],"等级占比   0.00%") & """"
+
+	measure 'R.亿元产值客商数' = DIVIDE([cnt.客商数],CALCULATE([sum.产值],'货币单位'[货币单位]="亿"))
+		lineageTag: 0f44c503-c635-4684-a95e-4e042992c813
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'R.等级平均万元产值' = DIVIDE(CALCULATE([sum.产值],'货币单位'[货币单位]="万"),[cnt.客商数])
+		formatString: "¥"#,0.00;"¥"-#,0.00;"¥"#,0.00
+		lineageTag: eed71857-47ce-45f3-9a06-6638b5746914
+
+		annotation PBI_FormatHint = {"currencyCulture":"zh-CN"}
+
+	column '列 1'
+		dataType: string
+		isHidden
+		lineageTag: 79d36800-91f5-434f-8ba0-d99b4821e193
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 指标 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"列 1" = _t])
+				in
+				    源
+
+	annotation PBI_ResultType = Table
+

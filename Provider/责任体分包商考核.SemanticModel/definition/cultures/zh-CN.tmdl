@@ -1,0 +1,2851 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "指标": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "指标": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "指标.列_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "列 1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "列 1": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "指标.cnt_客商数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "cnt.客商数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cnt.客商数": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "客商数": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "当期客商数": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "指标.sum_产值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "sum.产值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sum.产值": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "summation .产值": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "aggregation .产值": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "total .产值": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "aggregate .产值": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "amount .产值": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "产值": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "当期产值": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "指标.sum_产值_所有等级": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "sum.产值.所有等级"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sum.产值.所有等级": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "summation .产值.所有等级": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "aggregation .产值.所有等级": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "total .产值.所有等级": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "aggregate .产值.所有等级": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "amount .产值.所有等级": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "指标.r_产值等级占比": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "R.产值等级占比"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "r.产值等级占比": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "等级占比": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "等级占比(产值)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "产值等级占比": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "指标.cnt_客商数_所有等级": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "cnt.客商数.所有等级"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cnt.客商数.所有等级": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "指标.r_客商数等级占比": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "R.客商数等级占比"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "r.客商数等级占比": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "等级占比": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "等级占比(客商数)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "包商数等级占比": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "指标.y_最大值_产值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "Y.最大值.产值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "y.最大值.产值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "指标.y_最小值_客商数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "Y.最小值.客商数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "y.最小值.客商数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_包商等级": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_包商等级"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "D 包商等级": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "D_包商等级": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "D_包商等级.包商等级": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_包商等级",
+			          "ConceptualProperty": "包商等级"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "包商等级": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "F 分包产值": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "F_分包产值": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.责任体": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "责任体"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "责任体": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.项目名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "项目名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.客商名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "客商名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "客商名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.年序号": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "年序号"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "年序号": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.月份序号": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "月份序号"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "月份序号": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.产值": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "产值"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "产值": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.综合评级": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "综合评级"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "综合评级": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.施工专业": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "施工专业"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "施工专业": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.分包类型": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "分包类型"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "分包类型": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.标准合同编号": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "标准合同编号"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "标准合同编号": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.标准合同名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "标准合同名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "标准合同名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.日期": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "日期"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "日期": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "F_分包产值.五大分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "五大分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "五大分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.一级分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "一级分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "一级分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.二级分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "二级分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "二级分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "F_分包产值.三级分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "F_分包产值",
+			          "ConceptualProperty": "三级分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "三级分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_责任体": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_责任体"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "D 责任体": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "D_责任体": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "D_责任体.责任体": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_责任体",
+			          "ConceptualProperty": "责任体"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "责任体": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_责任体.排序": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_责任体",
+			          "ConceptualProperty": "排序"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "排序": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "货币单位": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "货币单位.货币单位": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "货币单位"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "货币单位": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "货币单位 name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "货币单位.系数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "货币单位",
+			          "ConceptualProperty": "系数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "系数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_采购分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_采购分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "D 采购分类": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "D_采购分类": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "D_采购分类.标准合同编号": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_采购分类",
+			          "ConceptualProperty": "标准合同编号"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "标准合同编号": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_采购分类.标准合同名称": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_采购分类",
+			          "ConceptualProperty": "标准合同名称"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "标准合同名称": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_采购分类.五大分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_采购分类",
+			          "ConceptualProperty": "五大分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "五大分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_采购分类.一级分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_采购分类",
+			          "ConceptualProperty": "一级分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "一级分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_采购分类.二级分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_采购分类",
+			          "ConceptualProperty": "二级分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "二级分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_采购分类.三级分类": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_采购分类",
+			          "ConceptualProperty": "三级分类"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "三级分类": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_日历": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_日历"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "D 日历": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "D_日历": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "D_日历.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_日历",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "date": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "moment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "period": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "指标.sum_产值_开累": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "sum.产值.开累"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sum.产值.开累": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "summation .产值.开累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "aggregation .产值.开累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "total .产值.开累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "aggregate .产值.开累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "amount .产值.开累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "指标.sum_产值_年累": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "sum.产值.年累"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sum.产值.年累": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "summation .产值.年累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "aggregation .产值.年累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.624
+			          }
+			        },
+			        {
+			          "total .产值.年累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "aggregate .产值.年累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "amount .产值.年累": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        }
+			      ]
+			    },
+			    "D_日历.年": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_日历",
+			          "ConceptualProperty": "年"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_日历.年月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_日历",
+			          "ConceptualProperty": "年月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年月": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_日历.年_层次结构": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_日历",
+			          "Hierarchy": "年 层次结构"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年 层次结构": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_日历.年_层次结构.年": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_日历",
+			          "Hierarchy": "年 层次结构",
+			          "HierarchyLevel": "年"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "D_日历.年_层次结构.年月": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "D_日历",
+			          "Hierarchy": "年 层次结构",
+			          "HierarchyLevel": "年月"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年月": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "指标.y_最大值_客商数": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "指标",
+			          "ConceptualProperty": "Y.最大值.客商数"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "y.最大值.客商数": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "D_日历_年_层次结构_has_年月": {
+			      "Binding": {
+			        "ConceptualEntity": "D_日历"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_日历.年_层次结构": {
+			          "Target": {
+			            "Entity": "D_日历.年_层次结构"
+			          }
+			        },
+			        "D_日历.年_层次结构.年月": {
+			          "Target": {
+			            "Entity": "D_日历.年_层次结构.年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历.年_层次结构"
+			            },
+			            "Object": {
+			              "Role": "D_日历.年_层次结构.年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "年_层次结构_have_年月"
+			        }
+			      ]
+			    },
+			    "D_日历_年_层次结构_has_年": {
+			      "Binding": {
+			        "ConceptualEntity": "D_日历"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_日历.年_层次结构": {
+			          "Target": {
+			            "Entity": "D_日历.年_层次结构"
+			          }
+			        },
+			        "D_日历.年_层次结构.年": {
+			          "Target": {
+			            "Entity": "D_日历.年_层次结构.年"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历.年_层次结构"
+			            },
+			            "Object": {
+			              "Role": "D_日历.年_层次结构.年"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "年_层次结构_have_年"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_D_日历": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "D_日历": {
+			          "Target": {
+			            "Entity": "D_日历"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "D_日历"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_D_日历"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_日历_have_F_分包产值"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_D_采购分类": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_D_采购分类"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_F_分包产值"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_D_责任体": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "D_责任体": {
+			          "Target": {
+			            "Entity": "D_责任体"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "D_责任体"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_D_责任体"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_责任体"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_责任体_have_F_分包产值"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_D_包商等级": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "D_包商等级": {
+			          "Target": {
+			            "Entity": "D_包商等级"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "D_包商等级"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_D_包商等级"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_包商等级"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_包商等级_have_F_分包产值"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_指标_y_最大值_客商数": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "指标.y_最大值_客商数": {
+			          "Target": {
+			            "Entity": "指标.y_最大值_客商数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "指标.y_最大值_客商数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_y_最大值_客商数"
+			        }
+			      ]
+			    },
+			    "D_责任体_has_指标_y_最大值_客商数": {
+			      "Binding": {
+			        "ConceptualEntity": "D_责任体"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_责任体": {
+			          "Target": {
+			            "Entity": "D_责任体"
+			          }
+			        },
+			        "指标.y_最大值_客商数": {
+			          "Target": {
+			            "Entity": "指标.y_最大值_客商数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_责任体"
+			            },
+			            "Object": {
+			              "Role": "指标.y_最大值_客商数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_责任体_have_y_最大值_客商数"
+			        }
+			      ]
+			    },
+			    "D_日历_has_年_层次结构": {
+			      "Binding": {
+			        "ConceptualEntity": "D_日历"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_日历": {
+			          "Target": {
+			            "Entity": "D_日历"
+			          }
+			        },
+			        "D_日历.年_层次结构": {
+			          "Target": {
+			            "Entity": "D_日历.年_层次结构"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历"
+			            },
+			            "Object": {
+			              "Role": "D_日历.年_层次结构"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_日历_have_年_层次结构"
+			        }
+			      ]
+			    },
+			    "D_日历_has_年月": {
+			      "Binding": {
+			        "ConceptualEntity": "D_日历"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_日历": {
+			          "Target": {
+			            "Entity": "D_日历"
+			          }
+			        },
+			        "D_日历.年月": {
+			          "Target": {
+			            "Entity": "D_日历.年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历"
+			            },
+			            "Object": {
+			              "Role": "D_日历.年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_日历_have_年月"
+			        }
+			      ]
+			    },
+			    "D_日历_has_年": {
+			      "Binding": {
+			        "ConceptualEntity": "D_日历"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_日历": {
+			          "Target": {
+			            "Entity": "D_日历"
+			          }
+			        },
+			        "D_日历.年": {
+			          "Target": {
+			            "Entity": "D_日历.年"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历"
+			            },
+			            "Object": {
+			              "Role": "D_日历.年"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_日历_have_年"
+			        }
+			      ]
+			    },
+			    "指标_has_sum_产值_年累": {
+			      "Binding": {
+			        "ConceptualEntity": "指标"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "指标": {
+			          "Target": {
+			            "Entity": "指标"
+			          }
+			        },
+			        "指标.sum_产值_年累": {
+			          "Target": {
+			            "Entity": "指标.sum_产值_年累"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "指标"
+			            },
+			            "Object": {
+			              "Role": "指标.sum_产值_年累"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "指标_have_sum_产值_年累"
+			        }
+			      ]
+			    },
+			    "指标_has_sum_产值_开累": {
+			      "Binding": {
+			        "ConceptualEntity": "指标"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "指标": {
+			          "Target": {
+			            "Entity": "指标"
+			          }
+			        },
+			        "指标.sum_产值_开累": {
+			          "Target": {
+			            "Entity": "指标.sum_产值_开累"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "指标"
+			            },
+			            "Object": {
+			              "Role": "指标.sum_产值_开累"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "指标_have_sum_产值_开累"
+			        }
+			      ]
+			    },
+			    "D_日历_has_date": {
+			      "Binding": {
+			        "ConceptualEntity": "D_日历"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_日历": {
+			          "Target": {
+			            "Entity": "D_日历"
+			          }
+			        },
+			        "D_日历.date": {
+			          "Target": {
+			            "Entity": "D_日历.date"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历"
+			            },
+			            "Object": {
+			              "Role": "D_日历.date"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_日历_have_dates"
+			        }
+			      ]
+			    },
+			    "D_采购分类_has_三级分类": {
+			      "Binding": {
+			        "ConceptualEntity": "D_采购分类"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        },
+			        "D_采购分类.三级分类": {
+			          "Target": {
+			            "Entity": "D_采购分类.三级分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类.三级分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_三级分类"
+			        }
+			      ]
+			    },
+			    "D_采购分类_has_二级分类": {
+			      "Binding": {
+			        "ConceptualEntity": "D_采购分类"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        },
+			        "D_采购分类.二级分类": {
+			          "Target": {
+			            "Entity": "D_采购分类.二级分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类.二级分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_二级分类"
+			        }
+			      ]
+			    },
+			    "D_采购分类_has_一级分类": {
+			      "Binding": {
+			        "ConceptualEntity": "D_采购分类"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        },
+			        "D_采购分类.一级分类": {
+			          "Target": {
+			            "Entity": "D_采购分类.一级分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类.一级分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_一级分类"
+			        }
+			      ]
+			    },
+			    "D_采购分类_has_五大分类": {
+			      "Binding": {
+			        "ConceptualEntity": "D_采购分类"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        },
+			        "D_采购分类.五大分类": {
+			          "Target": {
+			            "Entity": "D_采购分类.五大分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类.五大分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_五大分类"
+			        }
+			      ]
+			    },
+			    "D_采购分类_has_归属部门": {
+			      "Binding": {
+			        "ConceptualEntity": "D_采购分类"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        },
+			        "D_采购分类.归属部门": {
+			          "Target": {
+			            "Entity": "D_采购分类.归属部门"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类.归属部门"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_归属部门"
+			        }
+			      ]
+			    },
+			    "D_采购分类_has_标准合同名称": {
+			      "Binding": {
+			        "ConceptualEntity": "D_采购分类"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        },
+			        "D_采购分类.标准合同名称": {
+			          "Target": {
+			            "Entity": "D_采购分类.标准合同名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类.标准合同名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_标准合同名称"
+			        }
+			      ]
+			    },
+			    "D_采购分类_has_标准合同编号": {
+			      "Binding": {
+			        "ConceptualEntity": "D_采购分类"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_采购分类": {
+			          "Target": {
+			            "Entity": "D_采购分类"
+			          }
+			        },
+			        "D_采购分类.标准合同编号": {
+			          "Target": {
+			            "Entity": "D_采购分类.标准合同编号"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_采购分类"
+			            },
+			            "Object": {
+			              "Role": "D_采购分类.标准合同编号"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_采购分类_have_标准合同编号"
+			        }
+			      ]
+			    },
+			    "货币单位_has_系数": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.系数": {
+			          "Target": {
+			            "Entity": "货币单位.系数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.系数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_系数"
+			        }
+			      ]
+			    },
+			    "货币单位_has_货币单位": {
+			      "Binding": {
+			        "ConceptualEntity": "货币单位"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "货币单位": {
+			          "Target": {
+			            "Entity": "货币单位"
+			          }
+			        },
+			        "货币单位.货币单位": {
+			          "Target": {
+			            "Entity": "货币单位.货币单位"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Object": {
+			              "Role": "货币单位.货币单位"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_have_货币单位"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "货币单位"
+			            },
+			            "Name": {
+			              "Role": "货币单位.货币单位"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "货币单位_are_names_IDs_of_货币单位"
+			        }
+			      ]
+			    },
+			    "D_责任体_has_排序": {
+			      "Binding": {
+			        "ConceptualEntity": "D_责任体"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_责任体": {
+			          "Target": {
+			            "Entity": "D_责任体"
+			          }
+			        },
+			        "D_责任体.排序": {
+			          "Target": {
+			            "Entity": "D_责任体.排序"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_责任体"
+			            },
+			            "Object": {
+			              "Role": "D_责任体.排序"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_责任体_have_排序"
+			        }
+			      ]
+			    },
+			    "D_责任体_has_责任体": {
+			      "Binding": {
+			        "ConceptualEntity": "D_责任体"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_责任体": {
+			          "Target": {
+			            "Entity": "D_责任体"
+			          }
+			        },
+			        "D_责任体.责任体": {
+			          "Target": {
+			            "Entity": "D_责任体.责任体"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_责任体"
+			            },
+			            "Object": {
+			              "Role": "D_责任体.责任体"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_责任体_have_责任体"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_三级分类": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.三级分类": {
+			          "Target": {
+			            "Entity": "F_分包产值.三级分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.三级分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_三级分类"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_二级分类": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.二级分类": {
+			          "Target": {
+			            "Entity": "F_分包产值.二级分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.二级分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_二级分类"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_一级分类": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.一级分类": {
+			          "Target": {
+			            "Entity": "F_分包产值.一级分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.一级分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_一级分类"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_五大分类": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.五大分类": {
+			          "Target": {
+			            "Entity": "F_分包产值.五大分类"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.五大分类"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_五大分类"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_日期": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.日期": {
+			          "Target": {
+			            "Entity": "F_分包产值.日期"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.日期"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_日期"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_标准合同名称": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.标准合同名称": {
+			          "Target": {
+			            "Entity": "F_分包产值.标准合同名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.标准合同名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_标准合同名称"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_分包类型": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.分包类型": {
+			          "Target": {
+			            "Entity": "F_分包产值.分包类型"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.分包类型"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_分包类型"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_施工专业": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.施工专业": {
+			          "Target": {
+			            "Entity": "F_分包产值.施工专业"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.施工专业"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_施工专业"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_客商名称": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.客商名称": {
+			          "Target": {
+			            "Entity": "F_分包产值.客商名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.客商名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_客商名称"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_项目名称": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "F_分包产值.项目名称": {
+			          "Target": {
+			            "Entity": "F_分包产值.项目名称"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "F_分包产值.项目名称"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_项目名称"
+			        }
+			      ]
+			    },
+			    "D_包商等级_has_包商等级": {
+			      "Binding": {
+			        "ConceptualEntity": "D_包商等级"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_包商等级": {
+			          "Target": {
+			            "Entity": "D_包商等级"
+			          }
+			        },
+			        "D_包商等级.包商等级": {
+			          "Target": {
+			            "Entity": "D_包商等级.包商等级"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_包商等级"
+			            },
+			            "Object": {
+			              "Role": "D_包商等级.包商等级"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_包商等级_have_包商等级"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_指标_y_最小值_客商数": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "指标.y_最小值_客商数": {
+			          "Target": {
+			            "Entity": "指标.y_最小值_客商数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "指标.y_最小值_客商数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_y_最小值_客商数"
+			        }
+			      ]
+			    },
+			    "D_责任体_has_指标_y_最小值_客商数": {
+			      "Binding": {
+			        "ConceptualEntity": "D_责任体"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_责任体": {
+			          "Target": {
+			            "Entity": "D_责任体"
+			          }
+			        },
+			        "指标.y_最小值_客商数": {
+			          "Target": {
+			            "Entity": "指标.y_最小值_客商数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_责任体"
+			            },
+			            "Object": {
+			              "Role": "指标.y_最小值_客商数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "D_责任体_have_y_最小值_客商数"
+			        }
+			      ]
+			    },
+			    "指标_has_y_最大值_产值": {
+			      "Binding": {
+			        "ConceptualEntity": "指标"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "指标": {
+			          "Target": {
+			            "Entity": "指标"
+			          }
+			        },
+			        "指标.y_最大值_产值": {
+			          "Target": {
+			            "Entity": "指标.y_最大值_产值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "指标"
+			            },
+			            "Object": {
+			              "Role": "指标.y_最大值_产值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "指标_have_y_最大值_产值"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_指标_r_客商数等级占比": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "指标.r_客商数等级占比": {
+			          "Target": {
+			            "Entity": "指标.r_客商数等级占比"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "指标.r_客商数等级占比"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_r_客商数等级占比"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_指标_cnt_客商数_所有等级": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "指标.cnt_客商数_所有等级": {
+			          "Target": {
+			            "Entity": "指标.cnt_客商数_所有等级"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "指标.cnt_客商数_所有等级"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_cnt_客商数_所有等级"
+			        }
+			      ]
+			    },
+			    "指标_has_r_产值等级占比": {
+			      "Binding": {
+			        "ConceptualEntity": "指标"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "指标": {
+			          "Target": {
+			            "Entity": "指标"
+			          }
+			        },
+			        "指标.r_产值等级占比": {
+			          "Target": {
+			            "Entity": "指标.r_产值等级占比"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "指标"
+			            },
+			            "Object": {
+			              "Role": "指标.r_产值等级占比"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "指标_have_r_产值等级占比"
+			        }
+			      ]
+			    },
+			    "指标_has_sum_产值_所有等级": {
+			      "Binding": {
+			        "ConceptualEntity": "指标"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "指标": {
+			          "Target": {
+			            "Entity": "指标"
+			          }
+			        },
+			        "指标.sum_产值_所有等级": {
+			          "Target": {
+			            "Entity": "指标.sum_产值_所有等级"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "指标"
+			            },
+			            "Object": {
+			              "Role": "指标.sum_产值_所有等级"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "指标_have_sum_产值_所有等级"
+			        }
+			      ]
+			    },
+			    "指标_has_sum_产值": {
+			      "Binding": {
+			        "ConceptualEntity": "指标"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "指标": {
+			          "Target": {
+			            "Entity": "指标"
+			          }
+			        },
+			        "指标.sum_产值": {
+			          "Target": {
+			            "Entity": "指标.sum_产值"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "指标"
+			            },
+			            "Object": {
+			              "Role": "指标.sum_产值"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "指标_have_sum_产值"
+			        }
+			      ]
+			    },
+			    "F_分包产值_has_指标_cnt_客商数": {
+			      "Binding": {
+			        "ConceptualEntity": "F_分包产值"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "F_分包产值": {
+			          "Target": {
+			            "Entity": "F_分包产值"
+			          }
+			        },
+			        "指标.cnt_客商数": {
+			          "Target": {
+			            "Entity": "指标.cnt_客商数"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "F_分包产值"
+			            },
+			            "Object": {
+			              "Role": "指标.cnt_客商数"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "F_分包产值_have_cnt_客商数"
+			        }
+			      ]
+			    },
+			    "D_日历_年_层次结构_年_has_D_日历_年_层次结构_年月": {
+			      "Binding": {
+			        "ConceptualEntity": "D_日历"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "D_日历.年_层次结构.年": {
+			          "Target": {
+			            "Entity": "D_日历.年_层次结构.年"
+			          }
+			        },
+			        "D_日历.年_层次结构.年月": {
+			          "Target": {
+			            "Entity": "D_日历.年_层次结构.年月"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历.年_层次结构.年"
+			            },
+			            "Object": {
+			              "Role": "D_日历.年_层次结构.年月"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "年_have_年月"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "D_日历.年_层次结构.年月"
+			            },
+			            "Object": {
+			              "Role": "D_日历.年_层次结构.年"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "年月_have_年"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "D_日历.年_层次结构.年月"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "D_日历.年_层次结构.年"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "年月_are_in_年"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

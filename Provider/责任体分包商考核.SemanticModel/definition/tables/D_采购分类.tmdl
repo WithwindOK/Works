@@ -1,0 +1,64 @@
+table D_采购分类
+	lineageTag: eb36560c-dd45-4bd2-bc70-8d6bb9435c97
+
+	column 标准合同编号
+		dataType: string
+		lineageTag: 5bfec511-8b21-42c2-bf71-a6d6b2cf3252
+		summarizeBy: none
+		sourceColumn: 标准合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: bd16bd6f-8504-46f9-8b71-90b73c2fd47b
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 五大分类
+		dataType: string
+		lineageTag: ea928767-dc3d-40ed-a225-872a7e341187
+		summarizeBy: none
+		sourceColumn: 五大分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 一级分类
+		dataType: string
+		lineageTag: 7a610d9a-d128-46ea-8671-e022e47a5f82
+		summarizeBy: none
+		sourceColumn: 一级分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 二级分类
+		dataType: string
+		lineageTag: 11b49c80-af98-4b5a-b876-ed3db09a11e2
+		summarizeBy: none
+		sourceColumn: 二级分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 三级分类
+		dataType: string
+		lineageTag: 76697637-4e7a-47b5-a77d-0d261e3ac297
+		summarizeBy: none
+		sourceColumn: 三级分类
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_采购分类 = m
+		mode: import
+		source =
+				let
+				    源 = Sql.Database("sql1.chinaonebuild.com", "BAM"),
+				    dbo_D_采购分类 = 源{[Schema="dbo",Item="D_采购分类"]}[Data]
+				in
+				    dbo_D_采购分类
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,114 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 20.909090042114258,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 931,
+            "y": 290.27272033691406
+          },
+          "nodeIndex": "指标",
+          "nodeLineageTag": "3753585d-2a6b-44b6-af82-741cb2587211",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1162,
+            "y": 316.5
+          },
+          "nodeIndex": "货币单位",
+          "nodeLineageTag": "d05b5466-2363-4a14-b388-5710661f87b7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 427.54547119140625,
+            "y": 238
+          },
+          "nodeIndex": "F_分包产值",
+          "nodeLineageTag": "ffba6285-1138-4c7b-88b8-2e9362c0881b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 98
+          },
+          "nodeIndex": "D_包商等级",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 525.90909194946289,
+            "y": 0
+          },
+          "nodeIndex": "D_责任体",
+          "nodeLineageTag": "bf197bc2-1a83-4638-a3bb-15890282c4c1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 128
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 406
+          },
+          "nodeIndex": "D_采购分类",
+          "nodeLineageTag": "eb36560c-dd45-4bd2-bc70-8d6bb9435c97",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 248
+        },
+        {
+          "location": {
+            "x": 844.3636474609375,
+            "y": 0
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "5df74998-f681-493b-a2db-44d04847fd78",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "所有表",
+  "defaultDiagram": "所有表"
+}

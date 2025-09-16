@@ -1,0 +1,23 @@
+table D_包商等级
+	lineageTag: 0552eeb9-abff-4f3d-96f9-48c0e0749794
+
+	column 包商等级
+		dataType: string
+		lineageTag: 83de09d2-9ef4-41ac-9ed6-4eb1b68f2dd2
+		summarizeBy: none
+		sourceColumn: 包商等级
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_包商等级 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WctR/smfGiy0rlGJ1opWc9F90rn+6dC+Y46z/dELHswV7wBwX/Sc7epH4UfrP5qx6sb5FKTYWAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [包商等级 = _t])
+				in
+				    源
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

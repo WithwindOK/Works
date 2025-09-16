@@ -1,0 +1,33 @@
+table D_责任体
+	lineageTag: bf197bc2-1a83-4638-a3bb-15890282c4c1
+
+	column 责任体
+		dataType: string
+		lineageTag: bb3692a4-4c17-4af1-9c40-ad691bf680c7
+		summarizeBy: none
+		sourceColumn: 责任体
+
+		annotation SummarizationSetBy = Automatic
+
+	column 排序
+		dataType: int64
+		formatString: 0
+		lineageTag: e3263ee4-59f8-4bb8-95b3-b66242bebf47
+		summarizeBy: none
+		sourceColumn: 排序
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_责任体 = m
+		mode: import
+		source =
+				let
+				    责任体列表 = AnalysisServices.Database("sql1.chinaonebuild.com", "BAM", [Query="EVALUATE #(lf)TOPN( 500, 'D-责任体' )", Implementation="2.0"]),
+				    重命名的列 = Table.RenameColumns(责任体列表,{{"D-责任体[责任体]", "责任体"}, {"D-责任体[排序]", "排序"}})
+				in
+				    重命名的列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

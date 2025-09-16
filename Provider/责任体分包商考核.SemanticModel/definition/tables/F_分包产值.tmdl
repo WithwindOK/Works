@@ -1,0 +1,174 @@
+table F_分包产值
+	lineageTag: ffba6285-1138-4c7b-88b8-2e9362c0881b
+
+	column 责任体
+		dataType: string
+		isHidden
+		lineageTag: 07ed2bbe-b5a1-4e3d-a3b7-e40ce55245c8
+		summarizeBy: none
+		sourceColumn: 责任体
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: c7f5ded5-edaa-4994-a69c-cb8d402b7b61
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: cc69421d-469a-4c41-b6ea-54f06f50d82a
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年序号
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bd3bb2f0-f8ba-485c-929a-6bc0ebb18ff4
+		summarizeBy: sum
+		sourceColumn: 年序号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份序号
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 78d48420-42d8-4522-90af-595de722f577
+		summarizeBy: sum
+		sourceColumn: 月份序号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 产值
+		dataType: decimal
+		isHidden
+		formatString: "¥"#,0.###############;"¥"-#,0.###############;"¥"#,0.###############
+		lineageTag: c8199536-164d-4030-9511-ee473c38c10c
+		summarizeBy: sum
+		sourceColumn: 产值
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"zh-CN"}
+
+	column 综合评级
+		dataType: string
+		isHidden
+		lineageTag: f579aca7-26de-43c2-8d72-2af53a39032c
+		summarizeBy: none
+		sourceColumn: 综合评级
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: c03dfede-c4b2-4b9f-8c4b-2f8b0410e1c6
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: 0d27280d-4507-4904-a0e8-cb143031e748
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同编号
+		dataType: string
+		lineageTag: b3fd508f-cc75-4d3a-bceb-fe39a40fce8b
+		summarizeBy: none
+		sourceColumn: 标准合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: f5065b75-11e8-44cf-b99e-bb5966c942b6
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dd13f2bd-9da4-4c6b-bbf9-83c6856900b1
+		summarizeBy: none
+		sourceColumn: 日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 五大分类
+		dataType: string
+		lineageTag: 7600c8f7-e7aa-4941-a72e-6c303054de6f
+		summarizeBy: none
+		sourceColumn: 五大分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 一级分类
+		dataType: string
+		lineageTag: 4703f969-98df-4469-b3dd-dcb17419f427
+		summarizeBy: none
+		sourceColumn: 一级分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 二级分类
+		dataType: string
+		lineageTag: 0d572a01-7fd9-4c2b-9cb0-2e5d7490a07f
+		summarizeBy: none
+		sourceColumn: 二级分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 三级分类
+		dataType: string
+		lineageTag: d25b975a-036e-4241-8d4d-a053706f14c9
+		summarizeBy: none
+		sourceColumn: 三级分类
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_分包产值 = m
+		mode: import
+		source =
+				let
+				    F_分包产值 = AnalysisServices.Database("sql1.chinaonebuild.com", "BAM", [Query="/* START QUERY BUILDER */#(lf)EVALUATE#(lf)SUMMARIZECOLUMNS(#(lf)    'D_项目信息'[责任体],#(lf)    'D_项目信息'[项目名称],#(lf)    'D_下游合同'[施工专业],#(lf)    'D_下游合同'[分包类型],#(lf)    'D_下游合同'[标准合同编号],#(lf)    'D_下游合同'[标准合同名称],#(lf)    'D_下游合同'[客商名称],#(lf)    'D_日历'[年序号],#(lf)    'D_日历'[月份序号],#(lf)    KEEPFILTERS( FILTER( ALL( 'D_项目信息'[项目名称] ), NOT( ISBLANK( 'D_项目信息'[项目名称] )))),#(lf)    ""产值"", [M.下游合同完成量.价税合计.Sum]#(lf))", Implementation="2.0"]),
+				    更改的类型 = Table.TransformColumnTypes(F_分包产值,{{"[产值]", Currency.Type}}),
+				    重命名列 = Table.TransformColumnNames(更改的类型,each Text.BetweenDelimiters(_,"[","]")),
+				    已添加自定义 = Table.AddColumn(重命名列, "日期", each #date([年序号],[月份序号],1),type date),
+				    合并的查询1 = Table.NestedJoin(已添加自定义, {"标准合同编号"}, D_采购分类, {"标准合同编号"}, "D_采购分类", JoinKind.LeftOuter),
+				    #"展开的“D_采购分类”" = Table.ExpandTableColumn(合并的查询1, "D_采购分类", {"五大分类", "一级分类", "二级分类", "三级分类"}, {"五大分类", "一级分类", "二级分类", "三级分类"}),
+				    合并的查询 = Table.NestedJoin(#"展开的“D_采购分类”", {"客商名称", "五大分类", "年序号"}, 包商评价, {"分供商名称", "五大分类", "评级周期"}, "包商评价", JoinKind.LeftOuter),
+				    #"展开的“包商评价”" = Table.ExpandTableColumn(合并的查询, "包商评价", {"综合评级"}, {"综合评级"}),
+				    替换的值 = Table.ReplaceValue(#"展开的“包商评价”",null,"Z/未评",Replacer.ReplaceValue,{"综合评级"})
+				in
+				    替换的值
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

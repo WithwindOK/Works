@@ -1,0 +1,16 @@
+relationship 66e55331-0e02-e015-9856-ab92fbc25298
+	fromColumn: F_分包产值.综合评级
+	toColumn: D_包商等级.包商等级
+
+relationship AutoDetected_b5d3237d-ef68-4eee-8ebe-9c77d969c648
+	fromColumn: F_分包产值.责任体
+	toColumn: D_责任体.责任体
+
+relationship AutoDetected_cba69d98-876a-48fd-ac53-338de8899c6a
+	fromColumn: F_分包产值.标准合同编号
+	toColumn: D_采购分类.标准合同编号
+
+relationship 283e319a-8373-3906-4ae8-7fc0fa7220db
+	fromColumn: F_分包产值.日期
+	toColumn: D_日历.Date
+

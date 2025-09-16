@@ -1,0 +1,940 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "displayName": "产值",
+  "name": "3bc1eb22a2417fcd43d5",
+  "options": {
+    "targetVisualNames": [
+      "74fb692432b9e75f0ef4"
+    ]
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ee18b3c31889629ca4a4",
+    "filters": {
+      "byExpr": [
+        {
+          "name": "701558db4292d932215a",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "货",
+                "Entity": "货币单位",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "货"
+                            }
+                          },
+                          "Property": "货币单位"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "'万'"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "货币单位"
+                }
+              },
+              "Property": "货币单位"
+            }
+          },
+          "howCreated": 1
+        }
+      ]
+    },
+    "sections": {
+      "ee18b3c31889629ca4a4": {
+        "filters": {
+          "byName": {
+            "693db2c16fc103edd067": {
+              "name": "693db2c16fc103edd067",
+              "type": "Categorical",
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "d",
+                    "Entity": "D_责任体",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Not": {
+                        "Expression": {
+                          "In": {
+                            "Expressions": [
+                              {
+                                "Column": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Source": "d"
+                                    }
+                                  },
+                                  "Property": "责任体"
+                                }
+                              }
+                            ],
+                            "Values": [
+                              [
+                                {
+                                  "Literal": {
+                                    "Value": "'海外'"
+                                  }
+                                }
+                              ]
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "D_责任体"
+                    }
+                  },
+                  "Property": "责任体"
+                }
+              },
+              "howCreated": 1
+            }
+          },
+          "byExpr": [
+            {
+              "name": "a76a5a7e6fa3b42a0713",
+              "type": "Categorical",
+              "expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "D_包商等级"
+                    }
+                  },
+                  "Property": "包商等级"
+                }
+              },
+              "howCreated": 1
+            }
+          ]
+        },
+        "visualContainers": {
+          "fd8f83bf03ea94796408": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "379da6784dcab4ce3757",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_日历"
+                        }
+                      },
+                      "Property": "年"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "d",
+                                "Entity": "D_日历",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "d"
+                                            }
+                                          },
+                                          "Property": "年"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'2024年'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_日历"
+                        }
+                      },
+                      "Property": "年"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "74fb692432b9e75f0ef4": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "9fc07a77f82a393995b2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_责任体"
+                        }
+                      },
+                      "Property": "责任体"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "advancedSlicerVisual",
+              "objects": {
+                "merge": {
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_日历"
+                        }
+                      },
+                      "Property": "年"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "08cc03bd3dc275f48730": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "44fb461686965d95f43a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_包商等级"
+                        }
+                      },
+                      "Property": "包商等级"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3365c94c49bab1077024",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_责任体"
+                        }
+                      },
+                      "Property": "责任体"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "69c2304b80b579a3b9e5",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "一级分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "099861c3b75d6c3051d2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "二级分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a9b237b486fa6089421e",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "三级分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e550afdc4f75de434813",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "五大分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "d3c7809b0357e6252581",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "F_分包产值"
+                        }
+                      },
+                      "Property": "施工专业"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dad57c7ce12a4a7807ee",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "F_分包产值"
+                        }
+                      },
+                      "Property": "分包类型"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a1d561b97621e53e4f46",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "指标"
+                        }
+                      },
+                      "Property": "产值&等级占比"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "decompositionTreeVisual",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "指标"
+                        }
+                      },
+                      "Property": "产值&等级占比"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "ExplainBy": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_包商等级"
+                        }
+                      },
+                      "Property": "包商等级"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_责任体"
+                        }
+                      },
+                      "Property": "责任体"
+                    }
+                  }
+                ]
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "ExplainBy"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "D_包商等级.包商等级"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_包商等级"
+                              }
+                            },
+                            "Property": "包商等级"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "D_责任体.责任体"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_责任体"
+                              }
+                            },
+                            "Property": "责任体"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.五大分类"
+                      ],
+                      "isCollapsed": true
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.三级分类"
+                      ],
+                      "isCollapsed": true
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.二级分类"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_采购分类"
+                              }
+                            },
+                            "Property": "二级分类"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.一级分类"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_采购分类"
+                              }
+                            },
+                            "Property": "一级分类"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "queryRefs": [
+                        "F_分包产值.分包类型"
+                      ],
+                      "isCollapsed": true
+                    },
+                    {
+                      "queryRefs": [
+                        "F_分包产值.施工专业"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "F_分包产值"
+                              }
+                            },
+                            "Property": "施工专业"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null,
+                    "children": [
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'Z/未评'"
+                            }
+                          }
+                        ],
+                        "isToggled": true
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "fc21d970b6b4fd351473": {
+            "singleVisual": {
+              "visualType": "bookmarkNavigator",
+              "objects": {}
+            }
+          },
+          "be497bc86ddf1fb83996": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "dcb234cda1e22da4316a",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_包商等级"
+                        }
+                      },
+                      "Property": "包商等级"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a401d6b4f47f8213115d",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_责任体"
+                        }
+                      },
+                      "Property": "责任体"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6f93519adc1e50c1d340",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "一级分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "64db2483c4b0a4590b58",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "二级分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b31e8dedef363983cebf",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "三级分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ab8f8789206bb47c09f4",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "D_采购分类"
+                        }
+                      },
+                      "Property": "五大分类"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a081732fd66473a46691",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "F_分包产值"
+                        }
+                      },
+                      "Property": "施工专业"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "4d6e7acb76449c4a9542",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "F_分包产值"
+                        }
+                      },
+                      "Property": "分包类型"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e7739064bf1179168ab7",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "指标"
+                        }
+                      },
+                      "Property": "客商数&等级占比"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "decompositionTreeVisual",
+              "objects": {},
+              "expansionStates": [
+                {
+                  "roles": [
+                    "ExplainBy"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "F_分包产值.施工专业"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "F_分包产值"
+                              }
+                            },
+                            "Property": "施工专业"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "F_分包产值.分包类型"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.五大分类"
+                      ],
+                      "isCollapsed": true
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.三级分类"
+                      ],
+                      "isCollapsed": true
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.二级分类"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_采购分类"
+                              }
+                            },
+                            "Property": "二级分类"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "queryRefs": [
+                        "D_采购分类.一级分类"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_采购分类"
+                              }
+                            },
+                            "Property": "一级分类"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "queryRefs": [
+                        "D_责任体.责任体"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_责任体"
+                              }
+                            },
+                            "Property": "责任体"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "queryRefs": [
+                        "D_包商等级.包商等级"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "D_包商等级"
+                              }
+                            },
+                            "Property": "包商等级"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "root": {
+                    "identityValues": null,
+                    "isToggled": true,
+                    "children": [
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'机电'"
+                            }
+                          }
+                        ],
+                        "isToggled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

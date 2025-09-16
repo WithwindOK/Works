@@ -1,0 +1,63 @@
+expression 包商评价 =
+		let
+		    源 = Folder.Files("\\172.16.8.66\关键指标数据\经营管控中心\包商评价"),
+		    筛选的隐藏文件1 = Table.SelectRows(源, each [Attributes]?[Hidden]? <> true),
+		    调用自定义函数1 = Table.AddColumn(筛选的隐藏文件1, "转换文件", each 转换文件([Content])),
+		    重命名的列1 = Table.RenameColumns(调用自定义函数1, {"Name", "Source.Name"}),
+		    删除的其他列1 = Table.SelectColumns(重命名的列1, {"Source.Name", "转换文件"}),
+		    扩展的表格列1 = Table.ExpandTableColumn(删除的其他列1, "转换文件", Table.ColumnNames(转换文件(示例文件))),
+		    删除的其他列 = Table.SelectColumns(扩展的表格列1,{"五大分类", "分供商名称", "综合评级", "评级周期"}),
+		    已提取首字符 = Table.TransformColumns(删除的其他列, {{"评级周期", each Text.Start(_, 4), type text}}),
+		    更改的类型 = Table.TransformColumnTypes(已提取首字符,{{"五大分类", type text}, {"分供商名称", type text}, {"综合评级", type text}, {"评级周期", Int64.Type}}),
+		    已添加自定义 = Table.AddColumn(更改的类型, "日期", each #date([评级周期],1,1),type date)
+		in
+		    已添加自定义
+	lineageTag: ef1720a5-ea3a-4f2e-8275-163a16929516
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 参数1 = 示例文件 meta [IsParameterQuery=true, BinaryIdentifier=示例文件, Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: e35d3f2a-323b-46bf-af4b-7054261f643a
+	queryGroup: '从 包商评价 (3) 转换文件\帮助程序查询'
+
+	annotation PBI_ResultType = Binary
+
+expression 转换示例文件 =
+		let
+		    源 = Excel.Workbook(参数1, null, true),
+		    评级_Table = 源{[Item="评级",Kind="Table"]}[Data]
+		in
+		    评级_Table
+	lineageTag: 6a291c6f-d4ab-45dc-b1da-7415a4764263
+	queryGroup: '从 包商评价 (3) 转换文件'
+
+	annotation PBI_ResultType = Table
+
+expression 示例文件 =
+		let
+		    源 = Folder.Files("\\172.16.8.66\关键指标数据\经营管控中心\包商评价"),
+		    导航1 = 源{0}[Content]
+		in
+		    导航1
+	lineageTag: ec9bb5d0-88d0-4b8d-9950-b72146f6ca09
+	queryGroup: '从 包商评价 (3) 转换文件\帮助程序查询'
+
+	annotation PBI_ResultType = Binary
+
+expression 转换文件 =
+		let
+		    源 = (参数1 as binary) => let
+		    源 = Excel.Workbook(参数1, null, true),
+		    评级_Table = 源{[Item="评级",Kind="Table"]}[Data]
+		in
+		    评级_Table
+		in
+		    源
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""转换示例文件""}" ]
+	lineageTag: 11764c22-d750-4623-acf7-1e3618b0a546
+	queryGroup: '从 包商评价 (3) 转换文件\帮助程序查询'
+
+	annotation PBI_ResultType = Function
+

@@ -1,0 +1,296 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "a634d1d7acdf2c4d48a3",
+  "position": {
+    "x": 30.9699719161806,
+    "y": 29.495211348743428,
+    "z": 0,
+    "height": 662.16749477929,
+    "width": 1215.2027075682292,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用"
+                    }
+                  },
+                  "Property": "年度"
+                }
+              },
+              "queryRef": "人员费用.年度",
+              "nativeQueryRef": "年度"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用"
+                    }
+                  },
+                  "Property": "姓名/项目"
+                }
+              },
+              "queryRef": "人员费用.姓名/项目",
+              "nativeQueryRef": "姓名/项目"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用"
+                    }
+                  },
+                  "Property": "级别"
+                }
+              },
+              "queryRef": "人员费用.级别",
+              "nativeQueryRef": "级别"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用"
+                    }
+                  },
+                  "Property": "周期"
+                }
+              },
+              "queryRef": "人员费用.周期",
+              "nativeQueryRef": "周期"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用度量值"
+                    }
+                  },
+                  "Property": "平均单价"
+                }
+              },
+              "queryRef": "人员费用度量值.平均单价",
+              "nativeQueryRef": "平均单价"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用度量值"
+                    }
+                  },
+                  "Property": "人数"
+                }
+              },
+              "queryRef": "人员费用度量值.人数",
+              "nativeQueryRef": "人数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用度量值"
+                    }
+                  },
+                  "Property": "月数"
+                }
+              },
+              "queryRef": "人员费用度量值.月数",
+              "nativeQueryRef": "月数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "人员费用度量值"
+                    }
+                  },
+                  "Property": "金额"
+                }
+              },
+              "queryRef": "人员费用度量值.金额",
+              "nativeQueryRef": "金额"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "184.60448682187567D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "人员费用.姓名/项目"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.02988539976765D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "人员费用.级别"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "112.19233407348202D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "人员费用度量值.平均单价"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "126.02983517244564D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "人员费用度量值.人数"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.89763683216816D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "人员费用度量值.月数"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "174.7789786082077D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "人员费用度量值.金额"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "89.67383488344615D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "人员费用.年度"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'AlternatingRowsNew'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

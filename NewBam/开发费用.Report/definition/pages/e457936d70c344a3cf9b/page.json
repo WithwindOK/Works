@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.4.0/schema.json",
+  "name": "e457936d70c344a3cf9b",
+  "displayName": "费用分布",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "visualInteractions": [
+    {
+      "source": "b4b414f7b3ac67e1e60c",
+      "target": "0c58be67b21ab60d2b09",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6fb0ed871a5e29467f99",
+      "target": "0c58be67b21ab60d2b09",
+      "type": "NoFilter"
+    }
+  ]
+}

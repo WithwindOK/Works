@@ -1,0 +1,145 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.4.0/schema.json",
+  "name": "900ce8ad7372c27a2531",
+  "displayName": "弹出",
+  "displayOption": "ActualSize",
+  "height": 360,
+  "width": 600,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f76953d38b4a40979a20",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "开发费用"
+              }
+            },
+            "Property": "开发费用"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "d2b9161d72c3b05e2745",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "开发费用"
+              }
+            },
+            "Property": "修改数量"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "afc7de4f711412d24097",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "开发费用"
+              }
+            },
+            "Property": "扩展数量"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "17e931b7bb431d7f32b6",
+    "type": "Tooltip",
+    "parameters": [
+      {
+        "name": "4e80b29ae53abd31a3f3",
+        "boundFilter": "f76953d38b4a40979a20",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "开发费用"
+              }
+            },
+            "Property": "开发费用"
+          }
+        }
+      },
+      {
+        "name": "79ca1330920c5cda842e",
+        "boundFilter": "d2b9161d72c3b05e2745",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "开发费用"
+              }
+            },
+            "Property": "修改数量"
+          }
+        }
+      },
+      {
+        "name": "fddee8a5d2063901ea54",
+        "boundFilter": "afc7de4f711412d24097",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "开发费用"
+              }
+            },
+            "Property": "扩展数量"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspace": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

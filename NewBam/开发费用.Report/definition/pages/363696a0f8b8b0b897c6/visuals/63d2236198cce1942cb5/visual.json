@@ -1,0 +1,294 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "63d2236198cce1942cb5",
+  "position": {
+    "x": 24.478209552836418,
+    "y": 53.852061016240121,
+    "z": 0,
+    "height": 643.77691123959778,
+    "width": 1233.7017614629553,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "开发费用"
+                    }
+                  },
+                  "Property": "所属业务部门"
+                }
+              },
+              "queryRef": "开发费用.所属业务部门",
+              "nativeQueryRef": "所属业务部门"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "开发费用"
+                    }
+                  },
+                  "Property": "业务内容"
+                }
+              },
+              "queryRef": "开发费用.业务内容",
+              "nativeQueryRef": "业务内容"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "开发费用"
+                    }
+                  },
+                  "Property": "经济效益"
+                }
+              },
+              "queryRef": "开发费用.经济效益",
+              "nativeQueryRef": "经济效益"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "开发费用"
+                        }
+                      },
+                      "Property": "所用人天（天）"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(开发费用.所用人天（天）)",
+              "nativeQueryRef": "所用人天（天）",
+              "displayName": "所用人天（天）"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "开发费用"
+                        }
+                      },
+                      "Property": "开发费用（万元）"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(开发费用.开发费用（万元）)",
+              "nativeQueryRef": "开发费用（万元）",
+              "displayName": "开发费用（万元）"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "开发费用"
+                        }
+                      },
+                      "Property": "扩展功能数量"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(开发费用.扩展功能数量)",
+              "nativeQueryRef": "扩展功能数量",
+              "displayName": "扩展功能数量"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "开发费用"
+                        }
+                      },
+                      "Property": "修改功能数量"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(开发费用.修改功能数量)",
+              "nativeQueryRef": "修改功能数量",
+              "displayName": "修改功能数量"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "开发费用"
+                  }
+                },
+                "Property": "经济效益"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "449.45040634394394D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "开发费用.经济效益"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "189.25607256386115D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "开发费用.业务内容"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "149.2884172325567D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(开发费用.所用人天（天）)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144.92669190544322D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(开发费用.开发费用（万元）)"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0.4
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'AlternatingRowsNew'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

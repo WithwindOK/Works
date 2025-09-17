@@ -1,0 +1,437 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "开发费用": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "开发费用": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.年度": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "年度"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "年度": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.所属业务部门": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "所属业务部门"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "所属业务部门": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.业务内容": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "业务内容"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "业务内容": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.经济效益": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "经济效益"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "经济效益": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.所用人天天": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "所用人天（天）"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "所用人天（天）": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "所用人天": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.开发费用万元": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "开发费用（万元）"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "开发费用（万元）": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "开发费用": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.扩展功能数量": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "扩展功能数量"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "扩展功能数量": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "开发费用.修改功能数量": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "开发费用",
+			          "ConceptualProperty": "修改功能数量"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "修改功能数量": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "开发费用_has_修改功能数量": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.修改功能数量": {
+			          "Target": {
+			            "Entity": "开发费用.修改功能数量"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.修改功能数量"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_修改功能数量"
+			        }
+			      ]
+			    },
+			    "开发费用_has_扩展功能数量": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.扩展功能数量": {
+			          "Target": {
+			            "Entity": "开发费用.扩展功能数量"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.扩展功能数量"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_扩展功能数量"
+			        }
+			      ]
+			    },
+			    "开发费用_has_开发费用万元": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.开发费用万元": {
+			          "Target": {
+			            "Entity": "开发费用.开发费用万元"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.开发费用万元"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_开发费用万元"
+			        }
+			      ]
+			    },
+			    "开发费用_has_所用人天天": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.所用人天天": {
+			          "Target": {
+			            "Entity": "开发费用.所用人天天"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.所用人天天"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_所用人天天"
+			        }
+			      ]
+			    },
+			    "开发费用_has_经济效益": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.经济效益": {
+			          "Target": {
+			            "Entity": "开发费用.经济效益"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.经济效益"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_经济效益"
+			        }
+			      ]
+			    },
+			    "开发费用_has_业务内容": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.业务内容": {
+			          "Target": {
+			            "Entity": "开发费用.业务内容"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.业务内容"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_业务内容"
+			        }
+			      ]
+			    },
+			    "开发费用_has_所属业务部门": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.所属业务部门": {
+			          "Target": {
+			            "Entity": "开发费用.所属业务部门"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.所属业务部门"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_所属业务部门"
+			        }
+			      ]
+			    },
+			    "开发费用_has_年度": {
+			      "Binding": {
+			        "ConceptualEntity": "开发费用"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "开发费用": {
+			          "Target": {
+			            "Entity": "开发费用"
+			          }
+			        },
+			        "开发费用.年度": {
+			          "Target": {
+			            "Entity": "开发费用.年度"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "开发费用"
+			            },
+			            "Object": {
+			              "Role": "开发费用.年度"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "开发费用_have_年度"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

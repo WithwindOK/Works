@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "ba2f1e092d63f1dd729c",
+  "position": {
+    "x": 87.276616605018049,
+    "y": 495.93653906145551,
+    "z": 2000,
+    "height": 49.285618788716071,
+    "width": 764.953874949864,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "备注：初级：1.8万/月；中级：2.8万/月；准高级：3.2万/月；高级：3.8万/月",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

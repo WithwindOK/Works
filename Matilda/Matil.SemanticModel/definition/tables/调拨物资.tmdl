@@ -1,0 +1,119 @@
+table 调拨物资
+	lineageTag: a87ddb0a-7ad6-4b7f-b517-5b4109dac880
+
+	column FID
+		dataType: string
+		lineageTag: 6db7fefa-802d-42f2-b17c-f2fe29fc6f24
+		summarizeBy: none
+		sourceColumn: FID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 调出项目编码
+		dataType: string
+		lineageTag: ed60b5e3-8946-4d90-bef0-f9ec013fd71e
+		summarizeBy: none
+		sourceColumn: 调出项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 调出项目名称
+		dataType: string
+		lineageTag: 1b01e16d-1fa5-4360-9499-910fc6a1026d
+		summarizeBy: none
+		sourceColumn: 调出项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 调入项目编码
+		dataType: string
+		lineageTag: 4a6bf7f9-4a1d-4060-a04d-6effdea00b2d
+		summarizeBy: none
+		sourceColumn: 调入项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 调入项目名称
+		dataType: string
+		lineageTag: da3f0cec-b7eb-422f-8e41-8eb1d93a4d73
+		summarizeBy: none
+		sourceColumn: 调入项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准物资名称
+		dataType: string
+		lineageTag: 6d52f3c5-49f8-4d2f-a8d5-4ca435671657
+		summarizeBy: none
+		sourceColumn: 标准物资名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 规格型号
+		dataType: string
+		lineageTag: 251c2ce1-255b-4051-bf0a-1c49e9490eaf
+		summarizeBy: none
+		sourceColumn: 规格型号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 单位
+		dataType: string
+		lineageTag: 5732bb2a-3ad1-4fa3-919d-84bc24369a89
+		summarizeBy: none
+		sourceColumn: 单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 调拨单价
+		dataType: double
+		lineageTag: 63ee662b-bbdd-4e23-9c66-55dedd321672
+		summarizeBy: sum
+		sourceColumn: 调拨单价
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 调拨数量
+		dataType: double
+		lineageTag: 1e08a7de-95a5-4bc1-9108-68efd1906655
+		summarizeBy: sum
+		sourceColumn: 调拨数量
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 调拨金额
+		dataType: double
+		lineageTag: 33ce5345-119f-4bb0-a558-e10981a3588e
+		summarizeBy: sum
+		sourceColumn: 调拨金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 调拨日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 201bf6fd-7363-4cec-8b32-3272d385d646
+		summarizeBy: none
+		sourceColumn: 调拨日期
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 调拨物资 = m
+		mode: import
+		source =
+				let
+				    源 = Table.NestedJoin(#"GSPM_WUZIDIAOBOXIANGMUFAQI_ZB（ 调拨主表）", {"FID"}, #"GSPM_WUZIDIAOBOXIANGMUFAQI_CB（ 调拨从表）", {"调拨单"}, "GSPM_WUZIDIAOBOXIANGMUFAQI_CB（ 调拨从表）", JoinKind.Inner),
+				    #"展开的“GSPM_WUZIDIAOBOXIANGMUFAQI_CB（ 调拨从表）”" = Table.ExpandTableColumn(源, "GSPM_WUZIDIAOBOXIANGMUFAQI_CB（ 调拨从表）", {"标准物资名称", "规格型号", "单位", "调拨单价", "调拨数量", "调拨金额", "调拨日期"}, {"标准物资名称", "规格型号", "单位", "调拨单价", "调拨数量", "调拨金额", "调拨日期"})
+				in
+				    #"展开的“GSPM_WUZIDIAOBOXIANGMUFAQI_CB（ 调拨从表）”"
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

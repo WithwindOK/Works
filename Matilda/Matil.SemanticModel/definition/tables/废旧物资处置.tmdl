@@ -1,0 +1,127 @@
+table 废旧物资处置
+	lineageTag: e5db2f80-764e-4186-93dc-c33517540ecb
+
+	column FID
+		dataType: string
+		lineageTag: 003a64f5-0ebc-4bd6-8c58-68ab65c67312
+		summarizeBy: none
+		sourceColumn: FID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 56410899-c6f3-4711-9f63-733fc8b11b24
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 181ed033-77f7-4626-a918-77fe1fa8109d
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 专业分类
+		dataType: string
+		lineageTag: f64b8f9e-cb7c-43a7-ab4c-b175460db6c2
+		summarizeBy: none
+		sourceColumn: 专业分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 版本1
+		dataType: string
+		lineageTag: 0fa008dd-ed55-4242-b1c0-aa363167634f
+		summarizeBy: none
+		sourceColumn: 版本1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 处置方式
+		dataType: string
+		lineageTag: ffc53a55-c10a-4e56-964f-ca50422096b7
+		summarizeBy: none
+		sourceColumn: 处置方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 废旧物资处理日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f845e21a-10ce-43e3-8ce6-c6f3924b9317
+		summarizeBy: none
+		sourceColumn: 废旧物资处理日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 物资名称分类
+		dataType: string
+		lineageTag: 99721011-419c-4c04-ac66-cd298cc57122
+		summarizeBy: none
+		sourceColumn: 物资名称分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 单位
+		dataType: string
+		lineageTag: 3c35aec9-90ec-4cdf-a812-693f1f6e42f0
+		summarizeBy: none
+		sourceColumn: 单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 数量
+		dataType: double
+		lineageTag: 136d8354-afe1-4aef-97b5-47852afbde2a
+		summarizeBy: sum
+		sourceColumn: 数量
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 单价
+		dataType: double
+		lineageTag: f186778c-d5f9-4295-9445-de5a649404cf
+		summarizeBy: sum
+		sourceColumn: 单价
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		lineageTag: f7055c2b-f711-4521-8c40-e34480e77f38
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 收购单位
+		dataType: string
+		lineageTag: b979adeb-6923-49cc-862a-47bedec5d223
+		summarizeBy: none
+		sourceColumn: 收购单位
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 废旧物资处置 = m
+		mode: import
+		source =
+				let
+				    源 = Table.NestedJoin(#"GSPM_FEIJIUWUZICHULI_ZB（ 废旧物资处置主表）", {"FID"}, #"GSPM_FEIJIUWUZICHULIXX_CB（ 废旧物资处置从表）", {"废旧物资处理主表"}, "GSPM_FEIJIUWUZICHULIXX_CB（ 废旧物资处置从表） (3)", JoinKind.Inner),
+				    #"展开的“GSPM_FEIJIUWUZICHULIXX_CB（ 废旧物资处置从表） (3)”" = Table.ExpandTableColumn(源, "GSPM_FEIJIUWUZICHULIXX_CB（ 废旧物资处置从表） (3)", {"废旧物资处理日期", "物资名称分类", "单位", "数量", "单价", "金额", "收购单位"}, {"废旧物资处理日期", "物资名称分类", "单位", "数量", "单价", "金额", "收购单位"})
+				in
+				    #"展开的“GSPM_FEIJIUWUZICHULIXX_CB（ 废旧物资处置从表） (3)”"
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

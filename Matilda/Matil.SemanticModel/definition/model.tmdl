@@ -1,0 +1,21 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
+
+annotation PBI_QueryOrder = ["查询1","X5","DW_XIANGMUXINXI（项目信息）","fx_RN","GSPM_FEIJIUWUZICHULI_ZB（ 废旧物资处置主表）","GSPM_FEIJIUWUZICHULIXX_CB（ 废旧物资处置从表）","废旧物资处置","GSPM_WUZIDIAOBOXIANGMUFAQI_ZB（ 调拨主表）","GSPM_WUZIDIAOBOXIANGMUFAQI_CB（ 调拨从表）","调拨物资"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 废旧物资处置
+ref table 调拨物资
+
+ref cultureInfo zh-CN
+

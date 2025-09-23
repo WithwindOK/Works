@@ -1,0 +1,119 @@
+expression X5 = "172.16.8.76/oracledb" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 692cb9b4-3110-428d-bdb6-f76fc6f75f18
+
+	annotation PBI_ResultType = Text
+
+expression DW_XIANGMUXINXI（项目信息） =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="DW_XIANGMUXINXI"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("DATA_DW","DW_XIANGMUXINXI")),
+		    #"重命名（汉字）" = Table.TransformColumnNames(重命名的列,each Text.Select(_,{"一".."龟"}))
+		in
+		    #"重命名（汉字）"
+	lineageTag: 9e9d6dcd-fa22-4684-bbac-e921122fc84a
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression fx_RN =
+		let
+		    源 = (OWNER as text,TABLE_NAME as text) as list =>
+		    let
+		        源 =   Oracle.Database(X5, [HierarchicalNavigation=true]),
+		        源1=Value.NativeQuery(源,"select COLUMN_NAME,COMMENTS from all_col_comments where OWNER = '" & OWNER &"' and TABLE_NAME = '" & TABLE_NAME & "'"),
+		        替换的值 = Table.ReplaceValue(源1,null, each [COLUMN_NAME],Replacer.ReplaceValue,{"COMMENTS"}),
+		        更改的类型 = Table.TransformColumnTypes(替换的值,{{"COMMENTS", type text}}),
+		        已添加自定义 = Table.AddColumn(更改的类型, "NewName", each [COMMENTS]&"（"&[COLUMN_NAME]&"）",type text),
+		        删除的其他列 = Table.SelectColumns(已添加自定义,{"COLUMN_NAME", "NewName"}),
+		        转置表 = Table.ToColumns( Table.Transpose(删除的其他列) )
+		    in
+		        转置表
+		in
+		    源
+	lineageTag: 24322d7d-4228-4c5f-aad3-23f60c97e79a
+
+	annotation PBI_ResultType = Function
+
+expression 'GSPM_FEIJIUWUZICHULI_ZB（ 废旧物资处置主表）' =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="GSPM"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="GSPM_FEIJIUWUZICHULI_ZB"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("GSPM","GSPM_FEIJIUWUZICHULI_ZB")),
+		    #"重命名（汉字）" = Table.TransformColumnNames(重命名的列,each Text.Select(_,{"一".."龟"})),
+		    重命名的列1 = Table.RenameColumns(#"重命名（汉字）",{{"", "FID"}}),
+		    筛选的行 = Table.SelectRows(重命名的列1, each ([单据状态1] = "已完成")),
+		    删除的其他列 = Table.SelectColumns(筛选的行,{"FID", "项目编码", "项目名称", "专业分类", "版本1", "处置方式"})
+		in
+		    删除的其他列
+	lineageTag: dea6be02-a585-4594-9906-9fccd2b9d8c0
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 'GSPM_FEIJIUWUZICHULIXX_CB（ 废旧物资处置从表）' =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="GSPM"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="GSPM_FEIJIUWUZICHULIXX_CB"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("GSPM","GSPM_FEIJIUWUZICHULIXX_CB")),
+		    #"重命名（汉字）" = Table.TransformColumnNames(重命名的列,each Text.Select(_,{"一".."龟"})),
+		    删除的其他列 = Table.SelectColumns(#"重命名（汉字）",{"废旧物资处理主表", "废旧物资处理日期", "物资名称分类", "单位", "数量", "单价", "金额", "收购单位"})
+		in
+		    删除的其他列
+	lineageTag: e7d72552-e1e8-49f2-9ca1-13e8259de756
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 'GSPM_WUZIDIAOBOXIANGMUFAQI_ZB（ 调拨主表）' =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="GSPM"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="GSPM_WUZIDIAOBOXIANGMUFAQI_ZB"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("GSPM","GSPM_WUZIDIAOBOXIANGMUFAQI_ZB")),
+		    #"重命名（汉字）" = Table.TransformColumnNames(重命名的列,each Text.Select(_,{"一".."龟"})),
+		    重命名的列2 = Table.RenameColumns(#"重命名（汉字）",{{"", "FID"}}),
+		    筛选的行 = Table.SelectRows(重命名的列2, each ([单据状态1] = "已完成")),
+		    删除的其他列 = Table.SelectColumns(筛选的行,{"FID", "调出项目编码", "调出项目名称", "调入项目编码", "调入项目名称"})
+		in
+		    删除的其他列
+	lineageTag: d71a2311-6272-41ba-a04d-1335dfdcdfe9
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 'GSPM_WUZIDIAOBOXIANGMUFAQI_CB（ 调拨从表）' =
+		let
+		    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+		    DATA_DW = 源{[Schema="GSPM"]}[Data],
+		    DW_FB_BLMX1 = DATA_DW{[Name="GSPM_WUZIDIAOBOXIANGMUFAQI_CB"]}[Data],
+		    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("GSPM","GSPM_WUZIDIAOBOXIANGMUFAQI_CB")),
+		    #"重命名（汉字）" = Table.TransformColumnNames(重命名的列,each Text.Select(_,{"一".."龟"})),
+		    重命名的列2 = Table.RenameColumns(#"重命名（汉字）",{{"", "FID"}}),
+		    删除的其他列 = Table.SelectColumns(重命名的列2,{"调拨单", "标准物资名称", "规格型号", "单位", "调拨单价", "调拨数量", "调拨金额", "调拨日期"})
+		in
+		    删除的其他列
+	lineageTag: 72cb5226-d658-48a8-96b5-5a0cc45f513f
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 查询1 =
+		let
+		    源 = Text.Upper("GSPM_WuZiDiaoBoXiangMuFaQi_CB")
+		in
+		    源
+	lineageTag: e71dcb69-1f4c-4fe1-b8c1-1ba40083b9bf
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Text
+

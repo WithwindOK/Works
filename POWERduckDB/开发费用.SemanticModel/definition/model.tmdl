@@ -1,0 +1,20 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["开发费用","人员费用","人员费用度量值"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 开发费用
+ref table 人员费用
+ref table 人员费用度量值
+
+ref cultureInfo zh-CN
+

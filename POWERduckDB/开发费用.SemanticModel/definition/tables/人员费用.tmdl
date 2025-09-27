@@ -1,0 +1,96 @@
+table 人员费用
+	lineageTag: 81555b50-494e-4e9a-a18e-ea0bb628ad1e
+
+	measure 费用类型标题 = SELECTEDVALUE('人员费用'[费用类型],"选择类型点击查看") & "费用分布"
+		lineageTag: 87047607-319b-4d43-a667-e3296971847c
+
+	measure 年度标题 = FORMAT( SELECTEDVALUE('人员费用'[年度]),"0000")
+		lineageTag: 883ff7f6-ae3c-410e-a5d1-591d45cc2cf6
+
+	column 年度
+		dataType: string
+		lineageTag: d40d89ff-a8ad-4f78-8337-993f000706a6
+		summarizeBy: none
+		sourceColumn: 年度
+
+		annotation SummarizationSetBy = Automatic
+
+	column 姓名/项目
+		dataType: string
+		lineageTag: 88c17fb8-5f9d-4f50-8da5-1878992e5b97
+		summarizeBy: none
+		sourceColumn: 姓名/项目
+
+		annotation SummarizationSetBy = Automatic
+
+	column 级别
+		dataType: string
+		lineageTag: 9553871b-764d-49f1-ad41-948c0966d782
+		summarizeBy: none
+		sourceColumn: 级别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 单价（万元）
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 8a1c1583-a6dc-4faf-b8e7-642f4ad64d38
+		summarizeBy: sum
+		sourceColumn: 单价（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月数
+		dataType: double
+		lineageTag: 5bda16a3-7d12-4ff1-8fdf-ac05c4305b29
+		summarizeBy: sum
+		sourceColumn: 月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 周期
+		dataType: string
+		lineageTag: d7b00c8f-9840-40d6-8950-5bdcde5a10f5
+		summarizeBy: none
+		sourceColumn: 周期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 金额（万元）
+		dataType: double
+		formatString: #,0.00
+		lineageTag: 4a9d010f-36cb-496b-9518-dc0ea70322cf
+		summarizeBy: sum
+		sourceColumn: 金额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 费用类型
+		dataType: string
+		lineageTag: ea9c3801-f762-4dd7-a5b3-506c175a376b
+		summarizeBy: none
+		sourceColumn: 费用类型
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 人员费用 = m
+		mode: import
+		source =
+				let
+				    源 = Excel.Workbook(File.Contents("C:\Users\jiahe\Downloads\21-25年外包人员情况 (1).xlsx"), null, true),
+				    #"展开的“Data”" = Table.ExpandTableColumn(源, "Data", {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7"}, {"Column1", "Column2", "Column3", "Column4", "Column5", "Column6", "Column7"}),
+				    提升的标题 = Table.PromoteHeaders(#"展开的“Data”", [PromoteAllScalars=true]),
+				    重命名的列 = Table.RenameColumns(提升的标题,{{"2025", "年度"}}),
+				    筛选的行 = Table.SelectRows(重命名的列, each ([#"姓名/项目"] <> "合计：" and [#"姓名/项目"] <> "姓名/项目")),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"年度", "姓名/项目", "级别", "单价（万元）", "月数", "周期", "金额（万元）", "费用类型"}),
+				    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"姓名/项目", type text}, {"级别", type text}, {"单价（万元）", type number}, {"月数", type number}, {"周期", type text}, {"金额（万元）", type number}, {"费用类型", type text}}),
+				    筛选的行1 = Table.SelectRows(更改的类型, each ([#"金额（万元）"] <> null) and ([年度] <> "_xlnm._FilterDatabase"))
+				in
+				    筛选的行1
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

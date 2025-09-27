@@ -1,0 +1,39 @@
+table 人员费用度量值
+	lineageTag: 7d4d0d93-7e85-4eb1-9777-7d8796ad8026
+
+	measure 人数 = DISTINCTCOUNT('人员费用'[姓名/项目])
+		formatString: 0
+		lineageTag: 3b1e12ed-ffb8-4a8a-b1e7-0712952e0bff
+
+	measure 金额 = SUM('人员费用'[金额（万元）])
+		formatString: #,0.00
+		lineageTag: 0f2689d8-799a-4a88-9d57-8fd188faaea0
+
+	measure 月数 = SUM('人员费用'[月数])
+		lineageTag: 00667a28-ceda-48c8-a7d2-dc35535003c3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 平均单价 = AVERAGE('人员费用'[单价（万元）])
+		lineageTag: 1a36e5e6-cd5d-4a49-b527-92392eaee5ad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '列 1'
+		dataType: string
+		lineageTag: a0237da2-054a-4584-ba44-fbe5539edf0e
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 人员费用度量值 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"列 1" = _t])
+				in
+				    源
+
+	annotation PBI_ResultType = Table
+

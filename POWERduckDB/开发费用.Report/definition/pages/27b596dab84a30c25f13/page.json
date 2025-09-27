@@ -1,0 +1,135 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "27b596dab84a30c25f13",
+  "displayName": "原始明细",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a57e1f883990354e5d5c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "人数"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "2f6ec21124f787910de1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "平均单价"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "7d6a406db880d4208901",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "月数"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "72a9f57128dc76d103ad",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "金额"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "13d54c64deca45e46f72",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "95e27c27d721d8a32eb4",
+        "boundFilter": "a57e1f883990354e5d5c",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "人数"
+          }
+        }
+      },
+      {
+        "name": "be3c1410688152f788c2",
+        "boundFilter": "2f6ec21124f787910de1",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "平均单价"
+          }
+        }
+      },
+      {
+        "name": "5366aac0073a43b9b6cb",
+        "boundFilter": "7d6a406db880d4208901",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "月数"
+          }
+        }
+      },
+      {
+        "name": "aa1a7d55acdec3f843a8",
+        "boundFilter": "72a9f57128dc76d103ad",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "人员费用度量值"
+              }
+            },
+            "Property": "金额"
+          }
+        }
+      }
+    ]
+  },
+  "type": "Drillthrough"
+}

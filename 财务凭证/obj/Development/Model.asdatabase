@@ -1,0 +1,776 @@
+{
+  "name": "财务凭证",
+  "compatibilityLevel": 1600,
+  "model": {
+    "name": "模型",
+    "culture": "zh-CN",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "Oracle/172 16 8 199/orcl",
+        "connectionDetails": {
+          "protocol": "oracle",
+          "address": {
+            "server": "172.16.8.199/orcl"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {
+          "hierarchicalNavigation": true
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "Username": "BIDW_FOUR"
+        }
+      },
+      {
+        "type": "structured",
+        "name": "Oracle/172 16 8 76/oracledb",
+        "connectionDetails": {
+          "protocol": "oracle",
+          "address": {
+            "server": "172.16.8.76/oracledb"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {
+          "hierarchicalNavigation": true
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "Username": "all_readonly"
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "F_INVOICE",
+        "columns": [
+          {
+            "name": "科目编码",
+            "dataType": "string",
+            "sourceColumn": "科目编码"
+          },
+          {
+            "name": "利润中心",
+            "dataType": "string",
+            "sourceColumn": "利润中心"
+          },
+          {
+            "name": "年月.1",
+            "dataType": "string",
+            "sourceColumn": "年月.1"
+          },
+          {
+            "name": "年月.2",
+            "dataType": "string",
+            "sourceColumn": "年月.2"
+          },
+          {
+            "name": "金额",
+            "dataType": "double",
+            "sourceColumn": "金额"
+          },
+          {
+            "type": "calculated",
+            "name": "日期",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "expression": "DATE('F_INVOICE'[年月.1],'F_INVOICE'[年月.2],1)"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    源 = #\"Oracle/172 16 8 199/orcl\",",
+                "    BIDW_FOUR = 源{[Schema=\"BIDW_FOUR\"]}[Data],",
+                "    F_INVOICE1 = BIDW_FOUR{[Name=\"F_INVOICE\"]}[Data],",
+                "    删除的其他列 = Table.SelectColumns(F_INVOICE1,{\"RACCT\", \"PRCTR\", \"WSL\", \"FISCYEARPER\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"RACCT\", \"科目编码\"}, {\"PRCTR\", \"利润中心\"}, {\"FISCYEARPER\", \"年月\"}}),",
+                "    分组的行 = Table.Group(重命名的列, {\"科目编码\", \"利润中心\", \"年月\"}, {{\"金额\", each List.Sum([WSL]), type nullable number}}),",
+                "    按位置拆分列 = Table.SplitColumn(分组的行, \"年月\", Splitter.SplitTextByPositions({0, 4, 5}), {\"年月.1\", \"年月.0\", \"年月.2\"}),",
+                "    删除的列 = Table.RemoveColumns(按位置拆分列,{\"年月.0\"})",
+                "in",
+                "    删除的列"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "M.财务费用.Sum",
+            "expression": [
+              "",
+              "VAR a= SUM('F_INVOICE'[金额])/SELECTEDVALUE('货币单位'[系数],1)",
+              "RETURN",
+              "IF([D.当前财务层次]<=[L.财务长度],a)"
+            ],
+            "formatString": "\"¥\"#,0.00;\"¥\"-#,0.00;\"¥\"#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\"><Currency LCID=\"2052\" DisplayName=\"¥ 中文(简体，中国)\" Symbol=\"¥\" PositivePattern=\"0\" NegativePattern=\"2\" /></Format>"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "D_日历",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "日期",
+            "dataType": "dateTime",
+            "isNameInferred": false,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Date]"
+          },
+          {
+            "type": "calculated",
+            "name": "年",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " FORMAT('D_日历'[日期],\"YYYY年\")"
+          },
+          {
+            "type": "calculated",
+            "name": "季",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " FORMAT('D_日历'[日期],\"YYYY年Q季度\")"
+          },
+          {
+            "type": "calculated",
+            "name": "月",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "FORMAT('D_日历'[日期],\"YYYY年MM月\")"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": " CALENDAR(\"2017-1-1\",TODAY())"
+            }
+          }
+        ]
+      },
+      {
+        "name": "D_项目信息",
+        "columns": [
+          {
+            "name": "项目编码",
+            "dataType": "string",
+            "sourceColumn": "项目编码"
+          },
+          {
+            "name": "项目名称",
+            "dataType": "string",
+            "sourceColumn": "项目名称"
+          },
+          {
+            "name": "项目编号",
+            "dataType": "string",
+            "sourceColumn": "项目编号"
+          },
+          {
+            "name": "责任体",
+            "dataType": "string",
+            "sourceColumn": "责任体"
+          },
+          {
+            "name": "专业分类",
+            "dataType": "string",
+            "sourceColumn": "专业分类"
+          },
+          {
+            "name": "项目性质",
+            "dataType": "string",
+            "sourceColumn": "项目性质"
+          },
+          {
+            "name": "附加税率",
+            "dataType": "double",
+            "sourceColumn": "附加税率"
+          },
+          {
+            "name": "京内外分布",
+            "dataType": "string",
+            "sourceColumn": "京内外分布"
+          },
+          {
+            "name": "区域",
+            "dataType": "string",
+            "sourceColumn": "区域"
+          },
+          {
+            "name": "省",
+            "dataType": "string",
+            "sourceColumn": "省"
+          },
+          {
+            "name": "城市",
+            "dataType": "string",
+            "sourceColumn": "城市"
+          },
+          {
+            "name": "县",
+            "dataType": "string",
+            "sourceColumn": "县"
+          },
+          {
+            "name": "设计单位",
+            "dataType": "string",
+            "sourceColumn": "设计单位"
+          },
+          {
+            "name": "监理单位",
+            "dataType": "string",
+            "sourceColumn": "监理单位"
+          },
+          {
+            "name": "建设单位",
+            "dataType": "string",
+            "sourceColumn": "建设单位"
+          },
+          {
+            "name": "顾问管理公司",
+            "dataType": "string",
+            "sourceColumn": "顾问管理公司"
+          },
+          {
+            "name": "施工单位",
+            "dataType": "string",
+            "sourceColumn": "施工单位"
+          },
+          {
+            "name": "签约单位",
+            "dataType": "string",
+            "sourceColumn": "签约单位"
+          },
+          {
+            "name": "建筑面积",
+            "dataType": "double",
+            "sourceColumn": "建筑面积"
+          },
+          {
+            "name": "中标合同价万元",
+            "dataType": "double",
+            "sourceColumn": "中标合同价万元"
+          },
+          {
+            "name": "中标合同自施部分万元",
+            "dataType": "double",
+            "sourceColumn": "中标合同自施部分万元"
+          },
+          {
+            "name": "中标日期",
+            "dataType": "dateTime",
+            "sourceColumn": "中标日期"
+          },
+          {
+            "name": "签约日期",
+            "dataType": "dateTime",
+            "sourceColumn": "签约日期"
+          },
+          {
+            "name": "实际开工日期",
+            "dataType": "dateTime",
+            "sourceColumn": "实际开工日期"
+          },
+          {
+            "name": "实际竣工日期",
+            "dataType": "dateTime",
+            "sourceColumn": "实际竣工日期"
+          },
+          {
+            "name": "是否重点项目",
+            "dataType": "string",
+            "sourceColumn": "是否重点项目"
+          },
+          {
+            "name": "是否地产项目",
+            "dataType": "string",
+            "sourceColumn": "是否地产项目"
+          },
+          {
+            "name": "施工许可证",
+            "dataType": "string",
+            "sourceColumn": "施工许可证"
+          },
+          {
+            "name": "项目实施状态",
+            "dataType": "string",
+            "sourceColumn": "项目实施状态"
+          },
+          {
+            "name": "项目中标方式",
+            "dataType": "string",
+            "sourceColumn": "项目中标方式"
+          },
+          {
+            "name": "建筑用途",
+            "dataType": "string",
+            "sourceColumn": "建筑用途"
+          },
+          {
+            "name": "工程所在国家",
+            "dataType": "string",
+            "sourceColumn": "工程所在国家"
+          },
+          {
+            "name": "工程类别一级",
+            "dataType": "string",
+            "sourceColumn": "工程类别一级"
+          },
+          {
+            "name": "工程类别二级",
+            "dataType": "string",
+            "sourceColumn": "工程类别二级"
+          },
+          {
+            "name": "合同开工日期",
+            "dataType": "dateTime",
+            "sourceColumn": "合同开工日期"
+          },
+          {
+            "name": "合同竣工日期",
+            "dataType": "dateTime",
+            "sourceColumn": "合同竣工日期"
+          },
+          {
+            "name": "合同质量目标",
+            "dataType": "string",
+            "sourceColumn": "合同质量目标"
+          },
+          {
+            "name": "结构形式",
+            "dataType": "string",
+            "sourceColumn": "结构形式"
+          },
+          {
+            "name": "基础形式",
+            "dataType": "string",
+            "sourceColumn": "基础形式"
+          },
+          {
+            "name": "檐高",
+            "dataType": "double",
+            "sourceColumn": "檐高"
+          },
+          {
+            "name": "地下深度",
+            "dataType": "double",
+            "sourceColumn": "地下深度"
+          },
+          {
+            "name": "层高",
+            "dataType": "double",
+            "sourceColumn": "层高"
+          },
+          {
+            "name": "项目结算状态",
+            "dataType": "string",
+            "sourceColumn": "项目结算状态"
+          },
+          {
+            "name": "发包人名称",
+            "dataType": "string",
+            "sourceColumn": "发包人名称"
+          },
+          {
+            "name": "发包人性质",
+            "dataType": "string",
+            "sourceColumn": "发包人性质"
+          },
+          {
+            "name": "投资来源",
+            "dataType": "string",
+            "sourceColumn": "投资来源"
+          },
+          {
+            "name": "项目规模",
+            "dataType": "string",
+            "sourceColumn": "项目规模"
+          },
+          {
+            "name": "合同工期日历天",
+            "dataType": "double",
+            "sourceColumn": "合同工期日历天"
+          },
+          {
+            "name": "工程重点级别",
+            "dataType": "string",
+            "sourceColumn": "工程重点级别"
+          },
+          {
+            "name": "土建甲指核定收益率",
+            "dataType": "double",
+            "sourceColumn": "土建甲指核定收益率"
+          },
+          {
+            "name": "机电甲指核定收益率",
+            "dataType": "double",
+            "sourceColumn": "机电甲指核定收益率"
+          },
+          {
+            "name": "业务板块",
+            "dataType": "string",
+            "sourceColumn": "业务板块"
+          },
+          {
+            "name": "股份一体化利润中心编码",
+            "dataType": "string",
+            "sourceColumn": "股份一体化利润中心编码"
+          },
+          {
+            "name": "云筑劳务项目名称",
+            "dataType": "string",
+            "sourceColumn": "云筑劳务项目名称"
+          },
+          {
+            "name": "云筑劳务项目编号",
+            "dataType": "string",
+            "sourceColumn": "云筑劳务项目编号"
+          },
+          {
+            "name": "土建自施核定收益率",
+            "dataType": "double",
+            "sourceColumn": "土建自施核定收益率"
+          },
+          {
+            "name": "机电自施核定收益率",
+            "dataType": "double",
+            "sourceColumn": "机电自施核定收益率"
+          },
+          {
+            "name": "综合核定收益率",
+            "dataType": "double",
+            "sourceColumn": "综合核定收益率"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    源 = #\"DW_XIANGMUXINXI（项目信息）\",",
+                "    删除的其他列 = Table.SelectColumns(源,{\"项目编码\", \"项目名称\", \"项目编号\", \"责任体\", \"专业分类\", \"项目性质\", \"附加税率\", \"京内外分布\", \"区域\", \"省\", \"城市\", \"县\", \"设计单位\", \"监理单位\", \"建设单位\", \"顾问管理公司\", \"施工单位\", \"签约单位\", \"建筑面积\", \"中标合同价万元\", \"中标合同自施部分万元\", \"中标日期\", \"签约日期\", \"实际开工日期\", \"实际竣工日期\", \"是否重点项目\", \"是否地产项目\", \"施工许可证\", \"项目实施状态\", \"项目中标方式\", \"建筑用途\", \"工程所在国家\", \"工程类别一级\", \"工程类别二级\", \"合同开工日期\", \"合同竣工日期\", \"合同质量目标\", \"结构形式\", \"基础形式\", \"檐高\", \"地下深度\", \"层高\", \"项目结算状态\", \"发包人名称\", \"发包人性质\", \"投资来源\", \"项目规模\", \"合同工期日历天\", \"工程重点级别\", \"土建甲指核定收益率\", \"机电甲指核定收益率\", \"业务板块\", \"股份一体化利润中心编码\", \"云筑劳务项目名称\", \"云筑劳务项目编号\", \"土建自施核定收益率\", \"机电自施核定收益率\", \"综合核定收益率\"})",
+                "in",
+                "    删除的其他列"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "D_财务费用科目",
+        "columns": [
+          {
+            "name": "商务科目路径",
+            "dataType": "string",
+            "sourceColumn": "商务科目路径"
+          },
+          {
+            "name": "财务科目路径",
+            "dataType": "string",
+            "sourceColumn": "财务科目路径"
+          },
+          {
+            "name": "标准合同编号",
+            "dataType": "string",
+            "sourceColumn": "标准合同编号"
+          },
+          {
+            "name": "标准合同名称",
+            "dataType": "string",
+            "sourceColumn": "标准合同名称"
+          },
+          {
+            "name": "科目编码",
+            "dataType": "string",
+            "sourceColumn": "科目编码"
+          },
+          {
+            "type": "calculated",
+            "name": "财务科目1",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "PATHITEM('D_财务费用科目'[财务科目路径],1)"
+          },
+          {
+            "type": "calculated",
+            "name": "财务科目2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "PATHITEM('D_财务费用科目'[财务科目路径],2)"
+          },
+          {
+            "type": "calculated",
+            "name": "财务科目3",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " PATHITEM('D_财务费用科目'[财务科目路径],3)"
+          },
+          {
+            "type": "calculated",
+            "name": "财务科目4",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " PATHITEM('D_财务费用科目'[财务科目路径],4)"
+          },
+          {
+            "type": "calculated",
+            "name": "财务科目5",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": " PATHITEM('D_财务费用科目'[财务科目路径],5)"
+          },
+          {
+            "type": "calculated",
+            "name": "财务科目6",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "PATHITEM('D_财务费用科目'[财务科目路径],6)"
+          },
+          {
+            "type": "calculated",
+            "name": "财务长度",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "  PATHLENGTH('D_财务费用科目'[财务科目路径])"
+          },
+          {
+            "type": "calculated",
+            "name": "商务科目1",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "PATHITEM('D_财务费用科目'[商务科目路径],1)"
+          },
+          {
+            "type": "calculated",
+            "name": "商务科目2",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "PATHITEM('D_财务费用科目'[商务科目路径],2)"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    源 = #\"Oracle/172 16 8 76/oracledb\",",
+                "    MD = 源{[Schema=\"MD\"]}[Data],",
+                "    MD_SWCWDUIZHAO2020 = MD{[Name=\"MD_SWCWDUIZHAO2020\"]}[Data],",
+                "    删除的其他列 = Table.SelectColumns(MD_SWCWDUIZHAO2020,{\"FSWQLJ\", \"FCWKMQLJ\", \"FBZHTBH\", \"FBZHTMC\", \"RACCT\"}),",
+                "    重命名的列 = Table.RenameColumns(删除的其他列,{{\"FSWQLJ\", \"商务科目路径\"}, {\"FCWKMQLJ\", \"财务科目路径\"}, {\"FBZHTBH\", \"标准合同编号\"}, {\"FBZHTMC\", \"标准合同名称\"}, {\"RACCT\", \"科目编码\"}}),",
+                "    已提取分隔符之后的文本 = Table.TransformColumns(重命名的列, {{\"商务科目路径\", each Text.AfterDelimiter(_, \"/\"), type text}, {\"财务科目路径\", each Text.AfterDelimiter(_, \"/\"), type text}}),",
+                "    替换的值 = Table.ReplaceValue(已提取分隔符之后的文本,\"/\",\"|\",Replacer.ReplaceText,{\"商务科目路径\"}),",
+                "    替换的值1 = Table.ReplaceValue(替换的值,\"/\",\"|\",Replacer.ReplaceText,{\"财务科目路径\"})",
+                "in",
+                "    替换的值1"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "D.当前财务层次",
+            "expression": [
+              " ",
+              "    ISINSCOPE('D_财务费用科目'[财务科目1])+",
+              "    ISINSCOPE('D_财务费用科目'[财务科目2])+",
+              "    ISINSCOPE('D_财务费用科目'[财务科目3])+",
+              "    ISINSCOPE('D_财务费用科目'[财务科目4])+",
+              "    ISINSCOPE('D_财务费用科目'[财务科目5])+",
+              "    ISINSCOPE('D_财务费用科目'[财务科目6])"
+            ]
+          },
+          {
+            "name": "L.财务长度",
+            "expression": "MAX('D_财务费用科目'[财务长度])"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "财务科目层次",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
+              {
+                "name": "财务科目1",
+                "ordinal": 0,
+                "column": "财务科目1"
+              },
+              {
+                "name": "财务科目6",
+                "ordinal": 5,
+                "column": "财务科目6"
+              },
+              {
+                "name": "财务科目3",
+                "ordinal": 2,
+                "column": "财务科目3"
+              },
+              {
+                "name": "财务科目2",
+                "ordinal": 1,
+                "column": "财务科目2"
+              },
+              {
+                "name": "财务科目4",
+                "ordinal": 3,
+                "column": "财务科目4"
+              },
+              {
+                "name": "财务科目5",
+                "ordinal": 4,
+                "column": "财务科目5"
+              }
+            ]
+          },
+          {
+            "name": "商务科目层次",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
+              {
+                "name": "商务科目1",
+                "ordinal": 0,
+                "column": "商务科目1"
+              },
+              {
+                "name": "商务科目2",
+                "ordinal": 1,
+                "column": "商务科目2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "货币单位",
+        "columns": [
+          {
+            "name": "货币单位",
+            "dataType": "string",
+            "sourceColumn": "货币单位"
+          },
+          {
+            "name": "系数",
+            "dataType": "int64",
+            "sourceColumn": "系数"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WetrarKSjZKgUqxOt9GRHO4htAAQQ/q79MD5ELBYA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [货币单位 = _t, 系数 = _t]),",
+                "    更改的类型 = Table.TransformColumnTypes(源,{{\"系数\", Int32.Type}})",
+                "in",
+                "    更改的类型"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "07dd5c2a-414c-4fc7-b727-b7fbd086ae91",
+        "fromTable": "F_INVOICE",
+        "fromColumn": "科目编码",
+        "toTable": "D_财务费用科目",
+        "toColumn": "科目编码"
+      },
+      {
+        "name": "212014d0-c6a3-45f4-a0d1-56fe0a6c582b",
+        "toCardinality": "many",
+        "fromTable": "F_INVOICE",
+        "fromColumn": "利润中心",
+        "toTable": "D_项目信息",
+        "toColumn": "股份一体化利润中心编码",
+        "crossFilteringBehavior": "bothDirections"
+      },
+      {
+        "name": "04c7c25b-9d3a-4eea-a7d5-5591408d2e45",
+        "fromTable": "F_INVOICE",
+        "fromColumn": "日期",
+        "toTable": "D_日历",
+        "toColumn": "日期"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "X5",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = \"172.16.8.76/oracledb\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+          "in",
+          "    源"
+        ]
+      },
+      {
+        "name": "DW_XIANGMUXINXI（项目信息）",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),",
+          "    DATA_DW = 源{[Schema=\"DATA_DW\"]}[Data],",
+          "    DW_FB_BLMX1 = DATA_DW{[Name=\"DW_XIANGMUXINXI\"]}[Data],",
+          "    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN(\"DATA_DW\",\"DW_XIANGMUXINXI\")),",
+          "    #\"重命名（汉字）\" = Table.TransformColumnNames(重命名的列,each Text.Select(_,{\"一\"..\"龟\"}))",
+          "in",
+          "    #\"重命名（汉字）\""
+        ]
+      },
+      {
+        "name": "fx_RN",
+        "kind": "m",
+        "expression": [
+          "let",
+          "    源 = (OWNER as text,TABLE_NAME as text) as list =>",
+          "    let",
+          "        源 =   Oracle.Database(X5, [HierarchicalNavigation=true]),",
+          "        源1=Value.NativeQuery(源,\"select COLUMN_NAME,COMMENTS from all_col_comments where OWNER = '\" & OWNER &\"' and TABLE_NAME = '\" & TABLE_NAME & \"'\"),",
+          "        替换的值 = Table.ReplaceValue(源1,null, each [COLUMN_NAME],Replacer.ReplaceValue,{\"COMMENTS\"}),",
+          "        更改的类型 = Table.TransformColumnTypes(替换的值,{{\"COMMENTS\", type text}}),",
+          "        已添加自定义 = Table.AddColumn(更改的类型, \"NewName\", each [COMMENTS]&\"（\"&[COLUMN_NAME]&\"）\",type text),",
+          "        删除的其他列 = Table.SelectColumns(已添加自定义,{\"COLUMN_NAME\", \"NewName\"}),",
+          "        转置表 = Table.ToColumns( Table.Transpose(删除的其他列) )",
+          "    in",
+          "        转置表",
+          "in",
+          "    源"
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "700"
+      }
+    ]
+  }
+}

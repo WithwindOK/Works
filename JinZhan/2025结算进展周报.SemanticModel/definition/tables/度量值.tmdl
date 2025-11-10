@@ -1,0 +1,336 @@
+table 度量值
+	excludeFromModelRefresh
+	lineageTag: 3d336d28-c6a5-4488-bb5a-c6eb4410a7a6
+
+	measure 'dcnt.目标结算个数' =
+			
+			VAR JS=CALCULATE(DISTINCTCOUNT('F_年结算计划'[项目名称]),'F_年结算计划'[25年年度计划]="是")
+			RETURN
+			IF(ISINSCOPE('F_周报'[项目名称]),BLANK(),JS)
+		displayFolder: 周报
+		lineageTag: 68e7f2f8-e4d3-4c2d-b392-e353ae53313b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'sum.结算额' = SUM('F_周报'[结算额])/[【货币系数】]
+		displayFolder: 周报
+		lineageTag: c198ad24-dd29-4afe-9968-e736df86afe7
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'sum.自施结算额' = SUM('F_周报'[自施结算额])/[【货币系数】]
+		displayFolder: 周报
+		lineageTag: 2bd7a388-7097-45d0-8900-e5280941abfa
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'sum.成本降低额' = SUM('F_周报'[成本降低额])/[【货币系数】]
+		displayFolder: 周报
+		lineageTag: f63e25c4-2e65-4702-bb07-ccce50c3b140
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'sum.结算收益额' = SUM('F_周报'[总收益额])/[【货币系数】]
+		displayFolder: 周报
+		lineageTag: a3b4316a-31f4-4b8d-b538-a33cdace8b15
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'R.结算收益率' = DIVIDE([sum.结算收益额],[sum.自施结算额])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 周报
+		lineageTag: 6fffd057-124b-4577-9e11-a9db9c5d9602
+
+	measure 'dcnt.项目数' = IF(ISINSCOPE('F_周报'[项目名称]),BLANK(),DISTINCTCOUNT('F_周报'[项目名称]))
+		formatString: 0
+		displayFolder: 周报
+		lineageTag: 151c4eec-70db-4100-8b39-3c841a6ccc0a
+
+	measure 【责任体页面项目数占比】 =
+			
+			VAR fz=[dcnt.项目数]
+			VAR fm1=CALCULATE([dcnt.项目数],ALLSELECTED('F_周报'[产值所属二级机构]))
+			VAR fm2=CALCULATE([dcnt.项目数],ALLSELECTED('F_周报'[业主自施结算状态]))
+			return
+			IF(ISINSCOPE('F_周报'[产值所属二级机构])&&ISINSCOPE('F_周报'[业主自施结算状态]),DIVIDE(fz,fm1),DIVIDE(fz,fm2))
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 周报
+		lineageTag: 3038172a-c442-4149-a6b1-722742fa9fe1
+
+	measure 'sum.目标结算额' = SUM('F_年结算计划'[含税预计结算额])/[【货币系数】]
+		displayFolder: 周报
+		lineageTag: 32acb770-5964-463c-8efe-0a78657c6f13
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'sum.剩余回款' = SUM('F_周报'[剩余回款])/[【货币系数】]
+		displayFolder: 周报
+		lineageTag: 9c672afd-433b-4041-a617-06c54187e5a0
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'T.项目经理' = IF(ISINSCOPE('F_周报'[项目名称]),LASTNONBLANK('F_周报'[项目经理],TRUE()))
+		displayFolder: 周报
+		lineageTag: 5374e742-d435-42ae-8df9-40e0ed8ba060
+
+	measure 'T.25年度计划' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[25年年度计划]))
+		displayFolder: 周报
+		lineageTag: 6ffbeff2-a573-40ca-b13d-d6e7ee06fb0b
+
+	measure 'T.计划结算年月' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[本周预计结算时间]))
+		formatString: yyyy"年"m"月"
+		displayFolder: 周报
+		lineageTag: 58a0c323-dcbf-41ae-9b0d-5ca70d0ee3f7
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'T.结算分类' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[结算分类]))
+		displayFolder: 周报
+		lineageTag: 6a3a3e5d-2f3f-467d-aba8-42ca6b973fc4
+
+	measure 'T.所属板块' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[所属板块]))
+		displayFolder: 周报
+		lineageTag: 7bbb3cd0-cb5c-47d4-bbab-97f245e66608
+
+	measure 'sum.结算额.已结' = CALCULATE([sum.结算额],'F_周报'[业主自施结算状态]="已结")
+		displayFolder: 周报
+		lineageTag: 3d9aeab4-72f7-4147-b102-31c6b952eccd
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'T.自施结算状态' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[业主自施结算状态]))
+		displayFolder: 周报
+		lineageTag: ccc50c34-fc0d-4a36-8fca-e05b4f10ce21
+
+	measure 'T.结算进展' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[本周结算进展]))
+		displayFolder: 周报
+		lineageTag: 9863f8d9-d8de-4bfc-b6c0-0b15fbdf89ed
+
+	measure 'dcnt.项目数.已结' = CALCULATE([dcnt.项目数],'F_周报'[业主自施结算状态]="已结")
+		formatString: 0
+		displayFolder: 周报
+		lineageTag: 9bc6fb70-2140-4ae1-9684-4eb2b809c459
+
+	measure 【计划结算月】 = MIN('F_周报'[本周预计结算时间])
+		formatString: General Date
+		displayFolder: 周报
+		lineageTag: 762f1ca6-8404-4ec0-b7a4-f4b1e70d4ddc
+
+	measure 最新计划结算年月 = CALCULATE([T.计划结算年月],'F_周报'[计划有变化]="是")
+		formatString: yyyy"年"m"月"
+		displayFolder: 周报
+		lineageTag: df7935ba-dd45-4e09-8784-bcea6adf3be4
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'F.空值' = ""
+		displayFolder: 周报
+		lineageTag: 21d23105-1565-4459-8e22-e0f2cb053b05
+
+	measure 【已结结算额】(结算发展变化专用) = CALCULATE([sum.结算额],REMOVEFILTERS('F_周报'[25_5预计结算时间]),'F_周报'[业主自施结算状态]="已结")
+		formatString: #,0.00
+		displayFolder: 周报
+		lineageTag: 183904b5-d812-42a8-9538-f7213d51b8b3
+
+	measure 【已结项目数】（结算发展变化专用） = CALCULATE([dcnt.项目数],REMOVEFILTERS('F_周报'[25_5预计结算时间]),'F_周报'[业主自施结算状态]="已结")
+		formatString: 0
+		displayFolder: 周报
+		lineageTag: 13d24bbc-5f3a-47a1-8d6d-6ad6f20aad33
+
+	measure 'T.专项督导责任人' = IF(ISINSCOPE('F_周报'[项目名称]),LASTNONBLANK('F_周报'[专项督导责任人],TRUE()))
+		displayFolder: 周报
+		lineageTag: 8f896d8f-68b4-4c4a-af74-42f5d8bd1407
+
+	measure 'T.久竣未结分类' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[久竣未结分类]))
+		displayFolder: 周报
+		lineageTag: 7a596807-ea39-48de-85e3-338b55bf8a1d
+
+	measure 【超完工日期月数】 = AVERAGE('F_周报'[综合结算时长])
+		formatString: 0
+		displayFolder: 周报
+		lineageTag: 0ef34605-31de-4bf2-a676-fb79f449edd9
+
+	measure 【久竣未结项目数占比】 =
+			
+			VAR fz=[dcnt.项目数]
+			VAR fm1=CALCULATE([dcnt.项目数],ALLSELECTED('F_周报'[产值所属二级机构]))
+			return
+			DIVIDE(fz,fm1)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 周报
+		lineageTag: 1b50695e-a802-430d-b479-5717bd6b84bc
+
+	measure 'T.25_5预计结算时间' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[25_5预计结算时间]))
+		formatString: yyyy/m/d
+		displayFolder: 周报
+		lineageTag: f3b51312-c034-4c8b-9a94-6f6cea9cdf6f
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'T.本周预计结算时间' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[本周预计结算时间]))
+		formatString: yyyy.m
+		displayFolder: 周报
+		lineageTag: 75469911-63db-4d5f-b357-6d9e9bbd86fe
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'T.考核完工日期' = IF(ISINSCOPE('F_周报'[项目名称]), SELECTEDVALUE('F_周报'[考核完工日期]))
+		formatString: yyyy/m/d
+		displayFolder: 周报
+		lineageTag: 067063cb-1924-4c52-9177-34b13b6304a2
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 报表期月末日 = EOMONTH(SELECTEDVALUE('F_周报'[报表期]),0)
+		formatString: General Date
+		lineageTag: 2aef37ba-9cbf-44ba-a647-b1481c9d6939
+
+	measure 报表期应结项目 =
+			
+			VAR _endday=EOMONTH(MAX('F_周报'[报表期]),0)
+			RETURN
+			IF(AND([T.25_5预计结算时间]<=_endday,[T.25_5预计结算时间]>=date(2025,1,1)),1)
+		formatString: 0
+		lineageTag: a981b155-a34b-44a5-86f2-6769d1d5e1f3
+
+	measure 计划期项目数 =
+			
+			VAR _endday=EOMONTH(MAX('F_周报'[报表期]),0)
+			VAR _T=FILTER('F_周报',AND([T.25_5预计结算时间]<=_endday,[T.25_5预计结算时间]>=date(2025,1,1)))
+			RETURN
+			COUNTROWS(_T)
+		formatString: 0
+		lineageTag: 990c7a45-a971-4a67-b39e-7725f4a03349
+
+	measure 计划期已结项目数 = CALCULATE([dcnt.项目数],'F_周报'[业主结算年度]=2025)
+		formatString: 0
+		lineageTag: 1276d03f-3a3b-40ae-9088-c4cf0cebbf13
+
+	measure 计划期结算额 =
+			
+			VAR _endday=EOMONTH(MAX('F_周报'[报表期]),0)
+			VAR _T=FILTER('F_周报',AND([T.25_5预计结算时间]<=_endday,[T.25_5预计结算时间]>=date(2025,1,1)))
+			RETURN
+			SUMX(_T,'F_周报'[结算额])/[【货币系数】]
+		formatString: #,0.00
+		lineageTag: 586b044c-1359-48b0-ac25-4f3eab058c5d
+
+	measure 计划期已结结算额 = CALCULATE([sum.结算额.已结],'F_周报'[业主结算年度]=2025)
+		formatString: #,0.00
+		lineageTag: 66deee87-91e0-451b-9480-3ddbf4e42ccd
+
+	measure 'sum.结算额.未结' = CALCULATE([sum.结算额],'F_周报'[业主自施结算状态]="未结")
+		displayFolder: 周报
+		lineageTag: ba30bbe6-cbce-47eb-8e4f-908096a5de2e
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'sum.剩余回款.已结' = CALCULATE([sum.剩余回款],'F_周报'[业主自施结算状态]="已结")
+		displayFolder: 周报
+		lineageTag: e37beac9-8325-43b9-97be-a29f0657b88b
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'sum.剩余回款.未结' = CALCULATE([sum.剩余回款],'F_周报'[业主自施结算状态]="未结")
+		displayFolder: 周报
+		lineageTag: a925654a-6b04-4445-a5c5-1d1f167530a1
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿"
+				)
+
+	measure 'dcnt.项目数.未结' = CALCULATE([dcnt.项目数],'F_周报'[业主自施结算状态]="未结")
+		formatString: 0
+		displayFolder: 周报
+		lineageTag: 86d838ca-5a83-4f27-8bac-5c4ca733b92c
+
+	measure 'dcnt.项目数.久竣未结' = CALCULATE([dcnt.项目数],'F_周报'[久竣未结]="是",'F_周报'[业主自施结算状态]="未结")
+		formatString: 0
+		displayFolder: 周报
+		lineageTag: a35c2c8f-aaaf-432c-8b0b-9cb292c6dd03
+
+	measure 'F.空值2' = ""
+		displayFolder: 周报
+		lineageTag: 221a9673-e7c4-4058-97d7-d3ae01f45f3a
+
+	measure 'sum.剩余目标额' = [sum.目标结算额]-[sum.结算额.已结]
+		displayFolder: 周报
+		lineageTag: 3ab5be35-c326-49ef-b9cf-71a4c8181576
+
+		formatStringDefinition =
+				SWITCH(
+				    SELECTEDVALUE('货币单位'[货币单位],"亿"),
+				    "万","#,0.00万",
+				    "#,0.00亿")
+
+	column '列 1'
+		dataType: string
+		isHidden
+		lineageTag: da063ba5-ddf8-42b3-80f9-570ef8e78a75
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 度量值 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"列 1" = _t])
+				in
+				    源
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

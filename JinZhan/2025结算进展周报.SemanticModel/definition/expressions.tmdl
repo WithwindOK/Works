@@ -1,0 +1,188 @@
+expression 海外结算进展 =
+		let
+		    源 = Excel.Workbook(File.Contents("\\172.16.8.66\经营分析\经营分析会\2025-1季度\海外结算进展25.3.xls"), null, true),
+		    Sheet1 = 源{[Name="Sheet0"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(Sheet1, [PromoteAllScalars=true]),
+		    筛选的行 = Table.SelectRows(提升的标题, each ([业务年] = "2025")),
+		    删除的其他列 = Table.SelectColumns(筛选的行,{"业务年", "业务月", "业主结算年度", "业主自施结算状态", "项目名称", "25年年度计划", "预计结算时间", "结算分类", "产值所属二级机构", "大客户", "所属板块", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "考核完工日期", "超完工日期月数", "按预计结算#(lf)合理值待回款#(lf)（万元）"}),
+		    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"业务年", Int64.Type}, {"业务月", Int64.Type}, {"业主结算年度", Int64.Type}, {"业主自施结算状态", type text}, {"项目名称", type text}, {"25年年度计划", type text}, {"预计结算时间", type date}, {"结算分类", type text}, {"产值所属二级机构", type text}, {"大客户", type text}, {"所属板块", type text}, {"自施预计结算总额#(lf)合理值", type number}, {"合计预计结算总额#(lf)合理值", type number}, {"含税预计成本金额#(lf)合理值", type number}, {"预计成本降低额#(lf)合理值", Percentage.Type}, {"合计预计结算收益额#(lf)合理值", type number}, {"按预计结算#(lf)合理值待回款#(lf)（万元）", type number}, {"超完工日期月数", type number}}),
+		    合并的列 = Table.CombineColumns(Table.TransformColumnTypes(更改的类型, {{"业务年", type text}, {"业务月", type text}}, "zh-CN"),{"业务年", "业务月"},Combiner.CombineTextByDelimiter(".", QuoteStyle.None),"年月"),
+		    复制的列 = Table.DuplicateColumn(合并的列, "预计结算时间", "计划结算月"),
+		    重命名的列 = Table.RenameColumns(复制的列,{{"预计结算时间", "计划结算年"}, {"按预计结算#(lf)合理值待回款#(lf)（万元）", "剩余回款"}}),
+		    提取的年 = Table.TransformColumns(重命名的列,{{"计划结算年", Date.Year, Int64.Type}}),
+		    提取的月份 = Table.TransformColumns(提取的年,{{"计划结算月", Date.Month, Int64.Type}}),
+		    添加的前缀 = Table.TransformColumns(提取的月份, {{"产值所属二级机构", each "11." & _, type text}})
+		in
+		    添加的前缀
+	lineageTag: 7202611b-8d4a-4656-bd81-7998bcab6ac1
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 收益率段落 =
+		let
+		    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W0jU0AAElHSVdAz1DEGVooPp+T8fTCavf7+l8snvpkx3dSrE60XBpAz0DU6iyOl1ThFKYIrAs2DxT1ToDNHmQOFCJMYhSrTNGl4XKQMwwVq1DNx5mup6BBZACmm+BqQAkYwj1koUq2ANdSrGxAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [下限 = _t, 上限 = _t, 段落 = _t]),
+		    更改的类型 = Table.TransformColumnTypes(源,{{"下限", type number}, {"上限", type number}}),
+		    已添加索引 = Table.AddIndexColumn(更改的类型, "索引", 0, 1, Int64.Type)
+		in
+		    已添加索引
+	lineageTag: e9736e4b-6e56-4b83-be82-82554c42305d
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 参数1 = 周报示例文件 meta [IsParameterQuery=true, BinaryIdentifier=周报示例文件, Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 4cc67c10-2af0-401f-a497-11894a0ea4f7
+	queryGroup: '从 周报 (2) 转换文件\帮助程序查询'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = 导航
+
+expression 周报转换示例文件 =
+		let
+		    源 = Excel.Workbook(参数1, null, true),
+		    sheet1_Sheet = 源{[Item="sheet1",Kind="Sheet"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(sheet1_Sheet, [PromoteAllScalars=true]),
+		    提升的标题1 = Table.PromoteHeaders(提升的标题, [PromoteAllScalars=true]),
+		    删除的其他列 = Table.SelectColumns(提升的标题1,{"业主结算年度", "业主自施结算状态", "业主指定结算状态", "项目编码", "项目名称", "25年年度计划", "25_5预计结算时间", "本周预计结算时间", "25年肯定能结", "25年争取能结", "久竣未结分类", "结算分类", "本周结算进展", "产值所属二级机构", "所属板块", "专项督导责任人", "项目总监", "项目经理", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "考核完工日期", "超完工日期月数", "业主结算时长", "剩余回款", "剩余回款（按合同约定结算完后收款比例计算）", "其中：抵房#(lf)或其他抵物", "存贷差#(lf)（万元）430剔除收益"}),
+		    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"业主结算年度", Int64.Type}, {"业主自施结算状态", type text}, {"业主指定结算状态", type text}, {"项目编码", type text}, {"项目名称", type text}, {"25年年度计划", type text}, {"本周预计结算时间", type text}, {"25年肯定能结", type text}, {"25年争取能结", type text}, {"结算分类", type text}, {"产值所属二级机构", type text}, {"所属板块", type text}, {"项目总监", type text}, {"项目经理", type text}, {"自施预计结算总额#(lf)合理值", Currency.Type}, {"合计预计结算总额#(lf)合理值", Currency.Type}, {"含税预计成本金额#(lf)合理值", Currency.Type}, {"预计成本降低额#(lf)合理值", Currency.Type}, {"合计预计结算收益额#(lf)合理值", Currency.Type}, {"剩余回款", Currency.Type}, {"剩余回款（按合同约定结算完后收款比例计算）", Currency.Type}, {"其中：抵房#(lf)或其他抵物", Currency.Type}, {"存贷差#(lf)（万元）430剔除收益", Currency.Type}, {"本周结算进展", type text}, {"25_5预计结算时间", type text}, {"专项督导责任人", type text}, {"考核完工日期", type date}, {"久竣未结分类", type text}, {"超完工日期月数", type number}, {"业主结算时长", type number}}),
+		    #"筛选的行（25年结算和未结项目）" = Table.SelectRows(更改的类型, each ([业主结算年度] = 2025) or ([业主自施结算状态] = "未结")),
+		    替换的值 = Table.ReplaceValue(#"筛选的行（25年结算和未结项目）","_","-",Replacer.ReplaceText,{"25_5预计结算时间"}),
+		    添加的前缀 = Table.TransformColumns(替换的值, {{"25_5预计结算时间", each "20" & _, type text}}),
+		    已分析的日期 = Table.TransformColumns(添加的前缀,{{"25_5预计结算时间", each Date.From(DateTimeZone.From(_)), type date}}),
+		    替换的值1 = Table.ReplaceValue(已分析的日期,"_","-",Replacer.ReplaceText,{"本周预计结算时间"}),
+		    添加的前缀1 = Table.TransformColumns(替换的值1, {{"本周预计结算时间", each "20" & _, type text}}),
+		    已分析的日期1 = Table.TransformColumns(添加的前缀1,{{"本周预计结算时间", each Date.From(DateTimeZone.From(_)), type date}}),
+		    重命名的列 = Table.RenameColumns(已分析的日期1,{{"自施预计结算总额#(lf)合理值", "自施结算额"}, {"合计预计结算总额#(lf)合理值", "结算额"}, {"含税预计成本金额#(lf)合理值", "结算成本"}, {"预计成本降低额#(lf)合理值", "成本降低额"}, {"合计预计结算收益额#(lf)合理值", "总收益额"}, {"其中：抵房#(lf)或其他抵物", "抵房、物"}, {"存贷差#(lf)（万元）430剔除收益", "存贷差"}})
+		in
+		    重命名的列
+	lineageTag: bf39d4b9-fbb1-4da9-b17d-1b63a767b0e1
+	queryGroup: '从 周报 (2) 转换文件'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 周报示例文件 =
+		let
+		    源 = Folder.Files("\\172.16.8.66\经营分析\经营分析会\周报"),
+		    导航1 = 源{1}[Content]
+		in
+		    导航1
+	lineageTag: 8ffd8bd6-054c-41f7-99eb-076d01bc657b
+	queryGroup: '从 周报 (2) 转换文件\帮助程序查询'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = 导航
+
+expression 周报转换文件 =
+		let
+		    源 = (参数1 as binary) => let
+		    源 = Excel.Workbook(参数1, null, true),
+		    sheet1_Sheet = 源{[Item="sheet1",Kind="Sheet"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(sheet1_Sheet, [PromoteAllScalars=true]),
+		    提升的标题1 = Table.PromoteHeaders(提升的标题, [PromoteAllScalars=true]),
+		    删除的其他列 = Table.SelectColumns(提升的标题1,{"业主结算年度", "业主自施结算状态", "业主指定结算状态", "项目编码", "项目名称", "25年年度计划", "25_5预计结算时间", "本周预计结算时间", "25年肯定能结", "25年争取能结", "久竣未结分类", "结算分类", "本周结算进展", "产值所属二级机构", "所属板块", "专项督导责任人", "项目总监", "项目经理", "自施预计结算总额#(lf)合理值", "合计预计结算总额#(lf)合理值", "含税预计成本金额#(lf)合理值", "预计成本降低额#(lf)合理值", "合计预计结算收益额#(lf)合理值", "考核完工日期", "超完工日期月数", "业主结算时长", "剩余回款", "剩余回款（按合同约定结算完后收款比例计算）", "其中：抵房#(lf)或其他抵物", "存贷差#(lf)（万元）430剔除收益"}),
+		    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"业主结算年度", Int64.Type}, {"业主自施结算状态", type text}, {"业主指定结算状态", type text}, {"项目编码", type text}, {"项目名称", type text}, {"25年年度计划", type text}, {"本周预计结算时间", type text}, {"25年肯定能结", type text}, {"25年争取能结", type text}, {"结算分类", type text}, {"产值所属二级机构", type text}, {"所属板块", type text}, {"项目总监", type text}, {"项目经理", type text}, {"自施预计结算总额#(lf)合理值", Currency.Type}, {"合计预计结算总额#(lf)合理值", Currency.Type}, {"含税预计成本金额#(lf)合理值", Currency.Type}, {"预计成本降低额#(lf)合理值", Currency.Type}, {"合计预计结算收益额#(lf)合理值", Currency.Type}, {"剩余回款", Currency.Type}, {"剩余回款（按合同约定结算完后收款比例计算）", Currency.Type}, {"其中：抵房#(lf)或其他抵物", Currency.Type}, {"存贷差#(lf)（万元）430剔除收益", Currency.Type}, {"本周结算进展", type text}, {"25_5预计结算时间", type text}, {"专项督导责任人", type text}, {"考核完工日期", type date}, {"久竣未结分类", type text}, {"超完工日期月数", type number}, {"业主结算时长", type number}}),
+		    #"筛选的行（25年结算和未结项目）" = Table.SelectRows(更改的类型, each ([业主结算年度] = 2025) or ([业主自施结算状态] = "未结")),
+		    替换的值 = Table.ReplaceValue(#"筛选的行（25年结算和未结项目）","_","-",Replacer.ReplaceText,{"25_5预计结算时间"}),
+		    添加的前缀 = Table.TransformColumns(替换的值, {{"25_5预计结算时间", each "20" & _, type text}}),
+		    已分析的日期 = Table.TransformColumns(添加的前缀,{{"25_5预计结算时间", each Date.From(DateTimeZone.From(_)), type date}}),
+		    替换的值1 = Table.ReplaceValue(已分析的日期,"_","-",Replacer.ReplaceText,{"本周预计结算时间"}),
+		    添加的前缀1 = Table.TransformColumns(替换的值1, {{"本周预计结算时间", each "20" & _, type text}}),
+		    已分析的日期1 = Table.TransformColumns(添加的前缀1,{{"本周预计结算时间", each Date.From(DateTimeZone.From(_)), type date}}),
+		    重命名的列 = Table.RenameColumns(已分析的日期1,{{"自施预计结算总额#(lf)合理值", "自施结算额"}, {"合计预计结算总额#(lf)合理值", "结算额"}, {"含税预计成本金额#(lf)合理值", "结算成本"}, {"预计成本降低额#(lf)合理值", "成本降低额"}, {"合计预计结算收益额#(lf)合理值", "总收益额"}, {"其中：抵房#(lf)或其他抵物", "抵房、物"}, {"存贷差#(lf)（万元）430剔除收益", "存贷差"}})
+		in
+		    重命名的列
+		in
+		    源
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""周报转换示例文件""}" ]
+	lineageTag: c7fa0c0b-3368-4443-9eb9-81ce16c23657
+	queryGroup: '从 周报 (2) 转换文件\帮助程序查询'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Function
+
+expression 参数2 = 结算计划示例文件 meta [IsParameterQuery=true, BinaryIdentifier=结算计划示例文件, Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 15bd880a-d6f9-4f5f-abb5-62b2bffef076
+	queryGroup: '从 周报 转换文件\帮助程序查询'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Binary
+
+expression 结算计划转换示例文件 =
+		let
+		    源 = Excel.Workbook(参数2, null, true),
+		    #"25年结算计划_Sheet" = 源{[Item="25年结算计划",Kind="Sheet"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(#"25年结算计划_Sheet", [PromoteAllScalars=true]),
+		    删除的其他列 = Table.SelectColumns(提升的标题,{"项目名称", "含税预计结算额", "25年年度计划"}),
+		    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"项目名称", type text}, {"含税预计结算额", type number}, {"25年年度计划", type text}})
+		in
+		    更改的类型
+	lineageTag: e2bfcc69-33a7-455d-8a96-25b1949f42cb
+	queryGroup: '从 周报 转换文件'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 结算计划示例文件 =
+		let
+		    源 = Folder.Files("\\172.16.8.66\经营分析\经营分析会\周报"),
+		    导航1 = 源{0}[Content]
+		in
+		    导航1
+	lineageTag: cbbe89cb-0eec-4453-8a97-8a85438fba95
+	queryGroup: '从 周报 转换文件\帮助程序查询'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Binary
+
+expression 结算计划转换文件 =
+		let
+		    源 = (参数2 as binary) => let
+		    源 = Excel.Workbook(参数2, null, true),
+		    #"25年结算计划_Sheet" = 源{[Item="25年结算计划",Kind="Sheet"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(#"25年结算计划_Sheet", [PromoteAllScalars=true]),
+		    删除的其他列 = Table.SelectColumns(提升的标题,{"项目名称", "含税预计结算额", "25年年度计划"}),
+		    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"项目名称", type text}, {"含税预计结算额", type number}, {"25年年度计划", type text}})
+		in
+		    更改的类型
+		in
+		    源
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""结算计划转换示例文件""}" ]
+	lineageTag: aea89f8d-b2ea-42e0-9299-04075c7a7aed
+	queryGroup: '从 周报 转换文件\帮助程序查询'
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Function
+
+expression 初始计划年月 =
+		let
+		    源 = Excel.Workbook(File.Contents("\\172.16.8.66\经营分析\经营分析会\周报\结算进展25.5.27.xlsx"), null, true),
+		    sheet1_Sheet = 源{[Item="sheet1",Kind="Sheet"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(sheet1_Sheet, [PromoteAllScalars=true]),
+		    提升的标题1 = Table.PromoteHeaders(提升的标题, [PromoteAllScalars=true]),
+		    删除的其他列 = Table.SelectColumns(提升的标题1,{"项目编码", "本周预计结算时间"}),
+		    按分隔符拆分列 = Table.SplitColumn(删除的其他列, "本周预计结算时间", Splitter.SplitTextByDelimiter("_", QuoteStyle.Csv), {"本周预计结算时间.1", "本周预计结算时间.2"}),
+		    重命名的列 = Table.RenameColumns(按分隔符拆分列,{{"本周预计结算时间.1", "初始计划年"}, {"本周预计结算时间.2", "初始计划月"}}),
+		    添加的前缀 = Table.TransformColumns(重命名的列, {{"初始计划年", each "20" & _, type text}}),
+		    更改的类型 = Table.TransformColumnTypes(添加的前缀,{{"初始计划年", Int64.Type}, {"初始计划月", Int64.Type}}),
+		    已添加自定义 = Table.AddColumn(更改的类型, "初始计划结算时间", each #date([初始计划年],[初始计划月],1),type date),
+		    已替换的错误 = Table.ReplaceErrorValues(已添加自定义, {{"初始计划结算时间", null}})
+		in
+		    已替换的错误
+	lineageTag: a33f2853-74cd-447f-bb92-62b036d4a3b8
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

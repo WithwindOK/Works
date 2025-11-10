@@ -1,0 +1,12 @@
+relationship 691171f4-1152-19ad-cdb6-6b8ea75133e4
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: F_周报.项目名称
+	toColumn: 账户.项目名称
+
+relationship a51f7fc0-8b28-31f7-f24b-98622f417a21
+	toCardinality: many
+	fromColumn: F_年结算计划.项目名称
+	toColumn: F_周报.项目名称
+

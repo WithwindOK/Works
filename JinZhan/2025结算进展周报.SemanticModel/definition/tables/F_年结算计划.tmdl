@@ -1,0 +1,47 @@
+table F_年结算计划
+	lineageTag: eb9a8479-0aca-46c0-b542-afa28de56e8f
+
+	column 项目名称
+		dataType: string
+		lineageTag: 8b44b7d3-e1bc-4c5a-9288-9b2aa511fb41
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 25年年度计划
+		dataType: string
+		lineageTag: 27b7955b-ed0b-4d61-896b-5cf3158ed36e
+		summarizeBy: none
+		sourceColumn: 25年年度计划
+
+		annotation SummarizationSetBy = Automatic
+
+	column 含税预计结算额
+		dataType: double
+		lineageTag: 764848b4-6a7b-44d4-add6-1c3c8624952d
+		summarizeBy: sum
+		sourceColumn: 含税预计结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_年结算计划 = m
+		mode: import
+		source =
+				// F_25年结算计划
+				let
+				    源 = Excel.Workbook(File.Contents("\\172.16.8.66\经营分析\经营分析会\周报\结算进展25.7.25.xlsx"), null, true),
+				    #"25年结算计划_Sheet" = 源{[Item="25年结算计划",Kind="Sheet"]}[Data],
+				    提升的标题 = Table.PromoteHeaders(#"25年结算计划_Sheet", [PromoteAllScalars=true]),
+				    删除的其他列 = Table.SelectColumns(提升的标题,{"项目名称", "含税预计结算额", "25年年度计划"}),
+				    筛选的行 = Table.SelectRows(删除的其他列, each ([25年年度计划] = "是")),
+				    更改的类型 = Table.TransformColumnTypes(筛选的行,{{"项目名称", type text}, {"含税预计结算额", type number}, {"25年年度计划", type text}})
+				in
+				    更改的类型
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

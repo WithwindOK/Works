@@ -1,0 +1,133 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	discourageImplicitMeasures
+	sourceQueryCulture: zh-CN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 参数、自定义函数组
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 下游合同
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 下游合同\合同组
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 下游合同\合同组\合同维度
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 下游合同\合同组\合同评审
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 下游合同\合同组\合同完成量
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 下游合同\合同组\合同结算
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 下游合同\合同组\合同付款
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 维度表
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 维度表\项目信息
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 资金计划
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 全期现金流
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup 承包合同
+
+	annotation PBI_QueryGroupOrder = 13
+
+queryGroup 商务产值
+
+	annotation PBI_QueryGroupOrder = 12
+
+queryGroup 业主确认量
+
+	annotation PBI_QueryGroupOrder = 14
+
+queryGroup 账户
+
+	annotation PBI_QueryGroupOrder = 15
+
+queryGroup 财务凭证
+
+	annotation PBI_QueryGroupOrder = 16
+
+queryGroup 下游合同\合同组\合同成本锁定
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 业主结算
+
+	annotation PBI_QueryGroupOrder = 18
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["X5","fx_RN","DW_FB_HTXXB（分包合同信息）","DW_WZ_HTXXB（物资合同信息）","D_分包合同_L1","D_物资合同_L1","D_下游合同","DW_FB_HTPCMX（分包合同评审）","DW_WZ_HTPCMX（物资合同评审）","F_下游合同评审","DW_FB_BLMX（分包报量）","DW_WZ_DZMX（物资对账）","DW_WZ_ZLMX（租赁对账）","DW_WZ_JCMX（物资进场）","DW_WZ_TCMX（物资退场）","F_下游合同完成量","F_物资调拨","DW_FB_JSMX（分包结算）","DW_WZ_CGJSMX（物资结算）","DW_WZ_ZLJSMX（租赁结算）","F_下游合同结算","DW_FB_FKMX（分包付款）","DW_WZ_CGFKMX（物资付款）","DW_WZ_ZLFKMX（租赁付款）","DW_XIANGMUXINXI（项目信息）","D_项目信息","D_标准合同","货币单位","指标","F_下游合同付款","D_下游合同_参照完整","T_分包资金计划","T_采购资金计划","T_租赁资金计划","F_下游合同资金计划","T_新资金计划","T_新资金计划主表","全期现金流主表","全期现金流明细","F_全期现金流","项目年度预算主表","项目年度预算表收入收益情况","F_预计产值（暂时未用）","F_预算","D_承包合同","F_业主合同金额","I_承包合同信息","承包合同字段名","项目付款条件","F_业主确认量","F_商务产值","D-责任体","D_施工专业","D_分包类型","MD_SHANGWUKEMU2020（商务科目）","D_商务科目","账户","D_分包合同_L1_2","D_物资合同_L1_2","I_下游合同","刷新时间","D_采购分类","F_INVOICE（凭证表）","CW","D_财务费用科目","F_成本锁定","F_业主结算"]
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
+
+annotation __TEdtr = 1
+
+ref table D_下游合同
+ref table F_下游合同评审
+ref table F_下游合同完成量
+ref table F_物资调拨
+ref table F_下游合同结算
+ref table 货币单位
+ref table 指标
+ref table D_日历
+ref table F_下游合同付款
+ref table D_项目信息
+ref table D_标准合同
+ref table F_下游合同资金计划
+ref table F_全期现金流
+ref table F_预计产值（暂时未用）
+ref table F_预算
+ref table D_承包合同
+ref table F_业主合同金额
+ref table F_业主确认量
+ref table F_商务产值
+ref table D-责任体
+ref table D_施工专业
+ref table D_分包类型
+ref table CG_时间计算组
+ref table 账户
+ref table CG_权限计算组
+ref table I_下游合同
+ref table 刷新时间
+ref table D_采购分类
+ref table F_INVOICE（凭证表）
+ref table D_财务费用科目
+ref table F_成本锁定
+ref table I_承包合同信息
+ref table 行选择
+ref table F_业主结算
+ref table D_日历（用于合同签订日期）
+
+ref cultureInfo zh-CN
+

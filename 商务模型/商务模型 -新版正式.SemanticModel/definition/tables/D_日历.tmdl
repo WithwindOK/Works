@@ -1,0 +1,67 @@
+table D_日历
+	lineageTag: d560813b-89ce-40bd-b4ba-93a8236b679e
+	dataCategory: Time
+
+	column 日期
+		isKey
+		formatString: General Date
+		lineageTag: 4209688e-9a6f-4e0c-a5a4-13e7ab349b9f
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年 = FORMAT('D_日历'[日期],"YYYY年")
+		lineageTag: d927d8f8-1080-4dc6-9a80-53435b86db51
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度 = FORMAT('D_日历'[日期],"YYYY年Q季度")
+		lineageTag: bf55cdb5-29f5-42ec-9d5c-81f45bd00a6a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月 = FORMAT('D_日历'[日期],"YYYY年MM月")
+		lineageTag: 2bef5e2b-0050-4f3a-9687-e5418704d991
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年序号 = YEAR('D_日历'[日期])
+		formatString: 0
+		lineageTag: 1ad033bd-b5eb-4802-adf6-58667dd140c9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份序号 = MONTH('D_日历'[日期])
+		formatString: 0
+		lineageTag: 0c6e3a06-ba4f-43c0-85bc-dafe6044e3e5
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 日期层次
+		displayFolder: 层次结构
+		lineageTag: 5a4008f8-336f-4d1e-b4e9-2eb2003affaa
+
+		level 年
+			lineageTag: bb1948eb-c823-4261-80aa-c850b4d6cbb1
+			column: 年
+
+		level 季度
+			lineageTag: 83d3f61b-ae37-429b-a6cc-420b8ce12744
+			column: 季度
+
+		level 年月
+			lineageTag: 10bdb1e3-2358-4881-b3b6-e9bc339028f4
+			column: 年月
+
+	partition D_日历 = calculated
+		mode: import
+		source = CALENDAR("2017-1-1",TODAY())
+
+	annotation PBI_Id = 13ecaebd6d54408794fe1a941fdb1a86
+

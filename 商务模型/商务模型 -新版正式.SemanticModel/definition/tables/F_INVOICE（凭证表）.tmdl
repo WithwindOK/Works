@@ -1,0 +1,93 @@
+table F_INVOICE（凭证表）
+	isHidden
+	lineageTag: ff6622b8-1f61-44c1-8382-278cb7879a72
+
+	column 科目编码
+		dataType: string
+		isHidden
+		lineageTag: 5738684c-46e7-4fb2-b654-cd1a9e1114fa
+		summarizeBy: none
+		sourceColumn: 科目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 利润中心
+		dataType: string
+		isHidden
+		lineageTag: 1273c75b-0a2b-4804-8cf7-fc3ba27ed570
+		summarizeBy: none
+		sourceColumn: 利润中心
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '年月.1'
+		dataType: string
+		isHidden
+		lineageTag: baaa91e9-0432-4f19-9260-98b0069e987b
+		summarizeBy: none
+		sourceColumn: 年月.1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '年月.2'
+		dataType: string
+		isHidden
+		lineageTag: a8a0d5ea-3838-42ef-9268-3cac21058183
+		summarizeBy: none
+		sourceColumn: 年月.2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 金额
+		dataType: double
+		isHidden
+		lineageTag: 2ccb67f1-86e8-4ffc-bdc3-65737ed60f6b
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期 = DATE('F_INVOICE（凭证表）'[年月.1],'F_INVOICE（凭证表）'[年月.2],1)
+		isHidden
+		formatString: General Date
+		lineageTag: 701b69ca-ff59-4e50-9c5a-fe4bd7549032
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_INVOICE（凭证表） = m
+		mode: import
+		queryGroup: 财务凭证
+		source =
+				let
+				    源 = Oracle.Database(CW, [HierarchicalNavigation=true]),
+				    BIDW_FOUR = 源{[Schema="BIDW_FOUR"]}[Data],
+				    F_INVOICE1 = BIDW_FOUR{[Name="F_INVOICE"]}[Data],
+				    删除的其他列 = Table.SelectColumns(F_INVOICE1,{"RACCT", "PRCTR", "WSL", "FISCYEARPER"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"RACCT", "科目编码"}, {"PRCTR", "利润中心"}, {"FISCYEARPER", "年月"}}),
+				    分组的行 = Table.Group(重命名的列, {"科目编码", "利润中心", "年月"}, {{"金额", each List.Sum([WSL]), type nullable number}}),
+				    按位置拆分列 = Table.SplitColumn(分组的行, "年月", Splitter.SplitTextByPositions({0, 4, 5}), {"年月.1", "年月.0", "年月.2"}),
+				    删除的列 = Table.RemoveColumns(按位置拆分列,{"年月.0"})
+				in
+				    删除的列
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

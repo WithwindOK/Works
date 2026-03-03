@@ -1,0 +1,62 @@
+table D_日历（用于合同签订日期）
+	lineageTag: 0e73fe32-8472-4507-a778-bcf8d3daf6a9
+	dataCategory: Time
+
+	column 日期
+		isKey
+		formatString: General Date
+		lineageTag: 467a1ea0-1a46-4256-92b4-7956e78f43ef
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: D_日历[日期]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年
+		lineageTag: cea3564c-7d15-45c6-a338-fe4c632bf3f9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: D_日历[年]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 季度
+		lineageTag: ee77db70-8926-4011-8d2b-dab5f9008277
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: D_日历[季度]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年月
+		lineageTag: a77e3837-4c24-4cda-8516-418567ed1be9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: D_日历[年月]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年序号
+		formatString: 0
+		lineageTag: 352b8c55-beb4-426d-aa58-0d56b6d8b03b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: D_日历[年序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份序号
+		formatString: 0
+		lineageTag: 109e6427-7957-4562-8630-809042920de4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: D_日历[月份序号]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_日历（用于合同签订日期） = calculated
+		mode: import
+		source = 'D_日历'
+
+	annotation PBI_Id = 9026a26c7dd143ab8d1902f749871062
+

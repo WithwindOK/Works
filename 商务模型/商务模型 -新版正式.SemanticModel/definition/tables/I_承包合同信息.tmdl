@@ -1,0 +1,1535 @@
+table I_承包合同信息
+	lineageTag: 5cc41b1d-7317-43d1-b3d3-3a312cc4ed0b
+
+	column FID
+		dataType: string
+		lineageTag: e9b6dee2-8e85-4478-b764-10bce230f992
+		summarizeBy: none
+		sourceColumn: FID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同分类[1]
+		dataType: string
+		lineageTag: 67dd587d-6c8f-47f3-aeb8-9000dd2f16bd
+		summarizeBy: none
+		sourceColumn: 合同分类[1]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同分类[2]
+		dataType: string
+		lineageTag: d1734f2b-0162-425d-94c7-317c64a598f6
+		summarizeBy: none
+		sourceColumn: 合同分类[2]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 备案合同编号
+		dataType: string
+		lineageTag: adccf643-9254-4e84-94cc-37cd2699fc5d
+		summarizeBy: none
+		sourceColumn: 备案合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: be1dae74-fe5a-4159-883a-196485c19c7b
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: 3b11b204-1050-4ab0-ba54-165abf7e7521
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 份数
+		dataType: string
+		lineageTag: 97b5f43a-30fd-4662-974e-be100be963ee
+		summarizeBy: none
+		sourceColumn: 份数
+
+		annotation SummarizationSetBy = Automatic
+
+	column 补充协议类型
+		dataType: string
+		lineageTag: 356d967f-edbc-44dc-8cff-f0cba3ff8e5c
+		summarizeBy: none
+		sourceColumn: 补充协议类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 第X份补充变更协议
+		dataType: string
+		lineageTag: 74f3f7e5-205f-423f-8375-de77aa0f2f5e
+		summarizeBy: none
+		sourceColumn: 第X份补充变更协议
+
+		annotation SummarizationSetBy = Automatic
+
+	column 补充变更协议编号
+		dataType: string
+		lineageTag: 8cd8e733-af30-430e-b2aa-f3450c649c72
+		summarizeBy: none
+		sourceColumn: 补充变更协议编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应工程编码
+		dataType: string
+		lineageTag: 5303d893-324b-49e9-b95d-c87007a87d1a
+		summarizeBy: none
+		sourceColumn: 对应工程编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应工程编号
+		dataType: string
+		lineageTag: 32091ec0-ee24-4d60-8682-da6062454358
+		summarizeBy: none
+		sourceColumn: 对应工程编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应工程名称
+		dataType: string
+		lineageTag: b648e5f6-9909-42dd-aa5d-b5cd3d65604a
+		summarizeBy: none
+		sourceColumn: 对应工程名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应承包合同编号
+		dataType: string
+		lineageTag: e9df1c7e-a10d-4ab0-bb0a-4a2a047102fc
+		summarizeBy: none
+		sourceColumn: 对应承包合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应承包合同
+		dataType: string
+		lineageTag: f44d35b5-7d34-4489-ad90-a32ee8093dad
+		summarizeBy: none
+		sourceColumn: 对应承包合同
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应执行/备案合同编号
+		dataType: string
+		lineageTag: 1614aada-529c-4a58-9f0f-c58f91282bb5
+		summarizeBy: none
+		sourceColumn: 对应执行/备案合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column FDUIYINGBEIANHETONGNO
+		dataType: string
+		lineageTag: d4253f15-a2f9-452c-9794-7ad651e3592b
+		summarizeBy: none
+		sourceColumn: FDUIYINGBEIANHETONGNO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应执行/备案合同
+		dataType: string
+		lineageTag: 892fc7c4-dd1f-433b-a087-167cb67c03ed
+		summarizeBy: none
+		sourceColumn: 对应执行/备案合同
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程承包单位
+		dataType: string
+		lineageTag: bc7da6c5-e047-4d9a-9dd6-a02766f57fa8
+		summarizeBy: none
+		sourceColumn: 工程承包单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 履约责任单位
+		dataType: string
+		lineageTag: f3377f0c-3429-4b9d-96e6-847c4a1f5786
+		summarizeBy: none
+		sourceColumn: 履约责任单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 设计单位
+		dataType: string
+		lineageTag: d26ea9fd-1d42-4ef8-810f-b44d4a23c6dd
+		summarizeBy: none
+		sourceColumn: 设计单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 监理单位
+		dataType: string
+		lineageTag: 88f98f74-1962-41fd-a858-6a4994f225c7
+		summarizeBy: none
+		sourceColumn: 监理单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同签订日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bb71260e-3cf3-44a6-ba4c-0e30031223ec
+		summarizeBy: none
+		sourceColumn: 合同签订日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目经理
+		dataType: string
+		lineageTag: e073699e-88c8-44dd-97ee-638eb06ef29a
+		summarizeBy: none
+		sourceColumn: 项目经理
+
+		annotation SummarizationSetBy = Automatic
+
+	column 承包方式
+		dataType: string
+		lineageTag: 5f39400f-e5c4-443b-9c87-8e461a13f290
+		summarizeBy: none
+		sourceColumn: 承包方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 专业分类
+		dataType: string
+		lineageTag: 7a3b5039-12f0-4feb-8e58-681d825d540f
+		summarizeBy: none
+		sourceColumn: 专业分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 外部联合签约主体
+		dataType: string
+		lineageTag: b520324d-074b-4f76-b358-d40482065eb8
+		summarizeBy: none
+		sourceColumn: 外部联合签约主体
+
+		annotation SummarizationSetBy = Automatic
+
+	column 承包范围
+		dataType: string
+		lineageTag: d45f204c-7d65-40b2-a865-78fcffdd1c1e
+		summarizeBy: none
+		sourceColumn: 承包范围
+
+		annotation SummarizationSetBy = Automatic
+
+	column 用章情况
+		dataType: string
+		lineageTag: 62bb73c5-bc68-43e3-9611-25f57d6b8029
+		summarizeBy: none
+		sourceColumn: 用章情况
+
+		annotation SummarizationSetBy = Automatic
+
+	column 国内/外
+		dataType: string
+		lineageTag: 9f7dc6ab-d198-4a94-84c9-dd213d8e074e
+		summarizeBy: none
+		sourceColumn: 国内/外
+
+		annotation SummarizationSetBy = Automatic
+
+	column 省
+		dataType: string
+		lineageTag: af7c3ddd-dc72-4711-b7a7-70ad469f9f90
+		summarizeBy: none
+		sourceColumn: 省
+
+		annotation SummarizationSetBy = Automatic
+
+	column 市
+		dataType: string
+		lineageTag: bfd0ec4b-d131-41a6-a54e-9b4b2a9f59fa
+		summarizeBy: none
+		sourceColumn: 市
+
+		annotation SummarizationSetBy = Automatic
+
+	column 县/区
+		dataType: string
+		lineageTag: f591fef0-cd80-4604-8d20-9ded4deddd56
+		summarizeBy: none
+		sourceColumn: 县/区
+
+		annotation SummarizationSetBy = Automatic
+
+	column 具体地址
+		dataType: string
+		lineageTag: a4392214-c1f1-4b17-b9c7-6f08c0e358fc
+		summarizeBy: none
+		sourceColumn: 具体地址
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程类别[一级]
+		dataType: string
+		lineageTag: b2f1d770-4db5-420b-bc1e-b1a1893698f5
+		summarizeBy: none
+		sourceColumn: 工程类别[一级]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程类别[二级]
+		dataType: string
+		lineageTag: 389f7ef5-ac42-4734-b1be-edc3b3fe1057
+		summarizeBy: none
+		sourceColumn: 工程类别[二级]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 投资来源
+		dataType: string
+		lineageTag: 6cee4a61-ccc3-4cb0-a23a-b1afb93de71a
+		summarizeBy: none
+		sourceColumn: 投资来源
+
+		annotation SummarizationSetBy = Automatic
+
+	column 建筑高度(m)
+		dataType: string
+		lineageTag: a2ced17a-600b-46b5-b518-0f57f72603f4
+		summarizeBy: none
+		sourceColumn: 建筑高度(m)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 建筑面积(㎡)
+		dataType: string
+		lineageTag: 690e7a77-da4f-46f1-b46f-9defa692b3cd
+		summarizeBy: none
+		sourceColumn: 建筑面积(㎡)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 主体结构
+		dataType: string
+		lineageTag: 2dffdfd6-eb76-48c1-9c25-622f885dffbe
+		summarizeBy: none
+		sourceColumn: 主体结构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 地上层数
+		dataType: string
+		lineageTag: 7d5bbb7c-0fe6-443b-887a-3c80fceeb6b2
+		summarizeBy: none
+		sourceColumn: 地上层数
+
+		annotation SummarizationSetBy = Automatic
+
+	column 地下层数
+		dataType: string
+		lineageTag: d2fcbbf0-b9ee-4a7a-8836-26752d88764c
+		summarizeBy: none
+		sourceColumn: 地下层数
+
+		annotation SummarizationSetBy = Automatic
+
+	column 基础结构
+		dataType: string
+		lineageTag: d6910b21-a210-4ace-86b6-05079c23f46b
+		summarizeBy: none
+		sourceColumn: 基础结构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 开工具体日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c44f8619-4a72-4105-a9f0-6979afa7737c
+		summarizeBy: none
+		sourceColumn: 开工具体日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同总工期（天）
+		dataType: string
+		lineageTag: dd83aec7-cdad-45b7-b9d9-4af20cbacc1b
+		summarizeBy: none
+		sourceColumn: 合同总工期（天）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 竣工具体日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6a8f2313-d876-4bc8-83d4-ba814c7d8786
+		summarizeBy: none
+		sourceColumn: 竣工具体日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 其他特殊工期（天）
+		dataType: string
+		lineageTag: 7999b4ab-fa57-439f-b759-94c13208b392
+		summarizeBy: none
+		sourceColumn: 其他特殊工期（天）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 质量目标
+		dataType: string
+		lineageTag: 48b7e61a-6218-40b1-99ec-41eea958a0bd
+		summarizeBy: none
+		sourceColumn: 质量目标
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同价款类型
+		dataType: string
+		lineageTag: cee62db7-f9b7-4b5d-a8b0-e63f8e215c73
+		summarizeBy: none
+		sourceColumn: 合同价款类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 计价依据
+		dataType: string
+		lineageTag: 615f585a-25e6-41aa-a6c6-36be5289522b
+		summarizeBy: none
+		sourceColumn: 计价依据
+
+		annotation SummarizationSetBy = Automatic
+
+	column 主材价款是否可调
+		dataType: string
+		lineageTag: 00fe5cf1-5b83-4d97-a39e-2809e875e2cb
+		summarizeBy: none
+		sourceColumn: 主材价款是否可调
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同金额是否价税分离
+		dataType: string
+		lineageTag: 82b775e5-625f-49ec-8569-27a7578aaaa4
+		summarizeBy: none
+		sourceColumn: 合同金额是否价税分离
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同金额含税（元）
+		dataType: double
+		lineageTag: 6da3149f-4d66-400b-94d3-98066a89cfe3
+		summarizeBy: sum
+		sourceColumn: 合同金额含税（元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同金额无税（元）
+		dataType: double
+		lineageTag: 82a6615f-1d66-4d38-9f26-77e38a52fd0d
+		summarizeBy: sum
+		sourceColumn: 合同金额无税（元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目回购
+		dataType: string
+		lineageTag: 85963706-b93b-4103-81ac-30216989c29c
+		summarizeBy: none
+		sourceColumn: 项目回购
+
+		annotation SummarizationSetBy = Automatic
+
+	column 回购担保
+		dataType: string
+		lineageTag: 6817481d-53a1-4656-b0ee-41271a89860b
+		summarizeBy: none
+		sourceColumn: 回购担保
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同价款调整约定
+		dataType: string
+		lineageTag: dd81d1d9-d6e2-4c3d-bedc-9f8d36933bb7
+		summarizeBy: none
+		sourceColumn: 合同价款调整约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工完成量审核约定
+		dataType: string
+		lineageTag: 91be52aa-d884-41fb-9509-737e26aed949
+		summarizeBy: none
+		sourceColumn: 施工完成量审核约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工完成量业主/监理审核周期
+		dataType: string
+		lineageTag: 8b70d55f-4ff5-4f04-a280-a5fa233cf89d
+		summarizeBy: none
+		sourceColumn: 施工完成量业主/监理审核周期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 洽商变更索赔约定
+		dataType: string
+		lineageTag: 4eea8b01-9c44-4c78-8e7c-4344960be26f
+		summarizeBy: none
+		sourceColumn: 洽商变更索赔约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同结算约定
+		dataType: string
+		lineageTag: ab795be3-e8db-42f0-82e1-c5415f124d3f
+		summarizeBy: none
+		sourceColumn: 合同结算约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 竣工结算审核期限
+		dataType: string
+		lineageTag: 8a5459b2-3c65-4cc4-b816-28fa7e152f93
+		summarizeBy: none
+		sourceColumn: 竣工结算审核期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 审核参与单位
+		dataType: string
+		lineageTag: 7f912dad-fea2-464d-91d0-0a8cda20c6fb
+		summarizeBy: none
+		sourceColumn: 审核参与单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否有工程预付款
+		dataType: string
+		lineageTag: fbac132a-17d0-4e5c-9e8d-9e2dcf4ec120
+		summarizeBy: none
+		sourceColumn: 是否有工程预付款
+
+		annotation SummarizationSetBy = Automatic
+
+	column 预付款支付比例
+		dataType: double
+		lineageTag: 62c02c6a-bb57-4a54-9a84-b174bc80c1d3
+		summarizeBy: sum
+		sourceColumn: 预付款支付比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 进度款支付约定
+		dataType: string
+		lineageTag: 85e9d91a-d587-45a7-b579-c70cbef5c002
+		summarizeBy: none
+		sourceColumn: 进度款支付约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 进度款支付方式
+		dataType: string
+		lineageTag: bdf1e0e1-cba5-4fa6-b496-7f89c37de6dc
+		summarizeBy: none
+		sourceColumn: 进度款支付方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 进度款支付比例
+		dataType: double
+		lineageTag: 93de7fb2-ca5b-46db-9b90-e401a8191a46
+		summarizeBy: sum
+		sourceColumn: 进度款支付比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 竣工时累计支付比例
+		dataType: double
+		lineageTag: 05b2f720-089d-4bcd-9549-8b4da736763a
+		summarizeBy: sum
+		sourceColumn: 竣工时累计支付比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 进度款审核期限
+		dataType: string
+		lineageTag: e85a7e33-5ca2-4e11-b1bf-a28cdfed78fe
+		summarizeBy: none
+		sourceColumn: 进度款审核期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 进度款支付期限
+		dataType: string
+		lineageTag: bff9bf5d-e644-4177-80e5-f263a0202d67
+		summarizeBy: none
+		sourceColumn: 进度款支付期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 结算后累计支付比例
+		dataType: double
+		lineageTag: b67444a8-3939-4448-b9e0-ed3092ba796f
+		summarizeBy: sum
+		sourceColumn: 结算后累计支付比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 保修金预留及返还约定
+		dataType: string
+		lineageTag: 7b746928-b895-46d3-bdce-ec025cf3b5ee
+		summarizeBy: none
+		sourceColumn: 保修金预留及返还约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 保修金预留方式
+		dataType: string
+		lineageTag: ca416c75-1792-4321-8b55-4ce9e4c0b1c3
+		summarizeBy: none
+		sourceColumn: 保修金预留方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 保修金预留比例
+		dataType: double
+		lineageTag: 08f79fc2-25e7-4e6b-ac1f-bd66c3a85d01
+		summarizeBy: sum
+		sourceColumn: 保修金预留比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工期奖罚约定
+		dataType: string
+		lineageTag: f703a695-1609-4116-bc3d-83674d8c9740
+		summarizeBy: none
+		sourceColumn: 工期奖罚约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工期拖期违约金比例
+		dataType: string
+		lineageTag: 076f04d0-8090-4888-9014-b49132d6a82f
+		summarizeBy: none
+		sourceColumn: 工期拖期违约金比例
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工期拖期违约金有无上限
+		dataType: string
+		lineageTag: 3fa64f40-23c2-4625-8383-ec698fbc9f0d
+		summarizeBy: none
+		sourceColumn: 工期拖期违约金有无上限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 上限比例
+		dataType: string
+		lineageTag: 50d65ad5-5a97-47fe-80d9-55267204cfef
+		summarizeBy: none
+		sourceColumn: 上限比例
+
+		annotation SummarizationSetBy = Automatic
+
+	column 其它奖罚约定
+		dataType: string
+		lineageTag: d17adf6f-860d-492e-a768-b034c0bf73cd
+		summarizeBy: none
+		sourceColumn: 其它奖罚约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 担保约定
+		dataType: string
+		lineageTag: 2f144912-e3dc-4a3c-b577-ead601ada538
+		summarizeBy: none
+		sourceColumn: 担保约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 预付款担保形式
+		dataType: string
+		lineageTag: 17caff89-af09-4542-8cee-e6f69f44e60b
+		summarizeBy: none
+		sourceColumn: 预付款担保形式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 预付款担保额度
+		dataType: double
+		lineageTag: 6758aa7d-3607-4273-9da0-16a5753e747f
+		summarizeBy: sum
+		sourceColumn: 预付款担保额度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预付款担保期限
+		dataType: string
+		lineageTag: e3bb0e9a-5e70-487e-8062-a460659b893b
+		summarizeBy: none
+		sourceColumn: 预付款担保期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 履约担保形式
+		dataType: string
+		lineageTag: dc5aa824-d18a-41f6-bc19-5ca2de134342
+		summarizeBy: none
+		sourceColumn: 履约担保形式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 履约担保额度
+		dataType: double
+		lineageTag: 2e87a277-c14f-4956-97e5-092051f7118a
+		summarizeBy: sum
+		sourceColumn: 履约担保额度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 履约担保期限
+		dataType: string
+		lineageTag: e9c22f79-62d9-4c44-ba2f-9bd944d287a2
+		summarizeBy: none
+		sourceColumn: 履约担保期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支付担保形式
+		dataType: string
+		lineageTag: e2444c7b-a132-48e7-afe3-1a09421b4e01
+		summarizeBy: none
+		sourceColumn: 支付担保形式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支付担保额度
+		dataType: double
+		lineageTag: 057ce37c-6446-4a3a-9824-2496e5b2af9a
+		summarizeBy: sum
+		sourceColumn: 支付担保额度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 支付担保期限
+		dataType: string
+		lineageTag: 642cedd3-5126-4272-a0c2-d2e51d9c5338
+		summarizeBy: none
+		sourceColumn: 支付担保期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 争议解决方式约定
+		dataType: string
+		lineageTag: 37125f7f-dc0d-4e45-bb4d-3247e8378d6b
+		summarizeBy: none
+		sourceColumn: 争议解决方式约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否分别签订执行和备案合同
+		dataType: string
+		lineageTag: 15c461da-5c5b-45d3-87fe-9705a164576e
+		summarizeBy: none
+		sourceColumn: 是否分别签订执行和备案合同
+
+		annotation SummarizationSetBy = Automatic
+
+	column 承包方签约主体
+		dataType: string
+		lineageTag: 7dee3f96-aadb-40a0-81d0-50f547af611e
+		summarizeBy: none
+		sourceColumn: 承包方签约主体
+
+		annotation SummarizationSetBy = Automatic
+
+	column 评审级别
+		dataType: string
+		lineageTag: 060ff9a8-2c84-4d26-b0b8-6ea8c12870a3
+		summarizeBy: none
+		sourceColumn: 评审级别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否需要向集团借款
+		dataType: string
+		lineageTag: f689238d-bb3f-452d-91b1-b4f2f11dbc93
+		summarizeBy: none
+		sourceColumn: 是否需要向集团借款
+
+		annotation SummarizationSetBy = Automatic
+
+	column 高峰借款金额(元)
+		dataType: double
+		lineageTag: 34269b12-1117-422c-9e1a-af2a67bae0cc
+		summarizeBy: sum
+		sourceColumn: 高峰借款金额(元)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预收益率是否低于底线要求
+		dataType: string
+		lineageTag: d43c7c25-f55f-4690-96df-b7baea7f57e6
+		summarizeBy: none
+		sourceColumn: 预收益率是否低于底线要求
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否承诺放弃工程价款优先受偿权
+		dataType: string
+		lineageTag: 4441f4ba-cf6e-4805-9c7b-774284d51392
+		summarizeBy: none
+		sourceColumn: 是否承诺放弃工程价款优先受偿权
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否以现金形式支付履约保证金
+		dataType: string
+		lineageTag: 8df60119-94bd-4f51-92d2-d963adbd2ffa
+		summarizeBy: none
+		sourceColumn: 是否以现金形式支付履约保证金
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否以行为事实放弃工程价款优先受偿权
+		dataType: string
+		lineageTag: 61ed10c6-fc8d-4811-a899-116e0742b113
+		summarizeBy: none
+		sourceColumn: 是否以行为事实放弃工程价款优先受偿权
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工完成量业主/监理审核周期是否大于一个月
+		dataType: string
+		lineageTag: a0c25295-da02-4614-bd24-3ada67e2ae59
+		summarizeBy: none
+		sourceColumn: 施工完成量业主/监理审核周期是否大于一个月
+
+		annotation SummarizationSetBy = Automatic
+
+	column 竣工交付时工程款支付额度是否低于85%
+		dataType: string
+		lineageTag: 3360be48-f879-4381-8d16-19f8a5fcf8e9
+		summarizeBy: none
+		sourceColumn: 竣工交付时工程款支付额度是否低于85%
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否存在我方须无条件退场条款
+		dataType: string
+		lineageTag: 29f7aa39-026d-4d47-9286-8318fc9b9b98
+		summarizeBy: none
+		sourceColumn: 是否存在我方须无条件退场条款
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程延误的处罚是否高于日万分之四
+		dataType: string
+		lineageTag: bebb7d69-c931-4a8b-bfc6-c6e2aa247e14
+		summarizeBy: none
+		sourceColumn: 工程延误的处罚是否高于日万分之四
+
+		annotation SummarizationSetBy = Automatic
+
+	column 发包人是否出现两个及以上法人单位
+		dataType: string
+		lineageTag: 92531cd0-c40b-45a0-be87-f528f34616b4
+		summarizeBy: none
+		sourceColumn: 发包人是否出现两个及以上法人单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工期延误的处罚是否无上限
+		dataType: string
+		lineageTag: 1f1cb7df-3541-4a84-a3c3-80756a2fad3d
+		summarizeBy: none
+		sourceColumn: 工期延误的处罚是否无上限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程进度款支付额度是否低于每月75%或工程进度款支付方式为节点付款
+		dataType: string
+		lineageTag: 3ec41846-9a12-46be-a5c5-290013c279bd
+		summarizeBy: none
+		sourceColumn: 工程进度款支付额度是否低于每月75%或工程进度款支付方式为节点付款
+
+		annotation SummarizationSetBy = Automatic
+
+	column 该项目是否尚未取得规划许可证或建设用地许可证
+		dataType: string
+		lineageTag: 548817ee-1f3c-48b3-9b7c-5f6375f30cc2
+		summarizeBy: none
+		sourceColumn: 该项目是否尚未取得规划许可证或建设用地许可证
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否约定合同争议解决方式为仲裁裁决
+		dataType: string
+		lineageTag: 673c510d-3448-4ebe-9163-feaa6b76ac6d
+		summarizeBy: none
+		sourceColumn: 是否约定合同争议解决方式为仲裁裁决
+
+		annotation SummarizationSetBy = Automatic
+
+	column 主表ID
+		dataType: string
+		lineageTag: 37f128a5-d6b5-4212-8c2e-bf00dd32929f
+		summarizeBy: none
+		sourceColumn: 主表ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 创建时间
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4ddcc4de-d050-4e72-a18f-c14528d6951a
+		summarizeBy: none
+		sourceColumn: 创建时间
+
+		annotation SummarizationSetBy = Automatic
+
+	column 最后修改时间
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4c8dbe5f-fc8b-46d5-88ef-875b0eefcd05
+		summarizeBy: none
+		sourceColumn: 最后修改时间
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否需要缴纳印花税
+		dataType: string
+		lineageTag: 7d082ac3-95a2-4e3f-a632-1bd5d32b4c44
+		summarizeBy: none
+		sourceColumn: 是否需要缴纳印花税
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否存在商票支付条款
+		dataType: string
+		lineageTag: 6f6c1f6a-84b0-49b3-9d53-264032d58c3f
+		summarizeBy: none
+		sourceColumn: 是否存在商票支付条款
+
+		annotation SummarizationSetBy = Automatic
+
+	column 预付款是否需要抵扣
+		dataType: string
+		lineageTag: 639abe0b-5c21-4259-8934-a09fd555e143
+		summarizeBy: none
+		sourceColumn: 预付款是否需要抵扣
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份财务一体化项目名称
+		dataType: string
+		lineageTag: e4a2b9cf-3d09-4aff-b83c-54cad8693c58
+		summarizeBy: none
+		sourceColumn: 股份财务一体化项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份财务一体化项目编码
+		dataType: string
+		lineageTag: eadd71c0-06ab-470b-9c7a-640a3684d30c
+		summarizeBy: none
+		sourceColumn: 股份财务一体化项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同计价方式(股份)
+		dataType: string
+		lineageTag: 3365361e-91f9-4384-b900-3a9897fae382
+		summarizeBy: none
+		sourceColumn: 合同计价方式(股份)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 竣工结算审核期限(股份)
+		dataType: string
+		lineageTag: 33a18893-51bf-4ef9-a655-57e8e69e8f3b
+		summarizeBy: none
+		sourceColumn: 竣工结算审核期限(股份)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工期违约金上限比例(股份)(%)
+		dataType: double
+		lineageTag: 6f4ccb93-d011-45c6-bf55-8235620be2b4
+		summarizeBy: sum
+		sourceColumn: 工期违约金上限比例(股份)(%)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 股份财务一体化组织机构名称
+		dataType: string
+		lineageTag: 453ae37b-21c2-465d-a28e-19b905ae02a6
+		summarizeBy: none
+		sourceColumn: 股份财务一体化组织机构名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column FHTWBLX
+		dataType: string
+		lineageTag: 48533224-34c9-48c3-b490-b58e1a4e6619
+		summarizeBy: none
+		sourceColumn: FHTWBLX
+
+		annotation SummarizationSetBy = Automatic
+
+	column FXMCJLX
+		dataType: string
+		lineageTag: 37607da4-d4b8-4d5c-9dff-7735612572d9
+		summarizeBy: none
+		sourceColumn: FXMCJLX
+
+		annotation SummarizationSetBy = Automatic
+
+	column FSFZJJTNBJY
+		dataType: string
+		lineageTag: 9ff27e77-502e-469c-b861-4e5669b7c923
+		summarizeBy: none
+		sourceColumn: FSFZJJTNBJY
+
+		annotation SummarizationSetBy = Automatic
+
+	column FSFZJYJNBJY
+		dataType: string
+		lineageTag: 3d0a402c-db8b-4acd-aa3f-04e9622d6f1a
+		summarizeBy: none
+		sourceColumn: FSFZJYJNBJY
+
+		annotation SummarizationSetBy = Automatic
+
+	column FGCCBDWZX
+		dataType: string
+		lineageTag: 08939d0a-3f86-46e7-8559-9c152b886f3c
+		summarizeBy: none
+		sourceColumn: FGCCBDWZX
+
+		annotation SummarizationSetBy = Automatic
+
+	column SCOUNTRY
+		dataType: string
+		lineageTag: f70bbb71-e03c-4aa6-9aca-4ac96f679a85
+		summarizeBy: none
+		sourceColumn: SCOUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column FHTGQSFQD
+		dataType: string
+		lineageTag: 86e348f1-28eb-45ef-a3a7-82ba078bde33
+		summarizeBy: none
+		sourceColumn: FHTGQSFQD
+
+		annotation SummarizationSetBy = Automatic
+
+	column FJJBZ
+		dataType: string
+		lineageTag: 9d0c8a32-89b1-4998-a194-d4a071c0c4dc
+		summarizeBy: none
+		sourceColumn: FJJBZ
+
+		annotation SummarizationSetBy = Automatic
+
+	column FHTSE
+		dataType: double
+		lineageTag: 813122ab-f9a0-4f9a-bc8d-55a83df428bc
+		summarizeBy: sum
+		sourceColumn: FHTSE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FZSHTSE
+		dataType: double
+		lineageTag: 0ccd7d14-b66c-49d0-8b73-0f69b7c47b18
+		summarizeBy: sum
+		sourceColumn: FZSHTSE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FJTJSSHQX
+		dataType: string
+		lineageTag: 986bd4ff-e19e-4ec1-85e4-74a7ce855696
+		summarizeBy: none
+		sourceColumn: FJTJSSHQX
+
+		annotation SummarizationSetBy = Automatic
+
+	column FJGJSSFDSFSJ
+		dataType: string
+		lineageTag: 702650c7-78bf-481a-a984-0e48467ff91f
+		summarizeBy: none
+		sourceColumn: FJGJSSFDSFSJ
+
+		annotation SummarizationSetBy = Automatic
+
+	column FJDKZSFCZFXJZFBF
+		dataType: string
+		lineageTag: b8050811-eadc-4248-a6c9-e687a19e09cc
+		summarizeBy: none
+		sourceColumn: FJDKZSFCZFXJZFBF
+
+		annotation SummarizationSetBy = Automatic
+
+	column FFXJZFXS
+		dataType: string
+		lineageTag: a7af1f20-039e-40b3-bce2-9645d1745a95
+		summarizeBy: none
+		sourceColumn: FFXJZFXS
+
+		annotation SummarizationSetBy = Automatic
+
+	column FFXJZFBL
+		dataType: double
+		lineageTag: 834991e3-88f0-4867-86df-c943d5af15c2
+		summarizeBy: sum
+		sourceColumn: FFXJZFBL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FBXJQBFHSJ
+		dataType: double
+		lineageTag: e8ff7f40-4208-457b-9664-aa6148df0b69
+		summarizeBy: sum
+		sourceColumn: FBXJQBFHSJ
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FCNYXFQSCQ
+		dataType: string
+		lineageTag: 5e75fee6-d25c-4790-8520-f616fbbea6e6
+		summarizeBy: none
+		sourceColumn: FCNYXFQSCQ
+
+		annotation SummarizationSetBy = Automatic
+
+	column FYFKDBED
+		dataType: double
+		lineageTag: d76906d6-e3f3-4fc4-81ae-10cb4cbe0096
+		summarizeBy: sum
+		sourceColumn: FYFKDBED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FGQTQWYJJTBL
+		dataType: double
+		lineageTag: 097af5e6-58ac-40b1-b0d4-6c5b05ab6818
+		summarizeBy: sum
+		sourceColumn: FGQTQWYJJTBL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FSXJTBL
+		dataType: double
+		lineageTag: d53c69d0-004e-46ee-8c66-87c43453fc48
+		summarizeBy: sum
+		sourceColumn: FSXJTBL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FLYDBED
+		dataType: double
+		lineageTag: 2b31ad3d-26d5-4704-8cd5-4bf3213247e9
+		summarizeBy: sum
+		sourceColumn: FLYDBED
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FYFKKHFS
+		dataType: string
+		lineageTag: 169bff93-1ddd-4041-bb76-67e7fb7e4237
+		summarizeBy: none
+		sourceColumn: FYFKKHFS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 计价模式
+		dataType: string
+		lineageTag: dfd4329c-f860-4527-a524-2fe73fc5ec8d
+		summarizeBy: none
+		sourceColumn: 计价模式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同文本
+		dataType: string
+		lineageTag: 6d51f651-945b-4314-915e-53f0c002530c
+		summarizeBy: none
+		sourceColumn: 合同文本
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同中是否约定按月上报/审批进度款
+		dataType: string
+		lineageTag: 6a33371e-185d-40ff-bbfc-221583b32011
+		summarizeBy: none
+		sourceColumn: 合同中是否约定按月上报/审批进度款
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同签订后几日开具保函(天)
+		dataType: double
+		lineageTag: f7fef1cf-3979-4bc8-818a-ad61f87f602a
+		summarizeBy: sum
+		sourceColumn: 合同签订后几日开具保函(天)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中银行保函履约担保额度
+		dataType: double
+		lineageTag: 2c61c9ab-4628-4f75-b572-9021d7d74a83
+		summarizeBy: sum
+		sourceColumn: 其中银行保函履约担保额度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中银行保函履约担保额度%
+		dataType: double
+		lineageTag: c4ec8ab0-8fcd-4eca-a388-b84b268492fa
+		summarizeBy: sum
+		sourceColumn: 其中银行保函履约担保额度%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中银行保函履约担保期限
+		dataType: string
+		lineageTag: 07ffd0b4-42a9-4151-94c1-f07dc2d6b06c
+		summarizeBy: none
+		sourceColumn: 其中银行保函履约担保期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 其中现金履约担保额度
+		dataType: double
+		lineageTag: 8f30b18c-48ca-4d9f-aebe-7899990fcc90
+		summarizeBy: sum
+		sourceColumn: 其中现金履约担保额度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中现金履约担保额度%
+		dataType: double
+		lineageTag: dc8dfe5b-fd25-4c93-a5d2-868aefb631eb
+		summarizeBy: sum
+		sourceColumn: 其中现金履约担保额度%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中现金履约担保期限
+		dataType: string
+		lineageTag: b84c4c24-86e5-4b83-885a-4e9022f4aa31
+		summarizeBy: none
+		sourceColumn: 其中现金履约担保期限
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支付担保额度(%)
+		dataType: double
+		lineageTag: 91ac3322-eb80-47bc-9539-0f78371126e8
+		summarizeBy: sum
+		sourceColumn: 支付担保额度(%)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同盖章日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9e1ba5dc-1618-4b7d-bf63-bc7b266b3336
+		summarizeBy: none
+		sourceColumn: 合同盖章日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 人工费是否可调
+		dataType: string
+		lineageTag: 863ac32a-0a27-4d27-b158-079f75e41969
+		summarizeBy: none
+		sourceColumn: 人工费是否可调
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程所在地区
+		dataType: string
+		lineageTag: 46539493-2b3c-4473-ac7f-06d9d15df64e
+		summarizeBy: none
+		sourceColumn: 工程所在地区
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程所在国家
+		dataType: string
+		lineageTag: d89902f5-5efc-4cb7-8620-995997db83ae
+		summarizeBy: none
+		sourceColumn: 工程所在国家
+
+		annotation SummarizationSetBy = Automatic
+
+	column 当前付款比例
+		dataType: double
+		lineageTag: 6c111e4b-ebd8-4843-ae52-5b94a2c7b164
+		summarizeBy: sum
+		sourceColumn: 当前付款比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 当前付款节点描述
+		dataType: string
+		lineageTag: efbedd99-9049-4f0e-bbde-c0c4d5306245
+		summarizeBy: none
+		sourceColumn: 当前付款节点描述
+
+		annotation SummarizationSetBy = Automatic
+
+	column 计价货币兑人民币汇率
+		dataType: double
+		lineageTag: 062414cb-65d2-42f4-a32d-7375bfb51613
+		summarizeBy: sum
+		sourceColumn: 计价货币兑人民币汇率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 是否完成交底
+		dataType: string
+		lineageTag: 3f2f405d-b964-429d-88bd-531c74dd2f24
+		summarizeBy: none
+		sourceColumn: 是否完成交底
+
+		annotation SummarizationSetBy = Automatic
+
+	column 评审单号
+		dataType: string
+		lineageTag: 1f18ac6d-88ee-46ce-83ef-472e6b90a743
+		summarizeBy: none
+		sourceColumn: 评审单号
+
+		annotation SummarizationSetBy = Automatic
+
+	column FSHEJIZHOUQI
+		dataType: string
+		lineageTag: 7a7b627a-d355-4994-9e69-178035c8ee00
+		summarizeBy: none
+		sourceColumn: FSHEJIZHOUQI
+
+		annotation SummarizationSetBy = Automatic
+
+	column 设计内容
+		dataType: string
+		lineageTag: 56970a5f-6b5e-427a-841a-aee9baea2ad4
+		summarizeBy: none
+		sourceColumn: 设计内容
+
+		annotation SummarizationSetBy = Automatic
+
+	column FSFYDJTFXJZFBL
+		dataType: string
+		lineageTag: f84e1ea3-6f1a-441e-8bbb-e2a8fab3b988
+		summarizeBy: none
+		sourceColumn: FSFYDJTFXJZFBL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支付比例控制类型（催收清欠）
+		dataType: string
+		lineageTag: 24050491-0386-488f-a9df-548581a89656
+		summarizeBy: none
+		sourceColumn: 支付比例控制类型（催收清欠）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 承包合同交底日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 85ab4011-8128-4c68-820f-368bab89ac9d
+		summarizeBy: none
+		sourceColumn: 承包合同交底日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份合同编号
+		dataType: string
+		lineageTag: aacf1880-824e-4f94-8949-ec53890a717c
+		summarizeBy: none
+		sourceColumn: 股份合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否需要垫资
+		dataType: string
+		lineageTag: 80863693-b9d0-48f8-a3bc-18de284f94ea
+		summarizeBy: none
+		sourceColumn: 是否需要垫资
+
+		annotation SummarizationSetBy = Automatic
+
+	column 内部统计期号
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 377aa46e-bab5-4f4c-ae3a-621f3140f053
+		summarizeBy: none
+		sourceColumn: 内部统计期号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份统计期号
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 38ab9e4d-d360-4cca-bc99-a2b4ea0ec869
+		summarizeBy: none
+		sourceColumn: 股份统计期号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 备注
+		dataType: string
+		lineageTag: 23c0c61f-87f8-4daa-9b08-bc91ca04ab46
+		summarizeBy: none
+		sourceColumn: 备注
+
+		annotation SummarizationSetBy = Automatic
+
+	column 营销归属责任体
+		dataType: string
+		lineageTag: 9c2dcad8-170c-46d3-9a91-ef0f58ad8961
+		summarizeBy: none
+		sourceColumn: 营销归属责任体
+
+		annotation SummarizationSetBy = Automatic
+
+	column 直管机构
+		dataType: string
+		lineageTag: 71c05733-9a57-43fb-89c2-94adaa82e64c
+		summarizeBy: none
+		sourceColumn: 直管机构
+
+		annotation SummarizationSetBy = Automatic
+
+	column 直管机构编码
+		dataType: string
+		lineageTag: e40339a1-f431-47ae-9fb2-e5e054e673bf
+		summarizeBy: none
+		sourceColumn: 直管机构编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 设计费用
+		dataType: double
+		lineageTag: 6e07ece1-6936-40dc-a6a4-b7511a84baea
+		summarizeBy: sum
+		sourceColumn: 设计费用
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 设计支付约定
+		dataType: string
+		lineageTag: e52c5751-a397-4dba-9980-eb8b1c8b505a
+		summarizeBy: none
+		sourceColumn: 设计支付约定
+
+		annotation SummarizationSetBy = Automatic
+
+	column 设计进度延误的处罚
+		dataType: string
+		lineageTag: 8cabb69e-4074-4ffd-af9d-2403b8dc5b82
+		summarizeBy: none
+		sourceColumn: 设计进度延误的处罚
+
+		annotation SummarizationSetBy = Automatic
+
+	column 设计质量缺陷责任的处罚
+		dataType: string
+		lineageTag: ca12cb5e-517c-4e5e-8799-2be914fdc1e7
+		summarizeBy: none
+		sourceColumn: 设计质量缺陷责任的处罚
+
+		annotation SummarizationSetBy = Automatic
+
+	column 发包单位
+		dataType: string
+		lineageTag: 8c671246-2e56-470e-823b-01192853d617
+		summarizeBy: none
+		sourceColumn: 发包单位
+
+		annotation SummarizationSetBy = Automatic
+
+	partition I_承包合同信息 = m
+		mode: import
+		queryGroup: 承包合同
+		source =
+				let
+				    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    GSPM_HETONGPINGSHEN = GSPM{[Name="DW_CBHTXXB"]}[Data],
+				    删除的副本 = Table.Distinct(GSPM_HETONGPINGSHEN, {"FHETONGBIANHAO"}),
+				    重命名的列 = Table.RenameColumns(删除的副本,承包合同字段名,MissingField.Ignore)
+				in
+				    重命名的列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Exception
+

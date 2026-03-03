@@ -1,0 +1,152 @@
+table F_商务产值
+	isHidden
+	lineageTag: ff60dc9f-b765-4cf0-9e86-59bf635f253f
+
+	column 项目名称
+		dataType: string
+		isHidden
+		lineageTag: 075c9f56-fe14-46c1-9a2e-3111cafa387f
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		isHidden
+		lineageTag: 0a9856b8-164f-4a17-a0c1-4b5c6e8d8e74
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		isHidden
+		lineageTag: 1215365a-cf56-4140-b32d-14eca7cc5a9b
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 本期含税产值
+		dataType: double
+		isHidden
+		lineageTag: 970eb9cc-8ee7-4de7-b75b-584b01ecfb95
+		summarizeBy: sum
+		sourceColumn: 本期含税产值
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 责任体
+		dataType: string
+		lineageTag: a2d969c8-35fe-4e1b-8c4f-a84c246afada
+		summarizeBy: none
+		sourceColumn: 责任体
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目实施状态
+		dataType: string
+		lineageTag: 2d170653-1e3e-4bbb-a285-e841d0bd86cb
+		summarizeBy: none
+		sourceColumn: 项目实施状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: cee96704-9fca-4a52-be0a-8c8ac81ccfd3
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 核定收益率
+		dataType: double
+		lineageTag: 8a03d80f-d680-4808-9f06-b622cba35725
+		summarizeBy: sum
+		sourceColumn: 核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 上年末开累产值
+		dataType: double
+		lineageTag: 4b423f06-276d-4426-9059-a3b592dc0a6d
+		summarizeBy: sum
+		sourceColumn: 上年末开累产值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 本期止开累产值
+		dataType: double
+		lineageTag: 8e99e688-212f-451d-973b-8e276c00bb1e
+		summarizeBy: sum
+		sourceColumn: 本期止开累产值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 本期止年累计产值
+		dataType: double
+		lineageTag: f87e85e5-dc0d-40db-aaa5-441ec3e21489
+		summarizeBy: sum
+		sourceColumn: 本期止年累计产值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 报表期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c5532c22-cb9c-463e-87bd-d0877dcb58c5
+		summarizeBy: none
+		sourceColumn: 报表期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 上期年累计值
+		dataType: double
+		lineageTag: 8bfff0ba-6735-4d2f-8dbb-2b732fc65855
+		summarizeBy: sum
+		sourceColumn: 上期年累计值
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_商务产值 = m
+		mode: import
+		queryGroup: 商务产值
+		source =
+				let
+				    源 = Sql.Database("ssas1.chinaonebuild.com", "BAM"),
+				    dbo_F_商务产值 = 源{[Schema="dbo",Item="F_商务产值"]}[Data],
+				    更改的类型 = Table.TransformColumnTypes(dbo_F_商务产值,{{"报表期", type date}})
+				in
+				    更改的类型
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

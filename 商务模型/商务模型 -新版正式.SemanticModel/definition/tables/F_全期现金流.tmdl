@@ -1,0 +1,698 @@
+table F_全期现金流
+	isHidden
+	lineageTag: 6a538f07-5106-45eb-9cff-d69d22f307b7
+
+	column 项目名称
+		dataType: string
+		isHidden
+		lineageTag: a17f9d45-1b69-4d0c-bc1a-2902b2ea8f2a
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		isHidden
+		lineageTag: dcad1143-29a5-4517-b2ef-47dae4c944b4
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 评审状态
+		dataType: string
+		isHidden
+		lineageTag: f86d8774-6233-4c6c-8f7d-3aa59b1ff790
+		summarizeBy: none
+		sourceColumn: 评审状态
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年度
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8da67979-8e41-4626-a116-0f2346bac58c
+		summarizeBy: sum
+		sourceColumn: 年度
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 月份
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 240fb976-62a5-4d01-b13c-c0a6a158a327
+		summarizeBy: sum
+		sourceColumn: 月份
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务产值（含税）
+		dataType: double
+		isHidden
+		lineageTag: 3bb2738e-fa4a-4782-bc20-09e5d9c28fea
+		summarizeBy: sum
+		sourceColumn: 商务产值（含税）
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 业主确认量
+		dataType: double
+		isHidden
+		lineageTag: e432dcd6-43b2-4fd0-a8b2-5d4ccefa9cbe
+		summarizeBy: sum
+		sourceColumn: 业主确认量
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 现金流入
+		dataType: double
+		isHidden
+		lineageTag: b781156b-6df6-4d0b-902e-4b4612542b5e
+		summarizeBy: sum
+		sourceColumn: 现金流入
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款现金流入
+		dataType: double
+		isHidden
+		lineageTag: 8cdbaf43-c51c-4729-9bed-1ccc5412e9d6
+		summarizeBy: sum
+		sourceColumn: 工程款现金流入
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 保证金退还
+		dataType: double
+		isHidden
+		lineageTag: 5e2b2503-4dff-43bc-9e31-0b4abc19c863
+		summarizeBy: sum
+		sourceColumn: 保证金退还
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其他现金流入
+		dataType: double
+		isHidden
+		lineageTag: 7c949d16-4c3e-4eb5-bc44-3d7b72b3b38c
+		summarizeBy: sum
+		sourceColumn: 其他现金流入
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款回收率
+		dataType: double
+		isHidden
+		lineageTag: 8aa5b8c1-8741-4334-adf9-a256fa39b99b
+		summarizeBy: sum
+		sourceColumn: 工程款回收率
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 现金流出
+		dataType: double
+		isHidden
+		lineageTag: a5626517-56d1-4d10-aee0-e467008f59d6
+		summarizeBy: sum
+		sourceColumn: 现金流出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 直接费支出
+		dataType: double
+		isHidden
+		lineageTag: 2ccb9500-706e-43b4-b8e1-906edb4cfabf
+		summarizeBy: sum
+		sourceColumn: 直接费支出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 分包支出
+		dataType: double
+		isHidden
+		lineageTag: 9febb252-582f-42cd-90f2-57032c0f9407
+		summarizeBy: sum
+		sourceColumn: 分包支出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 材料款
+		dataType: double
+		isHidden
+		lineageTag: b98fd5fc-bdd2-465a-9cfc-608166dbe6b8
+		summarizeBy: sum
+		sourceColumn: 材料款
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 机械使用费
+		dataType: double
+		isHidden
+		lineageTag: d28ef189-5d66-4269-9ed5-4e5a96f42348
+		summarizeBy: sum
+		sourceColumn: 机械使用费
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其他直接费
+		dataType: double
+		isHidden
+		lineageTag: 96e014a9-88b9-4d70-b4c6-3572dcd89d49
+		summarizeBy: sum
+		sourceColumn: 其他直接费
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 间接费指出
+		dataType: string
+		isHidden
+		lineageTag: 87bf490a-d92a-43b8-ab52-a86edf7c33ae
+		summarizeBy: none
+		sourceColumn: 间接费指出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 上交公司预收益
+		dataType: double
+		isHidden
+		lineageTag: 6c62260a-2da1-4556-8248-7a01951ae539
+		summarizeBy: sum
+		sourceColumn: 上交公司预收益
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		isHidden
+		lineageTag: 893fd174-6551-42ae-96c9-31db663526aa
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 融资业务到期兑付支出
+		dataType: double
+		isHidden
+		lineageTag: 8cca1897-7f99-47ab-b56d-040760c3237a
+		summarizeBy: sum
+		sourceColumn: 融资业务到期兑付支出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 各类保证金支出
+		dataType: double
+		isHidden
+		lineageTag: 0b2368e3-fc6c-44a2-bece-6e97f21dbb9a
+		summarizeBy: sum
+		sourceColumn: 各类保证金支出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 支付率
+		dataType: double
+		isHidden
+		lineageTag: 43e51e73-840a-4905-b478-72c6b13c0089
+		summarizeBy: sum
+		sourceColumn: 支付率
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目月度现金净流量
+		dataType: double
+		isHidden
+		lineageTag: 7960d255-7782-408d-b822-eb5983b4beab
+		summarizeBy: sum
+		sourceColumn: 项目月度现金净流量
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目累计现金净流量
+		dataType: double
+		isHidden
+		lineageTag: 55083969-7300-4db2-aeec-1fa6c6acd854
+		summarizeBy: sum
+		sourceColumn: 项目累计现金净流量
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 公司内部借款
+		dataType: double
+		isHidden
+		lineageTag: e063dca0-1a6d-4066-a8e7-529bc7b6c580
+		summarizeBy: sum
+		sourceColumn: 公司内部借款
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预算内借款
+		dataType: double
+		isHidden
+		lineageTag: 23cd2145-648f-492b-8ecd-52cee6ea417a
+		summarizeBy: sum
+		sourceColumn: 预算内借款
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预算外借款
+		dataType: double
+		isHidden
+		lineageTag: b1c152cb-36ff-4c81-bf04-6c15642068a8
+		summarizeBy: sum
+		sourceColumn: 预算外借款
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 到期归还预算内借款
+		dataType: double
+		isHidden
+		lineageTag: 9ad9fe39-9547-4bd8-8d10-1cab0cf88be2
+		summarizeBy: sum
+		sourceColumn: 到期归还预算内借款
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 借款余额
+		dataType: double
+		isHidden
+		lineageTag: c8b2fb2d-6fa7-4be7-8120-66fc9cc9e09e
+		summarizeBy: sum
+		sourceColumn: 借款余额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目累计现金净流量（还款后）
+		dataType: double
+		isHidden
+		lineageTag: 094ed3f8-a63a-4609-83f7-d4662b3690d7
+		summarizeBy: sum
+		sourceColumn: 项目累计现金净流量（还款后）
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 到期归还预算外借款
+		dataType: double
+		isHidden
+		lineageTag: af89131a-2c6b-4410-923c-cbb4e04fdf21
+		summarizeBy: sum
+		sourceColumn: 到期归还预算外借款
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预算内借款余额
+		dataType: double
+		isHidden
+		lineageTag: 8ae88c37-d54a-476a-a465-b000bbbbe35f
+		summarizeBy: sum
+		sourceColumn: 预算内借款余额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FDATATYPE
+		dataType: string
+		isHidden
+		lineageTag: 527394fe-a63f-4d78-ad5b-2de7d20eba84
+		summarizeBy: none
+		sourceColumn: FDATATYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FXXJD
+		dataType: string
+		isHidden
+		lineageTag: 5666336c-9014-4c9c-8457-6785d842976c
+		summarizeBy: none
+		sourceColumn: FXXJD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FSFSKJD
+		dataType: string
+		isHidden
+		lineageTag: e71f4365-e1d6-4eb4-9810-f1eafe7c34d4
+		summarizeBy: none
+		sourceColumn: FSFSKJD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工产值
+		dataType: double
+		isHidden
+		lineageTag: d16afe0b-f5cd-47eb-9a91-db7efe36a30c
+		summarizeBy: sum
+		sourceColumn: 施工产值
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 产值税额
+		dataType: double
+		isHidden
+		lineageTag: 049e68ae-a53b-44ca-bf03-3d727b4c8069
+		summarizeBy: sum
+		sourceColumn: 产值税额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 商务产值（不含税）
+		dataType: double
+		isHidden
+		lineageTag: 9b4d0c09-807c-40db-b3b9-bfef0082a33a
+		summarizeBy: sum
+		sourceColumn: 商务产值（不含税）
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款流入（现金口径）
+		dataType: double
+		isHidden
+		lineageTag: 14beb66a-ffa2-436b-a194-d6751aac0a58
+		summarizeBy: sum
+		sourceColumn: 工程款流入（现金口径）
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款流入（全口径）
+		dataType: double
+		isHidden
+		lineageTag: 1c849ce3-6f1e-4e88-87b3-456b6d09eb05
+		summarizeBy: sum
+		sourceColumn: 工程款流入（全口径）
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 拟持有至到期票据收取
+		dataType: double
+		isHidden
+		lineageTag: a077699e-793e-498a-9db4-947f8eeb4e0e
+		summarizeBy: sum
+		sourceColumn: 拟持有至到期票据收取
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 票据到期现金流入
+		dataType: double
+		isHidden
+		lineageTag: 8c16bbac-393b-408b-b797-74fe92a34209
+		summarizeBy: sum
+		sourceColumn: 票据到期现金流入
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款非现金流入
+		dataType: double
+		isHidden
+		lineageTag: e26c318b-d129-41f1-aa10-95619019be37
+		summarizeBy: sum
+		sourceColumn: 工程款非现金流入
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 拟转帖票据收取
+		dataType: double
+		isHidden
+		lineageTag: f4d5ecdb-7121-4547-8f37-ca551caac6b8
+		summarizeBy: sum
+		sourceColumn: 拟转帖票据收取
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其他非现金工程款流入
+		dataType: double
+		isHidden
+		lineageTag: a78d8223-2da0-40c7-addb-20b4fffe42d1
+		summarizeBy: sum
+		sourceColumn: 其他非现金工程款流入
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 非现金流支出
+		dataType: double
+		isHidden
+		lineageTag: 984a21be-f45c-447b-9a49-9fa9b2523c88
+		summarizeBy: sum
+		sourceColumn: 非现金流支出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 分包支出:转贴票据支付
+		dataType: double
+		isHidden
+		lineageTag: bf058bbc-07a1-4590-9db6-4f11e4c2fae6
+		summarizeBy: sum
+		sourceColumn: 分包支出:转贴票据支付
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 材料款:转贴票据支付
+		dataType: double
+		isHidden
+		lineageTag: f3876056-1067-466c-a375-7ae029f9e212
+		summarizeBy: sum
+		sourceColumn: 材料款:转贴票据支付
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 机械使用费:转贴票据支付
+		dataType: double
+		isHidden
+		lineageTag: 3eda79b9-4b46-4a91-91f5-8b145dc58f56
+		summarizeBy: sum
+		sourceColumn: 机械使用费:转贴票据支付
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其他非现金流出
+		dataType: double
+		isHidden
+		lineageTag: 4118244b-4fca-4839-a022-8969f77938fd
+		summarizeBy: sum
+		sourceColumn: 其他非现金流出
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 8fd9bace-0108-408d-b0d1-7a3493a9dac2
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition F_全期现金流 = m
+		mode: import
+		queryGroup: 全期现金流
+		source =
+				let
+				    源 = Table.NestedJoin(全期现金流主表, {"FID"}, 全期现金流明细, {"FZBID"}, "明细", JoinKind.Inner),
+				    删除的列 = Table.RemoveColumns(源,{"FID", "SCREATETIME"}),
+				    #"展开的“明细”" = Table.ExpandTableColumn(删除的列, "明细", {"年度", "月份", "商务产值（含税）", "业主确认量", "现金流入", "工程款现金流入", "保证金退还", "其他现金流入", "工程款回收率", "现金流出", "直接费支出", "分包支出", "材料款", "机械使用费", "其他直接费", "间接费指出", "上交公司预收益", "税金", "融资业务到期兑付支出", "各类保证金支出", "支付率", "项目月度现金净流量", "项目累计现金净流量", "公司内部借款", "预算内借款", "预算外借款", "到期归还预算内借款", "借款余额", "项目累计现金净流量（还款后）", "到期归还预算外借款", "预算内借款余额", "FDATATYPE", "FXXJD", "FSFSKJD", "施工产值", "产值税额", "商务产值（不含税）", "工程款流入（现金口径）", "工程款流入（全口径）", "拟持有至到期票据收取", "票据到期现金流入", "工程款非现金流入", "拟转帖票据收取", "其他非现金工程款流入", "非现金流支出", "分包支出:转贴票据支付", "材料款:转贴票据支付", "机械使用费:转贴票据支付", "其他非现金流出"}, {"年度", "月份", "商务产值（含税）", "业主确认量", "现金流入", "工程款现金流入", "保证金退还", "其他现金流入", "工程款回收率", "现金流出", "直接费支出", "分包支出", "材料款", "机械使用费", "其他直接费", "间接费指出", "上交公司预收益", "税金", "融资业务到期兑付支出", "各类保证金支出", "支付率", "项目月度现金净流量", "项目累计现金净流量", "公司内部借款", "预算内借款", "预算外借款", "到期归还预算内借款", "借款余额", "项目累计现金净流量（还款后）", "到期归还预算外借款", "预算内借款余额", "FDATATYPE", "FXXJD", "FSFSKJD", "施工产值", "产值税额", "商务产值（不含税）", "工程款流入（现金口径）", "工程款流入（全口径）", "拟持有至到期票据收取", "票据到期现金流入", "工程款非现金流入", "拟转帖票据收取", "其他非现金工程款流入", "非现金流支出", "分包支出:转贴票据支付", "材料款:转贴票据支付", "机械使用费:转贴票据支付", "其他非现金流出"}),
+				    更改的类型 = Table.TransformColumnTypes(#"展开的“明细”",{{"年度", Int64.Type}, {"月份", Int64.Type}}),
+				    已添加自定义 = Table.AddColumn(更改的类型, "日期", each #date([年度],[月份],1),type date),
+				    替换的值 = Table.ReplaceValue(已添加自定义,0,null,Replacer.ReplaceValue,{"商务产值（含税）", "业主确认量", "现金流入", "工程款现金流入", "保证金退还", "其他现金流入", "工程款回收率", "现金流出", "直接费支出", "分包支出", "材料款", "机械使用费", "其他直接费", "间接费指出", "上交公司预收益", "税金", "融资业务到期兑付支出", "各类保证金支出", "支付率", "项目月度现金净流量", "项目累计现金净流量", "公司内部借款", "预算内借款", "预算外借款", "到期归还预算内借款", "借款余额", "项目累计现金净流量（还款后）", "到期归还预算外借款", "预算内借款余额", "FDATATYPE", "FXXJD", "FSFSKJD", "施工产值", "产值税额", "商务产值（不含税）", "工程款流入（现金口径）", "工程款流入（全口径）", "拟持有至到期票据收取", "票据到期现金流入", "工程款非现金流入", "拟转帖票据收取", "其他非现金工程款流入", "非现金流支出", "分包支出:转贴票据支付", "材料款:转贴票据支付", "机械使用费:转贴票据支付", "其他非现金流出"})
+				in
+				    替换的值
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Exception
+

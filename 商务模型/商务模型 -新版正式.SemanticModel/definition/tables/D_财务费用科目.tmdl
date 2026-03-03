@@ -1,0 +1,175 @@
+table D_财务费用科目
+	lineageTag: 0a2bc6c0-e018-4492-b6a6-d68207e56aea
+
+	measure 'D.当前财务层次' = ```
+			
+			    ISINSCOPE('D_财务费用科目'[财务科目1])+
+			    ISINSCOPE('D_财务费用科目'[财务科目2])+
+			    ISINSCOPE('D_财务费用科目'[财务科目3])+
+			    ISINSCOPE('D_财务费用科目'[财务科目4])+
+			    ISINSCOPE('D_财务费用科目'[财务科目5])+
+			    ISINSCOPE('D_财务费用科目'[财务科目6])
+			```
+		lineageTag: 086ea470-4f38-4426-83ee-534fc5d17047
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'L.财务长度' = MAX('D_财务费用科目'[财务长度])
+		lineageTag: 10beae41-6991-4b5f-b668-990aff367019
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'L.商务长度' = MAX('D_财务费用科目'[商务长度])
+		lineageTag: 38620081-13a9-433e-af96-b7429dc51d17
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 商务科目路径
+		dataType: string
+		lineageTag: 402dceae-3183-44c4-b794-c5ee3c42671d
+		summarizeBy: none
+		sourceColumn: 商务科目路径
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目路径
+		dataType: string
+		lineageTag: 6cb41487-1031-47f2-95c7-1717de07fbe6
+		summarizeBy: none
+		sourceColumn: 财务科目路径
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同编号
+		dataType: string
+		lineageTag: 2fcf3c18-514a-43ce-bb66-fd138716c612
+		summarizeBy: none
+		sourceColumn: 标准合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: 19d97b85-761b-4505-8e69-8dd7669178fe
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 科目编码
+		dataType: string
+		lineageTag: a5469460-bf8f-4ca0-872e-0fba81a3dd2f
+		summarizeBy: none
+		sourceColumn: 科目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目1 = PATHITEM('D_财务费用科目'[财务科目路径],1)
+		lineageTag: 303ba109-aac4-4bfd-a22c-89ba5f2c480c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目2 = PATHITEM('D_财务费用科目'[财务科目路径],2)
+		lineageTag: b6e912df-0e92-48d6-a747-b71b81252c01
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目3 = PATHITEM('D_财务费用科目'[财务科目路径],3)
+		lineageTag: 16349557-910a-45d1-9e24-1bc94fa8c6da
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目4 = PATHITEM('D_财务费用科目'[财务科目路径],4)
+		lineageTag: ee71c119-7d65-45f3-90cb-40ca0de85801
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目5 = PATHITEM('D_财务费用科目'[财务科目路径],5)
+		lineageTag: 7928ac0e-e338-4e7f-a2df-faaa1b344bc9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务科目6 = PATHITEM('D_财务费用科目'[财务科目路径],6)
+		lineageTag: 6482818b-9239-4312-941d-b63bdbc73ae5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 财务长度 = PATHLENGTH('D_财务费用科目'[财务科目路径])
+		formatString: 0
+		lineageTag: 324b3951-a494-4257-96bc-54a839d626e3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务科目1 = PATHITEM('D_财务费用科目'[商务科目路径],1)
+		lineageTag: 4ccd85ab-7235-43bf-b533-5d566a014a4b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务科目2 = PATHITEM('D_财务费用科目'[商务科目路径],2)
+		lineageTag: 8a2b4cf8-cae2-45df-9e38-f9a5dbb51bb8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务长度 = PATHLENGTH('D_财务费用科目'[商务科目路径])
+		formatString: 0
+		lineageTag: b47c2749-6eb1-4e82-9997-fc84c7c585c2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 财务科目层次
+		lineageTag: 2c817f1c-c056-4c41-b8de-d6625e1f9cf5
+
+		level 财务科目1
+			lineageTag: 2cb5d90d-e60d-4d97-a524-3e747c02e33d
+			column: 财务科目1
+
+		level 财务科目2
+			lineageTag: bd846248-cef8-49b0-93d3-9de489a508c1
+			column: 财务科目2
+
+		level 财务科目3
+			lineageTag: f4354136-bf97-4f03-b549-5cb7baf26709
+			column: 财务科目3
+
+		level 财务科目4
+			lineageTag: 38c0c40d-191b-4deb-89a0-4f4089530bee
+			column: 财务科目4
+
+		level 财务科目5
+			lineageTag: 80e1efca-c222-495e-992e-8e4e06eac8b4
+			column: 财务科目5
+
+		level 财务科目6
+			lineageTag: d3044b67-9bb0-4654-833a-329bb34c6c5c
+			column: 财务科目6
+
+	partition D_财务费用科目 = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+				    MD = 源{[Schema="MD"]}[Data],
+				    MD_SWCWDUIZHAO2020 = MD{[Name="MD_SWCWDUIZHAO2020"]}[Data],
+				    删除的其他列 = Table.SelectColumns(MD_SWCWDUIZHAO2020,{"FSWQLJ", "FCWKMQLJ", "FBZHTBH", "FBZHTMC", "RACCT"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FSWQLJ", "商务科目路径"}, {"FCWKMQLJ", "财务科目路径"}, {"FBZHTBH", "标准合同编号"}, {"FBZHTMC", "标准合同名称"}, {"RACCT", "科目编码"}}),
+				    已提取分隔符之后的文本 = Table.TransformColumns(重命名的列, {{"商务科目路径", each Text.AfterDelimiter(_, "/"), type text}, {"财务科目路径", each Text.AfterDelimiter(_, "/"), type text}}),
+				    替换的值 = Table.ReplaceValue(已提取分隔符之后的文本,"/","|",Replacer.ReplaceText,{"商务科目路径"}),
+				    替换的值1 = Table.ReplaceValue(替换的值,"/","|",Replacer.ReplaceText,{"财务科目路径"})
+				in
+				    替换的值1
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

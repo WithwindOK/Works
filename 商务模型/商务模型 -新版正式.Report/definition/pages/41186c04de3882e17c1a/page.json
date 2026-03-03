@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "41186c04de3882e17c1a",
+  "displayName": "商务产值查询",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

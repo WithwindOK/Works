@@ -1,0 +1,118 @@
+table F_预计产值（暂时未用）
+	isHidden
+	lineageTag: 3a39f2d0-4ef3-43af-bd00-13f1120333c9
+
+	column 项目名称
+		dataType: string
+		isHidden
+		lineageTag: 99206edc-58e8-4ac6-9889-025cab10acad
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		isHidden
+		lineageTag: 9a129719-803d-4b86-9406-8e858d4a40b2
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 年
+		dataType: double
+		isHidden
+		lineageTag: 468cb18f-04b8-42bd-94cb-65f0a0b4213c
+		summarizeBy: sum
+		sourceColumn: 年
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 55a79711-9206-4eab-9b64-8af38b99cd5d
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 施工专业
+		dataType: string
+		isHidden
+		lineageTag: 8661e349-42bb-44b6-a15d-53899f0b1f6c
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		isHidden
+		lineageTag: 1d96e6b6-5bd4-4a4c-8e90-d24511dcacb8
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 预计产值含税
+		dataType: double
+		isHidden
+		lineageTag: fde29af4-7185-4c8d-ab40-53f0fe23e450
+		summarizeBy: sum
+		sourceColumn: 预计产值含税
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计产值无税
+		dataType: double
+		isHidden
+		lineageTag: 47a99b0d-3b41-4841-9aee-8e02a367d325
+		summarizeBy: sum
+		sourceColumn: 预计产值无税
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_预计产值（暂时未用） = m
+		mode: import
+		queryGroup: 商务产值
+		source =
+				let
+				    源 = Table.NestedJoin(项目年度预算主表, {"FID"}, 项目年度预算表收入收益情况, {"FZBID"}, "项目年度预算表收入收益情况", JoinKind.Inner),
+				    #"展开的“项目年度预算表收入收益情况”" = Table.ExpandTableColumn(源, "项目年度预算表收入收益情况", {"施工专业", "分包类型", "预计产值含税", "预计产值无税"}, {"施工专业", "分包类型", "预计产值含税", "预计产值无税"}),
+				    删除的列 = Table.RemoveColumns(#"展开的“项目年度预算表收入收益情况”",{"FID"})
+				in
+				    删除的列
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

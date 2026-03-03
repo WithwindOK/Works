@@ -1,0 +1,112 @@
+table F_成本锁定
+	isHidden
+	lineageTag: 4fe45e46-f9e1-4bd5-b76c-db3eda0d8a62
+
+	column 项目编码
+		dataType: string
+		isHidden
+		lineageTag: f61c32f5-21f6-4875-88c3-11314cac3e7d
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		isHidden
+		lineageTag: c61cd214-44b6-4590-9c7a-410c9107fb99
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		isHidden
+		lineageTag: 1b5ac7b7-ed28-4ab4-93b9-48744abbf67e
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同类型
+		dataType: string
+		isHidden
+		lineageTag: 46f1aac3-9e00-4c98-a70c-d6c05690a549
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 328b1a96-b748-44f7-bcda-d297d2cc8ffb
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 含税成本锁定金额
+		dataType: double
+		isHidden
+		lineageTag: 00af2059-609e-4363-8e40-30f7de17610a
+		summarizeBy: sum
+		sourceColumn: 含税成本锁定金额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同KEY
+		dataType: string
+		isHidden
+		lineageTag: 4b4fbd1a-5279-4429-bca3-8df8977be634
+		summarizeBy: none
+		sourceColumn: 合同KEY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_成本锁定 = m
+		mode: import
+		queryGroup: 下游合同\合同组\合同成本锁定
+		source =
+				let
+				    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+				    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+				    DW_FB_BLMX1 = DATA_DW{[Name="DW_XYHT_CBSDMX"]}[Data],
+				    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("DATA_DW","DW_XYHT_CBSDMX")),
+				    删除的其他列 = Table.SelectColumns(重命名的列,{"项目编码（FXIANGMUBIANMA）", "合同编号（FHETONGBIANHAO）", "施工专业（FSHIGONGZHUANYE）", "合同类型（FHETONGLEIXING）", "SCREATETIME（SCREATETIME）", "含税成本锁定金额（FJIASHUIHEJI）"}),
+				    重命名的列1 = Table.RenameColumns(删除的其他列,{{"项目编码（FXIANGMUBIANMA）", "项目编码"}, {"合同编号（FHETONGBIANHAO）", "合同编号"}, {"施工专业（FSHIGONGZHUANYE）", "施工专业"}, {"合同类型（FHETONGLEIXING）", "合同类型"}, {"SCREATETIME（SCREATETIME）", "日期"}, {"含税成本锁定金额（FJIASHUIHEJI）", "含税成本锁定金额"}}),
+				    已添加自定义 = Table.AddColumn(重命名的列1, "合同KEY", each [合同编号]&"@"&[项目编码],type text),
+				    排序的行 = Table.Sort(已添加自定义,{{"合同KEY", Order.Ascending}, {"日期", Order.Descending}}),
+				    已添加索引 = Table.AddIndexColumn(排序的行, "索引", 0, 1, Int64.Type),
+				    删除的副本 = Table.Distinct(已添加索引, {"合同KEY"}),
+				    删除的列 = Table.RemoveColumns(删除的副本,{"索引"}),
+				    提取的日期 = Table.TransformColumns(删除的列,{{"日期", DateTime.Date, type date}})
+				in
+				    提取的日期
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

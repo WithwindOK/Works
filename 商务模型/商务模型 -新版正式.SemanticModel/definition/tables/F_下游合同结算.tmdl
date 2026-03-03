@@ -1,0 +1,116 @@
+table F_下游合同结算
+	lineageTag: 3ce3ecc8-966f-48e6-800e-cb3dcc85d932
+
+	column KEYID
+		dataType: string
+		isHidden
+		lineageTag: 921caaf4-5ee9-4824-a217-95a0dadd5fe7
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: a6a61370-9c6e-4ad8-8093-5579883f6812
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 价税合计
+		dataType: double
+		isHidden
+		lineageTag: 62c3cb11-dc96-4d6a-b898-449eb27b0b10
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目名称
+		dataType: string
+		isHidden
+		lineageTag: e61e3a52-7fdd-4cd5-9fc5-e345dd48ae1a
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		isHidden
+		lineageTag: 2dc137ae-6542-4181-9703-db23cae3b283
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 金额
+		dataType: double
+		isHidden
+		lineageTag: 0706f658-c951-44ca-873e-507d7a6fe247
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		isHidden
+		lineageTag: 4eeb8b96-1d85-4a18-a423-1834f46663bc
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 签约方式
+		dataType: string
+		lineageTag: 22960bf1-f3aa-4ddd-be2a-706e70c56805
+		summarizeBy: none
+		sourceColumn: 签约方式
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_下游合同结算 = m
+		mode: import
+		queryGroup: 下游合同\合同组\合同结算
+		source =
+				let
+				    源 = Table.Combine({#"DW_FB_JSMX（分包结算）", #"DW_WZ_CGJSMX（物资结算）", #"DW_WZ_ZLJSMX（租赁结算）"}),
+				    #"合并的查询（参照完整性）" = Table.NestedJoin(源, {"KEYID"}, D_下游合同_参照完整, {"KEYID"}, "D_下游合同", JoinKind.Inner),
+				    #"展开的“D_下游合同”" = Table.ExpandTableColumn(#"合并的查询（参照完整性）", "D_下游合同", {"项目名称", "客商名称"}, {"项目名称", "客商名称"})
+				in
+				    #"展开的“D_下游合同”"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = 导航
+

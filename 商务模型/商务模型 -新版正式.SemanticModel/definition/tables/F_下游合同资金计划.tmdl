@@ -1,0 +1,57 @@
+table F_下游合同资金计划
+	isHidden
+	lineageTag: bf752b31-7dc9-4b3d-bae2-2c061d63019c
+
+	column KEYID
+		dataType: string
+		isHidden
+		lineageTag: b6319658-a320-4d23-accf-b6b706765e28
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: b0cf53e3-a1d6-4bf9-8a19-da70722a65a4
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 付款比例
+		dataType: double
+		isHidden
+		lineageTag: 648462e7-604a-4f78-be47-fa0513ee4458
+		summarizeBy: sum
+		sourceColumn: 付款比例
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_下游合同资金计划 = m
+		mode: import
+		queryGroup: 资金计划
+		source =
+				let
+				    源 = Table.Combine({T_分包资金计划, T_采购资金计划, T_租赁资金计划,T_新资金计划})
+				in
+				    源
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,1490 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 30
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1086.3616394153598,
+            "y": 5
+          },
+          "nodeIndex": "货币单位",
+          "nodeLineageTag": "a8470b2f-3a25-4be4-96da-23268e5484c1",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0.18475118062985985,
+            "y": 252
+          },
+          "nodeIndex": "D_下游合同",
+          "nodeLineageTag": "975a9d32-c57f-46a5-844a-96d631deba4a",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 382,
+            "y": 564.42874137949025
+          },
+          "nodeIndex": "F_物资调拨",
+          "nodeLineageTag": "f2257b01-d81a-43c8-9ecb-e787eb30bea9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 309.36163941535983,
+            "y": 442
+          },
+          "nodeIndex": "F_下游合同结算",
+          "nodeLineageTag": "3ce3ecc8-966f-48e6-800e-cb3dcc85d932",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 390.36163941535983,
+            "y": 5
+          },
+          "nodeIndex": "F_下游合同评审",
+          "nodeLineageTag": "462d2171-3e5d-4337-92be-333db82b3fd3",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 176
+        },
+        {
+          "location": {
+            "x": 389.36163941535983,
+            "y": 171.99999999999997
+          },
+          "nodeIndex": "F_下游合同完成量",
+          "nodeLineageTag": "c310d441-a5c6-4c72-bdd7-92ed88391f51",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 849.6343444934846,
+            "y": 186
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 541.17688823472963,
+            "y": 310.71437068974512
+          },
+          "nodeIndex": "F_下游合同付款",
+          "nodeLineageTag": "30e2094e-4b43-4f81-b0bc-861abd1bf7a6",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 248
+        },
+        {
+          "location": {
+            "x": 39,
+            "y": 0
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 3072.8073858734697,
+            "y": 234.21437068974512
+          },
+          "nodeIndex": "D_标准合同",
+          "nodeLineageTag": "f8495ff1-fab7-4863-9994-e11bc166c300",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3356.6226346928397,
+            "y": 270.21437068974512
+          },
+          "nodeIndex": "F_下游合同资金计划",
+          "nodeLineageTag": "bf752b31-7dc9-4b3d-bae2-2c061d63019c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3640.6226346928397,
+            "y": 196.21437068974512
+          },
+          "nodeIndex": "F_全期现金流",
+          "nodeLineageTag": "6a538f07-5106-45eb-9cff-d69d22f307b7",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 3924.6226346928397,
+            "y": 210.21437068974512
+          },
+          "nodeIndex": "F_预计产值（暂时未用）",
+          "nodeLineageTag": "3a39f2d0-4ef3-43af-bd00-13f1120333c9",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4208.62263469284,
+            "y": 234.21437068974512
+          },
+          "nodeIndex": "F_预算",
+          "nodeLineageTag": "6a5533c9-9d9d-4c45-aac2-a9fd89b5f6b2",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4492.62263469284,
+            "y": 196.21437068974512
+          },
+          "nodeIndex": "D_承包合同",
+          "nodeLineageTag": "c5223f07-146b-41fc-9601-c8b4e12aa47e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 4776.62263469284,
+            "y": 198.21437068974512
+          },
+          "nodeIndex": "F_业主合同金额",
+          "nodeLineageTag": "ccf2cb64-ec00-483d-b53c-05705fdda66a",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5060.62263469284,
+            "y": 196.21437068974512
+          },
+          "nodeIndex": "F_商务产值",
+          "nodeLineageTag": "ff60dc9f-b765-4cf0-9e86-59bf635f253f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5344.62263469284,
+            "y": 196.21437068974512
+          },
+          "nodeIndex": "F_业主确认量",
+          "nodeLineageTag": "23f3381f-6cfd-4b19-9491-2f9c634f4752",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 5628.43788351221,
+            "y": 270.21437068974512
+          },
+          "nodeIndex": "D_分包类型",
+          "nodeLineageTag": "cdfa44ab-ec6f-4e35-9ab3-11062c5c5fe2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6196.43788351221,
+            "y": 282.21437068974512
+          },
+          "nodeIndex": "D_施工专业",
+          "nodeLineageTag": "cd00c745-78ab-41ca-b13e-588d0daaa97d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6480.43788351221,
+            "y": 282.21437068974512
+          },
+          "nodeIndex": "D-责任体",
+          "nodeLineageTag": "87e8a0c8-870b-4155-a0f5-4ab4d03f7919",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1720.3616394153598,
+            "y": 0
+          },
+          "nodeIndex": "指标",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6764.25313233158,
+            "y": 282.21437068974512
+          },
+          "nodeIndex": "CG_时间计算组",
+          "nodeLineageTag": "a9075058-7a9c-471e-b001-964c4b9a8ed0",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7048.25313233158,
+            "y": 246.21437068974512
+          },
+          "nodeIndex": "账户",
+          "nodeLineageTag": "67de4ef9-1a06-4760-a671-72d544f1f722",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7332.25313233158,
+            "y": 282.21437068974512
+          },
+          "nodeIndex": "CG_权限计算组",
+          "nodeLineageTag": "84993c1e-709f-467c-9678-03574f83abb7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7616.25313233158,
+            "y": 196.21437068974512
+          },
+          "nodeIndex": "I_下游合同",
+          "nodeLineageTag": "e37c525a-0043-466e-a453-288ff27a0a79",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7900.25313233158,
+            "y": 282.21437068974512
+          },
+          "nodeIndex": "刷新时间",
+          "nodeLineageTag": "103d865d-6077-4308-8be5-1a06509f095e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8184.06838115095,
+            "y": 222.21437068974512
+          },
+          "nodeIndex": "D_采购分类",
+          "nodeLineageTag": "f6cdf95f-b508-4c0f-8e52-2bb0578a062b",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8468.06838115095,
+            "y": 246.21437068974512
+          },
+          "nodeIndex": "D_财务费用科目",
+          "nodeLineageTag": "0a2bc6c0-e018-4492-b6a6-d68207e56aea",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 8752.06838115095,
+            "y": 246.21437068974512
+          },
+          "nodeIndex": "F_INVOICE（凭证表）",
+          "nodeLineageTag": "ff6622b8-1f61-44c1-8382-278cb7879a72",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "F_成本锁定",
+          "nodeLineageTag": "4fe45e46-f9e1-4bd5-b76c-db3eda0d8a62",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "I_承包合同信息",
+          "nodeLineageTag": "5cc41b1d-7317-43d1-b3d3-3a312cc4ed0b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "行选择",
+          "nodeLineageTag": "875229e2-662b-41e4-a7f7-8ab2f2cc59ba",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "F_业主结算",
+          "nodeLineageTag": "80b0175c-e314-4f72-ad64-651d78624c72",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "D_日历（用于合同签订日期）",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "所有表",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 345.47526622051259,
+            "y": 1.0974995782329984
+          },
+          "nodeIndex": "D_下游合同",
+          "nodeLineageTag": "975a9d32-c57f-46a5-844a-96d631deba4a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 588.65223654845909,
+            "y": 476.3422175133453
+          },
+          "nodeIndex": "F_下游合同评审",
+          "nodeLineageTag": "462d2171-3e5d-4337-92be-333db82b3fd3",
+          "size": {
+            "height": 128,
+            "width": 231
+          },
+          "zIndex": 0,
+          "expandedHeight": 224
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 316.87334500337846
+          },
+          "nodeIndex": "F_物资调拨",
+          "nodeLineageTag": "f2257b01-d81a-43c8-9ecb-e787eb30bea9",
+          "size": {
+            "height": 128,
+            "width": 169
+          },
+          "zIndex": 0,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 674.50275523870221,
+            "y": 111.01546652261072
+          },
+          "nodeIndex": "F_下游合同完成量",
+          "nodeLineageTag": "c310d441-a5c6-4c72-bdd7-92ed88391f51",
+          "size": {
+            "height": 128,
+            "width": 239
+          },
+          "zIndex": 0,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 637.09682862493651,
+            "y": 296
+          },
+          "nodeIndex": "F_下游合同结算",
+          "nodeLineageTag": "3ce3ecc8-966f-48e6-800e-cb3dcc85d932",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 200
+        },
+        {
+          "location": {
+            "x": 185.63668870816923,
+            "y": 451.42451386042171
+          },
+          "nodeIndex": "F_下游合同付款",
+          "nodeLineageTag": "30e2094e-4b43-4f81-b0bc-861abd1bf7a6",
+          "size": {
+            "height": 128,
+            "width": 224
+          },
+          "zIndex": 0,
+          "expandedHeight": 296
+        },
+        {
+          "location": {
+            "x": 21,
+            "y": 47
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        }
+      ],
+      "name": "下游合同",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 2,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 381.09091186523438,
+            "y": 0
+          },
+          "nodeIndex": "F_商务产值",
+          "nodeLineageTag": "ff60dc9f-b765-4cf0-9e86-59bf635f253f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": -57.909088134765625,
+            "y": 86.028411865234375
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 2,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 302.02841186523438
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 6,
+          "expandedHeight": 272
+        },
+        {
+          "location": {
+            "x": 396.09091186523438,
+            "y": 396.02841186523438
+          },
+          "nodeIndex": "F_预算",
+          "nodeLineageTag": "6a5533c9-9d9d-4c45-aac2-a9fd89b5f6b2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3,
+          "expandedHeight": 224
+        },
+        {
+          "location": {
+            "x": 736.09091186523438,
+            "y": -17.971588134765625
+          },
+          "nodeIndex": "D_施工专业",
+          "nodeLineageTag": "cd00c745-78ab-41ca-b13e-588d0daaa97d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 735.09091186523438,
+            "y": 269.02841186523438
+          },
+          "nodeIndex": "D_分包类型",
+          "nodeLineageTag": "cdfa44ab-ec6f-4e35-9ab3-11062c5c5fe2",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 5,
+          "expandedHeight": 152
+        }
+      ],
+      "name": "产值",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 3,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 382.09091186523438,
+            "y": 31.028411865234375
+          },
+          "nodeIndex": "F_业主确认量",
+          "nodeLineageTag": "23f3381f-6cfd-4b19-9491-2f9c634f4752",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": -38.909088134765625,
+            "y": -35.971588134765625
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 727.09091186523438,
+            "y": 0
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 272
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 225.02841186523438
+          },
+          "nodeIndex": "D_分包类型",
+          "nodeLineageTag": "cdfa44ab-ec6f-4e35-9ab3-11062c5c5fe2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 770.09091186523438,
+            "y": 249.02841186523438
+          },
+          "nodeIndex": "D_施工专业",
+          "nodeLineageTag": "cd00c745-78ab-41ca-b13e-588d0daaa97d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "确权",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 4,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 360.09091186523438,
+            "y": 120.02841186523438
+          },
+          "nodeIndex": "F_下游合同资金计划",
+          "nodeLineageTag": "bf752b31-7dc9-4b3d-bae2-2c061d63019c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 111.02841186523438
+          },
+          "nodeIndex": "D_下游合同",
+          "nodeLineageTag": "975a9d32-c57f-46a5-844a-96d631deba4a",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 743.09091186523438,
+            "y": 134.02841186523438
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 272
+        }
+      ],
+      "name": "资金计划",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 5,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 38.090911865234375,
+            "y": 207.02841186523438
+          },
+          "nodeIndex": "D-责任体",
+          "nodeLineageTag": "87e8a0c8-870b-4155-a0f5-4ab4d03f7919",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 152
+        },
+        {
+          "location": {
+            "x": 424.09091186523438,
+            "y": 224.02841186523438
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        }
+      ],
+      "name": "责任体",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 6,
+      "scrollPosition": {
+        "x": 0,
+        "y": 63.6363639831543
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 337.09091186523438,
+            "y": 58.028411865234375
+          },
+          "nodeIndex": "F_业主合同金额",
+          "nodeLineageTag": "ccf2cb64-ec00-483d-b53c-05705fdda66a",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 287.09091186523438,
+            "y": 397.02841186523438
+          },
+          "nodeIndex": "F_业主确认量",
+          "nodeLineageTag": "23f3381f-6cfd-4b19-9491-2f9c634f4752",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": -29.909088134765625,
+            "y": 105.02841186523438
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 669.09091186523438,
+            "y": 128.02841186523438
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 272
+        }
+      ],
+      "name": "上游合同",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 7,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 343.09091186523438,
+            "y": 111.02841186523438
+          },
+          "nodeIndex": "F_全期现金流",
+          "nodeLineageTag": "6a538f07-5106-45eb-9cff-d69d22f307b7",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 689.09091186523438,
+            "y": 113.02841186523438
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 272
+        },
+        {
+          "location": {
+            "x": -66.909088134765625,
+            "y": 102.02841186523438
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        }
+      ],
+      "name": "全期现金流",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 8,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 330.09091186523438,
+            "y": 0
+          },
+          "nodeIndex": "F_INVOICE（凭证表）",
+          "nodeLineageTag": "ff6622b8-1f61-44c1-8382-278cb7879a72",
+          "size": {
+            "height": 307,
+            "width": 233
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": -43.909088134765625,
+            "y": 26.028411865234375
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 272
+        },
+        {
+          "location": {
+            "x": 752.09091186523438,
+            "y": 1.028411865234375
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 744.09091186523438,
+            "y": 369.02841186523438
+          },
+          "nodeIndex": "D_财务费用科目",
+          "nodeLineageTag": "0a2bc6c0-e018-4492-b6a6-d68207e56aea",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "财务费用",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 9,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 35.090911865234375,
+            "y": 155.02841186523438
+          },
+          "nodeIndex": "F_成本锁定",
+          "nodeLineageTag": "4fe45e46-f9e1-4bd5-b76c-db3eda0d8a62",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1,
+          "expandedHeight": 248
+        },
+        {
+          "location": {
+            "x": 264.09091186523438,
+            "y": 0
+          },
+          "nodeIndex": "D_下游合同",
+          "nodeLineageTag": "975a9d32-c57f-46a5-844a-96d631deba4a",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 2,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 558.09091186523438,
+            "y": 186.02841186523438
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "成本锁定",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 10,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 338.85730371540546,
+            "y": 91.593786436458117
+          },
+          "nodeIndex": "F_商务产值",
+          "nodeLineageTag": "ff60dc9f-b765-4cf0-9e86-59bf635f253f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 349.628177424576,
+            "y": 448.84401850566871
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 623.02589353345547,
+            "y": -50
+          },
+          "nodeIndex": "D_分包类型",
+          "nodeLineageTag": "cdfa44ab-ec6f-4e35-9ab3-11062c5c5fe2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 669.09091186523438,
+            "y": 312.02841186523438
+          },
+          "nodeIndex": "D_施工专业",
+          "nodeLineageTag": "cd00c745-78ab-41ca-b13e-588d0daaa97d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "商务产值",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 11,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 3,
+            "y": 191.02841186523438
+          },
+          "nodeIndex": "I_承包合同信息",
+          "nodeLineageTag": "5cc41b1d-7317-43d1-b3d3-3a312cc4ed0b",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 3,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 64.090911865234375,
+            "y": 0
+          },
+          "nodeIndex": "D_承包合同",
+          "nodeLineageTag": "c5223f07-146b-41fc-9601-c8b4e12aa47e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 544.09091186523438,
+            "y": 0
+          },
+          "nodeIndex": "F_业主合同金额",
+          "nodeLineageTag": "ccf2cb64-ec00-483d-b53c-05705fdda66a",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 493.09091186523438,
+            "y": 308.57386779785156
+          },
+          "nodeIndex": "F_业主确认量",
+          "nodeLineageTag": "23f3381f-6cfd-4b19-9491-2f9c634f4752",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 815.09091186523438,
+            "y": 329.48295593261719
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 5,
+          "expandedHeight": 272
+        },
+        {
+          "location": {
+            "x": 70.090911865234375,
+            "y": 315.02841186523438
+          },
+          "nodeIndex": "D_分包类型",
+          "nodeLineageTag": "cdfa44ab-ec6f-4e35-9ab3-11062c5c5fe2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 94.090911865234375,
+            "y": 526.02841186523438
+          },
+          "nodeIndex": "D_施工专业",
+          "nodeLineageTag": "cd00c745-78ab-41ca-b13e-588d0daaa97d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        }
+      ],
+      "name": "业主合同",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 12,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 365.09091186523438,
+            "y": 16.028411865234375
+          },
+          "nodeIndex": "F_业主结算",
+          "nodeLineageTag": "80b0175c-e314-4f72-ad64-651d78624c72",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": -22.909088134765625,
+            "y": -11.971588134765625
+          },
+          "nodeIndex": "D_项目信息",
+          "nodeLineageTag": "817c2092-93d4-4f6c-b45c-40660b91ba8c",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 706.09091186523438,
+            "y": 15.028411865234375
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 21.090911865234375,
+            "y": 408.02841186523438
+          },
+          "nodeIndex": "D_施工专业",
+          "nodeLineageTag": "cd00c745-78ab-41ca-b13e-588d0daaa97d",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 646.09091186523438,
+            "y": 370.02841186523438
+          },
+          "nodeIndex": "D_分包类型",
+          "nodeLineageTag": "cdfa44ab-ec6f-4e35-9ab3-11062c5c5fe2",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "业主结算",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 13,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 324.09091186523438,
+            "y": 107.02841186523438
+          },
+          "nodeIndex": "D_日历（用于合同签订日期）",
+          "nodeLineageTag": "0e73fe32-8472-4507-a778-bcf8d3daf6a9",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 655.09091186523438,
+            "y": 86.028411865234375
+          },
+          "nodeIndex": "D_下游合同",
+          "nodeLineageTag": "975a9d32-c57f-46a5-844a-96d631deba4a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": -81.909088134765625,
+            "y": 105.02841186523438
+          },
+          "nodeIndex": "D_承包合同",
+          "nodeLineageTag": "c5223f07-146b-41fc-9601-c8b4e12aa47e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "合同签订日期",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 14,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 334.18475118062992,
+            "y": 18.93489082265647
+          },
+          "nodeIndex": "F_物资调拨",
+          "nodeLineageTag": "f2257b01-d81a-43c8-9ecb-e787eb30bea9",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 725.36163941535983,
+            "y": 42
+          },
+          "nodeIndex": "D_下游合同",
+          "nodeLineageTag": "975a9d32-c57f-46a5-844a-96d631deba4a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.000000000000014,
+            "y": -50
+          },
+          "nodeIndex": "D_日历",
+          "nodeLineageTag": "d560813b-89ce-40bd-b4ba-93a8236b679e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "布局 1",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "布局 1",
+  "defaultDiagram": "所有表"
+}

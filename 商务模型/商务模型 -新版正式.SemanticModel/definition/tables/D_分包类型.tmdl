@@ -1,0 +1,40 @@
+table D_分包类型
+	excludeFromModelRefresh
+	lineageTag: cdfa44ab-ec6f-4e35-9ab3-11062c5c5fe2
+
+	column 分包类型
+		dataType: string
+		lineageTag: c6497c07-6ff1-47b8-a216-2f7f4dc674c5
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型简称
+		dataType: string
+		lineageTag: 4886bf4e-651a-4111-874b-e85250d584c8
+		summarizeBy: none
+		sourceColumn: 分包类型简称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 排序
+		dataType: int64
+		formatString: 0
+		lineageTag: 0093c6a7-ef47-43b4-8fe5-b980cbb6690e
+		summarizeBy: sum
+		sourceColumn: 排序
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_分包类型 = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WetG+6tm0vUo6CIahUqxOtNKznvan62Y97Wh72tMKFIRwgQwjpdhYAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [分包类型 = _t, 简称 = _t, 排序 = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"排序", Int64.Type}}),
+				    重命名的列 = Table.RenameColumns(更改的类型,{{"简称", "分包类型简称"}})
+				in
+				    重命名的列
+

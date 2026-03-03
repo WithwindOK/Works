@@ -1,0 +1,83 @@
+table F_物资调拨
+	isHidden
+	lineageTag: f2257b01-d81a-43c8-9ecb-e787eb30bea9
+
+	column KEYID
+		dataType: string
+		isHidden
+		lineageTag: 28852dde-5339-46df-a37e-d4e3cc544509
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 7ecebec5-9a97-42a2-9a17-540aad56db92
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 价税合计
+		dataType: double
+		isHidden
+		lineageTag: fb3cb115-dc87-4d12-b2db-944b9540efe3
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		lineageTag: a4da9abc-39ba-42ec-9fc7-0996ed1febf7
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		lineageTag: 5115f4cc-33e6-43f1-8679-6c7b584a1ce0
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_物资调拨 = m
+		mode: import
+		queryGroup: 下游合同\合同组\合同完成量
+		source =
+				let
+				    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+				    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+				    DW_FB_BLMX1 = DATA_DW{[Name="DW_WZ_DBMX"]}[Data],
+				    重命名的列 = Table.RenameColumns(DW_FB_BLMX1,fx_RN("DATA_DW","DW_WZ_DBMX")),
+				    删除的其他列 = Table.SelectColumns(重命名的列,{"KEYID（KEYID）", "日期（FRQ）", "价税合计（JIASHUIHEJI）", "金额（JINE）", "税金（SHUIE）"}),
+				    重命名的列1 = Table.RenameColumns(删除的其他列,{{"KEYID（KEYID）", "KEYID"}, {"日期（FRQ）", "日期"}, {"价税合计（JIASHUIHEJI）", "价税合计"}, {"金额（JINE）", "金额"}, {"税金（SHUIE）", "税金"}}),
+				    更改的类型 = Table.TransformColumnTypes(重命名的列1,{{"日期", type date}})
+				in
+				    更改的类型
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

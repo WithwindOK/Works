@@ -1,0 +1,410 @@
+table 指标
+	excludeFromModelRefresh
+	lineageTag: 5161ef87-6d4b-4248-9ca4-37ad392983de
+
+	/// 公式：SELECTEDVALUE('货币单位'[系数],1)
+	measure _货币系数 = SELECTEDVALUE('货币单位'[系数],1)
+		formatString: 0
+		displayFolder: 中间变量，不可直接用
+		lineageTag: 891678e6-ed4d-42eb-9d0c-3172cc0966d2
+
+	/// 公式：SUM('F_下游合同评审'[价税合计])/[_货币系数]
+	measure 'sum.下游合同额.价税合计' = SUM('F_下游合同评审'[价税合计])/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: e0ca276e-d94a-4770-99ec-4abfb6798ae9
+
+	/// 公式：SUM('F_下游合同结算'[价税合计])/[_货币系数]
+	measure 'sum.下游合同结算.价税合计' = SUM('F_下游合同结算'[价税合计])/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 8f4c7088-0db8-4f4e-8a60-56c34fd52a56
+
+	/// 公式：SUM('F_下游合同完成量'[价税合计])/[_货币系数]
+	measure 'sum.下游合同完成量.价税合计' = SUM('F_下游合同完成量'[价税合计])/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 6a6c4818-7da0-4da3-ab34-56fc54b5befb
+
+	/// 公式：
+	/// VAR _Maxt=MAX('D_日历'[日期])
+	/// VAR _KLJS=CALCULATE([sum.下游合同结算.价税合计],'D_日历'[日期]<=_Maxt)  //开累结算
+	/// VAR _KLWCL=CALCULATE([sum.下游合同完成量.价税合计],'D_日历'[日期]<=_Maxt) //开累完成量
+	/// RETURN
+	/// COALESCE(_KLJS,_KLWCL)
+	/// 
+	measure '_下游合同应付.价税合计.Exp' = ```
+			
+			VAR _Maxt=MAX('D_日历'[日期])
+			VAR _KLJS=CALCULATE([sum.下游合同结算.价税合计],'D_日历'[日期]<=_Maxt)  //开累结算
+			VAR _KLWCL=CALCULATE([sum.下游合同完成量.价税合计],'D_日历'[日期]<=_Maxt) //开累完成量
+			RETURN
+			COALESCE(_KLJS,_KLWCL)
+			
+			```
+		displayFolder: 中间变量，不可直接用
+		lineageTag: d7d4bb3c-25ff-4f3e-a6b3-aab0a13cbf60
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：IF(ISBLANK([sum.下游合同结算.价税合计]),"未结","已结")
+	measure 'txt.是否已结' = IF(ISBLANK([sum.下游合同结算.价税合计]),"未结","已结")
+		lineageTag: 2dc323d1-be01-48c1-8c0c-d190b5b8cd25
+
+	/// 公式：SUMX(VALUES('D_下游合同'[KEYID]),[_下游合同应付.价税合计.Exp])
+	measure 'cum.下游合同累计应付.价税合计' = SUMX(VALUES('D_下游合同'[KEYID]),[_下游合同应付.价税合计.Exp])
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: d7878f28-ffed-42d1-b541-d8fa4531de1b
+
+	/// 公式：CALCULATE([sum.下游合同额.价税合计],'F_下游合同评审'[合同版本]="初始合同")
+	measure 'sum.下游合同额.价税合计.初始' = CALCULATE([sum.下游合同额.价税合计],'F_下游合同评审'[合同版本]="初始合同")
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 9560c06b-e869-41a2-b780-dbd46b32ddaf
+
+	/// 公式：CALCULATE([sum.下游合同额.价税合计],'F_下游合同评审'[合同版本]="补充合同")
+	measure 'sum.下游合同额.价税合计.补充' = CALCULATE([sum.下游合同额.价税合计],'F_下游合同评审'[合同版本]="补充合同")
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 041b40a2-f6bb-44df-87f3-ec933fdbc946
+
+	/// 公式：CALCULATE(SUM('F_下游合同付款'[本期实际付款]),'F_下游合同付款'[评审状态]="已完成")/[_货币系数]
+	measure 'sum.下游合同付款.实付' = CALCULATE(SUM('F_下游合同付款'[本期实际付款]),'F_下游合同付款'[评审状态]="已完成")/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 2181cc7b-38c4-44ff-83e1-f5ceb41c8552
+
+	/// 公式：CALCULATE(SUM('F_下游合同付款'[本期实际付款]),'F_下游合同付款'[评审状态]="在途")/[_货币系数]
+	measure 'sum.下游合同付款.在途' = CALCULATE(SUM('F_下游合同付款'[本期实际付款]),'F_下游合同付款'[评审状态]="在途")/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 2fad9df3-3fbb-4f2b-a6a5-e10c12d9b7dd
+
+	/// 公式：
+	/// VAR _Maxt=MAX('D_日历'[日期])
+	/// VAR _KLFK=CALCULATE([sum.下游合同付款.实付],FILTER(ALL('D_日历'),'D_日历'[日期]<=_Maxt))  //开累付款
+	/// RETURN
+	/// _KLFK
+	measure 'cum.下游合同付款.累计' =
+			
+			VAR _Maxt=MAX('D_日历'[日期])
+			VAR _KLFK=CALCULATE([sum.下游合同付款.实付],FILTER(ALL('D_日历'),'D_日历'[日期]<=_Maxt))  //开累付款
+			RETURN
+			_KLFK
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 7b975a0c-df86-4262-a06f-492f84225ab7
+
+	/// 公式：SUMX(VALUES('D_下游合同'[KEYID]),[cum.下游合同累计应付.价税合计]- [cum.下游合同付款.累计])
+	measure 'cum.下游合同欠款.累计' = SUMX(VALUES('D_下游合同'[KEYID]),[cum.下游合同累计应付.价税合计]- [cum.下游合同付款.累计])
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 1c419b15-b1af-479b-b70c-e0ba446d476d
+
+	/// 公式：COUNT('F_下游合同评审'[KEYID])
+	measure 'cnt.下游协议份数' = COUNT('F_下游合同评审'[KEYID])
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: f3cadeb7-0716-4948-bec9-c7d13af5b558
+
+	/// 公式：CALCULATE([cnt.下游协议份数],'F_下游合同评审'[合同版本]="初始合同")
+	measure 'cnt.下游协议份数.初始' = CALCULATE([cnt.下游协议份数],'F_下游合同评审'[合同版本]="初始合同")
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: 85378910-380d-4bb0-a766-4b46bd7dd5a1
+
+	/// 公式：CALCULATE([cnt.下游协议份数],'F_下游合同评审'[合同版本]="补充合同")
+	measure 'cnt.下游协议份数.补充' = CALCULATE([cnt.下游协议份数],'F_下游合同评审'[合同版本]="补充合同")
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: 2af29a96-9b21-4072-8763-83e5639ea1f9
+
+	/// 公式：COUNT('F_下游合同结算'[KEYID])
+	measure 'cnt.下游合同结算份数' = COUNT('F_下游合同结算'[KEYID])
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: f65939cb-a63e-4cf2-9091-b185eb478803
+
+	/// 公式：DISTINCTCOUNT('F_下游合同评审'[客商名称])
+	measure 'dcnt.下游合同客商数' = DISTINCTCOUNT('F_下游合同评审'[客商名称])
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: 370cc8f2-2b52-42f6-9b60-c9e5581f6041
+
+	/// 公式：DISTINCTCOUNT('F_下游合同评审'[项目名称])
+	measure dcnt下游合同项目数 = DISTINCTCOUNT('F_下游合同评审'[项目名称])
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: 8419066a-75b1-4877-a221-757c10754689
+
+	/// 公式：DISTINCTCOUNT('F_下游合同结算'[客商名称])
+	measure 'dcnt.下游结算客商数' = DISTINCTCOUNT('F_下游合同结算'[客商名称])
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: 020ab86b-a799-47a0-b82a-aa2c51b434b2
+
+	/// 公式：DISTINCTCOUNT('F_下游合同结算'[项目名称])
+	measure 'dcnt.下游结算项目数' = DISTINCTCOUNT('F_下游合同结算'[项目名称])
+		formatString: 0
+		displayFolder: 计数
+		lineageTag: 99b9fc66-3092-4097-97f1-dac2c43eebba
+
+	/// 公式：MIN('F_下游合同评审'[日期])
+	measure 'min.下游协议签订日期' = MIN('F_下游合同评审'[日期])
+		formatString: General Date
+		displayFolder: 签订日期
+		lineageTag: 04cacaa1-5bd5-4a6c-94bb-c19e07003451
+
+	/// 公式：MAX('F_下游合同评审'[日期])
+	measure 'max.下游协议签订日期' = MAX('F_下游合同评审'[日期])
+		formatString: General Date
+		displayFolder: 签订日期
+		lineageTag: 83b8d452-a592-4681-9781-4147f465c6f1
+
+	/// 公式：MIN('F_下游合同结算'[日期])
+	measure 'min.下游结算签订日期' = MIN('F_下游合同结算'[日期])
+		formatString: General Date
+		displayFolder: 签订日期
+		lineageTag: 21dcf979-fff2-460c-b8aa-08a43e45d182
+
+	/// 公式：MAX('F_下游合同结算'[日期])
+	measure 'max.下游结算签订日期' = MAX('F_下游合同结算'[日期])
+		formatString: General Date
+		displayFolder: 签订日期
+		lineageTag: 47bc1ecc-d1b1-486a-a3cc-78bb140b754e
+
+	/// 公式：MIN('F_下游合同付款'[日期])
+	measure 'min.下游付款日期' = MIN('F_下游合同付款'[日期])
+		formatString: General Date
+		displayFolder: 签订日期
+		lineageTag: c5445545-dd04-46f1-944b-dac17f0d5e1a
+
+	/// 公式：MAX('F_下游合同付款'[日期])
+	measure 'max.下游付款日期' = MAX('F_下游合同付款'[日期])
+		formatString: General Date
+		displayFolder: 签订日期
+		lineageTag: f2a2fd8b-816f-4c15-8148-1c1ef6846bde
+
+	/// 公式：
+	/// VAR _s=[sum.下游合同结算.价税合计]-[sum.下游合同完成量.价税合计]
+	/// VAR _R=IF(_s<0,_s)
+	/// RETURN
+	/// _R
+	measure _结算-完成量 =
+			
+			VAR _s=[sum.下游合同结算.价税合计]-[sum.下游合同完成量.价税合计]
+			VAR _R=IF(_s<0,_s)
+			RETURN
+			_R
+		formatString: 0
+		displayFolder: 中间变量，不可直接用
+		lineageTag: 51ccf242-eb42-4522-bacd-23f83ffdc3e3
+
+	/// 公式：DISTINCTCOUNT('F_业主合同金额'[合同编号])
+	measure 'dcnt.承包合同.份数' = DISTINCTCOUNT('F_业主合同金额'[合同编号])
+		formatString: 0
+		displayFolder: 01承包合同\合同
+		lineageTag: e3d9f9ae-3736-4b61-bd6f-307146d465eb
+
+	/// 公式：
+	/// SUM ( 'F_业主合同金额'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.承包合同.价税合计' =
+			
+			SUM ( 'F_业主合同金额'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\合同
+		lineageTag: d98a0bf9-1edc-41b5-b895-7cfc6c148508
+
+		changedProperty = FormatString
+
+	/// 公式：
+	/// SUM ( 'F_业主合同金额'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.承包合同.金额' =
+			
+			SUM ( 'F_业主合同金额'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\合同
+		lineageTag: 804d080e-817c-48fb-9bf0-aaff99586877
+
+		changedProperty = FormatString
+
+	/// 公式：CALCULATE([sum.承包合同.价税合计],'D_分包类型'[分包类型]="自施")
+	measure 'sum.承包合同额.价税合计.自施' = CALCULATE([sum.承包合同.价税合计],'D_分包类型'[分包类型]="自施")
+		formatString: #,0.00
+		displayFolder: 01承包合同\合同
+		lineageTag: b81d81c0-99c0-49a8-8019-c91aa6bc62c8
+
+	/// 公式：
+	/// SUM ( 'F_业主确认量'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.业主确权.价税合计' =
+			
+			SUM ( 'F_业主确认量'[价税合计] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\确权
+		lineageTag: ab8f71e9-ce82-4c34-8ad4-6eb8817634a6
+
+		changedProperty = FormatString
+
+	/// 公式：SUM ( 'F_业主确认量'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.业主确权.金额' = SUM ( 'F_业主确认量'[金额] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\确权
+		lineageTag: fdde9eac-723e-42ac-a9dc-e9982811d10d
+
+		changedProperty = FormatString
+
+	/// 公式：
+	/// SUM ( 'F_业主确认量'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.业主确权.税金' =
+			
+			SUM ( 'F_业主确认量'[税金] )/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\确权
+		lineageTag: b9a053bd-96ed-44d1-b1d8-c17363ebf8f4
+
+		changedProperty = FormatString
+
+	/// 公式：SUM('F_预算'[业主确认量])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.预算确权.价税合计' = SUM('F_预算'[业主确认量])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 01承包合同\确权
+		lineageTag: 55aeb7f1-5a95-40e6-bda2-62d54537b002
+
+	/// 公式：CALCULATE([sum.产值.价税合计],'CG_时间计算组'[时间组列]="年累")
+	measure 'cum.产值.价税合计.年累' = CALCULATE([sum.产值.价税合计],'CG_时间计算组'[时间组列]="年累")
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: 24c34024-700a-4a30-9bca-0b508c95efed
+
+	/// 公式：SUM('F_商务产值'[本期含税产值])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.产值.价税合计' = SUM('F_商务产值'[本期含税产值])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: 8061adf5-a6d4-44b0-b5f7-d102979d240a
+
+	/// 公式：CALCULATE([sum.预计产值.价税合计],'CG_时间计算组'[时间组列]="年累")
+	measure 'cum.预计产值.价税合计.年累' = CALCULATE([sum.预计产值.价税合计],'CG_时间计算组'[时间组列]="年累")
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: 63711817-66d2-4e68-9544-3bb5441ca0c8
+
+	/// 公式：SUM('F_预算'[商务产值(含税)])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.预计产值.价税合计' = SUM('F_预算'[商务产值(含税)])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: ca0d408f-649e-4bcb-a487-40fec4a969a6
+
+	/// 公式：SUM('F_预算'[商务产值(不含税)])/SELECTEDVALUE('货币单位'[系数],1)
+	measure 'sum.预计产值.金额' = SUM('F_预算'[商务产值(不含税)])/SELECTEDVALUE('货币单位'[系数],1)
+		formatString: #,0.00
+		displayFolder: 06产值
+		lineageTag: 8222887f-387c-4fe9-9c6d-71dcfb0ccc02
+
+	/// 公式：MAX('F_下游合同资金计划'[付款比例])
+	measure 'max.执行付款比例' = MAX('F_下游合同资金计划'[付款比例])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 合计
+		lineageTag: a638681d-be03-470f-8c91-bb661d03517b
+
+	/// 公式：DIVIDE([cum.下游合同付款.累计],[cum.下游合同累计应付.价税合计])
+	measure 'R.支付率' = DIVIDE([cum.下游合同付款.累计],[cum.下游合同累计应付.价税合计])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 合计
+		lineageTag: f8b32659-e01e-42fc-b1de-3eaac8d4e74e
+
+	/// 公式：
+	/// IF([D.当前财务层次]<=[L.财务长度],[_财务费用.sum])
+	measure 'sum.财务费用' =
+			
+			IF([D.当前财务层次]<=[L.财务长度],[_财务费用.sum])
+		displayFolder: 07财务费用
+		lineageTag: aac905f1-7835-45ba-b0fc-a7fd3d546601
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：SUM('F_INVOICE（凭证表）'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+	measure '_财务费用.sum' = SUM('F_INVOICE（凭证表）'[金额])/SELECTEDVALUE('货币单位'[系数],1)
+		displayFolder: 07财务费用
+		lineageTag: 5549b3c0-8a14-4c30-8fe6-1e60c0102c4f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：SUM('F_成本锁定'[含税成本锁定金额])/[_货币系数]
+	measure 'sum.下游合同成本锁定.价税合计' = SUM('F_成本锁定'[含税成本锁定金额])/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: d8ca2a46-9748-4b95-9878-1d800f7d95c2
+
+	/// 公式：SUM('F_业主结算'[结算额])/[_货币系数]
+	measure 'sum.业主结算额.价税合计' = SUM('F_业主结算'[结算额])/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 01承包合同\结算
+		lineageTag: fa269a02-3503-457b-80fb-524033b21229
+
+	/// 公式：SUM('F_业主结算'[总收益额])/[_货币系数]
+	measure 'sum.业主结算总收益.价税合计' = SUM('F_业主结算'[总收益额])/[_货币系数]
+		displayFolder: 01承包合同\结算
+		lineageTag: 94fe28f9-b5be-43b6-b07c-dd193d08d3a5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：SUM('F_业主结算'[成本降低])/[_货币系数]
+	measure 'sum.业主结算成本降低.价税合计' = SUM('F_业主结算'[成本降低])/[_货币系数]
+		displayFolder: 01承包合同\结算
+		lineageTag: 3f5c244c-ff52-47f4-95fb-2282f1883882
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：SUM('F_业主结算'[核定收益额])/[_货币系数]
+	measure 'sum.业主结算核定收益.价税合计' = SUM('F_业主结算'[核定收益额])/[_货币系数]
+		displayFolder: 01承包合同\结算
+		lineageTag: 3952e313-34f7-4388-b437-484a7e591c7a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：SUM('F_业主结算'[成本总额])/[_货币系数]
+	measure 'sum.业主结算成本.价税合计' = SUM('F_业主结算'[成本总额])/[_货币系数]
+		displayFolder: 01承包合同\结算
+		lineageTag: e2076285-93a5-4963-816a-9cfa43a0c717
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：CALCULATE([sum.承包合同.价税合计],'D_分包类型'[分包类型]="指定分包")
+	measure 'sum.承包合同额.价税合计.指定' = CALCULATE([sum.承包合同.价税合计],'D_分包类型'[分包类型]="指定分包")
+		displayFolder: 01承包合同\合同
+		lineageTag: 723eb587-74f0-47db-8fda-4cf2079330ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// 公式：SUM('F_物资调拨'[价税合计])/[_货币系数]
+	measure 'sum.物资调拨.价税合计' = SUM('F_物资调拨'[价税合计])/[_货币系数]
+		formatString: #,0.00
+		displayFolder: 合计
+		lineageTag: 0602e343-f43c-4d2f-99e6-a6b152ef9f0c
+
+	column '列 1'
+		dataType: string
+		isHidden
+		displayFolder: 中间变量，不可直接用
+		lineageTag: a8a623cd-a848-40ce-9f93-78955abfa2c8
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 指标 = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"列 1" = _t])
+				in
+				    源
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

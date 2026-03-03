@@ -1,0 +1,57 @@
+table 账户
+	lineageTag: 67de4ef9-1a06-4760-a671-72d544f1f722
+
+	column 身份证
+		dataType: string
+		lineageTag: 60b98c71-58cb-4dcc-9df3-07aca9981665
+		summarizeBy: none
+		sourceColumn: 身份证
+
+		annotation SummarizationSetBy = Automatic
+
+	column 账号
+		dataType: string
+		lineageTag: 8abb9906-c59b-4f31-b483-35ef960f860f
+		summarizeBy: none
+		sourceColumn: 账号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 姓名
+		dataType: string
+		lineageTag: d106f2ef-4edb-4780-8814-c6d0ff6e0817
+		summarizeBy: none
+		sourceColumn: 姓名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: b6d9af2c-08c6-4944-b9c7-71dd346bfed5
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 6b36958a-4f5f-4915-b90e-8d14e32fea3e
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 账户 = m
+		mode: import
+		queryGroup: 账户
+		source =
+				let
+				    源 = Sql.Database("ssas1.chinaonebuild.com", "BAM"),
+				    dbo_账户 = 源{[Schema="dbo",Item="账户"]}[Data]
+				in
+				    dbo_账户
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

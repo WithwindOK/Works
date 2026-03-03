@@ -1,0 +1,140 @@
+table F_业主确认量
+	isHidden
+	lineageTag: 23f3381f-6cfd-4b19-9491-2f9c634f4752
+
+	column KEYID
+		dataType: string
+		isHidden
+		lineageTag: 803370f1-c713-40ad-bab6-c8036b8140b1
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		isHidden
+		lineageTag: 8148dc93-0191-45eb-a291-e647433b8004
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		isHidden
+		lineageTag: 35437897-2f19-4a74-a87d-0c47e89da1b8
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		isHidden
+		lineageTag: 0081810c-43ae-44ea-81c0-9fcec0a6c3ae
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		isHidden
+		lineageTag: ff76a310-cdd6-4273-a66f-460b3406a778
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		isHidden
+		lineageTag: eee80766-43eb-4876-9a6c-2d8017f64d4b
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 价税合计
+		dataType: double
+		isHidden
+		lineageTag: 43d9c056-c1ce-41d9-a064-2bef6b7a9288
+		summarizeBy: sum
+		sourceColumn: 价税合计
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 金额
+		dataType: double
+		isHidden
+		lineageTag: bcbf6ad2-eaa2-4162-b7c6-977c27b55187
+		summarizeBy: sum
+		sourceColumn: 金额
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 税金
+		dataType: double
+		isHidden
+		lineageTag: ce0b37c2-0d72-4cd4-a0b9-1a5ead1e0cc8
+		summarizeBy: sum
+		sourceColumn: 税金
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 82ede94a-be38-4880-8308-02da830404a8
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition F_业主确认量 = m
+		mode: import
+		queryGroup: 业主确认量
+		source =
+				let
+				    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+				    GSPM = 源{[Schema="DATA_DW"]}[Data],
+				    DW_CBHTYZQR = GSPM{[Name="DW_CBHTYZQR"]}[Data],
+				    删除的其他列 = Table.SelectColumns(DW_CBHTYZQR,{"KEYID", "FXIANGMUBIANMA", "FXIANGMUMINGCHENG", "FHETONGBIANHAO", "FSHIGONGZHUANYE", "FHETONGLEIXING", "FJIASHUIHEJI", "FJINE", "FSHUIJIN", "FRQ"}),
+				    重命名的列 = Table.RenameColumns(删除的其他列,{{"FXIANGMUBIANMA", "项目编码"}, {"FXIANGMUMINGCHENG", "项目名称"}, {"FHETONGBIANHAO", "合同编号"}, {"FSHIGONGZHUANYE", "施工专业"}, {"FHETONGLEIXING", "分包类型"}, {"FJIASHUIHEJI", "价税合计"}, {"FJINE", "金额"}, {"FSHUIJIN", "税金"}, {"FRQ", "日期"}})
+				in
+				    重命名的列
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,106 @@
+table F_预算
+	isHidden
+	lineageTag: 6a5533c9-9d9d-4c45-aac2-a9fd89b5f6b2
+
+	column 项目名称
+		dataType: string
+		isHidden
+		lineageTag: e035f820-edb1-46e6-8b32-072b55a95c7d
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		isHidden
+		lineageTag: 2cc2968d-6f97-4611-a179-2129683cb8ac
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主确认量
+		dataType: double
+		isHidden
+		lineageTag: 57db8241-0bb6-42c2-bae5-b2e313f4b8c5
+		summarizeBy: sum
+		sourceColumn: 业主确认量
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 商务产值(含税)
+		dataType: double
+		isHidden
+		lineageTag: 21cbdb91-050a-4dd1-9a27-2e74e8bfe7c6
+		summarizeBy: sum
+		sourceColumn: 商务产值(含税)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 商务产值(不含税)
+		dataType: double
+		isHidden
+		lineageTag: 69e35311-3b52-4172-8bfe-2b3dfffa356d
+		summarizeBy: sum
+		sourceColumn: 商务产值(不含税)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 198dbad2-95d6-4c61-871e-ad1f8eaaa289
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition F_预算 = m
+		mode: import
+		queryGroup: 商务产值
+		source =
+				let
+				    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+				    YSXT = 源{[Schema="YSXT"]}[Data],
+				    YSXT_XMNDYSB_SRCB1 = YSXT{[Name="YSXT_XMNDYSB_ZJCB"]}[Data],
+				    筛选的行 = Table.SelectRows(YSXT_XMNDYSB_SRCB1, each ([FKM] = "业主确认量" or [FKM] = "商务产值(不含税)" or [FKM] = "商务产值(含税)")),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"FZBID", "FKM", "FYF1", "FYF2", "FYF3", "FYF4", "FYF5", "FYF6", "FYF7", "FYF8", "FYF9", "FYF10", "FYF11", "FYF12"}),
+				    合并的查询 = Table.NestedJoin(删除的其他列, {"FZBID"}, 项目年度预算主表, {"FID"}, "项目年度预算主表", JoinKind.Inner),
+				    #"展开的“项目年度预算主表”" = Table.ExpandTableColumn(合并的查询, "项目年度预算主表", {"项目名称", "项目编码", "年"}, {"项目名称", "项目编码", "年"}),
+				    删除的列 = Table.RemoveColumns(#"展开的“项目年度预算主表”",{"FZBID"}),
+				    逆透视的列 = Table.UnpivotOtherColumns(删除的列, {"FKM", "项目名称", "项目编码", "年"}, "月", "值"),
+				    已透视列 = Table.Pivot(逆透视的列, List.Distinct(逆透视的列[FKM]), "FKM", "值"),
+				    已提取分隔符之后的文本 = Table.TransformColumns(已透视列, {{"月", each Text.AfterDelimiter(_, "YF"), type text}}),
+				    已添加自定义 = Table.AddColumn(已提取分隔符之后的文本, "日期", each #date([年],Number.From([月]),1),type date),
+				    删除的列1 = Table.RemoveColumns(已添加自定义,{"年", "月"})
+				in
+				    删除的列1
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,136 @@
+table F_业主结算
+	lineageTag: 80b0175c-e314-4f72-ad64-651d78624c72
+
+	column 项目编码
+		dataType: string
+		lineageTag: 3e0d2e0d-6492-496b-bd9b-c4d343101ad8
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: 39661695-b40d-48a7-9d86-406a9379e0c3
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同类型
+		dataType: string
+		lineageTag: e8d27413-87d9-4bba-bd9b-6c3538614605
+		summarizeBy: none
+		sourceColumn: 合同类型
+
+		annotation SummarizationSetBy = Automatic
+
+	column 结算日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 0edc294a-b4d7-442f-bae2-3344d3e34041
+		summarizeBy: none
+		sourceColumn: 结算日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: 31375555-8cbd-4d03-ba3b-58eb2c881486
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业务单号
+		dataType: string
+		lineageTag: afee8c1d-26e4-467d-9451-9f8fe13db670
+		summarizeBy: none
+		sourceColumn: 业务单号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 成本降低
+		dataType: double
+		lineageTag: 321ea1ef-b473-479e-92b3-5c9ac26f9460
+		summarizeBy: sum
+		sourceColumn: 成本降低
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 结算收益率
+		dataType: double
+		lineageTag: 2587e96f-71c9-4136-b6ff-eb433b2e6ed9
+		summarizeBy: sum
+		sourceColumn: 结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 结算额
+		dataType: double
+		lineageTag: baca8fd4-74a6-4b01-afa8-a465be772cbc
+		summarizeBy: sum
+		sourceColumn: 结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 成本总额
+		dataType: double
+		lineageTag: 2f4b9b98-ea17-4bd8-8b33-41e0840f1acf
+		summarizeBy: sum
+		sourceColumn: 成本总额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 核定收益额
+		dataType: double
+		lineageTag: 49525013-acc6-4a94-9bf6-7c9d5b5fe2a0
+		summarizeBy: sum
+		sourceColumn: 核定收益额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 总收益额
+		dataType: double
+		lineageTag: 9ae50642-8c23-49d5-a197-15a39d2585ed
+		summarizeBy: sum
+		sourceColumn: 总收益额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition F_业主结算 = m
+		mode: import
+		queryGroup: 业主结算
+		source =
+				let
+				    源 = Oracle.Database(#"X5", [HierarchicalNavigation=true]),
+				    DATA_DW = 源{[Schema="DATA_DW"]}[Data],
+				    DW_CBHT_JSJZMX1 = DATA_DW{[Name="DW_CBHT_JSJZMX"]}[Data],
+				    重命名的列 = Table.RenameColumns(DW_CBHT_JSJZMX1,#"fx_RN"("DATA_DW","DW_CBHT_JSJZMX")),
+				    #"筛选的行（已结）" = Table.SelectRows(重命名的列, each ([#"业主自施结算状态（FYZZSJSZT）"] = "已结")),
+				    // 取业务日期最小值作为结算日期，分组后取业务日期最大的记录为最终结果
+				    分组的行 = Table.Group(#"筛选的行（已结）", {"项目编码（FXIANGMUBIANMA）", "施工专业（FSHIGONGZHUANYE）", "合同类型（FHETONGLEIXING）"}, {{"结算日期", each List.Min([#"业务日期（FRQ）"]), type nullable datetime}, {"ALLROWS", each _, type table [#"项目编码（FXIANGMUBIANMA）"=nullable text, #"项目名称（FXIANGMUMINGCHENG）"=nullable text, #"业务单号（FYEWUDANHAO）"=nullable text, #"施工专业（FSHIGONGZHUANYE）"=nullable text, #"合同类型（FHETONGLEIXING）"=nullable text, #"业主自施结算状态（FYZZSJSZT）"=nullable text, #"业主甲指结算状态（FYZJZJSZT）"=nullable text, #"业务日期（FRQ）"=nullable datetime, #"SCREATETIME（SCREATETIME）"=nullable datetime, #"成本降低（CBJD）"=nullable number, #"结算收益率（JSSYL）"=nullable number, #"结算额（JSE）"=nullable number, #"成本总额（CBZE）"=nullable number, #"核定收益额（HDSYE）"=nullable number, #"总收益额（ZSYE）"=nullable number, 索引=number]}}),
+				    已添加自定义 = Table.AddColumn(分组的行, "自定义", each Table.Max([ALLROWS],"业务日期（FRQ）")),
+				    删除的列 = Table.RemoveColumns(已添加自定义,{"ALLROWS"}),
+				    #"展开的“自定义”" = Table.ExpandRecordColumn(删除的列, "自定义", {"项目名称（FXIANGMUMINGCHENG）", "业务单号（FYEWUDANHAO）", "成本降低（CBJD）", "结算收益率（JSSYL）", "结算额（JSE）", "成本总额（CBZE）", "核定收益额（HDSYE）", "总收益额（ZSYE）"}, {"项目名称（FXIANGMUMINGCHENG）", "业务单号（FYEWUDANHAO）", "成本降低（CBJD）", "结算收益率（JSSYL）", "结算额（JSE）", "成本总额（CBZE）", "核定收益额（HDSYE）", "总收益额（ZSYE）"}),
+				    更改的类型 = Table.TransformColumnTypes(#"展开的“自定义”",{{"项目名称（FXIANGMUMINGCHENG）", type text}, {"业务单号（FYEWUDANHAO）", type text}, {"成本降低（CBJD）", type number}, {"结算收益率（JSSYL）", type number}, {"结算额（JSE）", type number}, {"成本总额（CBZE）", type number}, {"核定收益额（HDSYE）", type number}, {"总收益额（ZSYE）", type number}}),
+				    重命名列 = Table.TransformColumnNames(更改的类型,each Text.BeforeDelimiter(_,"（"))
+				in
+				    重命名列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

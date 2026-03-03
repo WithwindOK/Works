@@ -1,0 +1,535 @@
+table D_项目信息
+	lineageTag: 817c2092-93d4-4f6c-b45c-40660b91ba8c
+
+	column 项目编码
+		dataType: string
+		lineageTag: 34cfccf8-04e9-441b-83e3-2fee367b42a5
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: a5dc0667-3865-42aa-8992-c3637044a2b6
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编号
+		dataType: string
+		lineageTag: 970e180e-470b-486f-a121-7ff353141256
+		summarizeBy: none
+		sourceColumn: 项目编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 责任体
+		dataType: string
+		lineageTag: 8deab6fa-1108-4fdf-8e56-0606113da8eb
+		summarizeBy: none
+		sourceColumn: 责任体
+
+		annotation SummarizationSetBy = Automatic
+
+	column 专业分类
+		dataType: string
+		lineageTag: 3080d655-dd36-466a-b896-7b80ab100e6f
+		summarizeBy: none
+		sourceColumn: 专业分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目性质
+		dataType: string
+		lineageTag: 5349c2b1-bbae-4ce5-bf59-d201b1658feb
+		summarizeBy: none
+		sourceColumn: 项目性质
+
+		annotation SummarizationSetBy = Automatic
+
+	column 附加税率
+		dataType: double
+		lineageTag: f2790bd6-de0b-4285-9777-9d91f4a164e4
+		summarizeBy: sum
+		sourceColumn: 附加税率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 京内外分布
+		dataType: string
+		lineageTag: 6b5e9493-6aa8-48bd-a2ce-7a284929a93a
+		summarizeBy: none
+		sourceColumn: 京内外分布
+
+		annotation SummarizationSetBy = Automatic
+
+	column 区域
+		dataType: string
+		lineageTag: b3f6262b-dc27-4d77-aa75-5aa3bedd9aab
+		summarizeBy: none
+		sourceColumn: 区域
+
+		annotation SummarizationSetBy = Automatic
+
+	column 省
+		dataType: string
+		lineageTag: 51d82e12-324b-4d15-8a63-b9db62e14a50
+		summarizeBy: none
+		sourceColumn: 省
+
+		annotation SummarizationSetBy = Automatic
+
+	column 城市
+		dataType: string
+		lineageTag: 9daf6f7e-9e07-40d1-9446-0ca2a85a8757
+		summarizeBy: none
+		sourceColumn: 城市
+
+		annotation SummarizationSetBy = Automatic
+
+	column 县
+		dataType: string
+		lineageTag: 1ebd6828-6dfc-4fd3-8f29-995f78c867cb
+		summarizeBy: none
+		sourceColumn: 县
+
+		annotation SummarizationSetBy = Automatic
+
+	column 设计单位
+		dataType: string
+		lineageTag: 434474a3-147c-49d6-b3bb-14e3ba291abd
+		summarizeBy: none
+		sourceColumn: 设计单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 监理单位
+		dataType: string
+		lineageTag: 0f3da851-6803-434e-8417-a03f50025395
+		summarizeBy: none
+		sourceColumn: 监理单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 建设单位
+		dataType: string
+		lineageTag: c1d6332d-f3bd-40bf-bf03-d2d7273b0826
+		summarizeBy: none
+		sourceColumn: 建设单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 顾问管理公司
+		dataType: string
+		lineageTag: f92d0ff6-f93e-4a52-a1e1-a85a26f5daf4
+		summarizeBy: none
+		sourceColumn: 顾问管理公司
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工单位
+		dataType: string
+		lineageTag: c259027c-fe01-4a2f-9e38-e60852062b90
+		summarizeBy: none
+		sourceColumn: 施工单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 签约单位
+		dataType: string
+		lineageTag: 56aab490-5afb-4f92-8f26-1b2788d6395c
+		summarizeBy: none
+		sourceColumn: 签约单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 建筑面积
+		dataType: double
+		lineageTag: c442a887-45e2-4c0c-84d2-d22fb5ada1c8
+		summarizeBy: sum
+		sourceColumn: 建筑面积
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 中标合同价万元
+		dataType: double
+		lineageTag: 0f701892-346a-4867-b4ee-63e68242bc66
+		summarizeBy: sum
+		sourceColumn: 中标合同价万元
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 中标合同自施部分万元
+		dataType: double
+		lineageTag: 18b5be46-4e3b-46bb-bab6-6f7c2b3f1c72
+		summarizeBy: sum
+		sourceColumn: 中标合同自施部分万元
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 中标日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dafffca2-8642-4466-9e08-60f4e22216bd
+		summarizeBy: none
+		sourceColumn: 中标日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 签约日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8521ec94-86f5-4826-924b-fbd56daae67e
+		summarizeBy: none
+		sourceColumn: 签约日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 实际开工日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f5fd4917-d670-42f8-a64a-5856254d5cd5
+		summarizeBy: none
+		sourceColumn: 实际开工日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 实际竣工日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bddd732b-6658-4cf6-a5be-8583162609f1
+		summarizeBy: none
+		sourceColumn: 实际竣工日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否重点项目
+		dataType: string
+		lineageTag: 702b0072-183e-4cd2-a73b-7fad243b3170
+		summarizeBy: none
+		sourceColumn: 是否重点项目
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否地产项目
+		dataType: string
+		lineageTag: d5728104-4e3f-442c-9e64-c84f7d57d142
+		summarizeBy: none
+		sourceColumn: 是否地产项目
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工许可证
+		dataType: string
+		lineageTag: 3d9899db-71d3-42d5-b529-290a319eac83
+		summarizeBy: none
+		sourceColumn: 施工许可证
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目实施状态
+		dataType: string
+		lineageTag: fa58d09d-24d4-4f2b-aa00-cee417730b5b
+		summarizeBy: none
+		sourceColumn: 项目实施状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目中标方式
+		dataType: string
+		lineageTag: 07b1d95b-3f46-4f0a-8140-e521e139545c
+		summarizeBy: none
+		sourceColumn: 项目中标方式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 建筑用途
+		dataType: string
+		lineageTag: 1987d1a8-379a-4cbc-a2c0-a461951839d5
+		summarizeBy: none
+		sourceColumn: 建筑用途
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程所在国家
+		dataType: string
+		lineageTag: f354506f-9539-4273-b2ba-ff2bf7754acb
+		summarizeBy: none
+		sourceColumn: 工程所在国家
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程类别一级
+		dataType: string
+		lineageTag: 31580476-b2d5-44b8-b646-ae8effab3fc5
+		summarizeBy: none
+		sourceColumn: 工程类别一级
+
+		annotation SummarizationSetBy = Automatic
+
+	column 工程类别二级
+		dataType: string
+		lineageTag: 5836b58d-4009-4d43-ac12-252cea58d31f
+		summarizeBy: none
+		sourceColumn: 工程类别二级
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同开工日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c25b68b8-9a20-4b41-814a-21aacda7981a
+		summarizeBy: none
+		sourceColumn: 合同开工日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同竣工日期
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f8d992a6-6e62-4ea4-8ad6-700b848afbed
+		summarizeBy: none
+		sourceColumn: 合同竣工日期
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同质量目标
+		dataType: string
+		lineageTag: 056b36bc-c4d1-4b4d-90a7-2dc021f12ca2
+		summarizeBy: none
+		sourceColumn: 合同质量目标
+
+		annotation SummarizationSetBy = Automatic
+
+	column 结构形式
+		dataType: string
+		lineageTag: 53b2f13b-fe5d-468b-9fa7-e16d768e1aea
+		summarizeBy: none
+		sourceColumn: 结构形式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 基础形式
+		dataType: string
+		lineageTag: fa2edefd-42c9-42c4-8264-a4bb0557eb75
+		summarizeBy: none
+		sourceColumn: 基础形式
+
+		annotation SummarizationSetBy = Automatic
+
+	column 檐高
+		dataType: double
+		lineageTag: 7431246b-ed23-4af1-80dd-fa0377b4a7b5
+		summarizeBy: sum
+		sourceColumn: 檐高
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 地下深度
+		dataType: double
+		lineageTag: 10088832-e49a-4636-a1f5-9030dc815805
+		summarizeBy: sum
+		sourceColumn: 地下深度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 层高
+		dataType: double
+		lineageTag: bd358191-df6f-47c5-9aa2-03e7f352b74d
+		summarizeBy: sum
+		sourceColumn: 层高
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目结算状态
+		dataType: string
+		lineageTag: e47094a2-c03f-4a65-b8f4-2be9b3db0e95
+		summarizeBy: none
+		sourceColumn: 项目结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+	column 发包人名称
+		dataType: string
+		lineageTag: acad6851-30de-451f-b9ff-4c77c45c2e2c
+		summarizeBy: none
+		sourceColumn: 发包人名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 发包人性质
+		dataType: string
+		lineageTag: ec6048bd-6421-463e-9342-2804642f7d31
+		summarizeBy: none
+		sourceColumn: 发包人性质
+
+		annotation SummarizationSetBy = Automatic
+
+	column 投资来源
+		dataType: string
+		lineageTag: 03031614-35c3-4447-a655-64ed57831126
+		summarizeBy: none
+		sourceColumn: 投资来源
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目规模
+		dataType: string
+		lineageTag: 7d008ac1-65dd-42b8-a91e-8ddae8a013c9
+		summarizeBy: none
+		sourceColumn: 项目规模
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同工期日历天
+		dataType: double
+		lineageTag: 3f5373eb-64ec-44d5-b6bc-afb5f9b20f08
+		summarizeBy: sum
+		sourceColumn: 合同工期日历天
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程重点级别
+		dataType: string
+		lineageTag: 17ccba1d-cf39-40a6-98e6-18d704ff1e13
+		summarizeBy: none
+		sourceColumn: 工程重点级别
+
+		annotation SummarizationSetBy = Automatic
+
+	column 土建甲指核定收益率
+		dataType: double
+		lineageTag: faf136ce-1fc5-4942-8973-4a5ae983b786
+		summarizeBy: sum
+		sourceColumn: 土建甲指核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 机电甲指核定收益率
+		dataType: double
+		lineageTag: 75c14e65-35b5-4c12-91bc-413c570a3e81
+		summarizeBy: sum
+		sourceColumn: 机电甲指核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 业务板块
+		dataType: string
+		lineageTag: 6b60436c-6741-4a99-b7ee-f8b250c8a258
+		summarizeBy: none
+		sourceColumn: 业务板块
+
+		annotation SummarizationSetBy = Automatic
+
+	column 股份一体化利润中心编码
+		dataType: string
+		lineageTag: a8802c86-beff-4cd1-854e-880f840e6424
+		summarizeBy: none
+		sourceColumn: 股份一体化利润中心编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 云筑劳务项目名称
+		dataType: string
+		lineageTag: dccaf221-041e-48e7-a99e-203a67c2ecbf
+		summarizeBy: none
+		sourceColumn: 云筑劳务项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 云筑劳务项目编号
+		dataType: string
+		lineageTag: 7e63c1d3-3d0b-4b35-a16f-6052dd783ca5
+		summarizeBy: none
+		sourceColumn: 云筑劳务项目编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 土建自施核定收益率
+		dataType: double
+		lineageTag: 7c29e9a3-5604-46bf-b330-50355ee1290a
+		summarizeBy: sum
+		sourceColumn: 土建自施核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 机电自施核定收益率
+		dataType: double
+		lineageTag: 37198730-493a-4e14-9964-0129de8d26b3
+		summarizeBy: sum
+		sourceColumn: 机电自施核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 综合核定收益率
+		dataType: double
+		lineageTag: eb52db63-1007-4845-81b7-3ccfcf3fedd1
+		summarizeBy: sum
+		sourceColumn: 综合核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目税率
+		dataType: double
+		lineageTag: d9299a58-804e-4c4a-a916-d57317b50625
+		summarizeBy: sum
+		sourceColumn: 项目税率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	hierarchy '责任体 层次结构'
+		lineageTag: 0632336b-7322-463f-a962-b061a0d589f6
+
+		level 责任体
+			lineageTag: 51e6192e-34b1-44ac-8f06-7a81021603d1
+			column: 责任体
+
+		level 项目名称
+			lineageTag: 3d45c8a3-366c-403b-90f5-d5ac80d71c8d
+			column: 项目名称
+
+	partition D_项目信息 = m
+		mode: import
+		queryGroup: 维度表\项目信息
+		source =
+				let
+				    源 = #"DW_XIANGMUXINXI（项目信息）",
+				    删除的其他列 = Table.SelectColumns(源,{"项目编码", "项目名称", "项目编号", "责任体", "专业分类", "项目性质", "附加税率", "京内外分布", "区域", "省", "城市", "县", "设计单位", "监理单位", "建设单位", "顾问管理公司", "施工单位", "签约单位", "建筑面积", "中标合同价万元", "中标合同自施部分万元", "中标日期", "签约日期", "实际开工日期", "实际竣工日期", "是否重点项目", "是否地产项目", "施工许可证", "项目实施状态", "项目中标方式", "建筑用途", "工程所在国家", "工程类别一级", "工程类别二级", "合同开工日期", "合同竣工日期", "合同质量目标", "结构形式", "基础形式", "檐高", "地下深度", "层高", "项目结算状态", "发包人名称", "发包人性质", "投资来源", "项目规模", "合同工期日历天", "工程重点级别", "项目税率", "土建甲指核定收益率", "机电甲指核定收益率", "业务板块", "股份一体化利润中心编码", "云筑劳务项目名称", "云筑劳务项目编号", "土建自施核定收益率", "机电自施核定收益率", "综合核定收益率"}),
+				    筛选的行 = Table.SelectRows(删除的其他列, each [项目编码] <> null)
+				in
+				    筛选的行
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

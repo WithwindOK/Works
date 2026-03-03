@@ -1,0 +1,54 @@
+table 行选择
+	lineageTag: 875229e2-662b-41e4-a7f7-8ab2f2cc59ba
+
+	column 行选择
+		lineageTag: 89bf0b66-1c8e-4e47-b6c6-dd43906892a4
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '行选择 个订单'
+
+		relatedColumnDetails
+			groupByColumn: '行选择 个字段'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '行选择 个字段'
+		isHidden
+		lineageTag: 7f31f24d-cdf6-43d8-9db0-ad3ccab3dda6
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '行选择 个订单'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '行选择 个订单'
+		isHidden
+		formatString: 0
+		lineageTag: 5d8e34a5-1eff-440a-8f6f-658023154865
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 行选择 = calculated
+		mode: import
+		source =
+				{
+				    ("业务种类", NAMEOF('D_下游合同'[业务种类]), 0),
+				    ("责任体", NAMEOF('D-责任体'[责任体]), 1),
+				    ("分包类型", NAMEOF('D_分包类型'[分包类型]), 2),
+				    ("施工专业", NAMEOF('D_施工专业'[施工专业]), 3),
+				    ("项目名称", NAMEOF('D_下游合同'[项目名称]), 4),
+				    ("客商名称", NAMEOF('D_下游合同'[客商名称]), 5),
+				    ("合同编号", NAMEOF('D_下游合同'[合同编号]), 6),
+				    ("年月", NAMEOF('D_日历'[年月]), 7)
+				}
+
+	annotation PBI_Id = b4a168c3994b4ee5b70b4c48e398e016
+

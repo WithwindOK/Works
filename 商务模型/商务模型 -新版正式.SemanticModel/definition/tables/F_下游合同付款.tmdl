@@ -1,0 +1,136 @@
+table F_下游合同付款
+	isHidden
+	lineageTag: 30e2094e-4b43-4f81-b0bc-861abd1bf7a6
+
+	column KEYID
+		dataType: string
+		isHidden
+		lineageTag: b74b45bb-e8e9-4c80-81cf-0ccd07cd9f67
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 支付方式
+		dataType: string
+		isHidden
+		lineageTag: 8812f9af-fdb5-4cea-a24e-ee9c91191585
+		summarizeBy: none
+		sourceColumn: 支付方式
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 评审状态
+		dataType: string
+		isHidden
+		lineageTag: a2786e82-a1e4-49e5-b130-1eb93f272d13
+		summarizeBy: none
+		sourceColumn: 评审状态
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 日期
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: f9b936a0-fb7b-425e-b1ee-360d288dc0ea
+		summarizeBy: none
+		sourceColumn: 日期
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 本期实际付款
+		dataType: double
+		isHidden
+		lineageTag: 3c1bde22-47fc-424d-925d-949198f3cc3d
+		summarizeBy: sum
+		sourceColumn: 本期实际付款
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 劳务费
+		dataType: double
+		isHidden
+		lineageTag: 5718746c-4ff8-4ce7-8355-014fcf2834c1
+		summarizeBy: sum
+		sourceColumn: 劳务费
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其他
+		dataType: double
+		isHidden
+		lineageTag: f2a76b04-4190-4d53-a95f-49f3d1b7152c
+		summarizeBy: sum
+		sourceColumn: 其他
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目名称
+		dataType: string
+		lineageTag: eb7946db-710a-490c-942d-938dba652684
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: b3206953-b70e-4ac0-bbea-d6fe1e68de45
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 制单时间
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3df5422c-7c01-4b92-8b47-280ed6dab155
+		summarizeBy: none
+		sourceColumn: 制单时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition F_下游合同付款 = m
+		mode: import
+		queryGroup: 下游合同\合同组\合同付款
+		source =
+				let
+				    源 = Table.Combine({#"DW_FB_FKMX（分包付款）", #"DW_WZ_CGFKMX（物资付款）", #"DW_WZ_ZLFKMX（租赁付款）"}),
+				    #"合并的查询（参照完整性）" = Table.NestedJoin(源, {"KEYID"}, D_下游合同_参照完整, {"KEYID"}, "D_下游合同", JoinKind.Inner),
+				    #"展开的“D_下游合同”" = Table.ExpandTableColumn(#"合并的查询（参照完整性）", "D_下游合同", {"项目名称", "客商名称"}, {"项目名称", "客商名称"}),
+				    // 0值对计数产生干扰
+				    #"筛选的行（去掉0）" = Table.SelectRows(#"展开的“D_下游合同”", each [本期实际付款] <> 0)
+				in
+				    #"筛选的行（去掉0）"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Exception
+

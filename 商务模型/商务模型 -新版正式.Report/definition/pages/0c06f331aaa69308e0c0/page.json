@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "0c06f331aaa69308e0c0",
+  "displayName": "下游合同应付预付",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

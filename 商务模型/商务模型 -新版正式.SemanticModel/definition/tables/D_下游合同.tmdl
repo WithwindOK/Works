@@ -1,0 +1,278 @@
+table D_下游合同
+	lineageTag: 975a9d32-c57f-46a5-844a-96d631deba4a
+
+	measure 'T.合同编号' = IF(ISINSCOPE('D_下游合同'[合同名称]), SELECTEDVALUE('D_下游合同'[合同编号]))
+		lineageTag: f10ea87d-b5b4-4be8-b71e-3db5b52c2767
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'T.合同名称' = IF(ISINSCOPE('D_下游合同'[合同编号]), IF(NOT(ISBLANK([sum.下游合同额.价税合计])),SELECTEDVALUE('D_下游合同'[合同名称])))
+		lineageTag: 58c18c7f-5894-4e7f-a5be-b2704673709a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KEYID
+		dataType: string
+		lineageTag: 9fa1e652-6fd7-4915-8616-6ac92daa39fe
+		summarizeBy: none
+		sourceColumn: KEYID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 59cf825f-0c42-4181-94b7-05ad1680344c
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: f929e246-2d26-4625-bcb2-460a01479f5e
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同编号
+		dataType: string
+		lineageTag: 100e8cca-aed6-4156-b5f8-bcd4f8a4d064
+		summarizeBy: none
+		sourceColumn: 合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 补充协议号
+		dataType: string
+		lineageTag: 892b87a5-94b2-449f-8c65-b13bd859d9cc
+		summarizeBy: none
+		sourceColumn: 补充协议号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同名称
+		dataType: string
+		lineageTag: 1de330ab-d6b1-4733-9071-9ff246219866
+		summarizeBy: none
+		sourceColumn: 合同名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业务种类
+		dataType: string
+		lineageTag: 68906ac3-bf72-4ded-9b50-d55b6d84b521
+		summarizeBy: none
+		sourceColumn: 业务种类
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同编号
+		dataType: string
+		lineageTag: b6ca5902-6494-42d6-beab-d0fc6fb0ef98
+		summarizeBy: none
+		sourceColumn: 标准合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: c3642f4d-c751-413c-ac21-88cb88900086
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 对应集采合同编号
+		dataType: string
+		lineageTag: 56adcb0b-d51e-4ca1-b9a3-dacd02f10106
+		summarizeBy: none
+		sourceColumn: 对应集采合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务科目级次码
+		dataType: string
+		lineageTag: 78f0fdb6-3002-4c2b-b79e-30fdec7b80cc
+		summarizeBy: none
+		sourceColumn: 商务科目级次码
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 施工专业
+		dataType: string
+		lineageTag: 79aac1f8-b4f0-4932-8ed2-755b439d6602
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 分包类型
+		dataType: string
+		lineageTag: cef55ce8-51ee-43a5-af8d-41576f39e5f6
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商名称
+		dataType: string
+		lineageTag: 1d4f34cb-812e-46c3-bb9a-7add749859b9
+		summarizeBy: none
+		sourceColumn: 客商名称
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 付款模式
+		dataType: string
+		lineageTag: 527b9d2c-3275-4e12-95d5-1611fdb0d02c
+		summarizeBy: none
+		sourceColumn: 付款模式
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 客商类别
+		dataType: string
+		lineageTag: ecc3df4e-06f6-4ba5-b5fe-8d3c1fdee7b4
+		summarizeBy: none
+		sourceColumn: 客商类别
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 指定合同类型
+		dataType: string
+		lineageTag: 422056d9-ac34-491d-bf20-1c4f945c2c27
+		summarizeBy: none
+		sourceColumn: 指定合同类型
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 集采区域
+		dataType: string
+		lineageTag: de3ce479-158b-4fb2-9e1a-7cbdec0c2bac
+		summarizeBy: none
+		sourceColumn: 集采区域
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 增值税率
+		dataType: double
+		lineageTag: 9f166eaf-5894-457d-8e70-dcf081042d0a
+		summarizeBy: sum
+		sourceColumn: 增值税率
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 股份合同编号
+		dataType: string
+		lineageTag: bfd3925c-5f32-4bdf-9e8e-47ece93df4f5
+		summarizeBy: none
+		sourceColumn: 股份合同编号
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 是否暂估合同
+		dataType: string
+		lineageTag: f93fb7fc-6e93-43e9-9bfd-495cb5ea784e
+		summarizeBy: none
+		sourceColumn: 是否暂估合同
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同KEY
+		dataType: string
+		lineageTag: 59593e41-d729-47ce-9889-cca987b11421
+		summarizeBy: none
+		sourceColumn: 合同KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column 人工费比例
+		dataType: double
+		lineageTag: 2bb0b1e8-9c0b-41ec-814e-ce34b33b50bb
+		summarizeBy: sum
+		sourceColumn: 人工费比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 合同付款比例
+		dataType: string
+		lineageTag: 36c7df2f-2c69-43e2-8d9a-ad2b12d9b8cc
+		summarizeBy: none
+		sourceColumn: 合同付款比例
+
+		annotation SummarizationSetBy = Automatic
+
+	column 签订时间
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0128d9a9-27f2-407b-b7ea-1f5c6b5048af
+		summarizeBy: none
+		sourceColumn: 签订时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition D_下游合同 = m
+		mode: import
+		queryGroup: 下游合同\合同组\合同维度
+		source =
+				let
+				    源 = Table.Combine({D_物资合同_L1, D_分包合同_L1}),
+				    删除的副本 = Table.Distinct(源, {"KEYID"}),
+				    已添加自定义 = Table.AddColumn(删除的副本, "合同KEY", each [合同编号]&"@"&[项目编码],type text),
+				    #"重命名的列（兼容旧模型）" = Table.RenameColumns(已添加自定义,{{"合同类型", "分包类型"}})
+				in
+				    #"重命名的列（兼容旧模型）"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = 导航
+

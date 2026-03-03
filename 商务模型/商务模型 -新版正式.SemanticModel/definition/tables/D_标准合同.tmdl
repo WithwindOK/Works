@@ -1,0 +1,72 @@
+table D_标准合同
+	lineageTag: f8495ff1-fab7-4863-9994-e11bc166c300
+
+	column 标准合同编号
+		dataType: string
+		lineageTag: 7c18cceb-5394-4197-b015-c44606066dfc
+		summarizeBy: none
+		sourceColumn: 标准合同编号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 标准合同名称
+		dataType: string
+		lineageTag: 3fb34282-83d4-4721-84c3-0d092be33937
+		summarizeBy: none
+		sourceColumn: 标准合同名称
+
+		annotation SummarizationSetBy = Automatic
+
+	column 合同分类
+		dataType: string
+		lineageTag: b344f24d-8c6e-46e6-b5a2-07b64a97a5fe
+		summarizeBy: none
+		sourceColumn: 合同分类
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务科目级次码
+		dataType: string
+		lineageTag: 1fb1d989-1895-46f8-aca6-1eb4388fb633
+		summarizeBy: none
+		sourceColumn: 商务科目级次码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务科目一级
+		dataType: string
+		lineageTag: 7b45c475-da1f-4e0d-bd47-29c31ef79c12
+		summarizeBy: none
+		sourceColumn: 商务科目一级
+
+		annotation SummarizationSetBy = Automatic
+
+	column 商务科目二级
+		dataType: string
+		lineageTag: dce750dd-3252-4344-a4f5-81c9dda655e4
+		summarizeBy: none
+		sourceColumn: 商务科目二级
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_标准合同 = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    源 = Oracle.Database(X5, [HierarchicalNavigation=true]),
+				    GSPM = 源{[Schema="GSPM"]}[Data],
+				    GSPM_BIAOZHUNHETONG = GSPM{[Name="GSPM_BIAOZHUNHETONG2020"]}[Data],
+				    重命名的列 = Table.RenameColumns(GSPM_BIAOZHUNHETONG,#"fx_RN"("GSPM","GSPM_BIAOZHUNHETONG")),
+				    删除的其他列1 = Table.SelectColumns(重命名的列,{"标准合同编号（FBIAOZHUNHETONGBH）", "标准合同名称（FBIAOZHUNHETONGMC）", "合同分类（FHETONGFENLEI）", "商务科目级次码（FSHANGWUKEMUJICIMA）", "商务科目全路径（FSHANGWUKEMUFNAME）"}),
+				    自定义1 = Table.TransformColumnNames(删除的其他列1,each Text.Select(_,{"一".."龟"})),
+				    按分隔符拆分列 = Table.SplitColumn(自定义1, "商务科目全路径", Splitter.SplitTextByDelimiter("/", QuoteStyle.Csv), {"商务科目全路径.1", "商务科目一级", "商务科目二级"}),
+				    删除的列 = Table.RemoveColumns(按分隔符拆分列,{"商务科目全路径.1"}),
+				    筛选的行 = Table.SelectRows(删除的列, each ([标准合同编号] <> null))
+				in
+				    筛选的行
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,35 @@
+table D_施工专业
+	excludeFromModelRefresh
+	lineageTag: cd00c745-78ab-41ca-b13e-588d0daaa97d
+
+	column 施工专业
+		dataType: string
+		lineageTag: 5132b12c-4c91-4b43-8653-8cadf44dcf87
+		summarizeBy: none
+		sourceColumn: 施工专业
+
+		annotation SummarizationSetBy = Automatic
+
+	column 排序
+		dataType: int64
+		formatString: 0
+		lineageTag: b585ac5e-d87a-4ff4-bee6-ef2017341e88
+		summarizeBy: sum
+		sourceColumn: 排序
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_施工专业 = m
+		mode: import
+		queryGroup: 维度表
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wejpn/tPdu5R0lAyVYnWilZ7N2fV8ylYg10gpNhYA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [施工专业 = _t, 排序 = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"排序", Int64.Type}})
+				in
+				    更改的类型
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

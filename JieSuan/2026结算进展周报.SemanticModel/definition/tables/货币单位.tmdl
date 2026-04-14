@@ -1,0 +1,39 @@
+table 货币单位
+	lineageTag: 606430d9-6050-40e9-8923-2d7835017637
+
+	measure 【货币系数】 = SELECTEDVALUE('货币单位'[系数],1)
+		lineageTag: 6e737f67-a7b7-4107-a888-e0881e92fd36
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 货币单位
+		dataType: string
+		lineageTag: 33ecd98e-d0ae-418b-b934-1ceb6ba342c0
+		summarizeBy: none
+		sourceColumn: 货币单位
+
+		annotation SummarizationSetBy = Automatic
+
+	column 系数
+		dataType: double
+		lineageTag: e23c3cf6-beba-4f86-8762-b4dec198a700
+		summarizeBy: sum
+		sourceColumn: 系数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 货币单位 = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WerKjXUlHyVApVgfI3rUfxDYAAqXYWAA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [货币单位 = _t, 系数 = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"系数", type number}})
+				in
+				    更改的类型
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

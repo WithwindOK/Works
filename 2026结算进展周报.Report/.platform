@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "2026结算进展周报"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "87ce4aef-e4b8-4941-a043-6992c974dfca"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "2026结算进展周报"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5bb9af37-6722-4126-a820-ff01c6e0ecab"
+  }
+}

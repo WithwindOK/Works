@@ -1,0 +1,57 @@
+table 账户
+	excludeFromModelRefresh
+	lineageTag: 60b6ccf1-ea3e-4a28-8181-c94e05e4f29a
+
+	column 身份证
+		dataType: string
+		lineageTag: 93b475f8-21d0-425d-90cb-79aff1490ad1
+		summarizeBy: none
+		sourceColumn: 身份证
+
+		annotation SummarizationSetBy = Automatic
+
+	column 账号
+		dataType: string
+		lineageTag: c54f773c-4126-4166-a707-c60ff8b740b3
+		summarizeBy: none
+		sourceColumn: 账号
+
+		annotation SummarizationSetBy = Automatic
+
+	column 姓名
+		dataType: string
+		lineageTag: 3ab82cba-a001-4b6c-8d02-56a6bd93fb39
+		summarizeBy: none
+		sourceColumn: 姓名
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目编码
+		dataType: string
+		lineageTag: 28b7d847-5946-4c9b-a25f-0306cf4fe7e7
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+	column 项目名称
+		dataType: string
+		lineageTag: c2d4497c-d7c7-4fc5-bab2-370d4679cd8a
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 账户 = m
+		mode: import
+		source =
+				let
+				    查询1 = AnalysisServices.Database("sql1.chinaonebuild.com", "账户", [Query="evaluate '账户'", Implementation="2.0"]),
+				    重命名的列 = Table.RenameColumns(查询1,{{"账户[身份证]", "身份证"}, {"账户[账号]", "账号"}, {"账户[姓名]", "姓名"}, {"账户[项目编码]", "项目编码"}, {"账户[项目名称]", "项目名称"}})
+				in
+				    重命名的列
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

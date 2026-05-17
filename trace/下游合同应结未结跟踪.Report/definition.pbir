@@ -1,8 +1,0 @@
-{
-  "version": "4.0",
-  "datasetReference": {
-    "byPath": {
-      "path": "../下游合同应结未结跟踪.SemanticModel"
-    }
-  }
-}

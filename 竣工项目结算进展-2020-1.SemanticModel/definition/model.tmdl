@@ -1,0 +1,43 @@
+model Model
+	culture: zh-CN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: zh-CN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 未上报局项目
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["FolderPath","度量值","局竣工项目","局竣工项目度量值","发展竣工项目结算进展-机电","数据来源","项目信息","发展竣工项目结算进展","局竣工项目2","已竣已结","已竣已结 (2)","已竣已结局管控不为空","已竣已结局管控为空","3-26"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table DateTableTemplate_3cec1846-2f64-41c4-9cf0-336bf4729f16
+ref table 度量值
+ref table 局竣工项目
+ref table LocalDateTable_46149285-64e8-4472-a643-9fdfebfd6613
+ref table LocalDateTable_0d865754-dcba-4f9e-a986-3e065eeadf60
+ref table LocalDateTable_27a6121a-e346-4e04-b02c-3475ad5bdbd5
+ref table 局竣工项目度量值
+ref table 数据来源
+ref table 发展竣工项目结算进展
+ref table LocalDateTable_b072960e-cd06-45d5-b9b2-ed59d8bd2bc8
+ref table LocalDateTable_ec5501cb-b6b9-4358-a273-c385a3fe815d
+ref table LocalDateTable_f237a6d7-13d9-47a0-a264-5afb0a7e01ec
+ref table LocalDateTable_50d5787a-f113-49c2-9170-bd5ad196edc0
+ref table LocalDateTable_4cbb77fc-ca83-4eff-91a7-6c8535b585dc
+ref table 局竣工项目2
+ref table LocalDateTable_e6068976-8c4f-4212-bea6-e693f5416ba4
+ref table LocalDateTable_b7ecf9ce-bede-4c55-b0b0-769bfe4e28e6
+ref table LocalDateTable_5af81d22-9206-4ab7-a433-34a6b9b43a25
+ref table 已竣已结
+ref table LocalDateTable_6d3774d3-4065-45e9-8a7a-2fb80fa70e57
+ref table 3-26
+ref table LocalDateTable_cd1a4e27-2820-48fc-8a7b-e0572db24af8
+
+ref cultureInfo zh-CN
+

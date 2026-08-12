@@ -1,0 +1,376 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "a3ce02182734e78852b5",
+  "position": {
+    "x": 16,
+    "y": 312,
+    "z": 1000,
+    "height": 384,
+    "width": 928
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "已竣已结"
+                    }
+                  },
+                  "Property": "项目名称"
+                }
+              },
+              "queryRef": "已竣已结.项目名称"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "已竣已结"
+                        }
+                      },
+                      "Property": "自施预计结算额（万元）"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(已竣已结.自施预计结算额（万元）)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "已竣已结"
+                        }
+                      },
+                      "Property": "预计成本降低（万元）"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(已竣已结.预计成本降低（万元）)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "已竣已结"
+                        }
+                      },
+                      "Property": "预计总收益额（万元）"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(已竣已结.预计总收益额（万元）)"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "已竣已结"
+                        }
+                      },
+                      "Property": "自施预计结算收益率"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(已竣已结.自施预计结算收益率)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "已竣已结"
+                      }
+                    },
+                    "Property": "预计成本降低（万元）"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "竣工项目结算进展.预计自施结算收益率"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "竣工项目结算进展.预计总收益额"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "竣工项目结算进展.项目名称"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "竣工项目结算进展.约谈人员名单"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#b9e5f3'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#000000'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'10'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "5L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'10'"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "132.81006044205978D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "发展竣工项目结算进展.预收益率"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "158D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(已竣已结.自施预计结算额（万元）)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "252D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "已竣已结.项目名称"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "171.3530216265342D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(已竣已结.预计成本降低（万元）)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "166.0588884084953D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(已竣已结.预计总收益额（万元）)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(已竣已结.自施预计结算收益率)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

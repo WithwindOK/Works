@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "diagrams": [
+    {
+      "name": "All tables",
+      "zoomValue": 68.1001154704053,
+      "isDefault": true,
+      "tables": [
+        "3-26",
+        "发展竣工项目结算进展",
+        "局竣工项目",
+        "局竣工项目2",
+        "局竣工项目度量值",
+        "已竣已结",
+        "度量值",
+        "数据来源"
+      ],
+      "layout": {
+        "boundingBoxWidth": 2134.6553915233576,
+        "boundingBoxHeight": 803.05278874018541,
+        "boundingBoxPosition": {
+          "x": 105.79937610300792,
+          "y": 0
+        },
+        "nodes": [
+          {
+            "height": 300,
+            "layedOut": true,
+            "left": 105.79937610300792,
+            "nodeIndex": "度量值",
+            "top": 28.118148915139255,
+            "width": 180
+          },
+          {
+            "height": 300,
+            "layedOut": true,
+            "left": 613.41828335056493,
+            "nodeIndex": "局竣工项目",
+            "top": 34.000939471317672,
+            "width": 180
+          },
+          {
+            "height": 233,
+            "layedOut": true,
+            "left": 114.88469392257173,
+            "nodeIndex": "局竣工项目度量值",
+            "top": 432.91195124434813,
+            "width": 180
+          },
+          {
+            "height": 100,
+            "layedOut": true,
+            "left": 360.26552191791393,
+            "nodeIndex": "数据来源",
+            "top": 42.58436244884598,
+            "width": 180
+          },
+          {
+            "height": 759,
+            "layedOut": true,
+            "left": 940.68742136353308,
+            "nodeIndex": "发展竣工项目结算进展",
+            "top": 44.052788740185441,
+            "width": 264
+          },
+          {
+            "height": 214,
+            "layedOut": true,
+            "left": 1351.8862664676981,
+            "nodeIndex": "局竣工项目2",
+            "top": 0,
+            "width": 180
+          },
+          {
+            "height": 300,
+            "layedOut": true,
+            "left": 1706.1705170470318,
+            "nodeIndex": "已竣已结",
+            "top": 0,
+            "width": 180
+          },
+          {
+            "height": 300,
+            "layedOut": true,
+            "left": 2060.4547676263655,
+            "nodeIndex": "3-26",
+            "top": 0,
+            "width": 180
+          }
+        ]
+      }
+    }
+  ]
+}

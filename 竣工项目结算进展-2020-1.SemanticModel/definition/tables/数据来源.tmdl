@@ -1,0 +1,45 @@
+table 数据来源
+	lineageTag: a558def6-280b-4a8c-98e7-2fb3246a6db6
+
+	column 项目名称
+		dataType: string
+		lineageTag: d86ce6bc-014f-4fca-9ab5-46fd6f52ace6
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 超责任状月数
+		dataType: double
+		lineageTag: e62c2639-1464-4f44-bab9-27ccda30757e
+		summarizeBy: none
+		sourceColumn: 超责任状月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 数据来源-8867135e-0ed5-40fb-a33d-c315f2eb1bf5 = m
+		mode: import
+		source =
+				let
+				    源 = Excel.Workbook(File.Contents("\\172.16.8.66\经营分析\经营分析会\2019-2季度\竣工项目结算进展\竣工项目结算进展 - 总承包项目.xls"), null, true),
+				    数据来源1 = 源{[Name="数据来源"]}[Data],
+				    更改的类型 = Table.TransformColumnTypes(数据来源1,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type text}, {"Column11", type text}, {"Column12", type text}, {"Column13", type text}, {"Column14", type text}, {"Column15", type text}, {"Column16", type text}, {"Column17", type text}, {"Column18", type text}, {"Column19", type text}, {"Column20", type text}, {"Column21", type text}, {"Column22", type text}, {"Column23", type text}, {"Column24", type text}, {"Column25", type text}, {"Column26", type text}, {"Column27", type text}, {"Column28", type text}, {"Column29", type text}, {"Column30", type text}, {"Column31", type text}, {"Column32", type text}, {"Column33", type text}, {"Column34", type text}, {"Column35", type text}, {"Column36", type text}, {"Column37", type text}, {"Column38", type text}, {"Column39", type text}, {"Column40", type text}, {"Column41", type text}, {"Column42", type text}, {"Column43", type text}, {"Column44", type text}, {"Column45", type text}, {"Column46", type text}, {"Column47", type text}, {"Column48", type text}, {"Column49", type text}, {"Column50", type text}, {"Column51", type text}, {"Column52", type text}, {"Column53", type text}, {"Column54", type text}, {"Column55", type text}, {"Column56", type text}, {"Column57", type text}, {"Column58", type text}, {"Column59", type text}, {"Column60", type text}, {"Column61", type text}, {"Column62", type text}, {"Column63", type text}, {"Column64", type text}, {"Column65", type text}, {"Column66", type text}, {"Column67", type text}, {"Column68", type text}, {"Column69", type text}, {"Column70", type text}, {"Column71", type text}, {"Column72", type text}, {"Column73", type text}, {"Column74", type text}, {"Column75", type text}, {"Column76", type text}, {"Column77", type text}, {"Column78", type text}, {"Column79", type text}, {"Column80", type text}, {"Column81", type text}, {"Column82", type text}, {"Column83", type text}, {"Column84", type text}, {"Column85", type text}, {"Column86", type text}, {"Column87", type text}, {"Column88", type text}, {"Column89", type text}, {"Column90", type text}, {"Column91", type text}, {"Column92", type text}, {"Column93", type text}, {"Column94", type text}}),
+				    重命名的列 = Table.RenameColumns(更改的类型,{{"Column9", "项目名称"}, {"Column80", "超期月数"}}),
+				    筛选的行 = Table.SelectRows(重命名的列, each ([项目名称] <> null)),
+				    删除的其他列 = Table.SelectColumns(筛选的行,{"项目名称", "超期月数"}),
+				    替换的值 = Table.ReplaceValue(删除的其他列,null,"0",Replacer.ReplaceValue,{"超期月数"}),
+				    提升的标题 = Table.PromoteHeaders(替换的值, [PromoteAllScalars=true]),
+				    更改的类型1 = Table.TransformColumnTypes(提升的标题,{{"项目名称", type text}, {"超责任状月数", type number}})
+				in
+				    更改的类型1
+
+	annotation PBI_QueryRelationships = {"columnCount":2,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/数据来源/更改的类型1.{项目名称,0}","Section1/数据来源/更改的类型1.{超责任状月数,1}"],"ColumnCount":2,"KeyColumnNames":[],"ColumnIdentities":["Section1/数据来源/更改的类型1.{项目名称,0}","Section1/数据来源/更改的类型1.{超责任状月数,1}"],"RelationshipInfo":[]}
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

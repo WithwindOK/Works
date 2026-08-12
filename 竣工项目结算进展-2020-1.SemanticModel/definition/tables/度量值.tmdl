@@ -1,0 +1,120 @@
+table 度量值
+	lineageTag: b8baf320-5bec-4198-86b5-b00c912e5e0b
+
+	measure 【预计结算金额】 = SUM('发展竣工项目结算进展'[预计结算额])
+		formatString: #,0
+		lineageTag: 6686e0c5-7748-4671-aee9-42d08adfe70e
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 【分类占比】 = IF(ISFILTERED('发展竣工项目结算进展'[项目名称]),BLANK(),DISTINCTCOUNT('发展竣工项目结算进展'[项目编码])/CALCULATE(DISTINCTCOUNT('发展竣工项目结算进展'[项目编码]),all('发展竣工项目结算进展')))
+		lineageTag: 93645a3a-7262-4ac2-bee3-6a1ace27f1a4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【核定收益额】 = SUM('发展竣工项目结算进展'[核定收益额])
+		formatString: #,0
+		lineageTag: e5ddccce-135d-4167-bf4b-56b62ab6f490
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 【核定收益率】 = DIVIDE([【核定收益额】],[【预计自施结算金额】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: bf278b22-f90f-4114-9932-2915813957fe
+
+	measure 【结算完成率】 = DIVIDE([【已竣已结项目个数】],[【应结算项目个数】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: de23c39b-06b4-4052-8523-d1daca433619
+
+	measure 【平均结算收益率】 = DIVIDE([【预计总收益】],[【预计自施结算金额】])
+		formatString: #,0.00
+		lineageTag: 0fa1c003-261d-4355-806e-e11fa28d69dc
+
+	measure 【项目个数】 = if(ISFILTERED('发展竣工项目结算进展'[项目名称]),BLANK(),DISTINCTCOUNT('发展竣工项目结算进展'[项目名称]))
+		formatString: 0
+		lineageTag: 654601a8-5cc9-418b-ad71-111662a392a0
+
+	measure 【已竣已结项目个数】 =
+			
+			CALCULATE('度量值'[【项目个数】], '发展竣工项目结算进展'[结算分类] IN { "结算已归档","结算未归档" })
+		formatString: 0
+		lineageTag: d10176fc-683a-4f19-bafa-b3f939a2fdb2
+
+	measure 【应结算项目个数】 =
+			
+			CALCULATE('度量值'[【项目个数】], '发展竣工项目结算进展'[责任状日期] <=Date(2020,3,31))
+		formatString: 0
+		lineageTag: a90e410a-2b85-4c2a-a77e-0c6ac4aaaefa
+
+	measure 【预计收益率】 = DIVIDE([【预计总收益】],[【预计结算金额】])
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 362c2ddd-14bb-46a2-a28b-68403754014b
+
+	measure 【预计总收益】 = SUM('发展竣工项目结算进展'[预计总收益额])
+		formatString: #,0
+		lineageTag: 083ea971-65e3-45dd-bc96-fbdf555ab640
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 【预计结算收益率】 = DIVIDE([【预计总收益】],[【预计自施结算金额】])
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: f9f14d43-5136-4e4f-a0f5-ce0bcbc9e1a4
+
+	measure 【责任状时间】 = IF(ISFILTERED('发展竣工项目结算进展'[项目名称]),VALUES('发展竣工项目结算进展'[责任状日期]),BLANK())
+		formatString: General Date
+		lineageTag: 737fc912-8506-4736-93e8-87ee27a2dd0a
+
+	measure 【结算时长】 = AVERAGE('已竣已结'[业主结算时长])
+		lineageTag: c18edb88-053f-422e-a876-b4be72c694dc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【预计自施结算金额】 = CALCULATE(SUM('发展竣工项目结算进展'[预计结算额]),'发展竣工项目结算进展'[分包类型] = "自施")
+		formatString: #,0
+		lineageTag: e68596d3-8f46-4315-a784-68f5ff472df5
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 【自施结算收益额】 = CALCULATE(sum('发展竣工项目结算进展'[预计总收益额]),'发展竣工项目结算进展'[分包类型] = "自施")
+		lineageTag: 40d2c594-898b-4e2b-a06c-a247b5969b7e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【自施预计结算收益率】 = DIVIDE([【自施结算收益额】],[【预计自施结算金额】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9166576d-abe4-4b49-a03b-e4f395d31c97
+
+	measure 【预计成本降低】 = SUM('发展竣工项目结算进展'[预计成本降低])
+		formatString: #,0
+		lineageTag: 4548a426-0c66-4dfe-8386-459f03fd99ea
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column '列 1'
+		dataType: string
+		isHidden
+		lineageTag: 6250d69c-c76c-4e30-a685-08e393a148fb
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 度量值-5759284e-dcae-4fea-bbdc-7f973327643f = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [#"列 1" = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"列 1", type text}})
+				in
+				    更改的类型
+
+	annotation PBI_QueryRelationships = {"columnCount":1,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/度量值/更改的类型.{列 1,0}"],"ColumnCount":1,"KeyColumnNames":[],"ColumnIdentities":["Section1/度量值/更改的类型.{列 1,0}"],"RelationshipInfo":[]}
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

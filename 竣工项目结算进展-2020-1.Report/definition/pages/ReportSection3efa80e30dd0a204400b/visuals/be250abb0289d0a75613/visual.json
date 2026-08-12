@@ -1,0 +1,977 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "be250abb0289d0a75613",
+  "position": {
+    "x": 16,
+    "y": 256,
+    "z": 2000,
+    "height": 360,
+    "width": 696
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "局竣工项目"
+                    }
+                  },
+                  "Property": "项目状态"
+                }
+              },
+              "queryRef": "局竣工项目.项目状态",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "局竣工项目"
+                    }
+                  },
+                  "Property": "所属单位@"
+                }
+              },
+              "queryRef": "局竣工项目.所属单位@",
+              "active": true,
+              "displayName": "所属单位"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "局竣工项目"
+                    }
+                  },
+                  "Property": "类别"
+                }
+              },
+              "queryRef": "局竣工项目.类别",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "局竣工项目"
+                    }
+                  },
+                  "Property": "工程名称"
+                }
+              },
+              "queryRef": "局竣工项目.工程名称",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "局竣工项目度量值"
+                    }
+                  },
+                  "Property": "【项目数】"
+                }
+              },
+              "queryRef": "局竣工项目度量值.项目数"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "局竣工项目度量值"
+                    }
+                  },
+                  "Property": "【局预收益率】"
+                }
+              },
+              "queryRef": "局竣工项目度量值.【局预收益率】"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "局竣工项目"
+                  }
+                },
+                "Property": "类别"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {}
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目.项目状态(选择)"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目.工程名称"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目.类别"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目度量值.项目数"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目度量值.局预收益率"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目度量值.局自施结算额"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目度量值.局结算金额"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "局竣工项目度量值.分类项目占比"
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#b9e5f3'"
+                    }
+                  }
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'11'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "357.3307801825222D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "局竣工项目度量值.项目数"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "185.4565505388664D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "局竣工项目度量值.局预收益率"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "212.47687284296254D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "局竣工项目.类别"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "366.89055582901415D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "局竣工项目度量值.分类项目占比"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "146.95868094095744D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "局竣工项目度量值.局自施结算额"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "240.56120484656327D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主已结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "局竣工项目度量值.分类项目占比"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "177.33695693201977D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主未结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "局竣工项目度量值.分类项目占比"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "163.1678934058053D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "wildcard": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "局竣工项目"
+                        }
+                      },
+                      "Property": "项目状态"
+                    }
+                  }
+                ]
+              }
+            ],
+            "metadata": "局竣工项目度量值.分类项目占比"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85.17446275867385D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主未结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "局竣工项目度量值.项目数"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "111.96617055141502D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主已结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.01097340274977D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主未结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "169.27943230287246D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "wildcard": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "局竣工项目"
+                        }
+                      },
+                      "Property": "项目状态"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "76.88865167723758D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "局竣工项目.所属单位@"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "110.66044528328266D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "局竣工项目"
+                        }
+                      },
+                      "Property": "项目状态"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "114.97112809592915D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主未结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "局竣工项目度量值.【局预收益率】"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "85.67251770521584D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主已结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "局竣工项目度量值.项目数"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "115.08960570266954D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "局竣工项目"
+                          }
+                        },
+                        "Property": "项目状态"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'业主已结'"
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "metadata": "局竣工项目度量值.【局预收益率】"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "86.46272399186869D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "局竣工项目"
+                        }
+                      },
+                      "Property": "项目状态"
+                    }
+                  }
+                ]
+              }
+            ],
+            "metadata": "局竣工项目度量值.项目数"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "119.18627624280779D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "total": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "局竣工项目"
+                        }
+                      },
+                      "Property": "项目状态"
+                    }
+                  }
+                ]
+              }
+            ],
+            "metadata": "局竣工项目度量值.【局预收益率】"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'11'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'11'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {}
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'11'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Column"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "'11'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "Row"
+          }
+        }
+      ],
+      "rowTotal": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#b9e5f3'"
+                    }
+                  }
+                }
+              }
+            },
+            "applyToHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnTotal": [
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#b9e5f3'"
+                    }
+                  }
+                }
+              }
+            },
+            "applyToHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#e6e6e6'"
+                    }
+                  }
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylePreset": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Literal": {
+                  "Value": "'None'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

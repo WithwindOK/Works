@@ -1,0 +1,108 @@
+table LocalDateTable_ec5501cb-b6b9-4358-a273-c385a3fe815d
+	isHidden
+	showAsVariationsOnly
+	lineageTag: dc650f3e-2a3e-4b91-a632-df06b4309b18
+
+	column Date
+		isHidden
+		lineageTag: cd17f8d6-dc62-4d78-85d6-86dce84cd4d7
+		dataCategory: PaddedDateTableDates
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
+
+	column 年 = YEAR([Date])
+		isHidden
+		lineageTag: d013313e-4e22-471c-bfa4-3ff895b8f836
+		dataCategory: Years
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Year
+
+	column MonthNo = MONTH([Date])
+		isHidden
+		lineageTag: 11d811f2-93c2-446e-b03a-38dedec0ba6b
+		dataCategory: MonthOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = MonthNumber
+
+	column 月份 = FORMAT([Date], "MMMM")
+		isHidden
+		lineageTag: 5fb402fe-5c04-4448-9620-62469a15ca37
+		dataCategory: Months
+		summarizeBy: none
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Month
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column QuarterNo = INT(([MonthNo] + 2) / 3)
+		isHidden
+		lineageTag: 3f035364-aa12-43de-98ac-648f7585faa0
+		dataCategory: QuarterOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = QuarterNumber
+
+	column 季度 = "季度 " & [QuarterNo]
+		isHidden
+		lineageTag: 666048f9-6f19-4a81-961a-80f713428c8b
+		dataCategory: Quarters
+		summarizeBy: none
+		sortByColumn: QuarterNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Quarter
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 日 = DAY([Date])
+		isHidden
+		lineageTag: 82313518-bca5-43c6-b1d3-eef212b8c2c2
+		dataCategory: DayOfMonth
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Day
+
+	hierarchy 日期层次结构
+		lineageTag: 625a0db5-f855-4b26-93d5-ea954ca2f675
+
+		level 年
+			lineageTag: ac8ad5d5-958e-48e7-8bef-deaa6cd65e42
+			column: 年
+
+		level 季度
+			lineageTag: 47a59dd1-e19f-4cbf-bd37-47b9d3c2fb9a
+			column: 季度
+
+		level 月份
+			lineageTag: d6716cc8-64bb-4863-9b46-bb01f8e27a4a
+			column: 月份
+
+		level 日
+			lineageTag: 7acf3918-c86e-4ef1-a1fe-fc6790fecf76
+			column: 日
+
+		annotation TemplateId = DateHierarchy
+
+	partition LocalDateTable_ec5501cb-b6b9-4358-a273-c385a3fe815d-4236b31a-691f-4b55-af5a-80954adf579c = calculated
+		mode: import
+		source = Calendar(Date(Year(MIN('发展竣工项目结算进展'[责任状日期])), 1, 1), Date(Year(MAX('发展竣工项目结算进展'[责任状日期])), 12, 31))
+
+	annotation __PBI_LocalDateTable = true
+

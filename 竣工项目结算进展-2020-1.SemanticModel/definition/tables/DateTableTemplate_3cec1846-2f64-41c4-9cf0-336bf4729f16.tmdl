@@ -1,0 +1,110 @@
+table DateTableTemplate_3cec1846-2f64-41c4-9cf0-336bf4729f16
+	isHidden
+	isPrivate
+	lineageTag: ddb28b4d-8fc5-4c73-af55-498390295c8e
+
+	column Date
+		isHidden
+		lineageTag: cb67556b-122d-4a44-aa33-fd362130ae49
+		dataCategory: PaddedDateTableDates
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
+
+	column 年 = YEAR([Date])
+		isHidden
+		lineageTag: cf4f64b8-fd77-4fca-b044-55a34cc15633
+		dataCategory: Years
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Year
+
+	column MonthNo = MONTH([Date])
+		isHidden
+		lineageTag: b272b544-a605-45a8-8be6-7a8b66c08af9
+		dataCategory: MonthOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = MonthNumber
+
+	column 月份 = FORMAT([Date], "MMMM")
+		isHidden
+		lineageTag: 87030454-9ac7-448c-b4b8-5aa56f411a6c
+		dataCategory: Months
+		summarizeBy: none
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Month
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column QuarterNo = INT(([MonthNo] + 2) / 3)
+		isHidden
+		lineageTag: c81de662-42a4-446b-a1b5-a13259fd1d80
+		dataCategory: QuarterOfYear
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = QuarterNumber
+
+	column 季度 = "季度 " & [QuarterNo]
+		isHidden
+		lineageTag: 3c9f9f14-f4bc-4b1d-90e9-a62c1bd6d768
+		dataCategory: Quarters
+		summarizeBy: none
+		sortByColumn: QuarterNo
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Quarter
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 日 = DAY([Date])
+		isHidden
+		lineageTag: 71e3c257-0f8d-44dd-a30c-99d4406740cf
+		dataCategory: DayOfMonth
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+		annotation TemplateId = Day
+
+	hierarchy 日期层次结构
+		lineageTag: 30f1221f-9d4f-4485-bd17-7b76e8e64347
+
+		level 年
+			lineageTag: a6d42ef1-ada5-466a-bd86-ec906e9ad3a3
+			column: 年
+
+		level 季度
+			lineageTag: 504e10be-8ba2-4dda-9d34-aae25405a5f1
+			column: 季度
+
+		level 月份
+			lineageTag: f8aa7d58-8de7-4898-8d77-b67bd7821960
+			column: 月份
+
+		level 日
+			lineageTag: e163202b-d07c-42e2-bc04-987899ae2e04
+			column: 日
+
+		annotation TemplateId = DateHierarchy
+
+	partition DateTableTemplate_3cec1846-2f64-41c4-9cf0-336bf4729f16-0ccbe7b0-5ad1-4544-bf3d-f95948dafe31 = calculated
+		mode: import
+		source = Calendar(Date(2015,1,1), Date(2015,1,1))
+
+	annotation __PBI_TemplateDateTable = true
+
+	annotation DefaultItem = DateHierarchy
+

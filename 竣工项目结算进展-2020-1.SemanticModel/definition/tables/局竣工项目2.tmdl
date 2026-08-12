@@ -1,0 +1,193 @@
+table 局竣工项目2
+	lineageTag: 54e0ec91-c8a1-486c-8b7e-6d16c46fc97b
+
+	measure 【项目数2】 = DISTINCTCOUNT('局竣工项目2'[工程名称])
+		formatString: 0
+		lineageTag: 32aa38a3-8a5b-4de8-a25a-8b63574158ec
+
+	measure 【局结算金额2】 = SUM('局竣工项目2'[局结算总金额])
+		formatString: #,0
+		lineageTag: 96905cbc-46de-40ed-8ca4-dd9da6508ee7
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 【局结算收益额2】 = sum('局竣工项目2'[结算收益额])
+		formatString: #,0
+		lineageTag: 065f3655-9030-4d54-90e9-427bd594159b
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 【局预收益率2】 = DIVIDE([【局结算收益额2】],[【局自施结算额2】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: af90d449-a2da-4e17-8964-8d42bc8f225b
+
+	measure 【局自施结算额2】 = SUM('局竣工项目2'[局自施结算额])
+		lineageTag: 01357e3e-5388-4d46-8c1a-6236b92c66f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 【局核定收益额2】 = SUM('局竣工项目2'[核定收益额])
+		lineageTag: faf06e2b-6351-45e8-9313-8872713e7901
+
+	measure 【预收益变现乘数2】 = DIVIDE([【局结算收益额2】],[【局核定收益额2】])
+		lineageTag: 8b5bb475-2ce0-47d6-9111-2a7dac08909a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程名称
+		dataType: string
+		lineageTag: d3276468-15af-4ee7-83b7-df7f3cb25f05
+		summarizeBy: none
+		sourceColumn: 工程名称
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目状态
+		dataType: string
+		lineageTag: b0e6bdfb-f796-44c4-a3fb-2a99bdcb7527
+		summarizeBy: none
+		sourceColumn: 项目状态
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 完工时间
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4523d729-de7e-484d-804c-649a0f802b81
+		summarizeBy: none
+		sourceColumn: 完工时间
+
+		variation 变体
+			isDefault
+			relationship: 869cbecc-899e-4065-bc09-fa77ae9f7a57
+			defaultHierarchy: LocalDateTable_e6068976-8c4f-4212-bea6-e693f5416ba4.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 最终结算完成时间
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e8434cad-6a76-4b51-9056-8aff59d8923a
+		summarizeBy: none
+		sourceColumn: 最终结算完成时间
+
+		variation 变体
+			isDefault
+			relationship: cbf19cdd-0747-495e-bd85-78197483c216
+			defaultHierarchy: LocalDateTable_b7ecf9ce-bede-4c55-b0b0-769bfe4e28e6.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 局结算总金额
+		dataType: double
+		lineageTag: c6edcf2f-2ee8-4d28-a8ad-e050e8f7810c
+		summarizeBy: sum
+		sourceColumn: 局结算总金额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 局自施结算额
+		dataType: double
+		lineageTag: 844f174d-9d6b-401d-a1da-5f97dcae4b12
+		summarizeBy: sum
+		sourceColumn: 局自施结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 局预收益率
+		dataType: double
+		lineageTag: befeeebf-37e7-4515-8bdf-b1619384641e
+		summarizeBy: sum
+		sourceColumn: 局预收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 结算收益额
+		dataType: double
+		lineageTag: c434eb12-5569-49ec-a62e-8720690f72a1
+		summarizeBy: sum
+		sourceColumn: 结算收益额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自定义
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5cf508f7-3fde-455e-a43f-e164baca8915
+		summarizeBy: none
+		sourceColumn: 自定义
+
+		variation 变体
+			isDefault
+			relationship: e3d56b91-4bf0-4466-b040-83c727842553
+			defaultHierarchy: LocalDateTable_5af81d22-9206-4ab7-a433-34a6b9b43a25.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 时延 = DATEDIFF('局竣工项目2'[完工时间],'局竣工项目2'[自定义],DAY)/365
+		lineageTag: 2aeb3e73-ce1d-459f-aa75-a3305b018df0
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 类别 = if('局竣工项目2'[时延]>=1.5,"一类","二类")
+		lineageTag: 32358580-f755-4fef-8508-fe59838e401c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 核定收益额 = '局竣工项目2'[局自施结算额]*'局竣工项目2'[局预收益率]
+		lineageTag: 3494583f-2d7c-4036-befd-052ebd68573c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 局竣工项目2-59d99043-30a2-432e-bf36-ee4252922bb7 = m
+		mode: import
+		source =
+				let
+				    源 = Excel.Workbook(File.Contents("Y:\经营分析会\2020-1季度\结算进展-局管控2020.3.xls"), null, true),
+				    Sheet1 = 源{[Name="Sheet0"]}[Data],
+				    提升的标题 = Table.PromoteHeaders(Sheet1, [PromoteAllScalars=true]),
+				    更改的类型1 = Table.TransformColumnTypes(提升的标题,{{"完工时间", type date}, {"最终结算报出时间", type date}}),
+				    删除的其他列 = Table.SelectColumns(更改的类型1,{"工程名称", "项目业主状态", "完工时间", "最终结算完成时间", "最终结算总金额（万元)", "其中自施部分结算额（万元）", "预收益率", "结算收益额（万元）"}),
+				    更改的类型 = Table.TransformColumnTypes(删除的其他列,{{"最终结算完成时间", type date}}),
+				    更改的类型3 = Table.TransformColumnTypes(更改的类型,{{"最终结算完成时间", type date}}),
+				    重命名的列 = Table.RenameColumns(更改的类型3,{{"项目业主状态", "项目状态"}, {"最终结算总金额（万元)", "局结算总金额"}, {"其中自施部分结算额（万元）", "局自施结算额"}, {"预收益率", "局预收益率"}, {"结算收益额（万元）", "结算收益额"}}),
+				    更改的类型4 = Table.TransformColumnTypes(重命名的列,{{"结算收益额", type number}, {"局结算总金额", type number}, {"局自施结算额", type number}, {"局预收益率", type number}}),
+				    已添加条件列 = Table.AddColumn(更改的类型4, "自定义", each if [最终结算完成时间] = null then #date(2020, 3, 31) else [最终结算完成时间]),
+				    更改的类型5 = Table.TransformColumnTypes(已添加条件列,{{"自定义", type date}}),
+				    筛选的行 = Table.SelectRows(更改的类型5, each ([工程名称] <> null))
+				in
+				    筛选的行
+
+	annotation PBI_QueryRelationships = {"columnCount":9,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/局竣工项目2/Sheet1.{Column2,1}","Section1/局竣工项目2/Sheet1.{Column6,5}","Section1/局竣工项目2/更改的类型1.{完工时间,18}","Section1/局竣工项目2/更改的类型3.{最终结算完成时间,3}","Section1/局竣工项目2/更改的类型4.{局结算总金额,4}","Section1/局竣工项目2/更改的类型4.{局自施结算额,5}","Section1/局竣工项目2/更改的类型4.{局预收益率,6}","Section1/局竣工项目2/更改的类型4.{结算收益额,7}","Section1/局竣工项目2/更改的类型5.{自定义,8}"],"ColumnCount":9,"KeyColumnNames":[],"ColumnIdentities":["Section1/局竣工项目2/Sheet1.{Column2,1}","Section1/局竣工项目2/Sheet1.{Column6,5}","Section1/局竣工项目2/更改的类型1.{完工时间,18}","Section1/局竣工项目2/更改的类型3.{最终结算完成时间,3}","Section1/局竣工项目2/更改的类型4.{局结算总金额,4}","Section1/局竣工项目2/更改的类型4.{局自施结算额,5}","Section1/局竣工项目2/更改的类型4.{局预收益率,6}","Section1/局竣工项目2/更改的类型4.{结算收益额,7}","Section1/局竣工项目2/更改的类型5.{自定义,8}"],"RelationshipInfo":[]}
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

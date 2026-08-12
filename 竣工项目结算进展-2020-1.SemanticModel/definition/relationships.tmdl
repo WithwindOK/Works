@@ -1,0 +1,69 @@
+relationship dc07144d-cf8e-44a3-93af-bf061bbbc411
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 局竣工项目.完工时间
+	toColumn: LocalDateTable_46149285-64e8-4472-a643-9fdfebfd6613.Date
+
+relationship 5f57e560-d781-4bc3-9e98-27616b63407b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 局竣工项目.最终结算完成计划时间
+	toColumn: LocalDateTable_0d865754-dcba-4f9e-a986-3e065eeadf60.Date
+
+relationship 0e6b1bbe-3c66-47c9-a58f-3c22ab8dc442
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 局竣工项目.开工时间
+	toColumn: LocalDateTable_27a6121a-e346-4e04-b02c-3475ad5bdbd5.Date
+
+relationship 2234efcc-d17c-434f-a406-484fba8f751b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 发展竣工项目结算进展.业主结算签订日期
+	toColumn: LocalDateTable_b072960e-cd06-45d5-b9b2-ed59d8bd2bc8.Date
+
+relationship 471a034a-5229-4f80-aa94-bd194ba509ca
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 发展竣工项目结算进展.责任状日期
+	toColumn: LocalDateTable_ec5501cb-b6b9-4358-a273-c385a3fe815d.Date
+
+relationship 00efc195-5ee4-4b58-88fe-83c62b856ffb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 发展竣工项目结算进展.考核完工日期
+	toColumn: LocalDateTable_f237a6d7-13d9-47a0-a264-5afb0a7e01ec.Date
+
+relationship 4938e3df-b601-4e5e-98b4-b2470cd87034
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 发展竣工项目结算进展.分包分供结算预计完成时间
+	toColumn: LocalDateTable_50d5787a-f113-49c2-9170-bd5ad196edc0.Date
+
+relationship 6522b654-e171-4268-80bb-93e4ce308d47
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 局竣工项目.最终结算完成时间
+	toColumn: LocalDateTable_4cbb77fc-ca83-4eff-91a7-6c8535b585dc.Date
+
+relationship 869cbecc-899e-4065-bc09-fa77ae9f7a57
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 局竣工项目2.完工时间
+	toColumn: LocalDateTable_e6068976-8c4f-4212-bea6-e693f5416ba4.Date
+
+relationship cbf19cdd-0747-495e-bd85-78197483c216
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 局竣工项目2.最终结算完成时间
+	toColumn: LocalDateTable_b7ecf9ce-bede-4c55-b0b0-769bfe4e28e6.Date
+
+relationship e3d56b91-4bf0-4466-b040-83c727842553
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 局竣工项目2.自定义
+	toColumn: LocalDateTable_5af81d22-9206-4ab7-a433-34a6b9b43a25.Date
+
+relationship 134a4295-405d-48bd-baac-3c2b1ebf87f1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 已竣已结.Column109
+	toColumn: LocalDateTable_6d3774d3-4065-45e9-8a7a-2fb80fa70e57.Date
+
+relationship 2d2e72ad-2a4b-486f-8112-2459c2814147
+	fromColumn: 已竣已结.项目名称
+	toColumn: 数据来源.项目名称
+
+relationship 11089fa8-9609-45c6-a62d-26f286216360
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 3-26.Column109
+	toColumn: LocalDateTable_cd1a4e27-2820-48fc-8a7b-e0572db24af8.Date
+

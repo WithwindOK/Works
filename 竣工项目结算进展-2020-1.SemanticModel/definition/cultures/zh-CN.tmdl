@@ -1,0 +1,242 @@
+cultureInfo zh-CN
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "table.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "局竣工项目",
+			          "ConceptualProperty": "所属单位@"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "所属单位": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table2.column2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "局竣工项目2",
+			          "ConceptualProperty": "【局结算金额2】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【局结算金额】": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table2.column21": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "局竣工项目2",
+			          "ConceptualProperty": "【局结算收益额2】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【局结算收益额】": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table2.column22": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "局竣工项目2",
+			          "ConceptualProperty": "【预收益变现乘数2】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【预收益变现乘数】": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table2.column23": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "局竣工项目2",
+			          "ConceptualProperty": "【项目数2】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【项目数】": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table2.column24": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "局竣工项目2",
+			          "ConceptualProperty": "【局预收益率2】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "【局预收益率】": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table326.column": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "3-26",
+			          "ConceptualProperty": "【未上报预计结算额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table326.column1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "3-26",
+			          "ConceptualProperty": "【未上报自施预计结算额】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "自施预计结算额": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table326.column2": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "3-26",
+			          "ConceptualProperty": "【未上报预计总收益】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计总收益": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table326.column3": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "3-26",
+			          "ConceptualProperty": "【未上报预计结算收益率】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "预计结算收益率": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table326.column4": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "3-26",
+			          "ConceptualProperty": "【未上报项目个数】"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "项目个数": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

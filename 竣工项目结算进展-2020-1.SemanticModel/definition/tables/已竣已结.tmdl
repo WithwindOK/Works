@@ -1,0 +1,1122 @@
+table 已竣已结
+	lineageTag: 37d6d798-16cf-4c20-962a-4b43dccf5a44
+
+	column 评审状态
+		dataType: string
+		lineageTag: f00f6436-2046-433c-9504-83ea4b3a88d7
+		summarizeBy: none
+		sourceColumn: 评审状态
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 业务单号
+		dataType: string
+		lineageTag: 225b761b-5769-4281-8726-553d1f2224cd
+		summarizeBy: none
+		sourceColumn: 业务单号
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 业务年
+		dataType: int64
+		formatString: 0
+		lineageTag: c1518f25-d37b-4e5d-b452-370f7e438eca
+		summarizeBy: sum
+		sourceColumn: 业务年
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业务月
+		dataType: int64
+		formatString: 0
+		lineageTag: 159d4347-6b02-4877-8197-a5c053fc9b21
+		summarizeBy: sum
+		sourceColumn: 业务月
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主结算年度
+		dataType: int64
+		formatString: 0
+		lineageTag: d9de00a9-4346-4f5e-97b3-0bfbc99d2ced
+		summarizeBy: sum
+		sourceColumn: 业主结算年度
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主结算状态
+		dataType: string
+		lineageTag: aae57eae-ae8a-47bf-93ca-345ccd6bd008
+		summarizeBy: none
+		sourceColumn: 业主结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 分包分供结算
+		dataType: string
+		lineageTag: 854dbcdd-6ecb-4140-8a5b-cf80caf30de9
+		summarizeBy: none
+		sourceColumn: 分包分供结算
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目编码
+		dataType: string
+		lineageTag: 6098932e-16f3-482b-80f8-2badc31a5e1e
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目编号
+		dataType: string
+		lineageTag: 65a87dad-1909-4b49-a6ba-983d91571566
+		summarizeBy: none
+		sourceColumn: 项目编号
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目名称
+		dataType: string
+		lineageTag: 96981675-ecc5-4ee8-a8b4-fce7ce112760
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 合同签订年份
+		dataType: string
+		lineageTag: df2443d8-0a70-4006-b22a-659edf7275cc
+		summarizeBy: none
+		sourceColumn: 合同签订年份
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 成本主办
+		dataType: string
+		lineageTag: e6c38f98-5267-46b8-8c57-29e6cae65f28
+		summarizeBy: none
+		sourceColumn: 成本主办
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 产值所属分公司
+		dataType: string
+		lineageTag: c25769a4-fd37-40e2-8927-7e139c2c4eb5
+		summarizeBy: none
+		sourceColumn: 产值所属分公司
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 大客户
+		dataType: string
+		lineageTag: f01ceea3-2b19-4b30-b312-f77a7e8e7fd6
+		summarizeBy: none
+		sourceColumn: 大客户
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 所属板块
+		dataType: string
+		lineageTag: 60f0250b-98c7-4888-9c11-a13ca426642b
+		summarizeBy: none
+		sourceColumn: 所属板块
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 所属类型
+		dataType: string
+		lineageTag: 3308cc89-f66a-49f1-847e-7419910425e4
+		summarizeBy: none
+		sourceColumn: 所属类型
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 管理考核节点
+		dataType: int64
+		formatString: 0
+		lineageTag: 9239b357-883e-4c99-8cb9-09cd15329b5c
+		summarizeBy: sum
+		sourceColumn: 管理考核节点
+
+		annotation SummarizationSetBy = Automatic
+
+	column 总部联络人
+		dataType: string
+		lineageTag: 576e0176-68af-4ef3-96e5-e22819a12883
+		summarizeBy: none
+		sourceColumn: 总部联络人
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目总监
+		dataType: string
+		lineageTag: e02d85c2-0d77-4937-83d2-0eb491bde685
+		summarizeBy: none
+		sourceColumn: 项目总监
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目总监联系电话
+		dataType: string
+		lineageTag: d6056ee7-02f8-4db0-aa63-99208149cb61
+		summarizeBy: none
+		sourceColumn: 项目总监联系电话
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目经理
+		dataType: string
+		lineageTag: 6c4e1ea3-eb32-48c9-8692-701951bf9753
+		summarizeBy: none
+		sourceColumn: 项目经理
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目经理联系电话
+		dataType: string
+		lineageTag: 026e3ac1-a50e-4fa9-9a10-82460e51f4ee
+		summarizeBy: none
+		sourceColumn: 项目经理联系电话
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 商务经理
+		dataType: string
+		lineageTag: d59bf3b7-e904-4edc-aeac-a236271c62b1
+		summarizeBy: none
+		sourceColumn: 商务经理
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 商务经理联系电话
+		dataType: int64
+		formatString: 0
+		lineageTag: a08f544d-7277-425f-b9f4-69a92587e729
+		summarizeBy: sum
+		sourceColumn: 商务经理联系电话
+
+		annotation SummarizationSetBy = Automatic
+
+	column 其中：自施土建初始合同收入（万元）
+		dataType: double
+		lineageTag: 8a71d91b-b6e6-4d70-b105-62814d1e4ff8
+		summarizeBy: sum
+		sourceColumn: 其中：自施土建初始合同收入（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中：自施机电初始合同收入（万元）
+		dataType: double
+		lineageTag: 4c44777a-f4e6-4903-b648-7c32c53896b3
+		summarizeBy: sum
+		sourceColumn: 其中：自施机电初始合同收入（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施初始合同收入（万元）
+		dataType: double
+		lineageTag: 6405e31a-4250-442f-a4dc-b43b38d6e89e
+		summarizeBy: sum
+		sourceColumn: 自施初始合同收入（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中：甲指土建初始合同收入（万元）
+		dataType: double
+		lineageTag: 6cd70abb-12fb-4d59-aabe-9cc9df903613
+		summarizeBy: sum
+		sourceColumn: 其中：甲指土建初始合同收入（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 其中：甲指机电初始合同收入（万元）
+		dataType: double
+		lineageTag: 00928f1f-2808-4c56-a189-e8ebc36141f8
+		summarizeBy: sum
+		sourceColumn: 其中：甲指机电初始合同收入（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指初始合同收入（万元）
+		dataType: double
+		lineageTag: 51d04cee-277e-4753-a07d-f72973a06797
+		summarizeBy: sum
+		sourceColumn: 甲指初始合同收入（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 初始合同收入（万元）
+		dataType: double
+		lineageTag: 818ffd99-17b7-41d4-af2a-9078b350e95a
+		summarizeBy: sum
+		sourceColumn: 初始合同收入（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施土建预计结算额（万元）
+		dataType: double
+		lineageTag: 4fe988dd-cbd4-4c10-acf0-2793117fe902
+		summarizeBy: sum
+		sourceColumn: 自施土建预计结算额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电预计结算额（万元）
+		dataType: double
+		lineageTag: 1de785d5-e852-43e1-8af8-ef3ad31ed45d
+		summarizeBy: sum
+		sourceColumn: 自施机电预计结算额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施预计结算额（万元）
+		dataType: double
+		formatString: #,0
+		lineageTag: f7d77b50-4da2-4f54-baf1-0a950bc2d296
+		summarizeBy: sum
+		sourceColumn: 自施预计结算额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 甲指土建预计结算额（万元）
+		dataType: double
+		lineageTag: b094f8d1-253e-49bd-951f-9e993b9cabad
+		summarizeBy: sum
+		sourceColumn: 甲指土建预计结算额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指机电预计结算额（万元）
+		dataType: double
+		lineageTag: d14a7d1e-e813-43db-9866-013d30b14ab0
+		summarizeBy: sum
+		sourceColumn: 甲指机电预计结算额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指预计结算额（万元）
+		dataType: double
+		lineageTag: ad15a96e-4dde-4601-849e-75e513f94c71
+		summarizeBy: sum
+		sourceColumn: 甲指预计结算额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计结算额（万元）
+		dataType: double
+		lineageTag: d2719370-9c10-4390-9123-31412c5a9831
+		summarizeBy: sum
+		sourceColumn: 预计结算额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施土建核定收益率
+		dataType: double
+		lineageTag: 29de85f2-82cf-4e08-a7e5-f2fe13353b03
+		summarizeBy: sum
+		sourceColumn: 自施土建核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电核定收益率
+		dataType: double
+		lineageTag: 5f3bc8c9-eb46-4d78-bc42-1b94cfb8523b
+		summarizeBy: sum
+		sourceColumn: 自施机电核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施核定收益率
+		dataType: double
+		lineageTag: f4d868d4-c8e1-4c89-856c-4cc490d2db95
+		summarizeBy: sum
+		sourceColumn: 自施核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指土建核定收益率
+		dataType: double
+		lineageTag: a0eb24c2-05ac-4757-8245-d9b84fa0b02e
+		summarizeBy: sum
+		sourceColumn: 甲指土建核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指机电核定收益率
+		dataType: double
+		lineageTag: bf43b179-45e3-466b-aee1-0f9fe657f5a8
+		summarizeBy: sum
+		sourceColumn: 甲指机电核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指核定收益率
+		dataType: double
+		lineageTag: 3a19d9c7-d1e3-47eb-b7cc-bb798993066c
+		summarizeBy: sum
+		sourceColumn: 甲指核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 核定收益率
+		dataType: double
+		lineageTag: 23996f75-f36d-4428-8e23-803a8f4a94c4
+		summarizeBy: sum
+		sourceColumn: 核定收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施土建成本锁定（万元）
+		dataType: double
+		lineageTag: ea1ebfda-8140-4ce5-9bf3-320d1424dee1
+		summarizeBy: sum
+		sourceColumn: 自施土建成本锁定（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电成本锁定（万元）
+		dataType: double
+		lineageTag: aaf3b950-5c9d-484d-b1dd-6838de26b925
+		summarizeBy: sum
+		sourceColumn: 自施机电成本锁定（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施成本锁定（万元）
+		dataType: double
+		lineageTag: 9d8cd65a-fc16-405d-9937-15489eeb6be2
+		summarizeBy: sum
+		sourceColumn: 自施成本锁定（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指土建成本锁定（万元）
+		dataType: double
+		lineageTag: fc93417d-fb82-460a-9389-d4ab8770c560
+		summarizeBy: sum
+		sourceColumn: 甲指土建成本锁定（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指机电成本锁定（万元）
+		dataType: double
+		lineageTag: 7f165dc4-de3b-42f5-9b1d-93afdf2be894
+		summarizeBy: sum
+		sourceColumn: 甲指机电成本锁定（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指成本锁定（万元）
+		dataType: double
+		lineageTag: f0815af4-75bc-4da1-8db1-426d60448a73
+		summarizeBy: sum
+		sourceColumn: 甲指成本锁定（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 成本锁定（万元）
+		dataType: double
+		lineageTag: 1cb2d28f-618f-4e33-b105-32a0a6d32a96
+		summarizeBy: sum
+		sourceColumn: 成本锁定（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施土建核定收益额（万元）
+		dataType: double
+		lineageTag: dc79639d-13ea-4403-aeb1-5c238c256d59
+		summarizeBy: sum
+		sourceColumn: 自施土建核定收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电核定收益额（万元）
+		dataType: double
+		lineageTag: c4332ce8-df64-4ff2-84f3-4e4624f9eb61
+		summarizeBy: sum
+		sourceColumn: 自施机电核定收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施核定收益额（万元）
+		dataType: double
+		lineageTag: 2b49f689-4c92-4757-9d21-2ed327a153a0
+		summarizeBy: sum
+		sourceColumn: 自施核定收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指土建核定收益额（万元）
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b39c2f5-1e0f-489b-9ec5-332f146036e6
+		summarizeBy: sum
+		sourceColumn: 甲指土建核定收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 甲指机电核定收益额（万元）
+		dataType: int64
+		formatString: 0
+		lineageTag: 64ed240b-33f3-4bad-be6f-e9623bdd5ed2
+		summarizeBy: sum
+		sourceColumn: 甲指机电核定收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+	column 甲指核定收益额（万元）
+		dataType: double
+		lineageTag: 9dfe1cb4-e6b6-41e6-ab8a-0603cd744d3c
+		summarizeBy: sum
+		sourceColumn: 甲指核定收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 核定收益额（万元）
+		dataType: double
+		lineageTag: 65dfbab9-8538-421c-bd22-b16df6c1e5f8
+		summarizeBy: sum
+		sourceColumn: 核定收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施土建预计成本降低（万元）
+		dataType: double
+		lineageTag: b6e105cb-de74-47f3-889b-ab68d2682396
+		summarizeBy: sum
+		sourceColumn: 自施土建预计成本降低（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电预计成本降低（万元）
+		dataType: double
+		lineageTag: c6b1f336-9d11-4c10-ac0b-1ef3bf200168
+		summarizeBy: sum
+		sourceColumn: 自施机电预计成本降低（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施预计成本降低（万元）
+		dataType: double
+		lineageTag: b6675756-06ea-4674-b59b-229ef4b08d15
+		summarizeBy: sum
+		sourceColumn: 自施预计成本降低（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指土建预计成本降低（万元）
+		dataType: double
+		lineageTag: 5303159d-ca35-487d-a07a-044a4fafc538
+		summarizeBy: sum
+		sourceColumn: 甲指土建预计成本降低（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指机电预计成本降低（万元）
+		dataType: double
+		lineageTag: 0e4f3630-e20f-4b91-9a0f-ec0a1bb85f8b
+		summarizeBy: sum
+		sourceColumn: 甲指机电预计成本降低（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指预计成本降低（万元）
+		dataType: double
+		lineageTag: 8fba0b5a-e2a4-4b4c-a594-0e027ead3a07
+		summarizeBy: sum
+		sourceColumn: 甲指预计成本降低（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计成本降低（万元）
+		dataType: double
+		formatString: #,0
+		lineageTag: 32e91d5e-b5d4-4f52-98e9-4151daf42ece
+		summarizeBy: sum
+		sourceColumn: 预计成本降低（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 自施土建预计总收益额（万元）
+		dataType: double
+		lineageTag: b628d793-7030-477b-83ed-d2da66599cd2
+		summarizeBy: sum
+		sourceColumn: 自施土建预计总收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电预计总收益额（万元）
+		dataType: double
+		lineageTag: bfae8171-5e61-4345-b506-6e6a0cef3031
+		summarizeBy: sum
+		sourceColumn: 自施机电预计总收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施预计总收益额（万元）
+		dataType: double
+		lineageTag: 386a53b9-8de1-4708-b76c-f5f083b7f756
+		summarizeBy: sum
+		sourceColumn: 自施预计总收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指土建预计总收益额（万元）
+		dataType: double
+		lineageTag: c439e365-e8d4-4b6d-8653-af3e317bd02b
+		summarizeBy: sum
+		sourceColumn: 甲指土建预计总收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指机电预计总收益额（万元）
+		dataType: double
+		lineageTag: adb0f5c3-ced8-44f7-aafa-20dfc60c6420
+		summarizeBy: sum
+		sourceColumn: 甲指机电预计总收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指预计总收益额（万元）
+		dataType: double
+		lineageTag: 9e66914b-c5a3-4936-866f-3e0fb9d6f36e
+		summarizeBy: sum
+		sourceColumn: 甲指预计总收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计总收益额（万元）
+		dataType: double
+		formatString: #,0
+		lineageTag: fe02cd69-cc81-4980-a734-1dcfc5dcb624
+		summarizeBy: sum
+		sourceColumn: 预计总收益额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 自施土建预计结算收益率
+		dataType: double
+		lineageTag: 7bcd2f8c-0ce1-4084-b779-5185ef145231
+		summarizeBy: sum
+		sourceColumn: 自施土建预计结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电预计结算收益率
+		dataType: double
+		lineageTag: 753ec6f4-d1d9-4126-af12-6b93f21df3a0
+		summarizeBy: sum
+		sourceColumn: 自施机电预计结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施预计结算收益率
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2350f1dc-11e9-4b7b-a4ce-00334ad62670
+		summarizeBy: sum
+		sourceColumn: 自施预计结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+	column 甲指土建预计结算收益率
+		dataType: double
+		lineageTag: 23b6beb0-3cfd-4a8d-ab42-d14e4e4d98d8
+		summarizeBy: sum
+		sourceColumn: 甲指土建预计结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指机电预计结算收益率
+		dataType: double
+		lineageTag: 03861446-5b4b-464b-b05a-fbbe44c9d915
+		summarizeBy: sum
+		sourceColumn: 甲指机电预计结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 甲指预计结算收益率
+		dataType: double
+		lineageTag: e3ca621b-d787-4cd5-bccf-d782971f482e
+		summarizeBy: sum
+		sourceColumn: 甲指预计结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计结算收益率
+		dataType: double
+		lineageTag: 1a90d28e-087f-4055-9660-3c78632cecf6
+		summarizeBy: sum
+		sourceColumn: 预计结算收益率
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 建筑面积(㎡)
+		dataType: double
+		lineageTag: 3478ddea-0388-4c26-b2e8-648cfc057b61
+		summarizeBy: sum
+		sourceColumn: 建筑面积(㎡)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施土建单方造价（元）
+		dataType: double
+		lineageTag: 0ed604d2-defa-4fe9-9a70-4d8d5bbae93b
+		summarizeBy: sum
+		sourceColumn: 自施土建单方造价（元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施机电单方造价（元）
+		dataType: double
+		lineageTag: 2239d452-e675-4ff3-b2c7-a8108294b72b
+		summarizeBy: sum
+		sourceColumn: 自施机电单方造价（元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 自施单方造价（元）
+		dataType: double
+		lineageTag: e61bb06d-c9f0-4cdf-a638-1e1259285a3b
+		summarizeBy: sum
+		sourceColumn: 自施单方造价（元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 单方造价（元）
+		dataType: double
+		lineageTag: f56b6bfe-18c4-4406-889d-6b2d55cf4ad3
+		summarizeBy: sum
+		sourceColumn: 单方造价（元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款已回收（万元）
+		dataType: double
+		lineageTag: d67512cd-6382-41eb-bd1b-9b219a926633
+		summarizeBy: sum
+		sourceColumn: 工程款已回收（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 工程款回收比例
+		dataType: double
+		lineageTag: 3a21c5cc-c577-40eb-9286-96725bd5fafa
+		summarizeBy: sum
+		sourceColumn: 工程款回收比例
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 项目累计申请管理奖承诺成本降低额（万元）
+		dataType: double
+		lineageTag: 3c0af9d0-cb5c-4942-b93c-461303bcd2b1
+		summarizeBy: sum
+		sourceColumn: 项目累计申请管理奖承诺成本降低额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 结算分类
+		dataType: string
+		lineageTag: 50b0b1d5-2c3e-44bc-bef8-8406c96fb3ec
+		summarizeBy: none
+		sourceColumn: 结算分类
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 考核完工日期
+		dataType: string
+		lineageTag: 5e5d67fd-e0a9-4032-8a7e-0ad5228f856d
+		summarizeBy: none
+		sourceColumn: 考核完工日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 超完工日期月数
+		dataType: double
+		lineageTag: 1ab4bb46-db0f-45cd-a286-d7262a4a52fa
+		summarizeBy: sum
+		sourceColumn: 超完工日期月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 责任状日期
+		dataType: string
+		lineageTag: 1d490f73-903f-43f9-a332-7e7b3143fc2b
+		summarizeBy: none
+		sourceColumn: 责任状日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 超责任状月数
+		dataType: double
+		lineageTag: 2bbddfe0-572c-4465-ba94-1bd5212bf0f4
+		summarizeBy: sum
+		sourceColumn: 超责任状月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 业主结算预计完成时间
+		dataType: string
+		lineageTag: 4cefce4f-1f05-4a98-bcab-43f487480ee2
+		summarizeBy: none
+		sourceColumn: 业主结算预计完成时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 分包分供结算预计完成时间
+		dataType: string
+		lineageTag: 0051b826-6b0a-4e6c-b17f-2d53965a8c4d
+		summarizeBy: none
+		sourceColumn: 分包分供结算预计完成时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 业主结算签订日期
+		dataType: string
+		lineageTag: 7a418f5e-83ba-46f5-bde7-78450e4fbe6d
+		summarizeBy: none
+		sourceColumn: 业主结算签订日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 业主结算时长
+		dataType: double
+		lineageTag: 4dd08fd1-9cf1-43dc-927e-e17b29d90f96
+		summarizeBy: sum
+		sourceColumn: 业主结算时长
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 成本锁定是否完成
+		dataType: string
+		lineageTag: 1b1799be-f04f-4a3d-9889-50bd17cadfda
+		summarizeBy: none
+		sourceColumn: 成本锁定是否完成
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目期初成本锁定额（万元）
+		dataType: double
+		lineageTag: 7d2a9c75-7716-44ec-b1c6-f76ffaaff8ac
+		summarizeBy: sum
+		sourceColumn: 项目期初成本锁定额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 开工日期
+		dataType: string
+		lineageTag: 793ba986-e42b-4cfb-ad3c-4318b641ac9d
+		summarizeBy: none
+		sourceColumn: 开工日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 结算进展情况
+		dataType: string
+		lineageTag: e7014834-7319-458c-b041-e44bda6ca8ee
+		summarizeBy: none
+		sourceColumn: 结算进展情况
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 分包分供结算完成情况
+		dataType: string
+		lineageTag: d9ebca64-0453-4369-98b1-221c024ef2d8
+		summarizeBy: none
+		sourceColumn: 分包分供结算完成情况
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 结算尚遗留问题
+		dataType: string
+		lineageTag: e96d9f43-8a14-4951-936f-5212afa8e64b
+		summarizeBy: none
+		sourceColumn: 结算尚遗留问题
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 填报人
+		dataType: string
+		lineageTag: 1aacf48a-839a-4e11-adcd-50271c0ed029
+		summarizeBy: none
+		sourceColumn: 填报人
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 填报日期
+		dataType: string
+		lineageTag: 951b3ec3-d438-495d-af81-5a41e158dde7
+		summarizeBy: none
+		sourceColumn: 填报日期
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 提交者
+		dataType: string
+		lineageTag: 71acf558-b443-4902-a7ac-07a9782e57bc
+		summarizeBy: none
+		sourceColumn: 提交者
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 创建时间
+		dataType: string
+		lineageTag: b41ae477-eaab-4952-8015-f00aa0a6e8d9
+		summarizeBy: none
+		sourceColumn: 创建时间
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 局管控状态
+		dataType: string
+		lineageTag: 9e596fde-ddab-4af0-afe0-905600f2268f
+		summarizeBy: none
+		sourceColumn: 局管控状态
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Column109
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9a4d80d7-9859-4428-9a01-5378de616587
+		summarizeBy: none
+		sourceColumn: Column109
+
+		variation 变体
+			isDefault
+			relationship: 134a4295-405d-48bd-baac-3c2b1ebf87f1
+			defaultHierarchy: LocalDateTable_6d3774d3-4065-45e9-8a7a-2fb80fa70e57.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Column110
+		dataType: double
+		lineageTag: f702eb4c-97bb-4bca-8b2e-1ee95297ed1e
+		summarizeBy: sum
+		sourceColumn: Column110
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 已竣已结-4b342907-f592-40e5-9f48-b6da324ae16f = m
+		mode: import
+		source =
+				let
+				    源 = Excel.Workbook(File.Contents("Y:\经营分析会\2020-1季度\已竣已结项目情况.xls"), null, true),
+				    已竣已结1 = 源{[Name="已竣已结"]}[Data],
+				    提升的标题 = Table.PromoteHeaders(已竣已结1, [PromoteAllScalars=true]),
+				    更改的类型 = Table.TransformColumnTypes(提升的标题,{{"评审状态", type text}, {"业务单号", type text}, {"业务年", Int64.Type}, {"业务月", Int64.Type}, {"业主结算年度", Int64.Type}, {"业主结算状态", type text}, {"分包分供结算", type text}, {"项目编码", type text}, {"项目编号", type text}, {"项目名称", type text}, {"合同签订年份", type text}, {"成本主办", type text}, {"产值所属分公司", type text}, {"大客户", type text}, {"所属板块", type text}, {"所属类型", type text}, {"管理考核节点", Int64.Type}, {"总部联络人", type text}, {"项目总监", type text}, {"项目总监联系电话", type text}, {"项目经理", type text}, {"项目经理联系电话", type text}, {"商务经理", type text}, {"商务经理联系电话", Int64.Type}, {"其中：自施土建初始合同收入（万元）", type number}, {"其中：自施机电初始合同收入（万元）", type number}, {"自施初始合同收入（万元）", type number}, {"其中：甲指土建初始合同收入（万元）", type number}, {"其中：甲指机电初始合同收入（万元）", type number}, {"甲指初始合同收入（万元）", type number}, {"初始合同收入（万元）", type number}, {"自施土建预计结算额（万元）", type number}, {"自施机电预计结算额（万元）", type number}, {"自施预计结算额（万元）", type number}, {"甲指土建预计结算额（万元）", type number}, {"甲指机电预计结算额（万元）", type number}, {"甲指预计结算额（万元）", type number}, {"预计结算额（万元）", type number}, {"自施土建核定收益率", type number}, {"自施机电核定收益率", type number}, {"自施核定收益率", type number}, {"甲指土建核定收益率", type number}, {"甲指机电核定收益率", type number}, {"甲指核定收益率", type number}, {"核定收益率", type number}, {"自施土建成本锁定（万元）", type number}, {"自施机电成本锁定（万元）", type number}, {"自施成本锁定（万元）", type number}, {"甲指土建成本锁定（万元）", type number}, {"甲指机电成本锁定（万元）", type number}, {"甲指成本锁定（万元）", type number}, {"成本锁定（万元）", type number}, {"自施土建核定收益额（万元）", type number}, {"自施机电核定收益额（万元）", type number}, {"自施核定收益额（万元）", type number}, {"甲指土建核定收益额（万元）", Int64.Type}, {"甲指机电核定收益额（万元）", Int64.Type}, {"甲指核定收益额（万元）", type number}, {"核定收益额（万元）", type number}, {"自施土建预计成本降低（万元）", type number}, {"自施机电预计成本降低（万元）", type number}, {"自施预计成本降低（万元）", type number}, {"甲指土建预计成本降低（万元）", type number}, {"甲指机电预计成本降低（万元）", type number}, {"甲指预计成本降低（万元）", type number}, {"预计成本降低（万元）", type number}, {"自施土建预计总收益额（万元）", type number}, {"自施机电预计总收益额（万元）", type number}, {"自施预计总收益额（万元）", type number}, {"甲指土建预计总收益额（万元）", type number}, {"甲指机电预计总收益额（万元）", type number}, {"甲指预计总收益额（万元）", type number}, {"预计总收益额（万元）", type number}, {"自施土建预计结算收益率", type number}, {"自施机电预计结算收益率", type number}, {"自施预计结算收益率", type number}, {"甲指土建预计结算收益率", type number}, {"甲指机电预计结算收益率", type number}, {"甲指预计结算收益率", type number}, {"预计结算收益率", type number}, {"建筑面积(㎡)", type number}, {"自施土建单方造价（元）", type number}, {"自施机电单方造价（元）", type number}, {"自施单方造价（元）", type number}, {"单方造价（元）", type number}, {"工程款已回收（万元）", type number}, {"工程款回收比例", type number}, {"项目累计申请管理奖承诺成本降低额（万元）", type number}, {"结算分类", type text}, {"考核完工日期", type text}, {"超完工日期月数", type number}, {"责任状日期", type text}, {"超责任状月数", type number}, {"业主结算预计完成时间", type text}, {"分包分供结算预计完成时间", type text}, {"业主结算签订日期", type text}, {"业主结算时长", type number}, {"成本锁定是否完成", type text}, {"项目期初成本锁定额（万元）", type number}, {"开工日期", type text}, {"结算进展情况", type text}, {"分包分供结算完成情况", type text}, {"结算尚遗留问题", type text}, {"填报人", type text}, {"填报日期", type text}, {"提交者", type text}, {"创建时间", type text}, {"局管控状态", type text}, {"Column109", type date}, {"Column110", type number}}),
+				    筛选的行 = Table.SelectRows(更改的类型, each [项目名称] <> "唐山橡树湾（一期）" and [项目名称] <> "唐山橡树湾（二期）")
+				in
+				    筛选的行
+
+	annotation PBI_QueryRelationships = {"columnCount":110,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/已竣已结/更改的类型.{评审状态,0}","Section1/已竣已结/更改的类型.{业务单号,1}","Section1/已竣已结/更改的类型.{业务年,2}","Section1/已竣已结/更改的类型.{业务月,3}","Section1/已竣已结/更改的类型.{业主结算年度,4}","Section1/已竣已结/更改的类型.{业主结算状态,5}","Section1/已竣已结/更改的类型.{分包分供结算,6}","Section1/已竣已结/更改的类型.{项目编码,7}","Section1/已竣已结/更改的类型.{项目编号,8}","Section1/已竣已结/更改的类型.{项目名称,9}","Section1/已竣已结/更改的类型.{合同签订年份,10}","Section1/已竣已结/更改的类型.{成本主办,11}","Section1/已竣已结/更改的类型.{产值所属分公司,12}","Section1/已竣已结/更改的类型.{大客户,13}","Section1/已竣已结/更改的类型.{所属板块,14}","Section1/已竣已结/更改的类型.{所属类型,15}","Section1/已竣已结/更改的类型.{管理考核节点,16}","Section1/已竣已结/更改的类型.{总部联络人,17}","Section1/已竣已结/更改的类型.{项目总监,18}","Section1/已竣已结/更改的类型.{项目总监联系电话,19}","Section1/已竣已结/更改的类型.{项目经理,20}","Section1/已竣已结/更改的类型.{项目经理联系电话,21}","Section1/已竣已结/更改的类型.{商务经理,22}","Section1/已竣已结/更改的类型.{商务经理联系电话,23}","Section1/已竣已结/更改的类型.{其中：自施土建初始合同收入（万元）,24}","Section1/已竣已结/更改的类型.{其中：自施机电初始合同收入（万元）,25}","Section1/已竣已结/更改的类型.{自施初始合同收入（万元）,26}","Section1/已竣已结/更改的类型.{其中：甲指土建初始合同收入（万元）,27}","Section1/已竣已结/更改的类型.{其中：甲指机电初始合同收入（万元）,28}","Section1/已竣已结/更改的类型.{甲指初始合同收入（万元）,29}","Section1/已竣已结/更改的类型.{初始合同收入（万元）,30}","Section1/已竣已结/更改的类型.{自施土建预计结算额（万元）,31}","Section1/已竣已结/更改的类型.{自施机电预计结算额（万元）,32}","Section1/已竣已结/更改的类型.{自施预计结算额（万元）,33}","Section1/已竣已结/更改的类型.{甲指土建预计结算额（万元）,34}","Section1/已竣已结/更改的类型.{甲指机电预计结算额（万元）,35}","Section1/已竣已结/更改的类型.{甲指预计结算额（万元）,36}","Section1/已竣已结/更改的类型.{预计结算额（万元）,37}","Section1/已竣已结/更改的类型.{自施土建核定收益率,38}","Section1/已竣已结/更改的类型.{自施机电核定收益率,39}","Section1/已竣已结/更改的类型.{自施核定收益率,40}","Section1/已竣已结/更改的类型.{甲指土建核定收益率,41}","Section1/已竣已结/更改的类型.{甲指机电核定收益率,42}","Section1/已竣已结/更改的类型.{甲指核定收益率,43}","Section1/已竣已结/更改的类型.{核定收益率,44}","Section1/已竣已结/更改的类型.{自施土建成本锁定（万元）,45}","Section1/已竣已结/更改的类型.{自施机电成本锁定（万元）,46}","Section1/已竣已结/更改的类型.{自施成本锁定（万元）,47}","Section1/已竣已结/更改的类型.{甲指土建成本锁定（万元）,48}","Section1/已竣已结/更改的类型.{甲指机电成本锁定（万元）,49}","Section1/已竣已结/更改的类型.{甲指成本锁定（万元）,50}","Section1/已竣已结/更改的类型.{成本锁定（万元）,51}","Section1/已竣已结/更改的类型.{自施土建核定收益额（万元）,52}","Section1/已竣已结/更改的类型.{自施机电核定收益额（万元）,53}","Section1/已竣已结/更改的类型.{自施核定收益额（万元）,54}","Section1/已竣已结/更改的类型.{甲指土建核定收益额（万元）,55}","Section1/已竣已结/更改的类型.{甲指机电核定收益额（万元）,56}","Section1/已竣已结/更改的类型.{甲指核定收益额（万元）,57}","Section1/已竣已结/更改的类型.{核定收益额（万元）,58}","Section1/已竣已结/更改的类型.{自施土建预计成本降低（万元）,59}","Section1/已竣已结/更改的类型.{自施机电预计成本降低（万元）,60}","Section1/已竣已结/更改的类型.{自施预计成本降低（万元）,61}","Section1/已竣已结/更改的类型.{甲指土建预计成本降低（万元）,62}","Section1/已竣已结/更改的类型.{甲指机电预计成本降低（万元）,63}","Section1/已竣已结/更改的类型.{甲指预计成本降低（万元）,64}","Section1/已竣已结/更改的类型.{预计成本降低（万元）,65}","Section1/已竣已结/更改的类型.{自施土建预计总收益额（万元）,66}","Section1/已竣已结/更改的类型.{自施机电预计总收益额（万元）,67}","Section1/已竣已结/更改的类型.{自施预计总收益额（万元）,68}","Section1/已竣已结/更改的类型.{甲指土建预计总收益额（万元）,69}","Section1/已竣已结/更改的类型.{甲指机电预计总收益额（万元）,70}","Section1/已竣已结/更改的类型.{甲指预计总收益额（万元）,71}","Section1/已竣已结/更改的类型.{预计总收益额（万元）,72}","Section1/已竣已结/更改的类型.{自施土建预计结算收益率,73}","Section1/已竣已结/更改的类型.{自施机电预计结算收益率,74}","Section1/已竣已结/更改的类型.{自施预计结算收益率,75}","Section1/已竣已结/更改的类型.{甲指土建预计结算收益率,76}","Section1/已竣已结/更改的类型.{甲指机电预计结算收益率,77}","Section1/已竣已结/更改的类型.{甲指预计结算收益率,78}","Section1/已竣已结/更改的类型.{预计结算收益率,79}","Section1/已竣已结/更改的类型.{建筑面积(㎡),80}","Section1/已竣已结/更改的类型.{自施土建单方造价（元）,81}","Section1/已竣已结/更改的类型.{自施机电单方造价（元）,82}","Section1/已竣已结/更改的类型.{自施单方造价（元）,83}","Section1/已竣已结/更改的类型.{单方造价（元）,84}","Section1/已竣已结/更改的类型.{工程款已回收（万元）,85}","Section1/已竣已结/更改的类型.{工程款回收比例,86}","Section1/已竣已结/更改的类型.{项目累计申请管理奖承诺成本降低额（万元）,87}","Section1/已竣已结/更改的类型.{结算分类,88}","Section1/已竣已结/更改的类型.{考核完工日期,89}","Section1/已竣已结/更改的类型.{超完工日期月数,90}","Section1/已竣已结/更改的类型.{责任状日期,91}","Section1/已竣已结/更改的类型.{超责任状月数,92}","Section1/已竣已结/更改的类型.{业主结算预计完成时间,93}","Section1/已竣已结/更改的类型.{分包分供结算预计完成时间,94}","Section1/已竣已结/更改的类型.{业主结算签订日期,95}","Section1/已竣已结/更改的类型.{业主结算时长,96}","Section1/已竣已结/更改的类型.{成本锁定是否完成,97}","Section1/已竣已结/更改的类型.{项目期初成本锁定额（万元）,98}","Section1/已竣已结/更改的类型.{开工日期,99}","Section1/已竣已结/更改的类型.{结算进展情况,100}","Section1/已竣已结/更改的类型.{分包分供结算完成情况,101}","Section1/已竣已结/更改的类型.{结算尚遗留问题,102}","Section1/已竣已结/更改的类型.{填报人,103}","Section1/已竣已结/更改的类型.{填报日期,104}","Section1/已竣已结/更改的类型.{提交者,105}","Section1/已竣已结/更改的类型.{创建时间,106}","Section1/已竣已结/更改的类型.{局管控状态,107}","Section1/已竣已结/更改的类型.{Column109,108}","Section1/已竣已结/更改的类型.{Column110,109}"],"ColumnCount":110,"KeyColumnNames":[],"ColumnIdentities":["Section1/已竣已结/更改的类型.{评审状态,0}","Section1/已竣已结/更改的类型.{业务单号,1}","Section1/已竣已结/更改的类型.{业务年,2}","Section1/已竣已结/更改的类型.{业务月,3}","Section1/已竣已结/更改的类型.{业主结算年度,4}","Section1/已竣已结/更改的类型.{业主结算状态,5}","Section1/已竣已结/更改的类型.{分包分供结算,6}","Section1/已竣已结/更改的类型.{项目编码,7}","Section1/已竣已结/更改的类型.{项目编号,8}","Section1/已竣已结/更改的类型.{项目名称,9}","Section1/已竣已结/更改的类型.{合同签订年份,10}","Section1/已竣已结/更改的类型.{成本主办,11}","Section1/已竣已结/更改的类型.{产值所属分公司,12}","Section1/已竣已结/更改的类型.{大客户,13}","Section1/已竣已结/更改的类型.{所属板块,14}","Section1/已竣已结/更改的类型.{所属类型,15}","Section1/已竣已结/更改的类型.{管理考核节点,16}","Section1/已竣已结/更改的类型.{总部联络人,17}","Section1/已竣已结/更改的类型.{项目总监,18}","Section1/已竣已结/更改的类型.{项目总监联系电话,19}","Section1/已竣已结/更改的类型.{项目经理,20}","Section1/已竣已结/更改的类型.{项目经理联系电话,21}","Section1/已竣已结/更改的类型.{商务经理,22}","Section1/已竣已结/更改的类型.{商务经理联系电话,23}","Section1/已竣已结/更改的类型.{其中：自施土建初始合同收入（万元）,24}","Section1/已竣已结/更改的类型.{其中：自施机电初始合同收入（万元）,25}","Section1/已竣已结/更改的类型.{自施初始合同收入（万元）,26}","Section1/已竣已结/更改的类型.{其中：甲指土建初始合同收入（万元）,27}","Section1/已竣已结/更改的类型.{其中：甲指机电初始合同收入（万元）,28}","Section1/已竣已结/更改的类型.{甲指初始合同收入（万元）,29}","Section1/已竣已结/更改的类型.{初始合同收入（万元）,30}","Section1/已竣已结/更改的类型.{自施土建预计结算额（万元）,31}","Section1/已竣已结/更改的类型.{自施机电预计结算额（万元）,32}","Section1/已竣已结/更改的类型.{自施预计结算额（万元）,33}","Section1/已竣已结/更改的类型.{甲指土建预计结算额（万元）,34}","Section1/已竣已结/更改的类型.{甲指机电预计结算额（万元）,35}","Section1/已竣已结/更改的类型.{甲指预计结算额（万元）,36}","Section1/已竣已结/更改的类型.{预计结算额（万元）,37}","Section1/已竣已结/更改的类型.{自施土建核定收益率,38}","Section1/已竣已结/更改的类型.{自施机电核定收益率,39}","Section1/已竣已结/更改的类型.{自施核定收益率,40}","Section1/已竣已结/更改的类型.{甲指土建核定收益率,41}","Section1/已竣已结/更改的类型.{甲指机电核定收益率,42}","Section1/已竣已结/更改的类型.{甲指核定收益率,43}","Section1/已竣已结/更改的类型.{核定收益率,44}","Section1/已竣已结/更改的类型.{自施土建成本锁定（万元）,45}","Section1/已竣已结/更改的类型.{自施机电成本锁定（万元）,46}","Section1/已竣已结/更改的类型.{自施成本锁定（万元）,47}","Section1/已竣已结/更改的类型.{甲指土建成本锁定（万元）,48}","Section1/已竣已结/更改的类型.{甲指机电成本锁定（万元）,49}","Section1/已竣已结/更改的类型.{甲指成本锁定（万元）,50}","Section1/已竣已结/更改的类型.{成本锁定（万元）,51}","Section1/已竣已结/更改的类型.{自施土建核定收益额（万元）,52}","Section1/已竣已结/更改的类型.{自施机电核定收益额（万元）,53}","Section1/已竣已结/更改的类型.{自施核定收益额（万元）,54}","Section1/已竣已结/更改的类型.{甲指土建核定收益额（万元）,55}","Section1/已竣已结/更改的类型.{甲指机电核定收益额（万元）,56}","Section1/已竣已结/更改的类型.{甲指核定收益额（万元）,57}","Section1/已竣已结/更改的类型.{核定收益额（万元）,58}","Section1/已竣已结/更改的类型.{自施土建预计成本降低（万元）,59}","Section1/已竣已结/更改的类型.{自施机电预计成本降低（万元）,60}","Section1/已竣已结/更改的类型.{自施预计成本降低（万元）,61}","Section1/已竣已结/更改的类型.{甲指土建预计成本降低（万元）,62}","Section1/已竣已结/更改的类型.{甲指机电预计成本降低（万元）,63}","Section1/已竣已结/更改的类型.{甲指预计成本降低（万元）,64}","Section1/已竣已结/更改的类型.{预计成本降低（万元）,65}","Section1/已竣已结/更改的类型.{自施土建预计总收益额（万元）,66}","Section1/已竣已结/更改的类型.{自施机电预计总收益额（万元）,67}","Section1/已竣已结/更改的类型.{自施预计总收益额（万元）,68}","Section1/已竣已结/更改的类型.{甲指土建预计总收益额（万元）,69}","Section1/已竣已结/更改的类型.{甲指机电预计总收益额（万元）,70}","Section1/已竣已结/更改的类型.{甲指预计总收益额（万元）,71}","Section1/已竣已结/更改的类型.{预计总收益额（万元）,72}","Section1/已竣已结/更改的类型.{自施土建预计结算收益率,73}","Section1/已竣已结/更改的类型.{自施机电预计结算收益率,74}","Section1/已竣已结/更改的类型.{自施预计结算收益率,75}","Section1/已竣已结/更改的类型.{甲指土建预计结算收益率,76}","Section1/已竣已结/更改的类型.{甲指机电预计结算收益率,77}","Section1/已竣已结/更改的类型.{甲指预计结算收益率,78}","Section1/已竣已结/更改的类型.{预计结算收益率,79}","Section1/已竣已结/更改的类型.{建筑面积(㎡),80}","Section1/已竣已结/更改的类型.{自施土建单方造价（元）,81}","Section1/已竣已结/更改的类型.{自施机电单方造价（元）,82}","Section1/已竣已结/更改的类型.{自施单方造价（元）,83}","Section1/已竣已结/更改的类型.{单方造价（元）,84}","Section1/已竣已结/更改的类型.{工程款已回收（万元）,85}","Section1/已竣已结/更改的类型.{工程款回收比例,86}","Section1/已竣已结/更改的类型.{项目累计申请管理奖承诺成本降低额（万元）,87}","Section1/已竣已结/更改的类型.{结算分类,88}","Section1/已竣已结/更改的类型.{考核完工日期,89}","Section1/已竣已结/更改的类型.{超完工日期月数,90}","Section1/已竣已结/更改的类型.{责任状日期,91}","Section1/已竣已结/更改的类型.{超责任状月数,92}","Section1/已竣已结/更改的类型.{业主结算预计完成时间,93}","Section1/已竣已结/更改的类型.{分包分供结算预计完成时间,94}","Section1/已竣已结/更改的类型.{业主结算签订日期,95}","Section1/已竣已结/更改的类型.{业主结算时长,96}","Section1/已竣已结/更改的类型.{成本锁定是否完成,97}","Section1/已竣已结/更改的类型.{项目期初成本锁定额（万元）,98}","Section1/已竣已结/更改的类型.{开工日期,99}","Section1/已竣已结/更改的类型.{结算进展情况,100}","Section1/已竣已结/更改的类型.{分包分供结算完成情况,101}","Section1/已竣已结/更改的类型.{结算尚遗留问题,102}","Section1/已竣已结/更改的类型.{填报人,103}","Section1/已竣已结/更改的类型.{填报日期,104}","Section1/已竣已结/更改的类型.{提交者,105}","Section1/已竣已结/更改的类型.{创建时间,106}","Section1/已竣已结/更改的类型.{局管控状态,107}","Section1/已竣已结/更改的类型.{Column109,108}","Section1/已竣已结/更改的类型.{Column110,109}"],"RelationshipInfo":[]}
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

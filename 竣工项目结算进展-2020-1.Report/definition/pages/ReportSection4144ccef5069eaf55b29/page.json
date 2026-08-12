@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "ReportSection4144ccef5069eaf55b29",
+  "displayName": "局考核项目整体情况",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 960,
+  "pageBinding": {
+    "name": "Pod10",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "201L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

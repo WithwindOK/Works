@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "250787e36858caaa00c8",
+  "position": {
+    "x": 488.8235294117647,
+    "y": 23.823529411764707,
+    "z": 0,
+    "height": 680.2941176470589,
+    "width": 455.29411764705884
+  },
+  "visual": {
+    "visualType": "TextEnhancerByMAQ46ASG0293G65JY43S89DKJ9",
+    "query": {
+      "queryState": {
+        "category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "发展竣工项目结算进展"
+                    }
+                  },
+                  "Property": "结算进展情况"
+                }
+              },
+              "queryRef": "发展竣工项目结算进展2.结算进展情况"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

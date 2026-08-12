@@ -1,0 +1,84 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY18SU07",
+      "reportVersionAtImport": {
+        "visual": "1.8.29",
+        "report": "2.0.29",
+        "page": "1.3.29"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY18SU07",
+          "path": "BaseThemes/CY18SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "DonutChartGMO1461469098694",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "DonutChartGMO1461469098694.pbiviz.json",
+          "path": "DonutChartGMO1461469098694.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "TextEnhancerByMAQ46ASG0293G65JY43S89DKJ9",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "TextEnhancerByMAQ46ASG0293G65JY43S89DKJ9.pbiviz.json",
+          "path": "TextEnhancerByMAQ46ASG0293G65JY43S89DKJ9.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "useEnhancedTooltips": false
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

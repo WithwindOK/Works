@@ -1,0 +1,79 @@
+expression FolderPath = "\\172.16.8.66\经营分析\经营分析会\2019-3季度" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 8815bfe4-1512-4b3f-9091-3c32dcf5a6ca
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Text
+
+expression 发展竣工项目结算进展-机电 =
+		let
+		    源 = Excel.Workbook(File.Contents("\\172.16.8.66\经营分析\经营分析会\2019-1季度\竣工项目结算进展\凌冬伟-竣工项目结算进展 -机电独立承包项目.xlsx"), null, true),
+		    表1_Table = 源{[Item="表1",Kind="Table"]}[Data],
+		    更改的类型 = Table.TransformColumnTypes(表1_Table,{{"序号", Int64.Type}, {"结算年度", Int64.Type}, {"报出状态", type text}, {"产值所属分公司", type text}, {"大客户", type text}, {"业主结算状态", type text}, {"分包分供结算", type text}, {"项目编号", type text}, {"项目名称", type text}, {"合同签订年份", type any}, {"主办", type text}, {"总部联络人", type text}, {"项目经理", type text}, {"联系电话", type any}, {"商务经理", type text}, {"联系电话2", type any}, {"预计结算额", type number}, {"预计自施结算额", type number}, {"预收益率", type number}, {"考核完工日期", type date}, {"超完工日期", type number}, {"成本锁定", type any}, {"核定收益额", type number}, {"预计成本降低", type number}, {"预计总收益额", type number}, {"预计结算收益率", type number}, {"预计自施结算收益率", type number}, {"结算分类", type text}, {"2019.3.1承诺结算书归档时间", type datetime}, {"责任状日期", type date}, {"超期月数", type number}, {"进展说明", type text}, {"成本锁定是否完成", type text}, {"结算签订日期", type date}, {"项目期初成本锁定额", type number}, {"开工日期", type date}, {"列1", Int64.Type}})
+		in
+		    更改的类型
+	lineageTag: 0098f5f9-49fb-4a9f-94f4-b30f3ea8385e
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 项目信息 =
+		let
+		    源 = Oracle.Database("172.16.8.78/oracledb", [HierarchicalNavigation=true]),
+		    MD = 源{[Schema="MD"]}[Data],
+		    MD_XIANGMUXINXI1 = MD{[Name="MD_XIANGMUXINXI"]}[Data],
+		    重命名的列 = Table.RenameColumns(MD_XIANGMUXINXI1,{{"FXMBIANMA", "项目编码"}, {"FXMQUANCHENG", "项目名称"}, {"FXMZONGJIAN", "项目总监"}, {"FZHUANYEFL", "专业分类"}, {"FXMXINGZHI", "项目性质"}, {"FJNWFB", "京内外"}, {"FQUYU", "行政区域"}, {"FSHENG", "省"}, {"FCHENGSHI", "城市"}, {"FXIAN", "区县"}, {"FXMSSZT", "项目实施状态"}, {"FGCLBYJ", "工程类别一级"}, {"FGCLBEJ", "工程类别二级"}, {"FXMJSZT", "项目结算状态"}, {"FXMSZDKH", "项目所属大客户"}, {"FSFTZJZXM", "是否投资建造项目"}, {"FPINGSHENZHUANGTAIID", "FPINGSHENZHUANGTAIID"}, {"FZHIGUANJGXG", "直管机构"}, {"FXIANGMULEIXING", "项目类型"}, {"FZONGJIANTUANDUI", "所属总监团队"}, {"FXMCAIWUZHUANGTAI", "项目财务状态"}, {"FYWBK", "业务板块"}, {"FTUJIANHEDINGSYL", "土建核定收益率"}, {"FJIDIANHEDINGSYL", "机电核定收益率"}, {"FZONGHEHEDINGSYL", "综合核定收益率"}, {"FTUJIANHEDINGSYLJZ", "土建甲指核定收益率"}, {"FJIDIANHEDINGSYLJZ", "机电甲指核定收益率"}, {"FCHANGFANGSHIYEBU", "厂房事业部"}}),
+		    删除的其他列 = Table.SelectColumns(重命名的列,{"项目编码", "项目名称", "项目总监", "专业分类", "项目性质", "京内外", "行政区域", "省", "城市", "区县", "项目实施状态", "工程类别一级", "工程类别二级", "项目结算状态", "项目所属大客户", "是否投资建造项目", "土建核定收益率", "机电核定收益率", "综合核定收益率", "项目类型", "直管机构", "土建甲指核定收益率", "机电甲指核定收益率", "厂房事业部", "所属总监团队", "项目财务状态", "业务板块"}),
+		    Buffer一下预防出错 = Table.Buffer(删除的其他列),
+		    已添加条件列 = Table.AddColumn(Buffer一下预防出错, "责任体区域", each if [京内外] = "国际" then "海外" else if [厂房事业部] <> null then [厂房事业部] else if [直管机构] <> "公司" then [直管机构] else "公司直营")
+		in
+		    已添加条件列
+	lineageTag: cae99e2e-46e5-4c63-b63f-ab48478fb3f6
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression '已竣已结 (2)' =
+		let
+		    源 = Excel.Workbook(File.Contents("Y:\经营分析会\2020-1季度\已竣已结项目情况.xls"), null, true),
+		    已竣已结1 = 源{[Name="已竣已结"]}[Data],
+		    提升的标题 = Table.PromoteHeaders(已竣已结1, [PromoteAllScalars=true]),
+		    更改的类型 = Table.TransformColumnTypes(提升的标题,{{"评审状态", type text}, {"业务单号", type text}, {"业务年", Int64.Type}, {"业务月", Int64.Type}, {"业主结算年度", Int64.Type}, {"业主结算状态", type text}, {"分包分供结算", type text}, {"项目编码", type text}, {"项目编号", type text}, {"项目名称", type text}, {"合同签订年份", type text}, {"成本主办", type text}, {"产值所属分公司", type text}, {"大客户", type text}, {"所属板块", type text}, {"所属类型", type text}, {"管理考核节点", Int64.Type}, {"总部联络人", type text}, {"项目总监", type text}, {"项目总监联系电话", type text}, {"项目经理", type text}, {"项目经理联系电话", type text}, {"商务经理", type text}, {"商务经理联系电话", Int64.Type}, {"其中：自施土建初始合同收入（万元）", type number}, {"其中：自施机电初始合同收入（万元）", type number}, {"自施初始合同收入（万元）", type number}, {"其中：甲指土建初始合同收入（万元）", type number}, {"其中：甲指机电初始合同收入（万元）", type number}, {"甲指初始合同收入（万元）", type number}, {"初始合同收入（万元）", type number}, {"自施土建预计结算额（万元）", type number}, {"自施机电预计结算额（万元）", type number}, {"自施预计结算额（万元）", type number}, {"甲指土建预计结算额（万元）", type number}, {"甲指机电预计结算额（万元）", type number}, {"甲指预计结算额（万元）", type number}, {"预计结算额（万元）", type number}, {"自施土建核定收益率", type number}, {"自施机电核定收益率", type number}, {"自施核定收益率", type number}, {"甲指土建核定收益率", type number}, {"甲指机电核定收益率", type number}, {"甲指核定收益率", type number}, {"核定收益率", type number}, {"自施土建成本锁定（万元）", type number}, {"自施机电成本锁定（万元）", type number}, {"自施成本锁定（万元）", type number}, {"甲指土建成本锁定（万元）", type number}, {"甲指机电成本锁定（万元）", type number}, {"甲指成本锁定（万元）", type number}, {"成本锁定（万元）", type number}, {"自施土建核定收益额（万元）", type number}, {"自施机电核定收益额（万元）", type number}, {"自施核定收益额（万元）", type number}, {"甲指土建核定收益额（万元）", Int64.Type}, {"甲指机电核定收益额（万元）", Int64.Type}, {"甲指核定收益额（万元）", type number}, {"核定收益额（万元）", type number}, {"自施土建预计成本降低（万元）", type number}, {"自施机电预计成本降低（万元）", type number}, {"自施预计成本降低（万元）", type number}, {"甲指土建预计成本降低（万元）", type number}, {"甲指机电预计成本降低（万元）", type number}, {"甲指预计成本降低（万元）", type number}, {"预计成本降低（万元）", type number}, {"自施土建预计总收益额（万元）", type number}, {"自施机电预计总收益额（万元）", type number}, {"自施预计总收益额（万元）", type number}, {"甲指土建预计总收益额（万元）", type number}, {"甲指机电预计总收益额（万元）", type number}, {"甲指预计总收益额（万元）", type number}, {"预计总收益额（万元）", type number}, {"自施土建预计结算收益率", type number}, {"自施机电预计结算收益率", type number}, {"自施预计结算收益率", type number}, {"甲指土建预计结算收益率", type number}, {"甲指机电预计结算收益率", type number}, {"甲指预计结算收益率", type number}, {"预计结算收益率", type number}, {"建筑面积(㎡)", type number}, {"自施土建单方造价（元）", type number}, {"自施机电单方造价（元）", type number}, {"自施单方造价（元）", type number}, {"单方造价（元）", type number}, {"工程款已回收（万元）", type number}, {"工程款回收比例", type number}, {"项目累计申请管理奖承诺成本降低额（万元）", type number}, {"结算分类", type text}, {"考核完工日期", type text}, {"超完工日期月数", type number}, {"责任状日期", type text}, {"超责任状月数", type number}, {"业主结算预计完成时间", type text}, {"分包分供结算预计完成时间", type text}, {"业主结算签订日期", type text}, {"业主结算时长", type number}, {"成本锁定是否完成", type text}, {"项目期初成本锁定额（万元）", type number}, {"开工日期", type text}, {"结算进展情况", type text}, {"分包分供结算完成情况", type text}, {"结算尚遗留问题", type text}, {"填报人", type text}, {"填报日期", type text}, {"提交者", type text}, {"创建时间", type text}, {"局管控状态", type text}, {"Column109", type date}, {"Column110", type number}})
+		in
+		    更改的类型
+	lineageTag: 82d40e5b-c4cf-42b0-81d1-678832c12f29
+	queryGroup: 未上报局项目
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 已竣已结局管控不为空 =
+		let
+		    源 = #"已竣已结 (2)",
+		    筛选的行 = Table.SelectRows(源, each ([局管控状态] <> null)),
+		    删除的副本 = Table.Distinct(筛选的行, {"项目名称"})
+		in
+		    删除的副本
+	lineageTag: 535631a7-2651-49f9-a39f-103f9f45b6d0
+	queryGroup: 未上报局项目
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
+expression 已竣已结局管控为空 =
+		let
+		    源 = #"已竣已结 (2)",
+		    筛选的行 = Table.SelectRows(源, each ([局管控状态] = null))
+		in
+		    筛选的行
+	lineageTag: 285ae1dc-51c2-4d58-97f2-6ada5eb2b2cd
+	queryGroup: 未上报局项目
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

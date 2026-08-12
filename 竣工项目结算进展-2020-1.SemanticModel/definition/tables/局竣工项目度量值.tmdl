@@ -1,0 +1,61 @@
+table 局竣工项目度量值
+	lineageTag: 12836ac5-9121-4f27-bc83-1b5fa9794ed9
+
+	measure 【分类项目占比】 = if(ISFILTERED('局竣工项目'[工程名称]),BLANK(),DIVIDE([【项目数】],CALCULATE([【项目数】],ALLEXCEPT('局竣工项目','局竣工项目'[类别]))))
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7478cfc7-923d-4946-a92d-b0c199967a34
+
+	measure 【项目数】 = DISTINCTCOUNT('局竣工项目'[工程名称])
+		formatString: 0
+		lineageTag: b3a23ab4-9099-4dad-be09-796b89d76a80
+
+	measure 【局核定收益额】 = SUM('局竣工项目'[核定收益额])
+		formatString: #,0.00
+		lineageTag: b2affbcc-14ed-40f8-a367-51a7ceff10f7
+
+	measure 【局结算金额】 = SUM('局竣工项目'[局结算金额])
+		formatString: #,0.00
+		lineageTag: 5bfc87ad-8135-4c5e-872a-785d68cbbb21
+
+	measure 【局结算收益额】 = sum('局竣工项目'[结算收益额1])
+		formatString: #,0.00
+		lineageTag: de0ce07c-2970-4007-9af1-914ed50be9d8
+
+	measure 【局预收益率】 = DIVIDE([【局结算收益额】],[【局自施结算额】])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3a997ad5-432b-477e-b386-cb3f617c2a2f
+
+	measure 【局自施结算额】 = SUM('局竣工项目'[局自施结算额])
+		formatString: #,0.00
+		lineageTag: efc6807e-145a-4d19-bf7f-bb8e04918fdd
+
+	measure 【预收益变现乘数】 = DIVIDE([【局结算收益额】],[【局核定收益额】])
+		lineageTag: d19b3acf-582e-4e60-9e2a-64096b7fc994
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '列 1'
+		dataType: string
+		lineageTag: 977be03b-fa7f-4174-b9b7-87edc0582787
+		summarizeBy: none
+		sourceColumn: 列 1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 局竣工项目度量值-316bdbc9-381e-4c1e-830a-acd7d021891c = m
+		mode: import
+		source =
+				let
+				    源 = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [#"列 1" = _t]),
+				    更改的类型 = Table.TransformColumnTypes(源,{{"列 1", type text}})
+				in
+				    更改的类型
+
+	annotation PBI_QueryRelationships = {"columnCount":1,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/局竣工项目度量值/更改的类型.{列 1,0}"],"ColumnCount":1,"KeyColumnNames":[],"ColumnIdentities":["Section1/局竣工项目度量值/更改的类型.{列 1,0}"],"RelationshipInfo":[]}
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+

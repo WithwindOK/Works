@@ -1,0 +1,34 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "617d785de6d7573056ac",
+  "position": {
+    "x": 16,
+    "y": 640,
+    "z": 3000,
+    "height": 56,
+    "width": 536
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "一类：竣工超过1.5年以上 二类：竣工1-1.5年",
+                    "textStyle": {
+                      "fontSize": "15pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

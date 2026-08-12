@@ -1,0 +1,454 @@
+table 发展竣工项目结算进展
+	lineageTag: f22cd9df-e578-454e-93fb-ef4f77bde550
+
+	column 评审状态
+		dataType: string
+		lineageTag: 45902bfc-e61a-48f0-b56d-ecc998bcc4b9
+		summarizeBy: none
+		sourceColumn: 评审状态
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 业务年
+		dataType: int64
+		formatString: 0
+		lineageTag: 57ab6118-ea03-486b-a92c-7953faec5b7f
+		summarizeBy: sum
+		sourceColumn: 业务年
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业务月
+		dataType: int64
+		formatString: 0
+		lineageTag: f2170a1d-357f-464f-9e8f-b3ea983d82b5
+		summarizeBy: sum
+		sourceColumn: 业务月
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主结算年度
+		dataType: string
+		lineageTag: 99ea5c77-752d-47a5-8f1e-3bcd21dc0de0
+		summarizeBy: none
+		sourceColumn: 业主结算年度
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 业主结算状态
+		dataType: string
+		lineageTag: 1cf8aac6-ea8b-4655-bee3-e63322445545
+		summarizeBy: none
+		sourceColumn: 业主结算状态
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 分包分供结算
+		dataType: string
+		lineageTag: fce23ea8-f6b5-48f1-82b1-561261ba7d39
+		summarizeBy: none
+		sourceColumn: 分包分供结算
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目编码
+		dataType: string
+		lineageTag: c745880a-ec55-4951-824c-4825eae9fd80
+		summarizeBy: none
+		sourceColumn: 项目编码
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目名称
+		dataType: string
+		lineageTag: 3c46b593-2684-439e-a88e-1a245cc8cc14
+		summarizeBy: none
+		sourceColumn: 项目名称
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 合同签订年份
+		dataType: string
+		lineageTag: b0d116f6-73f8-4898-9c61-b9c40de8e3c6
+		summarizeBy: none
+		sourceColumn: 合同签订年份
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 成本主办
+		dataType: string
+		lineageTag: 5d544e7b-2eda-4655-a366-5f02fd9d93e7
+		summarizeBy: none
+		sourceColumn: 成本主办
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 产值所属分公司
+		dataType: string
+		lineageTag: c99e6b5c-dea8-4cef-a574-a053752f85c7
+		summarizeBy: none
+		sourceColumn: 产值所属分公司
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 大客户
+		dataType: string
+		lineageTag: 6e58608e-a942-4ae1-8f4d-c1d66992bcfb
+		summarizeBy: none
+		sourceColumn: 大客户
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 所属板块
+		dataType: string
+		lineageTag: 06ac120e-6590-436d-ad3b-119e7fe19691
+		summarizeBy: none
+		sourceColumn: 所属板块
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 所属类型
+		dataType: string
+		lineageTag: 07575ed2-aeb5-450c-bf31-6794fa802956
+		summarizeBy: none
+		sourceColumn: 所属类型
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 总部联络人
+		dataType: string
+		lineageTag: 3a1ed6c1-8ef6-496b-8662-946f634e9a76
+		summarizeBy: none
+		sourceColumn: 总部联络人
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目总监
+		dataType: string
+		lineageTag: 72c61b9d-0688-43f6-9e08-66581507b21d
+		summarizeBy: none
+		sourceColumn: 项目总监
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目经理
+		dataType: string
+		lineageTag: f743ec09-0960-4e36-82dd-581bb82baa68
+		summarizeBy: none
+		sourceColumn: 项目经理
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 商务经理
+		dataType: string
+		lineageTag: 7d20324c-c8d3-4a83-b834-dc865719ff9b
+		summarizeBy: none
+		sourceColumn: 商务经理
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 结算尚遗留问题
+		dataType: string
+		lineageTag: 4db365ad-4005-4b9b-b7ba-8b5caf50d891
+		summarizeBy: none
+		sourceColumn: 结算尚遗留问题
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 分包分供结算完成情况
+		dataType: string
+		lineageTag: 5514782a-d49e-41b8-abf8-d5324e712850
+		summarizeBy: none
+		sourceColumn: 分包分供结算完成情况
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 结算进展情况
+		dataType: string
+		lineageTag: 09cf6b8e-3c68-438f-88fb-642cf218e51b
+		summarizeBy: none
+		sourceColumn: 结算进展情况
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 项目期初成本锁定额（万元）
+		dataType: double
+		lineageTag: fe8453ca-aaca-4e1f-a2c1-257766db0ea6
+		summarizeBy: sum
+		sourceColumn: 项目期初成本锁定额（万元）
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 成本锁定是否完成
+		dataType: string
+		lineageTag: 73698f80-53e9-4189-81ea-9bbdba017ac6
+		summarizeBy: none
+		sourceColumn: 成本锁定是否完成
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 业主结算时长
+		dataType: double
+		formatString: 0
+		lineageTag: c9d29e69-8d4f-4151-8c78-119fcc9ed449
+		summarizeBy: sum
+		sourceColumn: 业主结算时长
+
+		annotation SummarizationSetBy = Automatic
+
+	column 业主结算签订日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f9c9d9ad-ad80-47dc-b314-a4809e2fbc3f
+		summarizeBy: none
+		sourceColumn: 业主结算签订日期
+
+		variation 变体
+			isDefault
+			relationship: 2234efcc-d17c-434f-a406-484fba8f751b
+			defaultHierarchy: LocalDateTable_b072960e-cd06-45d5-b9b2-ed59d8bd2bc8.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 责任状日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 98b597b6-927f-4c90-b568-5ec14fa7621b
+		summarizeBy: none
+		sourceColumn: 责任状日期
+
+		variation 变体
+			isDefault
+			relationship: 471a034a-5229-4f80-aa94-bd194ba509ca
+			defaultHierarchy: LocalDateTable_ec5501cb-b6b9-4358-a273-c385a3fe815d.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 考核完工日期
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 50398354-569a-4a5b-8ad3-81baf551d47f
+		summarizeBy: none
+		sourceColumn: 考核完工日期
+
+		variation 变体
+			isDefault
+			relationship: 00efc195-5ee4-4b58-88fe-83c62b856ffb
+			defaultHierarchy: LocalDateTable_f237a6d7-13d9-47a0-a264-5afb0a7e01ec.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 超完工日期月数
+		dataType: double
+		lineageTag: dd2f4bd5-c900-4e1e-afee-7b02bfa5ab34
+		summarizeBy: sum
+		sourceColumn: 超完工日期月数
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 超责任状月数
+		dataType: int64
+		lineageTag: b4a8ade0-357e-4f0f-86ff-04f678ff2d69
+		summarizeBy: sum
+		sourceColumn: 超责任状月数
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 分包分供结算预计完成时间
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a6faad4d-1c35-44c8-8f10-1fcad48da869
+		summarizeBy: none
+		sourceColumn: 分包分供结算预计完成时间
+
+		variation 变体
+			isDefault
+			relationship: 4938e3df-b601-4e5e-98b4-b2470cd87034
+			defaultHierarchy: LocalDateTable_50d5787a-f113-49c2-9170-bd5ad196edc0.日期层次结构
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 分包类型
+		dataType: string
+		lineageTag: b9c900c2-e7e0-4df3-8991-c2edafe9c0da
+		summarizeBy: none
+		sourceColumn: 分包类型
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 专业
+		dataType: string
+		lineageTag: 9060a6ea-03f2-4d74-abfb-f73e0f6c4110
+		summarizeBy: none
+		sourceColumn: 专业
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 预计结算额
+		dataType: double
+		lineageTag: 3fb19dab-d29c-4936-8891-4d0bc67e1ee9
+		summarizeBy: sum
+		sourceColumn: 预计结算额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 成本锁定
+		dataType: double
+		lineageTag: b6755973-b2d0-463a-be82-a320f39b2e22
+		summarizeBy: sum
+		sourceColumn: 成本锁定
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 核定收益额
+		dataType: double
+		lineageTag: 20e0c098-6597-4449-a18f-9916cd982c25
+		summarizeBy: sum
+		sourceColumn: 核定收益额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计成本降低
+		dataType: double
+		lineageTag: 32fe4673-8e8c-4df9-936f-f23b7f53b443
+		summarizeBy: sum
+		sourceColumn: 预计成本降低
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 预计总收益额
+		dataType: double
+		lineageTag: 75371a82-b61d-4821-b949-79a29e4c2455
+		summarizeBy: sum
+		sourceColumn: 预计总收益额
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 分类 = if((DATE(2019,9,30)-'发展竣工项目结算进展'[考核完工日期])/365>=1.5,"1类（1.5年以上）",if((DATE(2019,9,30)-'发展竣工项目结算进展'[考核完工日期])/365<1,"3类（1年以下）","2类（1-1.5年）"))
+		lineageTag: a5193920-18d4-4b82-a290-7b965ef4ba30
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column 结算分类
+		dataType: string
+		lineageTag: ecd53fd6-1f4c-4d3b-9484-babfe6940741
+		summarizeBy: none
+		sourceColumn: 结算分类
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition 发展竣工项目结算进展-d49037c1-d44f-4a67-bd4d-40f3eb8423aa = m
+		mode: import
+		source =
+				let
+				    源 = Excel.Workbook(File.Contents("Y:\经营分析会\2020-1季度\结算进展2020.3.26.xls"), null, true),
+				    Sheet0 = 源{[Name="公司"]}[Data],
+				    提升的标题 = Table.PromoteHeaders(Sheet0, [PromoteAllScalars=true]),
+				    更改的类型7 = Table.TransformColumnTypes(提升的标题,{{"开工日期", Int64.Type}, {"考核完工日期", Int64.Type}, {"责任状日期", Int64.Type}, {"业主结算预计完成时间", Int64.Type}, {"分包分供结算预计完成时间", Int64.Type}, {"业主结算签订日期", Int64.Type}, {"填报日期", Int64.Type}, {"创建时间", type number}}),
+				    筛选的行 = Table.SelectRows(更改的类型7, each [业主结算年度] = "2020" or [业主结算状态] = "已竣未结"),
+				    更改的类型6 = Table.TransformColumnTypes(筛选的行,{{"考核完工日期", type date}, {"超完工日期月数", type number}, {"责任状日期", type date}, {"业主结算预计完成时间", type date}, {"分包分供结算预计完成时间", type date}, {"业主结算签订日期", type date}, {"开工日期", type date}}),
+				    更改的类型 = Table.TransformColumnTypes(更改的类型6,{{"评审状态", type text}, {"业务年", Int64.Type}, {"业务月", Int64.Type}, {"业主结算年度", Int64.Type}, {"业主结算状态", type text}, {"分包分供结算", type text}, {"项目编码", type text}, {"项目编号", type text}, {"项目名称", type text}, {"合同签订年份", type text}, {"成本主办", type text}, {"产值所属分公司", type text}, {"大客户", type text}, {"所属板块", type text}, {"所属类型", type text}, {"管理考核节点", Int64.Type}, {"总部联络人", type text}, {"项目总监", type text}, {"项目总监联系电话", type text}, {"项目经理", type text}, {"项目经理联系电话", Int64.Type}, {"商务经理", type text}, {"商务经理联系电话", Int64.Type}, {"其中：自施土建初始合同收入（万元）", type number}, {"其中：自施机电初始合同收入（万元）", type number}, {"自施初始合同收入（万元）", type number}, {"其中：甲指土建初始合同收入（万元）", type number}, {"其中：甲指机电初始合同收入（万元）", type number}, {"甲指初始合同收入（万元）", type number}, {"初始合同收入（万元）", type number}, {"自施土建预计结算额（万元）", type number}, {"自施机电预计结算额（万元）", type number}, {"自施预计结算额（万元）", type number}, {"甲指土建预计结算额（万元）", type number}, {"甲指机电预计结算额（万元）", type number}, {"甲指预计结算额（万元）", type number}, {"预计结算额（万元）", type number}, {"自施土建核定收益率", type number}, {"自施机电核定收益率", type number}, {"自施核定收益率", type number}, {"甲指土建核定收益率", Int64.Type}, {"甲指机电核定收益率", Int64.Type}, {"甲指核定收益率", Int64.Type}, {"核定收益率", type number}, {"自施土建成本锁定（万元）", type number}, {"自施机电成本锁定（万元）", type number}, {"自施成本锁定（万元）", type number}, {"甲指土建成本锁定（万元）", type number}, {"甲指机电成本锁定（万元）", type number}, {"甲指成本锁定（万元）", type number}, {"成本锁定（万元）", type number}, {"自施土建核定收益额（万元）", type number}, {"自施机电核定收益额（万元）", type number}, {"自施核定收益额（万元）", type number}, {"甲指土建核定收益额（万元）", Int64.Type}, {"甲指机电核定收益额（万元）", Int64.Type}, {"甲指核定收益额（万元）", Int64.Type}, {"核定收益额（万元）", type number}, {"自施土建预计成本降低（万元）", type number}, {"自施机电预计成本降低（万元）", type number}, {"自施预计成本降低（万元）", type number}, {"甲指土建预计成本降低（万元）", type number}, {"甲指机电预计成本降低（万元）", Int64.Type}, {"甲指预计成本降低（万元）", type number}, {"预计成本降低（万元）", type number}, {"自施土建预计总收益额（万元）", type number}, {"自施机电预计总收益额（万元）", type number}, {"自施预计总收益额（万元）", type number}, {"甲指土建预计总收益额（万元）", type number}, {"甲指机电预计总收益额（万元）", Int64.Type}, {"甲指预计总收益额（万元）", type number}, {"预计总收益额（万元）", type number}, {"自施土建预计结算收益率", type number}, {"自施机电预计结算收益率", type number}, {"自施预计结算收益率", type number}, {"甲指土建预计结算收益率", type number}, {"甲指机电预计结算收益率", Int64.Type}, {"甲指预计结算收益率", type number}, {"预计结算收益率", type number}, {"建筑面积(㎡)", type number}, {"自施土建单方造价（元）", type number}, {"自施机电单方造价（元）", type number}, {"自施单方造价（元）", type number}, {"单方造价（元）", type number}, {"工程款已回收（万元）", type number}, {"工程款回收比例", type number}, {"项目累计申请管理奖承诺成本降低额（万元）", type number}, {"结算分类", type text}, {"考核完工日期", type date}, {"超完工日期月数", type number}, {"责任状日期", type date}, {"超责任状月数", type number}, {"业主结算预计完成时间", type text}, {"分包分供结算预计完成时间", type date}, {"业主结算签订日期", type date}, {"业主结算时长", Int64.Type}, {"成本锁定是否完成", type text}, {"项目期初成本锁定额（万元）", type number}, {"开工日期", type date}, {"结算进展情况", type text}, {"分包分供结算完成情况", type text}, {"结算尚遗留问题", type text}, {"填报人", type text}, {"填报日期", type date}, {"提交者", type text}, {"创建时间", type datetime}}),
+				 删除的其他列 = Table.SelectColumns(更改的类型,{"评审状态", "业务年", "业务月", "业主结算年度", "业主结算状态", "分包分供结算", "项目编码", "项目名称", "合同签订年份", "成本主办", "产值所属分公司", "大客户", "所属板块", "所属类型", "总部联络人", "项目总监", "项目经理", "商务经理", "自施土建预计结算额（万元）", "自施机电预计结算额（万元）", "甲指土建预计结算额（万元）", "甲指机电预计结算额（万元）", "自施土建成本锁定（万元）", "自施机电成本锁定（万元）", "甲指土建成本锁定（万元）", "甲指机电成本锁定（万元）", "自施土建核定收益额（万元）", "自施机电核定收益额（万元）", "甲指土建核定收益额（万元）", "甲指机电核定收益额（万元）", "自施土建预计成本降低（万元）", "自施机电预计成本降低（万元）", "甲指土建预计成本降低（万元）", "甲指机电预计成本降低（万元）", "自施土建预计总收益额（万元）", "自施机电预计总收益额（万元）", "甲指土建预计总收益额（万元）", "甲指机电预计总收益额（万元）", "结算分类", "考核完工日期", "超完工日期月数", "责任状日期", "超责任状月数", "业主结算预计完成时间", "分包分供结算预计完成时间", "业主结算签订日期", "业主结算时长", "成本锁定是否完成", "项目期初成本锁定额（万元）", "开工日期", "结算进展情况", "分包分供结算完成情况", "结算尚遗留问题"}),
+				    替换的值3 = Table.ReplaceValue(删除的其他列,null,0,Replacer.ReplaceValue,{"自施土建预计结算额（万元）"}),
+				    替换的值4 = Table.ReplaceValue(替换的值3,null,0,Replacer.ReplaceValue,{"自施机电预计结算额（万元）", "甲指土建预计结算额（万元）", "甲指机电预计结算额（万元）", "自施土建成本锁定（万元）", "自施机电成本锁定（万元）", "甲指土建成本锁定（万元）", "甲指机电成本锁定（万元）", "自施土建核定收益额（万元）", "自施机电核定收益额（万元）", "甲指土建核定收益额（万元）", "甲指机电核定收益额（万元）", "自施土建预计成本降低（万元）", "自施机电预计成本降低（万元）", "甲指土建预计成本降低（万元）", "甲指机电预计成本降低（万元）", "自施土建预计总收益额（万元）", "自施机电预计总收益额（万元）", "甲指土建预计总收益额（万元）", "甲指机电预计总收益额（万元）"}),
+				    逆透视的其他列 = Table.UnpivotOtherColumns(替换的值4, {"评审状态", "业务年", "业务月", "业主结算年度", "业主结算状态", "分包分供结算", "项目编码", "项目名称", "合同签订年份", "成本主办", "产值所属分公司", "大客户", "所属板块", "所属类型", "总部联络人", "项目总监",  "项目经理",  "商务经理",  "结算尚遗留问题", "分包分供结算完成情况", "结算进展情况", "开工日期", "项目期初成本锁定额（万元）", "成本锁定是否完成", "业主结算时长", "业主结算签订日期", "责任状日期", "考核完工日期", "超完工日期月数","结算分类", "超责任状月数", "业主结算预计完成时间", "分包分供结算预计完成时间"}, "属性", "值"),
+				    用位置分列 = Table.SplitColumn(逆透视的其他列, "属性", Splitter.SplitTextByPositions({0, 2}, false), {"属性.1", "属性.2"}),
+				    更改的类型1 = Table.TransformColumnTypes(用位置分列,{{"属性.1", type text}, {"属性.2", type text}}),
+				    用位置分列1 = Table.SplitColumn(更改的类型1, "属性.2", Splitter.SplitTextByPositions({0, 2}, false), {"属性.2.1", "属性.2.2"}),
+				    更改的类型2 = Table.TransformColumnTypes(用位置分列1,{{"属性.2.1", type text}, {"属性.2.2", type text}}),
+				    已透视列 = Table.Pivot(更改的类型2, List.Distinct(更改的类型2[属性.2.2]), "属性.2.2", "值"),
+				    更改的类型3 = Table.TransformColumnTypes(已透视列,{{"开工日期", type date}, {"业主结算签订日期", type date}, {"责任状日期", type date}, {"考核完工日期", type date}, {"超完工日期月数", type number}, {"业主结算预计完成时间", Int64.Type}}),
+				    更改的类型4 = Table.TransformColumnTypes(更改的类型3,{{"业主结算预计完成时间", type date}, {"分包分供结算预计完成时间", type date}}),
+				    重命名的列 = Table.RenameColumns(更改的类型4,{{"属性.1", "分包类型"}, {"属性.2.1", "专业"}}),
+				    替换的值 = Table.ReplaceValue(重命名的列,null,0,Replacer.ReplaceValue,{"预计结算额（万元）", "成本锁定（万元）", "核定收益额（万元）", "预计成本降低（万元）", "预计总收益额（万元）"}),
+				    重命名的列1 = Table.RenameColumns(替换的值,{{"预计结算额（万元）", "预计结算额"}, {"成本锁定（万元）", "成本锁定"}, {"核定收益额（万元）", "核定收益额"}, {"预计成本降低（万元）", "预计成本降低"}, {"预计总收益额（万元）", "预计总收益额"}}),
+				    删除的列 = Table.RemoveColumns(重命名的列1,{"业主结算预计完成时间"}),
+				    替换的值1 = Table.ReplaceValue(删除的列,"基础设施-市政工程","其他",Replacer.ReplaceText,{"所属类型"}),
+				    替换的值2 = Table.ReplaceValue(替换的值1,"基础设施-公路工程","其他",Replacer.ReplaceText,{"所属类型"}),
+				    更改的类型5 = Table.TransformColumnTypes(替换的值2,{{"业主结算年度", type text}}),
+				    被除的列 = Table.TransformColumns(更改的类型5, {{"业主结算时长", each _ / 30, type number}}),
+				    删除的列1 = Table.RemoveColumns(被除的列,{"开工日期"})
+				in
+				    删除的列1
+
+	annotation PBI_QueryRelationships = {"columnCount":38,"keyColumnNames":[],"queryRelationships":[],"columnIdentities":["Section1/发展竣工项目结算进展/已透视列.{评审状态,0}","Section1/发展竣工项目结算进展/已透视列.{业务年,1}","Section1/发展竣工项目结算进展/已透视列.{业务月,2}","Section1/发展竣工项目结算进展/更改的类型5.{业主结算年度,3}","Section1/发展竣工项目结算进展/已透视列.{业主结算状态,4}","Section1/发展竣工项目结算进展/已透视列.{分包分供结算,5}","Section1/发展竣工项目结算进展/已透视列.{项目编码,6}","Section1/发展竣工项目结算进展/已透视列.{项目名称,7}","Section1/发展竣工项目结算进展/已透视列.{合同签订年份,8}","Section1/发展竣工项目结算进展/已透视列.{成本主办,9}","Section1/发展竣工项目结算进展/已透视列.{产值所属分公司,10}","Section1/发展竣工项目结算进展/已透视列.{大客户,11}","Section1/发展竣工项目结算进展/已透视列.{所属板块,12}","Section1/发展竣工项目结算进展/替换的值2.{所属类型,13}","Section1/发展竣工项目结算进展/已透视列.{总部联络人,14}","Section1/发展竣工项目结算进展/已透视列.{项目总监,15}","Section1/发展竣工项目结算进展/已透视列.{项目经理,16}","Section1/发展竣工项目结算进展/已透视列.{商务经理,17}","Section1/发展竣工项目结算进展/已透视列.{结算分类,18}","Section1/发展竣工项目结算进展/更改的类型3.{考核完工日期,19}","Section1/发展竣工项目结算进展/更改的类型3.{超完工日期月数,20}","Section1/发展竣工项目结算进展/更改的类型3.{责任状日期,21}","Section1/发展竣工项目结算进展/已透视列.{超责任状月数,22}","Section1/发展竣工项目结算进展/更改的类型4.{分包分供结算预计完成时间,24}","Section1/发展竣工项目结算进展/更改的类型3.{业主结算签订日期,25}","Section1/发展竣工项目结算进展/被除的列.{业主结算时长,25}","Section1/发展竣工项目结算进展/已透视列.{成本锁定是否完成,27}","Section1/发展竣工项目结算进展/已透视列.{项目期初成本锁定额（万元）,28}","Section1/发展竣工项目结算进展/已透视列.{结算进展情况,30}","Section1/发展竣工项目结算进展/已透视列.{分包分供结算完成情况,31}","Section1/发展竣工项目结算进展/已透视列.{结算尚遗留问题,32}","Section1/发展竣工项目结算进展/已透视列.{属性.1,33}","Section1/发展竣工项目结算进展/已透视列.{属性.2.1,34}","Section1/发展竣工项目结算进展/替换的值.{预计结算额（万元）,35}","Section1/发展竣工项目结算进展/替换的值.{成本锁定（万元）,36}","Section1/发展竣工项目结算进展/替换的值.{核定收益额（万元）,37}","Section1/发展竣工项目结算进展/替换的值.{预计成本降低（万元）,38}","Section1/发展竣工项目结算进展/替换的值.{预计总收益额（万元）,39}"],"ColumnCount":38,"KeyColumnNames":[],"ColumnIdentities":["Section1/发展竣工项目结算进展/已透视列.{评审状态,0}","Section1/发展竣工项目结算进展/已透视列.{业务年,1}","Section1/发展竣工项目结算进展/已透视列.{业务月,2}","Section1/发展竣工项目结算进展/更改的类型5.{业主结算年度,3}","Section1/发展竣工项目结算进展/已透视列.{业主结算状态,4}","Section1/发展竣工项目结算进展/已透视列.{分包分供结算,5}","Section1/发展竣工项目结算进展/已透视列.{项目编码,6}","Section1/发展竣工项目结算进展/已透视列.{项目名称,7}","Section1/发展竣工项目结算进展/已透视列.{合同签订年份,8}","Section1/发展竣工项目结算进展/已透视列.{成本主办,9}","Section1/发展竣工项目结算进展/已透视列.{产值所属分公司,10}","Section1/发展竣工项目结算进展/已透视列.{大客户,11}","Section1/发展竣工项目结算进展/已透视列.{所属板块,12}","Section1/发展竣工项目结算进展/替换的值2.{所属类型,13}","Section1/发展竣工项目结算进展/已透视列.{总部联络人,14}","Section1/发展竣工项目结算进展/已透视列.{项目总监,15}","Section1/发展竣工项目结算进展/已透视列.{项目经理,16}","Section1/发展竣工项目结算进展/已透视列.{商务经理,17}","Section1/发展竣工项目结算进展/已透视列.{结算分类,18}","Section1/发展竣工项目结算进展/更改的类型3.{考核完工日期,19}","Section1/发展竣工项目结算进展/更改的类型3.{超完工日期月数,20}","Section1/发展竣工项目结算进展/更改的类型3.{责任状日期,21}","Section1/发展竣工项目结算进展/已透视列.{超责任状月数,22}","Section1/发展竣工项目结算进展/更改的类型4.{分包分供结算预计完成时间,24}","Section1/发展竣工项目结算进展/更改的类型3.{业主结算签订日期,25}","Section1/发展竣工项目结算进展/被除的列.{业主结算时长,25}","Section1/发展竣工项目结算进展/已透视列.{成本锁定是否完成,27}","Section1/发展竣工项目结算进展/已透视列.{项目期初成本锁定额（万元）,28}","Section1/发展竣工项目结算进展/已透视列.{结算进展情况,30}","Section1/发展竣工项目结算进展/已透视列.{分包分供结算完成情况,31}","Section1/发展竣工项目结算进展/已透视列.{结算尚遗留问题,32}","Section1/发展竣工项目结算进展/已透视列.{属性.1,33}","Section1/发展竣工项目结算进展/已透视列.{属性.2.1,34}","Section1/发展竣工项目结算进展/替换的值.{预计结算额（万元）,35}","Section1/发展竣工项目结算进展/替换的值.{成本锁定（万元）,36}","Section1/发展竣工项目结算进展/替换的值.{核定收益额（万元）,37}","Section1/发展竣工项目结算进展/替换的值.{预计成本降低（万元）,38}","Section1/发展竣工项目结算进展/替换的值.{预计总收益额（万元）,39}"],"RelationshipInfo":[]}
+
+	annotation PBI_NavigationStepName = 导航
+
+	annotation PBI_ResultType = Table
+
